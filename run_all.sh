@@ -24,4 +24,5 @@ python3 plot_deconv.py         "$OUT/deconv"
 python3 braak_gse106241.py     --data "$DATA" --ref "$REF_DIR/seaad_mtg_reference.csv.gz" --out "$OUT/braak" --n 500
 python3 braak_gse125583.py     --data "$DATA" --ref "$REF_DIR/seaad_mtg_reference.csv.gz" --out "$OUT/braak_gse125583" --n 500
 python3 other_scheme_li2022.py --data "$DATA" --out "$OUT/rq2_li2022" --n 500
+python3 simulate_composition.py --data "$DATA" --ref "$REF_DIR" --out "$OUT/simulation" --n 400
 python3 forest_plot.py         "$OUT"

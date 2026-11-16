@@ -1,0 +1,117 @@
+{
+  "n_genes": 257,
+  "coverage": 0.948,
+  "settings": {
+    "baseline": {
+      "Exc": 0.3,
+      "Inh": 0.1,
+      "Oligo": 0.3,
+      "Astro": 0.15,
+      "OPC": 0.06,
+      "Micro": 0.06,
+      "Vascular": 0.03
+    },
+    "rna_neuron": 2.0,
+    "gene_noise_sd": 0.25
+  },
+  "noise_only": {
+    "class_frac": {
+      "A": 0.302,
+      "B": 0.32,
+      "C": 0.378
+    },
+    "signal_mean_best_r": 0.084,
+    "ca_vs_neuron_frac_rho": -0.645,
+    "neuron_frac_by_class": {
+      "A": 0.406,
+      "B": 0.404,
+      "C": 0.393
+    },
+    "ca_vs_Astro_rho": 0.259,
+    "ca_vs_Micro_rho": 0.258,
+    "ca_vs_Oligo_rho": 0.136
+  },
+  "neuron_loss": {
+    "class_frac": {
+      "A": 0.2,
+      "B": 0.34,
+      "C": 0.46
+    },
+    "signal_mean_best_r": 0.278,
+    "ca_vs_neuron_frac_rho": -0.974,
+    "neuron_frac_by_class": {
+      "A": 0.332,
+      "B": 0.34,
+      "C": 0.223
+    },
+    "ca_vs_Astro_rho": 0.782,
+    "ca_vs_Micro_rho": 0.713,
+    "ca_vs_Oligo_rho": 0.372
+  },
+  "glia_only": {
+    "class_frac": {
+      "A": 0.237,
+      "B": 0.425,
+      "C": 0.338
+    },
+    "signal_mean_best_r": 0.125,
+    "ca_vs_neuron_frac_rho": -0.029,
+    "neuron_frac_by_class": {
+      "A": 0.4,
+      "B": 0.4,
+      "C": 0.4
+    },
+    "ca_vs_Astro_rho": 0.113,
+    "ca_vs_Micro_rho": 0.445,
+    "ca_vs_Oligo_rho": -0.328
+  },
+  "heterogeneous": {
+    "class_frac": {
+      "A": 0.28,
+      "B": 0.292,
+      "C": 0.427
+    },
+    "signal_mean_best_r": 0.264,
+    "ca_vs_neuron_frac_rho": -0.937,
+    "neuron_frac_by_class": {
+      "A": 0.464,
+      "B": 0.457,
+      "C": 0.334
+    },
+    "ca_vs_Astro_rho": 0.311,
+    "ca_vs_Micro_rho": 0.233,
+    "ca_vs_Oligo_rho": 0.4
+  },
+  "decomposition": {
+    "C_minus_A": {
+      "r2_all_types": 0.666,
+      "r_with_each_type": {
+        "Exc": -0.673,
+        "Inh": -0.556,
+        "Oligo": 0.409,
+        "Astro": 0.345,
+        "OPC": 0.128,
+        "Micro": 0.361,
+        "Vascular": 0.467
+      },
+      "r_with_neuronal_vector": -0.654,
+      "r2_perm_p": 0.001,
+      "r2_perm_median": 0.026
+    },
+    "B_minus_AC": {
+      "r2_all_types": 0.58,
+      "r_with_each_type": {
+        "Exc": 0.569,
+        "Inh": 0.478,
+        "Oligo": 0.052,
+        "Astro": -0.679,
+        "OPC": -0.032,
+        "Micro": -0.129,
+        "Vascular": -0.075
+      },
+      "r_with_neuronal_vector": 0.561,
+      "r2_perm_p": 0.001,
+      "r2_perm_median": 0.024
+    }
+  }
+}
