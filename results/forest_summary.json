@@ -1,0 +1,18 @@
+{
+  "C-minus-A score vs neuron marker score (AD)": {
+    "pooled_rho": -0.911,
+    "ci": [
+      -0.939,
+      -0.872
+    ],
+    "I2": 0.64
+  },
+  "C-minus-A score vs disease stage (all samples)": {
+    "pooled_rho": 0.495,
+    "ci": [
+      0.344,
+      0.622
+    ],
+    "I2": 0.802
+  }
+}
