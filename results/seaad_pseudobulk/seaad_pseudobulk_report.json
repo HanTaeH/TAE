@@ -1,0 +1,1144 @@
+{
+  "n_donors": 84,
+  "n_reference_donors": 0,
+  "nuclei_total": 1178694,
+  "facs_plan_counts": {
+    "70% NeuN+, 30% NeuN-": 80,
+    "100% NeuN+, 0% NeuN-;70% NeuN+, 30% NeuN-": 2,
+    "55% NeuN+, 45% NeuN-;70% NeuN+, 30% NeuN-": 1,
+    "66% NeuN+, 34% NeuN-;70% NeuN+, 30% NeuN-": 1
+  },
+  "NeuN_FANS_unique": [
+    0.7
+  ],
+  "neuron_nuclei_frac_range": [
+    0.155,
+    0.891
+  ],
+  "sorted": {
+    "n_genes": 19000,
+    "n_neff_genes": 250,
+    "class_frac": {
+      "A": 0.488,
+      "B": 0.321,
+      "C": 0.19
+    },
+    "ca_vs_neuron_score": {
+      "rho": -0.541,
+      "p": 1.07e-07,
+      "n": 84
+    },
+    "ca_vs_CPS": {
+      "rho": 0.272,
+      "p": 0.0122,
+      "n": 84
+    },
+    "ca_vs_CPS_partial_age_sex": {
+      "rho": 0.249,
+      "p": 0.0229,
+      "n": 84
+    },
+    "b_vs_CPS": {
+      "rho": -0.146,
+      "p": 0.184,
+      "n": 84
+    },
+    "ca_vs_Braak": {
+      "rho": 0.406,
+      "p": 0.000129,
+      "n": 84
+    },
+    "ca_vs_Braak_partial_age_sex": {
+      "rho": 0.386,
+      "p": 0.000308,
+      "n": 84
+    },
+    "b_vs_Braak": {
+      "rho": -0.065,
+      "p": 0.556,
+      "n": 84
+    },
+    "ca_vs_Thal": {
+      "rho": 0.277,
+      "p": 0.0108,
+      "n": 84
+    },
+    "ca_vs_Thal_partial_age_sex": {
+      "rho": 0.271,
+      "p": 0.0133,
+      "n": 84
+    },
+    "b_vs_Thal": {
+      "rho": -0.075,
+      "p": 0.5,
+      "n": 84
+    },
+    "ca_vs_CERAD": {
+      "rho": 0.343,
+      "p": 0.00139,
+      "n": 84
+    },
+    "ca_vs_CERAD_partial_age_sex": {
+      "rho": 0.329,
+      "p": 0.00238,
+      "n": 84
+    },
+    "b_vs_CERAD": {
+      "rho": -0.051,
+      "p": 0.643,
+      "n": 84
+    },
+    "ca_vs_ADNC": {
+      "rho": 0.307,
+      "p": 0.00457,
+      "n": 84
+    },
+    "ca_vs_ADNC_partial_age_sex": {
+      "rho": 0.282,
+      "p": 0.00971,
+      "n": 84
+    },
+    "b_vs_ADNC": {
+      "rho": -0.138,
+      "p": 0.21,
+      "n": 84
+    },
+    "ca_vs_dementia": {
+      "rho": 0.388,
+      "p": 0.000267,
+      "n": 84
+    },
+    "ca_vs_dementia_partial_age_sex": {
+      "rho": 0.379,
+      "p": 0.000413,
+      "n": 84
+    },
+    "b_vs_dementia": {
+      "rho": 0.021,
+      "p": 0.852,
+      "n": 84
+    },
+    "ca_vs_CPS_partial_neuron": {
+      "rho": 0.278,
+      "p": 0.0115,
+      "n": 84
+    },
+    "ca_vs_measured": {
+      "L2/3 IT_of_neurons": {
+        "rho": -0.559,
+        "p": 3.24e-08,
+        "n": 84
+      },
+      "L4 IT_of_neurons": {
+        "rho": 0.568,
+        "p": 1.77e-08,
+        "n": 84
+      },
+      "Sst_of_neurons": {
+        "rho": -0.228,
+        "p": 0.0372,
+        "n": 84
+      },
+      "Pvalb_of_neurons": {
+        "rho": -0.3,
+        "p": 0.00559,
+        "n": 84
+      },
+      "Vip_of_neurons": {
+        "rho": 0.215,
+        "p": 0.0495,
+        "n": 84
+      },
+      "Exc_of_neurons": {
+        "rho": -0.045,
+        "p": 0.684,
+        "n": 84
+      },
+      "Astro_of_nonneurons": {
+        "rho": 0.319,
+        "p": 0.00313,
+        "n": 84
+      },
+      "Oligo_of_nonneurons": {
+        "rho": -0.368,
+        "p": 0.000568,
+        "n": 84
+      },
+      "Micro_of_nonneurons": {
+        "rho": 0.321,
+        "p": 0.00288,
+        "n": 84
+      },
+      "OPC_of_nonneurons": {
+        "rho": -0.245,
+        "p": 0.0245,
+        "n": 84
+      },
+      "neuron_nuclei_frac": {
+        "rho": -0.543,
+        "p": 9.44e-08,
+        "n": 84
+      }
+    },
+    "class_vs_CPS_kruskal_p": 0.004690636640442882,
+    "ca_vs_CPS_random_null": {
+      "obs": 0.272,
+      "random_median": -0.039,
+      "random_q95": 0.171,
+      "p": 0.004
+    }
+  },
+  "fixed_comp": {
+    "n_genes": 19732,
+    "n_neff_genes": 257,
+    "class_frac": {
+      "A": 0.357,
+      "B": 0.345,
+      "C": 0.298
+    },
+    "ca_vs_neuron_score": {
+      "rho": -0.63,
+      "p": 1.36e-10,
+      "n": 84
+    },
+    "ca_vs_CPS": {
+      "rho": 0.142,
+      "p": 0.197,
+      "n": 84
+    },
+    "ca_vs_CPS_partial_age_sex": {
+      "rho": 0.135,
+      "p": 0.225,
+      "n": 84
+    },
+    "b_vs_CPS": {
+      "rho": 0.182,
+      "p": 0.0973,
+      "n": 84
+    },
+    "ca_vs_Braak": {
+      "rho": 0.242,
+      "p": 0.0265,
+      "n": 84
+    },
+    "ca_vs_Braak_partial_age_sex": {
+      "rho": 0.238,
+      "p": 0.0306,
+      "n": 84
+    },
+    "b_vs_Braak": {
+      "rho": 0.254,
+      "p": 0.0198,
+      "n": 84
+    },
+    "ca_vs_Thal": {
+      "rho": 0.198,
+      "p": 0.0716,
+      "n": 84
+    },
+    "ca_vs_Thal_partial_age_sex": {
+      "rho": 0.196,
+      "p": 0.0762,
+      "n": 84
+    },
+    "b_vs_Thal": {
+      "rho": 0.194,
+      "p": 0.0765,
+      "n": 84
+    },
+    "ca_vs_CERAD": {
+      "rho": 0.226,
+      "p": 0.039,
+      "n": 84
+    },
+    "ca_vs_CERAD_partial_age_sex": {
+      "rho": 0.221,
+      "p": 0.0447,
+      "n": 84
+    },
+    "b_vs_CERAD": {
+      "rho": 0.105,
+      "p": 0.342,
+      "n": 84
+    },
+    "ca_vs_ADNC": {
+      "rho": 0.194,
+      "p": 0.077,
+      "n": 84
+    },
+    "ca_vs_ADNC_partial_age_sex": {
+      "rho": 0.19,
+      "p": 0.0848,
+      "n": 84
+    },
+    "b_vs_ADNC": {
+      "rho": 0.135,
+      "p": 0.221,
+      "n": 84
+    },
+    "ca_vs_dementia": {
+      "rho": 0.317,
+      "p": 0.00329,
+      "n": 84
+    },
+    "ca_vs_dementia_partial_age_sex": {
+      "rho": 0.314,
+      "p": 0.00386,
+      "n": 84
+    },
+    "b_vs_dementia": {
+      "rho": 0.207,
+      "p": 0.0586,
+      "n": 84
+    },
+    "ca_vs_CPS_partial_neuron": {
+      "rho": 0.162,
+      "p": 0.146,
+      "n": 84
+    },
+    "ca_vs_measured": {
+      "L2/3 IT_of_neurons": {
+        "rho": -0.287,
+        "p": 0.00804,
+        "n": 84
+      },
+      "L4 IT_of_neurons": {
+        "rho": 0.378,
+        "p": 0.000396,
+        "n": 84
+      },
+      "Sst_of_neurons": {
+        "rho": -0.299,
+        "p": 0.00576,
+        "n": 84
+      },
+      "Pvalb_of_neurons": {
+        "rho": -0.412,
+        "p": 9.82e-05,
+        "n": 84
+      },
+      "Vip_of_neurons": {
+        "rho": -0.113,
+        "p": 0.307,
+        "n": 84
+      },
+      "Exc_of_neurons": {
+        "rho": 0.245,
+        "p": 0.0244,
+        "n": 84
+      },
+      "Astro_of_nonneurons": {
+        "rho": 0.291,
+        "p": 0.00719,
+        "n": 84
+      },
+      "Oligo_of_nonneurons": {
+        "rho": -0.287,
+        "p": 0.00803,
+        "n": 84
+      },
+      "Micro_of_nonneurons": {
+        "rho": 0.106,
+        "p": 0.338,
+        "n": 84
+      },
+      "OPC_of_nonneurons": {
+        "rho": -0.013,
+        "p": 0.91,
+        "n": 84
+      },
+      "neuron_nuclei_frac": {
+        "rho": -0.11,
+        "p": 0.319,
+        "n": 84
+      }
+    },
+    "class_vs_CPS_kruskal_p": 0.5060828135645388,
+    "ca_vs_CPS_random_null": {
+      "obs": 0.142,
+      "random_median": -0.018,
+      "random_q95": 0.174,
+      "p": 0.0818
+    }
+  },
+  "comp_only": {
+    "n_genes": 19743,
+    "n_neff_genes": 257,
+    "class_frac": {
+      "A": 0.393,
+      "B": 0.345,
+      "C": 0.262
+    },
+    "ca_vs_neuron_score": {
+      "rho": -0.601,
+      "p": 1.48e-09,
+      "n": 84
+    },
+    "ca_vs_CPS": {
+      "rho": 0.313,
+      "p": 0.0037,
+      "n": 84
+    },
+    "ca_vs_CPS_partial_age_sex": {
+      "rho": 0.272,
+      "p": 0.0129,
+      "n": 84
+    },
+    "b_vs_CPS": {
+      "rho": 0.098,
+      "p": 0.373,
+      "n": 84
+    },
+    "ca_vs_Braak": {
+      "rho": 0.268,
+      "p": 0.0137,
+      "n": 84
+    },
+    "ca_vs_Braak_partial_age_sex": {
+      "rho": 0.218,
+      "p": 0.0474,
+      "n": 84
+    },
+    "b_vs_Braak": {
+      "rho": 0.148,
+      "p": 0.179,
+      "n": 84
+    },
+    "ca_vs_Thal": {
+      "rho": 0.231,
+      "p": 0.0348,
+      "n": 84
+    },
+    "ca_vs_Thal_partial_age_sex": {
+      "rho": 0.231,
+      "p": 0.036,
+      "n": 84
+    },
+    "b_vs_Thal": {
+      "rho": 0.183,
+      "p": 0.0956,
+      "n": 84
+    },
+    "ca_vs_CERAD": {
+      "rho": 0.415,
+      "p": 8.74e-05,
+      "n": 84
+    },
+    "ca_vs_CERAD_partial_age_sex": {
+      "rho": 0.396,
+      "p": 0.000207,
+      "n": 84
+    },
+    "b_vs_CERAD": {
+      "rho": 0.171,
+      "p": 0.119,
+      "n": 84
+    },
+    "ca_vs_ADNC": {
+      "rho": 0.253,
+      "p": 0.0201,
+      "n": 84
+    },
+    "ca_vs_ADNC_partial_age_sex": {
+      "rho": 0.239,
+      "p": 0.0296,
+      "n": 84
+    },
+    "b_vs_ADNC": {
+      "rho": 0.157,
+      "p": 0.155,
+      "n": 84
+    },
+    "ca_vs_dementia": {
+      "rho": 0.317,
+      "p": 0.00329,
+      "n": 84
+    },
+    "ca_vs_dementia_partial_age_sex": {
+      "rho": 0.3,
+      "p": 0.00579,
+      "n": 84
+    },
+    "b_vs_dementia": {
+      "rho": 0.251,
+      "p": 0.0211,
+      "n": 84
+    },
+    "ca_vs_CPS_partial_neuron": {
+      "rho": 0.37,
+      "p": 0.000627,
+      "n": 84
+    },
+    "ca_vs_measured": {
+      "L2/3 IT_of_neurons": {
+        "rho": -0.517,
+        "p": 4.87e-07,
+        "n": 84
+      },
+      "L4 IT_of_neurons": {
+        "rho": 0.327,
+        "p": 0.00238,
+        "n": 84
+      },
+      "Sst_of_neurons": {
+        "rho": 0.12,
+        "p": 0.276,
+        "n": 84
+      },
+      "Pvalb_of_neurons": {
+        "rho": 0.182,
+        "p": 0.0969,
+        "n": 84
+      },
+      "Vip_of_neurons": {
+        "rho": 0.584,
+        "p": 5.34e-09,
+        "n": 84
+      },
+      "Exc_of_neurons": {
+        "rho": -0.502,
+        "p": 1.17e-06,
+        "n": 84
+      },
+      "Astro_of_nonneurons": {
+        "rho": 0.511,
+        "p": 6.78e-07,
+        "n": 84
+      },
+      "Oligo_of_nonneurons": {
+        "rho": -0.486,
+        "p": 2.8e-06,
+        "n": 84
+      },
+      "Micro_of_nonneurons": {
+        "rho": 0.441,
+        "p": 2.7e-05,
+        "n": 84
+      },
+      "OPC_of_nonneurons": {
+        "rho": -0.302,
+        "p": 0.00518,
+        "n": 84
+      },
+      "neuron_nuclei_frac": {
+        "rho": -0.069,
+        "p": 0.536,
+        "n": 84
+      }
+    },
+    "class_vs_CPS_kruskal_p": 0.19362950799954037,
+    "ca_vs_CPS_random_null": {
+      "obs": 0.313,
+      "random_median": 0.098,
+      "random_q95": 0.238,
+      "p": 0.006
+    }
+  },
+  "type_Exc": {
+    "n_genes": 18146,
+    "n_neff_genes": 225,
+    "class_frac": {
+      "A": 0.405,
+      "B": 0.31,
+      "C": 0.286
+    },
+    "ca_vs_neuron_score": {
+      "rho": -0.259,
+      "p": 0.0175,
+      "n": 84
+    },
+    "ca_vs_CPS": {
+      "rho": 0.069,
+      "p": 0.533,
+      "n": 84
+    },
+    "ca_vs_CPS_partial_age_sex": {
+      "rho": 0.081,
+      "p": 0.466,
+      "n": 84
+    },
+    "b_vs_CPS": {
+      "rho": 0.071,
+      "p": 0.521,
+      "n": 84
+    },
+    "ca_vs_Braak": {
+      "rho": 0.22,
+      "p": 0.044,
+      "n": 84
+    },
+    "ca_vs_Braak_partial_age_sex": {
+      "rho": 0.24,
+      "p": 0.0292,
+      "n": 84
+    },
+    "b_vs_Braak": {
+      "rho": 0.141,
+      "p": 0.202,
+      "n": 84
+    },
+    "ca_vs_Thal": {
+      "rho": 0.086,
+      "p": 0.439,
+      "n": 84
+    },
+    "ca_vs_Thal_partial_age_sex": {
+      "rho": 0.085,
+      "p": 0.445,
+      "n": 84
+    },
+    "b_vs_Thal": {
+      "rho": 0.199,
+      "p": 0.0694,
+      "n": 84
+    },
+    "ca_vs_CERAD": {
+      "rho": 0.056,
+      "p": 0.613,
+      "n": 84
+    },
+    "ca_vs_CERAD_partial_age_sex": {
+      "rho": 0.063,
+      "p": 0.574,
+      "n": 84
+    },
+    "b_vs_CERAD": {
+      "rho": 0.162,
+      "p": 0.14,
+      "n": 84
+    },
+    "ca_vs_ADNC": {
+      "rho": 0.129,
+      "p": 0.241,
+      "n": 84
+    },
+    "ca_vs_ADNC_partial_age_sex": {
+      "rho": 0.127,
+      "p": 0.251,
+      "n": 84
+    },
+    "b_vs_ADNC": {
+      "rho": 0.118,
+      "p": 0.283,
+      "n": 84
+    },
+    "ca_vs_dementia": {
+      "rho": 0.08,
+      "p": 0.472,
+      "n": 84
+    },
+    "ca_vs_dementia_partial_age_sex": {
+      "rho": 0.085,
+      "p": 0.445,
+      "n": 84
+    },
+    "b_vs_dementia": {
+      "rho": 0.218,
+      "p": 0.0464,
+      "n": 84
+    },
+    "ca_vs_CPS_partial_neuron": {
+      "rho": 0.112,
+      "p": 0.317,
+      "n": 84
+    }
+  },
+  "type_Inh": {
+    "n_genes": 17996,
+    "n_neff_genes": 234,
+    "class_frac": {
+      "A": 0.405,
+      "B": 0.333,
+      "C": 0.262
+    },
+    "ca_vs_neuron_score": {
+      "rho": -0.381,
+      "p": 0.000345,
+      "n": 84
+    },
+    "ca_vs_CPS": {
+      "rho": 0.153,
+      "p": 0.164,
+      "n": 84
+    },
+    "ca_vs_CPS_partial_age_sex": {
+      "rho": 0.174,
+      "p": 0.115,
+      "n": 84
+    },
+    "b_vs_CPS": {
+      "rho": 0.106,
+      "p": 0.337,
+      "n": 84
+    },
+    "ca_vs_Braak": {
+      "rho": 0.264,
+      "p": 0.0153,
+      "n": 84
+    },
+    "ca_vs_Braak_partial_age_sex": {
+      "rho": 0.291,
+      "p": 0.0075,
+      "n": 84
+    },
+    "b_vs_Braak": {
+      "rho": 0.175,
+      "p": 0.111,
+      "n": 84
+    },
+    "ca_vs_Thal": {
+      "rho": 0.2,
+      "p": 0.0687,
+      "n": 84
+    },
+    "ca_vs_Thal_partial_age_sex": {
+      "rho": 0.202,
+      "p": 0.0673,
+      "n": 84
+    },
+    "b_vs_Thal": {
+      "rho": 0.204,
+      "p": 0.0627,
+      "n": 84
+    },
+    "ca_vs_CERAD": {
+      "rho": 0.194,
+      "p": 0.0763,
+      "n": 84
+    },
+    "ca_vs_CERAD_partial_age_sex": {
+      "rho": 0.209,
+      "p": 0.0584,
+      "n": 84
+    },
+    "b_vs_CERAD": {
+      "rho": 0.217,
+      "p": 0.0475,
+      "n": 84
+    },
+    "ca_vs_ADNC": {
+      "rho": 0.222,
+      "p": 0.0424,
+      "n": 84
+    },
+    "ca_vs_ADNC_partial_age_sex": {
+      "rho": 0.224,
+      "p": 0.0417,
+      "n": 84
+    },
+    "b_vs_ADNC": {
+      "rho": 0.164,
+      "p": 0.136,
+      "n": 84
+    },
+    "ca_vs_dementia": {
+      "rho": 0.211,
+      "p": 0.0539,
+      "n": 84
+    },
+    "ca_vs_dementia_partial_age_sex": {
+      "rho": 0.223,
+      "p": 0.0431,
+      "n": 84
+    },
+    "b_vs_dementia": {
+      "rho": 0.179,
+      "p": 0.104,
+      "n": 84
+    },
+    "ca_vs_CPS_partial_neuron": {
+      "rho": 0.152,
+      "p": 0.173,
+      "n": 84
+    }
+  },
+  "type_Astro": {
+    "n_genes": 18526,
+    "n_neff_genes": 248,
+    "class_frac": {
+      "A": 0.321,
+      "B": 0.31,
+      "C": 0.369
+    },
+    "ca_vs_neuron_score": {
+      "rho": -0.72,
+      "p": 1.25e-14,
+      "n": 84
+    },
+    "ca_vs_CPS": {
+      "rho": 0.11,
+      "p": 0.321,
+      "n": 84
+    },
+    "ca_vs_CPS_partial_age_sex": {
+      "rho": 0.066,
+      "p": 0.553,
+      "n": 84
+    },
+    "b_vs_CPS": {
+      "rho": 0.231,
+      "p": 0.0348,
+      "n": 84
+    },
+    "ca_vs_Braak": {
+      "rho": 0.116,
+      "p": 0.291,
+      "n": 84
+    },
+    "ca_vs_Braak_partial_age_sex": {
+      "rho": 0.068,
+      "p": 0.54,
+      "n": 84
+    },
+    "b_vs_Braak": {
+      "rho": 0.281,
+      "p": 0.00973,
+      "n": 84
+    },
+    "ca_vs_Thal": {
+      "rho": 0.146,
+      "p": 0.185,
+      "n": 84
+    },
+    "ca_vs_Thal_partial_age_sex": {
+      "rho": 0.139,
+      "p": 0.209,
+      "n": 84
+    },
+    "b_vs_Thal": {
+      "rho": 0.153,
+      "p": 0.165,
+      "n": 84
+    },
+    "ca_vs_CERAD": {
+      "rho": 0.181,
+      "p": 0.0993,
+      "n": 84
+    },
+    "ca_vs_CERAD_partial_age_sex": {
+      "rho": 0.154,
+      "p": 0.165,
+      "n": 84
+    },
+    "b_vs_CERAD": {
+      "rho": 0.107,
+      "p": 0.331,
+      "n": 84
+    },
+    "ca_vs_ADNC": {
+      "rho": 0.127,
+      "p": 0.249,
+      "n": 84
+    },
+    "ca_vs_ADNC_partial_age_sex": {
+      "rho": 0.105,
+      "p": 0.345,
+      "n": 84
+    },
+    "b_vs_ADNC": {
+      "rho": 0.1,
+      "p": 0.364,
+      "n": 84
+    },
+    "ca_vs_dementia": {
+      "rho": 0.276,
+      "p": 0.0111,
+      "n": 84
+    },
+    "ca_vs_dementia_partial_age_sex": {
+      "rho": 0.258,
+      "p": 0.0186,
+      "n": 84
+    },
+    "b_vs_dementia": {
+      "rho": 0.168,
+      "p": 0.127,
+      "n": 84
+    },
+    "ca_vs_CPS_partial_neuron": {
+      "rho": 0.111,
+      "p": 0.321,
+      "n": 84
+    }
+  },
+  "type_Oligo": {
+    "n_genes": 17529,
+    "n_neff_genes": 243,
+    "class_frac": {
+      "A": 0.214,
+      "B": 0.345,
+      "C": 0.44
+    },
+    "ca_vs_neuron_score": {
+      "rho": -0.756,
+      "p": 8.82e-17,
+      "n": 84
+    },
+    "ca_vs_CPS": {
+      "rho": 0.034,
+      "p": 0.756,
+      "n": 84
+    },
+    "ca_vs_CPS_partial_age_sex": {
+      "rho": 0.028,
+      "p": 0.8,
+      "n": 84
+    },
+    "b_vs_CPS": {
+      "rho": 0.061,
+      "p": 0.583,
+      "n": 84
+    },
+    "ca_vs_Braak": {
+      "rho": 0.045,
+      "p": 0.685,
+      "n": 84
+    },
+    "ca_vs_Braak_partial_age_sex": {
+      "rho": 0.039,
+      "p": 0.725,
+      "n": 84
+    },
+    "b_vs_Braak": {
+      "rho": 0.073,
+      "p": 0.511,
+      "n": 84
+    },
+    "ca_vs_Thal": {
+      "rho": 0.12,
+      "p": 0.276,
+      "n": 84
+    },
+    "ca_vs_Thal_partial_age_sex": {
+      "rho": 0.121,
+      "p": 0.276,
+      "n": 84
+    },
+    "b_vs_Thal": {
+      "rho": -0.023,
+      "p": 0.836,
+      "n": 84
+    },
+    "ca_vs_CERAD": {
+      "rho": 0.143,
+      "p": 0.195,
+      "n": 84
+    },
+    "ca_vs_CERAD_partial_age_sex": {
+      "rho": 0.141,
+      "p": 0.204,
+      "n": 84
+    },
+    "b_vs_CERAD": {
+      "rho": -0.052,
+      "p": 0.64,
+      "n": 84
+    },
+    "ca_vs_ADNC": {
+      "rho": 0.079,
+      "p": 0.473,
+      "n": 84
+    },
+    "ca_vs_ADNC_partial_age_sex": {
+      "rho": 0.081,
+      "p": 0.465,
+      "n": 84
+    },
+    "b_vs_ADNC": {
+      "rho": -0.036,
+      "p": 0.742,
+      "n": 84
+    },
+    "ca_vs_dementia": {
+      "rho": 0.243,
+      "p": 0.0262,
+      "n": 84
+    },
+    "ca_vs_dementia_partial_age_sex": {
+      "rho": 0.242,
+      "p": 0.0276,
+      "n": 84
+    },
+    "b_vs_dementia": {
+      "rho": -0.018,
+      "p": 0.873,
+      "n": 84
+    },
+    "ca_vs_CPS_partial_neuron": {
+      "rho": 0.029,
+      "p": 0.796,
+      "n": 84
+    }
+  },
+  "type_Micro": {
+    "n_genes": 18162,
+    "n_neff_genes": 250,
+    "class_frac": {
+      "A": 0.214,
+      "B": 0.31,
+      "C": 0.476
+    },
+    "ca_vs_neuron_score": {
+      "rho": -0.858,
+      "p": 1.8e-25,
+      "n": 84
+    },
+    "ca_vs_CPS": {
+      "rho": 0.159,
+      "p": 0.148,
+      "n": 84
+    },
+    "ca_vs_CPS_partial_age_sex": {
+      "rho": 0.128,
+      "p": 0.248,
+      "n": 84
+    },
+    "b_vs_CPS": {
+      "rho": -0.108,
+      "p": 0.329,
+      "n": 84
+    },
+    "ca_vs_Braak": {
+      "rho": 0.152,
+      "p": 0.166,
+      "n": 84
+    },
+    "ca_vs_Braak_partial_age_sex": {
+      "rho": 0.117,
+      "p": 0.292,
+      "n": 84
+    },
+    "b_vs_Braak": {
+      "rho": -0.07,
+      "p": 0.524,
+      "n": 84
+    },
+    "ca_vs_Thal": {
+      "rho": 0.217,
+      "p": 0.0469,
+      "n": 84
+    },
+    "ca_vs_Thal_partial_age_sex": {
+      "rho": 0.211,
+      "p": 0.0558,
+      "n": 84
+    },
+    "b_vs_Thal": {
+      "rho": -0.111,
+      "p": 0.317,
+      "n": 84
+    },
+    "ca_vs_CERAD": {
+      "rho": 0.261,
+      "p": 0.0167,
+      "n": 84
+    },
+    "ca_vs_CERAD_partial_age_sex": {
+      "rho": 0.241,
+      "p": 0.0282,
+      "n": 84
+    },
+    "b_vs_CERAD": {
+      "rho": -0.167,
+      "p": 0.13,
+      "n": 84
+    },
+    "ca_vs_ADNC": {
+      "rho": 0.196,
+      "p": 0.074,
+      "n": 84
+    },
+    "ca_vs_ADNC_partial_age_sex": {
+      "rho": 0.175,
+      "p": 0.114,
+      "n": 84
+    },
+    "b_vs_ADNC": {
+      "rho": -0.174,
+      "p": 0.113,
+      "n": 84
+    },
+    "ca_vs_dementia": {
+      "rho": 0.286,
+      "p": 0.00842,
+      "n": 84
+    },
+    "ca_vs_dementia_partial_age_sex": {
+      "rho": 0.271,
+      "p": 0.0133,
+      "n": 84
+    },
+    "b_vs_dementia": {
+      "rho": -0.107,
+      "p": 0.333,
+      "n": 84
+    },
+    "ca_vs_CPS_partial_neuron": {
+      "rho": 0.025,
+      "p": 0.827,
+      "n": 84
+    }
+  },
+  "sorted_on_fixed_and_comp": {
+    "r2": 0.462,
+    "r2_fixed_only": 0.378,
+    "r2_comp_only": 0.144
+  },
+  "measured_vs_CPS": {
+    "L2/3 IT_of_neurons": {
+      "rho": -0.405,
+      "p": 0.000135,
+      "n": 84
+    },
+    "L4 IT_of_neurons": {
+      "rho": 0.354,
+      "p": 0.00095,
+      "n": 84
+    },
+    "Sst_of_neurons": {
+      "rho": -0.123,
+      "p": 0.263,
+      "n": 84
+    },
+    "Pvalb_of_neurons": {
+      "rho": -0.085,
+      "p": 0.44,
+      "n": 84
+    },
+    "Vip_of_neurons": {
+      "rho": -0.096,
+      "p": 0.385,
+      "n": 84
+    },
+    "Exc_of_neurons": {
+      "rho": 0.027,
+      "p": 0.81,
+      "n": 84
+    },
+    "Astro_of_nonneurons": {
+      "rho": 0.151,
+      "p": 0.171,
+      "n": 84
+    },
+    "Oligo_of_nonneurons": {
+      "rho": -0.109,
+      "p": 0.322,
+      "n": 84
+    },
+    "Micro_of_nonneurons": {
+      "rho": 0.086,
+      "p": 0.436,
+      "n": 84
+    },
+    "OPC_of_nonneurons": {
+      "rho": -0.349,
+      "p": 0.00116,
+      "n": 84
+    },
+    "neuron_nuclei_frac": {
+      "rho": -0.189,
+      "p": 0.0858,
+      "n": 84
+    }
+  }
+}

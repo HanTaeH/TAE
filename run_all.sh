@@ -25,4 +25,8 @@ python3 braak_gse106241.py     --data "$DATA" --ref "$REF_DIR/seaad_mtg_referenc
 python3 braak_gse125583.py     --data "$DATA" --ref "$REF_DIR/seaad_mtg_reference.csv.gz" --out "$OUT/braak_gse125583" --n 500
 python3 other_scheme_li2022.py --data "$DATA" --out "$OUT/rq2_li2022" --n 500
 python3 simulate_composition.py --data "$DATA" --ref "$REF_DIR" --out "$OUT/simulation" --n 400
+if [ ! -f "$REF_DIR/donors/donor_meta.csv" ]; then  # downloads 84 donor objects (~33 GB, one at a time)
+  for i in 0 1 2 3; do python3 seaad_donor_aggregate.py --out "$REF_DIR/donors" --shard $i/4 & done; wait
+fi
+python3 seaad_pseudobulk.py     --donors "$REF_DIR/donors" --cps "$REF_DIR/Global_and_Local_CPS.20260105.csv" --data "$DATA" --out "$OUT/seaad_pseudobulk" --n 500
 python3 forest_plot.py         "$OUT"
