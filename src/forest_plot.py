@@ -25,12 +25,12 @@ val = {r["cohort"]: r for r in json.loads((res / "validation/validation_report.j
 null = pd.read_csv(res / "null/null_summary.csv").set_index("cohort")
 braak = json.loads((res / "braak/braak_report.json").read_text())
 order = ["GSE33000_PFC", "GSE132903_MTG", "GSE118553_Temporal_Cortex", "GSE118553_Frontal_Cortex",
-         "GSE118553_Entorhinal_Cortex", "GSE118553_Cerebellum"]
+         "GSE118553_Entorhinal_Cortex", "GSE118553_Cerebellum", "GSE125583_FG"]
 label = {"GSE33000_PFC": "GSE33000 prefrontal", "GSE132903_MTG": "GSE132903 middle temporal",
          "GSE118553_Temporal_Cortex": "GSE118553 temporal", "GSE118553_Frontal_Cortex": "GSE118553 frontal",
          "GSE118553_Entorhinal_Cortex": "GSE118553 entorhinal", "GSE118553_Cerebellum": "GSE118553 cerebellum (neg. control)",
-         "GSE106241_ITC": "GSE106241 inferior temporal (Braak)"}
-INDEPENDENT = ["GSE33000_PFC", "GSE132903_MTG", "GSE118553_Temporal_Cortex"]
+         "GSE106241_ITC": "GSE106241 inferior temporal (Braak)", "GSE125583_FG": "GSE125583 fusiform (RNA-seq)"}
+INDEPENDENT = ["GSE33000_PFC", "GSE132903_MTG", "GSE118553_Temporal_Cortex", "GSE125583_FG"]
 
 
 def ci(r, n):

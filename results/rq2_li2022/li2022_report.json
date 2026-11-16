@@ -382,5 +382,69 @@
       "random_median": 0.427,
       "p_lower": 0.0319
     }
+  },
+  {
+    "cohort": "GSE125583_FG",
+    "n_AD": 219,
+    "hub_genes_found": {
+      "I": 10,
+      "II": 10,
+      "III": 9
+    },
+    "frac": {
+      "I": 0.265,
+      "II": 0.37,
+      "III": 0.365
+    },
+    "vs_neff_ari": 0.407,
+    "vs_neff_cramers_v": 0.621,
+    "crosstab_neff_rows": {
+      "A": {
+        "I": 0,
+        "II": 53,
+        "III": 8
+      },
+      "B": {
+        "I": 32,
+        "II": 27,
+        "III": 2
+      },
+      "C": {
+        "I": 26,
+        "II": 1,
+        "III": 70
+      }
+    },
+    "score_vs_neuron_rho": {
+      "I": -0.624,
+      "II": 0.963,
+      "III": -0.786
+    },
+    "score_vs_neff_ca_rho": {
+      "I": 0.695,
+      "II": -0.949,
+      "III": 0.641
+    },
+    "score_r2_cells": {
+      "I": 0.435,
+      "II": 0.92,
+      "III": 0.643
+    },
+    "ari_adj": 0.223,
+    "stage_rho": {
+      "I": 0.361,
+      "II": -0.381,
+      "III": 0.303
+    },
+    "null_max_abs_neuron_rho": {
+      "obs": 0.963,
+      "random_median": 0.521,
+      "p": 0.002
+    },
+    "null_ari_adj": {
+      "obs": 0.223,
+      "random_median": 0.353,
+      "p_lower": 0.1597
+    }
   }
 ]

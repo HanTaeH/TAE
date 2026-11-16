@@ -12,8 +12,8 @@ res = Path(sys.argv[1] if len(sys.argv) > 1 else "../results/deconv")
 P = pd.read_csv(res / "deconv_proportions.csv", index_col=0)
 S = pd.read_csv(res / "deconv_adjustment_summary.csv")
 order = ["GSE33000_PFC", "GSE132903_MTG", "GSE118553_Temporal_Cortex", "GSE118553_Frontal_Cortex",
-         "GSE118553_Entorhinal_Cortex", "GSE118553_Cerebellum"]
-short = ["33000\nPFC", "132903\nMTG", "118553\nTemporal", "118553\nFrontal", "118553\nEntorhinal", "118553\nCerebellum"]
+         "GSE118553_Entorhinal_Cortex", "GSE118553_Cerebellum", "GSE125583_FG"]
+short = ["33000\nPFC", "132903\nMTG", "118553\nTemporal", "118553\nFrontal", "118553\nEntorhinal", "118553\nCerebellum", "125583\nFusiform"]
 
 fig, axes = plt.subplots(1, 3, figsize=(19, 5.2))
 ax = axes[0]

@@ -244,5 +244,46 @@
       ],
       "p_empirical": 0.007
     }
+  },
+  {
+    "cohort": "GSE125583_FG",
+    "n_genes": 255,
+    "n_random_sets": 1000,
+    "r2_cell": {
+      "neff": 0.576,
+      "random_median": 0.293,
+      "random_q05_q95": [
+        0.267,
+        0.326
+      ],
+      "p_empirical": 0.001
+    },
+    "ari_adj": {
+      "neff": 0.193,
+      "random_median": 0.323,
+      "random_q05_q95": [
+        0.153,
+        0.531
+      ],
+      "p_empirical": 0.1219
+    },
+    "stage_rho": {
+      "neff": 0.402,
+      "random_median": 0.029,
+      "random_q05_q95": [
+        -0.312,
+        0.361
+      ],
+      "p_empirical": 0.019
+    },
+    "neuron_rho": {
+      "neff": -0.927,
+      "random_median": -0.037,
+      "random_q05_q95": [
+        -0.683,
+        0.617
+      ],
+      "p_empirical": 0.001
+    }
   }
 ]

@@ -537,5 +537,85 @@
     "stage_rho": -0.195,
     "stage_p": 0.07521517625856884,
     "cohort": "GSE118553_Cerebellum"
+  },
+  {
+    "variant": "baseline",
+    "frac_A": 0.279,
+    "frac_B": 0.279,
+    "frac_C": 0.443,
+    "neuron_rho": -0.927,
+    "ari_vs_base": 1.0,
+    "stage_rho": 0.402,
+    "stage_p": 1.2306781732242946e-12,
+    "cohort": "GSE125583_FG"
+  },
+  {
+    "variant": "age_sex",
+    "frac_A": 0.301,
+    "frac_B": 0.274,
+    "frac_C": 0.425,
+    "neuron_rho": -0.898,
+    "ari_vs_base": 0.726,
+    "stage_rho": 0.391,
+    "stage_p": 5.676144810320182e-12,
+    "cohort": "GSE125583_FG"
+  },
+  {
+    "variant": "spearman",
+    "frac_A": 0.274,
+    "frac_B": 0.288,
+    "frac_C": 0.438,
+    "neuron_rho": -0.919,
+    "ari_vs_base": 0.974,
+    "stage_rho": 0.397,
+    "stage_p": 2.4091046559776003e-12,
+    "cohort": "GSE125583_FG"
+  },
+  {
+    "variant": "ref_control",
+    "frac_A": 0.11,
+    "frac_B": 0.26,
+    "frac_C": 0.63,
+    "neuron_rho": -0.858,
+    "ari_vs_base": 0.396,
+    "stage_rho": 0.382,
+    "stage_p": 1.7824397542170338e-11,
+    "cohort": "GSE125583_FG"
+  },
+  {
+    "variant": "subtype5",
+    "frac_A": 0.205,
+    "frac_B": 0.311,
+    "frac_C": 0.484,
+    "neuron_rho": -0.915,
+    "ari_vs_base": 0.748,
+    "stage_rho": 0.405,
+    "stage_p": 8.181508944186619e-13,
+    "cohort": "GSE125583_FG"
+  },
+  {
+    "variant": "signature",
+    "n_genes": 1000,
+    "frac_A": 0.265,
+    "frac_B": 0.233,
+    "frac_C": 0.502,
+    "neuron_rho": -0.947,
+    "ari_vs_base": 0.634,
+    "stage_rho": 0.379,
+    "stage_p": 2.701589693994946e-11,
+    "cohort": "GSE125583_FG"
+  },
+  {
+    "variant": "gene_sub80",
+    "frac_A": 0.279,
+    "frac_B": 0.279,
+    "frac_C": 0.443,
+    "neuron_rho": -0.927,
+    "ari_vs_base": 0.96,
+    "stage_rho": 0.401,
+    "stage_p": 0.0,
+    "ari_q05": 0.932,
+    "neuron_rho_q95": -0.923,
+    "cohort": "GSE125583_FG"
   }
 ]

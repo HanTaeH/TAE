@@ -12,8 +12,8 @@ res = Path(sys.argv[1] if len(sys.argv) > 1 else "../results")
 sens = pd.read_csv(res / "sensitivity/sensitivity_long.csv")
 resid = pd.read_csv(res / "residual/residual_summary.csv")
 order = ["GSE33000_PFC", "GSE132903_MTG", "GSE118553_Temporal_Cortex", "GSE118553_Frontal_Cortex",
-         "GSE118553_Entorhinal_Cortex", "GSE118553_Cerebellum"]
-short = ["33000\nPFC", "132903\nMTG", "118553\nTemporal", "118553\nFrontal", "118553\nEntorhinal", "118553\nCerebellum"]
+         "GSE118553_Entorhinal_Cortex", "GSE118553_Cerebellum", "GSE125583_FG"]
+short = ["33000\nPFC", "132903\nMTG", "118553\nTemporal", "118553\nFrontal", "118553\nEntorhinal", "118553\nCerebellum", "125583\nFusiform"]
 variants = ["baseline", "age_sex", "spearman", "subtype5", "signature", "gene_sub80", "ref_control"]
 
 fig, axes = plt.subplots(1, 3, figsize=(19, 5.2))

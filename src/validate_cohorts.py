@@ -20,6 +20,7 @@ import pandas as pd
 from scipy import stats
 from sklearn.metrics import adjusted_rand_score
 
+import load_gse125583
 import load_gse33000
 import load_illumina
 import neff_subtypes
@@ -40,6 +41,9 @@ def cohorts(data: Path):
     for region in ["Temporal_Cortex", "Frontal_Cortex", "Entorhinal_Cortex", "Cerebellum"]:
         idx = m.index[m["region"] == region]
         yield f"GSE118553_{region}", e[idx], m.loc[idx]
+    if (data / "GSE125583" / "raw").exists():
+        e, m = load_gse125583.load(data)
+        yield "GSE125583_FG", e, m
 
 
 def analyse(name: str, expr: pd.DataFrame, meta: pd.DataFrame, cent: pd.DataFrame,

@@ -256,5 +256,44 @@
       "rho": -0.136,
       "p": 0.19534876523407937
     }
+  },
+  {
+    "cohort": "GSE125583_FG",
+    "n": {
+      "AD": 219,
+      "Control": 70
+    },
+    "coverage": 0.941,
+    "frac_p05": 0.986,
+    "class_frac": {
+      "A": 0.279,
+      "B": 0.279,
+      "C": 0.443
+    },
+    "neuron_by_class": {
+      "A": 0.846,
+      "B": 0.456,
+      "C": -0.819
+    },
+    "neuron_kruskal_p": 1.2045511358006062e-34,
+    "median_r2_cell_scores": 0.576,
+    "adj_frac_p05": 0.927,
+    "adj_ari_vs_unadjusted": 0.193,
+    "all_sample_class_by_group": {
+      "AD": {
+        "A": 0.233,
+        "B": 0.274,
+        "C": 0.493
+      },
+      "Control": {
+        "A": 0.7,
+        "B": 0.171,
+        "C": 0.129
+      }
+    },
+    "stage_trend_spearman": {
+      "rho": 0.409,
+      "p": 4.248350502249715e-13
+    }
   }
 ]

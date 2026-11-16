@@ -310,5 +310,57 @@
       "B": 0.571,
       "C": 0.5
     }
+  },
+  {
+    "cohort": "GSE125583_FG",
+    "n_AD": 219,
+    "n_genes": 255,
+    "r2_cells_ca_axis": 0.849,
+    "r2_cells_b_axis": 0.444,
+    "signal_raw": {
+      "neff": 0.604,
+      "random_median": 0.064,
+      "p": 0.002
+    },
+    "signal_adj": {
+      "neff": 0.401,
+      "random_median": 0.063,
+      "p": 0.002
+    },
+    "excess_retained_frac": 0.625,
+    "signal_adj_centroid_perm": {
+      "neff": 0.401,
+      "perm_median": 0.063,
+      "p": 0.002
+    },
+    "signal_raw_centroid_perm": {
+      "neff": 0.604,
+      "perm_median": 0.06,
+      "p": 0.002
+    },
+    "cluster_raw": {
+      "silhouette": 0.295,
+      "null_median": 0.257,
+      "p": 0.0199,
+      "pc1_var_frac": 0.432
+    },
+    "cluster_adj": {
+      "silhouette": 0.298,
+      "null_median": 0.284,
+      "p": 0.204,
+      "pc1_var_frac": 0.441
+    },
+    "adj_class_frac": {
+      "A": 0.42,
+      "B": 0.388,
+      "C": 0.192
+    },
+    "adj_age_kruskal_p": NaN,
+    "adj_sex_chi2_p": 0.7835,
+    "adj_female_frac": {
+      "A": 0.457,
+      "B": 0.412,
+      "C": 0.476
+    }
   }
 ]
