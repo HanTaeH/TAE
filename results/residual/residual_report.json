@@ -1,0 +1,314 @@
+[
+  {
+    "cohort": "GSE33000_PFC",
+    "n_AD": 310,
+    "n_genes": 224,
+    "r2_cells_ca_axis": 0.825,
+    "r2_cells_b_axis": 0.422,
+    "signal_raw": {
+      "neff": 0.536,
+      "random_median": 0.274,
+      "p": 0.002
+    },
+    "signal_adj": {
+      "neff": 0.354,
+      "random_median": 0.191,
+      "p": 0.002
+    },
+    "excess_retained_frac": 0.622,
+    "signal_adj_centroid_perm": {
+      "neff": 0.354,
+      "perm_median": 0.068,
+      "p": 0.002
+    },
+    "signal_raw_centroid_perm": {
+      "neff": 0.536,
+      "perm_median": 0.066,
+      "p": 0.002
+    },
+    "cluster_raw": {
+      "silhouette": 0.265,
+      "null_median": 0.246,
+      "p": 0.0647,
+      "pc1_var_frac": 0.38
+    },
+    "cluster_adj": {
+      "silhouette": 0.258,
+      "null_median": 0.234,
+      "p": 0.0249,
+      "pc1_var_frac": 0.317
+    },
+    "adj_class_frac": {
+      "A": 0.397,
+      "B": 0.348,
+      "C": 0.255
+    },
+    "adj_age_kruskal_p": 0.6221,
+    "adj_sex_chi2_p": 0.7263,
+    "adj_female_frac": {
+      "A": 0.569,
+      "B": 0.537,
+      "C": 0.595
+    }
+  },
+  {
+    "cohort": "GSE132903_MTG",
+    "n_AD": 97,
+    "n_genes": 241,
+    "r2_cells_ca_axis": 0.885,
+    "r2_cells_b_axis": 0.162,
+    "signal_raw": {
+      "neff": 0.454,
+      "random_median": 0.065,
+      "p": 0.002
+    },
+    "signal_adj": {
+      "neff": 0.291,
+      "random_median": 0.066,
+      "p": 0.002
+    },
+    "excess_retained_frac": 0.577,
+    "signal_adj_centroid_perm": {
+      "neff": 0.291,
+      "perm_median": 0.065,
+      "p": 0.002
+    },
+    "signal_raw_centroid_perm": {
+      "neff": 0.454,
+      "perm_median": 0.065,
+      "p": 0.002
+    },
+    "cluster_raw": {
+      "silhouette": 0.27,
+      "null_median": 0.242,
+      "p": 0.0945,
+      "pc1_var_frac": 0.37
+    },
+    "cluster_adj": {
+      "silhouette": 0.228,
+      "null_median": 0.246,
+      "p": 0.7612,
+      "pc1_var_frac": 0.33
+    },
+    "adj_class_frac": {
+      "A": 0.433,
+      "B": 0.464,
+      "C": 0.103
+    },
+    "adj_age_kruskal_p": 0.5669,
+    "adj_sex_chi2_p": 0.311,
+    "adj_female_frac": {
+      "A": 0.429,
+      "B": 0.578,
+      "C": 0.4
+    }
+  },
+  {
+    "cohort": "GSE118553_Temporal_Cortex",
+    "n_AD": 52,
+    "n_genes": 261,
+    "r2_cells_ca_axis": 0.88,
+    "r2_cells_b_axis": 0.446,
+    "signal_raw": {
+      "neff": 0.377,
+      "random_median": 0.076,
+      "p": 0.002
+    },
+    "signal_adj": {
+      "neff": 0.224,
+      "random_median": 0.071,
+      "p": 0.002
+    },
+    "excess_retained_frac": 0.51,
+    "signal_adj_centroid_perm": {
+      "neff": 0.224,
+      "perm_median": 0.063,
+      "p": 0.002
+    },
+    "signal_raw_centroid_perm": {
+      "neff": 0.377,
+      "perm_median": 0.062,
+      "p": 0.002
+    },
+    "cluster_raw": {
+      "silhouette": 0.249,
+      "null_median": 0.21,
+      "p": 0.0846,
+      "pc1_var_frac": 0.259
+    },
+    "cluster_adj": {
+      "silhouette": 0.159,
+      "null_median": 0.171,
+      "p": 0.7413,
+      "pc1_var_frac": 0.156
+    },
+    "adj_class_frac": {
+      "A": 0.462,
+      "B": 0.327,
+      "C": 0.212
+    },
+    "adj_age_kruskal_p": 0.458,
+    "adj_sex_chi2_p": 0.8369,
+    "adj_female_frac": {
+      "A": 0.542,
+      "B": 0.529,
+      "C": 0.636
+    }
+  },
+  {
+    "cohort": "GSE118553_Frontal_Cortex",
+    "n_AD": 40,
+    "n_genes": 261,
+    "r2_cells_ca_axis": 0.882,
+    "r2_cells_b_axis": 0.604,
+    "signal_raw": {
+      "neff": 0.342,
+      "random_median": 0.073,
+      "p": 0.002
+    },
+    "signal_adj": {
+      "neff": 0.213,
+      "random_median": 0.073,
+      "p": 0.002
+    },
+    "excess_retained_frac": 0.519,
+    "signal_adj_centroid_perm": {
+      "neff": 0.213,
+      "perm_median": 0.063,
+      "p": 0.002
+    },
+    "signal_raw_centroid_perm": {
+      "neff": 0.342,
+      "perm_median": 0.063,
+      "p": 0.002
+    },
+    "cluster_raw": {
+      "silhouette": 0.188,
+      "null_median": 0.199,
+      "p": 0.6517,
+      "pc1_var_frac": 0.239
+    },
+    "cluster_adj": {
+      "silhouette": 0.143,
+      "null_median": 0.167,
+      "p": 0.8408,
+      "pc1_var_frac": 0.178
+    },
+    "adj_class_frac": {
+      "A": 0.375,
+      "B": 0.325,
+      "C": 0.3
+    },
+    "adj_age_kruskal_p": 0.4894,
+    "adj_sex_chi2_p": 0.9505,
+    "adj_female_frac": {
+      "A": 0.667,
+      "B": 0.615,
+      "C": 0.667
+    }
+  },
+  {
+    "cohort": "GSE118553_Entorhinal_Cortex",
+    "n_AD": 37,
+    "n_genes": 261,
+    "r2_cells_ca_axis": 0.853,
+    "r2_cells_b_axis": 0.468,
+    "signal_raw": {
+      "neff": 0.379,
+      "random_median": 0.07,
+      "p": 0.002
+    },
+    "signal_adj": {
+      "neff": 0.235,
+      "random_median": 0.068,
+      "p": 0.002
+    },
+    "excess_retained_frac": 0.542,
+    "signal_adj_centroid_perm": {
+      "neff": 0.235,
+      "perm_median": 0.063,
+      "p": 0.002
+    },
+    "signal_raw_centroid_perm": {
+      "neff": 0.379,
+      "perm_median": 0.063,
+      "p": 0.002
+    },
+    "cluster_raw": {
+      "silhouette": 0.212,
+      "null_median": 0.202,
+      "p": 0.3682,
+      "pc1_var_frac": 0.24
+    },
+    "cluster_adj": {
+      "silhouette": 0.152,
+      "null_median": 0.169,
+      "p": 0.7811,
+      "pc1_var_frac": 0.171
+    },
+    "adj_class_frac": {
+      "A": 0.324,
+      "B": 0.432,
+      "C": 0.243
+    },
+    "adj_age_kruskal_p": 0.1259,
+    "adj_sex_chi2_p": 0.1773,
+    "adj_female_frac": {
+      "A": 0.833,
+      "B": 0.5,
+      "C": 0.556
+    }
+  },
+  {
+    "cohort": "GSE118553_Cerebellum",
+    "n_AD": 38,
+    "n_genes": 261,
+    "r2_cells_ca_axis": 0.789,
+    "r2_cells_b_axis": 0.663,
+    "signal_raw": {
+      "neff": 0.244,
+      "random_median": 0.068,
+      "p": 0.002
+    },
+    "signal_adj": {
+      "neff": 0.145,
+      "random_median": 0.068,
+      "p": 0.002
+    },
+    "excess_retained_frac": 0.439,
+    "signal_adj_centroid_perm": {
+      "neff": 0.145,
+      "perm_median": 0.063,
+      "p": 0.002
+    },
+    "signal_raw_centroid_perm": {
+      "neff": 0.244,
+      "perm_median": 0.063,
+      "p": 0.002
+    },
+    "cluster_raw": {
+      "silhouette": 0.145,
+      "null_median": 0.174,
+      "p": 0.8955,
+      "pc1_var_frac": 0.157
+    },
+    "cluster_adj": {
+      "silhouette": 0.099,
+      "null_median": 0.141,
+      "p": 1.0,
+      "pc1_var_frac": 0.107
+    },
+    "adj_class_frac": {
+      "A": 0.368,
+      "B": 0.368,
+      "C": 0.263
+    },
+    "adj_age_kruskal_p": 0.7318,
+    "adj_sex_chi2_p": 0.9135,
+    "adj_female_frac": {
+      "A": 0.5,
+      "B": 0.571,
+      "C": 0.5
+    }
+  }
+]
