@@ -1,0 +1,150 @@
+{
+  "n_samples": {
+    "AD": 310,
+    "Control": 157
+  },
+  "age_mean_by_group": {
+    "AD": 80.6,
+    "Control": 63.5
+  },
+  "n_genes_array": 30218,
+  "classifier_genes_total": 271,
+  "classifier_genes_measured": 224,
+  "coverage": 0.827,
+  "frac_assigned_p05": 0.984,
+  "class_counts_all": {
+    "A": 116,
+    "C": 115,
+    "B": 79
+  },
+  "class_counts_p05": {
+    "A": 114,
+    "C": 114,
+    "B": 77
+  },
+  "class_frac_all": {
+    "A": 0.374,
+    "C": 0.371,
+    "B": 0.255
+  },
+  "subtype_counts_all": {
+    "A": 99,
+    "C2": 73,
+    "C1": 56,
+    "B2": 54,
+    "B1": 28
+  },
+  "neff_msbb_frac": {
+    "A": 0.311,
+    "B": 0.357,
+    "C": 0.331
+  },
+  "neuron_markers_used": [
+    "SNAP25",
+    "STMN2",
+    "GAP43",
+    "VSNL1",
+    "NEFL",
+    "GAD1",
+    "GAD2",
+    "SST",
+    "NRGN",
+    "CALB1",
+    "SLC17A7",
+    "SYN1",
+    "ENO2"
+  ],
+  "neuron_score_mean_by_class": {
+    "A": 0.602,
+    "B": 0.213,
+    "C": -0.754
+  },
+  "neuron_kruskal_p": 1.880701175776686e-46,
+  "neuron_C_vs_A_mwu_p": 2.5096613199453646e-39,
+  "neuron_C_vs_B_mwu_p": 1.4198801898042787e-25,
+  "age_mean_by_class": {
+    "A": 79.8,
+    "B": 81.4,
+    "C": 80.9
+  },
+  "age_kruskal_p": 0.5901136690835977,
+  "sex_by_class": {
+    "female": {
+      "A": 53,
+      "B": 45,
+      "C": 77
+    },
+    "male": {
+      "A": 63,
+      "B": 34,
+      "C": 38
+    }
+  },
+  "sex_chi2_p": 0.00490356275491399,
+  "kmeans3_silhouette": 0.205,
+  "kmeans3_ari_vs_projection": 0.479,
+  "cell_score_mean_by_class": {
+    "neuron": {
+      "A": 0.602,
+      "B": 0.213,
+      "C": -0.754
+    },
+    "astrocyte": {
+      "A": -0.197,
+      "B": -0.344,
+      "C": 0.435
+    },
+    "microglia": {
+      "A": -0.138,
+      "B": -0.094,
+      "C": 0.204
+    },
+    "oligodendrocyte": {
+      "A": -0.048,
+      "B": -0.43,
+      "C": 0.343
+    },
+    "endothelial": {
+      "A": -0.596,
+      "B": -0.051,
+      "C": 0.636
+    }
+  },
+  "adj_median_r2_classifier_genes_explained_by_cell_scores": 0.526,
+  "adj_frac_assigned_p05": 0.887,
+  "adj_class_frac": {
+    "A": 0.397,
+    "B": 0.348,
+    "C": 0.255
+  },
+  "adj_ari_vs_unadjusted": 0.154,
+  "adj_crosstab": {
+    "A": {
+      "A": 74,
+      "B": 4,
+      "C": 45
+    },
+    "B": {
+      "A": 12,
+      "B": 59,
+      "C": 37
+    },
+    "C": {
+      "A": 30,
+      "B": 16,
+      "C": 33
+    }
+  },
+  "control_projection_frac": {
+    "A": 0.739,
+    "B": 0.217,
+    "C": 0.045
+  },
+  "criteria": {
+    "1_coverage>=0.70": true,
+    "2_assigned_p05>=0.50": true,
+    "3_each_class>=0.10": true,
+    "4_neuron_C_lowest": true
+  },
+  "decision": "GO"
+}
