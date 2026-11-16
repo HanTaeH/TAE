@@ -1,0 +1,248 @@
+[
+  {
+    "cohort": "GSE33000_PFC",
+    "n_genes": 224,
+    "n_random_sets": 1000,
+    "r2_cell": {
+      "neff": 0.526,
+      "random_median": 0.259,
+      "random_q05_q95": [
+        0.233,
+        0.287
+      ],
+      "p_empirical": 0.001
+    },
+    "ari_adj": {
+      "neff": 0.154,
+      "random_median": 0.308,
+      "random_q05_q95": [
+        0.229,
+        0.394
+      ],
+      "p_empirical": 0.003
+    },
+    "stage_rho": {
+      "neff": 0.636,
+      "random_median": 0.531,
+      "random_q05_q95": [
+        0.468,
+        0.583
+      ],
+      "p_empirical": 0.001
+    },
+    "neuron_rho": {
+      "neff": -0.928,
+      "random_median": -0.669,
+      "random_q05_q95": [
+        -0.761,
+        -0.573
+      ],
+      "p_empirical": 0.001
+    }
+  },
+  {
+    "cohort": "GSE132903_MTG",
+    "n_genes": 241,
+    "n_random_sets": 1000,
+    "r2_cell": {
+      "neff": 0.474,
+      "random_median": 0.386,
+      "random_q05_q95": [
+        0.36,
+        0.415
+      ],
+      "p_empirical": 0.001
+    },
+    "ari_adj": {
+      "neff": 0.133,
+      "random_median": 0.277,
+      "random_q05_q95": [
+        0.125,
+        0.498
+      ],
+      "p_empirical": 0.0619
+    },
+    "stage_rho": {
+      "neff": 0.459,
+      "random_median": 0.033,
+      "random_q05_q95": [
+        -0.388,
+        0.392
+      ],
+      "p_empirical": 0.02
+    },
+    "neuron_rho": {
+      "neff": -0.921,
+      "random_median": -0.104,
+      "random_q05_q95": [
+        -0.656,
+        0.571
+      ],
+      "p_empirical": 0.001
+    }
+  },
+  {
+    "cohort": "GSE118553_Temporal_Cortex",
+    "n_genes": 261,
+    "n_random_sets": 1000,
+    "r2_cell": {
+      "neff": 0.43,
+      "random_median": 0.244,
+      "random_q05_q95": [
+        0.223,
+        0.265
+      ],
+      "p_empirical": 0.001
+    },
+    "ari_adj": {
+      "neff": 0.216,
+      "random_median": 0.325,
+      "random_q05_q95": [
+        0.124,
+        0.582
+      ],
+      "p_empirical": 0.2248
+    },
+    "stage_rho": {
+      "neff": 0.451,
+      "random_median": 0.333,
+      "random_q05_q95": [
+        0.006,
+        0.578
+      ],
+      "p_empirical": 0.2158
+    },
+    "neuron_rho": {
+      "neff": -0.85,
+      "random_median": -0.35,
+      "random_q05_q95": [
+        -0.71,
+        0.248
+      ],
+      "p_empirical": 0.004
+    }
+  },
+  {
+    "cohort": "GSE118553_Frontal_Cortex",
+    "n_genes": 261,
+    "n_random_sets": 1000,
+    "r2_cell": {
+      "neff": 0.422,
+      "random_median": 0.242,
+      "random_q05_q95": [
+        0.224,
+        0.264
+      ],
+      "p_empirical": 0.001
+    },
+    "ari_adj": {
+      "neff": -0.005,
+      "random_median": 0.391,
+      "random_q05_q95": [
+        0.168,
+        0.654
+      ],
+      "p_empirical": 0.002
+    },
+    "stage_rho": {
+      "neff": 0.183,
+      "random_median": -0.042,
+      "random_q05_q95": [
+        -0.262,
+        0.186
+      ],
+      "p_empirical": 0.0539
+    },
+    "neuron_rho": {
+      "neff": -0.812,
+      "random_median": -0.068,
+      "random_q05_q95": [
+        -0.543,
+        0.362
+      ],
+      "p_empirical": 0.001
+    }
+  },
+  {
+    "cohort": "GSE118553_Entorhinal_Cortex",
+    "n_genes": 261,
+    "n_random_sets": 1000,
+    "r2_cell": {
+      "neff": 0.487,
+      "random_median": 0.28,
+      "random_q05_q95": [
+        0.258,
+        0.305
+      ],
+      "p_empirical": 0.001
+    },
+    "ari_adj": {
+      "neff": 0.058,
+      "random_median": 0.344,
+      "random_q05_q95": [
+        0.142,
+        0.627
+      ],
+      "p_empirical": 0.014
+    },
+    "stage_rho": {
+      "neff": 0.376,
+      "random_median": 0.061,
+      "random_q05_q95": [
+        -0.401,
+        0.478
+      ],
+      "p_empirical": 0.1129
+    },
+    "neuron_rho": {
+      "neff": -0.835,
+      "random_median": -0.085,
+      "random_q05_q95": [
+        -0.546,
+        0.394
+      ],
+      "p_empirical": 0.001
+    }
+  },
+  {
+    "cohort": "GSE118553_Cerebellum",
+    "n_genes": 261,
+    "n_random_sets": 1000,
+    "r2_cell": {
+      "neff": 0.277,
+      "random_median": 0.196,
+      "random_q05_q95": [
+        0.179,
+        0.213
+      ],
+      "p_empirical": 0.001
+    },
+    "ari_adj": {
+      "neff": 0.048,
+      "random_median": 0.44,
+      "random_q05_q95": [
+        0.209,
+        0.703
+      ],
+      "p_empirical": 0.002
+    },
+    "stage_rho": {
+      "neff": -0.173,
+      "random_median": 0.046,
+      "random_q05_q95": [
+        -0.184,
+        0.266
+      ],
+      "p_empirical": 0.9421
+    },
+    "neuron_rho": {
+      "neff": -0.509,
+      "random_median": -0.046,
+      "random_q05_q95": [
+        -0.38,
+        0.247
+      ],
+      "p_empirical": 0.007
+    }
+  }
+]
