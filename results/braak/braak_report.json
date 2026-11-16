@@ -1,0 +1,187 @@
+{
+  "n": 60,
+  "n_genes": 256,
+  "coverage": 0.945,
+  "braak_counts": {
+    "0": 6,
+    "1": 11,
+    "2": 11,
+    "3": 6,
+    "4": 7,
+    "5": 12,
+    "6": 7
+  },
+  "n_signature_genes": 260,
+  "neuron_score_vs_braak": {
+    "rho": -0.303,
+    "p": 0.0188,
+    "n": 60
+  },
+  "exc_prop_vs_braak": {
+    "rho": -0.331,
+    "p": 0.00976,
+    "n": 60
+  },
+  "exc_prop_vs_neuron_score": {
+    "rho": 0.685,
+    "p": 1.56e-09,
+    "n": 60
+  },
+  "T1_all": {
+    "ca_vs_braak": {
+      "rho": 0.339,
+      "p": 0.00802,
+      "n": 60
+    },
+    "ca_vs_braak_partial_age_sex_rin": {
+      "rho": 0.242,
+      "p": 0.0672,
+      "n": 60
+    },
+    "b_vs_braak": {
+      "rho": -0.18,
+      "p": 0.169,
+      "n": 60
+    },
+    "ca_vs_neuron": {
+      "rho": -0.951,
+      "p": 2.72e-31,
+      "n": 60
+    }
+  },
+  "T3_abeta42": {
+    "ca": {
+      "rho": 0.303,
+      "p": 0.0245,
+      "n": 55
+    },
+    "ca_partial": {
+      "rho": 0.163,
+      "p": 0.243,
+      "n": 55
+    },
+    "ca_partial_plus_braak": {
+      "rho": -0.118,
+      "p": 0.405,
+      "n": 55
+    }
+  },
+  "T4_all": {
+    "neuron_score": {
+      "rho": 0.083,
+      "p": 0.539,
+      "n": 60
+    },
+    "seaad_nnls": {
+      "rho": -0.125,
+      "p": 0.388,
+      "n": 60
+    }
+  },
+  "T2_braak_ge3": {
+    "n": 32,
+    "class_frac": {
+      "A": 0.344,
+      "B": 0.25,
+      "C": 0.406
+    },
+    "ca_vs_braak": {
+      "rho": -0.004,
+      "p": 0.983,
+      "n": 32
+    },
+    "ca_vs_braak_partial_age_sex_rin": {
+      "rho": -0.007,
+      "p": 0.969,
+      "n": 32
+    },
+    "ca_vs_braak_partial_plus_neuron": {
+      "rho": 0.052,
+      "p": 0.789,
+      "n": 32
+    },
+    "ca_vs_braak_partial_plus_nnls": {
+      "rho": 0.03,
+      "p": 0.896,
+      "n": 32
+    },
+    "class_vs_braak_kruskal_p": 0.9154057937200655,
+    "ca_vs_neuron": {
+      "rho": -0.97,
+      "p": 4.78e-20,
+      "n": 32
+    }
+  },
+  "T2_braak_ge5": {
+    "n": 19,
+    "class_frac": {
+      "A": 0.368,
+      "B": 0.316,
+      "C": 0.316
+    },
+    "ca_vs_braak": {
+      "rho": 0.159,
+      "p": 0.515,
+      "n": 19
+    },
+    "ca_vs_braak_partial_age_sex_rin": {
+      "rho": 0.271,
+      "p": 0.292,
+      "n": 19
+    },
+    "ca_vs_braak_partial_plus_neuron": {
+      "rho": 0.072,
+      "p": 0.791,
+      "n": 19
+    },
+    "ca_vs_braak_partial_plus_nnls": {
+      "rho": 0.599,
+      "p": 0.0886,
+      "n": 19
+    },
+    "class_vs_braak_kruskal_p": 0.7232650027394892,
+    "ca_vs_neuron": {
+      "rho": -0.974,
+      "p": 2.36e-12,
+      "n": 19
+    }
+  },
+  "T5_random_null": {
+    "all": {
+      "neff_rho": 0.339,
+      "random_median": 0.111,
+      "random_q95": 0.324,
+      "p": 0.0319
+    },
+    "braak_ge3": {
+      "neff_rho": -0.004,
+      "random_median": -0.046,
+      "random_q95": 0.175,
+      "p": 0.3513
+    },
+    "braak_ge5": {
+      "neff_rho": 0.159,
+      "random_median": 0.139,
+      "random_q95": 0.398,
+      "p": 0.4611
+    }
+  },
+  "T6_class_by_braak_group": {
+    "0-2": {
+      "A": 0.464,
+      "B": 0.286,
+      "C": 0.25
+    },
+    "3-4": {
+      "A": 0.231,
+      "B": 0.154,
+      "C": 0.615
+    },
+    "5-6": {
+      "A": 0.263,
+      "B": 0.105,
+      "C": 0.632
+    }
+  },
+  "T6_chi2_p": 0.06980915236742041
+}
