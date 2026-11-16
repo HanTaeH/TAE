@@ -1,0 +1,1260 @@
+[
+  {
+    "cohort": "GSE33000_PFC",
+    "n_sig_genes": 339,
+    "n_AD": 310,
+    "nnls_mean_by_group": {
+      "AD": {
+        "Exc": 0.162,
+        "Inh_SST": 0.001,
+        "Inh_PVALB": 0.025,
+        "Inh_other": 0.088,
+        "Astro": 0.096,
+        "Oligo": 0.101,
+        "OPC": 0.081,
+        "Micro": 0.073,
+        "Vascular": 0.373
+      },
+      "Control": {
+        "Exc": 0.207,
+        "Inh_SST": 0.014,
+        "Inh_PVALB": 0.071,
+        "Inh_other": 0.056,
+        "Astro": 0.104,
+        "Oligo": 0.121,
+        "OPC": 0.092,
+        "Micro": 0.056,
+        "Vascular": 0.28
+      }
+    },
+    "nnls_exc_vs_neuron_score_rho": 0.626,
+    "svr_mean_by_group": {
+      "AD": {
+        "Exc": 0.069,
+        "Inh_SST": 0.002,
+        "Inh_PVALB": 0.101,
+        "Inh_other": 0.077,
+        "Astro": 0.05,
+        "Oligo": 0.055,
+        "OPC": 0.152,
+        "Micro": 0.06,
+        "Vascular": 0.434
+      },
+      "Control": {
+        "Exc": 0.125,
+        "Inh_SST": 0.026,
+        "Inh_PVALB": 0.144,
+        "Inh_other": 0.041,
+        "Astro": 0.058,
+        "Oligo": 0.061,
+        "OPC": 0.171,
+        "Micro": 0.044,
+        "Vascular": 0.33
+      }
+    },
+    "svr_exc_vs_neuron_score_rho": 0.775,
+    "adj_markers5": {
+      "r2_ca": 0.825,
+      "r2_b": 0.422,
+      "ari_adj": 0.154,
+      "sig_raw": 0.536,
+      "sig_adj": 0.354,
+      "sig_adj_rand": 0.194,
+      "sig_adj_rand_p": 0.005,
+      "sig_adj_perm": 0.066,
+      "sig_adj_perm_p": 0.005,
+      "adj_frac": {
+        "A": 0.397,
+        "B": 0.348,
+        "C": 0.255
+      }
+    },
+    "adj_nnls": {
+      "r2_ca": 0.65,
+      "r2_b": 0.564,
+      "ari_adj": 0.19,
+      "sig_raw": 0.536,
+      "sig_adj": 0.422,
+      "sig_adj_rand": 0.22,
+      "sig_adj_rand_p": 0.005,
+      "sig_adj_perm": 0.067,
+      "sig_adj_perm_p": 0.005,
+      "adj_frac": {
+        "A": 0.342,
+        "B": 0.261,
+        "C": 0.397
+      }
+    },
+    "adj_svr": {
+      "r2_ca": 0.773,
+      "r2_b": 0.667,
+      "ari_adj": 0.087,
+      "sig_raw": 0.536,
+      "sig_adj": 0.387,
+      "sig_adj_rand": 0.197,
+      "sig_adj_rand_p": 0.005,
+      "sig_adj_perm": 0.067,
+      "sig_adj_perm_p": 0.005,
+      "adj_frac": {
+        "A": 0.361,
+        "B": 0.265,
+        "C": 0.374
+      }
+    },
+    "nnls_by_class": {
+      "A": {
+        "Exc": 0.192,
+        "Inh_SST": 0.002,
+        "Inh_PVALB": 0.046,
+        "Inh_other": 0.076,
+        "Astro": 0.13,
+        "Oligo": 0.11,
+        "OPC": 0.078,
+        "Micro": 0.069,
+        "Vascular": 0.297
+      },
+      "B": {
+        "Exc": 0.245,
+        "Inh_SST": 0.0,
+        "Inh_PVALB": 0.024,
+        "Inh_other": 0.063,
+        "Astro": 0.075,
+        "Oligo": 0.079,
+        "OPC": 0.086,
+        "Micro": 0.066,
+        "Vascular": 0.362
+      },
+      "C": {
+        "Exc": 0.075,
+        "Inh_SST": 0.0,
+        "Inh_PVALB": 0.004,
+        "Inh_other": 0.117,
+        "Astro": 0.078,
+        "Oligo": 0.107,
+        "OPC": 0.08,
+        "Micro": 0.082,
+        "Vascular": 0.457
+      }
+    },
+    "nnls_class_kruskal_p": {
+      "Exc": 2.971446421059636e-29,
+      "Inh_SST": 8.60764669409663e-09,
+      "Inh_PVALB": 6.999882873018209e-11,
+      "Inh_other": 1.4102348088676005e-08,
+      "Astro": 6.2246973992105785e-12,
+      "Oligo": 2.1833840509033427e-08,
+      "OPC": 0.06794178354524058,
+      "Micro": 0.0033621683526825936,
+      "Vascular": 3.1608817850850666e-30
+    },
+    "svr_by_class": {
+      "A": {
+        "Exc": 0.095,
+        "Inh_SST": 0.005,
+        "Inh_PVALB": 0.119,
+        "Inh_other": 0.069,
+        "Astro": 0.069,
+        "Oligo": 0.062,
+        "OPC": 0.154,
+        "Micro": 0.062,
+        "Vascular": 0.365
+      },
+      "B": {
+        "Exc": 0.104,
+        "Inh_SST": 0.001,
+        "Inh_PVALB": 0.105,
+        "Inh_other": 0.057,
+        "Astro": 0.037,
+        "Oligo": 0.04,
+        "OPC": 0.164,
+        "Micro": 0.053,
+        "Vascular": 0.44
+      },
+      "C": {
+        "Exc": 0.02,
+        "Inh_SST": 0.0,
+        "Inh_PVALB": 0.079,
+        "Inh_other": 0.099,
+        "Astro": 0.039,
+        "Oligo": 0.057,
+        "OPC": 0.143,
+        "Micro": 0.063,
+        "Vascular": 0.499
+      }
+    },
+    "svr_class_kruskal_p": {
+      "Exc": 3.014578759080825e-37,
+      "Inh_SST": 5.323283310329364e-15,
+      "Inh_PVALB": 0.00010681416070466476,
+      "Inh_other": 1.204385300421299e-07,
+      "Astro": 1.3153656761829158e-14,
+      "Oligo": 2.7218499699552766e-09,
+      "OPC": 7.373995313789286e-05,
+      "Micro": 0.009113260920262078,
+      "Vascular": 2.139624707651929e-29
+    }
+  },
+  {
+    "cohort": "GSE132903_MTG",
+    "n_sig_genes": 299,
+    "n_AD": 97,
+    "nnls_mean_by_group": {
+      "AD": {
+        "Exc": 0.326,
+        "Inh_SST": 0.005,
+        "Inh_PVALB": 0.008,
+        "Inh_other": 0.001,
+        "Astro": 0.159,
+        "Oligo": 0.205,
+        "OPC": 0.0,
+        "Micro": 0.103,
+        "Vascular": 0.194
+      },
+      "Control": {
+        "Exc": 0.477,
+        "Inh_SST": 0.005,
+        "Inh_PVALB": 0.002,
+        "Inh_other": 0.0,
+        "Astro": 0.149,
+        "Oligo": 0.154,
+        "OPC": 0.0,
+        "Micro": 0.07,
+        "Vascular": 0.142
+      }
+    },
+    "nnls_exc_vs_neuron_score_rho": 0.938,
+    "svr_mean_by_group": {
+      "AD": {
+        "Exc": 0.295,
+        "Inh_SST": 0.016,
+        "Inh_PVALB": 0.01,
+        "Inh_other": 0.021,
+        "Astro": 0.407,
+        "Oligo": 0.178,
+        "OPC": 0.006,
+        "Micro": 0.031,
+        "Vascular": 0.037
+      },
+      "Control": {
+        "Exc": 0.508,
+        "Inh_SST": 0.015,
+        "Inh_PVALB": 0.031,
+        "Inh_other": 0.018,
+        "Astro": 0.32,
+        "Oligo": 0.075,
+        "OPC": 0.001,
+        "Micro": 0.021,
+        "Vascular": 0.011
+      }
+    },
+    "svr_exc_vs_neuron_score_rho": 0.897,
+    "adj_markers5": {
+      "r2_ca": 0.885,
+      "r2_b": 0.162,
+      "ari_adj": 0.133,
+      "sig_raw": 0.454,
+      "sig_adj": 0.291,
+      "sig_adj_rand": 0.067,
+      "sig_adj_rand_p": 0.005,
+      "sig_adj_perm": 0.065,
+      "sig_adj_perm_p": 0.005,
+      "adj_frac": {
+        "A": 0.433,
+        "B": 0.464,
+        "C": 0.103
+      }
+    },
+    "adj_nnls": {
+      "r2_ca": 0.906,
+      "r2_b": 0.427,
+      "ari_adj": 0.089,
+      "sig_raw": 0.454,
+      "sig_adj": 0.275,
+      "sig_adj_rand": 0.066,
+      "sig_adj_rand_p": 0.005,
+      "sig_adj_perm": 0.065,
+      "sig_adj_perm_p": 0.005,
+      "adj_frac": {
+        "A": 0.454,
+        "B": 0.402,
+        "C": 0.144
+      }
+    },
+    "adj_svr": {
+      "r2_ca": 0.844,
+      "r2_b": 0.186,
+      "ari_adj": 0.067,
+      "sig_raw": 0.454,
+      "sig_adj": 0.347,
+      "sig_adj_rand": 0.065,
+      "sig_adj_rand_p": 0.005,
+      "sig_adj_perm": 0.065,
+      "sig_adj_perm_p": 0.005,
+      "adj_frac": {
+        "A": 0.412,
+        "B": 0.299,
+        "C": 0.289
+      }
+    },
+    "nnls_by_class": {
+      "A": {
+        "Exc": 0.468,
+        "Inh_SST": 0.005,
+        "Inh_PVALB": 0.001,
+        "Inh_other": 0.0,
+        "Astro": 0.151,
+        "Oligo": 0.157,
+        "OPC": 0.0,
+        "Micro": 0.072,
+        "Vascular": 0.145
+      },
+      "B": {
+        "Exc": 0.366,
+        "Inh_SST": 0.007,
+        "Inh_PVALB": 0.0,
+        "Inh_other": 0.0,
+        "Astro": 0.134,
+        "Oligo": 0.214,
+        "OPC": 0.0,
+        "Micro": 0.089,
+        "Vascular": 0.19
+      },
+      "C": {
+        "Exc": 0.188,
+        "Inh_SST": 0.003,
+        "Inh_PVALB": 0.018,
+        "Inh_other": 0.001,
+        "Astro": 0.177,
+        "Oligo": 0.24,
+        "OPC": 0.0,
+        "Micro": 0.137,
+        "Vascular": 0.236
+      }
+    },
+    "nnls_class_kruskal_p": {
+      "Exc": 6.002227602448364e-15,
+      "Inh_SST": 0.000998984989661944,
+      "Inh_PVALB": 3.0726441305794466e-06,
+      "Inh_other": 0.11452863804021807,
+      "Astro": 0.008879096401400763,
+      "Oligo": 1.8991482220526653e-06,
+      "OPC": NaN,
+      "Micro": 1.877639638353137e-11,
+      "Vascular": 5.558746382665586e-13
+    },
+    "svr_by_class": {
+      "A": {
+        "Exc": 0.516,
+        "Inh_SST": 0.013,
+        "Inh_PVALB": 0.019,
+        "Inh_other": 0.026,
+        "Astro": 0.344,
+        "Oligo": 0.061,
+        "OPC": 0.0,
+        "Micro": 0.015,
+        "Vascular": 0.006
+      },
+      "B": {
+        "Exc": 0.329,
+        "Inh_SST": 0.015,
+        "Inh_PVALB": 0.008,
+        "Inh_other": 0.024,
+        "Astro": 0.348,
+        "Oligo": 0.252,
+        "OPC": 0.001,
+        "Micro": 0.006,
+        "Vascular": 0.016
+      },
+      "C": {
+        "Exc": 0.095,
+        "Inh_SST": 0.018,
+        "Inh_PVALB": 0.003,
+        "Inh_other": 0.017,
+        "Astro": 0.487,
+        "Oligo": 0.24,
+        "OPC": 0.013,
+        "Micro": 0.056,
+        "Vascular": 0.072
+      }
+    },
+    "svr_class_kruskal_p": {
+      "Exc": 8.56711500605877e-15,
+      "Inh_SST": 0.6575865775577141,
+      "Inh_PVALB": 0.00012194284544064045,
+      "Inh_other": 0.010108826528210112,
+      "Astro": 0.00013399425601688054,
+      "Oligo": 2.3552364515683596e-09,
+      "OPC": 0.00012472059952223254,
+      "Micro": 0.0003900341733438655,
+      "Vascular": 3.9515444374773615e-09
+    }
+  },
+  {
+    "cohort": "GSE118553_Temporal_Cortex",
+    "n_sig_genes": 292,
+    "n_AD": 52,
+    "nnls_mean_by_group": {
+      "AD": {
+        "Exc": 0.385,
+        "Inh_SST": 0.093,
+        "Inh_PVALB": 0.0,
+        "Inh_other": 0.02,
+        "Astro": 0.1,
+        "Oligo": 0.07,
+        "OPC": 0.0,
+        "Micro": 0.136,
+        "Vascular": 0.196
+      },
+      "AsymAD": {
+        "Exc": 0.425,
+        "Inh_SST": 0.09,
+        "Inh_PVALB": 0.0,
+        "Inh_other": 0.018,
+        "Astro": 0.098,
+        "Oligo": 0.062,
+        "OPC": 0.0,
+        "Micro": 0.134,
+        "Vascular": 0.174
+      },
+      "Control": {
+        "Exc": 0.446,
+        "Inh_SST": 0.101,
+        "Inh_PVALB": 0.0,
+        "Inh_other": 0.02,
+        "Astro": 0.089,
+        "Oligo": 0.066,
+        "OPC": 0.0,
+        "Micro": 0.113,
+        "Vascular": 0.165
+      }
+    },
+    "nnls_exc_vs_neuron_score_rho": 0.935,
+    "svr_mean_by_group": {
+      "AD": {
+        "Exc": 0.407,
+        "Inh_SST": 0.006,
+        "Inh_PVALB": 0.0,
+        "Inh_other": 0.033,
+        "Astro": 0.367,
+        "Oligo": 0.07,
+        "OPC": 0.041,
+        "Micro": 0.016,
+        "Vascular": 0.06
+      },
+      "AsymAD": {
+        "Exc": 0.532,
+        "Inh_SST": 0.019,
+        "Inh_PVALB": 0.0,
+        "Inh_other": 0.04,
+        "Astro": 0.317,
+        "Oligo": 0.019,
+        "OPC": 0.012,
+        "Micro": 0.034,
+        "Vascular": 0.026
+      },
+      "Control": {
+        "Exc": 0.587,
+        "Inh_SST": 0.011,
+        "Inh_PVALB": 0.001,
+        "Inh_other": 0.049,
+        "Astro": 0.277,
+        "Oligo": 0.037,
+        "OPC": 0.005,
+        "Micro": 0.008,
+        "Vascular": 0.023
+      }
+    },
+    "svr_exc_vs_neuron_score_rho": 0.857,
+    "adj_markers5": {
+      "r2_ca": 0.88,
+      "r2_b": 0.446,
+      "ari_adj": 0.216,
+      "sig_raw": 0.377,
+      "sig_adj": 0.224,
+      "sig_adj_rand": 0.071,
+      "sig_adj_rand_p": 0.005,
+      "sig_adj_perm": 0.063,
+      "sig_adj_perm_p": 0.005,
+      "adj_frac": {
+        "A": 0.462,
+        "B": 0.327,
+        "C": 0.212
+      }
+    },
+    "adj_nnls": {
+      "r2_ca": 0.828,
+      "r2_b": 0.635,
+      "ari_adj": 0.242,
+      "sig_raw": 0.377,
+      "sig_adj": 0.237,
+      "sig_adj_rand": 0.074,
+      "sig_adj_rand_p": 0.005,
+      "sig_adj_perm": 0.064,
+      "sig_adj_perm_p": 0.005,
+      "adj_frac": {
+        "A": 0.5,
+        "B": 0.25,
+        "C": 0.25
+      }
+    },
+    "adj_svr": {
+      "r2_ca": 0.699,
+      "r2_b": 0.487,
+      "ari_adj": 0.132,
+      "sig_raw": 0.377,
+      "sig_adj": 0.297,
+      "sig_adj_rand": 0.075,
+      "sig_adj_rand_p": 0.005,
+      "sig_adj_perm": 0.062,
+      "sig_adj_perm_p": 0.005,
+      "adj_frac": {
+        "A": 0.346,
+        "B": 0.231,
+        "C": 0.423
+      }
+    },
+    "nnls_by_class": {
+      "A": {
+        "Exc": 0.506,
+        "Inh_SST": 0.061,
+        "Inh_PVALB": 0.0,
+        "Inh_other": 0.02,
+        "Astro": 0.089,
+        "Oligo": 0.063,
+        "OPC": 0.0,
+        "Micro": 0.115,
+        "Vascular": 0.146
+      },
+      "B": {
+        "Exc": 0.362,
+        "Inh_SST": 0.116,
+        "Inh_PVALB": 0.0,
+        "Inh_other": 0.016,
+        "Astro": 0.088,
+        "Oligo": 0.06,
+        "OPC": 0.0,
+        "Micro": 0.144,
+        "Vascular": 0.214
+      },
+      "C": {
+        "Exc": 0.286,
+        "Inh_SST": 0.108,
+        "Inh_PVALB": 0.0,
+        "Inh_other": 0.023,
+        "Astro": 0.117,
+        "Oligo": 0.083,
+        "OPC": 0.0,
+        "Micro": 0.151,
+        "Vascular": 0.233
+      }
+    },
+    "nnls_class_kruskal_p": {
+      "Exc": 2.3336816479654406e-05,
+      "Inh_SST": 0.005541599409040549,
+      "Inh_PVALB": NaN,
+      "Inh_other": 0.0579405315520238,
+      "Astro": 0.024113178356026367,
+      "Oligo": 0.007189125082417317,
+      "OPC": NaN,
+      "Micro": 0.0040749496769015995,
+      "Vascular": 0.00018030734244105296
+    },
+    "svr_by_class": {
+      "A": {
+        "Exc": 0.653,
+        "Inh_SST": 0.0,
+        "Inh_PVALB": 0.0,
+        "Inh_other": 0.046,
+        "Astro": 0.229,
+        "Oligo": 0.037,
+        "OPC": 0.006,
+        "Micro": 0.014,
+        "Vascular": 0.016
+      },
+      "B": {
+        "Exc": 0.405,
+        "Inh_SST": 0.005,
+        "Inh_PVALB": 0.0,
+        "Inh_other": 0.025,
+        "Astro": 0.386,
+        "Oligo": 0.041,
+        "OPC": 0.069,
+        "Micro": 0.006,
+        "Vascular": 0.063
+      },
+      "C": {
+        "Exc": 0.174,
+        "Inh_SST": 0.014,
+        "Inh_PVALB": 0.0,
+        "Inh_other": 0.026,
+        "Astro": 0.487,
+        "Oligo": 0.12,
+        "OPC": 0.056,
+        "Micro": 0.024,
+        "Vascular": 0.1
+      }
+    },
+    "svr_class_kruskal_p": {
+      "Exc": 5.30213856605738e-06,
+      "Inh_SST": 0.21637735940571456,
+      "Inh_PVALB": NaN,
+      "Inh_other": 0.004194587950883406,
+      "Astro": 9.753445528140025e-06,
+      "Oligo": 0.023777670342648317,
+      "OPC": 0.00020477522249196369,
+      "Micro": 0.8804547162647423,
+      "Vascular": 0.007376999694819643
+    }
+  },
+  {
+    "cohort": "GSE118553_Frontal_Cortex",
+    "n_sig_genes": 293,
+    "n_AD": 40,
+    "nnls_mean_by_group": {
+      "AD": {
+        "Exc": 0.376,
+        "Inh_SST": 0.1,
+        "Inh_PVALB": 0.001,
+        "Inh_other": 0.024,
+        "Astro": 0.081,
+        "Oligo": 0.078,
+        "OPC": 0.0,
+        "Micro": 0.133,
+        "Vascular": 0.207
+      },
+      "AsymAD": {
+        "Exc": 0.382,
+        "Inh_SST": 0.083,
+        "Inh_PVALB": 0.0,
+        "Inh_other": 0.025,
+        "Astro": 0.093,
+        "Oligo": 0.082,
+        "OPC": 0.0,
+        "Micro": 0.116,
+        "Vascular": 0.219
+      },
+      "Control": {
+        "Exc": 0.457,
+        "Inh_SST": 0.087,
+        "Inh_PVALB": 0.0,
+        "Inh_other": 0.023,
+        "Astro": 0.071,
+        "Oligo": 0.08,
+        "OPC": 0.0,
+        "Micro": 0.1,
+        "Vascular": 0.181
+      }
+    },
+    "nnls_exc_vs_neuron_score_rho": 0.867,
+    "svr_mean_by_group": {
+      "AD": {
+        "Exc": 0.443,
+        "Inh_SST": 0.001,
+        "Inh_PVALB": 0.0,
+        "Inh_other": 0.069,
+        "Astro": 0.294,
+        "Oligo": 0.054,
+        "OPC": 0.027,
+        "Micro": 0.03,
+        "Vascular": 0.082
+      },
+      "AsymAD": {
+        "Exc": 0.428,
+        "Inh_SST": 0.008,
+        "Inh_PVALB": 0.0,
+        "Inh_other": 0.071,
+        "Astro": 0.327,
+        "Oligo": 0.061,
+        "OPC": 0.034,
+        "Micro": 0.0,
+        "Vascular": 0.071
+      },
+      "Control": {
+        "Exc": 0.623,
+        "Inh_SST": 0.0,
+        "Inh_PVALB": 0.0,
+        "Inh_other": 0.059,
+        "Astro": 0.215,
+        "Oligo": 0.052,
+        "OPC": 0.011,
+        "Micro": 0.007,
+        "Vascular": 0.033
+      }
+    },
+    "svr_exc_vs_neuron_score_rho": 0.839,
+    "adj_markers5": {
+      "r2_ca": 0.882,
+      "r2_b": 0.604,
+      "ari_adj": -0.005,
+      "sig_raw": 0.342,
+      "sig_adj": 0.213,
+      "sig_adj_rand": 0.073,
+      "sig_adj_rand_p": 0.005,
+      "sig_adj_perm": 0.064,
+      "sig_adj_perm_p": 0.005,
+      "adj_frac": {
+        "A": 0.375,
+        "B": 0.325,
+        "C": 0.3
+      }
+    },
+    "adj_nnls": {
+      "r2_ca": 0.77,
+      "r2_b": 0.701,
+      "ari_adj": 0.143,
+      "sig_raw": 0.342,
+      "sig_adj": 0.281,
+      "sig_adj_rand": 0.073,
+      "sig_adj_rand_p": 0.005,
+      "sig_adj_perm": 0.065,
+      "sig_adj_perm_p": 0.005,
+      "adj_frac": {
+        "A": 0.425,
+        "B": 0.2,
+        "C": 0.375
+      }
+    },
+    "adj_svr": {
+      "r2_ca": 0.709,
+      "r2_b": 0.566,
+      "ari_adj": 0.188,
+      "sig_raw": 0.342,
+      "sig_adj": 0.33,
+      "sig_adj_rand": 0.075,
+      "sig_adj_rand_p": 0.005,
+      "sig_adj_perm": 0.063,
+      "sig_adj_perm_p": 0.005,
+      "adj_frac": {
+        "A": 0.35,
+        "B": 0.275,
+        "C": 0.375
+      }
+    },
+    "nnls_by_class": {
+      "A": {
+        "Exc": 0.472,
+        "Inh_SST": 0.086,
+        "Inh_PVALB": 0.002,
+        "Inh_other": 0.021,
+        "Astro": 0.074,
+        "Oligo": 0.065,
+        "OPC": 0.0,
+        "Micro": 0.114,
+        "Vascular": 0.166
+      },
+      "B": {
+        "Exc": 0.292,
+        "Inh_SST": 0.136,
+        "Inh_PVALB": 0.0,
+        "Inh_other": 0.022,
+        "Astro": 0.072,
+        "Oligo": 0.073,
+        "OPC": 0.0,
+        "Micro": 0.152,
+        "Vascular": 0.254
+      },
+      "C": {
+        "Exc": 0.327,
+        "Inh_SST": 0.099,
+        "Inh_PVALB": 0.0,
+        "Inh_other": 0.027,
+        "Astro": 0.09,
+        "Oligo": 0.088,
+        "OPC": 0.0,
+        "Micro": 0.142,
+        "Vascular": 0.226
+      }
+    },
+    "nnls_class_kruskal_p": {
+      "Exc": 0.001480105590936414,
+      "Inh_SST": 0.0049770535068644145,
+      "Inh_PVALB": 0.43459820850702746,
+      "Inh_other": 0.2492432232563387,
+      "Astro": 0.06833776869224693,
+      "Oligo": 0.05671566942765981,
+      "OPC": 0.0,
+      "Micro": 0.1654761649500535,
+      "Vascular": 0.00031778767527297576
+    },
+    "svr_by_class": {
+      "A": {
+        "Exc": 0.635,
+        "Inh_SST": 0.0,
+        "Inh_PVALB": 0.0,
+        "Inh_other": 0.052,
+        "Astro": 0.206,
+        "Oligo": 0.023,
+        "OPC": 0.03,
+        "Micro": 0.032,
+        "Vascular": 0.022
+      },
+      "B": {
+        "Exc": 0.336,
+        "Inh_SST": 0.0,
+        "Inh_PVALB": 0.0,
+        "Inh_other": 0.057,
+        "Astro": 0.329,
+        "Oligo": 0.029,
+        "OPC": 0.037,
+        "Micro": 0.042,
+        "Vascular": 0.17
+      },
+      "C": {
+        "Exc": 0.326,
+        "Inh_SST": 0.002,
+        "Inh_PVALB": 0.0,
+        "Inh_other": 0.086,
+        "Astro": 0.352,
+        "Oligo": 0.087,
+        "OPC": 0.02,
+        "Micro": 0.025,
+        "Vascular": 0.101
+      }
+    },
+    "svr_class_kruskal_p": {
+      "Exc": 0.0031110705446827304,
+      "Inh_SST": 0.5754335174032059,
+      "Inh_PVALB": 0.0,
+      "Inh_other": 0.5941875624995397,
+      "Astro": 0.03471029777010071,
+      "Oligo": 0.022222649713029518,
+      "OPC": 0.1245616930140683,
+      "Micro": 0.3873900733036416,
+      "Vascular": 0.0028083581909507075
+    }
+  },
+  {
+    "cohort": "GSE118553_Entorhinal_Cortex",
+    "n_sig_genes": 290,
+    "n_AD": 37,
+    "nnls_mean_by_group": {
+      "AD": {
+        "Exc": 0.228,
+        "Inh_SST": 0.161,
+        "Inh_PVALB": 0.01,
+        "Inh_other": 0.018,
+        "Astro": 0.169,
+        "Oligo": 0.089,
+        "OPC": 0.0,
+        "Micro": 0.132,
+        "Vascular": 0.194
+      },
+      "AsymAD": {
+        "Exc": 0.311,
+        "Inh_SST": 0.158,
+        "Inh_PVALB": 0.003,
+        "Inh_other": 0.02,
+        "Astro": 0.14,
+        "Oligo": 0.093,
+        "OPC": 0.0,
+        "Micro": 0.105,
+        "Vascular": 0.17
+      },
+      "Control": {
+        "Exc": 0.311,
+        "Inh_SST": 0.161,
+        "Inh_PVALB": 0.0,
+        "Inh_other": 0.02,
+        "Astro": 0.128,
+        "Oligo": 0.114,
+        "OPC": 0.0,
+        "Micro": 0.103,
+        "Vascular": 0.163
+      }
+    },
+    "nnls_exc_vs_neuron_score_rho": 0.883,
+    "svr_mean_by_group": {
+      "AD": {
+        "Exc": 0.14,
+        "Inh_SST": 0.003,
+        "Inh_PVALB": 0.071,
+        "Inh_other": 0.024,
+        "Astro": 0.57,
+        "Oligo": 0.098,
+        "OPC": 0.017,
+        "Micro": 0.014,
+        "Vascular": 0.064
+      },
+      "AsymAD": {
+        "Exc": 0.29,
+        "Inh_SST": 0.018,
+        "Inh_PVALB": 0.013,
+        "Inh_other": 0.042,
+        "Astro": 0.448,
+        "Oligo": 0.108,
+        "OPC": 0.035,
+        "Micro": 0.006,
+        "Vascular": 0.04
+      },
+      "Control": {
+        "Exc": 0.304,
+        "Inh_SST": 0.007,
+        "Inh_PVALB": 0.024,
+        "Inh_other": 0.045,
+        "Astro": 0.405,
+        "Oligo": 0.155,
+        "OPC": 0.027,
+        "Micro": 0.004,
+        "Vascular": 0.03
+      }
+    },
+    "svr_exc_vs_neuron_score_rho": 0.775,
+    "adj_markers5": {
+      "r2_ca": 0.853,
+      "r2_b": 0.468,
+      "ari_adj": 0.058,
+      "sig_raw": 0.379,
+      "sig_adj": 0.235,
+      "sig_adj_rand": 0.067,
+      "sig_adj_rand_p": 0.005,
+      "sig_adj_perm": 0.064,
+      "sig_adj_perm_p": 0.005,
+      "adj_frac": {
+        "A": 0.324,
+        "B": 0.432,
+        "C": 0.243
+      }
+    },
+    "adj_nnls": {
+      "r2_ca": 0.761,
+      "r2_b": 0.578,
+      "ari_adj": 0.163,
+      "sig_raw": 0.379,
+      "sig_adj": 0.226,
+      "sig_adj_rand": 0.067,
+      "sig_adj_rand_p": 0.005,
+      "sig_adj_perm": 0.063,
+      "sig_adj_perm_p": 0.005,
+      "adj_frac": {
+        "A": 0.324,
+        "B": 0.378,
+        "C": 0.297
+      }
+    },
+    "adj_svr": {
+      "r2_ca": 0.516,
+      "r2_b": 0.557,
+      "ari_adj": 0.106,
+      "sig_raw": 0.379,
+      "sig_adj": 0.313,
+      "sig_adj_rand": 0.068,
+      "sig_adj_rand_p": 0.005,
+      "sig_adj_perm": 0.063,
+      "sig_adj_perm_p": 0.005,
+      "adj_frac": {
+        "A": 0.378,
+        "B": 0.216,
+        "C": 0.405
+      }
+    },
+    "nnls_by_class": {
+      "A": {
+        "Exc": 0.27,
+        "Inh_SST": 0.156,
+        "Inh_PVALB": 0.007,
+        "Inh_other": 0.019,
+        "Astro": 0.177,
+        "Oligo": 0.086,
+        "OPC": 0.0,
+        "Micro": 0.127,
+        "Vascular": 0.158
+      },
+      "B": {
+        "Exc": 0.23,
+        "Inh_SST": 0.17,
+        "Inh_PVALB": 0.012,
+        "Inh_other": 0.012,
+        "Astro": 0.152,
+        "Oligo": 0.079,
+        "OPC": 0.0,
+        "Micro": 0.13,
+        "Vascular": 0.214
+      },
+      "C": {
+        "Exc": 0.172,
+        "Inh_SST": 0.161,
+        "Inh_PVALB": 0.013,
+        "Inh_other": 0.02,
+        "Astro": 0.167,
+        "Oligo": 0.097,
+        "OPC": 0.0,
+        "Micro": 0.14,
+        "Vascular": 0.23
+      }
+    },
+    "nnls_class_kruskal_p": {
+      "Exc": 0.0093931520137939,
+      "Inh_SST": 0.8442405995475709,
+      "Inh_PVALB": 0.648095261404614,
+      "Inh_other": 0.012258190506417684,
+      "Astro": 0.3749627710619717,
+      "Oligo": 0.04604403520249595,
+      "OPC": 0.0,
+      "Micro": 0.6532547617856312,
+      "Vascular": 0.00034487314072196944
+    },
+    "svr_by_class": {
+      "A": {
+        "Exc": 0.183,
+        "Inh_SST": 0.003,
+        "Inh_PVALB": 0.068,
+        "Inh_other": 0.022,
+        "Astro": 0.573,
+        "Oligo": 0.104,
+        "OPC": 0.008,
+        "Micro": 0.011,
+        "Vascular": 0.028
+      },
+      "B": {
+        "Exc": 0.196,
+        "Inh_SST": 0.009,
+        "Inh_PVALB": 0.121,
+        "Inh_other": 0.015,
+        "Astro": 0.495,
+        "Oligo": 0.052,
+        "OPC": 0.014,
+        "Micro": 0.015,
+        "Vascular": 0.083
+      },
+      "C": {
+        "Exc": 0.054,
+        "Inh_SST": 0.0,
+        "Inh_PVALB": 0.048,
+        "Inh_other": 0.032,
+        "Astro": 0.606,
+        "Oligo": 0.114,
+        "OPC": 0.03,
+        "Micro": 0.016,
+        "Vascular": 0.1
+      }
+    },
+    "svr_class_kruskal_p": {
+      "Exc": 0.031092290348316863,
+      "Inh_SST": 0.4063241974405495,
+      "Inh_PVALB": 0.4750423087667933,
+      "Inh_other": 0.8929101163466748,
+      "Astro": 0.24499081517118698,
+      "Oligo": 0.18441263881727618,
+      "OPC": 0.07652231772267518,
+      "Micro": 0.9314385995147005,
+      "Vascular": 0.027415942535598994
+    }
+  },
+  {
+    "cohort": "GSE118553_Cerebellum",
+    "n_sig_genes": 277,
+    "n_AD": 38,
+    "nnls_mean_by_group": {
+      "AD": {
+        "Exc": 0.02,
+        "Inh_SST": 0.256,
+        "Inh_PVALB": 0.026,
+        "Inh_other": 0.003,
+        "Astro": 0.042,
+        "Oligo": 0.09,
+        "OPC": 0.002,
+        "Micro": 0.331,
+        "Vascular": 0.231
+      },
+      "AsymAD": {
+        "Exc": 0.015,
+        "Inh_SST": 0.245,
+        "Inh_PVALB": 0.027,
+        "Inh_other": 0.005,
+        "Astro": 0.045,
+        "Oligo": 0.088,
+        "OPC": 0.002,
+        "Micro": 0.333,
+        "Vascular": 0.24
+      },
+      "Control": {
+        "Exc": 0.009,
+        "Inh_SST": 0.245,
+        "Inh_PVALB": 0.032,
+        "Inh_other": 0.005,
+        "Astro": 0.046,
+        "Oligo": 0.094,
+        "OPC": 0.005,
+        "Micro": 0.331,
+        "Vascular": 0.233
+      }
+    },
+    "nnls_exc_vs_neuron_score_rho": 0.325,
+    "svr_mean_by_group": {
+      "AD": {
+        "Exc": 0.104,
+        "Inh_SST": 0.231,
+        "Inh_PVALB": 0.013,
+        "Inh_other": 0.0,
+        "Astro": 0.178,
+        "Oligo": 0.126,
+        "OPC": 0.18,
+        "Micro": 0.024,
+        "Vascular": 0.145
+      },
+      "AsymAD": {
+        "Exc": 0.067,
+        "Inh_SST": 0.245,
+        "Inh_PVALB": 0.008,
+        "Inh_other": 0.0,
+        "Astro": 0.187,
+        "Oligo": 0.118,
+        "OPC": 0.134,
+        "Micro": 0.069,
+        "Vascular": 0.173
+      },
+      "Control": {
+        "Exc": 0.033,
+        "Inh_SST": 0.259,
+        "Inh_PVALB": 0.012,
+        "Inh_other": 0.0,
+        "Astro": 0.243,
+        "Oligo": 0.137,
+        "OPC": 0.183,
+        "Micro": 0.034,
+        "Vascular": 0.098
+      }
+    },
+    "svr_exc_vs_neuron_score_rho": 0.003,
+    "adj_markers5": {
+      "r2_ca": 0.789,
+      "r2_b": 0.663,
+      "ari_adj": 0.048,
+      "sig_raw": 0.244,
+      "sig_adj": 0.145,
+      "sig_adj_rand": 0.068,
+      "sig_adj_rand_p": 0.005,
+      "sig_adj_perm": 0.063,
+      "sig_adj_perm_p": 0.005,
+      "adj_frac": {
+        "A": 0.368,
+        "B": 0.368,
+        "C": 0.263
+      }
+    },
+    "adj_nnls": {
+      "r2_ca": 0.518,
+      "r2_b": 0.713,
+      "ari_adj": 0.183,
+      "sig_raw": 0.244,
+      "sig_adj": 0.199,
+      "sig_adj_rand": 0.067,
+      "sig_adj_rand_p": 0.005,
+      "sig_adj_perm": 0.063,
+      "sig_adj_perm_p": 0.005,
+      "adj_frac": {
+        "A": 0.395,
+        "B": 0.263,
+        "C": 0.342
+      }
+    },
+    "adj_svr": {
+      "r2_ca": 0.348,
+      "r2_b": 0.577,
+      "ari_adj": 0.284,
+      "sig_raw": 0.244,
+      "sig_adj": 0.24,
+      "sig_adj_rand": 0.067,
+      "sig_adj_rand_p": 0.005,
+      "sig_adj_perm": 0.063,
+      "sig_adj_perm_p": 0.005,
+      "adj_frac": {
+        "A": 0.368,
+        "B": 0.289,
+        "C": 0.342
+      }
+    },
+    "nnls_by_class": {
+      "A": {
+        "Exc": 0.008,
+        "Inh_SST": 0.266,
+        "Inh_PVALB": 0.043,
+        "Inh_other": 0.003,
+        "Astro": 0.041,
+        "Oligo": 0.092,
+        "OPC": 0.004,
+        "Micro": 0.331,
+        "Vascular": 0.213
+      },
+      "B": {
+        "Exc": 0.041,
+        "Inh_SST": 0.256,
+        "Inh_PVALB": 0.02,
+        "Inh_other": 0.002,
+        "Astro": 0.038,
+        "Oligo": 0.08,
+        "OPC": 0.0,
+        "Micro": 0.326,
+        "Vascular": 0.238
+      },
+      "C": {
+        "Exc": 0.012,
+        "Inh_SST": 0.246,
+        "Inh_PVALB": 0.014,
+        "Inh_other": 0.004,
+        "Astro": 0.048,
+        "Oligo": 0.098,
+        "OPC": 0.002,
+        "Micro": 0.335,
+        "Vascular": 0.242
+      }
+    },
+    "nnls_class_kruskal_p": {
+      "Exc": 0.00037137806966364763,
+      "Inh_SST": 0.24097142449614842,
+      "Inh_PVALB": 0.11411597903928088,
+      "Inh_other": 0.5486227885910955,
+      "Astro": 0.12930949542947542,
+      "Oligo": 0.03480159793787445,
+      "OPC": 0.014893153644417812,
+      "Micro": 0.8025612868466862,
+      "Vascular": 0.017287075847376262
+    },
+    "svr_by_class": {
+      "A": {
+        "Exc": 0.042,
+        "Inh_SST": 0.323,
+        "Inh_PVALB": 0.001,
+        "Inh_other": 0.0,
+        "Astro": 0.159,
+        "Oligo": 0.151,
+        "OPC": 0.245,
+        "Micro": 0.023,
+        "Vascular": 0.056
+      },
+      "B": {
+        "Exc": 0.261,
+        "Inh_SST": 0.187,
+        "Inh_PVALB": 0.0,
+        "Inh_other": 0.0,
+        "Astro": 0.172,
+        "Oligo": 0.062,
+        "OPC": 0.127,
+        "Micro": 0.006,
+        "Vascular": 0.184
+      },
+      "C": {
+        "Exc": 0.022,
+        "Inh_SST": 0.179,
+        "Inh_PVALB": 0.037,
+        "Inh_other": 0.0,
+        "Astro": 0.202,
+        "Oligo": 0.159,
+        "OPC": 0.163,
+        "Micro": 0.041,
+        "Vascular": 0.197
+      }
+    },
+    "svr_class_kruskal_p": {
+      "Exc": 0.023387169685250682,
+      "Inh_SST": 0.1506666992295674,
+      "Inh_PVALB": 0.6218527347968862,
+      "Inh_other": 0.38230427289210006,
+      "Astro": 0.738758331267557,
+      "Oligo": 0.030729464994620207,
+      "OPC": 0.08227528319137765,
+      "Micro": 0.32160558194460775,
+      "Vascular": 0.07414500020915586
+    }
+  }
+]
