@@ -1,0 +1,260 @@
+[
+  {
+    "cohort": "GSE33000_PFC",
+    "n": {
+      "AD": 310,
+      "Control": 157
+    },
+    "coverage": 0.827,
+    "frac_p05": 0.984,
+    "class_frac": {
+      "A": 0.374,
+      "B": 0.255,
+      "C": 0.371
+    },
+    "neuron_by_class": {
+      "A": 0.602,
+      "B": 0.213,
+      "C": -0.754
+    },
+    "neuron_kruskal_p": 1.880701175776686e-46,
+    "median_r2_cell_scores": 0.526,
+    "adj_frac_p05": 0.9,
+    "adj_ari_vs_unadjusted": 0.154,
+    "all_sample_class_by_group": {
+      "AD": {
+        "A": 0.239,
+        "B": 0.242,
+        "C": 0.519
+      },
+      "Control": {
+        "A": 0.739,
+        "B": 0.217,
+        "C": 0.045
+      }
+    },
+    "stage_trend_spearman": {
+      "rho": 0.527,
+      "p": 1.0077990950766874e-34
+    }
+  },
+  {
+    "cohort": "GSE132903_MTG",
+    "n": {
+      "Control": 98,
+      "AD": 97
+    },
+    "coverage": 0.889,
+    "frac_p05": 0.918,
+    "class_frac": {
+      "A": 0.361,
+      "B": 0.206,
+      "C": 0.433
+    },
+    "neuron_by_class": {
+      "A": 0.751,
+      "B": 0.084,
+      "C": -0.666
+    },
+    "neuron_kruskal_p": 2.7836417584809448e-14,
+    "median_r2_cell_scores": 0.474,
+    "adj_frac_p05": 0.825,
+    "adj_ari_vs_unadjusted": 0.133,
+    "all_sample_class_by_group": {
+      "AD": {
+        "A": 0.258,
+        "B": 0.134,
+        "C": 0.608
+      },
+      "Control": {
+        "A": 0.612,
+        "B": 0.204,
+        "C": 0.184
+      }
+    },
+    "stage_trend_spearman": {
+      "rho": 0.426,
+      "p": 5.179212385754297e-10
+    }
+  },
+  {
+    "cohort": "GSE118553_Temporal_Cortex",
+    "n": {
+      "AD": 52,
+      "AsymAD": 32,
+      "Control": 31
+    },
+    "coverage": 0.963,
+    "frac_p05": 0.923,
+    "class_frac": {
+      "A": 0.365,
+      "B": 0.25,
+      "C": 0.385
+    },
+    "neuron_by_class": {
+      "A": 0.683,
+      "B": -0.13,
+      "C": -0.565
+    },
+    "neuron_kruskal_p": 5.58598521217002e-07,
+    "median_r2_cell_scores": 0.43,
+    "adj_frac_p05": 0.788,
+    "adj_ari_vs_unadjusted": 0.216,
+    "all_sample_class_by_group": {
+      "AD": {
+        "A": 0.212,
+        "B": 0.212,
+        "C": 0.577
+      },
+      "AsymAD": {
+        "A": 0.531,
+        "B": 0.188,
+        "C": 0.281
+      },
+      "Control": {
+        "A": 0.548,
+        "B": 0.29,
+        "C": 0.161
+      }
+    },
+    "stage_trend_spearman": {
+      "rho": 0.379,
+      "p": 2.9048018221600217e-05
+    }
+  },
+  {
+    "cohort": "GSE118553_Frontal_Cortex",
+    "n": {
+      "AD": 40,
+      "AsymAD": 33,
+      "Control": 23
+    },
+    "coverage": 0.963,
+    "frac_p05": 0.875,
+    "class_frac": {
+      "A": 0.375,
+      "B": 0.15,
+      "C": 0.475
+    },
+    "neuron_by_class": {
+      "A": 0.59,
+      "B": -0.247,
+      "C": -0.388
+    },
+    "neuron_kruskal_p": 0.0007294529698467533,
+    "median_r2_cell_scores": 0.422,
+    "adj_frac_p05": 0.725,
+    "adj_ari_vs_unadjusted": -0.005,
+    "all_sample_class_by_group": {
+      "AD": {
+        "A": 0.35,
+        "B": 0.15,
+        "C": 0.5
+      },
+      "AsymAD": {
+        "A": 0.364,
+        "B": 0.242,
+        "C": 0.394
+      },
+      "Control": {
+        "A": 0.609,
+        "B": 0.217,
+        "C": 0.174
+      }
+    },
+    "stage_trend_spearman": {
+      "rho": 0.235,
+      "p": 0.02136599936637651
+    }
+  },
+  {
+    "cohort": "GSE118553_Entorhinal_Cortex",
+    "n": {
+      "AD": 37,
+      "AsymAD": 37,
+      "Control": 24
+    },
+    "coverage": 0.963,
+    "frac_p05": 0.973,
+    "class_frac": {
+      "A": 0.459,
+      "B": 0.189,
+      "C": 0.351
+    },
+    "neuron_by_class": {
+      "A": 0.526,
+      "B": -0.049,
+      "C": -0.662
+    },
+    "neuron_kruskal_p": 8.31965119874877e-05,
+    "median_r2_cell_scores": 0.487,
+    "adj_frac_p05": 0.784,
+    "adj_ari_vs_unadjusted": 0.058,
+    "all_sample_class_by_group": {
+      "AD": {
+        "A": 0.27,
+        "B": 0.081,
+        "C": 0.649
+      },
+      "AsymAD": {
+        "A": 0.351,
+        "B": 0.378,
+        "C": 0.27
+      },
+      "Control": {
+        "A": 0.5,
+        "B": 0.167,
+        "C": 0.333
+      }
+    },
+    "stage_trend_spearman": {
+      "rho": 0.262,
+      "p": 0.009036890574060945
+    }
+  },
+  {
+    "cohort": "GSE118553_Cerebellum",
+    "n": {
+      "AD": 38,
+      "AsymAD": 32,
+      "Control": 22
+    },
+    "coverage": 0.963,
+    "frac_p05": 0.868,
+    "class_frac": {
+      "A": 0.342,
+      "B": 0.316,
+      "C": 0.342
+    },
+    "neuron_by_class": {
+      "A": 0.236,
+      "B": 0.034,
+      "C": -0.268
+    },
+    "neuron_kruskal_p": 0.05284663401093591,
+    "median_r2_cell_scores": 0.277,
+    "adj_frac_p05": 0.553,
+    "adj_ari_vs_unadjusted": 0.048,
+    "all_sample_class_by_group": {
+      "AD": {
+        "A": 0.368,
+        "B": 0.342,
+        "C": 0.289
+      },
+      "AsymAD": {
+        "A": 0.281,
+        "B": 0.156,
+        "C": 0.562
+      },
+      "Control": {
+        "A": 0.318,
+        "B": 0.227,
+        "C": 0.455
+      }
+    },
+    "stage_trend_spearman": {
+      "rho": -0.136,
+      "p": 0.19534876523407937
+    }
+  }
+]
