@@ -1,0 +1,250 @@
+{
+  "pooled_AD_ca_vs_neuron": {
+    "rho": -0.894,
+    "ci": [
+      -0.945,
+      -0.8
+    ],
+    "p": 1.74e-16
+  },
+  "pooled_stage": {
+    "rho": 0.499,
+    "ci": [
+      0.348,
+      0.625
+    ],
+    "p": 6.42e-09
+  },
+  "cohorts": [
+    {
+      "cohort": "GSE33000_PFC",
+      "n": 467,
+      "n_AD": 310,
+      "neff_genes": 221,
+      "AD_ss_vs_cohortz_ca": 0.868,
+      "AD_ca_vs_neuron": -0.866,
+      "stage_rho": 0.64,
+      "stage_p": 3.96e-55,
+      "class_frac_by_group": {
+        "AD": {
+          "A": 0.061,
+          "B": 0.303,
+          "C": 0.635
+        },
+        "Control": {
+          "A": 0.484,
+          "B": 0.42,
+          "C": 0.096
+        }
+      },
+      "null_neuron": {
+        "random_median": -0.272,
+        "p": 0.005
+      },
+      "null_stage": {
+        "random_median": 0.579,
+        "p": 0.0846
+      }
+    },
+    {
+      "cohort": "GSE132903_MTG",
+      "n": 195,
+      "n_AD": 97,
+      "neff_genes": 241,
+      "AD_ss_vs_cohortz_ca": 0.975,
+      "AD_ca_vs_neuron": -0.914,
+      "stage_rho": 0.495,
+      "stage_p": 1.97e-13,
+      "class_frac_by_group": {
+        "AD": {
+          "A": 0.918,
+          "B": 0.021,
+          "C": 0.062
+        },
+        "Control": {
+          "A": 0.98,
+          "B": 0.0,
+          "C": 0.02
+        }
+      },
+      "null_neuron": {
+        "random_median": -0.095,
+        "p": 0.005
+      },
+      "null_stage": {
+        "random_median": 0.024,
+        "p": 0.005
+      }
+    },
+    {
+      "cohort": "GSE118553_Temporal_Cortex",
+      "n": 115,
+      "n_AD": 52,
+      "neff_genes": 261,
+      "AD_ss_vs_cohortz_ca": 0.979,
+      "AD_ca_vs_neuron": -0.753,
+      "stage_rho": 0.435,
+      "stage_p": 1.19e-06,
+      "class_frac_by_group": {
+        "AD": {
+          "A": 1.0,
+          "B": 0,
+          "C": 0
+        },
+        "AsymAD": {
+          "A": 1.0,
+          "B": 0,
+          "C": 0
+        },
+        "Control": {
+          "A": 1.0,
+          "B": 0,
+          "C": 0
+        }
+      },
+      "null_neuron": {
+        "random_median": -0.239,
+        "p": 0.005
+      },
+      "null_stage": {
+        "random_median": 0.265,
+        "p": 0.1144
+      }
+    },
+    {
+      "cohort": "GSE118553_Frontal_Cortex",
+      "n": 96,
+      "n_AD": 40,
+      "neff_genes": 261,
+      "AD_ss_vs_cohortz_ca": 0.99,
+      "AD_ca_vs_neuron": -0.802,
+      "stage_rho": 0.2,
+      "stage_p": 0.0506,
+      "class_frac_by_group": {
+        "AD": {
+          "A": 1.0,
+          "B": 0,
+          "C": 0.0
+        },
+        "AsymAD": {
+          "A": 0.97,
+          "B": 0,
+          "C": 0.03
+        },
+        "Control": {
+          "A": 1.0,
+          "B": 0,
+          "C": 0.0
+        }
+      },
+      "null_neuron": {
+        "random_median": -0.108,
+        "p": 0.005
+      },
+      "null_stage": {
+        "random_median": 0.011,
+        "p": 0.1294
+      }
+    },
+    {
+      "cohort": "GSE118553_Entorhinal_Cortex",
+      "n": 98,
+      "n_AD": 37,
+      "neff_genes": 261,
+      "AD_ss_vs_cohortz_ca": 0.97,
+      "AD_ca_vs_neuron": -0.853,
+      "stage_rho": 0.425,
+      "stage_p": 1.29e-05,
+      "class_frac_by_group": {
+        "AD": {
+          "A": 0.919,
+          "B": 0,
+          "C": 0.081
+        },
+        "AsymAD": {
+          "A": 1.0,
+          "B": 0,
+          "C": 0.0
+        },
+        "Control": {
+          "A": 1.0,
+          "B": 0,
+          "C": 0.0
+        }
+      },
+      "null_neuron": {
+        "random_median": -0.146,
+        "p": 0.005
+      },
+      "null_stage": {
+        "random_median": 0.053,
+        "p": 0.1194
+      }
+    },
+    {
+      "cohort": "GSE118553_Cerebellum",
+      "n": 92,
+      "n_AD": 38,
+      "neff_genes": 261,
+      "AD_ss_vs_cohortz_ca": 0.91,
+      "AD_ca_vs_neuron": -0.02,
+      "stage_rho": -0.198,
+      "stage_p": 0.0582,
+      "class_frac_by_group": {
+        "AD": {
+          "A": 1.0,
+          "B": 0,
+          "C": 0
+        },
+        "AsymAD": {
+          "A": 1.0,
+          "B": 0,
+          "C": 0
+        },
+        "Control": {
+          "A": 1.0,
+          "B": 0,
+          "C": 0
+        }
+      },
+      "null_neuron": {
+        "random_median": -0.066,
+        "p": 0.5473
+      },
+      "null_stage": {
+        "random_median": -0.003,
+        "p": 0.9055
+      }
+    },
+    {
+      "cohort": "GSE125583_FG",
+      "n": 289,
+      "n_AD": 219,
+      "neff_genes": 255,
+      "AD_ss_vs_cohortz_ca": 0.962,
+      "AD_ca_vs_neuron": -0.953,
+      "stage_rho": 0.382,
+      "stage_p": 1.88e-11,
+      "class_frac_by_group": {
+        "AD": {
+          "A": 0.333,
+          "B": 0.256,
+          "C": 0.411
+        },
+        "Control": {
+          "A": 0.743,
+          "B": 0.143,
+          "C": 0.114
+        }
+      },
+      "null_neuron": {
+        "random_median": -0.15,
+        "p": 0.005
+      },
+      "null_stage": {
+        "random_median": 0.027,
+        "p": 0.0199
+      }
+    }
+  ]
+}

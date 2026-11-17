@@ -1,0 +1,11 @@
+{
+  "median_over_17_regions": {
+    "n_AD": 31.0,
+    "neuron_raw_vs_cdr": -0.223,
+    "neuron_normalised_vs_cdr": -0.005,
+    "ca_normalised_vs_cdr": -0.009,
+    "ca_normalised_vs_neuron_normalised": -0.913,
+    "frac_A": 0.419,
+    "frac_C": 0.355
+  }
+}

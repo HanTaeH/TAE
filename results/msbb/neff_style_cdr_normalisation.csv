@@ -1,0 +1,18 @@
+region,n_AD,neuron_raw_vs_cdr,neuron_normalised_vs_cdr,ca_normalised_vs_cdr,ca_normalised_vs_neuron_normalised,frac_A,frac_C
+Anterior Cingulate,32,-0.2,-0.151,0.126,-0.913,0.406,0.344
+Caudate Nucleus,29,0.009,-0.01,-0.009,-0.938,0.276,0.448
+Dorsolateral Prefrontal Cortex,28,0.196,0.067,-0.029,-0.876,0.357,0.25
+Frontal Pole,35,-0.223,0.129,-0.053,-0.933,0.371,0.371
+Hippocampus,30,-0.302,-0.048,-0.054,-0.931,0.367,0.4
+Inferior Frontal Gyrus,27,-0.218,-0.011,-0.012,-0.908,0.444,0.333
+Inferior Temporal Gyrus,30,-0.097,-0.038,0.027,-0.931,0.3,0.433
+Middle Temporal Gyrus,31,-0.382,-0.077,0.024,-0.914,0.419,0.387
+Occipital Visual Cortex,26,-0.207,0.024,-0.055,-0.938,0.423,0.346
+Parahippocampal Gyrus,32,-0.469,0.051,0.002,-0.904,0.438,0.375
+Posterior Cingulate Cortex,31,-0.258,0.01,-0.018,-0.957,0.419,0.355
+Precentral Gyrus,31,-0.134,-0.005,0.047,-0.925,0.419,0.355
+Prefrontal Cortex,33,-0.235,0.011,-0.025,-0.884,0.424,0.333
+Putamen,31,-0.279,0.031,-0.031,-0.894,0.419,0.355
+Superior Parietal Lobule,22,-0.306,-0.011,0.02,-0.893,0.364,0.545
+Superior Temporal Gyrus,31,-0.241,-0.002,0.038,-0.904,0.452,0.387
+Temporal Pole,29,-0.219,-0.007,0.003,-0.911,0.345,0.345

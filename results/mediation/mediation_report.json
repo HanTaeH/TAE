@@ -1,0 +1,467 @@
+[
+  {
+    "dataset": "GSE125583 AD_only",
+    "n": 217,
+    "x": "braak",
+    "m": "neuron_score",
+    "covariates": [
+      "age",
+      "female"
+    ],
+    "a_x_to_m": -0.288,
+    "b_m_to_y": -0.93,
+    "total_c": 0.268,
+    "total_ci": [
+      0.125,
+      0.394
+    ],
+    "direct_c_prime": -0.0,
+    "direct_ci": [
+      -0.056,
+      0.053
+    ],
+    "indirect_ab": 0.268,
+    "indirect_ci": [
+      0.136,
+      0.382
+    ],
+    "indirect_p_boot": 0.0005,
+    "prop_mediated": 1.002,
+    "prop_ci": [
+      0.814,
+      1.319
+    ]
+  },
+  {
+    "dataset": "GSE125583 AD_only",
+    "n": 217,
+    "x": "braak",
+    "m": "nnls_Exc",
+    "covariates": [
+      "age",
+      "female"
+    ],
+    "a_x_to_m": -0.257,
+    "b_m_to_y": -0.845,
+    "total_c": 0.268,
+    "total_ci": [
+      0.131,
+      0.392
+    ],
+    "direct_c_prime": 0.051,
+    "direct_ci": [
+      -0.02,
+      0.124
+    ],
+    "indirect_ab": 0.217,
+    "indirect_ci": [
+      0.104,
+      0.325
+    ],
+    "indirect_p_boot": 0.0015,
+    "prop_mediated": 0.811,
+    "prop_ci": [
+      0.573,
+      1.105
+    ]
+  },
+  {
+    "dataset": "GSE125583 all_samples",
+    "n": 287,
+    "x": "braak",
+    "m": "neuron_score",
+    "covariates": [
+      "age",
+      "female"
+    ],
+    "a_x_to_m": -0.384,
+    "b_m_to_y": -0.927,
+    "total_c": 0.377,
+    "total_ci": [
+      0.267,
+      0.485
+    ],
+    "direct_c_prime": 0.021,
+    "direct_ci": [
+      -0.027,
+      0.068
+    ],
+    "indirect_ab": 0.356,
+    "indirect_ci": [
+      0.258,
+      0.456
+    ],
+    "indirect_p_boot": 0.0005,
+    "prop_mediated": 0.943,
+    "prop_ci": [
+      0.833,
+      1.084
+    ]
+  },
+  {
+    "dataset": "GSE125583 all_samples",
+    "n": 287,
+    "x": "braak",
+    "m": "nnls_Exc",
+    "covariates": [
+      "age",
+      "female"
+    ],
+    "a_x_to_m": -0.299,
+    "b_m_to_y": -0.834,
+    "total_c": 0.377,
+    "total_ci": [
+      0.273,
+      0.483
+    ],
+    "direct_c_prime": 0.128,
+    "direct_ci": [
+      0.073,
+      0.183
+    ],
+    "indirect_ab": 0.25,
+    "indirect_ci": [
+      0.16,
+      0.338
+    ],
+    "indirect_p_boot": 0.0005,
+    "prop_mediated": 0.662,
+    "prop_ci": [
+      0.522,
+      0.796
+    ]
+  },
+  {
+    "dataset": "GSE106241 all donors",
+    "n": 60,
+    "x": "braak",
+    "m": "neuron_score",
+    "covariates": [
+      "age",
+      "female",
+      "rna_quality"
+    ],
+    "a_x_to_m": -0.207,
+    "b_m_to_y": -0.976,
+    "total_c": 0.229,
+    "total_ci": [
+      -0.031,
+      0.473
+    ],
+    "direct_c_prime": 0.026,
+    "direct_ci": [
+      -0.052,
+      0.109
+    ],
+    "indirect_ab": 0.202,
+    "indirect_ci": [
+      -0.038,
+      0.421
+    ],
+    "indirect_p_boot": 0.1075,
+    "prop_mediated": 0.885,
+    "prop_ci": [
+      0.062,
+      1.586
+    ]
+  },
+  {
+    "dataset": "GSE106241 all donors",
+    "n": 60,
+    "x": "braak",
+    "m": "nnls_Exc",
+    "covariates": [
+      "age",
+      "female",
+      "rna_quality"
+    ],
+    "a_x_to_m": -0.291,
+    "b_m_to_y": -0.635,
+    "total_c": 0.229,
+    "total_ci": [
+      -0.022,
+      0.476
+    ],
+    "direct_c_prime": 0.044,
+    "direct_ci": [
+      -0.146,
+      0.247
+    ],
+    "indirect_ab": 0.185,
+    "indirect_ci": [
+      0.027,
+      0.33
+    ],
+    "indirect_p_boot": 0.0235,
+    "prop_mediated": 0.808,
+    "prop_ci": [
+      -0.659,
+      3.391
+    ]
+  },
+  {
+    "dataset": "GSE106241 Braak>=3 (all-donor scores)",
+    "n": 32,
+    "x": "braak",
+    "m": "neuron_score",
+    "covariates": [
+      "age",
+      "female",
+      "rna_quality"
+    ],
+    "a_x_to_m": 0.016,
+    "b_m_to_y": -0.992,
+    "total_c": 0.073,
+    "total_ci": [
+      -0.285,
+      0.412
+    ],
+    "direct_c_prime": 0.089,
+    "direct_ci": [
+      -0.038,
+      0.214
+    ],
+    "indirect_ab": -0.016,
+    "indirect_ci": [
+      -0.33,
+      0.286
+    ],
+    "indirect_p_boot": 0.9395,
+    "prop_mediated": -0.221,
+    "prop_ci": [
+      -6.668,
+      8.275
+    ]
+  },
+  {
+    "dataset": "MSBB subjects (cortex)",
+    "n": 106,
+    "x": "cdr",
+    "m": "neuron",
+    "covariates": [
+      "age",
+      "female"
+    ],
+    "a_x_to_m": -0.353,
+    "b_m_to_y": -0.969,
+    "total_c": 0.314,
+    "total_ci": [
+      0.133,
+      0.493
+    ],
+    "direct_c_prime": -0.029,
+    "direct_ci": [
+      -0.087,
+      0.026
+    ],
+    "indirect_ab": 0.342,
+    "indirect_ci": [
+      0.171,
+      0.515
+    ],
+    "indirect_p_boot": 0.0005,
+    "prop_mediated": 1.091,
+    "prop_ci": [
+      0.922,
+      1.481
+    ]
+  },
+  {
+    "dataset": "MSBB subjects (cortex)",
+    "n": 106,
+    "x": "braak",
+    "m": "neuron",
+    "covariates": [
+      "age",
+      "female"
+    ],
+    "a_x_to_m": -0.292,
+    "b_m_to_y": -0.954,
+    "total_c": 0.296,
+    "total_ci": [
+      0.129,
+      0.478
+    ],
+    "direct_c_prime": 0.017,
+    "direct_ci": [
+      -0.041,
+      0.075
+    ],
+    "indirect_ab": 0.278,
+    "indirect_ci": [
+      0.114,
+      0.446
+    ],
+    "indirect_p_boot": 0.0015,
+    "prop_mediated": 0.941,
+    "prop_ci": [
+      0.729,
+      1.19
+    ]
+  },
+  {
+    "dataset": "MSBB AD subjects (cortex)",
+    "n": 64,
+    "x": "cdr",
+    "m": "neuron",
+    "covariates": [
+      "age",
+      "female"
+    ],
+    "a_x_to_m": -0.227,
+    "b_m_to_y": -0.973,
+    "total_c": 0.18,
+    "total_ci": [
+      -0.087,
+      0.408
+    ],
+    "direct_c_prime": -0.041,
+    "direct_ci": [
+      -0.118,
+      0.019
+    ],
+    "indirect_ab": 0.221,
+    "indirect_ci": [
+      -0.039,
+      0.467
+    ],
+    "indirect_p_boot": 0.0915,
+    "prop_mediated": 1.228,
+    "prop_ci": [
+      -0.643,
+      3.559
+    ]
+  },
+  {
+    "dataset": "SEA-AD MTG snRNA (sorted pseudobulk)",
+    "n": 84,
+    "x": "CPS_Global",
+    "m": "L2/3 IT_of_neurons",
+    "covariates": [
+      "age",
+      "female"
+    ],
+    "a_x_to_m": -0.369,
+    "b_m_to_y": -0.524,
+    "total_c": 0.249,
+    "total_ci": [
+      0.058,
+      0.439
+    ],
+    "direct_c_prime": 0.056,
+    "direct_ci": [
+      -0.164,
+      0.258
+    ],
+    "indirect_ab": 0.194,
+    "indirect_ci": [
+      0.076,
+      0.35
+    ],
+    "indirect_p_boot": 0.0005,
+    "prop_mediated": 0.777,
+    "prop_ci": [
+      0.282,
+      2.909
+    ]
+  },
+  {
+    "dataset": "SEA-AD MTG snRNA (sorted pseudobulk)",
+    "n": 84,
+    "x": "CPS_Global",
+    "m": "Exc_of_neurons",
+    "covariates": [
+      "age",
+      "female"
+    ],
+    "a_x_to_m": 0.089,
+    "b_m_to_y": -0.037,
+    "total_c": 0.249,
+    "total_ci": [
+      0.053,
+      0.442
+    ],
+    "direct_c_prime": 0.252,
+    "direct_ci": [
+      0.057,
+      0.44
+    ],
+    "indirect_ab": -0.003,
+    "indirect_ci": [
+      -0.037,
+      0.035
+    ],
+    "indirect_p_boot": 0.9665,
+    "prop_mediated": -0.013,
+    "prop_ci": [
+      -0.248,
+      0.15
+    ]
+  },
+  {
+    "dataset": "SEA-AD MTG snRNA (sorted pseudobulk)",
+    "n": 84,
+    "x": "CPS_Global",
+    "m": "neuron_nuclei_frac",
+    "covariates": [
+      "age",
+      "female"
+    ],
+    "a_x_to_m": -0.168,
+    "b_m_to_y": -0.491,
+    "total_c": 0.249,
+    "total_ci": [
+      0.051,
+      0.441
+    ],
+    "direct_c_prime": 0.167,
+    "direct_ci": [
+      -0.01,
+      0.331
+    ],
+    "indirect_ab": 0.082,
+    "indirect_ci": [
+      -0.014,
+      0.19
+    ],
+    "indirect_p_boot": 0.0995,
+    "prop_mediated": 0.331,
+    "prop_ci": [
+      -0.116,
+      1.067
+    ]
+  },
+  {
+    "dataset": "SEA-AD MTG snRNA (composition-only pseudobulk)",
+    "n": 84,
+    "x": "CPS_Global",
+    "m": "L2/3 IT_of_neurons",
+    "covariates": [
+      "age",
+      "female"
+    ],
+    "a_x_to_m": -0.369,
+    "b_m_to_y": -0.452,
+    "total_c": 0.266,
+    "total_ci": [
+      0.061,
+      0.474
+    ],
+    "direct_c_prime": 0.099,
+    "direct_ci": [
+      -0.089,
+      0.291
+    ],
+    "indirect_ab": 0.167,
+    "indirect_ci": [
+      0.06,
+      0.286
+    ],
+    "indirect_p_boot": 0.0015,
+    "prop_mediated": 0.628,
+    "prop_ci": [
+      0.261,
+      1.871
+    ]
+  }
+]

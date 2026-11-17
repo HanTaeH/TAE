@@ -46,7 +46,8 @@ def pooled(rows):
     tau2 = max(0, (q - (len(z) - 1)) / (w.sum() - (w ** 2).sum() / w.sum()))
     ws = 1 / (v + tau2)
     m, se = np.sum(ws * z) / ws.sum(), np.sqrt(1 / ws.sum())
-    return {"name": "Pooled (random effects)", "r": np.tanh(m), "lo": np.tanh(m - 1.96 * se),
+    return {"name": "Pooled (random effects)", "r": np.tanh(m), "lo": np.tanh(m - 1.96 * se), "z_pooled": m,
+            "se_pooled": se, "p": float(2 * stats.norm.sf(abs(m / se))),
             "hi": np.tanh(m + 1.96 * se), "pooled": True, "I2": max(0, (q - (len(z) - 1)) / q) if q > 0 else 0}
 
 
@@ -87,7 +88,10 @@ for ax, (title, rows) in zip(axes, panels.items()):
     ax.set_xlabel("Spearman ρ (95% CI)")
     ax.set_title(title, fontsize=10)
     summary[title] = {"pooled_rho": round(float(pool["r"]), 3), "ci": [round(float(pool["lo"]), 3), round(float(pool["hi"]), 3)],
-                      "I2": round(float(pool["I2"]), 3)}
+                      "I2": round(float(pool["I2"]), 3), "p": float(f"{pool['p']:.3g}"),
+                      "pooled_cohorts": [r["cohort"] for r in rows if r["cohort"] in INDEPENDENT + ["GSE106241_ITC"]],
+                      "rows": [{"cohort": r["cohort"], "rho": round(float(r["r"]), 3), "n": int(r["n"]),
+                                "p": float(f"{2 * stats.norm.sf(abs(r['z'] / r['se'])):.3g}")} for r in rows]}
 fig.tight_layout()
 fig.savefig(res / "forest_plot.png", dpi=150, bbox_inches="tight")
 (res / "forest_summary.json").write_text(json.dumps(summary, indent=2))

@@ -5,7 +5,58 @@
       -0.936,
       -0.897
     ],
-    "I2": 0.489
+    "I2": 0.489,
+    "p": 1.29e-140,
+    "pooled_cohorts": [
+      "GSE33000_PFC",
+      "GSE132903_MTG",
+      "GSE118553_Temporal_Cortex",
+      "GSE125583_FG"
+    ],
+    "rows": [
+      {
+        "cohort": "GSE33000_PFC",
+        "rho": -0.928,
+        "n": 310,
+        "p": 6.17e-162
+      },
+      {
+        "cohort": "GSE132903_MTG",
+        "rho": -0.921,
+        "n": 97,
+        "p": 3.41e-48
+      },
+      {
+        "cohort": "GSE118553_Temporal_Cortex",
+        "rho": -0.85,
+        "n": 52,
+        "p": 1.07e-16
+      },
+      {
+        "cohort": "GSE118553_Frontal_Cortex",
+        "rho": -0.812,
+        "n": 40,
+        "p": 7.65e-11
+      },
+      {
+        "cohort": "GSE118553_Entorhinal_Cortex",
+        "rho": -0.835,
+        "n": 37,
+        "p": 3.57e-11
+      },
+      {
+        "cohort": "GSE118553_Cerebellum",
+        "rho": -0.509,
+        "n": 38,
+        "p": 0.00173
+      },
+      {
+        "cohort": "GSE125583_FG",
+        "rho": -0.927,
+        "n": 219,
+        "p": 2.83e-114
+      }
+    ]
   },
   "C-minus-A score vs disease stage (all samples)": {
     "pooled_rho": 0.476,
@@ -13,6 +64,64 @@
       0.341,
       0.591
     ],
-    "I2": 0.825
+    "I2": 0.825,
+    "p": 3.6e-10,
+    "pooled_cohorts": [
+      "GSE33000_PFC",
+      "GSE132903_MTG",
+      "GSE118553_Temporal_Cortex",
+      "GSE125583_FG",
+      "GSE106241_ITC"
+    ],
+    "rows": [
+      {
+        "cohort": "GSE33000_PFC",
+        "rho": 0.636,
+        "n": 467,
+        "p": 1.21e-52
+      },
+      {
+        "cohort": "GSE132903_MTG",
+        "rho": 0.459,
+        "n": 195,
+        "p": 8.91e-11
+      },
+      {
+        "cohort": "GSE118553_Temporal_Cortex",
+        "rho": 0.451,
+        "n": 115,
+        "p": 1.22e-06
+      },
+      {
+        "cohort": "GSE118553_Frontal_Cortex",
+        "rho": 0.183,
+        "n": 96,
+        "p": 0.0922
+      },
+      {
+        "cohort": "GSE118553_Entorhinal_Cortex",
+        "rho": 0.376,
+        "n": 98,
+        "p": 0.000277
+      },
+      {
+        "cohort": "GSE118553_Cerebellum",
+        "rho": -0.173,
+        "n": 92,
+        "p": 0.12
+      },
+      {
+        "cohort": "GSE125583_FG",
+        "rho": 0.402,
+        "n": 289,
+        "p": 1.07e-11
+      },
+      {
+        "cohort": "GSE106241_ITC",
+        "rho": 0.339,
+        "n": 60,
+        "p": 0.0119
+      }
+    ]
   }
 }

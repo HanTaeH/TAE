@@ -61,6 +61,7 @@ def main() -> None:
     pool_by = {s: pool[stratum.loc[pool].values == s] for s in range(30)}
     neff_s = stratum.loc[genes].values
 
+    per = []
     for name, idx in sets.items():
         m = meta.loc[idx]
         br = m["braak"].values
@@ -92,6 +93,10 @@ def main() -> None:
                             "random_q95": round(float(np.quantile(null, .95)), 3),
                             "p": round(float((np.sum(np.array(null) >= obs[0]) + 1) / (a.n + 1)), 4)},
         }
+        per.append(m[["group", "braak", "age", "sex"]].assign(set=name, ca_score=ca, b_axis=b, neff_class=lab,
+                                                               neuron_score=neuron)
+                   .join(P_all.loc[idx].add_prefix("nnls_")))
+    pd.concat(per).to_csv(a.out / "braak_gse125583_per_sample.csv")
     (a.out / "braak_gse125583_report.json").write_text(json.dumps(rep, indent=2, ensure_ascii=False, default=str))
     print(json.dumps(rep, indent=1, ensure_ascii=False, default=str))
 

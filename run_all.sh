@@ -31,3 +31,7 @@ fi
 python3 seaad_pseudobulk.py     --donors "$REF_DIR/donors" --cps "$REF_DIR/Global_and_Local_CPS.20260105.csv" --data "$DATA" --out "$OUT/seaad_pseudobulk" --n 500
 python3 msbb_gse84422.py       --data "$DATA" --out "$OUT/msbb" --n 200
 python3 forest_plot.py         "$OUT"
+python3 neff_style_normalisation.py --data "$DATA" --out "$OUT/msbb"
+python3 mediation.py           --res "$OUT" --seaad-meta "$REF_DIR/donors/donor_meta.csv" --n 2000
+python3 singlesample.py        --data "$DATA" --out "$OUT/singlesample" --n 200
+python3 multiple_testing.py    "$OUT"
