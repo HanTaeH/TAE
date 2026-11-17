@@ -1,0 +1,18 @@
+region,n,pmi_raw,ph_raw,age_raw,pmi_resid,ph_resid,age_resid
+Anterior Cingulate,32,0.002,0.046,0.04,-0.041,0.217,-0.195
+Caudate Nucleus,29,0.197,-0.018,0.034,0.051,0.138,-0.258
+Dorsolateral Prefrontal Cortex,28,0.208,0.253,-0.157,0.096,0.135,-0.406
+Frontal Pole,35,0.096,0.022,-0.0,-0.126,0.147,-0.167
+Hippocampus,30,0.002,0.007,-0.019,0.074,0.224,-0.307
+Inferior Frontal Gyrus,27,-0.008,0.214,0.004,0.251,0.102,-0.245
+Inferior Temporal Gyrus,30,0.108,0.101,-0.347,0.244,0.017,-0.254
+Middle Temporal Gyrus,31,0.173,0.206,-0.078,0.341,0.273,-0.523
+Occipital Visual Cortex,26,-0.218,0.177,0.137,-0.029,0.058,0.108
+Parahippocampal Gyrus,32,-0.12,0.244,0.235,-0.064,0.031,0.097
+Posterior Cingulate Cortex,31,-0.091,0.068,-0.02,0.25,0.191,-0.315
+Precentral Gyrus,31,0.089,0.089,0.253,-0.046,0.109,-0.008
+Prefrontal Cortex,33,-0.118,-0.11,-0.263,-0.167,0.141,-0.247
+Putamen,31,0.002,-0.212,-0.066,-0.1,0.169,-0.15
+Superior Parietal Lobule,22,0.146,-0.036,-0.193,0.502,-0.23,-0.422
+Superior Temporal Gyrus,31,0.125,0.075,-0.191,-0.442,0.339,-0.143
+Temporal Pole,29,0.28,-0.044,0.155,-0.183,0.245,-0.067

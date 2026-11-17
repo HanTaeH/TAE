@@ -19,7 +19,7 @@ import numpy as np
 import pandas as pd
 
 BUCKET = "https://sea-ad-single-cell-profiling.s3.amazonaws.com/"
-PREFIX = "MTG/RNAseq/donors_objects/"
+PREFIX = "MTG/RNAseq/donors_objects/"  # default region; --prefix PFC/RNAseq/donors_objects/ for DFC
 META_COLS = ["Donor ID", "Age at Death", "Sex", "APOE Genotype", "Braak", "Thal", "CERAD score",
              "Overall AD neuropathological Change", "Cognitive Status", "Last MMSE Score", "LATE",
              "Highest Lewy Body Disease", "NeuN positive fraction on FANS", "facs_population_plan",
@@ -27,8 +27,8 @@ META_COLS = ["Donor ID", "Age at Death", "Sex", "APOE Genotype", "Braak", "Thal"
              "Fresh Brain Weight", "Years of education"]
 
 
-def list_keys() -> list[str]:
-    x = subprocess.run(["curl", "-s", "-m", "120", f"{BUCKET}?list-type=2&prefix={PREFIX}"],
+def list_keys(prefix: str = PREFIX) -> list[str]:
+    x = subprocess.run(["curl", "-s", "-m", "120", f"{BUCKET}?list-type=2&prefix={prefix}"],
                        capture_output=True, text=True).stdout
     return re.findall(r"<Key>([^<]*\.h5ad)</Key>", x)
 
@@ -75,11 +75,15 @@ def main() -> None:
     ap.add_argument("--out", type=Path, required=True)
     ap.add_argument("--tmp", type=Path, default=Path("/tmp/seaad_dl"))
     ap.add_argument("--shard", default="0/1", help="i/k: process every k-th donor from i (parallel downloads)")
+    ap.add_argument("--prefix", default=PREFIX)
+    ap.add_argument("--donors", nargs="*", help="only these donor IDs")
     a = ap.parse_args()
     a.out.mkdir(parents=True, exist_ok=True)
     a.tmp.mkdir(parents=True, exist_ok=True)
     si, sk = map(int, a.shard.split("/"))
-    keys = list_keys()
+    keys = list_keys(a.prefix)
+    if a.donors:
+        keys = [k for k in keys if Path(k).name.split("_")[0] in a.donors]
     for i, key in list(enumerate(keys))[si::sk]:
         donor = Path(key).name.split("_")[0]
         dst = a.out / f"{donor}.npz"

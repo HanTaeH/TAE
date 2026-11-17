@@ -34,4 +34,11 @@ python3 forest_plot.py         "$OUT"
 python3 neff_style_normalisation.py --data "$DATA" --out "$OUT/msbb"
 python3 mediation.py           --res "$OUT" --seaad-meta "$REF_DIR/donors/donor_meta.csv" --n 2000
 python3 singlesample.py        --data "$DATA" --out "$OUT/singlesample" --n 200
+python3 marker_split.py        --data "$DATA" --out "$OUT/marker_split" --n 500
+python3 residual_identity.py   --data "$DATA" --ref-dir "$REF_DIR" --out "$OUT/residual_identity" --n 1000
+if [ ! -f "$REF_DIR/donors_dfc/donor_meta.csv" ]; then
+  python3 seaad_donor_aggregate.py --out "$REF_DIR/donors_dfc" --prefix PFC/RNAseq/donors_objects/ \
+    --donors H21.33.003 H21.33.004 H21.33.018 H21.33.019 H21.33.028 H21.33.043
+fi
+python3 region_reference.py    --data "$DATA" --seaad "$REF_DIR" --out "$OUT/region_reference" --n 200
 python3 multiple_testing.py    "$OUT"

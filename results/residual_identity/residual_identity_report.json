@@ -1,0 +1,1064 @@
+{
+  "gene_sets": {
+    "GSE33000_PFC": {
+      "oxphos": {
+        "n_genes": 85,
+        "mean_r": -0.052,
+        "z": -2.11,
+        "p": 0.037
+      },
+      "ribosome": {
+        "n_genes": 66,
+        "mean_r": 0.022,
+        "z": 0.04,
+        "p": 0.967
+      },
+      "immediate_early": {
+        "n_genes": 16,
+        "mean_r": 0.188,
+        "z": 2.15,
+        "p": 0.029
+      },
+      "heat_shock": {
+        "n_genes": 11,
+        "mean_r": 0.028,
+        "z": 0.05,
+        "p": 0.959
+      },
+      "interferon": {
+        "n_genes": 11,
+        "mean_r": -0.004,
+        "z": -0.22,
+        "p": 0.807
+      },
+      "microglia_activation_complement": {
+        "n_genes": 11,
+        "mean_r": 0.054,
+        "z": 0.31,
+        "p": 0.767
+      },
+      "reactive_astrocyte": {
+        "n_genes": 10,
+        "mean_r": 0.196,
+        "z": 1.79,
+        "p": 0.077
+      },
+      "hypoxia": {
+        "n_genes": 9,
+        "mean_r": -0.129,
+        "z": -1.49,
+        "p": 0.151
+      },
+      "sub_Astrocyte": {
+        "n_genes": 23,
+        "mean_r": 0.153,
+        "z": 2.08,
+        "p": 0.029
+      },
+      "sub_Chandelier": {
+        "n_genes": 18,
+        "mean_r": -0.017,
+        "z": -0.53,
+        "p": 0.587
+      },
+      "sub_Endothelial": {
+        "n_genes": 33,
+        "mean_r": 0.055,
+        "z": 0.64,
+        "p": 0.519
+      },
+      "sub_L2/3 IT": {
+        "n_genes": 12,
+        "mean_r": 0.052,
+        "z": 0.32,
+        "p": 0.781
+      },
+      "sub_L4 IT": {
+        "n_genes": 8,
+        "mean_r": 0.148,
+        "z": 1.2,
+        "p": 0.225
+      },
+      "sub_L5 ET": {
+        "n_genes": 19,
+        "mean_r": 0.097,
+        "z": 1.12,
+        "p": 0.253
+      },
+      "sub_L5/6 NP": {
+        "n_genes": 11,
+        "mean_r": 0.029,
+        "z": 0.07,
+        "p": 0.957
+      },
+      "sub_L6 IT Car3": {
+        "n_genes": 13,
+        "mean_r": 0.033,
+        "z": 0.14,
+        "p": 0.883
+      },
+      "sub_L6b": {
+        "n_genes": 11,
+        "mean_r": -0.072,
+        "z": -0.98,
+        "p": 0.335
+      },
+      "sub_Lamp5": {
+        "n_genes": 5,
+        "mean_r": 0.046,
+        "z": 0.17,
+        "p": 0.891
+      },
+      "sub_Lamp5 Lhx6": {
+        "n_genes": 14,
+        "mean_r": 0.101,
+        "z": 0.98,
+        "p": 0.339
+      },
+      "sub_Microglia-PVM": {
+        "n_genes": 34,
+        "mean_r": -0.059,
+        "z": -1.57,
+        "p": 0.127
+      },
+      "sub_OPC": {
+        "n_genes": 20,
+        "mean_r": 0.049,
+        "z": 0.4,
+        "p": 0.701
+      },
+      "sub_Oligodendrocyte": {
+        "n_genes": 17,
+        "mean_r": 0.178,
+        "z": 2.15,
+        "p": 0.043
+      },
+      "sub_Pax6": {
+        "n_genes": 10,
+        "mean_r": 0.097,
+        "z": 0.78,
+        "p": 0.427
+      },
+      "sub_Sncg": {
+        "n_genes": 8,
+        "mean_r": 0.023,
+        "z": -0.03,
+        "p": 0.995
+      },
+      "sub_Sst": {
+        "n_genes": 6,
+        "mean_r": 0.024,
+        "z": 0.01,
+        "p": 0.999
+      },
+      "sub_Sst Chodl": {
+        "n_genes": 29,
+        "mean_r": -0.023,
+        "z": -0.77,
+        "p": 0.451
+      },
+      "sub_VLMC": {
+        "n_genes": 36,
+        "mean_r": 0.23,
+        "z": 4.17,
+        "p": 0.001
+      },
+      "sub_Vip": {
+        "n_genes": 16,
+        "mean_r": 0.054,
+        "z": 0.41,
+        "p": 0.695
+      }
+    },
+    "GSE132903_MTG": {
+      "oxphos": {
+        "n_genes": 79,
+        "mean_r": -0.241,
+        "z": -7.5,
+        "p": 0.001
+      },
+      "ribosome": {
+        "n_genes": 67,
+        "mean_r": -0.206,
+        "z": -6.24,
+        "p": 0.001
+      },
+      "immediate_early": {
+        "n_genes": 16,
+        "mean_r": 0.078,
+        "z": 0.89,
+        "p": 0.373
+      },
+      "heat_shock": {
+        "n_genes": 13,
+        "mean_r": -0.131,
+        "z": -1.78,
+        "p": 0.085
+      },
+      "interferon": {
+        "n_genes": 13,
+        "mean_r": 0.011,
+        "z": -0.04,
+        "p": 0.989
+      },
+      "microglia_activation_complement": {
+        "n_genes": 12,
+        "mean_r": 0.047,
+        "z": 0.37,
+        "p": 0.717
+      },
+      "reactive_astrocyte": {
+        "n_genes": 8,
+        "mean_r": 0.129,
+        "z": 1.1,
+        "p": 0.257
+      },
+      "hypoxia": {
+        "n_genes": 10,
+        "mean_r": -0.127,
+        "z": -1.48,
+        "p": 0.139
+      },
+      "sub_Astrocyte": {
+        "n_genes": 24,
+        "mean_r": 0.085,
+        "z": 1.1,
+        "p": 0.271
+      },
+      "sub_Chandelier": {
+        "n_genes": 16,
+        "mean_r": 0.072,
+        "z": 0.8,
+        "p": 0.427
+      },
+      "sub_Endothelial": {
+        "n_genes": 31,
+        "mean_r": 0.028,
+        "z": 0.23,
+        "p": 0.807
+      },
+      "sub_L2/3 IT": {
+        "n_genes": 12,
+        "mean_r": -0.032,
+        "z": -0.6,
+        "p": 0.543
+      },
+      "sub_L4 IT": {
+        "n_genes": 6,
+        "mean_r": 0.011,
+        "z": 0.0,
+        "p": 0.993
+      },
+      "sub_L5 ET": {
+        "n_genes": 21,
+        "mean_r": 0.042,
+        "z": 0.41,
+        "p": 0.707
+      },
+      "sub_L5/6 NP": {
+        "n_genes": 14,
+        "mean_r": 0.062,
+        "z": 0.62,
+        "p": 0.545
+      },
+      "sub_L6 IT Car3": {
+        "n_genes": 18,
+        "mean_r": 0.026,
+        "z": 0.13,
+        "p": 0.863
+      },
+      "sub_L6b": {
+        "n_genes": 12,
+        "mean_r": 0.008,
+        "z": -0.06,
+        "p": 0.943
+      },
+      "sub_Lamp5": {
+        "n_genes": 5,
+        "mean_r": -0.249,
+        "z": -2.07,
+        "p": 0.033
+      },
+      "sub_Lamp5 Lhx6": {
+        "n_genes": 15,
+        "mean_r": -0.086,
+        "z": -1.32,
+        "p": 0.211
+      },
+      "sub_Microglia-PVM": {
+        "n_genes": 36,
+        "mean_r": -0.024,
+        "z": -0.77,
+        "p": 0.433
+      },
+      "sub_OPC": {
+        "n_genes": 22,
+        "mean_r": -0.03,
+        "z": -0.79,
+        "p": 0.441
+      },
+      "sub_Oligodendrocyte": {
+        "n_genes": 22,
+        "mean_r": -0.054,
+        "z": -1.1,
+        "p": 0.283
+      },
+      "sub_Pax6": {
+        "n_genes": 15,
+        "mean_r": 0.076,
+        "z": 0.77,
+        "p": 0.447
+      },
+      "sub_Sncg": {
+        "n_genes": 10,
+        "mean_r": -0.039,
+        "z": -0.54,
+        "p": 0.627
+      },
+      "sub_Sst": {
+        "n_genes": 6,
+        "mean_r": 0.054,
+        "z": 0.31,
+        "p": 0.765
+      },
+      "sub_Sst Chodl": {
+        "n_genes": 32,
+        "mean_r": -0.055,
+        "z": -1.37,
+        "p": 0.183
+      },
+      "sub_VLMC": {
+        "n_genes": 34,
+        "mean_r": 0.095,
+        "z": 1.51,
+        "p": 0.113
+      },
+      "sub_Vip": {
+        "n_genes": 18,
+        "mean_r": 0.073,
+        "z": 0.8,
+        "p": 0.445
+      }
+    },
+    "GSE118553_Temporal_Cortex": {
+      "oxphos": {
+        "n_genes": 87,
+        "mean_r": -0.276,
+        "z": -12.15,
+        "p": 0.001
+      },
+      "ribosome": {
+        "n_genes": 73,
+        "mean_r": -0.138,
+        "z": -5.35,
+        "p": 0.001
+      },
+      "immediate_early": {
+        "n_genes": 16,
+        "mean_r": 0.004,
+        "z": 0.31,
+        "p": 0.721
+      },
+      "heat_shock": {
+        "n_genes": 13,
+        "mean_r": 0.011,
+        "z": 0.41,
+        "p": 0.665
+      },
+      "interferon": {
+        "n_genes": 13,
+        "mean_r": 0.002,
+        "z": 0.23,
+        "p": 0.875
+      },
+      "microglia_activation_complement": {
+        "n_genes": 13,
+        "mean_r": 0.021,
+        "z": 0.55,
+        "p": 0.609
+      },
+      "reactive_astrocyte": {
+        "n_genes": 10,
+        "mean_r": 0.098,
+        "z": 1.88,
+        "p": 0.053
+      },
+      "hypoxia": {
+        "n_genes": 10,
+        "mean_r": -0.122,
+        "z": -1.74,
+        "p": 0.091
+      },
+      "sub_Astrocyte": {
+        "n_genes": 27,
+        "mean_r": 0.015,
+        "z": 0.68,
+        "p": 0.515
+      },
+      "sub_Chandelier": {
+        "n_genes": 18,
+        "mean_r": -0.081,
+        "z": -1.5,
+        "p": 0.129
+      },
+      "sub_Endothelial": {
+        "n_genes": 34,
+        "mean_r": -0.011,
+        "z": 0.02,
+        "p": 0.987
+      },
+      "sub_L2/3 IT": {
+        "n_genes": 13,
+        "mean_r": 0.013,
+        "z": 0.4,
+        "p": 0.711
+      },
+      "sub_L4 IT": {
+        "n_genes": 9,
+        "mean_r": -0.02,
+        "z": -0.16,
+        "p": 0.879
+      },
+      "sub_L5 ET": {
+        "n_genes": 22,
+        "mean_r": 0.009,
+        "z": 0.42,
+        "p": 0.689
+      },
+      "sub_L5/6 NP": {
+        "n_genes": 15,
+        "mean_r": 0.024,
+        "z": 0.64,
+        "p": 0.535
+      },
+      "sub_L6 IT Car3": {
+        "n_genes": 18,
+        "mean_r": 0.041,
+        "z": 1.07,
+        "p": 0.303
+      },
+      "sub_L6b": {
+        "n_genes": 13,
+        "mean_r": 0.024,
+        "z": 0.64,
+        "p": 0.529
+      },
+      "sub_Lamp5": {
+        "n_genes": 5,
+        "mean_r": -0.126,
+        "z": -1.36,
+        "p": 0.171
+      },
+      "sub_Lamp5 Lhx6": {
+        "n_genes": 18,
+        "mean_r": -0.019,
+        "z": -0.21,
+        "p": 0.833
+      },
+      "sub_Microglia-PVM": {
+        "n_genes": 38,
+        "mean_r": 0.057,
+        "z": 2.06,
+        "p": 0.027
+      },
+      "sub_OPC": {
+        "n_genes": 24,
+        "mean_r": 0.038,
+        "z": 1.2,
+        "p": 0.241
+      },
+      "sub_Oligodendrocyte": {
+        "n_genes": 23,
+        "mean_r": 0.037,
+        "z": 1.19,
+        "p": 0.231
+      },
+      "sub_Pax6": {
+        "n_genes": 15,
+        "mean_r": 0.078,
+        "z": 1.65,
+        "p": 0.077
+      },
+      "sub_Sncg": {
+        "n_genes": 12,
+        "mean_r": 0.106,
+        "z": 1.97,
+        "p": 0.043
+      },
+      "sub_Sst": {
+        "n_genes": 7,
+        "mean_r": -0.026,
+        "z": -0.23,
+        "p": 0.791
+      },
+      "sub_Sst Chodl": {
+        "n_genes": 33,
+        "mean_r": -0.027,
+        "z": -0.45,
+        "p": 0.661
+      },
+      "sub_VLMC": {
+        "n_genes": 36,
+        "mean_r": -0.031,
+        "z": -0.58,
+        "p": 0.559
+      },
+      "sub_Vip": {
+        "n_genes": 19,
+        "mean_r": 0.002,
+        "z": 0.26,
+        "p": 0.813
+      }
+    },
+    "GSE118553_Frontal_Cortex": {
+      "oxphos": {
+        "n_genes": 87,
+        "mean_r": -0.135,
+        "z": -4.85,
+        "p": 0.001
+      },
+      "ribosome": {
+        "n_genes": 73,
+        "mean_r": 0.047,
+        "z": 1.8,
+        "p": 0.059
+      },
+      "immediate_early": {
+        "n_genes": 16,
+        "mean_r": -0.031,
+        "z": -0.39,
+        "p": 0.723
+      },
+      "heat_shock": {
+        "n_genes": 13,
+        "mean_r": -0.016,
+        "z": -0.19,
+        "p": 0.827
+      },
+      "interferon": {
+        "n_genes": 13,
+        "mean_r": 0.053,
+        "z": 0.92,
+        "p": 0.389
+      },
+      "microglia_activation_complement": {
+        "n_genes": 13,
+        "mean_r": 0.161,
+        "z": 2.41,
+        "p": 0.015
+      },
+      "reactive_astrocyte": {
+        "n_genes": 10,
+        "mean_r": 0.153,
+        "z": 1.98,
+        "p": 0.043
+      },
+      "hypoxia": {
+        "n_genes": 10,
+        "mean_r": -0.173,
+        "z": -2.19,
+        "p": 0.037
+      },
+      "sub_Astrocyte": {
+        "n_genes": 27,
+        "mean_r": 0.015,
+        "z": 0.47,
+        "p": 0.643
+      },
+      "sub_Chandelier": {
+        "n_genes": 18,
+        "mean_r": 0.002,
+        "z": 0.13,
+        "p": 0.913
+      },
+      "sub_Endothelial": {
+        "n_genes": 34,
+        "mean_r": -0.002,
+        "z": 0.11,
+        "p": 0.895
+      },
+      "sub_L2/3 IT": {
+        "n_genes": 13,
+        "mean_r": -0.039,
+        "z": -0.48,
+        "p": 0.665
+      },
+      "sub_L4 IT": {
+        "n_genes": 9,
+        "mean_r": 0.022,
+        "z": 0.31,
+        "p": 0.755
+      },
+      "sub_L5 ET": {
+        "n_genes": 22,
+        "mean_r": -0.0,
+        "z": 0.11,
+        "p": 0.909
+      },
+      "sub_L5/6 NP": {
+        "n_genes": 15,
+        "mean_r": 0.047,
+        "z": 0.86,
+        "p": 0.389
+      },
+      "sub_L6 IT Car3": {
+        "n_genes": 18,
+        "mean_r": 0.034,
+        "z": 0.7,
+        "p": 0.465
+      },
+      "sub_L6b": {
+        "n_genes": 13,
+        "mean_r": -0.05,
+        "z": -0.63,
+        "p": 0.545
+      },
+      "sub_Lamp5": {
+        "n_genes": 5,
+        "mean_r": 0.045,
+        "z": 0.43,
+        "p": 0.689
+      },
+      "sub_Lamp5 Lhx6": {
+        "n_genes": 18,
+        "mean_r": -0.074,
+        "z": -1.16,
+        "p": 0.237
+      },
+      "sub_Microglia-PVM": {
+        "n_genes": 38,
+        "mean_r": 0.063,
+        "z": 1.73,
+        "p": 0.087
+      },
+      "sub_OPC": {
+        "n_genes": 24,
+        "mean_r": 0.054,
+        "z": 1.18,
+        "p": 0.211
+      },
+      "sub_Oligodendrocyte": {
+        "n_genes": 23,
+        "mean_r": 0.072,
+        "z": 1.53,
+        "p": 0.123
+      },
+      "sub_Pax6": {
+        "n_genes": 15,
+        "mean_r": -0.013,
+        "z": -0.11,
+        "p": 0.913
+      },
+      "sub_Sncg": {
+        "n_genes": 12,
+        "mean_r": 0.095,
+        "z": 1.4,
+        "p": 0.169
+      },
+      "sub_Sst": {
+        "n_genes": 7,
+        "mean_r": 0.068,
+        "z": 0.79,
+        "p": 0.417
+      },
+      "sub_Sst Chodl": {
+        "n_genes": 33,
+        "mean_r": -0.098,
+        "z": -2.21,
+        "p": 0.019
+      },
+      "sub_VLMC": {
+        "n_genes": 36,
+        "mean_r": 0.074,
+        "z": 1.91,
+        "p": 0.051
+      },
+      "sub_Vip": {
+        "n_genes": 19,
+        "mean_r": 0.029,
+        "z": 0.63,
+        "p": 0.519
+      }
+    },
+    "GSE118553_Entorhinal_Cortex": {
+      "oxphos": {
+        "n_genes": 87,
+        "mean_r": -0.134,
+        "z": -5.49,
+        "p": 0.001
+      },
+      "ribosome": {
+        "n_genes": 73,
+        "mean_r": -0.108,
+        "z": -3.94,
+        "p": 0.001
+      },
+      "immediate_early": {
+        "n_genes": 16,
+        "mean_r": 0.114,
+        "z": 2.06,
+        "p": 0.051
+      },
+      "heat_shock": {
+        "n_genes": 13,
+        "mean_r": 0.212,
+        "z": 3.37,
+        "p": 0.001
+      },
+      "interferon": {
+        "n_genes": 13,
+        "mean_r": -0.196,
+        "z": -3.03,
+        "p": 0.009
+      },
+      "microglia_activation_complement": {
+        "n_genes": 13,
+        "mean_r": 0.283,
+        "z": 4.51,
+        "p": 0.001
+      },
+      "reactive_astrocyte": {
+        "n_genes": 10,
+        "mean_r": 0.158,
+        "z": 2.31,
+        "p": 0.019
+      },
+      "hypoxia": {
+        "n_genes": 10,
+        "mean_r": -0.061,
+        "z": -0.85,
+        "p": 0.405
+      },
+      "sub_Astrocyte": {
+        "n_genes": 27,
+        "mean_r": 0.032,
+        "z": 0.8,
+        "p": 0.409
+      },
+      "sub_Chandelier": {
+        "n_genes": 18,
+        "mean_r": -0.019,
+        "z": -0.27,
+        "p": 0.787
+      },
+      "sub_Endothelial": {
+        "n_genes": 34,
+        "mean_r": -0.1,
+        "z": -2.42,
+        "p": 0.027
+      },
+      "sub_L2/3 IT": {
+        "n_genes": 13,
+        "mean_r": 0.012,
+        "z": 0.21,
+        "p": 0.851
+      },
+      "sub_L4 IT": {
+        "n_genes": 9,
+        "mean_r": 0.046,
+        "z": 0.68,
+        "p": 0.459
+      },
+      "sub_L5 ET": {
+        "n_genes": 22,
+        "mean_r": 0.075,
+        "z": 1.6,
+        "p": 0.099
+      },
+      "sub_L5/6 NP": {
+        "n_genes": 15,
+        "mean_r": 0.144,
+        "z": 2.43,
+        "p": 0.007
+      },
+      "sub_L6 IT Car3": {
+        "n_genes": 18,
+        "mean_r": 0.056,
+        "z": 1.11,
+        "p": 0.275
+      },
+      "sub_L6b": {
+        "n_genes": 13,
+        "mean_r": 0.02,
+        "z": 0.36,
+        "p": 0.717
+      },
+      "sub_Lamp5": {
+        "n_genes": 5,
+        "mean_r": 0.062,
+        "z": 0.62,
+        "p": 0.557
+      },
+      "sub_Lamp5 Lhx6": {
+        "n_genes": 18,
+        "mean_r": 0.007,
+        "z": 0.14,
+        "p": 0.913
+      },
+      "sub_Microglia-PVM": {
+        "n_genes": 38,
+        "mean_r": 0.116,
+        "z": 3.15,
+        "p": 0.001
+      },
+      "sub_OPC": {
+        "n_genes": 24,
+        "mean_r": 0.017,
+        "z": 0.35,
+        "p": 0.743
+      },
+      "sub_Oligodendrocyte": {
+        "n_genes": 23,
+        "mean_r": 0.055,
+        "z": 1.22,
+        "p": 0.247
+      },
+      "sub_Pax6": {
+        "n_genes": 15,
+        "mean_r": 0.027,
+        "z": 0.55,
+        "p": 0.601
+      },
+      "sub_Sncg": {
+        "n_genes": 12,
+        "mean_r": 0.052,
+        "z": 0.9,
+        "p": 0.363
+      },
+      "sub_Sst": {
+        "n_genes": 7,
+        "mean_r": 0.102,
+        "z": 1.21,
+        "p": 0.237
+      },
+      "sub_Sst Chodl": {
+        "n_genes": 33,
+        "mean_r": -0.006,
+        "z": -0.09,
+        "p": 0.909
+      },
+      "sub_VLMC": {
+        "n_genes": 36,
+        "mean_r": 0.007,
+        "z": 0.23,
+        "p": 0.839
+      },
+      "sub_Vip": {
+        "n_genes": 19,
+        "mean_r": -0.027,
+        "z": -0.49,
+        "p": 0.611
+      }
+    },
+    "GSE125583_FG": {
+      "oxphos": {
+        "n_genes": 87,
+        "mean_r": 0.203,
+        "z": 5.09,
+        "p": 0.001
+      },
+      "ribosome": {
+        "n_genes": 70,
+        "mean_r": 0.376,
+        "z": 7.91,
+        "p": 0.001
+      },
+      "immediate_early": {
+        "n_genes": 13,
+        "mean_r": 0.174,
+        "z": 1.61,
+        "p": 0.103
+      },
+      "heat_shock": {
+        "n_genes": 13,
+        "mean_r": 0.2,
+        "z": 1.91,
+        "p": 0.063
+      },
+      "interferon": {
+        "n_genes": 13,
+        "mean_r": 0.009,
+        "z": 0.19,
+        "p": 0.857
+      },
+      "microglia_activation_complement": {
+        "n_genes": 12,
+        "mean_r": 0.178,
+        "z": 1.54,
+        "p": 0.141
+      },
+      "reactive_astrocyte": {
+        "n_genes": 8,
+        "mean_r": 0.222,
+        "z": 1.6,
+        "p": 0.103
+      },
+      "hypoxia": {
+        "n_genes": 9,
+        "mean_r": -0.109,
+        "z": -0.88,
+        "p": 0.389
+      },
+      "sub_Astrocyte": {
+        "n_genes": 30,
+        "mean_r": 0.193,
+        "z": 2.83,
+        "p": 0.005
+      },
+      "sub_Chandelier": {
+        "n_genes": 12,
+        "mean_r": -0.041,
+        "z": -0.27,
+        "p": 0.779
+      },
+      "sub_Endothelial": {
+        "n_genes": 34,
+        "mean_r": -0.043,
+        "z": -0.47,
+        "p": 0.625
+      },
+      "sub_L2/3 IT": {
+        "n_genes": 9,
+        "mean_r": -0.037,
+        "z": -0.21,
+        "p": 0.839
+      },
+      "sub_L5 ET": {
+        "n_genes": 12,
+        "mean_r": -0.045,
+        "z": -0.28,
+        "p": 0.831
+      },
+      "sub_L6 IT Car3": {
+        "n_genes": 12,
+        "mean_r": 0.118,
+        "z": 1.06,
+        "p": 0.287
+      },
+      "sub_L6b": {
+        "n_genes": 5,
+        "mean_r": -0.016,
+        "z": -0.05,
+        "p": 0.973
+      },
+      "sub_Lamp5 Lhx6": {
+        "n_genes": 7,
+        "mean_r": -0.224,
+        "z": -1.43,
+        "p": 0.149
+      },
+      "sub_Microglia-PVM": {
+        "n_genes": 40,
+        "mean_r": 0.003,
+        "z": 0.19,
+        "p": 0.837
+      },
+      "sub_OPC": {
+        "n_genes": 22,
+        "mean_r": 0.111,
+        "z": 1.46,
+        "p": 0.145
+      },
+      "sub_Oligodendrocyte": {
+        "n_genes": 33,
+        "mean_r": -0.153,
+        "z": -2.15,
+        "p": 0.031
+      },
+      "sub_Pax6": {
+        "n_genes": 8,
+        "mean_r": 0.04,
+        "z": 0.35,
+        "p": 0.751
+      },
+      "sub_Sst Chodl": {
+        "n_genes": 19,
+        "mean_r": -0.036,
+        "z": -0.29,
+        "p": 0.797
+      },
+      "sub_VLMC": {
+        "n_genes": 15,
+        "mean_r": 0.058,
+        "z": 0.6,
+        "p": 0.543
+      },
+      "sub_Vip": {
+        "n_genes": 12,
+        "mean_r": 0.089,
+        "z": 0.85,
+        "p": 0.387
+      }
+    }
+  },
+  "technical": {
+    "GSE33000_PFC": {
+      "age": 0.003,
+      "female_mwu_p": 0.688
+    },
+    "GSE132903_MTG": {
+      "age": 0.031,
+      "female_mwu_p": 0.318
+    },
+    "GSE118553_Temporal_Cortex": {
+      "age": 0.013,
+      "female_mwu_p": 0.971
+    },
+    "GSE118553_Frontal_Cortex": {
+      "age": 0.216,
+      "female_mwu_p": 0.876
+    },
+    "GSE118553_Entorhinal_Cortex": {
+      "age": -0.096,
+      "female_mwu_p": 0.584
+    },
+    "GSE125583_FG": {
+      "age": 0.119,
+      "female_mwu_p": 0.457
+    },
+    "MSBB_17_regions_median": {
+      "n": 31.0,
+      "pmi_raw": 0.089,
+      "ph_raw": 0.068,
+      "age_raw": -0.019,
+      "pmi_resid": -0.029,
+      "ph_resid": 0.141,
+      "age_resid": -0.245
+    },
+    "MSBB_regions_p05_resid_ph": 0,
+    "GSE106241_rna_quality": {
+      "rho": 0.084,
+      "p": 0.524
+    }
+  },
+  "finer_composition_n_sig": {
+    "nnls9": 238,
+    "nnls24": 232
+  },
+  "finer_composition_GSE125583": {
+    "markers5": {
+      "r2_ca": 0.849,
+      "sig_raw": 0.604,
+      "sig_adj": 0.401,
+      "n_cov": 5
+    },
+    "nnls9": {
+      "r2_ca": 0.768,
+      "sig_raw": 0.604,
+      "sig_adj": 0.45,
+      "n_cov": 8
+    },
+    "nnls24": {
+      "r2_ca": 0.681,
+      "sig_raw": 0.604,
+      "sig_adj": 0.517,
+      "n_cov": 23
+    },
+    "markers5+nnls24": {
+      "r2_ca": 0.867,
+      "sig_raw": 0.604,
+      "sig_adj": 0.384,
+      "n_cov": 28
+    }
+  }
+}
