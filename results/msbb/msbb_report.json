@@ -1,0 +1,1938 @@
+{
+  "n_samples": 951,
+  "n_subjects": 107,
+  "n_genes": 12502,
+  "neff_genes": 216,
+  "coverage": 0.797,
+  "neuron_marker_genes": [
+    "SNAP25",
+    "STMN2",
+    "GAP43",
+    "VSNL1",
+    "NEFL",
+    "NEFM",
+    "GAD1",
+    "GAD2",
+    "SST",
+    "NRGN",
+    "CALB1",
+    "SLC17A7",
+    "SYN1",
+    "ENO2"
+  ],
+  "neff_msbb_class_frac": {
+    "A": 0.311,
+    "B": 0.358,
+    "C": 0.331
+  },
+  "regions": {
+    "Anterior Cingulate": {
+      "n": 59,
+      "n_AD": 32,
+      "AD_class_frac": {
+        "A": 0.406,
+        "B": 0.25,
+        "C": 0.344
+      },
+      "AD_ca_vs_neuron": {
+        "rho": -0.863,
+        "p": 2.21e-10,
+        "n": 32
+      },
+      "neuron_vs_cdr": {
+        "rho": -0.121,
+        "p": 0.363,
+        "n": 59
+      },
+      "neuron_vs_cdr_partial": {
+        "rho": -0.193,
+        "p": 0.153,
+        "n": 59
+      },
+      "ca_vs_cdr": {
+        "rho": 0.159,
+        "p": 0.23,
+        "n": 59
+      },
+      "ca_vs_cdr_partial": {
+        "rho": 0.232,
+        "p": 0.0858,
+        "n": 59
+      },
+      "ca_vs_cdr_partial_neuron": {
+        "rho": 0.136,
+        "p": 0.323,
+        "n": 59
+      },
+      "ca_vs_braak": {
+        "rho": 0.11,
+        "p": 0.405,
+        "n": 59
+      },
+      "ca_vs_braak_partial": {
+        "rho": 0.124,
+        "p": 0.362,
+        "n": 59
+      },
+      "ca_vs_braak_partial_neuron": {
+        "rho": 0.071,
+        "p": 0.605,
+        "n": 59
+      },
+      "ca_vs_plaque": {
+        "rho": -0.131,
+        "p": 0.324,
+        "n": 59
+      },
+      "ca_vs_plaque_partial": {
+        "rho": -0.131,
+        "p": 0.335,
+        "n": 59
+      },
+      "ca_vs_plaque_partial_neuron": {
+        "rho": -0.026,
+        "p": 0.851,
+        "n": 59
+      },
+      "ca_vs_np_num": {
+        "rho": -0.124,
+        "p": 0.349,
+        "n": 59
+      },
+      "ca_vs_np_num_partial": {
+        "rho": -0.131,
+        "p": 0.337,
+        "n": 59
+      },
+      "ca_vs_np_num_partial_neuron": {
+        "rho": 0.063,
+        "p": 0.65,
+        "n": 59
+      },
+      "AD_ca_vs_cdr": {
+        "rho": 0.258,
+        "p": 0.154,
+        "n": 32
+      },
+      "AD_ca_vs_cdr_partial_neuron": {
+        "rho": 0.172,
+        "p": 0.347,
+        "n": 32
+      },
+      "ca_vs_cdr_random_null": {
+        "obs": 0.159,
+        "random_median": -0.005,
+        "random_q95": 0.151,
+        "p": 0.0398
+      }
+    },
+    "Caudate Nucleus": {
+      "n": 52,
+      "n_AD": 29,
+      "AD_class_frac": {
+        "A": 0.345,
+        "B": 0.172,
+        "C": 0.483
+      },
+      "AD_ca_vs_neuron": {
+        "rho": -0.928,
+        "p": 4.26e-13,
+        "n": 29
+      },
+      "neuron_vs_cdr": {
+        "rho": -0.132,
+        "p": 0.349,
+        "n": 52
+      },
+      "neuron_vs_cdr_partial": {
+        "rho": -0.207,
+        "p": 0.154,
+        "n": 52
+      },
+      "ca_vs_cdr": {
+        "rho": 0.114,
+        "p": 0.419,
+        "n": 52
+      },
+      "ca_vs_cdr_partial": {
+        "rho": 0.171,
+        "p": 0.241,
+        "n": 52
+      },
+      "ca_vs_cdr_partial_neuron": {
+        "rho": -0.079,
+        "p": 0.593,
+        "n": 52
+      },
+      "ca_vs_braak": {
+        "rho": 0.145,
+        "p": 0.305,
+        "n": 52
+      },
+      "ca_vs_braak_partial": {
+        "rho": 0.136,
+        "p": 0.352,
+        "n": 52
+      },
+      "ca_vs_braak_partial_neuron": {
+        "rho": -0.034,
+        "p": 0.821,
+        "n": 52
+      },
+      "ca_vs_plaque": {
+        "rho": -0.12,
+        "p": 0.397,
+        "n": 52
+      },
+      "ca_vs_plaque_partial": {
+        "rho": -0.126,
+        "p": 0.389,
+        "n": 52
+      },
+      "ca_vs_plaque_partial_neuron": {
+        "rho": -0.077,
+        "p": 0.602,
+        "n": 52
+      },
+      "ca_vs_np_num": {
+        "rho": -0.04,
+        "p": 0.776,
+        "n": 52
+      },
+      "ca_vs_np_num_partial": {
+        "rho": -0.006,
+        "p": 0.969,
+        "n": 52
+      },
+      "ca_vs_np_num_partial_neuron": {
+        "rho": -0.077,
+        "p": 0.603,
+        "n": 52
+      },
+      "AD_ca_vs_cdr": {
+        "rho": 0.024,
+        "p": 0.902,
+        "n": 29
+      },
+      "AD_ca_vs_cdr_partial_neuron": {
+        "rho": 0.097,
+        "p": 0.618,
+        "n": 29
+      },
+      "ca_vs_cdr_random_null": {
+        "obs": 0.114,
+        "random_median": 0.075,
+        "random_q95": 0.237,
+        "p": 0.3731
+      }
+    },
+    "Dorsolateral Prefrontal Cortex": {
+      "n": 57,
+      "n_AD": 28,
+      "AD_class_frac": {
+        "A": 0.357,
+        "B": 0.393,
+        "C": 0.25
+      },
+      "AD_ca_vs_neuron": {
+        "rho": -0.894,
+        "p": 1.42e-10,
+        "n": 28
+      },
+      "neuron_vs_cdr": {
+        "rho": -0.104,
+        "p": 0.441,
+        "n": 57
+      },
+      "neuron_vs_cdr_partial": {
+        "rho": -0.161,
+        "p": 0.245,
+        "n": 57
+      },
+      "ca_vs_cdr": {
+        "rho": 0.143,
+        "p": 0.289,
+        "n": 57
+      },
+      "ca_vs_cdr_partial": {
+        "rho": 0.18,
+        "p": 0.193,
+        "n": 57
+      },
+      "ca_vs_cdr_partial_neuron": {
+        "rho": 0.081,
+        "p": 0.563,
+        "n": 57
+      },
+      "ca_vs_braak": {
+        "rho": 0.198,
+        "p": 0.14,
+        "n": 57
+      },
+      "ca_vs_braak_partial": {
+        "rho": 0.216,
+        "p": 0.117,
+        "n": 57
+      },
+      "ca_vs_braak_partial_neuron": {
+        "rho": 0.107,
+        "p": 0.444,
+        "n": 57
+      },
+      "ca_vs_plaque": {
+        "rho": 0.184,
+        "p": 0.17,
+        "n": 57
+      },
+      "ca_vs_plaque_partial": {
+        "rho": 0.198,
+        "p": 0.151,
+        "n": 57
+      },
+      "ca_vs_plaque_partial_neuron": {
+        "rho": 0.262,
+        "p": 0.0576,
+        "n": 57
+      },
+      "ca_vs_np_num": {
+        "rho": 0.226,
+        "p": 0.0904,
+        "n": 57
+      },
+      "ca_vs_np_num_partial": {
+        "rho": 0.267,
+        "p": 0.0509,
+        "n": 57
+      },
+      "ca_vs_np_num_partial_neuron": {
+        "rho": 0.14,
+        "p": 0.319,
+        "n": 57
+      },
+      "AD_ca_vs_cdr": {
+        "rho": -0.113,
+        "p": 0.565,
+        "n": 28
+      },
+      "AD_ca_vs_cdr_partial_neuron": {
+        "rho": 0.24,
+        "p": 0.219,
+        "n": 28
+      },
+      "ca_vs_cdr_random_null": {
+        "obs": 0.143,
+        "random_median": 0.051,
+        "random_q95": 0.176,
+        "p": 0.1443
+      }
+    },
+    "Frontal Pole": {
+      "n": 63,
+      "n_AD": 35,
+      "AD_class_frac": {
+        "A": 0.343,
+        "B": 0.343,
+        "C": 0.314
+      },
+      "AD_ca_vs_neuron": {
+        "rho": -0.913,
+        "p": 2.17e-14,
+        "n": 35
+      },
+      "neuron_vs_cdr": {
+        "rho": -0.285,
+        "p": 0.0234,
+        "n": 63
+      },
+      "neuron_vs_cdr_partial": {
+        "rho": -0.359,
+        "p": 0.00485,
+        "n": 63
+      },
+      "ca_vs_cdr": {
+        "rho": 0.304,
+        "p": 0.0155,
+        "n": 63
+      },
+      "ca_vs_cdr_partial": {
+        "rho": 0.356,
+        "p": 0.00523,
+        "n": 63
+      },
+      "ca_vs_cdr_partial_neuron": {
+        "rho": 0.084,
+        "p": 0.526,
+        "n": 63
+      },
+      "ca_vs_braak": {
+        "rho": 0.339,
+        "p": 0.00657,
+        "n": 63
+      },
+      "ca_vs_braak_partial": {
+        "rho": 0.379,
+        "p": 0.00283,
+        "n": 63
+      },
+      "ca_vs_braak_partial_neuron": {
+        "rho": 0.233,
+        "p": 0.0764,
+        "n": 63
+      },
+      "ca_vs_plaque": {
+        "rho": 0.098,
+        "p": 0.446,
+        "n": 63
+      },
+      "ca_vs_plaque_partial": {
+        "rho": 0.125,
+        "p": 0.343,
+        "n": 63
+      },
+      "ca_vs_plaque_partial_neuron": {
+        "rho": 0.252,
+        "p": 0.0546,
+        "n": 63
+      },
+      "ca_vs_np_num": {
+        "rho": 0.229,
+        "p": 0.0713,
+        "n": 63
+      },
+      "ca_vs_np_num_partial": {
+        "rho": 0.259,
+        "p": 0.0459,
+        "n": 63
+      },
+      "ca_vs_np_num_partial_neuron": {
+        "rho": 0.224,
+        "p": 0.0874,
+        "n": 63
+      },
+      "AD_ca_vs_cdr": {
+        "rho": 0.272,
+        "p": 0.114,
+        "n": 35
+      },
+      "AD_ca_vs_cdr_partial_neuron": {
+        "rho": 0.17,
+        "p": 0.329,
+        "n": 35
+      },
+      "ca_vs_cdr_random_null": {
+        "obs": 0.304,
+        "random_median": 0.274,
+        "random_q95": 0.412,
+        "p": 0.3433
+      }
+    },
+    "Hippocampus": {
+      "n": 55,
+      "n_AD": 30,
+      "AD_class_frac": {
+        "A": 0.267,
+        "B": 0.367,
+        "C": 0.367
+      },
+      "AD_ca_vs_neuron": {
+        "rho": -0.895,
+        "p": 2.53e-11,
+        "n": 30
+      },
+      "neuron_vs_cdr": {
+        "rho": -0.269,
+        "p": 0.0471,
+        "n": 55
+      },
+      "neuron_vs_cdr_partial": {
+        "rho": -0.284,
+        "p": 0.0411,
+        "n": 55
+      },
+      "ca_vs_cdr": {
+        "rho": 0.138,
+        "p": 0.316,
+        "n": 55
+      },
+      "ca_vs_cdr_partial": {
+        "rho": 0.168,
+        "p": 0.233,
+        "n": 55
+      },
+      "ca_vs_cdr_partial_neuron": {
+        "rho": -0.248,
+        "p": 0.0792,
+        "n": 55
+      },
+      "ca_vs_braak": {
+        "rho": 0.32,
+        "p": 0.0173,
+        "n": 55
+      },
+      "ca_vs_braak_partial": {
+        "rho": 0.371,
+        "p": 0.00677,
+        "n": 55
+      },
+      "ca_vs_braak_partial_neuron": {
+        "rho": 0.181,
+        "p": 0.203,
+        "n": 55
+      },
+      "ca_vs_plaque": {
+        "rho": -0.113,
+        "p": 0.413,
+        "n": 55
+      },
+      "ca_vs_plaque_partial": {
+        "rho": -0.136,
+        "p": 0.337,
+        "n": 55
+      },
+      "ca_vs_plaque_partial_neuron": {
+        "rho": 0.06,
+        "p": 0.676,
+        "n": 55
+      },
+      "ca_vs_np_num": {
+        "rho": 0.026,
+        "p": 0.85,
+        "n": 55
+      },
+      "ca_vs_np_num_partial": {
+        "rho": 0.045,
+        "p": 0.751,
+        "n": 55
+      },
+      "ca_vs_np_num_partial_neuron": {
+        "rho": -0.049,
+        "p": 0.733,
+        "n": 55
+      },
+      "AD_ca_vs_cdr": {
+        "rho": 0.157,
+        "p": 0.406,
+        "n": 30
+      },
+      "AD_ca_vs_cdr_partial_neuron": {
+        "rho": -0.271,
+        "p": 0.148,
+        "n": 30
+      },
+      "ca_vs_cdr_random_null": {
+        "obs": 0.138,
+        "random_median": 0.166,
+        "random_q95": 0.347,
+        "p": 0.6119
+      }
+    },
+    "Inferior Frontal Gyrus": {
+      "n": 53,
+      "n_AD": 27,
+      "AD_class_frac": {
+        "A": 0.407,
+        "B": 0.259,
+        "C": 0.333
+      },
+      "AD_ca_vs_neuron": {
+        "rho": -0.915,
+        "p": 2.35e-11,
+        "n": 27
+      },
+      "neuron_vs_cdr": {
+        "rho": -0.187,
+        "p": 0.18,
+        "n": 53
+      },
+      "neuron_vs_cdr_partial": {
+        "rho": -0.328,
+        "p": 0.02,
+        "n": 53
+      },
+      "ca_vs_cdr": {
+        "rho": 0.086,
+        "p": 0.539,
+        "n": 53
+      },
+      "ca_vs_cdr_partial": {
+        "rho": 0.179,
+        "p": 0.213,
+        "n": 53
+      },
+      "ca_vs_cdr_partial_neuron": {
+        "rho": -0.247,
+        "p": 0.0869,
+        "n": 53
+      },
+      "ca_vs_braak": {
+        "rho": 0.075,
+        "p": 0.591,
+        "n": 53
+      },
+      "ca_vs_braak_partial": {
+        "rho": 0.111,
+        "p": 0.442,
+        "n": 53
+      },
+      "ca_vs_braak_partial_neuron": {
+        "rho": 0.136,
+        "p": 0.351,
+        "n": 53
+      },
+      "ca_vs_plaque": {
+        "rho": -0.149,
+        "p": 0.288,
+        "n": 53
+      },
+      "ca_vs_plaque_partial": {
+        "rho": -0.113,
+        "p": 0.435,
+        "n": 53
+      },
+      "ca_vs_plaque_partial_neuron": {
+        "rho": 0.053,
+        "p": 0.718,
+        "n": 53
+      },
+      "ca_vs_np_num": {
+        "rho": 0.019,
+        "p": 0.89,
+        "n": 53
+      },
+      "ca_vs_np_num_partial": {
+        "rho": 0.087,
+        "p": 0.55,
+        "n": 53
+      },
+      "ca_vs_np_num_partial_neuron": {
+        "rho": -0.005,
+        "p": 0.971,
+        "n": 53
+      },
+      "AD_ca_vs_cdr": {
+        "rho": 0.197,
+        "p": 0.325,
+        "n": 27
+      },
+      "AD_ca_vs_cdr_partial_neuron": {
+        "rho": -0.071,
+        "p": 0.725,
+        "n": 27
+      },
+      "ca_vs_cdr_random_null": {
+        "obs": 0.086,
+        "random_median": 0.113,
+        "random_q95": 0.266,
+        "p": 0.6219
+      }
+    },
+    "Inferior Temporal Gyrus": {
+      "n": 58,
+      "n_AD": 30,
+      "AD_class_frac": {
+        "A": 0.3,
+        "B": 0.267,
+        "C": 0.433
+      },
+      "AD_ca_vs_neuron": {
+        "rho": -0.949,
+        "p": 1.51e-15,
+        "n": 30
+      },
+      "neuron_vs_cdr": {
+        "rho": -0.219,
+        "p": 0.0981,
+        "n": 58
+      },
+      "neuron_vs_cdr_partial": {
+        "rho": -0.258,
+        "p": 0.0575,
+        "n": 58
+      },
+      "ca_vs_cdr": {
+        "rho": 0.233,
+        "p": 0.0778,
+        "n": 58
+      },
+      "ca_vs_cdr_partial": {
+        "rho": 0.262,
+        "p": 0.0532,
+        "n": 58
+      },
+      "ca_vs_cdr_partial_neuron": {
+        "rho": 0.063,
+        "p": 0.649,
+        "n": 58
+      },
+      "ca_vs_braak": {
+        "rho": 0.237,
+        "p": 0.0726,
+        "n": 58
+      },
+      "ca_vs_braak_partial": {
+        "rho": 0.284,
+        "p": 0.0356,
+        "n": 58
+      },
+      "ca_vs_braak_partial_neuron": {
+        "rho": 0.098,
+        "p": 0.479,
+        "n": 58
+      },
+      "ca_vs_plaque": {
+        "rho": 0.125,
+        "p": 0.35,
+        "n": 58
+      },
+      "ca_vs_plaque_partial": {
+        "rho": 0.162,
+        "p": 0.237,
+        "n": 58
+      },
+      "ca_vs_plaque_partial_neuron": {
+        "rho": 0.218,
+        "p": 0.113,
+        "n": 58
+      },
+      "ca_vs_np_num": {
+        "rho": 0.173,
+        "p": 0.194,
+        "n": 58
+      },
+      "ca_vs_np_num_partial": {
+        "rho": 0.212,
+        "p": 0.12,
+        "n": 58
+      },
+      "ca_vs_np_num_partial_neuron": {
+        "rho": 0.16,
+        "p": 0.249,
+        "n": 58
+      },
+      "AD_ca_vs_cdr": {
+        "rho": 0.072,
+        "p": 0.704,
+        "n": 30
+      },
+      "AD_ca_vs_cdr_partial_neuron": {
+        "rho": -0.041,
+        "p": 0.83,
+        "n": 30
+      },
+      "ca_vs_cdr_random_null": {
+        "obs": 0.233,
+        "random_median": 0.025,
+        "random_q95": 0.165,
+        "p": 0.01
+      }
+    },
+    "Middle Temporal Gyrus": {
+      "n": 58,
+      "n_AD": 31,
+      "AD_class_frac": {
+        "A": 0.323,
+        "B": 0.323,
+        "C": 0.355
+      },
+      "AD_ca_vs_neuron": {
+        "rho": -0.923,
+        "p": 1.49e-13,
+        "n": 31
+      },
+      "neuron_vs_cdr": {
+        "rho": -0.378,
+        "p": 0.00343,
+        "n": 58
+      },
+      "neuron_vs_cdr_partial": {
+        "rho": -0.45,
+        "p": 0.00056,
+        "n": 58
+      },
+      "ca_vs_cdr": {
+        "rho": 0.312,
+        "p": 0.0171,
+        "n": 58
+      },
+      "ca_vs_cdr_partial": {
+        "rho": 0.365,
+        "p": 0.00621,
+        "n": 58
+      },
+      "ca_vs_cdr_partial_neuron": {
+        "rho": -0.13,
+        "p": 0.349,
+        "n": 58
+      },
+      "ca_vs_braak": {
+        "rho": 0.369,
+        "p": 0.00435,
+        "n": 58
+      },
+      "ca_vs_braak_partial": {
+        "rho": 0.39,
+        "p": 0.00328,
+        "n": 58
+      },
+      "ca_vs_braak_partial_neuron": {
+        "rho": 0.115,
+        "p": 0.406,
+        "n": 58
+      },
+      "ca_vs_plaque": {
+        "rho": 0.205,
+        "p": 0.123,
+        "n": 58
+      },
+      "ca_vs_plaque_partial": {
+        "rho": 0.27,
+        "p": 0.0463,
+        "n": 58
+      },
+      "ca_vs_plaque_partial_neuron": {
+        "rho": 0.266,
+        "p": 0.0515,
+        "n": 58
+      },
+      "ca_vs_np_num": {
+        "rho": 0.28,
+        "p": 0.0335,
+        "n": 58
+      },
+      "ca_vs_np_num_partial": {
+        "rho": 0.323,
+        "p": 0.0163,
+        "n": 58
+      },
+      "ca_vs_np_num_partial_neuron": {
+        "rho": 0.184,
+        "p": 0.184,
+        "n": 58
+      },
+      "AD_ca_vs_cdr": {
+        "rho": 0.311,
+        "p": 0.0888,
+        "n": 31
+      },
+      "AD_ca_vs_cdr_partial_neuron": {
+        "rho": -0.105,
+        "p": 0.574,
+        "n": 31
+      },
+      "ca_vs_cdr_random_null": {
+        "obs": 0.312,
+        "random_median": 0.096,
+        "random_q95": 0.258,
+        "p": 0.0249
+      }
+    },
+    "Occipital Visual Cortex": {
+      "n": 53,
+      "n_AD": 26,
+      "AD_class_frac": {
+        "A": 0.385,
+        "B": 0.269,
+        "C": 0.346
+      },
+      "AD_ca_vs_neuron": {
+        "rho": -0.917,
+        "p": 4.87e-11,
+        "n": 26
+      },
+      "neuron_vs_cdr": {
+        "rho": -0.025,
+        "p": 0.858,
+        "n": 53
+      },
+      "neuron_vs_cdr_partial": {
+        "rho": -0.047,
+        "p": 0.747,
+        "n": 53
+      },
+      "ca_vs_cdr": {
+        "rho": -0.109,
+        "p": 0.438,
+        "n": 53
+      },
+      "ca_vs_cdr_partial": {
+        "rho": -0.114,
+        "p": 0.432,
+        "n": 53
+      },
+      "ca_vs_cdr_partial_neuron": {
+        "rho": -0.348,
+        "p": 0.0143,
+        "n": 53
+      },
+      "ca_vs_braak": {
+        "rho": 0.071,
+        "p": 0.615,
+        "n": 53
+      },
+      "ca_vs_braak_partial": {
+        "rho": 0.097,
+        "p": 0.503,
+        "n": 53
+      },
+      "ca_vs_braak_partial_neuron": {
+        "rho": -0.028,
+        "p": 0.848,
+        "n": 53
+      },
+      "ca_vs_plaque": {
+        "rho": -0.326,
+        "p": 0.0173,
+        "n": 53
+      },
+      "ca_vs_plaque_partial": {
+        "rho": -0.345,
+        "p": 0.0142,
+        "n": 53
+      },
+      "ca_vs_plaque_partial_neuron": {
+        "rho": -0.088,
+        "p": 0.549,
+        "n": 53
+      },
+      "ca_vs_np_num": {
+        "rho": -0.2,
+        "p": 0.15,
+        "n": 53
+      },
+      "ca_vs_np_num_partial": {
+        "rho": -0.211,
+        "p": 0.141,
+        "n": 53
+      },
+      "ca_vs_np_num_partial_neuron": {
+        "rho": -0.179,
+        "p": 0.218,
+        "n": 53
+      },
+      "AD_ca_vs_cdr": {
+        "rho": 0.108,
+        "p": 0.598,
+        "n": 26
+      },
+      "AD_ca_vs_cdr_partial_neuron": {
+        "rho": -0.208,
+        "p": 0.308,
+        "n": 26
+      },
+      "ca_vs_cdr_random_null": {
+        "obs": -0.109,
+        "random_median": -0.105,
+        "random_q95": 0.068,
+        "p": 0.5174
+      }
+    },
+    "Parahippocampal Gyrus": {
+      "n": 60,
+      "n_AD": 32,
+      "AD_class_frac": {
+        "A": 0.375,
+        "B": 0.219,
+        "C": 0.406
+      },
+      "AD_ca_vs_neuron": {
+        "rho": -0.933,
+        "p": 7.01e-15,
+        "n": 32
+      },
+      "neuron_vs_cdr": {
+        "rho": -0.382,
+        "p": 0.00257,
+        "n": 60
+      },
+      "neuron_vs_cdr_partial": {
+        "rho": -0.47,
+        "p": 0.000222,
+        "n": 60
+      },
+      "ca_vs_cdr": {
+        "rho": 0.4,
+        "p": 0.00153,
+        "n": 60
+      },
+      "ca_vs_cdr_partial": {
+        "rho": 0.431,
+        "p": 0.000829,
+        "n": 60
+      },
+      "ca_vs_cdr_partial_neuron": {
+        "rho": -0.045,
+        "p": 0.743,
+        "n": 60
+      },
+      "ca_vs_braak": {
+        "rho": 0.136,
+        "p": 0.299,
+        "n": 60
+      },
+      "ca_vs_braak_partial": {
+        "rho": 0.119,
+        "p": 0.376,
+        "n": 60
+      },
+      "ca_vs_braak_partial_neuron": {
+        "rho": 0.074,
+        "p": 0.59,
+        "n": 60
+      },
+      "ca_vs_plaque": {
+        "rho": -0.077,
+        "p": 0.56,
+        "n": 60
+      },
+      "ca_vs_plaque_partial": {
+        "rho": -0.1,
+        "p": 0.458,
+        "n": 60
+      },
+      "ca_vs_plaque_partial_neuron": {
+        "rho": -0.028,
+        "p": 0.836,
+        "n": 60
+      },
+      "ca_vs_np_num": {
+        "rho": 0.112,
+        "p": 0.393,
+        "n": 60
+      },
+      "ca_vs_np_num_partial": {
+        "rho": 0.094,
+        "p": 0.485,
+        "n": 60
+      },
+      "ca_vs_np_num_partial_neuron": {
+        "rho": -0.008,
+        "p": 0.955,
+        "n": 60
+      },
+      "AD_ca_vs_cdr": {
+        "rho": 0.468,
+        "p": 0.00697,
+        "n": 32
+      },
+      "AD_ca_vs_cdr_partial_neuron": {
+        "rho": 0.093,
+        "p": 0.613,
+        "n": 32
+      },
+      "ca_vs_cdr_random_null": {
+        "obs": 0.4,
+        "random_median": 0.271,
+        "random_q95": 0.425,
+        "p": 0.0796
+      }
+    },
+    "Posterior Cingulate Cortex": {
+      "n": 58,
+      "n_AD": 31,
+      "AD_class_frac": {
+        "A": 0.419,
+        "B": 0.226,
+        "C": 0.355
+      },
+      "AD_ca_vs_neuron": {
+        "rho": -0.939,
+        "p": 5.47e-15,
+        "n": 31
+      },
+      "neuron_vs_cdr": {
+        "rho": -0.16,
+        "p": 0.231,
+        "n": 58
+      },
+      "neuron_vs_cdr_partial": {
+        "rho": -0.209,
+        "p": 0.126,
+        "n": 58
+      },
+      "ca_vs_cdr": {
+        "rho": 0.052,
+        "p": 0.697,
+        "n": 58
+      },
+      "ca_vs_cdr_partial": {
+        "rho": 0.066,
+        "p": 0.633,
+        "n": 58
+      },
+      "ca_vs_cdr_partial_neuron": {
+        "rho": -0.292,
+        "p": 0.0323,
+        "n": 58
+      },
+      "ca_vs_braak": {
+        "rho": 0.099,
+        "p": 0.458,
+        "n": 58
+      },
+      "ca_vs_braak_partial": {
+        "rho": 0.109,
+        "p": 0.427,
+        "n": 58
+      },
+      "ca_vs_braak_partial_neuron": {
+        "rho": -0.162,
+        "p": 0.241,
+        "n": 58
+      },
+      "ca_vs_plaque": {
+        "rho": -0.202,
+        "p": 0.128,
+        "n": 58
+      },
+      "ca_vs_plaque_partial": {
+        "rho": -0.204,
+        "p": 0.135,
+        "n": 58
+      },
+      "ca_vs_plaque_partial_neuron": {
+        "rho": -0.104,
+        "p": 0.455,
+        "n": 58
+      },
+      "ca_vs_np_num": {
+        "rho": -0.041,
+        "p": 0.757,
+        "n": 58
+      },
+      "ca_vs_np_num_partial": {
+        "rho": -0.034,
+        "p": 0.806,
+        "n": 58
+      },
+      "ca_vs_np_num_partial_neuron": {
+        "rho": -0.239,
+        "p": 0.0822,
+        "n": 58
+      },
+      "AD_ca_vs_cdr": {
+        "rho": 0.123,
+        "p": 0.51,
+        "n": 31
+      },
+      "AD_ca_vs_cdr_partial_neuron": {
+        "rho": -0.363,
+        "p": 0.0449,
+        "n": 31
+      },
+      "ca_vs_cdr_random_null": {
+        "obs": 0.052,
+        "random_median": 0.113,
+        "random_q95": 0.279,
+        "p": 0.7264
+      }
+    },
+    "Precentral Gyrus": {
+      "n": 49,
+      "n_AD": 31,
+      "AD_class_frac": {
+        "A": 0.419,
+        "B": 0.226,
+        "C": 0.355
+      },
+      "AD_ca_vs_neuron": {
+        "rho": -0.886,
+        "p": 3.48e-11,
+        "n": 31
+      },
+      "neuron_vs_cdr": {
+        "rho": -0.037,
+        "p": 0.801,
+        "n": 49
+      },
+      "neuron_vs_cdr_partial": {
+        "rho": -0.119,
+        "p": 0.432,
+        "n": 49
+      },
+      "ca_vs_cdr": {
+        "rho": 0.079,
+        "p": 0.588,
+        "n": 49
+      },
+      "ca_vs_cdr_partial": {
+        "rho": 0.134,
+        "p": 0.376,
+        "n": 49
+      },
+      "ca_vs_cdr_partial_neuron": {
+        "rho": 0.062,
+        "p": 0.685,
+        "n": 49
+      },
+      "ca_vs_braak": {
+        "rho": 0.1,
+        "p": 0.493,
+        "n": 49
+      },
+      "ca_vs_braak_partial": {
+        "rho": 0.083,
+        "p": 0.582,
+        "n": 49
+      },
+      "ca_vs_braak_partial_neuron": {
+        "rho": 0.101,
+        "p": 0.51,
+        "n": 49
+      },
+      "ca_vs_plaque": {
+        "rho": -0.03,
+        "p": 0.841,
+        "n": 49
+      },
+      "ca_vs_plaque_partial": {
+        "rho": -0.041,
+        "p": 0.785,
+        "n": 49
+      },
+      "ca_vs_plaque_partial_neuron": {
+        "rho": 0.155,
+        "p": 0.308,
+        "n": 49
+      },
+      "ca_vs_np_num": {
+        "rho": 0.161,
+        "p": 0.269,
+        "n": 49
+      },
+      "ca_vs_np_num_partial": {
+        "rho": 0.158,
+        "p": 0.293,
+        "n": 49
+      },
+      "ca_vs_np_num_partial_neuron": {
+        "rho": 0.14,
+        "p": 0.359,
+        "n": 49
+      },
+      "AD_ca_vs_cdr": {
+        "rho": 0.131,
+        "p": 0.482,
+        "n": 31
+      },
+      "AD_ca_vs_cdr_partial_neuron": {
+        "rho": 0.052,
+        "p": 0.782,
+        "n": 31
+      },
+      "ca_vs_cdr_random_null": {
+        "obs": 0.079,
+        "random_median": 0.113,
+        "random_q95": 0.273,
+        "p": 0.6866
+      }
+    },
+    "Prefrontal Cortex": {
+      "n": 56,
+      "n_AD": 33,
+      "AD_class_frac": {
+        "A": 0.424,
+        "B": 0.273,
+        "C": 0.303
+      },
+      "AD_ca_vs_neuron": {
+        "rho": -0.872,
+        "p": 3.9e-11,
+        "n": 33
+      },
+      "neuron_vs_cdr": {
+        "rho": -0.177,
+        "p": 0.193,
+        "n": 56
+      },
+      "neuron_vs_cdr_partial": {
+        "rho": -0.275,
+        "p": 0.0465,
+        "n": 56
+      },
+      "ca_vs_cdr": {
+        "rho": 0.173,
+        "p": 0.202,
+        "n": 56
+      },
+      "ca_vs_cdr_partial": {
+        "rho": 0.224,
+        "p": 0.106,
+        "n": 56
+      },
+      "ca_vs_cdr_partial_neuron": {
+        "rho": -0.069,
+        "p": 0.627,
+        "n": 56
+      },
+      "ca_vs_braak": {
+        "rho": 0.11,
+        "p": 0.419,
+        "n": 56
+      },
+      "ca_vs_braak_partial": {
+        "rho": 0.164,
+        "p": 0.239,
+        "n": 56
+      },
+      "ca_vs_braak_partial_neuron": {
+        "rho": 0.003,
+        "p": 0.984,
+        "n": 56
+      },
+      "ca_vs_plaque": {
+        "rho": -0.058,
+        "p": 0.669,
+        "n": 56
+      },
+      "ca_vs_plaque_partial": {
+        "rho": -0.026,
+        "p": 0.851,
+        "n": 56
+      },
+      "ca_vs_plaque_partial_neuron": {
+        "rho": -0.206,
+        "p": 0.143,
+        "n": 56
+      },
+      "ca_vs_np_num": {
+        "rho": 0.036,
+        "p": 0.791,
+        "n": 56
+      },
+      "ca_vs_np_num_partial": {
+        "rho": 0.075,
+        "p": 0.594,
+        "n": 56
+      },
+      "ca_vs_np_num_partial_neuron": {
+        "rho": -0.107,
+        "p": 0.451,
+        "n": 56
+      },
+      "AD_ca_vs_cdr": {
+        "rho": 0.275,
+        "p": 0.122,
+        "n": 33
+      },
+      "AD_ca_vs_cdr_partial_neuron": {
+        "rho": 0.119,
+        "p": 0.51,
+        "n": 33
+      },
+      "ca_vs_cdr_random_null": {
+        "obs": 0.173,
+        "random_median": 0.151,
+        "random_q95": 0.278,
+        "p": 0.408
+      }
+    },
+    "Putamen": {
+      "n": 52,
+      "n_AD": 31,
+      "AD_class_frac": {
+        "A": 0.355,
+        "B": 0.194,
+        "C": 0.452
+      },
+      "AD_ca_vs_neuron": {
+        "rho": -0.92,
+        "p": 2.64e-13,
+        "n": 31
+      },
+      "neuron_vs_cdr": {
+        "rho": -0.394,
+        "p": 0.00382,
+        "n": 52
+      },
+      "neuron_vs_cdr_partial": {
+        "rho": -0.431,
+        "p": 0.00201,
+        "n": 52
+      },
+      "ca_vs_cdr": {
+        "rho": 0.351,
+        "p": 0.0108,
+        "n": 52
+      },
+      "ca_vs_cdr_partial": {
+        "rho": 0.39,
+        "p": 0.00564,
+        "n": 52
+      },
+      "ca_vs_cdr_partial_neuron": {
+        "rho": -0.044,
+        "p": 0.768,
+        "n": 52
+      },
+      "ca_vs_braak": {
+        "rho": 0.256,
+        "p": 0.0666,
+        "n": 52
+      },
+      "ca_vs_braak_partial": {
+        "rho": 0.244,
+        "p": 0.0909,
+        "n": 52
+      },
+      "ca_vs_braak_partial_neuron": {
+        "rho": 0.099,
+        "p": 0.505,
+        "n": 52
+      },
+      "ca_vs_plaque": {
+        "rho": -0.027,
+        "p": 0.848,
+        "n": 52
+      },
+      "ca_vs_plaque_partial": {
+        "rho": -0.047,
+        "p": 0.751,
+        "n": 52
+      },
+      "ca_vs_plaque_partial_neuron": {
+        "rho": -0.083,
+        "p": 0.576,
+        "n": 52
+      },
+      "ca_vs_np_num": {
+        "rho": 0.126,
+        "p": 0.373,
+        "n": 52
+      },
+      "ca_vs_np_num_partial": {
+        "rho": 0.12,
+        "p": 0.41,
+        "n": 52
+      },
+      "ca_vs_np_num_partial_neuron": {
+        "rho": 0.045,
+        "p": 0.76,
+        "n": 52
+      },
+      "AD_ca_vs_cdr": {
+        "rho": 0.268,
+        "p": 0.145,
+        "n": 31
+      },
+      "AD_ca_vs_cdr_partial_neuron": {
+        "rho": 0.01,
+        "p": 0.956,
+        "n": 31
+      },
+      "ca_vs_cdr_random_null": {
+        "obs": 0.351,
+        "random_median": 0.227,
+        "random_q95": 0.37,
+        "p": 0.0796
+      }
+    },
+    "Superior Parietal Lobule": {
+      "n": 50,
+      "n_AD": 22,
+      "AD_class_frac": {
+        "A": 0.364,
+        "B": 0.182,
+        "C": 0.455
+      },
+      "AD_ca_vs_neuron": {
+        "rho": -0.816,
+        "p": 3.68e-06,
+        "n": 22
+      },
+      "neuron_vs_cdr": {
+        "rho": -0.093,
+        "p": 0.522,
+        "n": 50
+      },
+      "neuron_vs_cdr_partial": {
+        "rho": -0.179,
+        "p": 0.23,
+        "n": 50
+      },
+      "ca_vs_cdr": {
+        "rho": 0.035,
+        "p": 0.81,
+        "n": 50
+      },
+      "ca_vs_cdr_partial": {
+        "rho": 0.121,
+        "p": 0.417,
+        "n": 50
+      },
+      "ca_vs_cdr_partial_neuron": {
+        "rho": -0.045,
+        "p": 0.768,
+        "n": 50
+      },
+      "ca_vs_braak": {
+        "rho": 0.152,
+        "p": 0.293,
+        "n": 50
+      },
+      "ca_vs_braak_partial": {
+        "rho": 0.177,
+        "p": 0.235,
+        "n": 50
+      },
+      "ca_vs_braak_partial_neuron": {
+        "rho": 0.254,
+        "p": 0.089,
+        "n": 50
+      },
+      "ca_vs_plaque": {
+        "rho": -0.16,
+        "p": 0.268,
+        "n": 50
+      },
+      "ca_vs_plaque_partial": {
+        "rho": -0.157,
+        "p": 0.293,
+        "n": 50
+      },
+      "ca_vs_plaque_partial_neuron": {
+        "rho": 0.12,
+        "p": 0.426,
+        "n": 50
+      },
+      "ca_vs_np_num": {
+        "rho": -0.051,
+        "p": 0.724,
+        "n": 50
+      },
+      "ca_vs_np_num_partial": {
+        "rho": -0.016,
+        "p": 0.915,
+        "n": 50
+      },
+      "ca_vs_np_num_partial_neuron": {
+        "rho": 0.182,
+        "p": 0.227,
+        "n": 50
+      },
+      "AD_ca_vs_cdr": {
+        "rho": 0.038,
+        "p": 0.867,
+        "n": 22
+      },
+      "AD_ca_vs_cdr_partial_neuron": {
+        "rho": -0.368,
+        "p": 0.0921,
+        "n": 22
+      },
+      "ca_vs_cdr_random_null": {
+        "obs": 0.035,
+        "random_median": 0.108,
+        "random_q95": 0.254,
+        "p": 0.8557
+      }
+    },
+    "Superior Temporal Gyrus": {
+      "n": 60,
+      "n_AD": 31,
+      "AD_class_frac": {
+        "A": 0.484,
+        "B": 0.161,
+        "C": 0.355
+      },
+      "AD_ca_vs_neuron": {
+        "rho": -0.921,
+        "p": 2.29e-13,
+        "n": 31
+      },
+      "neuron_vs_cdr": {
+        "rho": -0.367,
+        "p": 0.0039,
+        "n": 60
+      },
+      "neuron_vs_cdr_partial": {
+        "rho": -0.423,
+        "p": 0.00106,
+        "n": 60
+      },
+      "ca_vs_cdr": {
+        "rho": 0.359,
+        "p": 0.0048,
+        "n": 60
+      },
+      "ca_vs_cdr_partial": {
+        "rho": 0.416,
+        "p": 0.00131,
+        "n": 60
+      },
+      "ca_vs_cdr_partial_neuron": {
+        "rho": 0.077,
+        "p": 0.57,
+        "n": 60
+      },
+      "ca_vs_braak": {
+        "rho": 0.182,
+        "p": 0.165,
+        "n": 60
+      },
+      "ca_vs_braak_partial": {
+        "rho": 0.198,
+        "p": 0.14,
+        "n": 60
+      },
+      "ca_vs_braak_partial_neuron": {
+        "rho": 0.069,
+        "p": 0.615,
+        "n": 60
+      },
+      "ca_vs_plaque": {
+        "rho": 0.047,
+        "p": 0.721,
+        "n": 60
+      },
+      "ca_vs_plaque_partial": {
+        "rho": 0.071,
+        "p": 0.602,
+        "n": 60
+      },
+      "ca_vs_plaque_partial_neuron": {
+        "rho": 0.013,
+        "p": 0.925,
+        "n": 60
+      },
+      "ca_vs_np_num": {
+        "rho": 0.246,
+        "p": 0.0585,
+        "n": 60
+      },
+      "ca_vs_np_num_partial": {
+        "rho": 0.281,
+        "p": 0.0345,
+        "n": 60
+      },
+      "ca_vs_np_num_partial_neuron": {
+        "rho": -0.0,
+        "p": 0.998,
+        "n": 60
+      },
+      "AD_ca_vs_cdr": {
+        "rho": 0.3,
+        "p": 0.101,
+        "n": 31
+      },
+      "AD_ca_vs_cdr_partial_neuron": {
+        "rho": 0.211,
+        "p": 0.254,
+        "n": 31
+      },
+      "ca_vs_cdr_random_null": {
+        "obs": 0.359,
+        "random_median": 0.347,
+        "random_q95": 0.462,
+        "p": 0.4527
+      }
+    },
+    "Temporal Pole": {
+      "n": 58,
+      "n_AD": 29,
+      "AD_class_frac": {
+        "A": 0.414,
+        "B": 0.276,
+        "C": 0.31
+      },
+      "AD_ca_vs_neuron": {
+        "rho": -0.933,
+        "p": 1.68e-13,
+        "n": 29
+      },
+      "neuron_vs_cdr": {
+        "rho": -0.373,
+        "p": 0.00396,
+        "n": 58
+      },
+      "neuron_vs_cdr_partial": {
+        "rho": -0.495,
+        "p": 0.000122,
+        "n": 58
+      },
+      "ca_vs_cdr": {
+        "rho": 0.328,
+        "p": 0.012,
+        "n": 58
+      },
+      "ca_vs_cdr_partial": {
+        "rho": 0.429,
+        "p": 0.00107,
+        "n": 58
+      },
+      "ca_vs_cdr_partial_neuron": {
+        "rho": -0.101,
+        "p": 0.467,
+        "n": 58
+      },
+      "ca_vs_braak": {
+        "rho": 0.067,
+        "p": 0.619,
+        "n": 58
+      },
+      "ca_vs_braak_partial": {
+        "rho": 0.1,
+        "p": 0.469,
+        "n": 58
+      },
+      "ca_vs_braak_partial_neuron": {
+        "rho": 0.132,
+        "p": 0.342,
+        "n": 58
+      },
+      "ca_vs_plaque": {
+        "rho": -0.125,
+        "p": 0.349,
+        "n": 58
+      },
+      "ca_vs_plaque_partial": {
+        "rho": -0.11,
+        "p": 0.426,
+        "n": 58
+      },
+      "ca_vs_plaque_partial_neuron": {
+        "rho": -0.144,
+        "p": 0.299,
+        "n": 58
+      },
+      "ca_vs_np_num": {
+        "rho": 0.11,
+        "p": 0.41,
+        "n": 58
+      },
+      "ca_vs_np_num_partial": {
+        "rho": 0.166,
+        "p": 0.227,
+        "n": 58
+      },
+      "ca_vs_np_num_partial_neuron": {
+        "rho": -0.161,
+        "p": 0.246,
+        "n": 58
+      },
+      "AD_ca_vs_cdr": {
+        "rho": 0.249,
+        "p": 0.192,
+        "n": 29
+      },
+      "AD_ca_vs_cdr_partial_neuron": {
+        "rho": 0.14,
+        "p": 0.47,
+        "n": 29
+      },
+      "ca_vs_cdr_random_null": {
+        "obs": 0.328,
+        "random_median": 0.225,
+        "random_q95": 0.358,
+        "p": 0.1095
+      }
+    }
+  },
+  "P_neff_regions_AD_class_frac": {
+    "Frontal Pole (BM10)": {
+      "A": 0.343,
+      "B": 0.343,
+      "C": 0.314
+    },
+    "Superior Temporal Gyrus (BM22)": {
+      "A": 0.484,
+      "B": 0.161,
+      "C": 0.355
+    },
+    "Parahippocampal Gyrus (BM36)": {
+      "A": 0.375,
+      "B": 0.219,
+      "C": 0.406
+    },
+    "Inferior Frontal Gyrus (BM44)": {
+      "A": 0.407,
+      "B": 0.259,
+      "C": 0.333
+    }
+  },
+  "R_across_regions": {
+    "ca_cdr_vs_neuron_cdr": {
+      "rho": -0.868,
+      "p": 6.43e-06,
+      "n": 17
+    },
+    "n_regions_ca_cdr_p05": 6,
+    "n_regions_ca_cdr_null_p05": 3,
+    "n_regions_adj_p05": 2,
+    "median_ca_cdr": 0.159,
+    "median_ca_cdr_adj": -0.045,
+    "median_AD_ca_neuron": -0.917
+  },
+  "S_subject_all_regions": {
+    "n_subjects": 107,
+    "ca_vs_cdr": {
+      "rho": 0.309,
+      "p": 0.0012,
+      "n": 107
+    },
+    "ca_vs_cdr_partial": {
+      "rho": 0.319,
+      "p": 0.000846,
+      "n": 107
+    },
+    "ca_vs_cdr_partial_neuron": {
+      "rho": -0.084,
+      "p": 0.396,
+      "n": 107
+    },
+    "ca_vs_braak": {
+      "rho": 0.299,
+      "p": 0.00177,
+      "n": 107
+    },
+    "ca_vs_braak_partial": {
+      "rho": 0.308,
+      "p": 0.00134,
+      "n": 107
+    },
+    "ca_vs_braak_partial_neuron": {
+      "rho": 0.094,
+      "p": 0.343,
+      "n": 107
+    },
+    "ca_vs_plaque": {
+      "rho": 0.114,
+      "p": 0.241,
+      "n": 107
+    },
+    "ca_vs_plaque_partial": {
+      "rho": 0.121,
+      "p": 0.216,
+      "n": 107
+    },
+    "ca_vs_plaque_partial_neuron": {
+      "rho": 0.072,
+      "p": 0.463,
+      "n": 107
+    },
+    "ca_vs_np_num": {
+      "rho": 0.246,
+      "p": 0.0108,
+      "n": 107
+    },
+    "ca_vs_np_num_partial": {
+      "rho": 0.262,
+      "p": 0.0067,
+      "n": 107
+    },
+    "ca_vs_np_num_partial_neuron": {
+      "rho": 0.059,
+      "p": 0.549,
+      "n": 107
+    },
+    "ca_vs_neuron": {
+      "rho": -0.963,
+      "p": 6.57e-62,
+      "n": 107
+    },
+    "AD_ca_vs_cdr": {
+      "rho": 0.159,
+      "p": 0.205,
+      "n": 65
+    },
+    "AD_ca_vs_cdr_partial_neuron": {
+      "rho": -0.135,
+      "p": 0.282,
+      "n": 65
+    }
+  },
+  "S_subject_cortex": {
+    "n_subjects": 106,
+    "ca_vs_cdr": {
+      "rho": 0.302,
+      "p": 0.00166,
+      "n": 106
+    },
+    "ca_vs_cdr_partial": {
+      "rho": 0.313,
+      "p": 0.00117,
+      "n": 106
+    },
+    "ca_vs_cdr_partial_neuron": {
+      "rho": -0.097,
+      "p": 0.33,
+      "n": 106
+    },
+    "ca_vs_braak": {
+      "rho": 0.285,
+      "p": 0.00309,
+      "n": 106
+    },
+    "ca_vs_braak_partial": {
+      "rho": 0.293,
+      "p": 0.0024,
+      "n": 106
+    },
+    "ca_vs_braak_partial_neuron": {
+      "rho": 0.06,
+      "p": 0.547,
+      "n": 106
+    },
+    "ca_vs_plaque": {
+      "rho": 0.103,
+      "p": 0.295,
+      "n": 106
+    },
+    "ca_vs_plaque_partial": {
+      "rho": 0.109,
+      "p": 0.269,
+      "n": 106
+    },
+    "ca_vs_plaque_partial_neuron": {
+      "rho": 0.067,
+      "p": 0.499,
+      "n": 106
+    },
+    "ca_vs_np_num": {
+      "rho": 0.238,
+      "p": 0.0141,
+      "n": 106
+    },
+    "ca_vs_np_num_partial": {
+      "rho": 0.255,
+      "p": 0.00877,
+      "n": 106
+    },
+    "ca_vs_np_num_partial_neuron": {
+      "rho": 0.045,
+      "p": 0.647,
+      "n": 106
+    },
+    "ca_vs_neuron": {
+      "rho": -0.961,
+      "p": 4.07e-60,
+      "n": 106
+    },
+    "AD_ca_vs_cdr": {
+      "rho": 0.163,
+      "p": 0.198,
+      "n": 64
+    },
+    "AD_ca_vs_cdr_partial_neuron": {
+      "rho": -0.144,
+      "p": 0.256,
+      "n": 64
+    }
+  },
+  "T_person_consistency": {
+    "raw": {
+      "median_pairwise_rho": 0.573,
+      "n_pairs": 136,
+      "null_median": -0.001,
+      "null_q95": 0.03,
+      "p": 0.005
+    },
+    "residual": {
+      "median_pairwise_rho": 0.361,
+      "n_pairs": 136,
+      "null_median": -0.001,
+      "null_q95": 0.029,
+      "p": 0.005
+    },
+    "modal_class_share_median": 0.75
+  }
+}

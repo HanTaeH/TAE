@@ -29,4 +29,5 @@ if [ ! -f "$REF_DIR/donors/donor_meta.csv" ]; then  # downloads 84 donor objects
   for i in 0 1 2 3; do python3 seaad_donor_aggregate.py --out "$REF_DIR/donors" --shard $i/4 & done; wait
 fi
 python3 seaad_pseudobulk.py     --donors "$REF_DIR/donors" --cps "$REF_DIR/Global_and_Local_CPS.20260105.csv" --data "$DATA" --out "$OUT/seaad_pseudobulk" --n 500
+python3 msbb_gse84422.py       --data "$DATA" --out "$OUT/msbb" --n 200
 python3 forest_plot.py         "$OUT"
