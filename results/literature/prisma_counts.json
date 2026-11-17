@@ -1,0 +1,27 @@
+{
+  "identified_search1": 366,
+  "identified_search2": 773,
+  "duplicates_removed": 366,
+  "records_after_dedup": 773,
+  "excluded_pubtype": 139,
+  "screened_title_abstract": 634,
+  "excluded_rule": 374,
+  "manual_review": 260,
+  "manual_review_from_rule_kept": 203,
+  "manual_review_from_title_check": 57,
+  "recovered_by_title_check": 3,
+  "excluded_manual": 226,
+  "included_records": 34,
+  "included_studies": 30,
+  "included_de_novo": 27,
+  "included_application": 3,
+  "other_sources": [
+    "Lai2022 (Front Immunol; not retrieved, added from other sources)"
+  ],
+  "included_studies_total": 31,
+  "study_level_flags": {
+    "mentions_composition": 4,
+    "mentions_null_control": 0,
+    "mentions_validation": 14
+  }
+}
