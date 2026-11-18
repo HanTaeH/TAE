@@ -15,9 +15,9 @@ import pandas as pd
 import os
 N = {"included": 10, "excluded_manual": 25, "excluded_rule": 25}
 SEED = 20261117
-if os.environ.get("ROUND") == "2":  # human-only round, disjoint from round 1
+if os.environ.get("ROUND") in ("2", "3"):  # human-only rounds, disjoint from earlier rounds
     N = {"included": 6, "excluded_manual": 12, "excluded_rule": 12}
-    SEED = 20261118
+    SEED = 20261118 if os.environ["ROUND"] == "2" else 20261119
 
 
 def make(records, decisions, out):
@@ -25,8 +25,7 @@ def make(records, decisions, out):
     r = pd.read_csv(records, dtype={"PMID": str})
     d = pd.read_csv(decisions, dtype={"PMID": str})
     d = d.merge(r[["PMID", "abstract"]], on="PMID")
-    prev = Path(os.environ["EXCLUDE_KEY"]) if os.environ.get("EXCLUDE_KEY") else None
-    if prev is not None:
+    for prev in filter(None, os.environ.get("EXCLUDE_KEY", "").split(",")):  # comma-separated earlier keys
         d = d[~d.PMID.isin(pd.read_csv(prev, dtype={"PMID": str}).PMID)]
     parts = [d[d.stage == s].sample(n, random_state=SEED) for s, n in N.items()]
     s = pd.concat(parts).sample(frac=1, random_state=SEED).reset_index(drop=True)
