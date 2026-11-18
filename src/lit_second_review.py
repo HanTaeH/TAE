@@ -45,7 +45,7 @@ def make(records, decisions, out):
         for row in ws.iter_rows(min_row=2):
             for cell in row:
                 cell.alignment = Alignment(wrap_text=True, vertical="top")
-        ws.freeze_panes = "F2"
+        ws.freeze_panes = "A2"  # freezing A-E hid the decision column on narrow screens
     print(len(s), "records written")
 
 
