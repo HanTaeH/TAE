@@ -44,7 +44,7 @@ def make(records, decisions, out):
 
 def score(key, filled, out):
     k = pd.read_csv(key, dtype={"PMID": str})
-    f = pd.read_excel(filled, dtype={"PMID": str})
+    f = pd.read_excel(filled, sheet_name="검토", dtype={"PMID": str})
     col = [c for c in f.columns if str(c).startswith("판정")][0]
     m = k.merge(f[["no", col, "메모"]], on="no")
     m["r2"] = m[col].astype(str).str.strip().map(lambda x: "include" if x.startswith("포함") else
