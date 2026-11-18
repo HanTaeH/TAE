@@ -1,0 +1,76 @@
+{
+  "n_rated": 30,
+  "agreement": 0.733,
+  "cohen_kappa": 0.394,
+  "by_stratum": {
+    "excluded_manual": 0.667,
+    "excluded_rule": 0.75,
+    "included": 0.833
+  },
+  "disagreements": [
+    {
+      "no": 2,
+      "PMID": "41542451",
+      "stage": "excluded_manual",
+      "reason": "not patient-level AD subtyping from brain bulk transcriptome",
+      "r2": "include",
+      "메모": "해마"
+    },
+    {
+      "no": 3,
+      "PMID": "30497016",
+      "stage": "excluded_rule",
+      "reason": "rule: no subgrouping + brain molecular terms, or animal only",
+      "r2": "include",
+      "메모": NaN
+    },
+    {
+      "no": 6,
+      "PMID": "40100818",
+      "stage": "included",
+      "reason": NaN,
+      "r2": "exclude",
+      "메모": "성별로 나눔"
+    },
+    {
+      "no": 17,
+      "PMID": "41279079",
+      "stage": "excluded_rule",
+      "reason": "rule: no subgrouping + brain molecular terms, or animal only",
+      "r2": "include",
+      "메모": NaN
+    },
+    {
+      "no": 18,
+      "PMID": "40657931",
+      "stage": "excluded_manual",
+      "reason": "not patient-level AD subtyping from brain bulk transcriptome",
+      "r2": "include",
+      "메모": NaN
+    },
+    {
+      "no": 26,
+      "PMID": "36577842",
+      "stage": "excluded_manual",
+      "reason": "not patient-level AD subtyping from brain bulk transcriptome",
+      "r2": "include",
+      "메모": "애매함 내가 이해를 잘못 한걸 수도 있는데 환자 비교랑 RNAseq 사용한거로만 판단했어"
+    },
+    {
+      "no": 28,
+      "PMID": "31346329",
+      "stage": "excluded_rule",
+      "reason": "rule: no subgrouping + brain molecular terms, or animal only",
+      "r2": "include",
+      "메모": NaN
+    },
+    {
+      "no": 29,
+      "PMID": "39754632",
+      "stage": "excluded_manual",
+      "reason": "not patient-level AD subtyping from brain bulk transcriptome",
+      "r2": "include",
+      "메모": "잘 모르겠음, "
+    }
+  ]
+}
