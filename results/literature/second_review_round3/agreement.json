@@ -1,0 +1,11 @@
+{
+  "n_rated": 30,
+  "agreement": 1.0,
+  "cohen_kappa": 1.0,
+  "by_stratum": {
+    "excluded_manual": 1.0,
+    "excluded_rule": 1.0,
+    "included": 1.0
+  },
+  "disagreements": []
+}
