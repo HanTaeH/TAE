@@ -7,7 +7,7 @@ our earlier findings are a generic property of bulk brain data, not of the Neff 
 For every cohort / region, observed values from the Neff genes are compared against N random
 gene sets that
   - have the same size as the measured Neff genes,
-  - are matched on mean expression (same count drawn from each expression decile),
+  - are matched on mean expression decile x SD tercile within decile (30 strata),
   - exclude Neff classifier genes and the cell-marker genes used for adjustment.
 Random sets inherit the Neff centroid profiles gene-by-gene (gene i of the random set gets the
 centroid row of Neff gene i, matched within expression decile), so the projection machinery is
@@ -56,8 +56,19 @@ def corr_np(z: np.ndarray, cent: np.ndarray) -> np.ndarray:
     return zc.T @ cc / z.shape[0]
 
 
+def partial_rank(x: np.ndarray, y: np.ndarray, cov: np.ndarray | None) -> float:
+    """Spearman partial correlation: residualise ranks of x and y on covariates."""
+    if cov is None:
+        return float("nan")
+    rx, ry = stats.rankdata(x), stats.rankdata(y)
+    D = np.column_stack([np.ones(len(rx)), cov])
+    ex = rx - D @ np.linalg.lstsq(D, rx, rcond=None)[0]
+    ey = ry - D @ np.linalg.lstsq(D, ry, rcond=None)[0]
+    return float(np.corrcoef(ex, ey)[0, 1])
+
+
 def metrics(x_ad: np.ndarray, x_all: np.ndarray, cent: np.ndarray, cells: np.ndarray,
-            neuron: np.ndarray, stage: np.ndarray) -> dict:
+            neuron: np.ndarray, stage: np.ndarray, cov_all: np.ndarray | None = None) -> dict:
     """cent columns are classes A, B, C (centred per gene)."""
     z = z_np(x_ad)
     lab = corr_np(z, cent).argmax(1)
@@ -76,6 +87,9 @@ def metrics(x_ad: np.ndarray, x_all: np.ndarray, cent: np.ndarray, cells: np.nda
         "ari_adj": float(adjusted_rand_score(lab, lab_adj)),
         "stage_rho": float(stats.spearmanr(stage, ca_all)[0]),
         "neuron_rho": float(stats.spearmanr(neuron, ca_ad)[0]),
+        "stage_rho_agesex": partial_rank(stage, ca_all, cov_all),
+        "frac_A": float((lab == 0).mean()), "frac_B": float((lab == 1).mean()),
+        "frac_C": float((lab == 2).mean()),
     }
 
 
@@ -91,39 +105,55 @@ def run_cohort(name, expr, meta, cls, n, rng):
     neuron = score(NEURON_MARKERS)
     cells = np.column_stack([neuron] + [score(v) for v in CELL_MARKERS.values()])
     stage = meta["group"].map(GROUP_ORDER).values
+    cov_all = None
+    if {"age", "sex"} <= set(meta.columns):
+        age = pd.to_numeric(meta["age"], errors="coerce")
+        sex = (meta["sex"].astype(str).str.lower().str[0] == "m").astype(float)
+        age = age.fillna(age.median())
+        if age.notna().all() and sex.nunique() > 1:
+            cov_all = np.column_stack([age.values, sex.values])
 
     X_ad = expr[ad]
     X_all = expr[meta.index]
-    obs = metrics(X_ad.loc[genes].values, X_all.loc[genes].values, cent.values, cells, neuron, stage)
+    obs = metrics(X_ad.loc[genes].values, X_all.loc[genes].values, cent.values, cells, neuron, stage, cov_all)
 
-    # expression-matched sampling pool
+    # expression-matched sampling pool: mean-expression decile x SD tercile (within decile)
     mean_expr = expr.mean(axis=1)
     decile = pd.qcut(mean_expr.rank(method="first"), 10, labels=False)
+    sd_expr = expr.std(axis=1)
+    terc = sd_expr.groupby(decile).transform(lambda s: pd.qcut(s.rank(method="first"), 3, labels=False))
+    stratum = (decile * 3 + terc).astype(int)
     pool = expr.index.difference(genes).difference(list(marker_genes))
-    pool_by_dec = {d: pool[decile.loc[pool].values == d] for d in range(10)}
-    neff_dec = decile.loc[genes].values
+    strata = sorted(stratum.unique())
+    pool_by_st = {k: pool[stratum.loc[pool].values == k] for k in strata}
+    neff_st = stratum.loc[genes].values
 
     null = []
     for _ in range(n):
         pick = np.empty(len(genes), dtype=object)
-        for d in range(10):
-            idx = np.where(neff_dec == d)[0]
+        for k in strata:
+            idx = np.where(neff_st == k)[0]
             if len(idx):
-                pick[idx] = rng.choice(pool_by_dec[d], size=len(idx), replace=False)
+                pick[idx] = rng.choice(pool_by_st[k], size=len(idx), replace=len(idx) > len(pool_by_st[k]))
         pick = list(pick)
         null.append(metrics(X_ad.loc[pick].values, X_all.loc[pick].values, cent.values,
-                            cells, neuron, stage))
+                            cells, neuron, stage, cov_all))
     null = pd.DataFrame(null)
 
     # one-sided empirical p: is Neff more extreme than random in the direction we reported?
-    direction = {"r2_cell": "greater", "ari_adj": "less", "stage_rho": "greater", "neuron_rho": "less"}
+    direction = {"r2_cell": "greater", "ari_adj": "less", "stage_rho": "greater", "neuron_rho": "less",
+                 "stage_rho_agesex": "greater", "frac_A": "greater", "frac_B": "greater", "frac_C": "greater"}
+    null = null.dropna(axis=1, how="all")
+    direction = {k: v for k, v in direction.items() if k in null.columns and not np.isnan(obs[k])}
     out = {"cohort": name, "n_genes": int(len(genes)), "n_random_sets": n}
     for k, d in direction.items():
         more = (null[k] >= obs[k]).sum() if d == "greater" else (null[k] <= obs[k]).sum()
         out[k] = {"neff": round(obs[k], 3),
                   "random_median": round(float(null[k].median()), 3),
                   "random_q05_q95": [round(float(null[k].quantile(.05)), 3), round(float(null[k].quantile(.95)), 3)],
-                  "p_empirical": round(float((more + 1) / (n + 1)), 4)}
+                  "excess_over_median": round(obs[k] - float(null[k].median()), 3),
+                  "p_empirical": round(float((more + 1) / (n + 1)), 4),
+                  "p_is_floor": bool(more == 0)}
     null["cohort"] = name
     return out, null
 
@@ -167,8 +197,9 @@ def main() -> None:
     fig.tight_layout()
     fig.savefig(a.out / "null_summary.png", dpi=150)
 
-    flat = pd.DataFrame([{"cohort": r["cohort"], **{f"{k}_{s}": r[k][s] for k, _ in keys
-                          for s in ["neff", "random_median", "p_empirical"]}} for r in reports])
+    allk = ["r2_cell", "ari_adj", "stage_rho", "neuron_rho", "stage_rho_agesex", "frac_A", "frac_B", "frac_C"]
+    flat = pd.DataFrame([{"cohort": r["cohort"], **{f"{k}_{s}": r[k][s] for k in allk if k in r
+                          for s in ["neff", "random_median", "excess_over_median", "p_empirical"]}} for r in reports])
     flat.to_csv(a.out / "null_summary.csv", index=False)
     print(flat.to_string())
 

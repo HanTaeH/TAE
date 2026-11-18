@@ -1,0 +1,103 @@
+{
+  "B_msbb_across_region_blocks": {
+    "observed_rho": -0.868,
+    "subject_bootstrap_ci95": [
+      -0.951,
+      -0.654
+    ],
+    "n_boot": 2000,
+    "cdr_shuffled_null_median": -0.853,
+    "cdr_shuffled_null_q05_q95": [
+      -0.946,
+      -0.659
+    ],
+    "p_obs_more_negative_than_null": 0.4391,
+    "n_null": 500
+  },
+  "A_nnls_validation_seaad": {
+    "n_donors": 84,
+    "n_signature_genes": 387,
+    "per_type": {
+      "Exc": {
+        "est_mean": 0.767,
+        "true_umi_mean": 0.716,
+        "true_nuclei_mean": 0.533,
+        "pearson_vs_umi": 0.948,
+        "spearman_vs_umi": 0.817,
+        "spearman_vs_nuclei": 0.704
+      },
+      "Inh_SST": {
+        "est_mean": 0.038,
+        "true_umi_mean": 0.022,
+        "true_nuclei_mean": 0.037,
+        "pearson_vs_umi": 0.621,
+        "spearman_vs_umi": 0.671,
+        "spearman_vs_nuclei": 0.615
+      },
+      "Inh_PVALB": {
+        "est_mean": 0.088,
+        "true_umi_mean": 0.063,
+        "true_nuclei_mean": 0.072,
+        "pearson_vs_umi": 0.355,
+        "spearman_vs_umi": 0.353,
+        "spearman_vs_nuclei": 0.321
+      },
+      "Inh_other": {
+        "est_mean": 0.014,
+        "true_umi_mean": 0.103,
+        "true_nuclei_mean": 0.145,
+        "pearson_vs_umi": 0.839,
+        "spearman_vs_umi": 0.673,
+        "spearman_vs_nuclei": 0.59
+      },
+      "Astro": {
+        "est_mean": 0.039,
+        "true_umi_mean": 0.046,
+        "true_nuclei_mean": 0.072,
+        "pearson_vs_umi": 0.991,
+        "spearman_vs_umi": 0.957,
+        "spearman_vs_nuclei": 0.873
+      },
+      "Oligo": {
+        "est_mean": 0.02,
+        "true_umi_mean": 0.021,
+        "true_nuclei_mean": 0.074,
+        "pearson_vs_umi": 0.955,
+        "spearman_vs_umi": 0.973,
+        "spearman_vs_nuclei": 0.797
+      },
+      "OPC": {
+        "est_mean": 0.023,
+        "true_umi_mean": 0.014,
+        "true_nuclei_mean": 0.025,
+        "pearson_vs_umi": 0.951,
+        "spearman_vs_umi": 0.649,
+        "spearman_vs_nuclei": 0.408
+      },
+      "Micro": {
+        "est_mean": 0.009,
+        "true_umi_mean": 0.011,
+        "true_nuclei_mean": 0.035,
+        "pearson_vs_umi": 0.974,
+        "spearman_vs_umi": 0.948,
+        "spearman_vs_nuclei": 0.822
+      },
+      "Vascular": {
+        "est_mean": 0.002,
+        "true_umi_mean": 0.003,
+        "true_nuclei_mean": 0.006,
+        "pearson_vs_umi": 0.909,
+        "spearman_vs_umi": 0.516,
+        "spearman_vs_nuclei": 0.546
+      },
+      "Neuron_total": {
+        "est_mean": 0.908,
+        "true_umi_mean": 0.905,
+        "true_nuclei_mean": 0.787,
+        "pearson_vs_umi": 0.99,
+        "spearman_vs_umi": 0.939,
+        "spearman_vs_nuclei": 0.688
+      }
+    }
+  }
+}

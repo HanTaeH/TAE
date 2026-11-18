@@ -1,0 +1,226 @@
+{
+  "MSBB": {
+    "all_per_region_median": {
+      "ca_vs_pmi": 0.058,
+      "ca_vs_ph": 0.041,
+      "neuron_vs_ph": -0.104
+    },
+    "all_per_region_range": {
+      "ca_vs_pmi": [
+        -0.054,
+        0.204
+      ],
+      "ca_vs_ph": [
+        -0.066,
+        0.12
+      ],
+      "neuron_vs_ph": [
+        -0.229,
+        0.057
+      ]
+    },
+    "AD_per_region_median": {
+      "ca_vs_pmi": 0.086,
+      "ca_vs_ph": 0.07,
+      "neuron_vs_ph": -0.073
+    },
+    "AD_per_region_range": {
+      "ca_vs_pmi": [
+        -0.227,
+        0.28
+      ],
+      "ca_vs_ph": [
+        -0.205,
+        0.248
+      ],
+      "neuron_vs_ph": [
+        -0.278,
+        0.253
+      ]
+    },
+    "subject_n": 107,
+    "subject_ca_vs_pmi": {
+      "rho": 0.133,
+      "p": 0.171,
+      "n": 107
+    },
+    "subject_ca_vs_ph": {
+      "rho": -0.174,
+      "p": 0.0729,
+      "n": 107
+    },
+    "subject_ca_vs_cdr_age_sex": {
+      "rho": 0.319,
+      "p": 0.000846,
+      "n": 107
+    },
+    "subject_ca_vs_cdr_age_sex_pmi_ph": {
+      "rho": 0.33,
+      "p": 0.000629,
+      "n": 107
+    },
+    "subject_ca_vs_braak_age_sex": {
+      "rho": 0.308,
+      "p": 0.00134,
+      "n": 107
+    },
+    "subject_ca_vs_braak_age_sex_pmi_ph": {
+      "rho": 0.283,
+      "p": 0.00359,
+      "n": 107
+    },
+    "subject_ca_vs_neuron_age_sex_pmi_ph": {
+      "rho": -0.962,
+      "p": 1.94e-59,
+      "n": 107
+    }
+  },
+  "GSE106241": {
+    "ca_vs_rna_quality": {
+      "rho": -0.367,
+      "p": 0.00397,
+      "n": 60
+    },
+    "neuron_vs_rna_quality": {
+      "rho": 0.432,
+      "p": 0.000561,
+      "n": 60
+    },
+    "ca_vs_braak_age_sex": {
+      "rho": 0.241,
+      "p": 0.0663,
+      "n": 60
+    },
+    "ca_vs_braak_age_sex_rnaq": {
+      "rho": 0.242,
+      "p": 0.0672,
+      "n": 60
+    },
+    "ca_vs_neuron_rnaq": {
+      "rho": -0.945,
+      "p": 8.42e-30,
+      "n": 60
+    }
+  },
+  "SEA-AD": {
+    "n_with_all": 84,
+    "ca_vs_RIN": {
+      "rho": -0.356,
+      "p": 0.000878,
+      "n": 84
+    },
+    "ca_vs_PMI": {
+      "rho": -0.027,
+      "p": 0.806,
+      "n": 84
+    },
+    "ca_vs_Brain pH": {
+      "rho": -0.27,
+      "p": 0.0132,
+      "n": 84
+    },
+    "ca_vs_CPS_age_sex": {
+      "rho": 0.249,
+      "p": 0.0229,
+      "n": 84
+    },
+    "ca_vs_CPS_age_sex_RIN_PMI_pH": {
+      "rho": 0.193,
+      "p": 0.0868,
+      "n": 84
+    }
+  },
+  "oligodendrocyte_and_cerebellum": [
+    {
+      "cohort": "GSE33000_PFC",
+      "n_AD": 310,
+      "n_oligo_markers": 4,
+      "ca_vs_oligo": 0.298,
+      "neuron_vs_oligo": -0.32,
+      "ca_vs_neuron": -0.928,
+      "ca_vs_neuron_given_oligo": -0.92,
+      "ca_vs_oligo_given_neuron": 0.003,
+      "n_cerebellar_markers": NaN,
+      "ca_vs_cerebellar_neuron": NaN,
+      "cortical_vs_cerebellar_neuron": NaN
+    },
+    {
+      "cohort": "GSE132903_MTG",
+      "n_AD": 97,
+      "n_oligo_markers": 4,
+      "ca_vs_oligo": 0.619,
+      "neuron_vs_oligo": -0.479,
+      "ca_vs_neuron": -0.921,
+      "ca_vs_neuron_given_oligo": -0.906,
+      "ca_vs_oligo_given_neuron": 0.52,
+      "n_cerebellar_markers": NaN,
+      "ca_vs_cerebellar_neuron": NaN,
+      "cortical_vs_cerebellar_neuron": NaN
+    },
+    {
+      "cohort": "GSE118553_Temporal_Cortex",
+      "n_AD": 52,
+      "n_oligo_markers": 4,
+      "ca_vs_oligo": -0.012,
+      "neuron_vs_oligo": 0.351,
+      "ca_vs_neuron": -0.85,
+      "ca_vs_neuron_given_oligo": -0.903,
+      "ca_vs_oligo_given_neuron": 0.581,
+      "n_cerebellar_markers": NaN,
+      "ca_vs_cerebellar_neuron": NaN,
+      "cortical_vs_cerebellar_neuron": NaN
+    },
+    {
+      "cohort": "GSE118553_Frontal_Cortex",
+      "n_AD": 40,
+      "n_oligo_markers": 4,
+      "ca_vs_oligo": -0.027,
+      "neuron_vs_oligo": 0.361,
+      "ca_vs_neuron": -0.812,
+      "ca_vs_neuron_given_oligo": -0.861,
+      "ca_vs_oligo_given_neuron": 0.49,
+      "n_cerebellar_markers": NaN,
+      "ca_vs_cerebellar_neuron": NaN,
+      "cortical_vs_cerebellar_neuron": NaN
+    },
+    {
+      "cohort": "GSE118553_Entorhinal_Cortex",
+      "n_AD": 37,
+      "n_oligo_markers": 4,
+      "ca_vs_oligo": -0.008,
+      "neuron_vs_oligo": 0.307,
+      "ca_vs_neuron": -0.835,
+      "ca_vs_neuron_given_oligo": -0.875,
+      "ca_vs_oligo_given_neuron": 0.474,
+      "n_cerebellar_markers": NaN,
+      "ca_vs_cerebellar_neuron": NaN,
+      "cortical_vs_cerebellar_neuron": NaN
+    },
+    {
+      "cohort": "GSE118553_Cerebellum",
+      "n_AD": 38,
+      "n_oligo_markers": 4,
+      "ca_vs_oligo": 0.427,
+      "neuron_vs_oligo": 0.198,
+      "ca_vs_neuron": -0.509,
+      "ca_vs_neuron_given_oligo": -0.669,
+      "ca_vs_oligo_given_neuron": 0.625,
+      "n_cerebellar_markers": 11.0,
+      "ca_vs_cerebellar_neuron": -0.304,
+      "cortical_vs_cerebellar_neuron": 0.158
+    },
+    {
+      "cohort": "GSE125583_FG",
+      "n_AD": 219,
+      "n_oligo_markers": 4,
+      "ca_vs_oligo": 0.623,
+      "neuron_vs_oligo": -0.634,
+      "ca_vs_neuron": -0.927,
+      "ca_vs_neuron_given_oligo": -0.88,
+      "ca_vs_oligo_given_neuron": 0.123,
+      "n_cerebellar_markers": NaN,
+      "ca_vs_cerebellar_neuron": NaN,
+      "cortical_vs_cerebellar_neuron": NaN
+    }
+  ]
+}

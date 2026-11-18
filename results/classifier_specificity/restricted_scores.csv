@@ -1,0 +1,36 @@
+cohort,set,n_genes,neuron_rho,stage_rho,rho_with_full_score,random_subset_neuron_rho_median,p_weaker_than_random_subset
+GSE33000_PFC,all,224,-0.9275,0.6359,1.0,,
+GSE33000_PFC,non-specific only (|log2| <= 1),71,-0.8462,0.588,0.9318,-0.9215,0.001
+GSE33000_PFC,non-specific strict (|log2| <= 0.5),36,-0.7982,0.567,0.8963,-0.9125,0.001
+GSE33000_PFC,without neuron-enriched (log2 > 1),187,-0.9091,0.6297,0.9952,-0.9266,0.001
+GSE33000_PFC,without any enriched at 0.5,47,-0.8678,0.6038,0.9589,-0.9161,0.013
+GSE132903_MTG,all,241,-0.9209,0.4588,1.0,,
+GSE132903_MTG,non-specific only (|log2| <= 1),80,-0.8215,0.4149,0.8869,-0.9113,0.001
+GSE132903_MTG,non-specific strict (|log2| <= 0.5),44,-0.7906,0.3958,0.8799,-0.9002,0.001
+GSE132903_MTG,without neuron-enriched (log2 > 1),202,-0.9096,0.4632,0.9904,-0.9194,0.026
+GSE132903_MTG,without any enriched at 0.5,57,-0.8605,0.4142,0.951,-0.9068,0.023
+GSE118553_Temporal_Cortex,all,261,-0.8501,0.4513,1.0,,
+GSE118553_Temporal_Cortex,non-specific only (|log2| <= 1),88,-0.8626,0.377,0.8614,-0.8449,0.7103
+GSE118553_Temporal_Cortex,non-specific strict (|log2| <= 0.5),46,-0.8141,0.4515,0.7901,-0.8303,0.3776
+GSE118553_Temporal_Cortex,without neuron-enriched (log2 > 1),219,-0.8369,0.4593,0.9897,-0.85,0.1588
+GSE118553_Temporal_Cortex,without any enriched at 0.5,59,-0.8618,0.4053,0.8966,-0.8364,0.7752
+GSE118553_Frontal_Cortex,all,261,-0.8124,0.1832,1.0,,
+GSE118553_Frontal_Cortex,non-specific only (|log2| <= 1),88,-0.8135,0.101,0.909,-0.7975,0.7443
+GSE118553_Frontal_Cortex,non-specific strict (|log2| <= 0.5),46,-0.7966,0.1516,0.8771,-0.7749,0.7123
+GSE118553_Frontal_Cortex,without neuron-enriched (log2 > 1),219,-0.7938,0.1615,0.9916,-0.8111,0.012
+GSE118553_Frontal_Cortex,without any enriched at 0.5,59,-0.8073,0.1923,0.9039,-0.7874,0.7493
+GSE118553_Entorhinal_Cortex,all,261,-0.8348,0.3761,1.0,,
+GSE118553_Entorhinal_Cortex,non-specific only (|log2| <= 1),88,-0.8191,0.2215,0.8535,-0.8255,0.4456
+GSE118553_Entorhinal_Cortex,non-specific strict (|log2| <= 0.5),46,-0.8708,0.2295,0.8257,-0.8144,0.9021
+GSE118553_Entorhinal_Cortex,without neuron-enriched (log2 > 1),219,-0.8032,0.3371,0.9891,-0.8338,0.013
+GSE118553_Entorhinal_Cortex,without any enriched at 0.5,59,-0.9241,0.1616,0.8962,-0.816,0.999
+GSE118553_Cerebellum,all,261,-0.5089,-0.1727,1.0,,
+GSE118553_Cerebellum,non-specific only (|log2| <= 1),88,-0.6676,-0.0828,0.7389,-0.492,0.99
+GSE118553_Cerebellum,non-specific strict (|log2| <= 0.5),46,-0.6418,-0.1138,0.6249,-0.462,0.953
+GSE118553_Cerebellum,without neuron-enriched (log2 > 1),219,-0.5312,-0.186,0.9786,-0.5142,0.7592
+GSE118553_Cerebellum,without any enriched at 0.5,59,-0.5761,-0.1006,0.7267,-0.4742,0.8821
+GSE125583_FG,all,255,-0.9273,0.4018,1.0,,
+GSE125583_FG,non-specific only (|log2| <= 1),92,-0.7877,0.4299,0.9178,-0.9253,0.001
+GSE125583_FG,non-specific strict (|log2| <= 0.5),48,-0.6404,0.4151,0.8022,-0.9203,0.001
+GSE125583_FG,without neuron-enriched (log2 > 1),211,-0.9093,0.4005,0.996,-0.927,0.001
+GSE125583_FG,without any enriched at 0.5,48,-0.6404,0.4151,0.8022,-0.9213,0.001

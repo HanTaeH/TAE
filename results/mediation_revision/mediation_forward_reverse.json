@@ -1,0 +1,409 @@
+[
+  {
+    "dataset": "GSE125583 AD_only",
+    "x": "braak",
+    "mediator": "neuron_score",
+    "outcome": "ca_score",
+    "n": 217,
+    "rho_mediator_outcome": -0.927,
+    "fwd_total": 0.268,
+    "fwd_indirect": 0.268,
+    "fwd_indirect_ci": [
+      0.136,
+      0.382
+    ],
+    "fwd_direct": -0.0,
+    "fwd_direct_ci": [
+      -0.056,
+      0.053
+    ],
+    "fwd_prop": 1.002,
+    "fwd_prop_ci": [
+      0.814,
+      1.319
+    ],
+    "fwd_indirect_p": 0.0005,
+    "rev_total": -0.288,
+    "rev_indirect": -0.243,
+    "rev_indirect_ci": [
+      -0.356,
+      -0.121
+    ],
+    "rev_direct": -0.045,
+    "rev_prop": 0.843,
+    "rev_prop_ci": [
+      0.646,
+      1.038
+    ]
+  },
+  {
+    "dataset": "GSE125583 AD_only",
+    "x": "braak",
+    "mediator": "nnls_Exc",
+    "outcome": "ca_score",
+    "n": 217,
+    "rho_mediator_outcome": -0.863,
+    "fwd_total": 0.268,
+    "fwd_indirect": 0.217,
+    "fwd_indirect_ci": [
+      0.1,
+      0.327
+    ],
+    "fwd_direct": 0.051,
+    "fwd_direct_ci": [
+      -0.024,
+      0.123
+    ],
+    "fwd_prop": 0.811,
+    "fwd_prop_ci": [
+      0.587,
+      1.116
+    ],
+    "fwd_indirect_p": 0.0005,
+    "rev_total": -0.257,
+    "rev_indirect": -0.23,
+    "rev_indirect_ci": [
+      -0.341,
+      -0.12
+    ],
+    "rev_direct": -0.027,
+    "rev_prop": 0.896,
+    "rev_prop_ci": [
+      0.656,
+      1.295
+    ]
+  },
+  {
+    "dataset": "GSE125583 all_samples",
+    "x": "braak",
+    "mediator": "neuron_score",
+    "outcome": "ca_score",
+    "n": 287,
+    "rho_mediator_outcome": -0.929,
+    "fwd_total": 0.377,
+    "fwd_indirect": 0.356,
+    "fwd_indirect_ci": [
+      0.256,
+      0.457
+    ],
+    "fwd_direct": 0.021,
+    "fwd_direct_ci": [
+      -0.026,
+      0.068
+    ],
+    "fwd_prop": 0.943,
+    "fwd_prop_ci": [
+      0.828,
+      1.082
+    ],
+    "fwd_indirect_p": 0.0005,
+    "rev_total": -0.384,
+    "rev_indirect": -0.341,
+    "rev_indirect_ci": [
+      -0.437,
+      -0.25
+    ],
+    "rev_direct": -0.043,
+    "rev_prop": 0.888,
+    "rev_prop_ci": [
+      0.78,
+      1.017
+    ]
+  },
+  {
+    "dataset": "GSE125583 all_samples",
+    "x": "braak",
+    "mediator": "nnls_Exc",
+    "outcome": "ca_score",
+    "n": 287,
+    "rho_mediator_outcome": -0.872,
+    "fwd_total": 0.377,
+    "fwd_indirect": 0.25,
+    "fwd_indirect_ci": [
+      0.152,
+      0.344
+    ],
+    "fwd_direct": 0.128,
+    "fwd_direct_ci": [
+      0.07,
+      0.186
+    ],
+    "fwd_prop": 0.662,
+    "fwd_prop_ci": [
+      0.512,
+      0.796
+    ],
+    "fwd_indirect_p": 0.0005,
+    "rev_total": -0.299,
+    "rev_indirect": -0.33,
+    "rev_indirect_ci": [
+      -0.422,
+      -0.237
+    ],
+    "rev_direct": 0.031,
+    "rev_prop": 1.104,
+    "rev_prop_ci": [
+      0.911,
+      1.429
+    ]
+  },
+  {
+    "dataset": "GSE106241 all donors",
+    "x": "braak",
+    "mediator": "neuron_score",
+    "outcome": "ca_score",
+    "n": 60,
+    "rho_mediator_outcome": -0.951,
+    "fwd_total": 0.229,
+    "fwd_indirect": 0.202,
+    "fwd_indirect_ci": [
+      -0.031,
+      0.418
+    ],
+    "fwd_direct": 0.026,
+    "fwd_direct_ci": [
+      -0.052,
+      0.113
+    ],
+    "fwd_prop": 0.885,
+    "fwd_prop_ci": [
+      0.077,
+      1.565
+    ],
+    "fwd_indirect_p": 0.1005,
+    "rev_total": -0.207,
+    "rev_indirect": -0.208,
+    "rev_indirect_ci": [
+      -0.436,
+      0.021
+    ],
+    "rev_direct": 0.001,
+    "rev_prop": 1.004,
+    "rev_prop_ci": [
+      0.155,
+      2.412
+    ]
+  },
+  {
+    "dataset": "GSE106241 all donors",
+    "x": "braak",
+    "mediator": "nnls_Exc",
+    "outcome": "ca_score",
+    "n": 60,
+    "rho_mediator_outcome": -0.726,
+    "fwd_total": 0.229,
+    "fwd_indirect": 0.185,
+    "fwd_indirect_ci": [
+      0.034,
+      0.33
+    ],
+    "fwd_direct": 0.044,
+    "fwd_direct_ci": [
+      -0.145,
+      0.261
+    ],
+    "fwd_prop": 0.808,
+    "fwd_prop_ci": [
+      -0.503,
+      3.837
+    ],
+    "fwd_indirect_p": 0.0245,
+    "rev_total": -0.291,
+    "rev_indirect": -0.175,
+    "rev_indirect_ci": [
+      -0.384,
+      0.024
+    ],
+    "rev_direct": -0.116,
+    "rev_prop": 0.603,
+    "rev_prop_ci": [
+      -0.179,
+      1.589
+    ]
+  },
+  {
+    "dataset": "MSBB subjects (cortex)",
+    "x": "cdr",
+    "mediator": "neuron",
+    "outcome": "ca",
+    "n": 106,
+    "rho_mediator_outcome": -0.961,
+    "fwd_total": 0.314,
+    "fwd_indirect": 0.342,
+    "fwd_indirect_ci": [
+      0.16,
+      0.516
+    ],
+    "fwd_direct": -0.029,
+    "fwd_direct_ci": [
+      -0.084,
+      0.023
+    ],
+    "fwd_prop": 1.091,
+    "fwd_prop_ci": [
+      0.932,
+      1.384
+    ],
+    "fwd_indirect_p": 0.0005,
+    "rev_total": -0.353,
+    "rev_indirect": -0.297,
+    "rev_indirect_ci": [
+      -0.47,
+      -0.131
+    ],
+    "rev_direct": -0.056,
+    "rev_prop": 0.84,
+    "rev_prop_ci": [
+      0.645,
+      0.989
+    ]
+  },
+  {
+    "dataset": "MSBB subjects (cortex)",
+    "x": "braak",
+    "mediator": "neuron",
+    "outcome": "ca",
+    "n": 106,
+    "rho_mediator_outcome": -0.961,
+    "fwd_total": 0.296,
+    "fwd_indirect": 0.278,
+    "fwd_indirect_ci": [
+      0.11,
+      0.463
+    ],
+    "fwd_direct": 0.017,
+    "fwd_direct_ci": [
+      -0.042,
+      0.073
+    ],
+    "fwd_prop": 0.941,
+    "fwd_prop_ci": [
+      0.726,
+      1.204
+    ],
+    "fwd_indirect_p": 0.0045,
+    "rev_total": -0.292,
+    "rev_indirect": -0.284,
+    "rev_indirect_ci": [
+      -0.455,
+      -0.106
+    ],
+    "rev_direct": -0.008,
+    "rev_prop": 0.974,
+    "rev_prop_ci": [
+      0.755,
+      1.254
+    ]
+  },
+  {
+    "dataset": "MSBB AD subjects (cortex)",
+    "x": "cdr",
+    "mediator": "neuron",
+    "outcome": "ca",
+    "n": 64,
+    "rho_mediator_outcome": -0.961,
+    "fwd_total": 0.18,
+    "fwd_indirect": 0.221,
+    "fwd_indirect_ci": [
+      -0.047,
+      0.449
+    ],
+    "fwd_direct": -0.041,
+    "fwd_direct_ci": [
+      -0.118,
+      0.023
+    ],
+    "fwd_prop": 1.228,
+    "fwd_prop_ci": [
+      -1.387,
+      3.975
+    ],
+    "fwd_indirect_p": 0.1065,
+    "rev_total": -0.227,
+    "rev_indirect": -0.17,
+    "rev_indirect_ci": [
+      -0.398,
+      0.089
+    ],
+    "rev_direct": -0.057,
+    "rev_prop": 0.749,
+    "rev_prop_ci": [
+      -0.758,
+      1.992
+    ]
+  },
+  {
+    "dataset": "SEA-AD MTG (sorted pseudobulk)",
+    "x": "CPS_Global",
+    "mediator": "L2/3 IT_of_neurons",
+    "outcome": "ca_sorted",
+    "n": 84,
+    "rho_mediator_outcome": -0.559,
+    "fwd_total": 0.249,
+    "fwd_indirect": 0.194,
+    "fwd_indirect_ci": [
+      0.074,
+      0.346
+    ],
+    "fwd_direct": 0.056,
+    "fwd_direct_ci": [
+      -0.163,
+      0.252
+    ],
+    "fwd_prop": 0.777,
+    "fwd_prop_ci": [
+      0.275,
+      2.957
+    ],
+    "fwd_indirect_p": 0.0005,
+    "rev_total": -0.369,
+    "rev_indirect": -0.119,
+    "rev_indirect_ci": [
+      -0.238,
+      -0.02
+    ],
+    "rev_direct": -0.251,
+    "rev_prop": 0.321,
+    "rev_prop_ci": [
+      0.068,
+      0.746
+    ]
+  },
+  {
+    "dataset": "SEA-AD MTG (sorted pseudobulk)",
+    "x": "CPS_Global",
+    "mediator": "neuron_nuclei_frac",
+    "outcome": "ca_sorted",
+    "n": 84,
+    "rho_mediator_outcome": -0.543,
+    "fwd_total": 0.249,
+    "fwd_indirect": 0.082,
+    "fwd_indirect_ci": [
+      -0.018,
+      0.188
+    ],
+    "fwd_direct": 0.167,
+    "fwd_direct_ci": [
+      -0.009,
+      0.329
+    ],
+    "fwd_prop": 0.331,
+    "fwd_prop_ci": [
+      -0.14,
+      1.023
+    ],
+    "fwd_indirect_p": 0.1025,
+    "rev_total": -0.168,
+    "rev_indirect": -0.128,
+    "rev_indirect_ci": [
+      -0.251,
+      -0.026
+    ],
+    "rev_direct": -0.04,
+    "rev_prop": 0.762,
+    "rev_prop_ci": [
+      -2.136,
+      3.868
+    ]
+  }
+]

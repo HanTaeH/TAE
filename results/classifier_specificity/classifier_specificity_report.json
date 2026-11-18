@@ -1,0 +1,376 @@
+{
+  "table_specificity_by_direction": {
+    "up_in_A": {
+      "glia-enriched": 1,
+      "neuron-enriched": 40,
+      "non-specific": 63,
+      "not_in_reference": 4
+    },
+    "up_in_C": {
+      "glia-enriched": 119,
+      "neuron-enriched": 4,
+      "non-specific": 30,
+      "not_in_reference": 10
+    }
+  },
+  "spearman_ratio_vs_C_minus_A_centroid": -0.833,
+  "set_sizes": {
+    "all": 271,
+    "non-specific only (|log2| <= 1)": 93,
+    "non-specific strict (|log2| <= 0.5)": 48,
+    "without neuron-enriched (log2 > 1)": 227,
+    "without any enriched at 0.5": 62
+  },
+  "restricted": [
+    {
+      "cohort": "GSE33000_PFC",
+      "set": "all",
+      "n_genes": 224,
+      "neuron_rho": -0.9275,
+      "stage_rho": 0.6359,
+      "rho_with_full_score": 1.0,
+      "random_subset_neuron_rho_median": NaN,
+      "p_weaker_than_random_subset": NaN
+    },
+    {
+      "cohort": "GSE33000_PFC",
+      "set": "non-specific only (|log2| <= 1)",
+      "n_genes": 71,
+      "neuron_rho": -0.8462,
+      "stage_rho": 0.588,
+      "rho_with_full_score": 0.9318,
+      "random_subset_neuron_rho_median": -0.9215,
+      "p_weaker_than_random_subset": 0.001
+    },
+    {
+      "cohort": "GSE33000_PFC",
+      "set": "non-specific strict (|log2| <= 0.5)",
+      "n_genes": 36,
+      "neuron_rho": -0.7982,
+      "stage_rho": 0.567,
+      "rho_with_full_score": 0.8963,
+      "random_subset_neuron_rho_median": -0.9125,
+      "p_weaker_than_random_subset": 0.001
+    },
+    {
+      "cohort": "GSE33000_PFC",
+      "set": "without neuron-enriched (log2 > 1)",
+      "n_genes": 187,
+      "neuron_rho": -0.9091,
+      "stage_rho": 0.6297,
+      "rho_with_full_score": 0.9952,
+      "random_subset_neuron_rho_median": -0.9266,
+      "p_weaker_than_random_subset": 0.001
+    },
+    {
+      "cohort": "GSE33000_PFC",
+      "set": "without any enriched at 0.5",
+      "n_genes": 47,
+      "neuron_rho": -0.8678,
+      "stage_rho": 0.6038,
+      "rho_with_full_score": 0.9589,
+      "random_subset_neuron_rho_median": -0.9161,
+      "p_weaker_than_random_subset": 0.013
+    },
+    {
+      "cohort": "GSE132903_MTG",
+      "set": "all",
+      "n_genes": 241,
+      "neuron_rho": -0.9209,
+      "stage_rho": 0.4588,
+      "rho_with_full_score": 1.0,
+      "random_subset_neuron_rho_median": NaN,
+      "p_weaker_than_random_subset": NaN
+    },
+    {
+      "cohort": "GSE132903_MTG",
+      "set": "non-specific only (|log2| <= 1)",
+      "n_genes": 80,
+      "neuron_rho": -0.8215,
+      "stage_rho": 0.4149,
+      "rho_with_full_score": 0.8869,
+      "random_subset_neuron_rho_median": -0.9113,
+      "p_weaker_than_random_subset": 0.001
+    },
+    {
+      "cohort": "GSE132903_MTG",
+      "set": "non-specific strict (|log2| <= 0.5)",
+      "n_genes": 44,
+      "neuron_rho": -0.7906,
+      "stage_rho": 0.3958,
+      "rho_with_full_score": 0.8799,
+      "random_subset_neuron_rho_median": -0.9002,
+      "p_weaker_than_random_subset": 0.001
+    },
+    {
+      "cohort": "GSE132903_MTG",
+      "set": "without neuron-enriched (log2 > 1)",
+      "n_genes": 202,
+      "neuron_rho": -0.9096,
+      "stage_rho": 0.4632,
+      "rho_with_full_score": 0.9904,
+      "random_subset_neuron_rho_median": -0.9194,
+      "p_weaker_than_random_subset": 0.026
+    },
+    {
+      "cohort": "GSE132903_MTG",
+      "set": "without any enriched at 0.5",
+      "n_genes": 57,
+      "neuron_rho": -0.8605,
+      "stage_rho": 0.4142,
+      "rho_with_full_score": 0.951,
+      "random_subset_neuron_rho_median": -0.9068,
+      "p_weaker_than_random_subset": 0.023
+    },
+    {
+      "cohort": "GSE118553_Temporal_Cortex",
+      "set": "all",
+      "n_genes": 261,
+      "neuron_rho": -0.8501,
+      "stage_rho": 0.4513,
+      "rho_with_full_score": 1.0,
+      "random_subset_neuron_rho_median": NaN,
+      "p_weaker_than_random_subset": NaN
+    },
+    {
+      "cohort": "GSE118553_Temporal_Cortex",
+      "set": "non-specific only (|log2| <= 1)",
+      "n_genes": 88,
+      "neuron_rho": -0.8626,
+      "stage_rho": 0.377,
+      "rho_with_full_score": 0.8614,
+      "random_subset_neuron_rho_median": -0.8449,
+      "p_weaker_than_random_subset": 0.7103
+    },
+    {
+      "cohort": "GSE118553_Temporal_Cortex",
+      "set": "non-specific strict (|log2| <= 0.5)",
+      "n_genes": 46,
+      "neuron_rho": -0.8141,
+      "stage_rho": 0.4515,
+      "rho_with_full_score": 0.7901,
+      "random_subset_neuron_rho_median": -0.8303,
+      "p_weaker_than_random_subset": 0.3776
+    },
+    {
+      "cohort": "GSE118553_Temporal_Cortex",
+      "set": "without neuron-enriched (log2 > 1)",
+      "n_genes": 219,
+      "neuron_rho": -0.8369,
+      "stage_rho": 0.4593,
+      "rho_with_full_score": 0.9897,
+      "random_subset_neuron_rho_median": -0.85,
+      "p_weaker_than_random_subset": 0.1588
+    },
+    {
+      "cohort": "GSE118553_Temporal_Cortex",
+      "set": "without any enriched at 0.5",
+      "n_genes": 59,
+      "neuron_rho": -0.8618,
+      "stage_rho": 0.4053,
+      "rho_with_full_score": 0.8966,
+      "random_subset_neuron_rho_median": -0.8364,
+      "p_weaker_than_random_subset": 0.7752
+    },
+    {
+      "cohort": "GSE118553_Frontal_Cortex",
+      "set": "all",
+      "n_genes": 261,
+      "neuron_rho": -0.8124,
+      "stage_rho": 0.1832,
+      "rho_with_full_score": 1.0,
+      "random_subset_neuron_rho_median": NaN,
+      "p_weaker_than_random_subset": NaN
+    },
+    {
+      "cohort": "GSE118553_Frontal_Cortex",
+      "set": "non-specific only (|log2| <= 1)",
+      "n_genes": 88,
+      "neuron_rho": -0.8135,
+      "stage_rho": 0.101,
+      "rho_with_full_score": 0.909,
+      "random_subset_neuron_rho_median": -0.7975,
+      "p_weaker_than_random_subset": 0.7443
+    },
+    {
+      "cohort": "GSE118553_Frontal_Cortex",
+      "set": "non-specific strict (|log2| <= 0.5)",
+      "n_genes": 46,
+      "neuron_rho": -0.7966,
+      "stage_rho": 0.1516,
+      "rho_with_full_score": 0.8771,
+      "random_subset_neuron_rho_median": -0.7749,
+      "p_weaker_than_random_subset": 0.7123
+    },
+    {
+      "cohort": "GSE118553_Frontal_Cortex",
+      "set": "without neuron-enriched (log2 > 1)",
+      "n_genes": 219,
+      "neuron_rho": -0.7938,
+      "stage_rho": 0.1615,
+      "rho_with_full_score": 0.9916,
+      "random_subset_neuron_rho_median": -0.8111,
+      "p_weaker_than_random_subset": 0.012
+    },
+    {
+      "cohort": "GSE118553_Frontal_Cortex",
+      "set": "without any enriched at 0.5",
+      "n_genes": 59,
+      "neuron_rho": -0.8073,
+      "stage_rho": 0.1923,
+      "rho_with_full_score": 0.9039,
+      "random_subset_neuron_rho_median": -0.7874,
+      "p_weaker_than_random_subset": 0.7493
+    },
+    {
+      "cohort": "GSE118553_Entorhinal_Cortex",
+      "set": "all",
+      "n_genes": 261,
+      "neuron_rho": -0.8348,
+      "stage_rho": 0.3761,
+      "rho_with_full_score": 1.0,
+      "random_subset_neuron_rho_median": NaN,
+      "p_weaker_than_random_subset": NaN
+    },
+    {
+      "cohort": "GSE118553_Entorhinal_Cortex",
+      "set": "non-specific only (|log2| <= 1)",
+      "n_genes": 88,
+      "neuron_rho": -0.8191,
+      "stage_rho": 0.2215,
+      "rho_with_full_score": 0.8535,
+      "random_subset_neuron_rho_median": -0.8255,
+      "p_weaker_than_random_subset": 0.4456
+    },
+    {
+      "cohort": "GSE118553_Entorhinal_Cortex",
+      "set": "non-specific strict (|log2| <= 0.5)",
+      "n_genes": 46,
+      "neuron_rho": -0.8708,
+      "stage_rho": 0.2295,
+      "rho_with_full_score": 0.8257,
+      "random_subset_neuron_rho_median": -0.8144,
+      "p_weaker_than_random_subset": 0.9021
+    },
+    {
+      "cohort": "GSE118553_Entorhinal_Cortex",
+      "set": "without neuron-enriched (log2 > 1)",
+      "n_genes": 219,
+      "neuron_rho": -0.8032,
+      "stage_rho": 0.3371,
+      "rho_with_full_score": 0.9891,
+      "random_subset_neuron_rho_median": -0.8338,
+      "p_weaker_than_random_subset": 0.013
+    },
+    {
+      "cohort": "GSE118553_Entorhinal_Cortex",
+      "set": "without any enriched at 0.5",
+      "n_genes": 59,
+      "neuron_rho": -0.9241,
+      "stage_rho": 0.1616,
+      "rho_with_full_score": 0.8962,
+      "random_subset_neuron_rho_median": -0.816,
+      "p_weaker_than_random_subset": 0.999
+    },
+    {
+      "cohort": "GSE118553_Cerebellum",
+      "set": "all",
+      "n_genes": 261,
+      "neuron_rho": -0.5089,
+      "stage_rho": -0.1727,
+      "rho_with_full_score": 1.0,
+      "random_subset_neuron_rho_median": NaN,
+      "p_weaker_than_random_subset": NaN
+    },
+    {
+      "cohort": "GSE118553_Cerebellum",
+      "set": "non-specific only (|log2| <= 1)",
+      "n_genes": 88,
+      "neuron_rho": -0.6676,
+      "stage_rho": -0.0828,
+      "rho_with_full_score": 0.7389,
+      "random_subset_neuron_rho_median": -0.492,
+      "p_weaker_than_random_subset": 0.99
+    },
+    {
+      "cohort": "GSE118553_Cerebellum",
+      "set": "non-specific strict (|log2| <= 0.5)",
+      "n_genes": 46,
+      "neuron_rho": -0.6418,
+      "stage_rho": -0.1138,
+      "rho_with_full_score": 0.6249,
+      "random_subset_neuron_rho_median": -0.462,
+      "p_weaker_than_random_subset": 0.953
+    },
+    {
+      "cohort": "GSE118553_Cerebellum",
+      "set": "without neuron-enriched (log2 > 1)",
+      "n_genes": 219,
+      "neuron_rho": -0.5312,
+      "stage_rho": -0.186,
+      "rho_with_full_score": 0.9786,
+      "random_subset_neuron_rho_median": -0.5142,
+      "p_weaker_than_random_subset": 0.7592
+    },
+    {
+      "cohort": "GSE118553_Cerebellum",
+      "set": "without any enriched at 0.5",
+      "n_genes": 59,
+      "neuron_rho": -0.5761,
+      "stage_rho": -0.1006,
+      "rho_with_full_score": 0.7267,
+      "random_subset_neuron_rho_median": -0.4742,
+      "p_weaker_than_random_subset": 0.8821
+    },
+    {
+      "cohort": "GSE125583_FG",
+      "set": "all",
+      "n_genes": 255,
+      "neuron_rho": -0.9273,
+      "stage_rho": 0.4018,
+      "rho_with_full_score": 1.0,
+      "random_subset_neuron_rho_median": NaN,
+      "p_weaker_than_random_subset": NaN
+    },
+    {
+      "cohort": "GSE125583_FG",
+      "set": "non-specific only (|log2| <= 1)",
+      "n_genes": 92,
+      "neuron_rho": -0.7877,
+      "stage_rho": 0.4299,
+      "rho_with_full_score": 0.9178,
+      "random_subset_neuron_rho_median": -0.9253,
+      "p_weaker_than_random_subset": 0.001
+    },
+    {
+      "cohort": "GSE125583_FG",
+      "set": "non-specific strict (|log2| <= 0.5)",
+      "n_genes": 48,
+      "neuron_rho": -0.6404,
+      "stage_rho": 0.4151,
+      "rho_with_full_score": 0.8022,
+      "random_subset_neuron_rho_median": -0.9203,
+      "p_weaker_than_random_subset": 0.001
+    },
+    {
+      "cohort": "GSE125583_FG",
+      "set": "without neuron-enriched (log2 > 1)",
+      "n_genes": 211,
+      "neuron_rho": -0.9093,
+      "stage_rho": 0.4005,
+      "rho_with_full_score": 0.996,
+      "random_subset_neuron_rho_median": -0.927,
+      "p_weaker_than_random_subset": 0.001
+    },
+    {
+      "cohort": "GSE125583_FG",
+      "set": "without any enriched at 0.5",
+      "n_genes": 48,
+      "neuron_rho": -0.6404,
+      "stage_rho": 0.4151,
+      "rho_with_full_score": 0.8022,
+      "random_subset_neuron_rho_median": -0.9213,
+      "p_weaker_than_random_subset": 0.001
+    }
+  ]
+}

@@ -42,3 +42,11 @@ if [ ! -f "$REF_DIR/donors_dfc/donor_meta.csv" ]; then
 fi
 python3 region_reference.py    --data "$DATA" --seaad "$REF_DIR" --out "$OUT/region_reference" --n 200
 python3 multiple_testing.py    "$OUT"
+# --- reviewer revision (2026-11-18) ---
+python3 meta_reanalysis.py      --data "$DATA" --res "$OUT" --out "$OUT/meta_revision"
+python3 classifier_specificity.py --data "$DATA" --ref "$REF_DIR/seaad_mtg_reference.csv.gz" --out "$OUT/classifier_specificity"
+python3 seaad_celltype_revision.py --donors "$REF_DIR/donors" --cps "$REF_DIR/Global_and_Local_CPS.20260105.csv" --data "$DATA" --out "$OUT/seaad_celltype_revision" --n 1000
+python3 mediation_revision.py   --res "$OUT" --seaad-meta "$REF_DIR/donors/donor_meta.csv" --out "$OUT/mediation_revision" --n 2000
+python3 technical_confounders.py --data "$DATA" --res "$OUT" --seaad-dir "$REF_DIR" --out "$OUT/technical_confounders"
+python3 simulation_revision.py  --data "$DATA" --ref "$REF_DIR" --out "$OUT/simulation_revision" --n 400
+python3 deconv_validation_blocks.py --seaad-dir "$REF_DIR" --res "$OUT" --out "$OUT/deconv_validation_blocks" --n 2000
