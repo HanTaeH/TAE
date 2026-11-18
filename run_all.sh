@@ -50,3 +50,4 @@ python3 mediation_revision.py   --res "$OUT" --seaad-meta "$REF_DIR/donors/donor
 python3 technical_confounders.py --data "$DATA" --res "$OUT" --seaad-dir "$REF_DIR" --out "$OUT/technical_confounders"
 python3 simulation_revision.py  --data "$DATA" --ref "$REF_DIR" --out "$OUT/simulation_revision" --n 400
 python3 deconv_validation_blocks.py --seaad-dir "$REF_DIR" --res "$OUT" --out "$OUT/deconv_validation_blocks" --n 2000
+python3 residual_go.py         --data "$DATA" --gmt-dir "${GMT_DIR:-/mnt/project-files/d1-data/msigdb}" --out "$OUT/residual_go"

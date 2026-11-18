@@ -1,0 +1,428 @@
+{
+  "GOBP": {
+    "n_sets_tested": 3718,
+    "n_cohorts": 6,
+    "consistent_up_all": [],
+    "consistent_down_all": [],
+    "n_consistent_up_all": 0,
+    "n_consistent_down_all": 0,
+    "n_arrays_only_up": 0,
+    "n_arrays_only_down": 0,
+    "platform_flip": [],
+    "n_platform_flip": 0
+  },
+  "HALLMARK": {
+    "n_sets_tested": 50,
+    "n_cohorts": 6,
+    "consistent_up_all": [],
+    "consistent_down_all": [],
+    "n_consistent_up_all": 0,
+    "n_consistent_down_all": 0,
+    "n_arrays_only_up": 0,
+    "n_arrays_only_down": 0,
+    "platform_flip": [],
+    "n_platform_flip": 0,
+    "z_table": {
+      "HALLMARK_ADIPOGENESIS": {
+        "GSE118553_Entorhinal_Cortex": -0.39,
+        "GSE118553_Frontal_Cortex": -1.23,
+        "GSE118553_Temporal_Cortex": -2.69,
+        "GSE125583_FG": 0.67,
+        "GSE132903_MTG": -0.41,
+        "GSE33000_PFC": -0.28
+      },
+      "HALLMARK_ALLOGRAFT_REJECTION": {
+        "GSE118553_Entorhinal_Cortex": -0.31,
+        "GSE118553_Frontal_Cortex": 0.3,
+        "GSE118553_Temporal_Cortex": 0.16,
+        "GSE125583_FG": -0.05,
+        "GSE132903_MTG": -0.38,
+        "GSE33000_PFC": -0.02
+      },
+      "HALLMARK_ANDROGEN_RESPONSE": {
+        "GSE118553_Entorhinal_Cortex": -1.44,
+        "GSE118553_Frontal_Cortex": -2.3,
+        "GSE118553_Temporal_Cortex": -2.05,
+        "GSE125583_FG": -1.46,
+        "GSE132903_MTG": -2.11,
+        "GSE33000_PFC": -1.59
+      },
+      "HALLMARK_ANGIOGENESIS": {
+        "GSE118553_Entorhinal_Cortex": 0.77,
+        "GSE118553_Frontal_Cortex": -0.14,
+        "GSE118553_Temporal_Cortex": -1.19,
+        "GSE125583_FG": -0.06,
+        "GSE132903_MTG": -0.91,
+        "GSE33000_PFC": 0.17
+      },
+      "HALLMARK_APICAL_JUNCTION": {
+        "GSE118553_Entorhinal_Cortex": 0.72,
+        "GSE118553_Frontal_Cortex": -0.62,
+        "GSE118553_Temporal_Cortex": -0.12,
+        "GSE125583_FG": 0.66,
+        "GSE132903_MTG": 1.03,
+        "GSE33000_PFC": 1.75
+      },
+      "HALLMARK_APICAL_SURFACE": {
+        "GSE118553_Entorhinal_Cortex": 0.8,
+        "GSE118553_Frontal_Cortex": 0.14,
+        "GSE118553_Temporal_Cortex": 1.07,
+        "GSE125583_FG": 1.01,
+        "GSE132903_MTG": 0.84,
+        "GSE33000_PFC": 0.51
+      },
+      "HALLMARK_APOPTOSIS": {
+        "GSE118553_Entorhinal_Cortex": 0.54,
+        "GSE118553_Frontal_Cortex": 0.17,
+        "GSE118553_Temporal_Cortex": -0.5,
+        "GSE125583_FG": 0.52,
+        "GSE132903_MTG": 0.08,
+        "GSE33000_PFC": -0.15
+      },
+      "HALLMARK_BILE_ACID_METABOLISM": {
+        "GSE118553_Entorhinal_Cortex": -0.12,
+        "GSE118553_Frontal_Cortex": -1.56,
+        "GSE118553_Temporal_Cortex": -2.34,
+        "GSE125583_FG": -0.72,
+        "GSE132903_MTG": -0.71,
+        "GSE33000_PFC": -0.02
+      },
+      "HALLMARK_CHOLESTEROL_HOMEOSTASIS": {
+        "GSE118553_Entorhinal_Cortex": -0.34,
+        "GSE118553_Frontal_Cortex": -0.87,
+        "GSE118553_Temporal_Cortex": -1.81,
+        "GSE125583_FG": 0.54,
+        "GSE132903_MTG": 0.1,
+        "GSE33000_PFC": 0.03
+      },
+      "HALLMARK_COAGULATION": {
+        "GSE118553_Entorhinal_Cortex": 2.19,
+        "GSE118553_Frontal_Cortex": 0.73,
+        "GSE118553_Temporal_Cortex": 0.97,
+        "GSE125583_FG": 1.62,
+        "GSE132903_MTG": 1.24,
+        "GSE33000_PFC": 1.21
+      },
+      "HALLMARK_COMPLEMENT": {
+        "GSE118553_Entorhinal_Cortex": -0.09,
+        "GSE118553_Frontal_Cortex": -1.01,
+        "GSE118553_Temporal_Cortex": -0.52,
+        "GSE125583_FG": -0.11,
+        "GSE132903_MTG": -0.81,
+        "GSE33000_PFC": 0.02
+      },
+      "HALLMARK_DNA_REPAIR": {
+        "GSE118553_Entorhinal_Cortex": -1.14,
+        "GSE118553_Frontal_Cortex": -1.13,
+        "GSE118553_Temporal_Cortex": -2.17,
+        "GSE125583_FG": 0.84,
+        "GSE132903_MTG": -0.06,
+        "GSE33000_PFC": 0.09
+      },
+      "HALLMARK_E2F_TARGETS": {
+        "GSE118553_Entorhinal_Cortex": -2.27,
+        "GSE118553_Frontal_Cortex": -1.75,
+        "GSE118553_Temporal_Cortex": -1.44,
+        "GSE125583_FG": -1.04,
+        "GSE132903_MTG": -2.41,
+        "GSE33000_PFC": -1.15
+      },
+      "HALLMARK_EPITHELIAL_MESENCHYMAL_TRANSITION": {
+        "GSE118553_Entorhinal_Cortex": 0.51,
+        "GSE118553_Frontal_Cortex": 0.0,
+        "GSE118553_Temporal_Cortex": -1.16,
+        "GSE125583_FG": 0.42,
+        "GSE132903_MTG": -0.32,
+        "GSE33000_PFC": 0.84
+      },
+      "HALLMARK_ESTROGEN_RESPONSE_EARLY": {
+        "GSE118553_Entorhinal_Cortex": 1.0,
+        "GSE118553_Frontal_Cortex": -0.98,
+        "GSE118553_Temporal_Cortex": -0.99,
+        "GSE125583_FG": 0.04,
+        "GSE132903_MTG": 0.71,
+        "GSE33000_PFC": 0.96
+      },
+      "HALLMARK_ESTROGEN_RESPONSE_LATE": {
+        "GSE118553_Entorhinal_Cortex": 0.02,
+        "GSE118553_Frontal_Cortex": -0.98,
+        "GSE118553_Temporal_Cortex": -1.51,
+        "GSE125583_FG": 1.04,
+        "GSE132903_MTG": 0.05,
+        "GSE33000_PFC": 0.67
+      },
+      "HALLMARK_FATTY_ACID_METABOLISM": {
+        "GSE118553_Entorhinal_Cortex": -0.34,
+        "GSE118553_Frontal_Cortex": -1.28,
+        "GSE118553_Temporal_Cortex": -2.83,
+        "GSE125583_FG": 0.14,
+        "GSE132903_MTG": -1.21,
+        "GSE33000_PFC": -1.07
+      },
+      "HALLMARK_G2M_CHECKPOINT": {
+        "GSE118553_Entorhinal_Cortex": -2.75,
+        "GSE118553_Frontal_Cortex": -2.12,
+        "GSE118553_Temporal_Cortex": -1.26,
+        "GSE125583_FG": -1.2,
+        "GSE132903_MTG": -1.77,
+        "GSE33000_PFC": -1.19
+      },
+      "HALLMARK_GLYCOLYSIS": {
+        "GSE118553_Entorhinal_Cortex": 0.17,
+        "GSE118553_Frontal_Cortex": -1.68,
+        "GSE118553_Temporal_Cortex": -2.08,
+        "GSE125583_FG": 0.65,
+        "GSE132903_MTG": -0.86,
+        "GSE33000_PFC": 0.38
+      },
+      "HALLMARK_HEDGEHOG_SIGNALING": {
+        "GSE118553_Entorhinal_Cortex": -0.75,
+        "GSE118553_Frontal_Cortex": -1.81,
+        "GSE118553_Temporal_Cortex": -0.82,
+        "GSE125583_FG": -0.06,
+        "GSE132903_MTG": -1.91,
+        "GSE33000_PFC": 0.66
+      },
+      "HALLMARK_HEME_METABOLISM": {
+        "GSE118553_Entorhinal_Cortex": -0.78,
+        "GSE118553_Frontal_Cortex": -1.87,
+        "GSE118553_Temporal_Cortex": -2.41,
+        "GSE125583_FG": -0.64,
+        "GSE132903_MTG": -1.98,
+        "GSE33000_PFC": -1.01
+      },
+      "HALLMARK_HYPOXIA": {
+        "GSE118553_Entorhinal_Cortex": 0.9,
+        "GSE118553_Frontal_Cortex": 0.06,
+        "GSE118553_Temporal_Cortex": -0.47,
+        "GSE125583_FG": 0.72,
+        "GSE132903_MTG": 0.03,
+        "GSE33000_PFC": 0.73
+      },
+      "HALLMARK_IL2_STAT5_SIGNALING": {
+        "GSE118553_Entorhinal_Cortex": 0.6,
+        "GSE118553_Frontal_Cortex": -0.68,
+        "GSE118553_Temporal_Cortex": -0.55,
+        "GSE125583_FG": -0.45,
+        "GSE132903_MTG": -0.49,
+        "GSE33000_PFC": 0.79
+      },
+      "HALLMARK_IL6_JAK_STAT3_SIGNALING": {
+        "GSE118553_Entorhinal_Cortex": 0.56,
+        "GSE118553_Frontal_Cortex": 0.16,
+        "GSE118553_Temporal_Cortex": 0.17,
+        "GSE125583_FG": 0.25,
+        "GSE132903_MTG": -0.16,
+        "GSE33000_PFC": 0.3
+      },
+      "HALLMARK_INFLAMMATORY_RESPONSE": {
+        "GSE118553_Entorhinal_Cortex": 0.15,
+        "GSE118553_Frontal_Cortex": 0.05,
+        "GSE118553_Temporal_Cortex": 0.54,
+        "GSE125583_FG": -0.23,
+        "GSE132903_MTG": -0.1,
+        "GSE33000_PFC": 0.42
+      },
+      "HALLMARK_INTERFERON_ALPHA_RESPONSE": {
+        "GSE118553_Entorhinal_Cortex": -1.02,
+        "GSE118553_Frontal_Cortex": 0.41,
+        "GSE118553_Temporal_Cortex": 0.67,
+        "GSE125583_FG": 0.72,
+        "GSE132903_MTG": 0.55,
+        "GSE33000_PFC": 0.43
+      },
+      "HALLMARK_INTERFERON_GAMMA_RESPONSE": {
+        "GSE118553_Entorhinal_Cortex": -0.77,
+        "GSE118553_Frontal_Cortex": -0.09,
+        "GSE118553_Temporal_Cortex": 0.35,
+        "GSE125583_FG": 0.36,
+        "GSE132903_MTG": 0.21,
+        "GSE33000_PFC": 0.02
+      },
+      "HALLMARK_KRAS_SIGNALING_DN": {
+        "GSE118553_Entorhinal_Cortex": 2.81,
+        "GSE118553_Frontal_Cortex": 1.5,
+        "GSE118553_Temporal_Cortex": 1.49,
+        "GSE125583_FG": 1.18,
+        "GSE132903_MTG": 1.64,
+        "GSE33000_PFC": 1.48
+      },
+      "HALLMARK_KRAS_SIGNALING_UP": {
+        "GSE118553_Entorhinal_Cortex": -0.69,
+        "GSE118553_Frontal_Cortex": -1.02,
+        "GSE118553_Temporal_Cortex": -1.69,
+        "GSE125583_FG": -1.1,
+        "GSE132903_MTG": -1.52,
+        "GSE33000_PFC": -1.03
+      },
+      "HALLMARK_MITOTIC_SPINDLE": {
+        "GSE118553_Entorhinal_Cortex": -1.2,
+        "GSE118553_Frontal_Cortex": -1.35,
+        "GSE118553_Temporal_Cortex": -0.86,
+        "GSE125583_FG": -0.86,
+        "GSE132903_MTG": -1.21,
+        "GSE33000_PFC": -1.44
+      },
+      "HALLMARK_MTORC1_SIGNALING": {
+        "GSE118553_Entorhinal_Cortex": -1.07,
+        "GSE118553_Frontal_Cortex": -2.39,
+        "GSE118553_Temporal_Cortex": -2.25,
+        "GSE125583_FG": -0.65,
+        "GSE132903_MTG": -1.96,
+        "GSE33000_PFC": -1.29
+      },
+      "HALLMARK_MYC_TARGETS_V1": {
+        "GSE118553_Entorhinal_Cortex": -1.87,
+        "GSE118553_Frontal_Cortex": -1.91,
+        "GSE118553_Temporal_Cortex": -2.55,
+        "GSE125583_FG": -0.51,
+        "GSE132903_MTG": -2.31,
+        "GSE33000_PFC": -1.51
+      },
+      "HALLMARK_MYC_TARGETS_V2": {
+        "GSE118553_Entorhinal_Cortex": 1.06,
+        "GSE118553_Frontal_Cortex": -0.28,
+        "GSE118553_Temporal_Cortex": -1.59,
+        "GSE125583_FG": 0.94,
+        "GSE132903_MTG": 0.95,
+        "GSE33000_PFC": 0.59
+      },
+      "HALLMARK_MYOGENESIS": {
+        "GSE118553_Entorhinal_Cortex": 1.44,
+        "GSE118553_Frontal_Cortex": 1.47,
+        "GSE118553_Temporal_Cortex": 0.07,
+        "GSE125583_FG": 1.93,
+        "GSE132903_MTG": 1.66,
+        "GSE33000_PFC": 1.8
+      },
+      "HALLMARK_NOTCH_SIGNALING": {
+        "GSE118553_Entorhinal_Cortex": -0.95,
+        "GSE118553_Frontal_Cortex": -0.42,
+        "GSE118553_Temporal_Cortex": -0.17,
+        "GSE125583_FG": 1.0,
+        "GSE132903_MTG": 1.72,
+        "GSE33000_PFC": 1.39
+      },
+      "HALLMARK_OXIDATIVE_PHOSPHORYLATION": {
+        "GSE118553_Entorhinal_Cortex": -0.86,
+        "GSE118553_Frontal_Cortex": -1.48,
+        "GSE118553_Temporal_Cortex": -3.24,
+        "GSE125583_FG": 0.3,
+        "GSE132903_MTG": -2.04,
+        "GSE33000_PFC": -1.31
+      },
+      "HALLMARK_P53_PATHWAY": {
+        "GSE118553_Entorhinal_Cortex": 0.4,
+        "GSE118553_Frontal_Cortex": -0.09,
+        "GSE118553_Temporal_Cortex": 0.07,
+        "GSE125583_FG": 1.44,
+        "GSE132903_MTG": 0.59,
+        "GSE33000_PFC": 1.12
+      },
+      "HALLMARK_PANCREAS_BETA_CELLS": {
+        "GSE118553_Entorhinal_Cortex": -1.28,
+        "GSE118553_Frontal_Cortex": -1.83,
+        "GSE118553_Temporal_Cortex": -2.09,
+        "GSE125583_FG": -0.76,
+        "GSE132903_MTG": -1.82,
+        "GSE33000_PFC": -0.8
+      },
+      "HALLMARK_PEROXISOME": {
+        "GSE118553_Entorhinal_Cortex": -0.97,
+        "GSE118553_Frontal_Cortex": -1.72,
+        "GSE118553_Temporal_Cortex": -2.52,
+        "GSE125583_FG": -0.1,
+        "GSE132903_MTG": -0.33,
+        "GSE33000_PFC": -0.69
+      },
+      "HALLMARK_PI3K_AKT_MTOR_SIGNALING": {
+        "GSE118553_Entorhinal_Cortex": -1.31,
+        "GSE118553_Frontal_Cortex": -1.81,
+        "GSE118553_Temporal_Cortex": -2.11,
+        "GSE125583_FG": -0.31,
+        "GSE132903_MTG": -0.75,
+        "GSE33000_PFC": -1.57
+      },
+      "HALLMARK_PROTEIN_SECRETION": {
+        "GSE118553_Entorhinal_Cortex": -2.49,
+        "GSE118553_Frontal_Cortex": -2.69,
+        "GSE118553_Temporal_Cortex": -3.03,
+        "GSE125583_FG": -1.81,
+        "GSE132903_MTG": -2.62,
+        "GSE33000_PFC": -2.01
+      },
+      "HALLMARK_REACTIVE_OXYGEN_SPECIES_PATHWAY": {
+        "GSE118553_Entorhinal_Cortex": -0.29,
+        "GSE118553_Frontal_Cortex": -0.58,
+        "GSE118553_Temporal_Cortex": -2.21,
+        "GSE125583_FG": 1.05,
+        "GSE132903_MTG": -0.2,
+        "GSE33000_PFC": -0.0
+      },
+      "HALLMARK_SPERMATOGENESIS": {
+        "GSE118553_Entorhinal_Cortex": -1.81,
+        "GSE118553_Frontal_Cortex": -2.55,
+        "GSE118553_Temporal_Cortex": -2.19,
+        "GSE125583_FG": -1.77,
+        "GSE132903_MTG": -1.95,
+        "GSE33000_PFC": -1.77
+      },
+      "HALLMARK_TGF_BETA_SIGNALING": {
+        "GSE118553_Entorhinal_Cortex": 0.18,
+        "GSE118553_Frontal_Cortex": -0.87,
+        "GSE118553_Temporal_Cortex": -0.33,
+        "GSE125583_FG": -0.32,
+        "GSE132903_MTG": -0.73,
+        "GSE33000_PFC": -0.4
+      },
+      "HALLMARK_TNFA_SIGNALING_VIA_NFKB": {
+        "GSE118553_Entorhinal_Cortex": -0.0,
+        "GSE118553_Frontal_Cortex": -0.2,
+        "GSE118553_Temporal_Cortex": 0.55,
+        "GSE125583_FG": 0.37,
+        "GSE132903_MTG": -0.23,
+        "GSE33000_PFC": 0.26
+      },
+      "HALLMARK_UNFOLDED_PROTEIN_RESPONSE": {
+        "GSE118553_Entorhinal_Cortex": -0.58,
+        "GSE118553_Frontal_Cortex": -1.56,
+        "GSE118553_Temporal_Cortex": -2.11,
+        "GSE125583_FG": 0.07,
+        "GSE132903_MTG": -1.1,
+        "GSE33000_PFC": -0.66
+      },
+      "HALLMARK_UV_RESPONSE_DN": {
+        "GSE118553_Entorhinal_Cortex": -1.61,
+        "GSE118553_Frontal_Cortex": -1.84,
+        "GSE118553_Temporal_Cortex": -1.97,
+        "GSE125583_FG": -1.31,
+        "GSE132903_MTG": -2.36,
+        "GSE33000_PFC": -1.44
+      },
+      "HALLMARK_UV_RESPONSE_UP": {
+        "GSE118553_Entorhinal_Cortex": -0.67,
+        "GSE118553_Frontal_Cortex": -0.97,
+        "GSE118553_Temporal_Cortex": -1.12,
+        "GSE125583_FG": 1.1,
+        "GSE132903_MTG": 0.28,
+        "GSE33000_PFC": -0.01
+      },
+      "HALLMARK_WNT_BETA_CATENIN_SIGNALING": {
+        "GSE118553_Entorhinal_Cortex": 0.07,
+        "GSE118553_Frontal_Cortex": -0.2,
+        "GSE118553_Temporal_Cortex": -0.14,
+        "GSE125583_FG": 0.79,
+        "GSE132903_MTG": 0.19,
+        "GSE33000_PFC": 1.73
+      },
+      "HALLMARK_XENOBIOTIC_METABOLISM": {
+        "GSE118553_Entorhinal_Cortex": 0.1,
+        "GSE118553_Frontal_Cortex": -1.01,
+        "GSE118553_Temporal_Cortex": -1.9,
+        "GSE125583_FG": 1.24,
+        "GSE132903_MTG": -0.94,
+        "GSE33000_PFC": 0.61
+      }
+    }
+  }
+}
