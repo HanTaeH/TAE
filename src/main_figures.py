@@ -61,8 +61,9 @@ def fig1():
 # ---------- Fig 2: reproducibility ----------
 def fig2():
     v = pd.read_csv(R / "validation/validation_summary.csv")
-    nul = pd.read_csv(R / "null/null_distributions.csv"); ns = pd.read_csv(R / "null/null_summary.csv")
-    fig, axs = plt.subplots(1, 2, figsize=(7.2, 3.0), gridspec_kw={"width_ratios": [1.1, 1]})
+    ND = R / "revision/null" if (R / "revision/null").exists() else R / "null"
+    nul = pd.read_csv(ND / "null_distributions.csv"); ns = pd.read_csv(ND / "null_summary.csv")
+    fig, axs = plt.subplots(1, 3, figsize=(10.4, 3.0), gridspec_kw={"width_ratios": [1.1, 1, 0.8], "wspace": 0.55})
     ax = axs[0]
     rows = [("Neff 2021 (MSBB PHG)", 0.31, 0.36, 0.33)] + [(SHORT[c] + f" (n={n})", a, b, cc) for c, n, a, b, cc in
                                                            v[["cohort", "n_AD", "frac_A", "frac_B", "frac_C"]].values]
@@ -75,7 +76,12 @@ def fig2():
     ax.get_yticklabels()[0].set_weight("bold")
     for k, x in zip("ABC", (0.17, 0.48, 0.82)):
         ax.text(x, y[0] + 0.62, k, color=INK, ha="center", fontsize=8, weight="bold")
-    ax.set_title("Subtype proportions reproduce"); tag(ax, "a")
+    ax.set_title("Subtype structure is recovered"); tag(ax, "a")
+    rmed = ns.set_index("cohort")
+    for yi, c in zip(y[1:], v.cohort):
+        ax.plot([rmed.loc[c, "frac_A_random_median"]] * 2, [yi - 0.38, yi + 0.38], color=INK, lw=1)
+    ax.text(0.0, -2.3, "| = A fraction from matched random gene sets (median)", transform=ax.get_yaxis_transform(),
+            fontsize=6.5, color=MUTED, va="top")
     ax = axs[1]
     order = list(v.cohort)
     for i, c in enumerate(order):
@@ -88,13 +94,30 @@ def fig2():
     ax.set_ylabel("ρ (C−A score vs neuron score)")
     ax.scatter([], [], s=36, color=COL["C"], label="Neff genes"); ax.scatter([], [], s=8, color="#b8b7b0", label="1,000 random gene sets")
     ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.45), ncol=2, fontsize=7); ax.set_title("Neuron axis exceeds random-gene null"); tag(ax, "b")
-    fig.tight_layout(); save(fig, "Fig2_reproducibility")
+    ax = axs[2]
+    spec = pd.read_csv(R / "revision/classifier_specificity/classifier_gene_specificity.csv", index_col=0)
+    tab = pd.crosstab(spec["direction"], spec["class"]).reindex(index=["up_in_A", "up_in_C"])
+    cols = [("neuron-enriched", COL["A"]), ("non-specific", "#b8b7b0"), ("glia-enriched", COL["C"]), ("not_in_reference", GRID)]
+    left = np.zeros(2)
+    for k, cl in cols:
+        vals = tab.get(k, pd.Series(0, index=tab.index)).values
+        ax.barh([1, 0], vals, left=left, color=cl, height=0.6, label=k.replace("_", " "))
+        for yi, (l, vv) in zip([1, 0], zip(left, vals)):
+            if vv >= 15:
+                ax.text(l + vv / 2, yi, str(vv), ha="center", va="center", fontsize=7, color="white" if k != "non-specific" else INK)
+        left += vals
+    ax.set_yticks([1, 0]); ax.set_yticklabels(["Higher in A", "Higher in C"]); ax.set_xlabel("Classifier genes")
+    ax.legend(loc="upper center", bbox_to_anchor=(0.45, -0.3), ncol=2, fontsize=6.5)
+    ax.set_title("Classifier genes by cell type"); tag(ax, "c")
+    save(fig, "Fig2_reproducibility")
 
 
 # ---------- Fig 3: neuron axis ----------
 def fig3():
     p = pd.read_csv(R / "validation/projection_all_cohorts.csv"); p["ca"] = p.r_C - p.r_A
-    fs = json.load(open(R / "forest_summary.json"))["C-minus-A score vs neuron marker score (AD)"]
+    mr = json.load(open(R / "revision/meta_revision/meta_report.json"))["P1_neuron (4 cohorts)"]
+    fs0 = json.load(open(R / "forest_summary.json"))["C-minus-A score vs neuron marker score (AD)"]
+    fs = {"rows": fs0["rows"], "pooled_rho": mr["se_boot"]["rho"], "ci": mr["se_boot"]["ci95_hksj"], "pi": mr["se_boot"]["pi95"]}
     reg = pd.read_csv(R / "msbb/msbb_region_summary.csv", index_col=0).sort_values("ad_ca_neuron")
     fig = plt.figure(figsize=(7.2, 5.6)); gs = fig.add_gridspec(2, 3, height_ratios=[1, 1.05])
     for j, c in enumerate(["GSE33000_PFC", "GSE132903_MTG", "GSE125583_FG"]):
@@ -109,12 +132,14 @@ def fig3():
     ax = fig.add_subplot(gs[1, :2]); rows = fs["rows"]; yy = np.arange(len(rows) + 1)[::-1]
     for yi, r in zip(yy[:-1], rows):
         ax.scatter(r["rho"], yi, s=14 + r["n"] / 6, color=MUTED, zorder=3)
-    lo, hi = fs["ci"]; ax.plot([lo, hi], [yy[-1]] * 2, color=INK, lw=2); ax.scatter(fs["pooled_rho"], yy[-1], marker="D", s=40, color=INK, zorder=3)
-    ax.text(fs["pooled_rho"] + 0.04, yy[-1], f"{fs['pooled_rho']:.2f} [{lo:.2f}, {hi:.2f}]", va="center", fontsize=7)
+    lo, hi = fs["ci"]; plo, phi = fs["pi"]
+    ax.plot([plo, phi], [yy[-1]] * 2, color=MUTED, lw=1); ax.plot([lo, hi], [yy[-1]] * 2, color=INK, lw=2.5)
+    ax.scatter(fs["pooled_rho"], yy[-1], marker="D", s=40, color=INK, zorder=3)
+    ax.text(fs["pooled_rho"] + 0.06, yy[-1], f"{fs['pooled_rho']:.2f} [{lo:.2f}, {hi:.2f}]; PI [{plo:.2f}, {phi:.2f}]", va="center", fontsize=7)
     ax.set_yticks(yy); ax.set_yticklabels([f"{SHORT[r['cohort']]}  n={r['n']}" for r in rows] + ["Pooled (4 cohorts)"], fontsize=7)
     ax.get_yticklabels()[-1].set_weight("bold")
     ax.set_xlim(-1.0, 0); ax.axvline(0, color=GRID, lw=0.8)
-    ax.set_xlabel("\u03c1 (C\u2212A score vs neuron score), AD samples"); ax.set_title("Meta-analysis (random effects)"); tag(ax, "b")
+    ax.set_xlabel("\u03c1 (C\u2212A score vs neuron score), AD samples"); ax.set_title("Meta-analysis (REML, HKSJ)"); tag(ax, "b")
     ax = fig.add_subplot(gs[1, 2]); yv = np.arange(len(reg))
     ax.barh(yv, reg.ad_ca_neuron, color=COL["C"], height=0.65); ax.set_yticks(yv); ax.set_yticklabels(reg.index, fontsize=6.5)
     ax.set_xlim(-1, 0); ax.set_xlabel("ρ in AD, per region"); ax.set_title("MSBB, 17 regions"); tag(ax, "c")
@@ -123,7 +148,7 @@ def fig3():
 
 # ---------- Fig 4: stage and mediation ----------
 def fig4():
-    g = pd.read_csv(R / "gse125583/braak_gse125583_per_sample.csv", index_col=0); g = g[g.group == "AD"]
+    g = pd.read_csv(R / "gse125583/braak_gse125583_per_sample.csv", index_col=0); g = g[g.set == "AD_only"] if "set" in g else g[g.group == "AD"]
     m = pd.read_csv(R / "msbb/msbb_subject_scores.csv")
     reg = pd.read_csv(R / "msbb/msbb_region_summary.csv", index_col=0)
     med = pd.read_csv(R / "mediation/mediation_summary.csv")
@@ -148,48 +173,80 @@ def fig4():
     ax.set_xticks(range(len(cd))); ax.set_xticklabels([f"{c:g}" for c in cd]); ax.set_xlabel("CDR")
     ax.set_ylabel("C−A score (subject mean, cortex)"); ax.set_title(f"MSBB subjects: CDR, ρ = {r[0]:.2f}"); tag(ax, "b")
     ax = axs[1, 0]
-    rho = spearmanr(reg.neuron_cdr, reg.ca_cdr)[0]
-    ax.scatter(reg.neuron_cdr, reg.ca_cdr, s=22, color=COL["C"], edgecolor="white", lw=0.8)
-    for nm in ["Parahippocampal Gyrus", "Precentral Gyrus", "Caudate Nucleus", "Superior Temporal Gyrus"]:
-        if nm in reg.index:
-            ax.annotate(nm.replace(" Gyrus", ""), (reg.loc[nm, "neuron_cdr"], reg.loc[nm, "ca_cdr"]), fontsize=6.5,
-                        xytext=(4, 2), textcoords="offset points", color=MUTED)
-    ax.axhline(0, color=GRID, lw=0.8); ax.axvline(0, color=GRID, lw=0.8)
-    ax.set_xlabel("ρ (neuron score vs CDR)"); ax.set_ylabel("ρ (C−A score vs CDR)")
-    ax.set_title(f"Across 17 regions, ρ = {rho:.2f}"); tag(ax, "c")
+    pc = pd.read_csv(R / "revision/meta_revision/per_cohort.csv")
+    nsr = pd.read_csv(R / "revision/null/null_summary.csv").set_index("cohort")
+    mrep = json.load(open(R / "revision/meta_revision/meta_report.json"))
+    cs = ["GSE33000_PFC", "GSE132903_MTG", "GSE118553_Temporal_Cortex", "GSE125583_FG"]
+    yy = np.arange(len(cs) + 1)[::-1]
+    for yi, c in zip(yy[:-1], cs):
+        raw = pc[(pc.cohort == c) & (pc.endpoint == "P2_stage")].iloc[0]
+        adj = pc[(pc.cohort == c) & (pc.endpoint == "P2_stage_agesex")].iloc[0]
+        ax.scatter(raw.rho, yi + 0.15, s=22, color="#b8b7b0", zorder=3)
+        ax.scatter(adj.rho, yi - 0.15, s=22, color=COL["C"], zorder=3)
+        ax.scatter(nsr.loc[c, "stage_rho_agesex_random_median"], yi - 0.15, marker="|", s=90, color=INK, zorder=4)
+    pa = mrep["P2_stage age/sex adjusted (4 cohorts)"]["se_boot"]
+    ax.plot(pa["pi95"], [yy[-1]] * 2, color=MUTED, lw=1); ax.plot(pa["ci95_hksj"], [yy[-1]] * 2, color=INK, lw=2.5)
+    ax.scatter(pa["rho"], yy[-1], marker="D", s=36, color=INK, zorder=3)
+    ax.set_yticks(yy); ax.set_yticklabels([SHORT[c] for c in cs] + ["Pooled, adjusted"], fontsize=7)
+    ax.get_yticklabels()[-1].set_weight("bold")
+    ax.axvline(0, color=GRID, lw=0.8); ax.set_xlim(-0.2, 0.9)
+    ax.scatter([], [], s=22, color="#b8b7b0", label="unadjusted"); ax.scatter([], [], s=22, color=COL["C"], label="age + sex adjusted")
+    ax.scatter([], [], marker="|", s=60, color=INK, label="random genes (median)")
+    ax.legend(fontsize=6.5, loc="upper center", bbox_to_anchor=(0.45, -0.22), ncol=3, columnspacing=0.8)
+    ax.set_xlabel("ρ (C−A score vs diagnostic stage)")
+    ax.set_title("Stage association vs random genes"); tag(ax, "c")
     ax = axs[1, 1]
-    sel = [(0, "GSE125583 AD, Braak → neuron"), (7, "MSBB, CDR → neuron"), (8, "MSBB, Braak → neuron"),
-           (10, "SEA-AD, CPS → L2/3 IT"), (11, "SEA-AD, CPS → all Exc")]
+    mf = pd.read_csv(R / "revision/mediation_revision/mediation_forward_reverse.csv")
+    sel = [(0, "GSE125583 AD, Braak"), (6, "MSBB, CDR"), (7, "MSBB, Braak"), (9, "SEA-AD, CPS (L2/3 IT)")]
     for yi, (i, lab) in enumerate(sel[::-1]):
-        row = med.iloc[i]; lo, hi = ast.literal_eval(row.prop_ci)
-        ax.plot([max(lo, -0.3), min(hi, 1.5)], [yi, yi], color=MUTED, lw=1.5)
-        ax.scatter(row.prop_mediated, yi, s=30, color=COL["C"] if row.indirect_p_boot < 0.05 else "#b8b7b0", zorder=3)
+        row = mf.iloc[i]
+        for off, pre, colr in [(0.15, "fwd", COL["C"]), (-0.15, "rev", "#b8b7b0")]:
+            lo, hi = ast.literal_eval(row[f"{pre}_prop_ci"])
+            ax.plot([max(lo, -0.3), min(hi, 1.6)], [yi + off] * 2, color=colr, lw=1.5)
+            ax.scatter(row[f"{pre}_prop"], yi + off, s=26, color=colr, zorder=3)
+    ax.scatter([], [], s=26, color=COL["C"], label="stage → neuron → C−A"); ax.scatter([], [], s=26, color="#b8b7b0", label="stage → C−A → neuron")
+    ax.legend(fontsize=6.5, loc="upper center", bbox_to_anchor=(0.4, -0.22), ncol=2)
     ax.set_yticks(range(len(sel))); ax.set_yticklabels([s[1] for s in sel[::-1]], fontsize=7)
-    ax.axvline(0, color=GRID, lw=0.8); ax.axvline(1, color=GRID, lw=0.8, ls="--"); ax.set_xlim(-0.3, 1.5)
-    ax.set_xlabel("Proportion mediated (95% bootstrap CI)"); ax.set_title("Stage → cell loss → subtype axis"); tag(ax, "d")
-    fig.tight_layout(); save(fig, "Fig4_stage_mediation")
+    ax.axvline(0, color=GRID, lw=0.8); ax.axvline(1, color=GRID, lw=0.8, ls="--"); ax.set_xlim(-0.3, 1.6)
+    ax.set_xlabel("Proportion mediated (95% bootstrap CI)"); ax.set_title("Forward and reverse models agree"); tag(ax, "d")
+    fig.tight_layout(h_pad=3.5); save(fig, "Fig4_stage_mediation")
 
 
 # ---------- Fig 5: mechanism ----------
 def fig5():
     s = pd.read_csv(R / "seaad_pseudobulk/seaad_pseudobulk_per_donor.csv")
     nn = pd.read_csv(R / "msbb/neff_style_cdr_normalisation.csv")
-    fig, axs = plt.subplots(1, 3, figsize=(7.6, 2.9), gridspec_kw={"wspace": 0.95, "width_ratios": [1, 0.9, 1]})
+    fig, axs = plt.subplots(1, 3, figsize=(9.4, 3.1), gridspec_kw={"wspace": 1.25, "width_ratios": [1, 0.9, 0.9]})
     ax = axs[0]
-    for k in "ABC":
-        d = s[s.class_sorted == k]; ax.scatter(d["L2/3 IT_of_neurons"], d.ca_sorted, s=10, color=COL[k], lw=0, label=k)
-    r = spearmanr(s["L2/3 IT_of_neurons"], s.ca_sorted)[0]
-    ax.set_xlabel("L2/3 IT fraction of neurons"); ax.set_ylabel("C−A score (pseudobulk)")
-    ax.set_title(f"SEA-AD 84 donors, ρ = {r:.2f}"); ax.legend(fontsize=7, loc="upper right", markerscale=1.5); tag(ax, "a")
+    cr = json.load(open(R / "revision/seaad_celltype_revision/seaad_celltype_revision_report.json"))
+    lam = cr["laminar"]
+    bars = [("All nuclei", cr["sorted"]["ca_vs_CPS_partial_age_sex"]["rho"], cr["sorted"]["ca_vs_Braak_partial_age_sex"]["rho"]),
+            ("All nuclei, Exc\nsubclass-adjusted", lam["ca_sorted_vs_CPS_partial"]["all Exc subclass shares (CLR)"]["rho"],
+             lam["ca_sorted_vs_Braak_partial"]["all Exc subclass shares (CLR)"]["rho"]),
+            ("Exc nuclei only", cr["type_Exc"]["ca_vs_CPS"]["rho"], cr["type_Exc"]["ca_vs_Braak"]["rho"]),
+            ("Inh nuclei only", cr["type_Inh"]["ca_vs_CPS"]["rho"], cr["type_Inh"]["ca_vs_Braak"]["rho"]),
+            ("Astrocytes only", cr["type_Astro"]["ca_vs_CPS"]["rho"], cr["type_Astro"]["ca_vs_Braak"]["rho"]),
+            ("Oligodendrocytes only", cr["type_Oligo"]["ca_vs_CPS"]["rho"], cr["type_Oligo"]["ca_vs_Braak"]["rho"])]
+    yb = np.arange(len(bars))[::-1]
+    ax.barh(yb + 0.18, [b[1] for b in bars], height=0.34, color="#b8b7b0", label="pseudo-progression")
+    ax.barh(yb - 0.18, [b[2] for b in bars], height=0.34, color=COL["C"], label="Braak stage")
+    ax.set_yticks(yb); ax.set_yticklabels([b[0] for b in bars], fontsize=6.5); ax.axvline(0, color=GRID, lw=0.8)
+    ax.set_xlim(-0.1, 0.5); ax.set_xlabel("ρ with C−A score"); ax.legend(fontsize=6.5, loc="upper center", bbox_to_anchor=(0.4, -0.2), ncol=2)
+    ax.set_title("SEA-AD: composition vs within-cell"); tag(ax, "a")
     ax = axs[1]
     rep = json.load(open(R / "simulation/simulation_report.json"))
-    names = [("neuron_loss", "Neuron loss"), ("heterogeneous", "Mixed loss"), ("glia_only", "Glia change only"), ("noise_only", "Noise only")]
-    sig = [rep[k]["signal_mean_best_r"] for k, _ in names]
-    ax.barh(range(4)[::-1], sig, color=[COL["C"], COL["C"], "#b8b7b0", "#b8b7b0"], height=0.6)
-    for yi, (k, _) in zip(range(4)[::-1], names):
-        if k != "noise_only":
-            ax.text(rep[k]["signal_mean_best_r"] + 0.01, yi, f"\u03c1 = {rep[k]['ca_vs_neuron_frac_rho']:.2f}", va="center", fontsize=6.5, color=MUTED)
-    ax.set_yticks(range(4)[::-1]); ax.set_yticklabels([n for _, n in names]); ax.set_xlim(0, 0.4)
+    rv = json.load(open(R / "revision/simulation_revision/simulation_revision_report.json"))
+    names = [("Neuron loss", rv["neuron_loss_reference"]["signal_mean_best_r"], rv["neuron_loss_reference"]["ca_vs_driver_rho"], COL["C"]),
+             ("Per-neuron mRNA ↓\n(fixed composition)", rv["percell_global"]["signal_mean_best_r"], rv["percell_global"]["ca_vs_driver_rho"], COL["A"]),
+             ("Neuron-enriched genes ↓\n(fixed composition)", rv["percell_neuronal"]["signal_mean_best_r"], rv["percell_neuronal"]["ca_vs_driver_rho"], COL["A"]),
+             ("Glia change only", rep["glia_only"]["signal_mean_best_r"], rep["glia_only"]["ca_vs_neuron_frac_rho"], "#b8b7b0"),
+             ("Composition fixed", rv["noise_only_exact"]["signal_mean_best_r"], None, "#b8b7b0")]
+    yb = np.arange(len(names))[::-1]
+    ax.barh(yb, [n[1] for n in names], color=[n[3] for n in names], height=0.6)
+    for yi, n in zip(yb, names):
+        if n[2] is not None:
+            ax.text(n[1] + 0.01, yi, f"ρ = {n[2]:.2f}", va="center", fontsize=6.5, color=MUTED)
+    ax.set_yticks(yb); ax.set_yticklabels([n[0] for n in names], fontsize=6.5); ax.set_xlim(0, 0.42)
     ax.set_xlabel("Subtype signal (mean best r)"); ax.set_title("Simulated bulk (SEA-AD)"); tag(ax, "b")
     ax = axs[2]
     for _, r in nn.iterrows():
