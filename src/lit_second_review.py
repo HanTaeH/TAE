@@ -12,8 +12,12 @@ from pathlib import Path
 
 import pandas as pd
 
+import os
 N = {"included": 10, "excluded_manual": 25, "excluded_rule": 25}
 SEED = 20261117
+if os.environ.get("ROUND") == "2":  # human-only round, disjoint from round 1
+    N = {"included": 6, "excluded_manual": 12, "excluded_rule": 12}
+    SEED = 20261118
 
 
 def make(records, decisions, out):
@@ -21,6 +25,9 @@ def make(records, decisions, out):
     r = pd.read_csv(records, dtype={"PMID": str})
     d = pd.read_csv(decisions, dtype={"PMID": str})
     d = d.merge(r[["PMID", "abstract"]], on="PMID")
+    prev = Path(os.environ["EXCLUDE_KEY"]) if os.environ.get("EXCLUDE_KEY") else None
+    if prev is not None:
+        d = d[~d.PMID.isin(pd.read_csv(prev, dtype={"PMID": str}).PMID)]
     parts = [d[d.stage == s].sample(n, random_state=SEED) for s, n in N.items()]
     s = pd.concat(parts).sample(frac=1, random_state=SEED).reset_index(drop=True)
     s.insert(0, "no", range(1, len(s) + 1))
@@ -28,7 +35,7 @@ def make(records, decisions, out):
     sheet = s[["no", "PMID", "year", "title", "abstract"]].copy()
     sheet["판정(포함/제외)"] = ""
     sheet["메모"] = ""
-    with pd.ExcelWriter(out / "2차검토_시트.xlsx", engine="openpyxl") as w:
+    with pd.ExcelWriter(out / os.environ.get("SHEET", "2차검토_시트.xlsx"), engine="openpyxl") as w:
         sheet.to_excel(w, index=False, sheet_name="검토")
         ws = w.sheets["검토"]
         from openpyxl.styles import Alignment

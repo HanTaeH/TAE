@@ -1,0 +1,31 @@
+no,PMID,stage,reason
+1,35974022,excluded_rule,"rule: no subgrouping + brain molecular terms, or animal only"
+2,41542451,excluded_manual,not patient-level AD subtyping from brain bulk transcriptome
+3,30497016,excluded_rule,"rule: no subgrouping + brain molecular terms, or animal only"
+4,42178007,included,
+5,33517514,excluded_rule,"rule: no subgrouping + brain molecular terms, or animal only"
+6,40100818,included,
+7,42860235,excluded_manual,not patient-level AD subtyping from brain bulk transcriptome
+8,31247206,excluded_manual,not patient-level AD subtyping from brain bulk transcriptome
+9,38687251,excluded_manual,not patient-level AD subtyping from brain bulk transcriptome
+10,40463056,excluded_manual,not patient-level AD subtyping from brain bulk transcriptome
+11,29262769,excluded_rule,"rule: no subgrouping + brain molecular terms, or animal only"
+12,41699702,excluded_rule,"rule: no subgrouping + brain molecular terms, or animal only"
+13,40196602,included,
+14,41102562,excluded_rule,"rule: no subgrouping + brain molecular terms, or animal only"
+15,42779047,excluded_manual,not patient-level AD subtyping from brain bulk transcriptome
+16,42620705,included,
+17,41279079,excluded_rule,"rule: no subgrouping + brain molecular terms, or animal only"
+18,40657931,excluded_manual,not patient-level AD subtyping from brain bulk transcriptome
+19,27454254,excluded_rule,"rule: no subgrouping + brain molecular terms, or animal only"
+20,42015285,excluded_manual,not patient-level AD subtyping from brain bulk transcriptome
+21,42056682,included,
+22,40181382,included,
+23,38106187,excluded_rule,"rule: no subgrouping + brain molecular terms, or animal only"
+24,41454068,excluded_manual,not patient-level AD subtyping from brain bulk transcriptome
+25,42136267,excluded_rule,"rule: no subgrouping + brain molecular terms, or animal only"
+26,36577842,excluded_manual,not patient-level AD subtyping from brain bulk transcriptome
+27,38036733,excluded_rule,"rule: no subgrouping + brain molecular terms, or animal only"
+28,31346329,excluded_rule,"rule: no subgrouping + brain molecular terms, or animal only"
+29,39754632,excluded_manual,not patient-level AD subtyping from brain bulk transcriptome
+30,40166227,excluded_manual,not patient-level AD subtyping from brain bulk transcriptome
