@@ -38,41 +38,41 @@
         0.253
       ]
     },
-    "subject_n": 107,
+    "subject_n": 106,
     "subject_ca_vs_pmi": {
-      "rho": 0.133,
-      "p": 0.171,
-      "n": 107
+      "rho": 0.122,
+      "p": 0.214,
+      "n": 106
     },
     "subject_ca_vs_ph": {
-      "rho": -0.174,
-      "p": 0.0729,
-      "n": 107
+      "rho": -0.172,
+      "p": 0.0777,
+      "n": 106
     },
     "subject_ca_vs_cdr_age_sex": {
-      "rho": 0.319,
-      "p": 0.000846,
-      "n": 107
+      "rho": 0.313,
+      "p": 0.00117,
+      "n": 106
     },
     "subject_ca_vs_cdr_age_sex_pmi_ph": {
-      "rho": 0.33,
-      "p": 0.000629,
-      "n": 107
+      "rho": 0.322,
+      "p": 0.000895,
+      "n": 106
     },
     "subject_ca_vs_braak_age_sex": {
-      "rho": 0.308,
-      "p": 0.00134,
-      "n": 107
+      "rho": 0.293,
+      "p": 0.0024,
+      "n": 106
     },
     "subject_ca_vs_braak_age_sex_pmi_ph": {
-      "rho": 0.283,
-      "p": 0.00359,
-      "n": 107
+      "rho": 0.271,
+      "p": 0.00554,
+      "n": 106
     },
     "subject_ca_vs_neuron_age_sex_pmi_ph": {
-      "rho": -0.962,
-      "p": 1.94e-59,
-      "n": 107
+      "rho": -0.961,
+      "p": 5.72e-58,
+      "n": 106
     }
   },
   "GSE106241": {

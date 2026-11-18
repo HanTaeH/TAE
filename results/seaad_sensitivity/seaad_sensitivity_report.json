@@ -1,0 +1,617 @@
+{
+  "fdr": {
+    "n_tests": 42,
+    "fdr_nominal_lt_0.05": [
+      {
+        "pseudobulk": "sorted",
+        "outcome": "CPS",
+        "rho": 0.272,
+        "fdr_nominal": 0.039
+      },
+      {
+        "pseudobulk": "sorted",
+        "outcome": "Braak",
+        "rho": 0.406,
+        "fdr_nominal": 0.005
+      },
+      {
+        "pseudobulk": "sorted",
+        "outcome": "dementia",
+        "rho": 0.388,
+        "fdr_nominal": 0.006
+      },
+      {
+        "pseudobulk": "fixed_comp",
+        "outcome": "dementia",
+        "rho": 0.317,
+        "fdr_nominal": 0.017
+      },
+      {
+        "pseudobulk": "comp_only",
+        "outcome": "CPS",
+        "rho": 0.313,
+        "fdr_nominal": 0.017
+      },
+      {
+        "pseudobulk": "comp_only",
+        "outcome": "Braak",
+        "rho": 0.268,
+        "fdr_nominal": 0.041
+      },
+      {
+        "pseudobulk": "comp_only",
+        "outcome": "dementia",
+        "rho": 0.317,
+        "fdr_nominal": 0.017
+      },
+      {
+        "pseudobulk": "type_Inh",
+        "outcome": "Braak",
+        "rho": 0.264,
+        "fdr_nominal": 0.043
+      },
+      {
+        "pseudobulk": "type_Astro",
+        "outcome": "dementia",
+        "rho": 0.276,
+        "fdr_nominal": 0.039
+      },
+      {
+        "pseudobulk": "type_Micro",
+        "outcome": "dementia",
+        "rho": 0.286,
+        "fdr_nominal": 0.032
+      },
+      {
+        "pseudobulk": "Exc_subclass_comp_only",
+        "outcome": "CPS",
+        "rho": -0.317,
+        "fdr_nominal": 0.017
+      },
+      {
+        "pseudobulk": "Exc_subclass_comp_only",
+        "outcome": "Braak",
+        "rho": -0.306,
+        "fdr_nominal": 0.019
+      },
+      {
+        "pseudobulk": "Exc_subclass_comp_only",
+        "outcome": "dementia",
+        "rho": -0.324,
+        "fdr_nominal": 0.017
+      },
+      {
+        "pseudobulk": "sub_L4 IT",
+        "outcome": "Braak",
+        "rho": 0.32,
+        "fdr_nominal": 0.017
+      },
+      {
+        "pseudobulk": "sub_L5 IT",
+        "outcome": "Braak",
+        "rho": 0.263,
+        "fdr_nominal": 0.043
+      },
+      {
+        "pseudobulk": "sub_L6 IT",
+        "outcome": "Braak",
+        "rho": 0.321,
+        "fdr_nominal": 0.017
+      }
+    ],
+    "fdr_random_lt_0.05": []
+  },
+  "braak_leverage": {
+    "ca_sorted": {
+      "Braak_all": {
+        "rho": 0.406,
+        "p": 0.000129,
+        "n": 84
+      },
+      "Braak_given_CPS": {
+        "rho": 0.33,
+        "p": 0.00215,
+        "n": 84
+      },
+      "CPS_given_Braak": {
+        "rho": -0.112,
+        "p": 0.309,
+        "n": 84
+      },
+      "Braak_in_Braak4to6": {
+        "rho": 0.454,
+        "p": 6.22e-05,
+        "n": 72
+      },
+      "CPS_in_Braak4to6": {
+        "rho": 0.284,
+        "p": 0.0158,
+        "n": 72
+      }
+    },
+    "ca_fixed_comp": {
+      "Braak_all": {
+        "rho": 0.242,
+        "p": 0.0265,
+        "n": 84
+      },
+      "Braak_given_CPS": {
+        "rho": 0.221,
+        "p": 0.0438,
+        "n": 84
+      },
+      "CPS_given_Braak": {
+        "rho": -0.099,
+        "p": 0.369,
+        "n": 84
+      },
+      "Braak_in_Braak4to6": {
+        "rho": 0.293,
+        "p": 0.0124,
+        "n": 72
+      },
+      "CPS_in_Braak4to6": {
+        "rho": 0.142,
+        "p": 0.235,
+        "n": 72
+      }
+    },
+    "ca_comp_only": {
+      "Braak_all": {
+        "rho": 0.268,
+        "p": 0.0137,
+        "n": 84
+      },
+      "Braak_given_CPS": {
+        "rho": 0.022,
+        "p": 0.841,
+        "n": 84
+      },
+      "CPS_given_Braak": {
+        "rho": 0.17,
+        "p": 0.123,
+        "n": 84
+      },
+      "Braak_in_Braak4to6": {
+        "rho": 0.54,
+        "p": 9.72e-07,
+        "n": 72
+      },
+      "CPS_in_Braak4to6": {
+        "rho": 0.5,
+        "p": 7.83e-06,
+        "n": 72
+      }
+    },
+    "ca_type_Exc": {
+      "Braak_all": {
+        "rho": 0.22,
+        "p": 0.044,
+        "n": 84
+      },
+      "Braak_given_CPS": {
+        "rho": 0.285,
+        "p": 0.00854,
+        "n": 84
+      },
+      "CPS_given_Braak": {
+        "rho": -0.198,
+        "p": 0.0716,
+        "n": 84
+      },
+      "Braak_in_Braak4to6": {
+        "rho": 0.163,
+        "p": 0.17,
+        "n": 72
+      },
+      "CPS_in_Braak4to6": {
+        "rho": 0.017,
+        "p": 0.886,
+        "n": 72
+      }
+    },
+    "ca_type_Inh": {
+      "Braak_all": {
+        "rho": 0.264,
+        "p": 0.0153,
+        "n": 84
+      },
+      "Braak_given_CPS": {
+        "rho": 0.243,
+        "p": 0.0258,
+        "n": 84
+      },
+      "CPS_given_Braak": {
+        "rho": -0.112,
+        "p": 0.311,
+        "n": 84
+      },
+      "Braak_in_Braak4to6": {
+        "rho": 0.305,
+        "p": 0.00909,
+        "n": 72
+      },
+      "CPS_in_Braak4to6": {
+        "rho": 0.169,
+        "p": 0.155,
+        "n": 72
+      }
+    },
+    "ca_type_Astro": {
+      "Braak_all": {
+        "rho": 0.116,
+        "p": 0.291,
+        "n": 84
+      },
+      "Braak_given_CPS": {
+        "rho": 0.047,
+        "p": 0.671,
+        "n": 84
+      },
+      "CPS_given_Braak": {
+        "rho": 0.025,
+        "p": 0.82,
+        "n": 84
+      },
+      "Braak_in_Braak4to6": {
+        "rho": 0.186,
+        "p": 0.118,
+        "n": 72
+      },
+      "CPS_in_Braak4to6": {
+        "rho": 0.141,
+        "p": 0.239,
+        "n": 72
+      }
+    },
+    "ca_type_Oligo": {
+      "Braak_all": {
+        "rho": 0.045,
+        "p": 0.685,
+        "n": 84
+      },
+      "Braak_given_CPS": {
+        "rho": 0.029,
+        "p": 0.791,
+        "n": 84
+      },
+      "CPS_given_Braak": {
+        "rho": -0.004,
+        "p": 0.97,
+        "n": 84
+      },
+      "Braak_in_Braak4to6": {
+        "rho": 0.102,
+        "p": 0.395,
+        "n": 72
+      },
+      "CPS_in_Braak4to6": {
+        "rho": 0.048,
+        "p": 0.687,
+        "n": 72
+      }
+    },
+    "ca_type_Micro": {
+      "Braak_all": {
+        "rho": 0.152,
+        "p": 0.166,
+        "n": 84
+      },
+      "Braak_given_CPS": {
+        "rho": 0.039,
+        "p": 0.724,
+        "n": 84
+      },
+      "CPS_given_Braak": {
+        "rho": 0.061,
+        "p": 0.582,
+        "n": 84
+      },
+      "Braak_in_Braak4to6": {
+        "rho": 0.163,
+        "p": 0.172,
+        "n": 72
+      },
+      "CPS_in_Braak4to6": {
+        "rho": 0.146,
+        "p": 0.22,
+        "n": 72
+      }
+    },
+    "ca_Exc_fixed_subclass_mix": {
+      "Braak_all": {
+        "rho": 0.217,
+        "p": 0.0475,
+        "n": 84
+      },
+      "Braak_given_CPS": {
+        "rho": 0.286,
+        "p": 0.00833,
+        "n": 84
+      },
+      "CPS_given_Braak": {
+        "rho": -0.201,
+        "p": 0.0665,
+        "n": 84
+      },
+      "Braak_in_Braak4to6": {
+        "rho": 0.157,
+        "p": 0.187,
+        "n": 72
+      },
+      "CPS_in_Braak4to6": {
+        "rho": 0.004,
+        "p": 0.973,
+        "n": 72
+      }
+    },
+    "ca_Exc_subclass_comp_only": {
+      "Braak_all": {
+        "rho": -0.306,
+        "p": 0.00459,
+        "n": 84
+      },
+      "Braak_given_CPS": {
+        "rho": -0.087,
+        "p": 0.429,
+        "n": 84
+      },
+      "CPS_given_Braak": {
+        "rho": -0.121,
+        "p": 0.274,
+        "n": 84
+      },
+      "Braak_in_Braak4to6": {
+        "rho": -0.244,
+        "p": 0.0387,
+        "n": 72
+      },
+      "CPS_in_Braak4to6": {
+        "rho": -0.24,
+        "p": 0.0427,
+        "n": 72
+      }
+    },
+    "ca_sub_L2/3 IT": {
+      "Braak_all": {
+        "rho": 0.07,
+        "p": 0.53,
+        "n": 84
+      },
+      "Braak_given_CPS": {
+        "rho": 0.302,
+        "p": 0.00531,
+        "n": 84
+      },
+      "CPS_given_Braak": {
+        "rho": -0.318,
+        "p": 0.00322,
+        "n": 84
+      },
+      "Braak_in_Braak4to6": {
+        "rho": 0.037,
+        "p": 0.759,
+        "n": 72
+      },
+      "CPS_in_Braak4to6": {
+        "rho": -0.177,
+        "p": 0.137,
+        "n": 72
+      }
+    },
+    "ca_sub_L4 IT": {
+      "Braak_all": {
+        "rho": 0.32,
+        "p": 0.00301,
+        "n": 84
+      },
+      "Braak_given_CPS": {
+        "rho": 0.3,
+        "p": 0.00562,
+        "n": 84
+      },
+      "CPS_given_Braak": {
+        "rho": -0.142,
+        "p": 0.197,
+        "n": 84
+      },
+      "Braak_in_Braak4to6": {
+        "rho": 0.26,
+        "p": 0.0276,
+        "n": 72
+      },
+      "CPS_in_Braak4to6": {
+        "rho": 0.125,
+        "p": 0.295,
+        "n": 72
+      }
+    },
+    "ca_sub_L5 IT": {
+      "Braak_all": {
+        "rho": 0.263,
+        "p": 0.0164,
+        "n": 83
+      },
+      "Braak_given_CPS": {
+        "rho": 0.29,
+        "p": 0.00783,
+        "n": 83
+      },
+      "CPS_given_Braak": {
+        "rho": -0.173,
+        "p": 0.117,
+        "n": 83
+      },
+      "Braak_in_Braak4to6": {
+        "rho": 0.153,
+        "p": 0.204,
+        "n": 71
+      },
+      "CPS_in_Braak4to6": {
+        "rho": 0.038,
+        "p": 0.755,
+        "n": 71
+      }
+    },
+    "ca_sub_L6 IT": {
+      "Braak_all": {
+        "rho": 0.321,
+        "p": 0.00324,
+        "n": 82
+      },
+      "Braak_given_CPS": {
+        "rho": 0.277,
+        "p": 0.0119,
+        "n": 82
+      },
+      "CPS_given_Braak": {
+        "rho": -0.11,
+        "p": 0.324,
+        "n": 82
+      },
+      "Braak_in_Braak4to6": {
+        "rho": 0.271,
+        "p": 0.0233,
+        "n": 70
+      },
+      "CPS_in_Braak4to6": {
+        "rho": 0.158,
+        "p": 0.192,
+        "n": 70
+      }
+    }
+  },
+  "braak_distribution": {
+    "0": 2,
+    "2": 4,
+    "3": 6,
+    "4": 23,
+    "5": 34,
+    "6": 15
+  },
+  "CPS_vs_Braak": {
+    "rho": 0.817,
+    "p": 2.66e-21,
+    "n": 84
+  },
+  "low_vs_high_braak": {
+    "age": {
+      "median_braak0_3": 88.0,
+      "median_braak4_6": 91.0,
+      "n": [
+        12,
+        72
+      ],
+      "mannwhitney_p": 0.183
+    },
+    "RIN": {
+      "median_braak0_3": 8.71,
+      "median_braak4_6": 8.59,
+      "n": [
+        12,
+        72
+      ],
+      "mannwhitney_p": 0.283
+    },
+    "Brain pH": {
+      "median_braak0_3": 6.5,
+      "median_braak4_6": 6.75,
+      "n": [
+        12,
+        72
+      ],
+      "mannwhitney_p": 0.249
+    },
+    "PMI": {
+      "median_braak0_3": 8.95,
+      "median_braak4_6": 6.5,
+      "n": [
+        12,
+        72
+      ],
+      "mannwhitney_p": 0.0389
+    },
+    "neuron_nuclei_frac": {
+      "median_braak0_3": 0.826,
+      "median_braak4_6": 0.802,
+      "n": [
+        12,
+        72
+      ],
+      "mannwhitney_p": 0.114
+    },
+    "ca_sorted": {
+      "median_braak0_3": -0.465,
+      "median_braak4_6": -0.359,
+      "n": [
+        12,
+        72
+      ],
+      "mannwhitney_p": 0.258
+    }
+  },
+  "laminar": {
+    "L23_vs_L4_share": {
+      "rho": -0.844,
+      "p": 6.92e-24,
+      "n": 84
+    },
+    "ca_vs_L23_given_L4": {
+      "rho": -0.071,
+      "p": 0.52,
+      "n": 84
+    },
+    "ca_vs_L4_given_L23": {
+      "rho": 0.319,
+      "p": 0.0031,
+      "n": 84
+    },
+    "ca_vs_ilr_L4_vs_L23": {
+      "rho": 0.585,
+      "p": 5.24e-09,
+      "n": 84
+    },
+    "CPS_vs_ilr_L4_vs_L23": {
+      "rho": 0.396,
+      "p": 0.000194,
+      "n": 84
+    },
+    "ca_vs_CPS_given_ilr": {
+      "rho": 0.055,
+      "p": 0.62,
+      "n": 84
+    },
+    "comp_only_vs_observed": {
+      "rho": -0.098,
+      "p": 0.373,
+      "n": 84
+    }
+  },
+  "rin": {
+    "ca_vs_RIN": {
+      "rho": -0.356,
+      "p": 0.000878,
+      "n": 84
+    },
+    "ca_vs_RIN_given_CPS": {
+      "rho": -0.314,
+      "p": 0.00368,
+      "n": 84
+    },
+    "ca_vs_RIN_given_CPS_neuronfrac": {
+      "rho": -0.176,
+      "p": 0.109,
+      "n": 84
+    },
+    "RIN_vs_CPS": {
+      "rho": -0.23,
+      "p": 0.035,
+      "n": 84
+    },
+    "RIN_vs_neuronfrac": {
+      "rho": 0.359,
+      "p": 0.000812,
+      "n": 84
+    }
+  }
+}

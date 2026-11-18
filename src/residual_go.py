@@ -53,16 +53,20 @@ def bh(p: np.ndarray) -> np.ndarray:
     return out
 
 
-def test_sets(gc: pd.Series, Zs: np.ndarray, idx: dict, sets: dict) -> pd.DataFrame:
+def test_sets(gc: pd.Series, Zs: np.ndarray, idx: dict, sets: dict, rz: np.ndarray) -> pd.DataFrame:
+    """VIF is estimated from gene profiles orthogonalised to the residual axis, so that correlation
+    induced by the axis itself does not inflate the inter-gene correlation (second-round review)."""
     mu, sd, N = gc.mean(), gc.std(), len(gc)
     n_s = Zs.shape[1]
+    Zo = Zs - np.outer(gc.values, rz)
+    Zo = (Zo - Zo.mean(1, keepdims=True)) / Zo.std(1, keepdims=True)
     rows = []
     for name, genes in sets.items():
         ii = [idx[g] for g in genes if g in idx]
         k = len(ii)
         if k < 15 or k > 500:
             continue
-        sub = Zs[ii]
+        sub = Zo[ii]
         s = sub.sum(0)
         rbar = ((s @ s) / n_s - k) / (k * (k - 1))
         vif = max(1.0, 1 + (k - 1) * rbar)
@@ -97,12 +101,12 @@ def main() -> None:
         rca = residual_ca(expr, ad, genes, cent, cells)
         keep = expr.index.difference(genes).difference(list(MARKERS))
         Z = residualise(z_np(expr.loc[keep, ad].values), cells)
-        rz = (rca - rca.mean()) / rca.std()
+        rz = (rca - rca.mean()) / rca.std(ddof=0)
         Zs = (Z - Z.mean(1, keepdims=True)) / Z.std(1, keepdims=True)
         gc = pd.Series(Zs @ rz / len(rz), index=keep)
         idx = {g: i for i, g in enumerate(keep)}
         for c, sets in coll.items():
-            df = test_sets(gc, Zs, idx, sets)
+            df = test_sets(gc, Zs, idx, sets, np.asarray(rz))
             df["cohort"] = name
             res[c].append(df)
         print(name, "done", flush=True)
@@ -125,13 +129,23 @@ def main() -> None:
         summ = pd.DataFrame({"mean_z": wide_z.mean(axis=1), "n_cohorts_fdr05": sig.sum(axis=1),
                              "all_up": all_up, "all_down": all_dn, "arrays_up": arr_up, "arrays_down": arr_dn,
                              "platform_flip": flip}).join(wide_z.add_prefix("z_"))
+        # cross-study Stouffer meta-z: GSE118553 regions (same donors) averaged into one study first
+        study = {c: c.split("_")[0] for c in wide_z.columns}
+        zs = wide_z.T.groupby(pd.Series(study)).mean().T
+        k = zs.notna().sum(axis=1)
+        summ["meta_z"] = zs.sum(axis=1) / np.sqrt(k)
+        summ["meta_p"] = 2 * stats.norm.sf(summ["meta_z"].abs())
+        summ["meta_fdr"] = bh(summ["meta_p"].fillna(1).values)
         summ.sort_values("mean_z").round(3).to_csv(a.out / f"{c}_consistency.csv")
         rep[c] = {"n_sets_tested": int(len(wide_z)), "n_cohorts": int(wide_z.shape[1]),
                   "consistent_up_all": summ.index[all_up].tolist()[:40],
                   "consistent_down_all": summ.index[all_dn].tolist()[:40],
                   "n_consistent_up_all": int(all_up.sum()), "n_consistent_down_all": int(all_dn.sum()),
                   "n_arrays_only_up": int((arr_up & ~all_up).sum()), "n_arrays_only_down": int((arr_dn & ~all_dn).sum()),
-                  "platform_flip": summ.index[flip].tolist()[:40], "n_platform_flip": int(flip.sum())}
+                  "platform_flip": summ.index[flip].tolist()[:40], "n_platform_flip": int(flip.sum()),
+                  "n_meta_fdr05": int((summ["meta_fdr"] < 0.05).sum()),
+                  "meta_fdr05": summ.loc[summ["meta_fdr"] < 0.05, ["meta_z", "meta_fdr", "n_cohorts_fdr05"]]
+                  .sort_values("meta_z").round(4).reset_index().to_dict("records")[:60]}
         if c == "HALLMARK":
             rep[c]["z_table"] = wide_z.round(2).to_dict(orient="index")
     (a.out / "residual_go_report.json").write_text(json.dumps(rep, indent=2))

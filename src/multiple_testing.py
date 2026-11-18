@@ -4,7 +4,7 @@ Families
   primary       2 pre-specified endpoints, random-effects pooled over the independent cohorts
                 (forest_summary.json): P1 C-minus-A vs neuron marker score (AD samples),
                 P2 C-minus-A vs disease stage (all samples). Bonferroni, alpha 0.05 / 2.
-  confirmatory  per-cohort versions of the primary claims and the main follow-up claims, listed
+  secondary     per-cohort versions of the primary claims and the main follow-up claims, listed
                 in CONFIRMATORY (regex on 'report::path'); Benjamini-Hochberg within the family.
   exploratory   every other p-value found in results/*/*report.json; BH within the family.
 A global BH over all tests is reported too. Tests whose expected result is a null (e.g. after
@@ -29,8 +29,12 @@ CONFIRMATORY = [
     r"^braak_gse125583::AD_only/(ca_vs_braak|random_null)/p$",
     r"^braak::(T1_all/ca_vs_braak|T5_random_null/all)/p$",
     r"^seaad_pseudobulk::sorted/(ca_vs_CPS|ca_vs_CPS_random_null)/p$",
-    r"^msbb::(S_subject_cortex/ca_vs_cdr|R_across_regions/ca_cdr_vs_neuron_cdr)/p$",
+    r"^msbb::S_subject_cortex/ca_vs_cdr/p$",  # across-region test dropped (CDR-shuffle null)
     rf"^li2022::{INDEP}/null_max_abs_neuron_rho/p$",
+    # second-round revision: secondary claims carried into the text
+    rf"^null::{INDEP}/stage_rho_agesex/p_empirical$",
+    r"^seaad_celltype_revision::(Exc_fixed_subclass_mix|type_Inh|sub_L4 IT|sub_L6 IT)/random_null/Braak/p$",
+    r"^technical_confounders::MSBB/subject_ca_vs_cdr_age_sex_pmi_ph/p$",
 ]
 EST_KEYS = ["rho", "obs", "neff", "neff_rho", "obs_rho", "r"]
 
@@ -78,17 +82,20 @@ def main() -> None:
     df = collect(res)
     df["key"] = df["report"] + "::" + df["path"]
     df["family"] = np.where(df["key"].apply(lambda k: any(re.search(r, k) for r in CONFIRMATORY)),
-                            "confirmatory", "exploratory")
+                            "secondary", "exploratory")
     df["adjusted_for_neuron"] = df["path"].str.contains("neuron", case=False) & \
         df["path"].str.contains("partial|_adj", case=False)
-    fs = json.loads((res / "forest_summary.json").read_text())
-    prim = pd.DataFrame([{"report": "forest", "path": f"P{i + 1}: {k}", "estimate": v["pooled_rho"],
-                          "n": len(v["pooled_cohorts"]), "p": v["p"], "family": "primary",
-                          "adjusted_for_neuron": False, "key": f"forest::P{i + 1}"}
-                         for i, (k, v) in enumerate(fs.items())])
+    # primary family: REML + HKSJ pooled endpoints from meta_reanalysis.py (bootstrap SE);
+    # P2 is the age/sex-adjusted stage endpoint
+    mr = json.loads((res / "meta_revision/meta_report.json").read_text())
+    pk = {"P1": "P1_neuron (4 cohorts)", "P2": "P2_stage age/sex adjusted (4 cohorts)"}
+    prim = pd.DataFrame([{"report": "meta_revision", "path": f"{i}: {k}", "estimate": mr[k]["se_boot"]["rho"],
+                          "n": mr[k]["se_boot"]["k"], "p": mr[k]["se_boot"]["p_hksj"], "family": "primary",
+                          "adjusted_for_neuron": False, "key": f"meta_revision::{i}"} for i, k in pk.items()])
+    df = df[df["report"] != "meta"]  # pooled endpoints are the primary family, not re-counted
     prim["q_family"] = np.minimum(prim["p"] * len(prim), 1)  # Bonferroni
     df["q_family"] = np.nan
-    for fam in ["confirmatory", "exploratory"]:
+    for fam in ["secondary", "exploratory"]:
         m = df["family"] == fam
         df.loc[m, "q_family"] = bh(df.loc[m, "p"].values)
     allt = pd.concat([prim, df], ignore_index=True)
@@ -106,9 +113,9 @@ def main() -> None:
                                   "n_q05_family": int((disc["q_family"] < .05).sum()),
                                   "n_q05_global": int((disc["q_global"] < .05).sum())}
     summ["primary"] = prim[["path", "estimate", "n", "p", "q_family"]].to_dict(orient="records")
-    conf = allt[allt["family"] == "confirmatory"].sort_values("p")
-    summ["confirmatory"] = conf[["report", "path", "estimate", "p", "q_family"]].round(4).to_dict(orient="records")
-    summ["confirmatory_failing_q05"] = conf.loc[conf["q_family"] >= .05, ["report", "path", "estimate", "p", "q_family"]] \
+    conf = allt[allt["family"] == "secondary"].sort_values("p")
+    summ["secondary"] = conf[["report", "path", "estimate", "p", "q_family"]].round(4).to_dict(orient="records")
+    summ["secondary_failing_q05"] = conf.loc[conf["q_family"] >= .05, ["report", "path", "estimate", "p", "q_family"]] \
         .round(4).to_dict(orient="records")
     (out / "multiple_testing_summary.json").write_text(json.dumps(summ, indent=2, ensure_ascii=False, default=str))
     print(json.dumps(summ, indent=1, ensure_ascii=False, default=str))

@@ -41,7 +41,6 @@ if [ ! -f "$REF_DIR/donors_dfc/donor_meta.csv" ]; then
     --donors H21.33.003 H21.33.004 H21.33.018 H21.33.019 H21.33.028 H21.33.043
 fi
 python3 region_reference.py    --data "$DATA" --seaad "$REF_DIR" --out "$OUT/region_reference" --n 200
-python3 multiple_testing.py    "$OUT"
 # --- reviewer revision (2026-11-18) ---
 python3 meta_reanalysis.py      --data "$DATA" --res "$OUT" --out "$OUT/meta_revision"
 python3 classifier_specificity.py --data "$DATA" --ref "$REF_DIR/seaad_mtg_reference.csv.gz" --out "$OUT/classifier_specificity"
@@ -51,3 +50,5 @@ python3 technical_confounders.py --data "$DATA" --res "$OUT" --seaad-dir "$REF_D
 python3 simulation_revision.py  --data "$DATA" --ref "$REF_DIR" --out "$OUT/simulation_revision" --n 400
 python3 deconv_validation_blocks.py --seaad-dir "$REF_DIR" --res "$OUT" --out "$OUT/deconv_validation_blocks" --n 2000
 python3 residual_go.py         --data "$DATA" --gmt-dir "${GMT_DIR:-/mnt/project-files/d1-data/msigdb}" --out "$OUT/residual_go"
+python3 seaad_sensitivity.py    --res "$OUT" --seaad-meta "$REF_DIR/donors/donor_meta.csv" --out "$OUT/seaad_sensitivity"
+python3 multiple_testing.py    "$OUT"   # last: covers every report above

@@ -61,7 +61,8 @@ def main() -> None:
         pr = pd.DataFrame(per_region).T
         msbb[f"{scope}_per_region_median"] = pr.median().round(3).to_dict()
         msbb[f"{scope}_per_region_range"] = {c: [round(pr[c].min(), 3), round(pr[c].max(), 3)] for c in pr}
-    subj = m.groupby("subject").agg(ca=("ca", "mean"), neuron=("neuron", "mean"), pmi=("pmi", "first"),
+    from msbb_gse84422 import SUBCORTICAL  # subject means over cortical regions, as in msbb_gse84422.py
+    subj = m[~m["region"].isin(SUBCORTICAL)].groupby("subject").agg(ca=("ca", "mean"), neuron=("neuron", "mean"), pmi=("pmi", "first"),
                                     ph=("ph", "first"), cdr=("cdr", "first"), braak=("braak", "first"),
                                     age=("age", "first"), female=("female", "first")).dropna()
     cov = subj[["age", "female"]].values

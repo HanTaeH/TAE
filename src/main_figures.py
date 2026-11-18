@@ -116,9 +116,10 @@ def fig2():
 def fig3():
     p = pd.read_csv(R / "validation/projection_all_cohorts.csv"); p["ca"] = p.r_C - p.r_A
     mr = json.load(open(R / "revision/meta_revision/meta_report.json"))["P1_neuron (4 cohorts)"]
-    fs0 = json.load(open(R / "forest_summary.json"))["C-minus-A score vs neuron marker score (AD)"]
-    fs = {"rows": fs0["rows"], "pooled_rho": mr["se_boot"]["rho"], "ci": mr["se_boot"]["ci95_hksj"], "pi": mr["se_boot"]["pi95"]}
-    reg = pd.read_csv(R / "msbb/msbb_region_summary.csv", index_col=0).sort_values("ad_ca_neuron")
+    pcm = pd.read_csv(R / "revision/meta_revision/per_cohort.csv")
+    rows0 = pcm[pcm.endpoint == "P1_neuron"][["cohort", "n", "rho"]].to_dict("records")
+    fs = {"rows": rows0, "pooled_rho": mr["se_boot"]["rho"], "ci": mr["se_boot"]["ci95_hksj"], "pi": mr["se_boot"]["pi95"]}
+    nn = pd.read_csv(R / "msbb/neff_style_cdr_normalisation.csv")
     fig = plt.figure(figsize=(7.2, 5.6)); gs = fig.add_gridspec(2, 3, height_ratios=[1, 1.05])
     for j, c in enumerate(["GSE33000_PFC", "GSE132903_MTG", "GSE125583_FG"]):
         ax = fig.add_subplot(gs[0, j]); d = p[p.cohort == c]
@@ -140,9 +141,14 @@ def fig3():
     ax.get_yticklabels()[-1].set_weight("bold")
     ax.set_xlim(-1.0, 0); ax.axvline(0, color=GRID, lw=0.8)
     ax.set_xlabel("\u03c1 (C\u2212A score vs neuron score), AD samples"); ax.set_title("Meta-analysis (REML, HKSJ)"); tag(ax, "b")
-    ax = fig.add_subplot(gs[1, 2]); yv = np.arange(len(reg))
-    ax.barh(yv, reg.ad_ca_neuron, color=COL["C"], height=0.65); ax.set_yticks(yv); ax.set_yticklabels(reg.index, fontsize=6.5)
-    ax.set_xlim(-1, 0); ax.set_xlabel("ρ in AD, per region"); ax.set_title("MSBB, 17 regions"); tag(ax, "c")
+    ax = fig.add_subplot(gs[1, 2])
+    for _, r in nn.iterrows():
+        ax.plot([0, 1], [r.neuron_raw_vs_cdr, r.neuron_normalised_vs_cdr], color=GRID, lw=0.8)
+    ax.scatter(np.zeros(len(nn)), nn.neuron_raw_vs_cdr, s=10, color=MUTED); ax.scatter(np.ones(len(nn)), nn.neuron_normalised_vs_cdr, s=10, color=MUTED)
+    ax.scatter(np.full(len(nn), 2), nn.ca_normalised_vs_neuron_normalised, s=10, color=COL["C"])
+    ax.set_xticks([0, 1, 2]); ax.set_xticklabels(["Neuron–\nCDR\nraw", "Neuron–\nCDR\nnorm.", "C\u2212A–\nneuron\nnorm."], fontsize=6.5)
+    ax.set_xlim(-0.4, 2.4); ax.set_ylim(-1, 0.4); ax.set_ylabel("ρ per MSBB region")
+    ax.set_title("Neff-style CDR normalisation"); tag(ax, "c")
     fig.subplots_adjust(hspace=0.55, wspace=0.9); save(fig, "Fig3_neuron_axis")
 
 
@@ -152,7 +158,10 @@ def fig4():
     m = pd.read_csv(R / "msbb/msbb_subject_scores.csv")
     reg = pd.read_csv(R / "msbb/msbb_region_summary.csv", index_col=0)
     med = pd.read_csv(R / "mediation/mediation_summary.csv")
-    fig, axs = plt.subplots(2, 2, figsize=(7.2, 5.6))
+    fig = plt.figure(figsize=(7.2, 5.6)); gs4 = fig.add_gridspec(2, 2)
+    axs = np.array([[fig.add_subplot(gs4[0, 0]), fig.add_subplot(gs4[0, 1])], [fig.add_subplot(gs4[1, :]), None]], dtype=object)
+    g125 = json.load(open(R / "gse125583/braak_gse125583_report.json"))["AD_only"]
+    msj = json.load(open(R / "msbb/msbb_report.json"))["S_subject_cortex"]
     ax = axs[0, 0]; bs = sorted(g.braak.dropna().unique())
     data = [g[g.braak == b].ca_score.values for b in bs]
     ax.boxplot(data, positions=range(len(bs)), widths=0.55, showfliers=False, medianprops=dict(color=INK),
@@ -162,7 +171,7 @@ def fig4():
     ax.set_xticks(range(len(bs))); ax.set_xticklabels([f"{int(b)}\n(n={len(d)})" for b, d in zip(bs, data)], fontsize=7)
     r = spearmanr(g.braak, g.ca_score, nan_policy="omit")
     ax.set_xlabel("Braak stage"); ax.set_ylabel("C−A subtype score")
-    ax.set_title(f"Within AD: Braak (GSE125583), ρ = {r[0]:.2f}"); tag(ax, "a")
+    ax.set_title(f"Within AD: Braak (GSE125583)\nρ = {r[0]:.2f}; age/sex-adjusted {g125['ca_vs_braak_partial_age_sex']['rho']:.2f}"); tag(ax, "a")
     ax = axs[0, 1]; cd = sorted(m.cdr.dropna().unique())
     data = [m[m.cdr == c].ca.values for c in cd]
     ax.boxplot(data, positions=range(len(cd)), widths=0.55, showfliers=False, medianprops=dict(color=INK),
@@ -171,7 +180,7 @@ def fig4():
         ax.scatter(np.random.default_rng(i).normal(i, 0.08, len(d)), d, s=6, color=COL["C"], alpha=0.7, lw=0)
     r = spearmanr(m.cdr, m.ca, nan_policy="omit")
     ax.set_xticks(range(len(cd))); ax.set_xticklabels([f"{c:g}" for c in cd]); ax.set_xlabel("CDR")
-    ax.set_ylabel("C−A score (subject mean, cortex)"); ax.set_title(f"MSBB subjects: CDR, ρ = {r[0]:.2f}"); tag(ax, "b")
+    ax.set_ylabel("C−A score (subject mean, cortex)"); ax.set_title(f"MSBB subjects: CDR\nρ = {r[0]:.2f}; age/sex-adjusted {msj['ca_vs_cdr_partial']['rho']:.2f}"); tag(ax, "b")
     ax = axs[1, 0]
     pc = pd.read_csv(R / "revision/meta_revision/per_cohort.csv")
     nsr = pd.read_csv(R / "revision/null/null_summary.csv").set_index("cohort")
@@ -191,54 +200,45 @@ def fig4():
     ax.get_yticklabels()[-1].set_weight("bold")
     ax.axvline(0, color=GRID, lw=0.8); ax.set_xlim(-0.2, 0.9)
     ax.scatter([], [], s=22, color="#b8b7b0", label="unadjusted"); ax.scatter([], [], s=22, color=COL["C"], label="age + sex adjusted")
-    ax.scatter([], [], marker="|", s=60, color=INK, label="random genes (median)")
+    ax.scatter([], [], marker="|", s=60, color=INK, label="random genes, adjusted (median)")
     ax.legend(fontsize=6.5, loc="upper center", bbox_to_anchor=(0.45, -0.22), ncol=3, columnspacing=0.8)
     ax.set_xlabel("ρ (C−A score vs diagnostic stage)")
-    ax.set_title("Stage association vs random genes"); tag(ax, "c")
-    ax = axs[1, 1]
-    mf = pd.read_csv(R / "revision/mediation_revision/mediation_forward_reverse.csv")
-    sel = [(0, "GSE125583 AD, Braak"), (6, "MSBB, CDR"), (7, "MSBB, Braak"), (9, "SEA-AD, CPS (L2/3 IT)")]
-    for yi, (i, lab) in enumerate(sel[::-1]):
-        row = mf.iloc[i]
-        for off, pre, colr in [(0.15, "fwd", COL["C"]), (-0.15, "rev", "#b8b7b0")]:
-            lo, hi = ast.literal_eval(row[f"{pre}_prop_ci"])
-            ax.plot([max(lo, -0.3), min(hi, 1.6)], [yi + off] * 2, color=colr, lw=1.5)
-            ax.scatter(row[f"{pre}_prop"], yi + off, s=26, color=colr, zorder=3)
-    ax.scatter([], [], s=26, color=COL["C"], label="stage → neuron → C−A"); ax.scatter([], [], s=26, color="#b8b7b0", label="stage → C−A → neuron")
-    ax.legend(fontsize=6.5, loc="upper center", bbox_to_anchor=(0.4, -0.22), ncol=2)
-    ax.set_yticks(range(len(sel))); ax.set_yticklabels([s[1] for s in sel[::-1]], fontsize=7)
-    ax.axvline(0, color=GRID, lw=0.8); ax.axvline(1, color=GRID, lw=0.8, ls="--"); ax.set_xlim(-0.3, 1.6)
-    ax.set_xlabel("Proportion mediated (95% bootstrap CI)"); ax.set_title("Forward and reverse models agree"); tag(ax, "d")
-    fig.tight_layout(h_pad=3.5); save(fig, "Fig4_stage_mediation")
+    ax.set_title("Stage association vs matched random genes (same centroid weights)"); tag(ax, "c")
+    fig.tight_layout(h_pad=3.5); save(fig, "Fig4_stage")
 
 
 # ---------- Fig 5: mechanism ----------
 def fig5():
-    s = pd.read_csv(R / "seaad_pseudobulk/seaad_pseudobulk_per_donor.csv")
-    nn = pd.read_csv(R / "msbb/neff_style_cdr_normalisation.csv")
-    fig, axs = plt.subplots(1, 3, figsize=(9.4, 3.1), gridspec_kw={"wspace": 1.25, "width_ratios": [1, 0.9, 0.9]})
+    fig, axs = plt.subplots(1, 2, figsize=(8.2, 3.6), gridspec_kw={"wspace": 1.1, "width_ratios": [1.15, 0.9]})
     ax = axs[0]
     cr = json.load(open(R / "revision/seaad_celltype_revision/seaad_celltype_revision_report.json"))
     lam = cr["laminar"]
-    bars = [("All nuclei", cr["sorted"]["ca_vs_CPS_partial_age_sex"]["rho"], cr["sorted"]["ca_vs_Braak_partial_age_sex"]["rho"]),
-            ("All nuclei, Exc\nsubclass-adjusted", lam["ca_sorted_vs_CPS_partial"]["all Exc subclass shares (CLR)"]["rho"],
-             lam["ca_sorted_vs_Braak_partial"]["all Exc subclass shares (CLR)"]["rho"]),
-            ("Exc nuclei only", cr["type_Exc"]["ca_vs_CPS"]["rho"], cr["type_Exc"]["ca_vs_Braak"]["rho"]),
-            ("Inh nuclei only", cr["type_Inh"]["ca_vs_CPS"]["rho"], cr["type_Inh"]["ca_vs_Braak"]["rho"]),
-            ("Astrocytes only", cr["type_Astro"]["ca_vs_CPS"]["rho"], cr["type_Astro"]["ca_vs_Braak"]["rho"]),
-            ("Oligodendrocytes only", cr["type_Oligo"]["ca_vs_CPS"]["rho"], cr["type_Oligo"]["ca_vs_Braak"]["rho"])]
+    pa = lambda k, o: cr[k][f"ca_vs_{o}_partial_age_sex"]["rho"]
+    bars = [("All nuclei (sorted)", pa("sorted", "CPS"), pa("sorted", "Braak"), pa("sorted", "dementia")),
+            ("All nuclei, Exc subclass\nshares adjusted (CLR)", lam["ca_sorted_vs_CPS_partial"]["all Exc subclass shares (CLR)"]["rho"],
+             lam["ca_sorted_vs_Braak_partial"]["all Exc subclass shares (CLR)"]["rho"], np.nan),
+            ("Cell-type mix only", pa("comp_only", "CPS"), pa("comp_only", "Braak"), pa("comp_only", "dementia")),
+            ("Exc subclass mix only", pa("Exc_subclass_comp_only", "CPS"), pa("Exc_subclass_comp_only", "Braak"), pa("Exc_subclass_comp_only", "dementia")),
+            ("Exc, subclass mix fixed", pa("Exc_fixed_subclass_mix", "CPS"), pa("Exc_fixed_subclass_mix", "Braak"), pa("Exc_fixed_subclass_mix", "dementia")),
+            ("Inh nuclei only", pa("type_Inh", "CPS"), pa("type_Inh", "Braak"), pa("type_Inh", "dementia")),
+            ("Astrocytes only", pa("type_Astro", "CPS"), pa("type_Astro", "Braak"), pa("type_Astro", "dementia")),
+            ("Oligodendrocytes only", pa("type_Oligo", "CPS"), pa("type_Oligo", "Braak"), pa("type_Oligo", "dementia")),
+            ("Microglia only", pa("type_Micro", "CPS"), pa("type_Micro", "Braak"), pa("type_Micro", "dementia"))]
     yb = np.arange(len(bars))[::-1]
-    ax.barh(yb + 0.18, [b[1] for b in bars], height=0.34, color="#b8b7b0", label="pseudo-progression")
-    ax.barh(yb - 0.18, [b[2] for b in bars], height=0.34, color=COL["C"], label="Braak stage")
-    ax.set_yticks(yb); ax.set_yticklabels([b[0] for b in bars], fontsize=6.5); ax.axvline(0, color=GRID, lw=0.8)
-    ax.set_xlim(-0.1, 0.5); ax.set_xlabel("ρ with C−A score"); ax.legend(fontsize=6.5, loc="upper center", bbox_to_anchor=(0.4, -0.2), ncol=2)
-    ax.set_title("SEA-AD: composition vs within-cell"); tag(ax, "a")
+    ax.barh(yb + 0.27, [b[1] for b in bars], height=0.26, color="#b8b7b0", label="pseudo-progression (CPS)")
+    ax.barh(yb, [b[2] for b in bars], height=0.26, color=COL["C"], label="Braak stage")
+    ax.barh(yb - 0.27, [b[3] for b in bars], height=0.26, color=COL["A"], label="dementia")
+    ax.set_yticks(yb); ax.set_yticklabels([b[0] for b in bars], fontsize=6.5); ax.axvline(0, color=INK, lw=0.6)
+    ax.set_xlim(-0.4, 0.5); ax.set_xlabel("ρ with C−A score (age/sex-adjusted)")
+    ax.legend(fontsize=6.5, loc="upper center", bbox_to_anchor=(0.4, -0.16), ncol=3, columnspacing=0.8)
+    ax.set_title("SEA-AD MTG pseudobulks (n = 84; exploratory)"); tag(ax, "a")
     ax = axs[1]
     rep = json.load(open(R / "simulation/simulation_report.json"))
     rv = json.load(open(R / "revision/simulation_revision/simulation_revision_report.json"))
+    # labels: rho of C-A with neuron fraction (loss, glia) or with the extent of lowering d (per-cell; driver = -d)
     names = [("Neuron loss", rv["neuron_loss_reference"]["signal_mean_best_r"], rv["neuron_loss_reference"]["ca_vs_driver_rho"], COL["C"]),
-             ("Per-neuron mRNA ↓\n(fixed composition)", rv["percell_global"]["signal_mean_best_r"], rv["percell_global"]["ca_vs_driver_rho"], COL["A"]),
-             ("Neuron-enriched genes ↓\n(fixed composition)", rv["percell_neuronal"]["signal_mean_best_r"], rv["percell_neuronal"]["ca_vs_driver_rho"], COL["A"]),
+             ("Per-neuron mRNA ↓\n(fixed composition)", rv["percell_global"]["signal_mean_best_r"], -rv["percell_global"]["ca_vs_driver_rho"], COL["A"]),
+             ("Neuron-enriched genes ↓\n(fixed composition)", rv["percell_neuronal"]["signal_mean_best_r"], -rv["percell_neuronal"]["ca_vs_driver_rho"], COL["A"]),
              ("Glia change only", rep["glia_only"]["signal_mean_best_r"], rep["glia_only"]["ca_vs_neuron_frac_rho"], "#b8b7b0"),
              ("Composition fixed", rv["noise_only_exact"]["signal_mean_best_r"], None, "#b8b7b0")]
     yb = np.arange(len(names))[::-1]
@@ -247,17 +247,33 @@ def fig5():
         if n[2] is not None:
             ax.text(n[1] + 0.01, yi, f"ρ = {n[2]:.2f}", va="center", fontsize=6.5, color=MUTED)
     ax.set_yticks(yb); ax.set_yticklabels([n[0] for n in names], fontsize=6.5); ax.set_xlim(0, 0.42)
-    ax.set_xlabel("Subtype signal (mean best r)"); ax.set_title("Simulated bulk (SEA-AD)"); tag(ax, "b")
-    ax = axs[2]
-    for _, r in nn.iterrows():
-        ax.plot([0, 1], [r.neuron_raw_vs_cdr, r.neuron_normalised_vs_cdr], color=GRID, lw=0.8)
-    ax.scatter(np.zeros(len(nn)), nn.neuron_raw_vs_cdr, s=10, color=MUTED); ax.scatter(np.ones(len(nn)), nn.neuron_normalised_vs_cdr, s=10, color=MUTED)
-    ax.scatter(np.full(len(nn), 2), nn.ca_normalised_vs_neuron_normalised, s=10, color=COL["C"])
-    ax.set_xticks([0, 1, 2]); ax.set_xticklabels(["Neuron\nvs CDR\n(raw)", "Neuron\nvs CDR\n(normalised)", "C\u2212A\nvs neuron\n(normalised)"], fontsize=6.5)
-    ax.axhline(0, color=GRID, lw=0.8); ax.set_ylim(-1, 0.4); ax.set_ylabel("ρ per MSBB region")
-    ax.set_title("Neff-style normalisation"); tag(ax, "c")
+    ax.set_xlabel("Subtype signal: mean best centroid r\n(label: ρ of C−A with neuron fraction,\nor with extent of lowering)"); ax.set_title("Simulated bulk (SEA-AD)"); tag(ax, "b")
     save(fig, "Fig5_mechanism")
 
 
-for f in (fig1, fig2, fig3, fig4, fig5):
+# ---------- Supplementary: all mediation models; MSBB per-region ----------
+def figS():
+    mf = pd.read_csv(R / "revision/mediation_revision/mediation_forward_reverse.csv")
+    lab = (mf.dataset + ", " + mf.x + " | " + mf.mediator).tolist()
+    fig, ax = plt.subplots(figsize=(6.4, 0.42 * len(mf) + 1.2))
+    for yi, (_, row) in zip(range(len(mf))[::-1], mf.iterrows()):
+        for off, pre, colr in [(0.15, "fwd", COL["C"]), (-0.15, "rev", "#b8b7b0")]:
+            lo, hi = ast.literal_eval(row[f"{pre}_prop_ci"])
+            ax.plot([max(lo, -0.5), min(hi, 2.0)], [yi + off] * 2, color=colr, lw=1.5)
+            ax.scatter(row[f"{pre}_prop"], yi + off, s=22, color=colr, zorder=3)
+    ax.scatter([], [], s=22, color=COL["C"], label="stage → mediator → C−A"); ax.scatter([], [], s=22, color="#b8b7b0", label="stage → C−A → mediator")
+    ax.legend(fontsize=6.5, loc="upper center", bbox_to_anchor=(0.4, -0.08), ncol=2)
+    ax.set_yticks(range(len(mf))[::-1]); ax.set_yticklabels(lab, fontsize=6.5)
+    ax.axvline(0, color=GRID, lw=0.8); ax.axvline(1, color=GRID, lw=0.8, ls="--"); ax.set_xlim(-0.5, 2.0)
+    ax.set_xlabel("Proportion mediated (95% bootstrap CI; clipped to −0.5–2)")
+    ax.set_title("All mediation models, forward and reverse")
+    save(fig, "FigS1_mediation_all_models")
+    reg = pd.read_csv(R / "msbb/msbb_region_summary.csv", index_col=0).sort_values("ad_ca_neuron")
+    fig, ax = plt.subplots(figsize=(3.6, 4.2)); yv = np.arange(len(reg))
+    ax.barh(yv, reg.ad_ca_neuron, color=COL["C"], height=0.65); ax.set_yticks(yv); ax.set_yticklabels(reg.index, fontsize=6.5)
+    ax.set_xlim(-1, 0); ax.set_xlabel("ρ (C−A vs neuron score) in AD, per region"); ax.set_title("MSBB GSE84422, 17 regions")
+    save(fig, "FigS2_msbb_regions")
+
+
+for f in (fig1, fig2, fig3, fig4, fig5, figS):
     f(); print("ok", f.__name__)

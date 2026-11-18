@@ -27,6 +27,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+from scipy import stats
 
 import neff_subtypes
 from braak_gse106241 import partial_spearman
@@ -86,9 +87,22 @@ def null_test(L, ng, cent, ys: dict, rng, n):
     return out
 
 
-def clr(m: np.ndarray) -> np.ndarray:
-    l = np.log(m + 0.5 / m.shape[1])
+def clr(counts: np.ndarray) -> np.ndarray:
+    """CLR of subclass composition from nuclei counts with a 0.5-nucleus pseudocount."""
+    l = np.log(counts + 0.5)
     return l - l.mean(1, keepdims=True)
+
+
+def partial_spearman_rawcov(x, y, covars):
+    """Spearman of x, y after regressing their ranks on covariates kept on their own scale (CLR, age, sex)."""
+    rx, ry = stats.rankdata(x), stats.rankdata(y)
+    D = np.column_stack([np.ones(len(rx)), covars])
+    ex = rx - D @ np.linalg.lstsq(D, rx, rcond=None)[0]
+    ey = ry - D @ np.linalg.lstsq(D, ry, rcond=None)[0]
+    r = float(np.corrcoef(ex, ey)[0, 1])
+    df = len(rx) - D.shape[1]
+    t = r * np.sqrt(df / max(1e-12, 1 - r ** 2))
+    return r, float(2 * stats.t.sf(abs(t), df)), int(len(rx))
 
 
 def main() -> None:
@@ -193,9 +207,15 @@ def main() -> None:
            "L4 IT share": np.column_stack([cov, exc_share["L4 IT"].values]),
            "superficial:deep ratio": np.column_stack([cov, sup_deep.values]),
            "L2/3 IT + L4 IT shares": np.column_stack([cov, exc_share[["L2/3 IT", "L4 IT"]].values]),
-           "all Exc subclass shares (CLR)": np.column_stack([cov, clr(exc_share.values)[:, :-1]])}
+           }
     lam["ca_sorted_vs_CPS_partial"] = {k: fmt(partial_spearman(ca, ys["CPS"], v)) for k, v in adj.items()}
     lam["ca_sorted_vs_Braak_partial"] = {k: fmt(partial_spearman(ca, ys["Braak"], v)) for k, v in adj.items()}
+    # CLR coordinates from nuclei counts (0.5 pseudocount), entered unranked; age imputed with median
+    cov_raw = cov.copy()
+    cov_raw[:, 0] = np.where(np.isnan(cov_raw[:, 0]), np.nanmedian(cov_raw[:, 0]), cov_raw[:, 0])
+    clr_cov = np.column_stack([cov_raw, clr(N[EXC].values.astype(float))[:, :-1]])
+    for o in ["CPS", "Braak"]:
+        lam[f"ca_sorted_vs_{o}_partial"]["all Exc subclass shares (CLR)"] = fmt(partial_spearman_rawcov(ca, ys[o], clr_cov))
     rep["laminar"] = lam
     per = per.join(exc_share.add_suffix("_of_Exc")).assign(neuron_nuclei_frac=neuron_frac,
                                                           sup_deep_logratio=sup_deep, CPS=ys["CPS"],

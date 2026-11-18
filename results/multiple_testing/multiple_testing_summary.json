@@ -1,19 +1,12 @@
 {
-  "n_tests": 1021,
+  "n_tests": 1342,
   "by_family": {
-    "confirmatory": {
-      "n": 24,
-      "n_adjusted_for_neuron": 0,
-      "n_p05": 23,
-      "n_q05_family": 23,
-      "n_q05_global": 19
-    },
     "exploratory": {
-      "n": 995,
-      "n_adjusted_for_neuron": 124,
-      "n_p05": 387,
-      "n_q05_family": 321,
-      "n_q05_global": 325
+      "n": 1308,
+      "n_adjusted_for_neuron": 126,
+      "n_p05": 525,
+      "n_q05_family": 420,
+      "n_q05_global": 421
     },
     "primary": {
       "n": 2,
@@ -21,201 +14,285 @@
       "n_p05": 2,
       "n_q05_family": 2,
       "n_q05_global": 2
+    },
+    "secondary": {
+      "n": 32,
+      "n_adjusted_for_neuron": 0,
+      "n_p05": 28,
+      "n_q05_family": 28,
+      "n_q05_global": 22
     }
   },
   "primary": [
     {
-      "path": "P1: C-minus-A score vs neuron marker score (AD)",
-      "estimate": -0.919,
+      "path": "P1: P1_neuron (4 cohorts)",
+      "estimate": -0.924,
       "n": 4,
-      "p": 1.29e-140,
-      "q_family": 2.58e-140
+      "p": 4.93408243976942e-05,
+      "q_family": 9.86816487953884e-05
     },
     {
-      "path": "P2: C-minus-A score vs disease stage (all samples)",
-      "estimate": 0.476,
-      "n": 5,
-      "p": 3.6e-10,
-      "q_family": 7.2e-10
+      "path": "P2: P2_stage age/sex adjusted (4 cohorts)",
+      "estimate": 0.426,
+      "n": 4,
+      "p": 0.0007302327733020085,
+      "q_family": 0.001460465546604017
     }
   ],
-  "confirmatory": [
-    {
-      "report": "msbb",
-      "path": "R_across_regions/ca_cdr_vs_neuron_cdr/p",
-      "estimate": -0.868,
-      "p": 0.0,
-      "q_family": 0.0001
-    },
+  "secondary": [
     {
       "report": "braak_gse125583",
       "path": "AD_only/ca_vs_braak/p",
       "estimate": 0.299,
       "p": 0.0,
-      "q_family": 0.0001
+      "q_family": 0.0002
     },
     {
-      "report": "null",
-      "path": "GSE33000_PFC/r2_cell/p_empirical",
-      "estimate": 0.526,
-      "p": 0.001,
-      "q_family": 0.0024
-    },
-    {
-      "report": "null",
-      "path": "GSE33000_PFC/stage_rho/p_empirical",
-      "estimate": 0.636,
-      "p": 0.001,
-      "q_family": 0.0024
-    },
-    {
-      "report": "null",
-      "path": "GSE118553_Temporal_Cortex/r2_cell/p_empirical",
-      "estimate": 0.43,
-      "p": 0.001,
-      "q_family": 0.0024
-    },
-    {
-      "report": "null",
-      "path": "GSE132903_MTG/neuron_rho/p_empirical",
-      "estimate": -0.921,
-      "p": 0.001,
-      "q_family": 0.0024
-    },
-    {
-      "report": "null",
-      "path": "GSE132903_MTG/r2_cell/p_empirical",
-      "estimate": 0.474,
-      "p": 0.001,
-      "q_family": 0.0024
+      "report": "technical_confounders",
+      "path": "MSBB/subject_ca_vs_cdr_age_sex_pmi_ph/p",
+      "estimate": 0.322,
+      "p": 0.0009,
+      "q_family": 0.0036
     },
     {
       "report": "null",
       "path": "GSE33000_PFC/neuron_rho/p_empirical",
       "estimate": -0.928,
       "p": 0.001,
-      "q_family": 0.0024
+      "q_family": 0.0036
+    },
+    {
+      "report": "null",
+      "path": "GSE33000_PFC/r2_cell/p_empirical",
+      "estimate": 0.526,
+      "p": 0.001,
+      "q_family": 0.0036
+    },
+    {
+      "report": "null",
+      "path": "GSE118553_Temporal_Cortex/r2_cell/p_empirical",
+      "estimate": 0.43,
+      "p": 0.001,
+      "q_family": 0.0036
+    },
+    {
+      "report": "seaad_celltype_revision",
+      "path": "sub_L6 IT/random_null/Braak/p",
+      "estimate": 0.321,
+      "p": 0.001,
+      "q_family": 0.0036
     },
     {
       "report": "null",
       "path": "GSE125583_FG/r2_cell/p_empirical",
       "estimate": 0.576,
       "p": 0.001,
-      "q_family": 0.0024
+      "q_family": 0.0036
+    },
+    {
+      "report": "null",
+      "path": "GSE132903_MTG/neuron_rho/p_empirical",
+      "estimate": -0.921,
+      "p": 0.001,
+      "q_family": 0.0036
     },
     {
       "report": "null",
       "path": "GSE125583_FG/neuron_rho/p_empirical",
       "estimate": -0.927,
       "p": 0.001,
-      "q_family": 0.0024
+      "q_family": 0.0036
     },
     {
       "report": "msbb",
       "path": "S_subject_cortex/ca_vs_cdr/p",
       "estimate": 0.302,
       "p": 0.0017,
-      "q_family": 0.0034
-    },
-    {
-      "report": "li2022",
-      "path": "GSE132903_MTG/null_max_abs_neuron_rho/p",
-      "estimate": 0.953,
-      "p": 0.002,
-      "q_family": 0.0034
-    },
-    {
-      "report": "li2022",
-      "path": "GSE118553_Temporal_Cortex/null_max_abs_neuron_rho/p",
-      "estimate": 0.935,
-      "p": 0.002,
-      "q_family": 0.0034
+      "q_family": 0.0049
     },
     {
       "report": "li2022",
       "path": "GSE125583_FG/null_max_abs_neuron_rho/p",
       "estimate": 0.963,
       "p": 0.002,
-      "q_family": 0.0034
+      "q_family": 0.0049
     },
     {
-      "report": "null",
-      "path": "GSE118553_Temporal_Cortex/neuron_rho/p_empirical",
-      "estimate": -0.85,
+      "report": "li2022",
+      "path": "GSE132903_MTG/null_max_abs_neuron_rho/p",
+      "estimate": 0.953,
+      "p": 0.002,
+      "q_family": 0.0049
+    },
+    {
+      "report": "li2022",
+      "path": "GSE118553_Temporal_Cortex/null_max_abs_neuron_rho/p",
+      "estimate": 0.935,
+      "p": 0.002,
+      "q_family": 0.0049
+    },
+    {
+      "report": "seaad_celltype_revision",
+      "path": "sub_L4 IT/random_null/Braak/p",
+      "estimate": 0.32,
+      "p": 0.003,
+      "q_family": 0.0069
+    },
+    {
+      "report": "seaad_celltype_revision",
+      "path": "type_Inh/random_null/Braak/p",
+      "estimate": 0.264,
       "p": 0.004,
-      "q_family": 0.006
+      "q_family": 0.008
     },
     {
       "report": "seaad_pseudobulk",
       "path": "sorted/ca_vs_CPS_random_null/p",
       "estimate": 0.272,
       "p": 0.004,
-      "q_family": 0.006
+      "q_family": 0.008
     },
     {
       "report": "li2022",
       "path": "GSE33000_PFC/null_max_abs_neuron_rho/p",
       "estimate": 0.942,
       "p": 0.006,
-      "q_family": 0.0085
+      "q_family": 0.0113
     },
     {
       "report": "braak",
       "path": "T1_all/ca_vs_braak/p",
       "estimate": 0.339,
       "p": 0.008,
-      "q_family": 0.0107
+      "q_family": 0.0143
     },
     {
       "report": "seaad_pseudobulk",
       "path": "sorted/ca_vs_CPS/p",
       "estimate": 0.272,
       "p": 0.0122,
-      "q_family": 0.0154
+      "q_family": 0.0205
+    },
+    {
+      "report": "null",
+      "path": "GSE125583_FG/stage_rho_agesex/p_empirical",
+      "estimate": 0.393,
+      "p": 0.014,
+      "q_family": 0.0224
+    },
+    {
+      "report": "null",
+      "path": "GSE125583_FG/stage_rho/p_empirical",
+      "estimate": 0.402,
+      "p": 0.015,
+      "q_family": 0.0229
+    },
+    {
+      "report": "null",
+      "path": "GSE118553_Temporal_Cortex/neuron_rho/p_empirical",
+      "estimate": -0.85,
+      "p": 0.016,
+      "q_family": 0.0233
     },
     {
       "report": "braak_gse125583",
       "path": "AD_only/random_null/p",
       "estimate": NaN,
       "p": 0.018,
-      "q_family": 0.0216
-    },
-    {
-      "report": "null",
-      "path": "GSE125583_FG/stage_rho/p_empirical",
-      "estimate": 0.402,
-      "p": 0.019,
-      "q_family": 0.0217
+      "q_family": 0.025
     },
     {
       "report": "null",
       "path": "GSE132903_MTG/stage_rho/p_empirical",
       "estimate": 0.459,
-      "p": 0.02,
-      "q_family": 0.0218
+      "p": 0.022,
+      "q_family": 0.0271
+    },
+    {
+      "report": "seaad_celltype_revision",
+      "path": "Exc_fixed_subclass_mix/random_null/Braak/p",
+      "estimate": 0.217,
+      "p": 0.022,
+      "q_family": 0.0271
+    },
+    {
+      "report": "null",
+      "path": "GSE132903_MTG/stage_rho_agesex/p_empirical",
+      "estimate": 0.459,
+      "p": 0.022,
+      "q_family": 0.0271
     },
     {
       "report": "braak",
       "path": "T5_random_null/all/p",
       "estimate": 0.339,
       "p": 0.0319,
-      "q_family": 0.0333
+      "q_family": 0.0378
+    },
+    {
+      "report": "null",
+      "path": "GSE33000_PFC/stage_rho/p_empirical",
+      "estimate": 0.636,
+      "p": 0.037,
+      "q_family": 0.0423
+    },
+    {
+      "report": "null",
+      "path": "GSE132903_MTG/r2_cell/p_empirical",
+      "estimate": 0.474,
+      "p": 0.0659,
+      "q_family": 0.0727
+    },
+    {
+      "report": "null",
+      "path": "GSE33000_PFC/stage_rho_agesex/p_empirical",
+      "estimate": 0.435,
+      "p": 0.0809,
+      "q_family": 0.0863
     },
     {
       "report": "null",
       "path": "GSE118553_Temporal_Cortex/stage_rho/p_empirical",
       "estimate": 0.451,
-      "p": 0.2158,
-      "q_family": 0.2158
+      "p": 0.5005,
+      "q_family": 0.5166
+    },
+    {
+      "report": "null",
+      "path": "GSE118553_Temporal_Cortex/stage_rho_agesex/p_empirical",
+      "estimate": 0.424,
+      "p": 0.6444,
+      "q_family": 0.6444
     }
   ],
-  "confirmatory_failing_q05": [
+  "secondary_failing_q05": [
+    {
+      "report": "null",
+      "path": "GSE132903_MTG/r2_cell/p_empirical",
+      "estimate": 0.474,
+      "p": 0.0659,
+      "q_family": 0.0727
+    },
+    {
+      "report": "null",
+      "path": "GSE33000_PFC/stage_rho_agesex/p_empirical",
+      "estimate": 0.435,
+      "p": 0.0809,
+      "q_family": 0.0863
+    },
     {
       "report": "null",
       "path": "GSE118553_Temporal_Cortex/stage_rho/p_empirical",
       "estimate": 0.451,
-      "p": 0.2158,
-      "q_family": 0.2158
+      "p": 0.5005,
+      "q_family": 0.5166
+    },
+    {
+      "report": "null",
+      "path": "GSE118553_Temporal_Cortex/stage_rho_agesex/p_empirical",
+      "estimate": 0.424,
+      "p": 0.6444,
+      "q_family": 0.6444
     }
   ]
 }
