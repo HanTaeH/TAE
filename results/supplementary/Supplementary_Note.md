@@ -42,3 +42,28 @@ Gene-level correlations with the residual axis (C−A after removing the neuron 
 | Immediate early | 2.15 | 0.89 | 0.31 | −0.39 | 2.06 | 1.61 |
 
 Only reactive-astrocyte genes had the same sign in every cohort, and none of the 20 subclass marker sets was consistent across cohorts. Oxidative phosphorylation and ribosome genes reversed sign in the RNA-seq cohort (GSE125583), consistent with platform-specific technical structure rather than a shared biological programme. The full table is in `results/residual_identity/gene_set_z_by_cohort.csv`; the Hallmark analysis with the corrected variance-inflation estimate is Supplementary Table S6.
+
+## S5. Supplementary Methods (moved from the main text)
+
+### S5.1 SEA-AD donor pseudobulks
+Besides the pseudobulk of all sequenced nuclei, we built:
+1. Single-type pseudobulks: excitatory, inhibitory, astrocyte, oligodendrocyte and microglial nuclei, and the L2/3, L4, L5 and L6 IT subclasses. These remove differences between major types; the excitatory and inhibitory pseudobulks still mix their subclasses at each donor's own shares.
+2. Excitatory, subclass mix fixed: each donor's own excitatory subclass profiles mixed at the cohort-average subclass shares, so that only within-subclass expression varies.
+3. Fixed-composition pseudobulk: each donor's own type profiles mixed at the same proportions for every donor.
+4. Composition-only pseudobulks: (a) cohort-average type profiles mixed at each donor's type proportions, with the total neuronal share fixed at 0.40 so that only the excitatory:inhibitory and glial ratios vary; (b) cohort-average excitatory subclass profiles mixed at each donor's subclass shares.
+
+Laminar sampling: we related the share of each excitatory subclass among excitatory neurons, and the superficial-to-deep ratio (L2/3 IT + L4 IT versus L5/L6 types), to the C−A score, and computed mutual partial correlations of the L2/3 IT and L4 IT shares. We also adjusted the CPS and Braak associations for excitatory subclass composition: centred log-ratio coordinates of subclass nuclei counts (pseudocount 0.5 nuclei), entered on their own scale with age and sex. Result not shown in the main text: the superficial-to-deep ratio was unrelated to the score (ρ = −0.10), arguing against differences in dissection depth.
+
+### S5.2 Simulation scenarios
+Pseudobulk samples were built from the SEA-AD neurotypical reference with only the cell-type mixture varying, plus gene-level multiplicative noise and no disease-specific expression change: (i) fixed composition (exactly fixed, or with small jitter); (ii) neuron loss; (iii) glia-only change; (iv) heterogeneous change. To test whether neuron number can be distinguished from per-cell expression, we also simulated fixed composition with per-neuron expression lowered for (a) all neuronal mRNA, (b) only neuron-enriched genes, (c) neuron-enriched genes other than the marker genes. Lowering all neuronal mRNA with composition fixed is algebraically equivalent to lowering the neuronal share of RNA, so the classifier cannot distinguish the two by construction. The neuron-loss scenario was repeated over neuronal RNA content of 1–3 times that of glia and gene noise SD of 0.1–0.5.
+
+### S5.3 Mediation models
+We fitted forward (stage → composition → C−A score) and reverse (stage → C−A score → composition) mediation models on rank-standardised variables, with 2,000 bootstrap resamples. All 11 models are shown in Supplementary Fig. S1. Because the data are cross-sectional and the two scores are nearly collinear, these estimates are descriptive only.
+
+### S5.4 Screening reliability
+To assess screening reliability, the first author independently screened stratified random samples without AI assistance and blinded to the screening decisions. Calibration round (30 records): agreement 73%, Cohen's κ = 0.39; disagreements were discussed and the eligibility wording was clarified. Second round (a non-overlapping sample of 30 records): complete agreement (30/30; κ = 1.00; 95% CI for agreement 0.88–1.00). No screening decision was changed as a result of either round.
+
+### S5.5 RNA quality and deconvolution checks (detail)
+In SEA-AD, RIN was related to pseudo-progression (ρ = −0.23) and to the neuronal fraction of nuclei (ρ = 0.36), and its association with the C−A score weakened after adjustment for both (ρ = −0.18, p = 0.11).
+
+On SEA-AD donor pseudobulks with known proportions, NNLS estimated the major types well (Spearman ρ: excitatory neurons 0.82, astrocytes 0.96, oligodendrocytes 0.97, microglia 0.95, total neurons 0.94). This test is optimistic because the pseudobulks and the reference come from the same single-nucleus platform. Inhibitory subtypes were estimated poorly (ρ = 0.35–0.67; the residual inhibitory group was underestimated, 1.4% against a true 10.3%), so they were not interpreted.
