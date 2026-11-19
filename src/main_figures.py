@@ -39,22 +39,25 @@ def save(fig, name):
 
 # ---------- Fig 1: design ----------
 def fig1():
-    fig, ax = plt.subplots(figsize=(7.2, 3.4)); ax.axis("off"); ax.set_xlim(0, 10); ax.set_ylim(0, 5)
+    fig, ax = plt.subplots(figsize=(7.2, 3.6)); ax.axis("off"); ax.set_xlim(0, 10); ax.set_ylim(-0.5, 5)
     def box(x, y, w, h, t, fc="#f5f4f0"):
         ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.03", fc=fc, ec=MUTED, lw=0.8))
         ax.text(x + w / 2, y + h / 2, t, ha="center", va="center", fontsize=7.2)
     def arr(x1, y1, x2, y2):
         ax.annotate("", (x2, y2), (x1, y1), arrowprops=dict(arrowstyle="->", color=MUTED, lw=0.9))
-    box(0.1, 3.3, 2.3, 1.4, "Neff 2021 subtypes\n271 marker genes\nA / B / C centroids", "#e7f1fb")
-    box(0.1, 0.3, 2.3, 2.6, "Independent cohorts\nGSE33000 PFC\nGSE132903 MTG\nGSE118553 (4 regions)\nGSE125583 FG (RNA-seq)\nGSE106241 ITC (Braak)\nMSBB 17 regions (CDR)")
+    box(0.1, 3.75, 2.3, 1.15, "Neff 2021 classifier\n271 genes, A / B / C\n(+ Li 2022, 3 subgroups)", "#e7f1fb")
+    box(0.1, 1.45, 2.3, 2.05, "Independent cohorts\nGSE33000 PFC\nGSE132903 MTG*\nGSE118553 (4 regions)\nGSE125583 FG (RNA-seq)*\nGSE106241 ITC (Braak)")
+    box(0.1, 0.1, 2.3, 1.1, "Positive control\nMSBB GSE84422 (17 regions)\nsame bank as Neff", "#f9eeda")
     box(3.0, 1.9, 2.0, 1.4, "Project each sample\nr(A), r(B), r(C)\nC−A axis score")
-    box(5.6, 3.4, 2.0, 1.2, "Reproducibility\nvs random-gene null")
-    box(5.6, 1.95, 2.0, 1.2, "Cell composition\nmarkers, NNLS (SEA-AD)")
-    box(5.6, 0.5, 2.0, 1.2, "Disease stage\nBraak, CDR, mediation")
-    box(8.1, 1.95, 1.8, 1.2, "SEA-AD 84 donors\npseudobulk +\nsimulation", "#e5f4e4")
-    arr(2.4, 4.0, 3.0, 2.9); arr(2.4, 1.6, 3.0, 2.3)
-    for y in (4.0, 2.55, 1.1): arr(5.0, 2.6, 5.6, y)
-    arr(8.1, 2.55, 7.6, 2.55)
+    box(5.6, 3.75, 2.0, 1.15, "Matched random-gene\nnull (1,000 sets)")
+    box(5.6, 2.45, 2.0, 1.15, "Cell composition\nmarkers, NNLS;\nseverity normalisation")
+    box(5.6, 1.15, 2.0, 1.15, "Disease stage\ndiagnosis, Braak, CDR")
+    box(8.1, 2.45, 1.8, 1.15, "SEA-AD 84 donors\npseudobulks", "#e5f4e4")
+    box(8.1, 1.15, 1.8, 1.15, "Simulation\nneuron loss vs\nper-cell change", "#e5f4e4")
+    arr(2.4, 4.3, 3.0, 2.9); arr(2.4, 2.5, 3.0, 2.5); arr(2.4, 0.65, 3.0, 2.1)
+    for y in (4.3, 3.0, 1.7): arr(5.0, 2.6, 5.6, y)
+    arr(8.1, 3.0, 7.6, 3.0); arr(8.1, 1.7, 7.6, 1.7)
+    ax.text(0.1, -0.25, "* share 62 donors (Banner Sun Health); meta-analysis repeated without them", fontsize=6.3, color=MUTED, va="top")
     save(fig, "Fig1_design")
 
 

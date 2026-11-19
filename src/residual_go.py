@@ -84,6 +84,8 @@ def main() -> None:
     ap.add_argument("--data", type=Path, required=True)
     ap.add_argument("--gmt-dir", type=Path, required=True)
     ap.add_argument("--out", type=Path, required=True)
+    ap.add_argument("--drop-banner-overlap", action="store_true",
+                    help="sensitivity: remove donors shared with GSE125583 from GSE132903")
     a = ap.parse_args()
     a.out.mkdir(parents=True, exist_ok=True)
     _, cls = neff_subtypes.load_centroids(a.data / "neff2021")
@@ -93,6 +95,10 @@ def main() -> None:
     for name, expr, meta in cohorts(a.data):
         if "Cerebellum" in name:
             continue
+        if a.drop_banner_overlap and name == "GSE132903_MTG":
+            from meta_reanalysis import banner_overlap
+            keep = meta.index.difference(list(banner_overlap(a.data)["GSE132903"]))
+            expr, meta = expr[keep], meta.loc[keep]
         expr = expr.loc[expr.index.notna() & ~expr.index.duplicated()].dropna()
         ad = meta.index[meta["group"] == "AD"]
         genes = cls.index.intersection(expr.index)

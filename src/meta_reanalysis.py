@@ -27,6 +27,29 @@ from validate_cohorts import GROUP_ORDER, cohorts
 INDEPENDENT = ["GSE33000_PFC", "GSE132903_MTG", "GSE118553_Temporal_Cortex", "GSE125583_FG"]
 
 
+def banner_overlap(data: Path) -> dict:
+    """GSE132903 (MTG) and GSE125583 (fusiform) both come from the Banner Sun Health brain bank.
+    Donors are matched on the case id at the end of the sample title (e.g. '08-81').
+    Returns, for each series, the GSM ids of donors present in both."""
+    import gzip
+    import re
+    ids = {}
+    for g in ["GSE132903", "GSE125583"]:
+        f = next((data / g).glob("*series_matrix*"))
+        op = gzip.open if f.suffix == ".gz" else open
+        title = gsm = None
+        with op(f, "rt", errors="ignore") as fh:
+            for line in fh:
+                if line.startswith("!Sample_title"):
+                    title = [x.strip('"') for x in line.rstrip("\n").split("\t")[1:]]
+                elif line.startswith("!Sample_geo_accession"):
+                    gsm = [x.strip('"') for x in line.rstrip("\n").split("\t")[1:]]
+        case = [re.search(r"(\d\d-\d+)$", t) for t in title]
+        ids[g] = {c.group(1): s for c, s in zip(case, gsm) if c}
+    shared = set(ids["GSE132903"]) & set(ids["GSE125583"])
+    return {g: {ids[g][c] for c in shared} for g in ids}
+
+
 def ca_score(z: pd.DataFrame, cent: pd.DataFrame) -> pd.Series:
     zc = (z - z.mean()) / z.std(ddof=0)
     cc = (cent - cent.mean()) / cent.std(ddof=0)
@@ -101,35 +124,46 @@ def main() -> None:
     a = ap.parse_args()
     a.out.mkdir(parents=True, exist_ok=True)
     rng = np.random.default_rng(SEED)
+    rng_s = np.random.default_rng(SEED + 1)  # sensitivity rows: separate stream keeps the main results unchanged
     _, cls = neff_subtypes.load_centroids(a.data / "neff2021")
 
+    overlap = banner_overlap(a.data)
+    drop = {"GSE132903_MTG": overlap["GSE132903"], "GSE125583_FG": overlap["GSE125583"]}
+
+    def variants(name, e, m):
+        yield name, "", e, m
+        if name in drop:  # donor-overlap sensitivity: same cohort without the shared donors
+            keep = m.index.difference(list(drop[name]))
+            yield name, "_nooverlap", e[keep], m.loc[keep]
+
     rows = []
-    for name, e, m in cohorts(a.data):
-        if name not in INDEPENDENT:
+    for name0, e0, m0 in cohorts(a.data):
+        if name0 not in INDEPENDENT:
             continue
-        genes = cls.index.intersection(e.index)
-        cent = cls.loc[genes].sub(cls.loc[genes].mean(axis=1), axis=0)
-        ad = m.index[m["group"] == "AD"]
-        ca_ad = ca_score(zscore_rows(e.loc[genes, ad]), cent)
-        mk = [g for g in NEURON_MARKERS if g in e.index and g not in genes]
-        neuron = zscore_rows(e.loc[mk, ad]).mean()
-        ca_all = ca_score(zscore_rows(e.loc[genes, m.index]), cent)
-        stage = m["group"].map(GROUP_ORDER).values.astype(float)
-        age = pd.to_numeric(m["age"], errors="coerce")
-        age = age.fillna(age.median()).values
-        sex = (m["sex"].astype(str).str.lower().str[0] == "m").astype(float).values
-        cov = np.column_stack([age, sex])
-        for ep, x, y, c in [("P1_neuron", ca_ad.values, neuron.values, None),
-                            ("P2_stage", ca_all.values, stage, None),
-                            ("P2_stage_agesex", ca_all.values, stage, cov)]:
-            n = len(x)
-            r = rho(x, y, c)
-            rows.append({"endpoint": ep, "cohort": name, "n": n, "rho": r, "z": np.arctanh(r),
-                         "se_fieller": np.sqrt(1.06 / (n - 3)),
-                         "se_bonett": np.sqrt((1 + r ** 2 / 2) / (n - 3)),
-                         "se_old_formula": 1.06 / np.sqrt(n - 3),
-                         "se_boot": boot_se(x, y, c, rng, a.n_boot)})
-        print(name, "done", flush=True)
+        for name, suf, e, m in variants(name0, e0, m0):
+            genes = cls.index.intersection(e.index)
+            cent = cls.loc[genes].sub(cls.loc[genes].mean(axis=1), axis=0)
+            ad = m.index[m["group"] == "AD"]
+            ca_ad = ca_score(zscore_rows(e.loc[genes, ad]), cent)
+            mk = [g for g in NEURON_MARKERS if g in e.index and g not in genes]
+            neuron = zscore_rows(e.loc[mk, ad]).mean()
+            ca_all = ca_score(zscore_rows(e.loc[genes, m.index]), cent)
+            stage = m["group"].map(GROUP_ORDER).values.astype(float)
+            age = pd.to_numeric(m["age"], errors="coerce")
+            age = age.fillna(age.median()).values
+            sex = (m["sex"].astype(str).str.lower().str[0] == "m").astype(float).values
+            cov = np.column_stack([age, sex])
+            for ep, x, y, c in [("P1_neuron", ca_ad.values, neuron.values, None),
+                                ("P2_stage", ca_all.values, stage, None),
+                                ("P2_stage_agesex", ca_all.values, stage, cov)]:
+                n = len(x)
+                r = rho(x, y, c)
+                rows.append({"endpoint": ep + suf, "cohort": name, "n": n, "rho": r, "z": np.arctanh(r),
+                             "se_fieller": np.sqrt(1.06 / (n - 3)),
+                             "se_bonett": np.sqrt((1 + r ** 2 / 2) / (n - 3)),
+                             "se_old_formula": 1.06 / np.sqrt(n - 3),
+                             "se_boot": boot_se(x, y, c, rng if not suf else rng_s, a.n_boot)})
+            print(name + suf, "done", flush=True)
 
     b = pd.read_csv(a.res / "braak/braak_per_sample.csv", index_col=0)
     cov = np.column_stack([b["age"].values, (b["sex"].str[0] == "m").astype(float).values])
@@ -150,19 +184,30 @@ def main() -> None:
             d = pd.concat([d, df[df.endpoint == extra]])
         return d
 
-    report = {}
+    def sel_nooverlap(ep, which):
+        """4-cohort set with the shared Banner donors removed from one of the two Banner cohorts."""
+        d = df[df.endpoint == ep]
+        alt = df[(df.endpoint == ep + "_nooverlap") & (df.cohort == which)]
+        return pd.concat([d[d.cohort != which], alt])
+
+    report = {"donor_overlap": {"n_shared_banner_donors": len(overlap["GSE132903"]),
+                                "note": "GSE132903 and GSE125583 share donors (Banner Sun Health)"}}
     specs = {"P1_neuron (4 cohorts)": sel("P1_neuron"),
              "P2_stage diagnosis only (4 cohorts)": sel("P2_stage"),
              "P2_stage age/sex adjusted (4 cohorts)": sel("P2_stage_agesex"),
              "P2_stage original mix (4 diagnosis + GSE106241 Braak)": sel("P2_stage", "P2_stage_braak106241"),
              "P2_stage original mix, age/sex adjusted": sel("P2_stage_agesex", "P2_stage_agesex_braak106241")}
+    for ep, lab in [("P1_neuron", "P1_neuron"), ("P2_stage_agesex", "P2_stage age/sex adjusted")]:
+        specs[f"{lab}, shared donors removed from GSE132903"] = sel_nooverlap(ep, "GSE132903_MTG")
+        specs[f"{lab}, shared donors removed from GSE125583"] = sel_nooverlap(ep, "GSE125583_FG")
     for k, d in specs.items():
         report[k] = {se: pool(d["z"].values, d[se].values)
                      for se in ["se_boot", "se_bonett", "se_fieller", "se_old_formula"]}
         report[k]["per_cohort"] = d[["cohort", "n", "rho", "se_boot", "se_bonett"]].round(3).to_dict(orient="records")
     (a.out / "meta_report.json").write_text(json.dumps(report, indent=2, ensure_ascii=False))
     for k, v in report.items():
-        print(k, json.dumps(v["se_boot"]), flush=True)
+        if "se_boot" in v:
+            print(k, json.dumps(v["se_boot"]), flush=True)
 
 
 if __name__ == "__main__":

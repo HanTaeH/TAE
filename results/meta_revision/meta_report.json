@@ -1,4 +1,8 @@
 {
+  "donor_overlap": {
+    "n_shared_banner_donors": 62,
+    "note": "GSE132903 and GSE125583 share donors (Banner Sun Health)"
+  },
   "P1_neuron (4 cohorts)": {
     "se_boot": {
       "k": 4,
@@ -470,6 +474,374 @@
         "rho": 0.215,
         "se_boot": 0.156,
         "se_bonett": 0.134
+      }
+    ]
+  },
+  "P1_neuron, shared donors removed from GSE132903": {
+    "se_boot": {
+      "k": 4,
+      "rho": -0.926,
+      "ci95_hksj": [
+        -0.946,
+        -0.899
+      ],
+      "p_hksj": 6.945148409331219e-05,
+      "tau2_reml": 0.0,
+      "I2": 0.511,
+      "pi95": [
+        -0.952,
+        -0.888
+      ]
+    },
+    "se_bonett": {
+      "k": 4,
+      "rho": -0.924,
+      "ci95_hksj": [
+        -0.95,
+        -0.888
+      ],
+      "p_hksj": 0.00014462530086753044,
+      "tau2_reml": 0.0,
+      "I2": 0.47,
+      "pi95": [
+        -0.956,
+        -0.871
+      ]
+    },
+    "se_fieller": {
+      "k": 4,
+      "rho": -0.921,
+      "ci95_hksj": [
+        -0.956,
+        -0.862
+      ],
+      "p_hksj": 0.000432081901307254,
+      "tau2_reml": 0.016,
+      "I2": 0.591,
+      "pi95": [
+        -0.979,
+        -0.726
+      ]
+    },
+    "se_old_formula": {
+      "k": 4,
+      "rho": -0.922,
+      "ci95_hksj": [
+        -0.955,
+        -0.865
+      ],
+      "p_hksj": 0.00039426407790341963,
+      "tau2_reml": 0.0132,
+      "I2": 0.567,
+      "pi95": [
+        -0.977,
+        -0.749
+      ]
+    },
+    "per_cohort": [
+      {
+        "cohort": "GSE33000_PFC",
+        "n": 310,
+        "rho": -0.928,
+        "se_boot": 0.05,
+        "se_bonett": 0.068
+      },
+      {
+        "cohort": "GSE118553_Temporal_Cortex",
+        "n": 52,
+        "rho": -0.85,
+        "se_boot": 0.168,
+        "se_bonett": 0.167
+      },
+      {
+        "cohort": "GSE125583_FG",
+        "n": 219,
+        "rho": -0.927,
+        "se_boot": 0.062,
+        "se_bonett": 0.081
+      },
+      {
+        "cohort": "GSE132903_MTG",
+        "n": 60,
+        "rho": -0.942,
+        "se_boot": 0.121,
+        "se_bonett": 0.159
+      }
+    ]
+  },
+  "P1_neuron, shared donors removed from GSE125583": {
+    "se_boot": {
+      "k": 4,
+      "rho": -0.924,
+      "ci95_hksj": [
+        -0.942,
+        -0.9
+      ],
+      "p_hksj": 4.669280145304851e-05,
+      "tau2_reml": 0.0,
+      "I2": 0.388,
+      "pi95": [
+        -0.947,
+        -0.89
+      ]
+    },
+    "se_bonett": {
+      "k": 4,
+      "rho": -0.921,
+      "ci95_hksj": [
+        -0.946,
+        -0.887
+      ],
+      "p_hksj": 0.00011340733716559791,
+      "tau2_reml": 0.0,
+      "I2": 0.362,
+      "pi95": [
+        -0.952,
+        -0.872
+      ]
+    },
+    "se_fieller": {
+      "k": 4,
+      "rho": -0.919,
+      "ci95_hksj": [
+        -0.947,
+        -0.877
+      ],
+      "p_hksj": 0.00018556967286986485,
+      "tau2_reml": 0.0044,
+      "I2": 0.505,
+      "pi95": [
+        -0.964,
+        -0.824
+      ]
+    },
+    "se_old_formula": {
+      "k": 4,
+      "rho": -0.921,
+      "ci95_hksj": [
+        -0.946,
+        -0.887
+      ],
+      "p_hksj": 0.00011261693055423724,
+      "tau2_reml": 0.0003,
+      "I2": 0.476,
+      "pi95": [
+        -0.953,
+        -0.87
+      ]
+    },
+    "per_cohort": [
+      {
+        "cohort": "GSE33000_PFC",
+        "n": 310,
+        "rho": -0.928,
+        "se_boot": 0.05,
+        "se_bonett": 0.068
+      },
+      {
+        "cohort": "GSE132903_MTG",
+        "n": 97,
+        "rho": -0.921,
+        "se_boot": 0.099,
+        "se_bonett": 0.123
+      },
+      {
+        "cohort": "GSE118553_Temporal_Cortex",
+        "n": 52,
+        "rho": -0.85,
+        "se_boot": 0.168,
+        "se_bonett": 0.167
+      },
+      {
+        "cohort": "GSE125583_FG",
+        "n": 182,
+        "rho": -0.926,
+        "se_boot": 0.06,
+        "se_bonett": 0.089
+      }
+    ]
+  },
+  "P2_stage age/sex adjusted, shared donors removed from GSE132903": {
+    "se_boot": {
+      "k": 4,
+      "rho": 0.421,
+      "ci95_hksj": [
+        0.332,
+        0.502
+      ],
+      "p_hksj": 0.0008354147975692855,
+      "tau2_reml": 0.0,
+      "I2": 0.0,
+      "pi95": [
+        0.298,
+        0.529
+      ]
+    },
+    "se_bonett": {
+      "k": 4,
+      "rho": 0.421,
+      "ci95_hksj": [
+        0.331,
+        0.504
+      ],
+      "p_hksj": 0.0008691300577583981,
+      "tau2_reml": 0.0,
+      "I2": 0.0,
+      "pi95": [
+        0.297,
+        0.532
+      ]
+    },
+    "se_fieller": {
+      "k": 4,
+      "rho": 0.421,
+      "ci95_hksj": [
+        0.332,
+        0.503
+      ],
+      "p_hksj": 0.0008344676527194853,
+      "tau2_reml": 0.0,
+      "I2": 0.0,
+      "pi95": [
+        0.299,
+        0.53
+      ]
+    },
+    "se_old_formula": {
+      "k": 4,
+      "rho": 0.421,
+      "ci95_hksj": [
+        0.33,
+        0.505
+      ],
+      "p_hksj": 0.0009095309842019964,
+      "tau2_reml": 0.0,
+      "I2": 0.0,
+      "pi95": [
+        0.295,
+        0.533
+      ]
+    },
+    "per_cohort": [
+      {
+        "cohort": "GSE33000_PFC",
+        "n": 467,
+        "rho": 0.435,
+        "se_boot": 0.048,
+        "se_bonett": 0.049
+      },
+      {
+        "cohort": "GSE118553_Temporal_Cortex",
+        "n": 115,
+        "rho": 0.424,
+        "se_boot": 0.105,
+        "se_bonett": 0.099
+      },
+      {
+        "cohort": "GSE125583_FG",
+        "n": 289,
+        "rho": 0.393,
+        "se_boot": 0.058,
+        "se_bonett": 0.061
+      },
+      {
+        "cohort": "GSE132903_MTG",
+        "n": 133,
+        "rho": 0.43,
+        "se_boot": 0.094,
+        "se_bonett": 0.092
+      }
+    ]
+  },
+  "P2_stage age/sex adjusted, shared donors removed from GSE125583": {
+    "se_boot": {
+      "k": 4,
+      "rho": 0.405,
+      "ci95_hksj": [
+        0.28,
+        0.516
+      ],
+      "p_hksj": 0.002346567299512058,
+      "tau2_reml": 0.003,
+      "I2": 0.355,
+      "pi95": [
+        0.124,
+        0.626
+      ]
+    },
+    "se_bonett": {
+      "k": 4,
+      "rho": 0.406,
+      "ci95_hksj": [
+        0.286,
+        0.514
+      ],
+      "p_hksj": 0.0020972876073925683,
+      "tau2_reml": 0.0026,
+      "I2": 0.32,
+      "pi95": [
+        0.145,
+        0.615
+      ]
+    },
+    "se_fieller": {
+      "k": 4,
+      "rho": 0.407,
+      "ci95_hksj": [
+        0.289,
+        0.513
+      ],
+      "p_hksj": 0.001998559408404342,
+      "tau2_reml": 0.0025,
+      "I2": 0.319,
+      "pi95": [
+        0.151,
+        0.612
+      ]
+    },
+    "se_old_formula": {
+      "k": 4,
+      "rho": 0.407,
+      "ci95_hksj": [
+        0.29,
+        0.513
+      ],
+      "p_hksj": 0.0019853998520614523,
+      "tau2_reml": 0.0022,
+      "I2": 0.278,
+      "pi95": [
+        0.159,
+        0.607
+      ]
+    },
+    "per_cohort": [
+      {
+        "cohort": "GSE33000_PFC",
+        "n": 467,
+        "rho": 0.435,
+        "se_boot": 0.048,
+        "se_bonett": 0.049
+      },
+      {
+        "cohort": "GSE132903_MTG",
+        "n": 195,
+        "rho": 0.459,
+        "se_boot": 0.076,
+        "se_bonett": 0.076
+      },
+      {
+        "cohort": "GSE118553_Temporal_Cortex",
+        "n": 115,
+        "rho": 0.424,
+        "se_boot": 0.105,
+        "se_bonett": 0.099
+      },
+      {
+        "cohort": "GSE125583_FG",
+        "n": 227,
+        "rho": 0.301,
+        "se_boot": 0.066,
+        "se_bonett": 0.068
       }
     ]
   }
