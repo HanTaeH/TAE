@@ -141,7 +141,7 @@ PMID,year,first_author,journal,title,stage,study_id,role,reason
 29458203,2018,Hampel H,Pharmacol Res,Precision pharmacology for Alzheimer's disease.,excluded_pubtype,,,"publication type (review, editorial, comment, ...)"
 42675343,2026,Gunasekaran SK,Daru,Trehalose's untapped mechanisms in alzheimer's: gut-brain-autophagy signalling  beyond the usual targets.,excluded_pubtype,,,"publication type (review, editorial, comment, ...)"
 32862331,2020,Miao X,Neuromolecular Med,Transcriptomic Heterogeneity of Alzheimer's Disease Associated with Lipid Genetic  Risk.,excluded_manual,,,not patient-level AD subtyping from brain bulk transcriptome
-39394418,2024,Li CL,Sci Rep,The PANoptosis-related hippocampal molecular subtypes and key biomarkers in  Alzheimer's disease patients.,included,Wang2024_PANoptosis,de novo,
+39394418,2024,Li CL,Sci Rep,The PANoptosis-related hippocampal molecular subtypes and key biomarkers in  Alzheimer's disease patients.,included,LiCL2024_PANoptosis,de novo,
 39936500,2025,Chen J,Brain,Single-nucleus transcriptome atlas of the basal forebrain reveals diverse  ageing-related pathways.,excluded_rule,,,"rule: no subgrouping + brain molecular terms, or animal only"
 42511496,2026,Cha S,Int J Mol Sci,Spatial Transcriptomics for Dissecting Cellular and Molecular Heterogeneity in  the Aging and Diseased Brain.,excluded_pubtype,,,"publication type (review, editorial, comment, ...)"
 40515808,2026,Sanfilippo C,Geroscience,Synaptic pruning genes networks in Alzheimer's disease: correlations with  neuropathology and cognitive decline.,excluded_manual,,,not patient-level AD subtyping from brain bulk transcriptome

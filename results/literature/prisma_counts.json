@@ -16,9 +16,10 @@
   "included_de_novo": 27,
   "included_application": 3,
   "other_sources": [
-    "Lai2022 (Front Immunol; not retrieved, added from other sources)"
+    "Lai2022 (Front Immunol; not retrieved, added from other sources)",
+    "Wang2024 (Front Immunol 15:1462003, PANoptosis subclasses; not retrieved, added from other sources)"
   ],
-  "included_studies_total": 31,
+  "included_studies_total": 32,
   "study_level_flags": {
     "mentions_composition": 4,
     "mentions_null_control": 0,

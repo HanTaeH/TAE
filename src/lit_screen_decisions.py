@@ -17,7 +17,7 @@ INCLUDE = {
     "33523961": ("Neff2021", "de novo"),
     "34014928": ("ZhengXu2021", "de novo"),
     "38687811": ("Eteleeb2024", "de novo"),
-    "39394418": ("Wang2024_PANoptosis", "de novo"),
+    "39394418": ("LiCL2024_PANoptosis", "de novo"),
     "40654912": ("Song2025", "de novo"),
     "42056682": ("Song2025", "de novo"),
     "42620705": ("Lee2026", "de novo"),
@@ -116,7 +116,8 @@ def main(src, out):
        "mentions_null_control", "mentions_validation", "rnaseq", "array", "cohorts"]].to_csv(
         out / "included_features.csv", index=False)
 
-    n_found_known_missing = ["Lai2022 (Front Immunol; not retrieved, added from other sources)"]
+    n_found_known_missing = ["Lai2022 (Front Immunol; not retrieved, added from other sources)",
+                             "Wang2024 (Front Immunol 15:1462003, PANoptosis subclasses; not retrieved, added from other sources)"]
     studies = I.groupby("study_id").agg(role=("role", "first")).reset_index()
     prisma = {
         "identified_search1": 366,
@@ -136,7 +137,7 @@ def main(src, out):
         "included_de_novo": int((studies.role == "de novo").sum()),
         "included_application": int((studies.role == "application").sum()),
         "other_sources": n_found_known_missing,
-        "included_studies_total": int(len(studies)) + 1,
+        "included_studies_total": int(len(studies)) + len(n_found_known_missing),
         "study_level_flags": {
             k: int(I.groupby("study_id")[k].any().sum())
             for k in ["mentions_composition", "mentions_null_control", "mentions_validation"]

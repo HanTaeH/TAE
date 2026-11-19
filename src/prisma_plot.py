@@ -38,7 +38,7 @@ def main(src, out):
         "epigenome-only, diagnosis-only, ...)")
     box(ax, L, ys[4], W, H * 1.3, f"Included: {c['included_records']} records = {c['included_studies']} studies\n"
         f"({c['included_de_novo']} de novo subtyping, {c['included_application']} applications)\n"
-        f"+ 1 study from other sources (Lai 2022)\nTotal {c['included_studies_total']} studies")
+        f"+ {len(c['other_sources'])} studies from other sources (Lai 2022, Wang 2024)\nTotal {c['included_studies_total']} studies")
     for i in range(4):
         arrow(ax, L + W / 2, ys[i], L + W / 2, ys[i + 1] + (H if i < 3 else H * 1.3))
         arrow(ax, L + W, ys[i] + H / 2, R, ys[i] + H / 2)
