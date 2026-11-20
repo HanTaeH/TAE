@@ -44,3 +44,13 @@ EUR (FG+UKBB+MVP) meta Z files. `src/run_sldsc.sh` (`make_annot.py`, `split_ldsc
 - `enrich_exp4.py`: per trait x cell type, loci (CS merged within 500 kb) whose nearest gene / any window gene is in the
   top-10% specificity set; null from 20k random positions, window test matched on number of genes in window.
 - Inputs: gs://finngen-public-data-r12/finemap/full/susie/, gs://adult-gtex/bulk-qtl/v10/susie-qtl/GTEx_v10_SuSiE_eQTL.tar
+
+## Experiment 5 and atlas v2
+- **Atlas v2 (`build_atlas_v2.py`)**: gene union instead of intersection. v1 lost core neuronal genes because
+  GSE165722 ships only ~14k disc-detected genes; with v1 even depression showed no brain-neuron enrichment.
+  `build_sets_pooled_exp5.py` (pooled neuron / fibroblast / chondrocyte sets), `combine_sets_v2.py` (+20 random sets);
+  LDSC-SEG via `run_sldsc.sh` with A=<dir holding the combined genesets.tsv>.
+- 5a/5c controls and lumbar prolapse: `run_exp5_prep.sh` (FinnGen download + munge), `run_sldsc_exp5.sh` (v1 sets), `summarise_exp5.py`.
+- 5b: `adjust_multi.py` (Cholesky removal of height + BMI genetic components, LDSC intercepts for sampling covariance).
+- 5d: `lof_celltype_exp5.py` (FinnGen R12 LoF burden, best mask per gene, Mann-Whitney per cell-type set).
+- 5e: `surgery_lookup_exp5.py` (FinnGen CS leads -> rsID -> GRCh37 -> Pan-UKB OPCS4 procedure GWAS via remote tabix; needs pysam).
