@@ -1,6 +1,6 @@
 # Supplementary Note
 
-## S1. Literature search (PubMed, run 2026-11-17)
+## S1. Structured literature search (PubMed, run 2026-11-17)
 
 Search 2 (broad; 773 records):
 
@@ -10,7 +10,7 @@ Search 2 (broad; 773 records):
 
 Search 1 (narrow; 366 records, all contained in Search 2) was the same query without heterogeneity, cluster*, taxonomy and the cohort names.
 
-Flow: 773 records; 139 excluded by publication type; 634 screened on title and abstract; 374 excluded by keyword rule; 260 reviewed manually (203 passing the rule plus 57 rule-excluded records whose titles mentioned subtypes or clusters); 226 excluded on review; 34 records from 30 studies included (27 de novo subtyping, 3 applications). Two further studies were not retrieved by the search and were added from other sources: Lai et al. 2022 (Front Immunol) and Wang et al. 2024 (Front Immunol 15:1462003). Total: 32 studies (Supplementary Table S1). Features were extracted from the full text for 9 studies and from the abstract for 23. A second reviewer re-screened a random sample; agreement after reconciling the inclusion rule was 30/30 (κ = 1.00; κ = 0.39 before reconciliation).
+Flow: 773 records; 139 excluded by publication type; 634 screened on title and abstract; 374 excluded by keyword rule; 260 reviewed manually (203 passing the rule plus 57 rule-excluded records whose titles mentioned subtypes or clusters); 226 excluded on review; 34 records from 30 studies included (27 de novo subtyping, 3 applications). Two further studies were not retrieved by the search and were added from other sources: Lai et al. 2022 (Front Immunol) and Wang et al. 2024 (Front Immunol 15:1462003). Total: 32 studies (Supplementary Table S1). Features were extracted from the full text for 9 studies and from the abstract for 23. The first author re-screened random samples without AI assistance (Section S5.4); agreement was 30/30 (κ = 1.00) in the second round, after a calibration round with κ = 0.39. This was a structured search reported with reference to the PRISMA 2020 flow diagram (Supplementary Fig. S3), not a full systematic review.
 
 ## S2. Shared donors between GSE132903 and GSE125583
 
@@ -61,7 +61,7 @@ Pseudobulk samples were built from the SEA-AD neurotypical reference with only t
 We fitted forward (stage → composition → C−A score) and reverse (stage → C−A score → composition) mediation models on rank-standardised variables, with 2,000 bootstrap resamples. All 11 models are shown in Supplementary Fig. S1. Because the data are cross-sectional and the two scores are nearly collinear, these estimates are descriptive only.
 
 ### S5.4 Screening reliability
-To assess screening reliability, the first author independently screened stratified random samples without AI assistance and blinded to the screening decisions. Calibration round (30 records): agreement 73%, Cohen's κ = 0.39; disagreements were discussed and the eligibility wording was clarified. Second round (a non-overlapping sample of 30 records): complete agreement (30/30; κ = 1.00; 95% CI for agreement 0.88–1.00). No screening decision was changed as a result of either round.
+To assess screening reliability, the first author independently screened stratified random samples without AI assistance and blinded to the screening decisions. Calibration round (30 records): agreement 73%, Cohen's κ = 0.39; disagreements were discussed and the eligibility wording was clarified. Second round (a non-overlapping sample of 30 records): complete agreement (30/30; κ = 1.00; 95% CI for agreement 0.88–1.00). No screening decision was changed as a result of either round. An earlier check of 60 records (60/60 agreement) is not reported as a reliability estimate because the rater had used AI assistance for it.
 
 ### S5.5 RNA quality and deconvolution checks (detail)
 In SEA-AD, RIN was related to pseudo-progression (ρ = −0.23) and to the neuronal fraction of nuclei (ρ = 0.36), and its association with the C−A score weakened after adjustment for both (ρ = −0.18, p = 0.11).
