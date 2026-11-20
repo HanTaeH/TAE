@@ -70,6 +70,10 @@ def main() -> None:
     sheets["S2b_pooled"] = pd.DataFrame([{"analysis": k, **{kk: (str(vv) if isinstance(vv, list) else vv)
                                                             for kk, vv in v["se_boot"].items()}}
                                          for k, v in mr.items() if "se_boot" in v])
+    ss = json.loads((R / "singlesample/singlesample_report.json").read_text())["pooled_AD_ca_vs_neuron"]
+    sheets["S2b_pooled"] = pd.concat([sheets["S2b_pooled"], pd.DataFrame([{
+        "analysis": "P1_neuron, reference-free single-sample score (4 cohorts)", "rho": ss["rho"],
+        "ci95_hksj": str(ss["ci"]), "p_hksj": ss["p"]}])], ignore_index=True)
     sheets["S3_random_gene_null"] = pd.read_csv(R / "null/null_summary.csv")
     sheets["S4_seaad_pseudobulk_tests"] = pd.read_csv(R / "seaad_sensitivity/fdr_all_pseudobulk_tests.csv")
     sheets["S5_mediation_all_models"] = pd.read_csv(R / "mediation_revision/mediation_forward_reverse.csv")
@@ -110,7 +114,17 @@ def main() -> None:
     sheets["S13_stage_extra"] = pd.concat([pd.DataFrame([{"spec": "POOLED " + k.replace("pooled_", ""), **flat(v)}
                                                          for k, v in ex.items() if k.startswith("pooled")]),
                                            pd.read_csv(R / "stage_extra/stage_extra_per_cohort.csv")], ignore_index=True)
-    sheets["S14_seaad_neun_histology"] = pd.read_csv(R / "seaad_neun/seaad_neun_associations.csv")
+    nb = json.loads((R / "seaad_neun/seaad_neun_report.json").read_text())["neun_density_beyond"]
+    beyond = pd.DataFrame([{"subset": sub, "histology": "neun_density", "score": sc, "n": v["n"],
+                            "rho_age_sex": r["rho_given_age_sex_CPS"], "p_age_sex": r["p"], "ci_age_sex": str(r["ci"]),
+                            "note": "given age, sex and CPS"} for sub, v in nb.items() for sc, r in v.items()
+                           if isinstance(r, dict)] +
+                          [{"subset": sub, "histology": "neun_density", "score": sc, "n": v["n"],
+                            "rho_age_sex": r["rho_given_age_sex_FANS_neuron_frac"], "p_age_sex": r["p_fans"],
+                            "note": "given age, sex and FANS neuronal fraction"} for sub, v in nb.items()
+                           for sc, r in v.items() if isinstance(r, dict)])
+    sheets["S14_seaad_neun_histology"] = pd.concat([pd.read_csv(R / "seaad_neun/seaad_neun_associations.csv"), beyond],
+                                                   ignore_index=True)
 
     titles = {
         "S1": "Included studies of the structured literature search, with extracted composition and null-control features",
@@ -128,7 +142,7 @@ def main() -> None:
         "S13": "NNLS-adjusted case-control association, alternative GSE118553 regions, GSE118553 AD vs control only, AUC with "
                "bootstrap 95% CIs (AUC compares AD with controls only; GSE118553 n = 83 excludes asymptomatic AD)",
         "S14": "SEA-AD histology (MTG grey matter) against pseudobulk C-A scores; subset neun_share_ge_5pct excludes 4 donors "
-               "with NeuN+ < 5% of nuclei",
+               "with NeuN+ < 5% of nuclei (threshold set after inspecting the data); rows with a note are NeuN density given CPS or FANS fraction",
     }
     readme = pd.DataFrame([{"sheet": k, "table": k.split("_")[0], "title": titles.get(k.split("_")[0], "")} for k in sheets])
     readme = pd.concat([pd.DataFrame([{"sheet": "README", "table": "", "title":

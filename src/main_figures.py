@@ -233,12 +233,12 @@ def fig5():
     lam = cr["laminar"]
     pa = lambda k, o: cr[k][f"ca_vs_{o}_partial_age_sex"]["rho"]
     bars = [("All nuclei (sorted)", pa("sorted", "CPS"), pa("sorted", "Braak"), pa("sorted", "dementia")),
-            ("All nuclei, Exc subclass\nshares adjusted (CLR)", lam["ca_sorted_vs_CPS_partial"]["all Exc subclass shares (CLR)"]["rho"],
+            ("All nuclei, adjusted for\nexcitatory subclass shares", lam["ca_sorted_vs_CPS_partial"]["all Exc subclass shares (CLR)"]["rho"],
              lam["ca_sorted_vs_Braak_partial"]["all Exc subclass shares (CLR)"]["rho"], np.nan),
             ("Cell-type mix only", pa("comp_only", "CPS"), pa("comp_only", "Braak"), pa("comp_only", "dementia")),
-            ("Exc subclass mix only", pa("Exc_subclass_comp_only", "CPS"), pa("Exc_subclass_comp_only", "Braak"), pa("Exc_subclass_comp_only", "dementia")),
-            ("Exc, subclass mix fixed", pa("Exc_fixed_subclass_mix", "CPS"), pa("Exc_fixed_subclass_mix", "Braak"), pa("Exc_fixed_subclass_mix", "dementia")),
-            ("Inh nuclei only", pa("type_Inh", "CPS"), pa("type_Inh", "Braak"), pa("type_Inh", "dementia")),
+            ("Excitatory subclass mix only", pa("Exc_subclass_comp_only", "CPS"), pa("Exc_subclass_comp_only", "Braak"), pa("Exc_subclass_comp_only", "dementia")),
+            ("Excitatory, subclass mix fixed", pa("Exc_fixed_subclass_mix", "CPS"), pa("Exc_fixed_subclass_mix", "Braak"), pa("Exc_fixed_subclass_mix", "dementia")),
+            ("Inhibitory only", pa("type_Inh", "CPS"), pa("type_Inh", "Braak"), pa("type_Inh", "dementia")),
             ("Astrocytes only", pa("type_Astro", "CPS"), pa("type_Astro", "Braak"), pa("type_Astro", "dementia")),
             ("Oligodendrocytes only", pa("type_Oligo", "CPS"), pa("type_Oligo", "Braak"), pa("type_Oligo", "dementia")),
             ("Microglia only", pa("type_Micro", "CPS"), pa("type_Micro", "Braak"), pa("type_Micro", "dementia"))]
@@ -258,7 +258,7 @@ def fig5():
              ("Per-neuron mRNA ↓\n(fixed composition)", rv["percell_global"]["signal_mean_best_r"], -rv["percell_global"]["ca_vs_driver_rho"], COL["A"]),
              ("Neuron-enriched genes ↓\n(fixed composition)", rv["percell_neuronal"]["signal_mean_best_r"], -rv["percell_neuronal"]["ca_vs_driver_rho"], COL["A"]),
              ("Glia change only", rep["glia_only"]["signal_mean_best_r"], rep["glia_only"]["ca_vs_neuron_frac_rho"], "#b8b7b0"),
-             ("Composition fixed", rv["noise_only_exact"]["signal_mean_best_r"], None, "#b8b7b0")]
+             ("Composition fixed", rv["noise_only_exact"]["signal_mean_best_r"], rv["noise_only_exact"]["ca_vs_marker_neuron_score_rho"], "#b8b7b0")]
     yb = np.arange(len(names))[::-1]
     ax.barh(yb, [n[1] for n in names], color=[n[3] for n in names], height=0.6)
     for yi, n in zip(yb, names):
@@ -290,7 +290,7 @@ def figS():
     fig, ax = plt.subplots(figsize=(3.6, 4.2)); yv = np.arange(len(reg))
     ax.barh(yv, reg.ad_ca_neuron, color=COL["C"], height=0.65); ax.set_yticks(yv); ax.set_yticklabels(reg.index, fontsize=6.5)
     ax.set_xlim(-1, 0); ax.set_xlabel("ρ (C−A vs neuron score) in AD, per region"); ax.set_title("MSBB GSE84422, 17 regions")
-    save(fig, "FigS2_msbb_regions")
+    save(fig, "FigS3_msbb_regions")
 
 
 for f in (fig1, fig2, fig3, fig4, fig5, figS):

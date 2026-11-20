@@ -41,7 +41,8 @@ def main() -> None:
     n = dist.groupby("cohort").size().min()
     for m, ep in SE_ENDPOINT.items():
         w = np.array([1 / se[(se.endpoint == ep) & (se.cohort == c)].se_boot.iloc[0] ** 2 for c in cohorts])
-        z_obs = np.arctanh([obs[c][m]["neff"] for c in cohorts])
+        # unrounded observed z (the matched report rounds to 3 decimals)
+        z_obs = np.array([se[(se.endpoint == ep) & (se.cohort == c)].z.iloc[0] for c in cohorts])
         Z = np.column_stack([np.arctanh(dist[dist.cohort == c][m].values[:n]) for c in cohorts])
         pooled_null = np.tanh(Z @ w / w.sum())
         pooled_obs = float(np.tanh(z_obs @ w / w.sum()))
