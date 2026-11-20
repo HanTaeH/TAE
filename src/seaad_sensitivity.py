@@ -66,7 +66,10 @@ def main() -> None:
     t = pd.DataFrame(rows)
     t["fdr_nominal"] = bh(t["p_nominal"].values)
     t["fdr_age_sex"] = bh(t["p_age_sex"].values)
-    t["fdr_random"] = bh(t["p_random"].values)
+    # random-gene p-values exist only for CPS and Braak (no null was run for dementia): BH over those 28
+    ok = t["p_random"].notna().values
+    t["fdr_random"] = np.nan
+    t.loc[ok, "fdr_random"] = bh(t.loc[ok, "p_random"].values)
     t.round(4).to_csv(a.out / "fdr_all_pseudobulk_tests.csv", index=False)
     rep["fdr"] = {"n_tests": int(len(t)),
                   "fdr_nominal_lt_0.05": t.loc[t.fdr_nominal < 0.05, ["pseudobulk", "outcome", "rho", "fdr_nominal"]].round(3).to_dict("records"),

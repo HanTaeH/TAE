@@ -57,7 +57,9 @@ def bh(p: np.ndarray) -> np.ndarray:
 
 def collect(res: Path) -> pd.DataFrame:
     rows = []
-    for f in sorted(res.glob("*/*report.json")):
+    extra = [res / x for x in ["stage_neuron_adjusted/stage_neuron_adjusted.json",
+                                "stage_reliability/stage_reliability.json", "stage_followups/stage_followups.json"]]
+    for f in sorted(res.glob("*/*report.json")) + [x for x in extra if x.exists()]:
         name = f.stem.replace("_report", "")
         name = {"braak_gse125583": "braak_gse125583"}.get(name, name)
 
@@ -74,6 +76,11 @@ def collect(res: Path) -> pd.DataFrame:
                 for i, v in enumerate(o):
                     walk(v, path + [str(v.get("cohort", i)) if isinstance(v, dict) else str(i)])
         walk(json.loads(f.read_text()), [])
+    nf = res / "stage_neuron_adjusted/stage_neuron_adjusted_null.csv"
+    if nf.exists():  # random-gene null after neuron adjustment (one-sided empirical p per cohort)
+        for _, r in pd.read_csv(nf).iterrows():
+            rows.append({"report": "stage_neuron_adjusted_null", "path": f"{r.cohort}/p_empirical",
+                         "estimate": r.neff_adjusted, "n": np.nan, "p": float(r.p_empirical)})
     return pd.DataFrame(rows)
 
 

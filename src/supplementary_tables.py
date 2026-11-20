@@ -4,7 +4,8 @@ S1 literature (32 studies), S2 per-cohort primary endpoints incl. donor-overlap 
 S3 random-gene null summary, S4 SEA-AD pseudobulk tests with FDR, S5 all mediation models,
 S6 Hallmark residual-axis gene sets, S7 secondary-family tests with FDR, S8 MSBB neuronal-SPV
 normalisation per region, S9 measurement-error (reliability) correction of the neuron-adjusted stage test, S10 random-gene null
-for the neuron-adjusted stage test.
+for the neuron-adjusted stage test, S11 stage follow-ups (bootstrap CIs of within-cohort tests, covariate
+specifications, reverse partial, glial covariates, GSE33000 age sensitivity).
 
 Usage: python supplementary_tables.py --res ../results --out <file.xlsx>
 """
@@ -18,6 +19,17 @@ import pandas as pd
 
 FULL_TEXT = {"Milind2020", "Neff2021", "ZhengXu2021", "LiH2022_consensus", "Eteleeb2024", "Song2025", "Lee2026",
              "Lai2022", "Wang2024"}  # the last two were added from other sources
+COMPOSITION_FULLTEXT = {
+    "Milind2020": "not estimated",
+    "Neff2021": "estimated (BRETIGEA); described per subtype; CDR/MMSE normalisation before subtyping",
+    "ZhengXu2021": "not estimated (stated as a limitation)",
+    "LiH2022_consensus": "not reported",
+    "Lai2022": "immune cell scores only; no adjustment",
+    "Eteleeb2024": "estimated by deconvolution; adjusted in differential expression",
+    "Wang2024": "immune cell scores only (CIBERSORT); no adjustment",
+    "Song2025": "not estimated",
+    "Lee2026": "estimated; described per subtype",
+}
 
 
 def main() -> None:
@@ -46,6 +58,10 @@ def main() -> None:
                          "independent_validation": False}])
     lit = pd.concat([lit, lai], ignore_index=True)
     lit["features_from"] = ["full text" if s in FULL_TEXT else "abstract" for s in lit.study_id]
+    # automated keyword flags come from titles/abstracts; for the nine full-text studies the manual
+    # reading below takes precedence (results/literature comparison table)
+    lit = lit.rename(columns={"composition_mentioned": "composition_keyword_in_abstract"})
+    lit["composition_fulltext"] = lit.study_id.map(COMPOSITION_FULLTEXT).fillna("not assessed (abstract only)")
     sheets["S1_literature"] = lit.sort_values(["year", "first_author"])
 
     sheets["S2_primary_per_cohort"] = pd.read_csv(R / "meta_revision/per_cohort.csv")
@@ -63,6 +79,13 @@ def main() -> None:
     sheets["S8_msbb_neuron_spv_norm"] = pd.read_csv(R / "msbb/msbb_neuron_spv_normalisation.csv")
     sheets["S9_stage_reliability"] = pd.read_csv(R / "stage_reliability/per_cohort.csv")
     sheets["S10_stage_neuron_adj_null"] = pd.read_csv(R / "stage_neuron_adjusted/stage_neuron_adjusted_null.csv")
+    fu = json.loads((R / "stage_followups/stage_followups.json").read_text())
+    within = pd.DataFrame([{"test": k, **{kk: (str(vv) if isinstance(vv, list) else vv) for kk, vv in v.items()}}
+                           for k, v in fu["within_cohort"].items()])
+    pooled = pd.DataFrame([{"test": "pooled_" + k, **{kk: (str(vv) if isinstance(vv, list) else vv) for kk, vv in v.items()}}
+                           for k, v in fu["pooled"].items()])
+    sheets["S11_stage_followups"] = pd.concat([within, pooled, pd.read_csv(R / "stage_followups/stage_followups_per_cohort.csv")
+                                               .assign(test=lambda d: "per_cohort_" + d.spec)], ignore_index=True)
 
     a.out.parent.mkdir(parents=True, exist_ok=True)
     with pd.ExcelWriter(a.out) as w:
