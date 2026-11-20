@@ -1,0 +1,71 @@
+{
+  "ca_stage_agesex": {
+    "per_cohort": {
+      "GSE33000_PFC": 0.435,
+      "GSE132903_MTG": 0.459,
+      "GSE118553_Temporal_Cortex": 0.424,
+      "GSE125583_FG": 0.393
+    },
+    "pooled": {
+      "k": 4,
+      "rho": 0.426,
+      "ci95_hksj": [
+        0.34,
+        0.506
+      ],
+      "p_hksj": 0.000745646494009047,
+      "tau2_reml": 0.0,
+      "I2": 0.0,
+      "pi95": [
+        0.307,
+        0.532
+      ]
+    }
+  },
+  "ca_stage_agesex_neuron": {
+    "per_cohort": {
+      "GSE33000_PFC": 0.171,
+      "GSE132903_MTG": 0.09,
+      "GSE118553_Temporal_Cortex": 0.043,
+      "GSE125583_FG": 0.154
+    },
+    "pooled": {
+      "k": 4,
+      "rho": 0.138,
+      "ci95_hksj": [
+        0.042,
+        0.231
+      ],
+      "p_hksj": 0.019931176229524467,
+      "tau2_reml": 0.0,
+      "I2": 0.0,
+      "pi95": [
+        0.007,
+        0.264
+      ]
+    }
+  },
+  "neuron_stage_agesex": {
+    "per_cohort": {
+      "GSE33000_PFC": -0.457,
+      "GSE132903_MTG": -0.494,
+      "GSE118553_Temporal_Cortex": -0.453,
+      "GSE125583_FG": -0.388
+    },
+    "pooled": {
+      "k": 4,
+      "rho": -0.445,
+      "ci95_hksj": [
+        -0.521,
+        -0.363
+      ],
+      "p_hksj": 0.0005927092841409514,
+      "tau2_reml": 0.0,
+      "I2": 0.0,
+      "pi95": [
+        -0.546,
+        -0.332
+      ]
+    }
+  }
+}
