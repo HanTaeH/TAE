@@ -37,3 +37,10 @@ types) and top-10% specificity gene sets. Gene coordinates (GRCh37) come from th
 headers + GENCODE v34 symbols (gs://gcp-public-data--broad-references). `src/meta_z.py` builds
 EUR (FG+UKBB+MVP) meta Z files. `src/run_sldsc.sh` (`make_annot.py`, `split_ldscores.py`, LDSC-SEG
 `--h2-cts`, baselineLD v2.2 + all-genes control), `src/summarise_exp3.py`.
+
+## Experiment 4 (fine-mapped loci -> genes)
+- `map_genes_exp4.py`: FinnGen R12 SuSiE credible sets (low_purity 0) -> nearest protein-coding gene (GENCODE v34),
+  genes within +/-100 kb, GTEx v10 SuSiE eQTL overlap (CLPP = PIP_gwas x PIP_eqtl >= 0.01).
+- `enrich_exp4.py`: per trait x cell type, loci (CS merged within 500 kb) whose nearest gene / any window gene is in the
+  top-10% specificity set; null from 20k random positions, window test matched on number of genes in window.
+- Inputs: gs://finngen-public-data-r12/finemap/full/susie/, gs://adult-gtex/bulk-qtl/v10/susie-qtl/GTEx_v10_SuSiE_eQTL.tar
