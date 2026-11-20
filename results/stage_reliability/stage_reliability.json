@@ -1,0 +1,100 @@
+{
+  "per_cohort": {
+    "GSE33000_PFC": {
+      "rho_ca_stage": 0.435,
+      "rho_ca_neuron": -0.867,
+      "rho_neuron_stage": -0.412,
+      "partial_observed": 0.171,
+      "partial_rank_neuron": 0.056,
+      "partial_half_markers": 0.199,
+      "rel_neuron": 0.94,
+      "rel_ca": 0.992,
+      "rho_ca_neuron_disattenuated": -0.898,
+      "partial_disattenuated": 0.139,
+      "n": 467,
+      "n_neuron_markers": 13,
+      "boot_frac_undefined": 0.0,
+      "se_boot_z": 0.059,
+      "ci95_boot": [
+        0.02477302107087751,
+        0.23511376296122144
+      ]
+    },
+    "GSE132903_MTG": {
+      "rho_ca_stage": 0.459,
+      "rho_ca_neuron": -0.878,
+      "rho_neuron_stage": -0.48,
+      "partial_observed": 0.09,
+      "partial_rank_neuron": 0.04,
+      "partial_half_markers": 0.123,
+      "rel_neuron": 0.958,
+      "rel_ca": 0.991,
+      "rho_ca_neuron_disattenuated": -0.901,
+      "partial_disattenuated": 0.051,
+      "n": 195,
+      "n_neuron_markers": 13,
+      "boot_frac_undefined": 0.0,
+      "se_boot_z": 0.078,
+      "ci95_boot": [
+        -0.09189466748241938,
+        0.2140344030245549
+      ]
+    },
+    "GSE118553_Temporal_Cortex": {
+      "rho_ca_stage": 0.424,
+      "rho_ca_neuron": -0.898,
+      "rho_neuron_stage": -0.454,
+      "partial_observed": 0.043,
+      "partial_rank_neuron": 0.028,
+      "partial_half_markers": 0.075,
+      "rel_neuron": 0.956,
+      "rel_ca": 0.986,
+      "rho_ca_neuron_disattenuated": -0.925,
+      "partial_disattenuated": -0.006,
+      "n": 115,
+      "n_neuron_markers": 14,
+      "boot_frac_undefined": 0.0,
+      "se_boot_z": 0.116,
+      "ci95_boot": [
+        -0.23675231760570664,
+        0.2012763462134489
+      ]
+    },
+    "GSE125583_FG": {
+      "rho_ca_stage": 0.393,
+      "rho_ca_neuron": -0.9,
+      "rho_neuron_stage": -0.368,
+      "partial_observed": 0.154,
+      "partial_rank_neuron": 0.097,
+      "partial_half_markers": 0.162,
+      "rel_neuron": 0.983,
+      "rel_ca": 0.996,
+      "rho_ca_neuron_disattenuated": -0.909,
+      "partial_disattenuated": 0.148,
+      "n": 289,
+      "n_neuron_markers": 15,
+      "boot_frac_undefined": 0.0,
+      "se_boot_z": 0.053,
+      "ci95_boot": [
+        0.04315077483127648,
+        0.24106314552239522
+      ]
+    }
+  },
+  "pooled_partial_disattenuated": {
+    "k": 4,
+    "rho": 0.114,
+    "ci95_hksj": [
+      0.007,
+      0.218
+    ],
+    "p_hksj": 0.042335384833852414,
+    "tau2_reml": 0.0,
+    "I2": 0.0,
+    "pi95": [
+      -0.031,
+      0.254
+    ]
+  },
+  "note": "stage treated as error-free; reliabilities from split halves (Spearman-Brown)"
+}

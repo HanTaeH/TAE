@@ -1,0 +1,5 @@
+cohort,neff_adjusted,random_median,random_q05,random_q95,p_empirical,random_median_agesex_only,n_random_sets
+GSE33000_PFC,0.1714,0.1795,0.1186,0.237,0.588,0.3927,300
+GSE132903_MTG,0.0895,-0.0215,-0.235,0.2364,0.2658,0.0473,300
+GSE118553_Temporal_Cortex,0.0432,0.2813,-0.0602,0.5564,0.8771,0.4653,300
+GSE125583_FG,0.1543,-0.0461,-0.2173,0.1733,0.0664,0.0029,300

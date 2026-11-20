@@ -99,7 +99,62 @@
         "fdr_nominal": 0.017
       }
     ],
-    "fdr_random_lt_0.05": []
+    "fdr_random_lt_0.05": [
+      {
+        "pseudobulk": "sorted",
+        "outcome": "CPS",
+        "rho": 0.272,
+        "fdr_random": 0.022
+      },
+      {
+        "pseudobulk": "sorted",
+        "outcome": "Braak",
+        "rho": 0.406,
+        "fdr_random": 0.014
+      },
+      {
+        "pseudobulk": "fixed_comp",
+        "outcome": "Braak",
+        "rho": 0.242,
+        "fdr_random": 0.05
+      },
+      {
+        "pseudobulk": "comp_only",
+        "outcome": "CPS",
+        "rho": 0.313,
+        "fdr_random": 0.05
+      },
+      {
+        "pseudobulk": "type_Inh",
+        "outcome": "Braak",
+        "rho": 0.264,
+        "fdr_random": 0.022
+      },
+      {
+        "pseudobulk": "sub_L4 IT",
+        "outcome": "Braak",
+        "rho": 0.32,
+        "fdr_random": 0.022
+      },
+      {
+        "pseudobulk": "sub_L5 IT",
+        "outcome": "Braak",
+        "rho": 0.263,
+        "fdr_random": 0.05
+      },
+      {
+        "pseudobulk": "sub_L6 IT",
+        "outcome": "CPS",
+        "rho": 0.202,
+        "fdr_random": 0.037
+      },
+      {
+        "pseudobulk": "sub_L6 IT",
+        "outcome": "Braak",
+        "rho": 0.321,
+        "fdr_random": 0.014
+      }
+    ]
   },
   "braak_leverage": {
     "ca_sorted": {

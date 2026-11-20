@@ -1,0 +1,70 @@
+{
+  "spv": {
+    "median_17_regions": {
+      "n_AD": 31.0,
+      "r2_ca_by_spv_before": 0.81,
+      "frac_A_before": 0.387,
+      "frac_B_before": 0.25,
+      "frac_C_before": 0.355,
+      "frac_A": 0.37,
+      "frac_B": 0.355,
+      "frac_C": 0.276,
+      "kappa_vs_before": 0.475,
+      "rho_ca_norm_vs_ca_before": 0.4,
+      "rho_ca_norm_vs_heldout_neuron_median": -0.381,
+      "rho_ca_norm_vs_cdr": -0.004,
+      "rho_ca_norm_vs_braak": 0.123,
+      "rho_ca_before_vs_cdr": 0.179
+    },
+    "parahippocampal_gyrus": {
+      "n_AD": 32.0,
+      "r2_ca_by_spv_before": 0.858,
+      "frac_A_before": 0.469,
+      "frac_B_before": 0.219,
+      "frac_C_before": 0.312,
+      "frac_A": 0.344,
+      "frac_B": 0.312,
+      "frac_C": 0.344,
+      "kappa_vs_before": 0.434,
+      "rho_ca_norm_vs_ca_before": 0.331,
+      "rho_ca_norm_vs_heldout_neuron_median": -0.44,
+      "rho_ca_norm_vs_cdr": 0.135,
+      "rho_ca_norm_vs_braak": 0.164,
+      "rho_ca_before_vs_cdr": 0.533
+    }
+  },
+  "spv_cdr": {
+    "median_17_regions": {
+      "n_AD": 31.0,
+      "r2_ca_by_spv_before": 0.81,
+      "frac_A_before": 0.387,
+      "frac_B_before": 0.25,
+      "frac_C_before": 0.355,
+      "frac_A": 0.375,
+      "frac_B": 0.345,
+      "frac_C": 0.286,
+      "kappa_vs_before": 0.393,
+      "rho_ca_norm_vs_ca_before": 0.387,
+      "rho_ca_norm_vs_heldout_neuron_median": -0.401,
+      "rho_ca_norm_vs_cdr": 0.0,
+      "rho_ca_norm_vs_braak": 0.102,
+      "rho_ca_before_vs_cdr": 0.179
+    },
+    "parahippocampal_gyrus": {
+      "n_AD": 32.0,
+      "r2_ca_by_spv_before": 0.858,
+      "frac_A_before": 0.469,
+      "frac_B_before": 0.219,
+      "frac_C_before": 0.312,
+      "frac_A": 0.375,
+      "frac_B": 0.344,
+      "frac_C": 0.281,
+      "kappa_vs_before": 0.386,
+      "rho_ca_norm_vs_ca_before": 0.267,
+      "rho_ca_norm_vs_heldout_neuron_median": -0.446,
+      "rho_ca_norm_vs_cdr": -0.069,
+      "rho_ca_norm_vs_braak": 0.105,
+      "rho_ca_before_vs_cdr": 0.533
+    }
+  }
+}

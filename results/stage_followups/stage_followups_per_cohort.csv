@@ -1,0 +1,15 @@
+spec,cohort,n,rho,z,se_boot
+neuron_as_ranks,GSE33000_PFC,467,0.056,0.0561,0.0454
+reverse_neuron_given_ca,GSE33000_PFC,467,-0.17,-0.1718,0.0467
+neuron_plus_glia,GSE33000_PFC,467,0.133,0.1338,0.0476
+age_cubic,GSE33000_PFC,467,0.153,0.1543,0.0496
+age_ge_60,GSE33000_PFC,403,0.144,0.1451,0.0518
+neuron_as_ranks,GSE132903_MTG,195,0.04,0.0397,0.0723
+reverse_neuron_given_ca,GSE132903_MTG,195,-0.186,-0.1882,0.0741
+neuron_plus_glia,GSE132903_MTG,195,0.241,0.2454,0.0772
+neuron_as_ranks,GSE118553_Temporal_Cortex,115,0.028,0.0279,0.1003
+reverse_neuron_given_ca,GSE118553_Temporal_Cortex,115,-0.189,-0.1916,0.1048
+neuron_plus_glia,GSE118553_Temporal_Cortex,115,-0.106,-0.1063,0.094
+neuron_as_ranks,GSE125583_FG,289,0.097,0.0975,0.0594
+reverse_neuron_given_ca,GSE125583_FG,289,-0.049,-0.0492,0.0681
+neuron_plus_glia,GSE125583_FG,289,0.221,0.2243,0.054

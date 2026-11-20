@@ -1,0 +1,156 @@
+{
+  "within_cohort": {
+    "MSBB_all_subjects_cdr": {
+      "n": 106,
+      "rho_agesex": 0.313,
+      "p_agesex": 0.0011678999234530072,
+      "ci_agesex": [
+        0.136,
+        0.473
+      ],
+      "rho_agesex_neuron": -0.097,
+      "p_agesex_neuron": 0.32972977505697226,
+      "ci_agesex_neuron": [
+        -0.286,
+        0.11
+      ]
+    },
+    "MSBB_all_subjects_braak": {
+      "n": 106,
+      "rho_agesex": 0.293,
+      "p_agesex": 0.0023984312148978134,
+      "ci_agesex": [
+        0.108,
+        0.458
+      ],
+      "rho_agesex_neuron": 0.06,
+      "p_agesex_neuron": 0.5470326308067269,
+      "ci_agesex_neuron": [
+        -0.136,
+        0.258
+      ]
+    },
+    "MSBB_AD_subjects_cdr": {
+      "n": 64,
+      "rho_agesex": 0.183,
+      "p_agesex": 0.15162031730779194,
+      "ci_agesex": [
+        -0.092,
+        0.417
+      ],
+      "rho_agesex_neuron": -0.145,
+      "p_agesex_neuron": 0.26168200759322335,
+      "ci_agesex_neuron": [
+        -0.379,
+        0.125
+      ]
+    },
+    "MSBB_AD_subjects_braak": {
+      "n": 64,
+      "rho_agesex": 0.322,
+      "p_agesex": 0.010036881568792833,
+      "ci_agesex": [
+        0.073,
+        0.542
+      ],
+      "rho_agesex_neuron": 0.07,
+      "p_agesex_neuron": 0.5882127125220221,
+      "ci_agesex_neuron": [
+        -0.22,
+        0.332
+      ]
+    },
+    "GSE125583_AD_braak": {
+      "n": 217,
+      "rho_agesex": 0.259,
+      "p_agesex": 0.00011452825197897264,
+      "ci_agesex": [
+        0.124,
+        0.386
+      ],
+      "rho_agesex_neuron": -0.001,
+      "p_agesex_neuron": 0.987529287220113,
+      "ci_agesex_neuron": [
+        -0.14,
+        0.14
+      ]
+    }
+  },
+  "pooled": {
+    "neuron_as_ranks": {
+      "k": 4,
+      "rho": 0.061,
+      "ci95_hksj": [
+        -0.036,
+        0.158
+      ],
+      "p_hksj": 0.1390782192966804,
+      "tau2_reml": 0.0,
+      "I2": 0.0,
+      "pi95": [
+        -0.071,
+        0.192
+      ]
+    },
+    "neuron_plus_glia": {
+      "k": 4,
+      "rho": 0.134,
+      "ci95_hksj": [
+        -0.105,
+        0.359
+      ],
+      "p_hksj": 0.17168164099822175,
+      "tau2_reml": 0.0155,
+      "I2": 0.726,
+      "pi95": [
+        -0.456,
+        0.642
+      ]
+    },
+    "reverse_neuron_given_ca": {
+      "k": 4,
+      "rho": -0.148,
+      "ci95_hksj": [
+        -0.248,
+        -0.045
+      ],
+      "p_hksj": 0.019747918331510805,
+      "tau2_reml": 0.0,
+      "I2": 0.0,
+      "pi95": [
+        -0.283,
+        -0.006
+      ]
+    },
+    "GSE33000_age_ge_60": {
+      "k": 4,
+      "rho": 0.127,
+      "ci95_hksj": [
+        0.028,
+        0.222
+      ],
+      "p_hksj": 0.026391502690557667,
+      "tau2_reml": 0.0,
+      "I2": 0.0,
+      "pi95": [
+        -0.007,
+        0.256
+      ]
+    },
+    "GSE33000_age_cubic": {
+      "k": 4,
+      "rho": 0.131,
+      "ci95_hksj": [
+        0.034,
+        0.225
+      ],
+      "p_hksj": 0.023258352461875655,
+      "tau2_reml": 0.0,
+      "I2": 0.0,
+      "pi95": [
+        -0.001,
+        0.257
+      ]
+    }
+  }
+}
