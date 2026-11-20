@@ -32,6 +32,7 @@ python3 seaad_pseudobulk.py     --donors "$REF_DIR/donors" --cps "$REF_DIR/Globa
 python3 msbb_gse84422.py       --data "$DATA" --out "$OUT/msbb" --n 200
 python3 forest_plot.py         "$OUT"
 python3 neff_style_normalisation.py --data "$DATA" --out "$OUT/msbb"
+python3 msbb_neuron_normalisation.py --data "$DATA" --out "$OUT/msbb"
 python3 mediation.py           --res "$OUT" --seaad-meta "$REF_DIR/donors/donor_meta.csv" --n 2000
 python3 singlesample.py        --data "$DATA" --out "$OUT/singlesample" --n 200
 python3 marker_split.py        --data "$DATA" --out "$OUT/marker_split" --n 500
@@ -53,5 +54,6 @@ python3 residual_go.py         --data "$DATA" --gmt-dir "${GMT_DIR:-/mnt/project
 python3 residual_go.py         --data "$DATA" --gmt-dir "${GMT_DIR:-/mnt/project-files/d1-data/msigdb}" --out "$OUT/residual_go_nooverlap" --drop-banner-overlap
 python3 seaad_sensitivity.py    --res "$OUT" --seaad-meta "$REF_DIR/donors/donor_meta.csv" --out "$OUT/seaad_sensitivity"
 python3 stage_neuron_adjusted.py --data "$DATA" --out "$OUT/stage_neuron_adjusted"
+python3 stage_reliability.py --data "$DATA" --out "$OUT/stage_reliability"
 python3 multiple_testing.py    "$OUT"   # last: covers every report above
-python3 supplementary_tables.py --res "$OUT" --out "$OUT/supplementary/Supplementary_Tables_S1-S7.xlsx"
+python3 supplementary_tables.py --res "$OUT" --out "$OUT/supplementary/Supplementary_Tables_S1-S9.xlsx"
