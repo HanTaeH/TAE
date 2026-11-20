@@ -5,7 +5,9 @@
 2. GSE118553 region choice: the pooled endpoint with frontal or entorhinal cortex in place of
    temporal cortex (same donors, so only one region at a time).
 3. A prevalence-invariant effect size: the AUC of the C-A score for AD versus control (Mann-Whitney),
-   unadjusted and after residualising the score on age and sex, per cohort.
+   unadjusted and after residualising the score on age and sex (OLS), per cohort, with bootstrap 95% CIs.
+   GSE118553 asymptomatic AD donors are not part of the AUC (AD versus control only).
+4. GSE118553 AD versus control only (asymptomatic AD dropped) in place of the ordinal three-level coding.
 Bootstrap SEs (2,000) and REML/HKSJ pooling as in meta_reanalysis.py.
 
 Usage: python stage_extra_sensitivity.py --data /mnt/project-files/d1-data/raw --res ../results --out <dir>
@@ -35,6 +37,15 @@ def auc(score, y):
     pos, neg = score[y == 1], score[y == 0]
     u = stats.mannwhitneyu(pos, neg).statistic
     return float(u / (len(pos) * len(neg)))
+
+
+def auc_ci(score, y, rng, n):
+    v = []
+    for _ in range(n):
+        i = rng.integers(0, len(y), len(y))
+        if 0 < y[i].sum() < len(i):
+            v.append(auc(score[i], y[i]))
+    return [round(float(np.percentile(v, 2.5)), 3), round(float(np.percentile(v, 97.5)), 3)]
 
 
 def main() -> None:
@@ -77,7 +88,13 @@ def main() -> None:
             res = ca - D @ np.linalg.lstsq(D, ca, rcond=None)[0]
             rows.append({"spec": "auc", "cohort": name, "n": int(keep.sum()),
                          "auc_unadjusted": round(auc(ca[keep], y[keep]), 3),
-                         "auc_age_sex_residual": round(auc(res[keep], y[keep]), 3)})
+                         "auc_unadjusted_ci": str(auc_ci(ca[keep], y[keep], rng, a.n_boot)),
+                         "auc_age_sex_residual": round(auc(res[keep], y[keep]), 3),
+                         "auc_age_sex_residual_ci": str(auc_ci(res[keep], y[keep], rng, a.n_boot))})
+            if name == "GSE118553_Temporal_Cortex":
+                r = rho(ca[keep], stage[keep], cov[keep])
+                rows.append({"spec": "agesex_ad_vs_control", "cohort": name, "n": int(keep.sum()), "rho": round(r, 3),
+                             "z": np.arctanh(r), "se_boot": boot_se(ca[keep], stage[keep], cov[keep], rng, a.n_boot)})
         print(name, "done", flush=True)
     df = pd.DataFrame(rows)
     df.round(4).to_csv(a.out / "stage_extra_per_cohort.csv", index=False)
@@ -92,7 +109,13 @@ def main() -> None:
             z = np.r_[b2.z.values, r.z.values]
             se = np.r_[b2.se_boot.values, r.se_boot.values]
             rep[f"pooled_agesex_with_{alt}"] = pool(z, se)
-    rep["auc"] = df[df.spec == "auc"][["cohort", "n", "auc_unadjusted", "auc_age_sex_residual"]].to_dict(orient="records")
+    r = df[df.spec == "agesex_ad_vs_control"]
+    if len(r):
+        b2 = base.drop("GSE118553_Temporal_Cortex")
+        rep["pooled_agesex_GSE118553_ad_vs_control"] = pool(np.r_[b2.z.values, r.z.values],
+                                                            np.r_[b2.se_boot.values, r.se_boot.values])
+    rep["auc"] = df[df.spec == "auc"][["cohort", "n", "auc_unadjusted", "auc_unadjusted_ci", "auc_age_sex_residual",
+                                       "auc_age_sex_residual_ci"]].to_dict(orient="records")
     (a.out / "stage_extra_report.json").write_text(json.dumps(rep, indent=2, default=float))
     print(json.dumps(rep, indent=2, default=float))
 

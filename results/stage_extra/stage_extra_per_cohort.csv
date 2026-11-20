@@ -1,15 +1,16 @@
-spec,cohort,n,rho,z,se_boot,auc_unadjusted,auc_age_sex_residual
-agesex,GSE33000_PFC,467,0.435,0.4663,0.0455,,
-agesex_nnls,GSE33000_PFC,467,0.24,0.2452,0.0552,,
-auc,GSE33000_PFC,467,,,,0.889,0.699
-agesex,GSE132903_MTG,195,0.459,0.4959,0.0767,,
-agesex_nnls,GSE132903_MTG,195,0.05,0.0499,0.0725,,
-auc,GSE132903_MTG,195,,,,0.765,0.766
-agesex,GSE118553_Temporal_Cortex,115,0.424,0.4531,0.1043,,
-agesex_nnls,GSE118553_Temporal_Cortex,115,0.288,0.2967,0.0954,,
-auc,GSE118553_Temporal_Cortex,83,,,,0.791,0.746
-agesex,GSE118553_Frontal_Cortex,96,0.142,0.1433,0.1079,,
-agesex,GSE118553_Entorhinal_Cortex,98,0.329,0.3423,0.1024,,
-agesex,GSE125583_FG,289,0.393,0.4159,0.058,,
-agesex_nnls,GSE125583_FG,289,0.348,0.3627,0.0588,,
-auc,GSE125583_FG,289,,,,0.771,0.757
+spec,cohort,n,rho,z,se_boot,auc_unadjusted,auc_unadjusted_ci,auc_age_sex_residual,auc_age_sex_residual_ci
+agesex,GSE33000_PFC,467,0.435,0.4663,0.0455,,,,
+agesex_nnls,GSE33000_PFC,467,0.24,0.2452,0.0552,,,,
+auc,GSE33000_PFC,467,,,,0.889,"[0.857, 0.915]",0.699,"[0.653, 0.746]"
+agesex,GSE132903_MTG,195,0.459,0.4959,0.077,,,,
+agesex_nnls,GSE132903_MTG,195,0.05,0.0499,0.0703,,,,
+auc,GSE132903_MTG,195,,,,0.765,"[0.696, 0.831]",0.766,"[0.697, 0.832]"
+agesex,GSE118553_Temporal_Cortex,115,0.424,0.4531,0.1047,,,,
+agesex_nnls,GSE118553_Temporal_Cortex,115,0.288,0.2967,0.0944,,,,
+auc,GSE118553_Temporal_Cortex,83,,,,0.791,"[0.686, 0.888]",0.746,"[0.626, 0.846]"
+agesex_ad_vs_control,GSE118553_Temporal_Cortex,83,0.428,0.4578,0.117,,,,
+agesex,GSE118553_Frontal_Cortex,96,0.142,0.1433,0.1071,,,,
+agesex,GSE118553_Entorhinal_Cortex,98,0.329,0.3423,0.1049,,,,
+agesex,GSE125583_FG,289,0.393,0.4159,0.0582,,,,
+agesex_nnls,GSE125583_FG,289,0.348,0.3627,0.0586,,,,
+auc,GSE125583_FG,289,,,,0.771,"[0.708, 0.83]",0.757,"[0.69, 0.817]"

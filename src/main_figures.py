@@ -47,12 +47,12 @@ def fig1():
         ax.annotate("", (x2, y2), (x1, y1), arrowprops=dict(arrowstyle="->", color=MUTED, lw=0.9))
     box(0.1, 3.75, 2.3, 1.15, "Neff 2021 classifier\n271 genes, A / B / C\n(+ Li 2022, 3 subgroups)", "#e7f1fb")
     box(0.1, 1.45, 2.3, 2.05, "Independent cohorts\nGSE33000 PFC\nGSE132903 MTG*\nGSE118553 (4 regions)\nGSE125583 FG (RNA-seq)*\nGSE106241 ITC (Braak)")
-    box(0.1, 0.1, 2.3, 1.1, "Positive control\nMSBB GSE84422 (17 regions)\nsame bank as Neff", "#f9eeda")
+    box(0.1, 0.1, 2.3, 1.1, "Same-bank comparison\nMSBB GSE84422\n(17 regions)", "#f9eeda")
     box(3.0, 1.9, 2.0, 1.4, "Project each sample\nr(A), r(B), r(C)\nC−A axis score")
-    box(5.6, 3.75, 2.0, 1.15, "Matched random-gene\nnull (1,000 sets)")
+    box(5.6, 3.75, 2.0, 1.15, "Random-gene nulls\nexpression (1,000 sets)\ncell type (500 sets)")
     box(5.6, 2.45, 2.0, 1.15, "Cell composition\nmarkers, NNLS;\nseverity normalisation")
     box(5.6, 1.15, 2.0, 1.15, "Disease stage\ndiagnosis, Braak, CDR")
-    box(8.1, 2.45, 1.8, 1.15, "SEA-AD 84 donors\npseudobulks", "#e5f4e4")
+    box(8.1, 2.45, 1.8, 1.15, "SEA-AD 84 donors\npseudobulks;\nNeuN histology", "#e5f4e4")
     box(8.1, 1.15, 1.8, 1.15, "Simulation\nneuron loss vs\nper-cell change", "#e5f4e4")
     arr(2.4, 4.3, 3.0, 2.9); arr(2.4, 2.5, 3.0, 2.5); arr(2.4, 0.65, 3.0, 2.1)
     for y in (4.3, 3.0, 1.7): arr(5.0, 2.6, 5.6, y)
@@ -87,16 +87,23 @@ def fig2():
             fontsize=6.5, color=MUTED, va="top")
     ax = axs[1]
     order = list(v.cohort)
+    sn = R / "revision/null_specificity/null_specificity_matched_distributions.csv"
+    spec_med = pd.read_csv(sn).groupby("cohort").neuron_rho.median().to_dict() if sn.exists() else {}
     for i, c in enumerate(order):
         d = nul[nul.cohort == c].neuron_rho.values
         ax.scatter(np.random.default_rng(0).normal(i, 0.07, len(d)), d, s=1.5, color="#b8b7b0", alpha=0.35, lw=0)
         obs = ns.set_index("cohort").loc[c, "neuron_rho_neff"]
         ax.scatter(i, obs, s=36, color=COL["C"], edgecolor="white", lw=1, zorder=3)
+        if c in spec_med:
+            ax.plot([i - 0.3, i + 0.3], [spec_med[c]] * 2, color=INK, lw=1.4, zorder=4)
     ax.axhline(0, color=GRID, lw=0.8)
     ax.set_xticks(range(len(order))); ax.set_xticklabels([SHORT[c].split(" (")[0].replace("GSE", "") for c in order], rotation=45, ha="right")
     ax.set_ylabel("ρ (C−A score vs neuron score)")
-    ax.scatter([], [], s=36, color=COL["C"], label="Neff genes"); ax.scatter([], [], s=8, color="#b8b7b0", label="1,000 random gene sets")
-    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.45), ncol=2, fontsize=7); ax.set_title("Neuron axis exceeds random-gene null"); tag(ax, "b")
+    ax.scatter([], [], s=36, color=COL["C"], label="Neff genes"); ax.scatter([], [], s=8, color="#b8b7b0", label="1,000 expression-matched sets")
+    if spec_med:
+        ax.plot([], [], color=INK, lw=1.4, label="cell-type-matched median")
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.45), ncol=2, fontsize=6.5)
+    ax.set_title("Neuron axis vs random-gene nulls"); tag(ax, "b")
     ax = axs[2]
     spec = pd.read_csv(R / "revision/classifier_specificity/classifier_gene_specificity.csv", index_col=0)
     tab = pd.crosstab(spec["direction"], spec["class"]).reindex(index=["up_in_A", "up_in_C"])

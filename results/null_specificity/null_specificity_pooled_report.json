@@ -1,0 +1,46 @@
+{
+  "per_cohort_fixed_tail": {
+    "GSE33000_PFC": {
+      "neuron_rho": 0.004,
+      "stage_agesex": 0.3792,
+      "stage_agesex_neuron": 0.6068
+    },
+    "GSE132903_MTG": {
+      "neuron_rho": 0.1397,
+      "stage_agesex": 0.3014,
+      "stage_agesex_neuron": 0.3234
+    },
+    "GSE118553_Temporal_Cortex": {
+      "neuron_rho": 0.3972,
+      "stage_agesex": 0.8164,
+      "stage_agesex_neuron": 0.8263
+    },
+    "GSE125583_FG": {
+      "neuron_rho": 0.7804,
+      "stage_agesex": 0.002,
+      "stage_agesex_neuron": 0.002
+    }
+  },
+  "pooled": {
+    "stage_agesex": {
+      "neff": 0.426,
+      "random_median": 0.406,
+      "random_q05_q95": [
+        0.381,
+        0.429
+      ],
+      "p_empirical": 0.0838,
+      "n_sets": 500
+    },
+    "stage_agesex_neuron": {
+      "neff": 0.138,
+      "random_median": 0.091,
+      "random_q05_q95": [
+        0.04,
+        0.141
+      ],
+      "p_empirical": 0.0619,
+      "n_sets": 500
+    }
+  }
+}

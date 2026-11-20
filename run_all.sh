@@ -58,6 +58,7 @@ python3 stage_neuron_adjusted_null.py --data "$DATA" --out "$OUT/stage_neuron_ad
 python3 stage_followups.py --data "$DATA" --res "$OUT" --out "$OUT/stage_followups"
 python3 stage_extra_sensitivity.py --data "$DATA" --res "$OUT" --out "$OUT/stage_extra"
 python3 null_specificity_matched.py --data "$DATA" --ref "$REF_DIR/seaad_mtg_reference.csv.gz" --out "$OUT/null_specificity"
+python3 null_specificity_pooled.py --res "$OUT"
 python3 seaad_neun_histology.py --res "$OUT" --qnp "$REF_DIR/quant_neuropath/MTG_all-values_aibs-ids_20250922.csv" --seaad-meta "$REF_DIR/donors/donor_meta.csv" --out "$OUT/seaad_neun"
 python3 stage_reliability.py --data "$DATA" --out "$OUT/stage_reliability"
 python3 multiple_testing.py    "$OUT"   # last: covers every report above

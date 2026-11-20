@@ -9,7 +9,8 @@ classifier gene's centroid row. Metrics per independent cohort:
   - neuron_rho: Spearman of the C-A score with the neuron marker score in AD samples;
   - stage_agesex: age/sex partial Spearman with diagnostic group (all samples);
   - stage_agesex_neuron: the same, also adjusted for the neuron score.
-One-sided empirical p (direction of the observed effect), 500 sets.
+One-sided empirical p (lower tail for neuron_rho, upper tail for the stage metrics), 500 sets.
+Pooled across cohorts in null_specificity_pooled.py.
 
 Usage: python null_specificity_matched.py --data /mnt/project-files/d1-data/raw --ref <seaad_mtg_reference.csv.gz> --out <dir>
 """
@@ -95,7 +96,7 @@ def main() -> None:
                "specificity_mix": {int(k): int((gst % 4 == k).sum()) for k in range(4)}}
         for k, v in obs.items():
             nv = null[k].values
-            more = (nv <= v).sum() if v < 0 else (nv >= v).sum()
+            more = (nv <= v).sum() if k == "neuron_rho" else (nv >= v).sum()  # tails fixed by hypothesis
             row[k] = {"neff": round(float(v), 3), "random_median": round(float(np.median(nv)), 3),
                       "random_q05_q95": [round(float(np.quantile(nv, .05)), 3), round(float(np.quantile(nv, .95)), 3)],
                       "p_empirical": round(float((more + 1) / (a.n + 1)), 4)}

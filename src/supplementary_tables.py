@@ -78,7 +78,17 @@ def main() -> None:
     mt = pd.read_csv(R / "multiple_testing/all_tests.csv")
     sheets["S7_primary_secondary_tests"] = mt[mt.family.isin(["primary", "secondary"])].sort_values(["family", "p"])
     sheets["S8_msbb_neuron_spv_norm"] = pd.read_csv(R / "msbb/msbb_neuron_spv_normalisation.csv")
-    sheets["S9_stage_reliability"] = pd.read_csv(R / "stage_reliability/per_cohort.csv")
+    def flat(v):
+        return {kk: (str([round(float(x), 3) for x in vv]) if isinstance(vv, list) else vv) for kk, vv in v.items()}
+    s9 = pd.read_csv(R / "stage_reliability/per_cohort.csv")
+    for c in s9.columns:
+        if s9[c].astype(str).str.startswith("[").any():
+            s9[c] = s9[c].map(lambda x: str([round(float(t), 3) for t in str(x).strip("[]").split(",")]) if str(x).startswith("[") else x)
+    na = json.loads((R / "stage_neuron_adjusted/stage_neuron_adjusted.json").read_text())
+    rel = json.loads((R / "stage_reliability/stage_reliability.json").read_text())
+    pooled9 = [{"cohort": "POOLED " + k, **flat(v["pooled"])} for k, v in na.items()]
+    pooled9.append({"cohort": "POOLED ca_stage_agesex_neuron_disattenuated", **flat(rel["pooled_partial_disattenuated"])})
+    sheets["S9_stage_reliability"] = pd.concat([pd.DataFrame(pooled9), s9], ignore_index=True)
     sheets["S10_stage_neuron_adj_null"] = pd.read_csv(R / "stage_neuron_adjusted/stage_neuron_adjusted_null.csv")
     fu = json.loads((R / "stage_followups/stage_followups.json").read_text())
     within = pd.DataFrame([{"test": k, **{kk: (str(vv) if isinstance(vv, list) else vv) for kk, vv in v.items()}}
@@ -90,9 +100,41 @@ def main() -> None:
     sp = json.loads((R / "null_specificity/null_specificity_matched_report.json").read_text())
     sheets["S12_null_specificity_matched"] = pd.DataFrame([{"cohort": r["cohort"], "metric": k, **{kk: (str(vv) if isinstance(vv, list) else vv) for kk, vv in r[k].items()}}
                                                           for r in sp for k in ["neuron_rho", "stage_agesex", "stage_agesex_neuron"]])
-    sheets["S13_stage_extra"] = pd.read_csv(R / "stage_extra/stage_extra_per_cohort.csv")
+    spp = R / "null_specificity/null_specificity_pooled_report.json"
+    if spp.exists():
+        pp = json.loads(spp.read_text())["pooled"]
+        sheets["S12_null_specificity_matched"] = pd.concat(
+            [pd.DataFrame([{"cohort": "POOLED (4 cohorts)", "metric": k, **flat(v)} for k, v in pp.items()]),
+             sheets["S12_null_specificity_matched"]], ignore_index=True)
+    ex = json.loads((R / "stage_extra/stage_extra_report.json").read_text())
+    sheets["S13_stage_extra"] = pd.concat([pd.DataFrame([{"spec": "POOLED " + k.replace("pooled_", ""), **flat(v)}
+                                                         for k, v in ex.items() if k.startswith("pooled")]),
+                                           pd.read_csv(R / "stage_extra/stage_extra_per_cohort.csv")], ignore_index=True)
     sheets["S14_seaad_neun_histology"] = pd.read_csv(R / "seaad_neun/seaad_neun_associations.csv")
 
+    titles = {
+        "S1": "Included studies of the structured literature search, with extracted composition and null-control features",
+        "S2": "Per-cohort primary endpoints (S2b: pooled random-effects estimates, REML/HKSJ)",
+        "S3": "Expression-matched random-gene null (1,000 sets) per cohort-region set",
+        "S4": "SEA-AD pseudobulk x outcome tests with nominal and random-gene FDR",
+        "S5": "Forward and reverse mediation models (descriptive)",
+        "S6": "Hallmark gene sets on the composition-adjusted residual axis (GO sets in the code repository)",
+        "S7": "Primary and secondary tests with within-family and global FDR",
+        "S8": "MSBB neuronal SPV normalisation per region",
+        "S9": "Neuron-adjusted case-control association: pooled rows (POOLED ...) and reliability correction per cohort",
+        "S10": "Expression-matched random-gene null for the neuron-adjusted case-control association",
+        "S11": "Follow-up stage analyses: bootstrap CIs, covariate specifications, reverse partial, glial covariates, age",
+        "S12": "Random-gene null matched on cell-type specificity: pooled rows and per cohort (one-sided empirical p)",
+        "S13": "NNLS-adjusted case-control association, alternative GSE118553 regions, GSE118553 AD vs control only, AUC with "
+               "bootstrap 95% CIs (AUC compares AD with controls only; GSE118553 n = 83 excludes asymptomatic AD)",
+        "S14": "SEA-AD histology (MTG grey matter) against pseudobulk C-A scores; subset neun_share_ge_5pct excludes 4 donors "
+               "with NeuN+ < 5% of nuclei",
+    }
+    readme = pd.DataFrame([{"sheet": k, "table": k.split("_")[0], "title": titles.get(k.split("_")[0], "")} for k in sheets])
+    readme = pd.concat([pd.DataFrame([{"sheet": "README", "table": "", "title":
+                        "rho = Spearman or partial Spearman; ci95_hksj = Hartung-Knapp CI; pi95 = 95% prediction interval; "
+                        "p_empirical = (k+1)/(N+1), one-sided; se_boot = bootstrap SE of Fisher z"}]), readme], ignore_index=True)
+    sheets = {"README": readme, **sheets}
     a.out.parent.mkdir(parents=True, exist_ok=True)
     with pd.ExcelWriter(a.out) as w:
         for k, d in sheets.items():

@@ -3,60 +3,75 @@
     "k": 4,
     "rho": 0.426,
     "ci95_hksj": [
-      0.343,
+      0.342,
       0.504
     ],
-    "p_hksj": 0.0006829415631924729,
+    "p_hksj": 0.000686522120744644,
     "tau2_reml": 0.0,
     "I2": 0.0,
     "pi95": [
       0.311,
-      0.529
+      0.53
     ]
   },
   "pooled_agesex_nnls": {
     "k": 4,
     "rho": 0.235,
     "ci95_hksj": [
-      0.024,
-      0.426
+      0.022,
+      0.427
     ],
-    "p_hksj": 0.03850953422330667,
-    "tau2_reml": 0.0134,
-    "I2": 0.74,
+    "p_hksj": 0.03928447728121146,
+    "tau2_reml": 0.0137,
+    "I2": 0.751,
     "pi95": [
-      -0.326,
-      0.674
+      -0.332,
+      0.676
     ]
   },
   "pooled_agesex_with_GSE118553_Frontal_Cortex": {
     "k": 4,
-    "rho": 0.382,
+    "rho": 0.381,
     "ci95_hksj": [
-      0.173,
+      0.171,
       0.558
     ],
-    "p_hksj": 0.011122584075426717,
-    "tau2_reml": 0.0113,
-    "I2": 0.647,
+    "p_hksj": 0.011322680658334566,
+    "tau2_reml": 0.0115,
+    "I2": 0.651,
     "pi95": [
-      -0.148,
-      0.741
+      -0.154,
+      0.743
     ]
   },
   "pooled_agesex_with_GSE118553_Entorhinal_Cortex": {
     "k": 4,
-    "rho": 0.418,
+    "rho": 0.419,
     "ci95_hksj": [
       0.334,
-      0.496
+      0.497
     ],
-    "p_hksj": 0.0007264455348268244,
+    "p_hksj": 0.0007321587258576718,
     "tau2_reml": 0.0,
     "I2": 0.0,
     "pi95": [
       0.302,
-      0.522
+      0.523
+    ]
+  },
+  "pooled_agesex_GSE118553_ad_vs_control": {
+    "k": 4,
+    "rho": 0.427,
+    "ci95_hksj": [
+      0.342,
+      0.505
+    ],
+    "p_hksj": 0.0007029096505545439,
+    "tau2_reml": 0.0,
+    "I2": 0.0,
+    "pi95": [
+      0.31,
+      0.531
     ]
   },
   "auc": [
@@ -64,25 +79,33 @@
       "cohort": "GSE33000_PFC",
       "n": 467,
       "auc_unadjusted": 0.889,
-      "auc_age_sex_residual": 0.699
+      "auc_unadjusted_ci": "[0.857, 0.915]",
+      "auc_age_sex_residual": 0.699,
+      "auc_age_sex_residual_ci": "[0.653, 0.746]"
     },
     {
       "cohort": "GSE132903_MTG",
       "n": 195,
       "auc_unadjusted": 0.765,
-      "auc_age_sex_residual": 0.766
+      "auc_unadjusted_ci": "[0.696, 0.831]",
+      "auc_age_sex_residual": 0.766,
+      "auc_age_sex_residual_ci": "[0.697, 0.832]"
     },
     {
       "cohort": "GSE118553_Temporal_Cortex",
       "n": 83,
       "auc_unadjusted": 0.791,
-      "auc_age_sex_residual": 0.746
+      "auc_unadjusted_ci": "[0.686, 0.888]",
+      "auc_age_sex_residual": 0.746,
+      "auc_age_sex_residual_ci": "[0.626, 0.846]"
     },
     {
       "cohort": "GSE125583_FG",
       "n": 289,
       "auc_unadjusted": 0.771,
-      "auc_age_sex_residual": 0.757
+      "auc_unadjusted_ci": "[0.708, 0.83]",
+      "auc_age_sex_residual": 0.757,
+      "auc_age_sex_residual_ci": "[0.69, 0.817]"
     }
   ]
 }
