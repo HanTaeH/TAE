@@ -32,8 +32,9 @@ HIST = {"neun_density": "number of NeuN positive cells per area",
         "iba1_density": "number of Iba1 positive cells per area",
         "at8_area_pct": "percent AT8 positive area",
         "abeta_area_pct": "percent 6e10 positive area"}
-SCORES = ["ca_sorted", "ca_fixed_comp", "ca_comp_only", "ca_type_Exc", "ca_type_Inh", "ca_Exc_fixed_subclass_mix",
-          "neuron_nuclei_frac", "CPS", "Braak"]
+SCORES = ["ca_sorted", "ca_fixed_comp", "ca_comp_only", "ca_type_Exc", "ca_type_Inh", "ca_type_Astro", "ca_type_Oligo",
+          "ca_type_Micro", "ca_Exc_fixed_subclass_mix", "L2/3 IT_of_Exc", "neuron_nuclei_frac", "CPS", "Braak"]
+MIN_NEUN_SHARE = 0.05  # sensitivity: drop donors whose grey matter has NeuN+ < 5% of nuclei (staining failure or end stage)
 
 
 def boot(x, y, cov, rng, n):
@@ -67,32 +68,42 @@ def main() -> None:
     d["male"] = (meta["Sex"].astype(str).str.lower().str[0] == "m").astype(float)
     d = d.join(h, how="inner")
     d.to_csv(a.out / "seaad_neun_per_donor.csv")
-    cov = d[["age", "male"]].values.astype(float)
+    full = d
     rows = []
-    for hv in ["neun_density", "neun_share_of_nuclei", "neun_area_pct", "gfap_area_pct", "iba1_density"]:
-        for sc in SCORES:
-            x, y = d[hv].values.astype(float), d[sc].values.astype(float)
-            r, p, n = partial_spearman(x, y)
-            ra, pa, _ = partial_spearman(x, y, cov)
-            rows.append({"histology": hv, "score": sc, "n": n, "rho": round(r, 3), "p": p,
-                         "rho_age_sex": round(ra, 3), "p_age_sex": pa, "ci_age_sex": str(boot(x, y, cov, rng, a.n_boot))})
+    for subset in ["all", "neun_share_ge_5pct"]:
+        d = full if subset == "all" else full[full["neun_share_of_nuclei"] >= MIN_NEUN_SHARE]
+        cov = d[["age", "male"]].values.astype(float)
+        for hv in ["neun_density", "neun_share_of_nuclei", "neun_area_pct", "gfap_area_pct", "iba1_density"]:
+            for sc in SCORES:
+                x, y = d[hv].values.astype(float), d[sc].values.astype(float)
+                r, p, n = partial_spearman(x, y)
+                ra, pa, _ = partial_spearman(x, y, cov)
+                rows.append({"subset": subset, "histology": hv, "score": sc, "n": n, "rho": round(r, 3), "p": p,
+                             "rho_age_sex": round(ra, 3), "p_age_sex": pa,
+                             "ci_age_sex": str(boot(x, y, cov, rng, a.n_boot))})
+    d = full
+    cov = d[["age", "male"]].values.astype(float)
     t = pd.DataFrame(rows)
     t.to_csv(a.out / "seaad_neun_associations.csv", index=False)
     # does histological neuron density relate to the score beyond progression?
     extra = {}
-    for sc in ["ca_sorted", "ca_fixed_comp", "ca_type_Exc", "ca_type_Inh"]:
-        x, y = d["neun_density"].values.astype(float), d[sc].values.astype(float)
-        c2 = np.column_stack([cov, d["CPS"].values])
-        r, p, n = partial_spearman(x, y, c2)
-        c3 = np.column_stack([cov, d["neuron_nuclei_frac"].values])
-        r3, p3, _ = partial_spearman(x, y, c3)
-        extra[sc] = {"rho_given_age_sex_CPS": round(r, 3), "p": p, "ci": boot(x, y, c2, rng, a.n_boot),
-                     "rho_given_age_sex_FANS_neuron_frac": round(r3, 3), "p_fans": p3}
+    for subset in ["all", "neun_share_ge_5pct"]:
+        dd = full if subset == "all" else full[full["neun_share_of_nuclei"] >= MIN_NEUN_SHARE]
+        cv = dd[["age", "male"]].values.astype(float)
+        extra[subset] = {"n": int(len(dd)), "excluded": sorted(set(full.index) - set(dd.index))}
+        for sc in ["ca_sorted", "ca_fixed_comp", "ca_type_Exc", "ca_type_Inh"]:
+            x, y = dd["neun_density"].values.astype(float), dd[sc].values.astype(float)
+            c2 = np.column_stack([cv, dd["CPS"].values])
+            r, p, n = partial_spearman(x, y, c2)
+            c3 = np.column_stack([cv, dd["neuron_nuclei_frac"].values])
+            r3, p3, _ = partial_spearman(x, y, c3)
+            extra[subset][sc] = {"rho_given_age_sex_CPS": round(r, 3), "p": p, "ci": boot(x, y, c2, rng, a.n_boot),
+                                 "rho_given_age_sex_FANS_neuron_frac": round(r3, 3), "p_fans": p3}
     rep = {"n_donors": int(len(d)),
            "neun_density_summary": d["neun_density"].describe().round(8).to_dict(),
            "associations": t.round(4).to_dict(orient="records"), "neun_density_beyond": extra}
     (a.out / "seaad_neun_report.json").write_text(json.dumps(rep, indent=2, default=float))
-    print(t[["histology", "score", "n", "rho", "p", "rho_age_sex", "p_age_sex", "ci_age_sex"]].to_string())
+    print(t[["subset", "histology", "score", "n", "rho", "p", "rho_age_sex", "p_age_sex", "ci_age_sex"]].to_string())
     print(json.dumps(extra, indent=2, default=float))
 
 
