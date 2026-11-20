@@ -5,7 +5,8 @@ S3 random-gene null summary, S4 SEA-AD pseudobulk tests with FDR, S5 all mediati
 S6 Hallmark residual-axis gene sets, S7 secondary-family tests with FDR, S8 MSBB neuronal-SPV
 normalisation per region, S9 measurement-error (reliability) correction of the neuron-adjusted stage test, S10 random-gene null
 for the neuron-adjusted stage test, S11 stage follow-ups (bootstrap CIs of within-cohort tests, covariate
-specifications, reverse partial, glial covariates, GSE33000 age sensitivity).
+specifications, reverse partial, glial covariates, GSE33000 age sensitivity), S12 specificity-matched null,
+S13 NNLS-adjusted / alternative-region / AUC case-control analyses, S14 SEA-AD NeuN histology.
 
 Usage: python supplementary_tables.py --res ../results --out <file.xlsx>
 """
@@ -86,6 +87,11 @@ def main() -> None:
                            for k, v in fu["pooled"].items()])
     sheets["S11_stage_followups"] = pd.concat([within, pooled, pd.read_csv(R / "stage_followups/stage_followups_per_cohort.csv")
                                                .assign(test=lambda d: "per_cohort_" + d.spec)], ignore_index=True)
+    sp = json.loads((R / "null_specificity/null_specificity_matched_report.json").read_text())
+    sheets["S12_null_specificity_matched"] = pd.DataFrame([{"cohort": r["cohort"], "metric": k, **{kk: (str(vv) if isinstance(vv, list) else vv) for kk, vv in r[k].items()}}
+                                                          for r in sp for k in ["neuron_rho", "stage_agesex", "stage_agesex_neuron"]])
+    sheets["S13_stage_extra"] = pd.read_csv(R / "stage_extra/stage_extra_per_cohort.csv")
+    sheets["S14_seaad_neun_histology"] = pd.read_csv(R / "seaad_neun/seaad_neun_associations.csv")
 
     a.out.parent.mkdir(parents=True, exist_ok=True)
     with pd.ExcelWriter(a.out) as w:

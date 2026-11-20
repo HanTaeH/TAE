@@ -120,7 +120,7 @@ def fig3():
     p = pd.read_csv(R / "validation/projection_all_cohorts.csv"); p["ca"] = p.r_C - p.r_A
     mr = json.load(open(R / "revision/meta_revision/meta_report.json"))["P1_neuron (4 cohorts)"]
     pcm = pd.read_csv(R / "revision/meta_revision/per_cohort.csv")
-    rows0 = pcm[pcm.endpoint == "P1_neuron"][["cohort", "n", "rho"]].to_dict("records")
+    rows0 = pcm[pcm.endpoint == "P1_neuron"][["cohort", "n", "rho", "z", "se_boot"]].to_dict("records")
     fs = {"rows": rows0, "pooled_rho": mr["se_boot"]["rho"], "ci": mr["se_boot"]["ci95_hksj"], "pi": mr["se_boot"]["pi95"]}
     nn = pd.read_csv(R / "msbb/neff_style_cdr_normalisation.csv")
     fig = plt.figure(figsize=(7.2, 5.6)); gs = fig.add_gridspec(2, 3, height_ratios=[1, 1.05])
@@ -135,6 +135,7 @@ def fig3():
             ax.set_ylabel("C−A subtype score"); tag(ax, "a"); ax.legend(title="Subtype", fontsize=7, title_fontsize=7, loc="lower left", markerscale=1.6)
     ax = fig.add_subplot(gs[1, :2]); rows = fs["rows"]; yy = np.arange(len(rows) + 1)[::-1]
     for yi, r in zip(yy[:-1], rows):
+        ax.plot(np.tanh([r["z"] - 1.96 * r["se_boot"], r["z"] + 1.96 * r["se_boot"]]), [yi] * 2, color=MUTED, lw=1.2)
         ax.scatter(r["rho"], yi, s=14 + r["n"] / 6, color=MUTED, zorder=3)
     lo, hi = fs["ci"]; plo, phi = fs["pi"]
     ax.plot([plo, phi], [yy[-1]] * 2, color=MUTED, lw=1); ax.plot([lo, hi], [yy[-1]] * 2, color=INK, lw=2.5)
@@ -183,12 +184,14 @@ def fig4():
         ax.scatter(np.random.default_rng(i).normal(i, 0.08, len(d)), d, s=6, color=COL["C"], alpha=0.7, lw=0)
     r = spearmanr(m.cdr, m.ca, nan_policy="omit")
     ax.set_xticks(range(len(cd))); ax.set_xticklabels([f"{c:g}" for c in cd]); ax.set_xlabel("CDR")
-    ax.set_ylabel("C−A score (subject mean, cortex)"); ax.set_title(f"MSBB subjects: CDR\nρ = {r[0]:.2f}; age/sex-adjusted {msj['ca_vs_cdr_partial']['rho']:.2f}"); tag(ax, "b")
+    ax.set_ylabel("C−A score (subject mean, cortex)"); ax.set_title(f"MSBB, all subjects: CDR\nρ = {r[0]:.2f}; age/sex-adjusted {msj['ca_vs_cdr_partial']['rho']:.2f}"); tag(ax, "b")
     ax = axs[1, 0]
     pc = pd.read_csv(R / "revision/meta_revision/per_cohort.csv")
     nsr = pd.read_csv(R / "revision/null/null_summary.csv").set_index("cohort")
     mrep = json.load(open(R / "revision/meta_revision/meta_report.json"))
     cs = ["GSE33000_PFC", "GSE132903_MTG", "GSE118553_Temporal_Cortex", "GSE125583_FG"]
+    sna = pd.read_csv(R / "revision/stage_neuron_adjusted/per_cohort.csv")
+    snj = json.load(open(R / "revision/stage_neuron_adjusted/stage_neuron_adjusted.json"))["ca_stage_agesex_neuron"]["pooled"]
     yy = np.arange(len(cs) + 1)[::-1]
     for yi, c in zip(yy[:-1], cs):
         raw = pc[(pc.cohort == c) & (pc.endpoint == "P2_stage")].iloc[0]
@@ -196,17 +199,22 @@ def fig4():
         ax.scatter(raw.rho, yi + 0.15, s=22, color="#b8b7b0", zorder=3)
         ax.scatter(adj.rho, yi - 0.15, s=22, color=COL["C"], zorder=3)
         ax.scatter(nsr.loc[c, "stage_rho_agesex_random_median"], yi - 0.15, marker="|", s=90, color=INK, zorder=4)
+        nadj = sna[(sna.cohort == c) & (sna.endpoint == "ca_stage_agesex_neuron")].iloc[0]
+        ax.scatter(nadj.rho, yi - 0.15, s=22, color=COL["A"], marker="s", zorder=3)
     pa = mrep["P2_stage age/sex adjusted (4 cohorts)"]["se_boot"]
     ax.plot(pa["pi95"], [yy[-1]] * 2, color=MUTED, lw=1); ax.plot(pa["ci95_hksj"], [yy[-1]] * 2, color=INK, lw=2.5)
     ax.scatter(pa["rho"], yy[-1], marker="D", s=36, color=INK, zorder=3)
-    ax.set_yticks(yy); ax.set_yticklabels([SHORT[c] for c in cs] + ["Pooled, adjusted"], fontsize=7)
+    ax.plot(snj["ci95_hksj"], [yy[-1] - 0.3] * 2, color=COL["A"], lw=2.5)
+    ax.scatter(snj["rho"], yy[-1] - 0.3, marker="s", s=30, color=COL["A"], zorder=3)
+    ax.set_yticks(yy); ax.set_yticklabels([SHORT[c] for c in cs] + ["Pooled (age/sex; + neuron below)"], fontsize=7)
     ax.get_yticklabels()[-1].set_weight("bold")
     ax.axvline(0, color=GRID, lw=0.8); ax.set_xlim(-0.2, 0.9)
     ax.scatter([], [], s=22, color="#b8b7b0", label="unadjusted"); ax.scatter([], [], s=22, color=COL["C"], label="age + sex adjusted")
     ax.scatter([], [], marker="|", s=60, color=INK, label="random genes, adjusted (median)")
-    ax.legend(fontsize=6.5, loc="upper center", bbox_to_anchor=(0.45, -0.22), ncol=3, columnspacing=0.8)
-    ax.set_xlabel("ρ (C−A score vs diagnostic stage)")
-    ax.set_title("Stage association vs matched random genes (same centroid weights)"); tag(ax, "c")
+    ax.scatter([], [], marker="s", s=22, color=COL["A"], label="+ neuron score")
+    ax.legend(fontsize=6.5, loc="upper center", bbox_to_anchor=(0.45, -0.22), ncol=4, columnspacing=0.8)
+    ax.set_xlabel("ρ (C−A score vs diagnosis, case–control)")
+    ax.set_title("Case–control separation vs matched random genes, and after neuron adjustment"); tag(ax, "c")
     fig.tight_layout(h_pad=3.5); save(fig, "Fig4_stage")
 
 

@@ -1,0 +1,507 @@
+{
+  "n_donors": 84,
+  "neun_density_summary": {
+    "count": 84.0,
+    "mean": 0.00031725,
+    "std": 0.00013106,
+    "min": 2.9e-07,
+    "25%": 0.00022436,
+    "50%": 0.00032205,
+    "75%": 0.00040571,
+    "max": 0.00065908
+  },
+  "associations": [
+    {
+      "histology": "neun_density",
+      "score": "ca_sorted",
+      "n": 84,
+      "rho": -0.293,
+      "p": 0.0069,
+      "rho_age_sex": -0.284,
+      "p_age_sex": 0.0092,
+      "ci_age_sex": "[-0.492, -0.042]"
+    },
+    {
+      "histology": "neun_density",
+      "score": "ca_fixed_comp",
+      "n": 84,
+      "rho": -0.338,
+      "p": 0.0017,
+      "rho_age_sex": -0.336,
+      "p_age_sex": 0.0019,
+      "ci_age_sex": "[-0.51, -0.134]"
+    },
+    {
+      "histology": "neun_density",
+      "score": "ca_comp_only",
+      "n": 84,
+      "rho": -0.14,
+      "p": 0.2036,
+      "rho_age_sex": -0.129,
+      "p_age_sex": 0.2465,
+      "ci_age_sex": "[-0.329, 0.08]"
+    },
+    {
+      "histology": "neun_density",
+      "score": "ca_type_Exc",
+      "n": 84,
+      "rho": -0.104,
+      "p": 0.3456,
+      "rho_age_sex": -0.105,
+      "p_age_sex": 0.3435,
+      "ci_age_sex": "[-0.354, 0.143]"
+    },
+    {
+      "histology": "neun_density",
+      "score": "ca_type_Inh",
+      "n": 84,
+      "rho": -0.134,
+      "p": 0.224,
+      "rho_age_sex": -0.137,
+      "p_age_sex": 0.2162,
+      "ci_age_sex": "[-0.363, 0.094]"
+    },
+    {
+      "histology": "neun_density",
+      "score": "ca_Exc_fixed_subclass_mix",
+      "n": 84,
+      "rho": -0.083,
+      "p": 0.4503,
+      "rho_age_sex": -0.086,
+      "p_age_sex": 0.4406,
+      "ci_age_sex": "[-0.328, 0.149]"
+    },
+    {
+      "histology": "neun_density",
+      "score": "neuron_nuclei_frac",
+      "n": 84,
+      "rho": 0.16,
+      "p": 0.1459,
+      "rho_age_sex": 0.149,
+      "p_age_sex": 0.1775,
+      "ci_age_sex": "[-0.101, 0.381]"
+    },
+    {
+      "histology": "neun_density",
+      "score": "CPS",
+      "n": 84,
+      "rho": -0.142,
+      "p": 0.196,
+      "rho_age_sex": -0.129,
+      "p_age_sex": 0.2463,
+      "ci_age_sex": "[-0.327, 0.085]"
+    },
+    {
+      "histology": "neun_density",
+      "score": "Braak",
+      "n": 84,
+      "rho": -0.132,
+      "p": 0.2308,
+      "rho_age_sex": -0.116,
+      "p_age_sex": 0.2947,
+      "ci_age_sex": "[-0.328, 0.103]"
+    },
+    {
+      "histology": "neun_share_of_nuclei",
+      "score": "ca_sorted",
+      "n": 84,
+      "rho": -0.3,
+      "p": 0.0056,
+      "rho_age_sex": -0.292,
+      "p_age_sex": 0.0074,
+      "ci_age_sex": "[-0.507, -0.062]"
+    },
+    {
+      "histology": "neun_share_of_nuclei",
+      "score": "ca_fixed_comp",
+      "n": 84,
+      "rho": -0.354,
+      "p": 0.0009,
+      "rho_age_sex": -0.351,
+      "p_age_sex": 0.0011,
+      "ci_age_sex": "[-0.538, -0.147]"
+    },
+    {
+      "histology": "neun_share_of_nuclei",
+      "score": "ca_comp_only",
+      "n": 84,
+      "rho": -0.221,
+      "p": 0.0436,
+      "rho_age_sex": -0.181,
+      "p_age_sex": 0.1022,
+      "ci_age_sex": "[-0.386, 0.044]"
+    },
+    {
+      "histology": "neun_share_of_nuclei",
+      "score": "ca_type_Exc",
+      "n": 84,
+      "rho": -0.068,
+      "p": 0.5388,
+      "rho_age_sex": -0.083,
+      "p_age_sex": 0.4542,
+      "ci_age_sex": "[-0.32, 0.16]"
+    },
+    {
+      "histology": "neun_share_of_nuclei",
+      "score": "ca_type_Inh",
+      "n": 84,
+      "rho": -0.114,
+      "p": 0.3009,
+      "rho_age_sex": -0.136,
+      "p_age_sex": 0.2195,
+      "ci_age_sex": "[-0.353, 0.105]"
+    },
+    {
+      "histology": "neun_share_of_nuclei",
+      "score": "ca_Exc_fixed_subclass_mix",
+      "n": 84,
+      "rho": -0.048,
+      "p": 0.6637,
+      "rho_age_sex": -0.066,
+      "p_age_sex": 0.5561,
+      "ci_age_sex": "[-0.291, 0.172]"
+    },
+    {
+      "histology": "neun_share_of_nuclei",
+      "score": "neuron_nuclei_frac",
+      "n": 84,
+      "rho": 0.103,
+      "p": 0.3498,
+      "rho_age_sex": 0.092,
+      "p_age_sex": 0.4088,
+      "ci_age_sex": "[-0.136, 0.325]"
+    },
+    {
+      "histology": "neun_share_of_nuclei",
+      "score": "CPS",
+      "n": 84,
+      "rho": -0.314,
+      "p": 0.0037,
+      "rho_age_sex": -0.288,
+      "p_age_sex": 0.0083,
+      "ci_age_sex": "[-0.466, -0.076]"
+    },
+    {
+      "histology": "neun_share_of_nuclei",
+      "score": "Braak",
+      "n": 84,
+      "rho": -0.301,
+      "p": 0.0054,
+      "rho_age_sex": -0.272,
+      "p_age_sex": 0.0127,
+      "ci_age_sex": "[-0.462, -0.062]"
+    },
+    {
+      "histology": "neun_area_pct",
+      "score": "ca_sorted",
+      "n": 84,
+      "rho": -0.258,
+      "p": 0.0179,
+      "rho_age_sex": -0.24,
+      "p_age_sex": 0.0288,
+      "ci_age_sex": "[-0.436, -0.017]"
+    },
+    {
+      "histology": "neun_area_pct",
+      "score": "ca_fixed_comp",
+      "n": 84,
+      "rho": -0.391,
+      "p": 0.0002,
+      "rho_age_sex": -0.389,
+      "p_age_sex": 0.0003,
+      "ci_age_sex": "[-0.548, -0.208]"
+    },
+    {
+      "histology": "neun_area_pct",
+      "score": "ca_comp_only",
+      "n": 84,
+      "rho": -0.127,
+      "p": 0.2493,
+      "rho_age_sex": -0.1,
+      "p_age_sex": 0.3688,
+      "ci_age_sex": "[-0.303, 0.127]"
+    },
+    {
+      "histology": "neun_area_pct",
+      "score": "ca_type_Exc",
+      "n": 84,
+      "rho": -0.065,
+      "p": 0.5579,
+      "rho_age_sex": -0.068,
+      "p_age_sex": 0.5436,
+      "ci_age_sex": "[-0.287, 0.151]"
+    },
+    {
+      "histology": "neun_area_pct",
+      "score": "ca_type_Inh",
+      "n": 84,
+      "rho": -0.089,
+      "p": 0.4217,
+      "rho_age_sex": -0.094,
+      "p_age_sex": 0.3956,
+      "ci_age_sex": "[-0.305, 0.126]"
+    },
+    {
+      "histology": "neun_area_pct",
+      "score": "ca_Exc_fixed_subclass_mix",
+      "n": 84,
+      "rho": -0.043,
+      "p": 0.7003,
+      "rho_age_sex": -0.047,
+      "p_age_sex": 0.6699,
+      "ci_age_sex": "[-0.27, 0.18]"
+    },
+    {
+      "histology": "neun_area_pct",
+      "score": "neuron_nuclei_frac",
+      "n": 84,
+      "rho": 0.078,
+      "p": 0.4799,
+      "rho_age_sex": 0.058,
+      "p_age_sex": 0.6038,
+      "ci_age_sex": "[-0.185, 0.289]"
+    },
+    {
+      "histology": "neun_area_pct",
+      "score": "CPS",
+      "n": 84,
+      "rho": -0.205,
+      "p": 0.0612,
+      "rho_age_sex": -0.182,
+      "p_age_sex": 0.1005,
+      "ci_age_sex": "[-0.385, 0.026]"
+    },
+    {
+      "histology": "neun_area_pct",
+      "score": "Braak",
+      "n": 84,
+      "rho": -0.194,
+      "p": 0.0771,
+      "rho_age_sex": -0.167,
+      "p_age_sex": 0.1314,
+      "ci_age_sex": "[-0.364, 0.059]"
+    },
+    {
+      "histology": "gfap_area_pct",
+      "score": "ca_sorted",
+      "n": 84,
+      "rho": 0.146,
+      "p": 0.1839,
+      "rho_age_sex": 0.162,
+      "p_age_sex": 0.1425,
+      "ci_age_sex": "[-0.061, 0.369]"
+    },
+    {
+      "histology": "gfap_area_pct",
+      "score": "ca_fixed_comp",
+      "n": 84,
+      "rho": 0.209,
+      "p": 0.0561,
+      "rho_age_sex": 0.207,
+      "p_age_sex": 0.0608,
+      "ci_age_sex": "[0.004, 0.414]"
+    },
+    {
+      "histology": "gfap_area_pct",
+      "score": "ca_comp_only",
+      "n": 84,
+      "rho": 0.248,
+      "p": 0.023,
+      "rho_age_sex": 0.214,
+      "p_age_sex": 0.052,
+      "ci_age_sex": "[0.003, 0.413]"
+    },
+    {
+      "histology": "gfap_area_pct",
+      "score": "ca_type_Exc",
+      "n": 84,
+      "rho": 0.133,
+      "p": 0.2275,
+      "rho_age_sex": 0.164,
+      "p_age_sex": 0.1389,
+      "ci_age_sex": "[-0.052, 0.359]"
+    },
+    {
+      "histology": "gfap_area_pct",
+      "score": "ca_type_Inh",
+      "n": 84,
+      "rho": 0.245,
+      "p": 0.0248,
+      "rho_age_sex": 0.287,
+      "p_age_sex": 0.0085,
+      "ci_age_sex": "[0.077, 0.476]"
+    },
+    {
+      "histology": "gfap_area_pct",
+      "score": "ca_Exc_fixed_subclass_mix",
+      "n": 84,
+      "rho": 0.138,
+      "p": 0.2116,
+      "rho_age_sex": 0.169,
+      "p_age_sex": 0.1259,
+      "ci_age_sex": "[-0.04, 0.377]"
+    },
+    {
+      "histology": "gfap_area_pct",
+      "score": "neuron_nuclei_frac",
+      "n": 84,
+      "rho": 0.043,
+      "p": 0.7011,
+      "rho_age_sex": 0.032,
+      "p_age_sex": 0.7742,
+      "ci_age_sex": "[-0.179, 0.243]"
+    },
+    {
+      "histology": "gfap_area_pct",
+      "score": "CPS",
+      "n": 84,
+      "rho": 0.468,
+      "p": 0.0,
+      "rho_age_sex": 0.465,
+      "p_age_sex": 0.0,
+      "ci_age_sex": "[0.258, 0.635]"
+    },
+    {
+      "histology": "gfap_area_pct",
+      "score": "Braak",
+      "n": 84,
+      "rho": 0.476,
+      "p": 0.0,
+      "rho_age_sex": 0.475,
+      "p_age_sex": 0.0,
+      "ci_age_sex": "[0.258, 0.651]"
+    },
+    {
+      "histology": "iba1_density",
+      "score": "ca_sorted",
+      "n": 84,
+      "rho": -0.011,
+      "p": 0.9189,
+      "rho_age_sex": -0.033,
+      "p_age_sex": 0.7663,
+      "ci_age_sex": "[-0.285, 0.212]"
+    },
+    {
+      "histology": "iba1_density",
+      "score": "ca_fixed_comp",
+      "n": 84,
+      "rho": 0.075,
+      "p": 0.4962,
+      "rho_age_sex": 0.063,
+      "p_age_sex": 0.57,
+      "ci_age_sex": "[-0.175, 0.309]"
+    },
+    {
+      "histology": "iba1_density",
+      "score": "ca_comp_only",
+      "n": 84,
+      "rho": 0.118,
+      "p": 0.2862,
+      "rho_age_sex": 0.021,
+      "p_age_sex": 0.8474,
+      "ci_age_sex": "[-0.181, 0.228]"
+    },
+    {
+      "histology": "iba1_density",
+      "score": "ca_type_Exc",
+      "n": 84,
+      "rho": -0.1,
+      "p": 0.3661,
+      "rho_age_sex": -0.07,
+      "p_age_sex": 0.5312,
+      "ci_age_sex": "[-0.276, 0.156]"
+    },
+    {
+      "histology": "iba1_density",
+      "score": "ca_type_Inh",
+      "n": 84,
+      "rho": 0.029,
+      "p": 0.7957,
+      "rho_age_sex": 0.079,
+      "p_age_sex": 0.4763,
+      "ci_age_sex": "[-0.143, 0.291]"
+    },
+    {
+      "histology": "iba1_density",
+      "score": "ca_Exc_fixed_subclass_mix",
+      "n": 84,
+      "rho": -0.097,
+      "p": 0.3783,
+      "rho_age_sex": -0.063,
+      "p_age_sex": 0.5723,
+      "ci_age_sex": "[-0.267, 0.156]"
+    },
+    {
+      "histology": "iba1_density",
+      "score": "neuron_nuclei_frac",
+      "n": 84,
+      "rho": 0.024,
+      "p": 0.8251,
+      "rho_age_sex": 0.039,
+      "p_age_sex": 0.7296,
+      "ci_age_sex": "[-0.177, 0.248]"
+    },
+    {
+      "histology": "iba1_density",
+      "score": "CPS",
+      "n": 84,
+      "rho": -0.021,
+      "p": 0.8502,
+      "rho_age_sex": -0.091,
+      "p_age_sex": 0.4137,
+      "ci_age_sex": "[-0.292, 0.123]"
+    },
+    {
+      "histology": "iba1_density",
+      "score": "Braak",
+      "n": 84,
+      "rho": 0.034,
+      "p": 0.7555,
+      "rho_age_sex": -0.038,
+      "p_age_sex": 0.7353,
+      "ci_age_sex": "[-0.261, 0.184]"
+    }
+  ],
+  "neun_density_beyond": {
+    "ca_sorted": {
+      "rho_given_age_sex_CPS": -0.263,
+      "p": 0.017111519770810744,
+      "ci": [
+        -0.468,
+        -0.03
+      ],
+      "rho_given_age_sex_FANS_neuron_frac": -0.245,
+      "p_fans": 0.026719575260591818
+    },
+    "ca_fixed_comp": {
+      "rho_given_age_sex_CPS": -0.324,
+      "p": 0.0029906698869309554,
+      "ci": [
+        -0.503,
+        -0.129
+      ],
+      "rho_given_age_sex_FANS_neuron_frac": -0.325,
+      "p_fans": 0.002881774902380249
+    },
+    "ca_type_Exc": {
+      "rho_given_age_sex_CPS": -0.096,
+      "p": 0.39111158879102964,
+      "ci": [
+        -0.332,
+        0.135
+      ],
+      "rho_given_age_sex_FANS_neuron_frac": -0.078,
+      "p_fans": 0.4864008253883193
+    },
+    "ca_type_Inh": {
+      "rho_given_age_sex_CPS": -0.118,
+      "p": 0.2929982967930565,
+      "ci": [
+        -0.347,
+        0.11
+      ],
+      "rho_given_age_sex_FANS_neuron_frac": -0.114,
+      "p_fans": 0.3084890705805637
+    }
+  }
+}

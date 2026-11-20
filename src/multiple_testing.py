@@ -58,7 +58,8 @@ def bh(p: np.ndarray) -> np.ndarray:
 def collect(res: Path) -> pd.DataFrame:
     rows = []
     extra = [res / x for x in ["stage_neuron_adjusted/stage_neuron_adjusted.json",
-                                "stage_reliability/stage_reliability.json", "stage_followups/stage_followups.json"]]
+                                "stage_reliability/stage_reliability.json", "stage_followups/stage_followups.json",
+                                "stage_extra/stage_extra_report.json"]]
     for f in sorted(res.glob("*/*report.json")) + [x for x in extra if x.exists()]:
         name = f.stem.replace("_report", "")
         name = {"braak_gse125583": "braak_gse125583"}.get(name, name)

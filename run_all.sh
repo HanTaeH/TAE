@@ -56,6 +56,9 @@ python3 seaad_sensitivity.py    --res "$OUT" --seaad-meta "$REF_DIR/donors/donor
 python3 stage_neuron_adjusted.py --data "$DATA" --out "$OUT/stage_neuron_adjusted"
 python3 stage_neuron_adjusted_null.py --data "$DATA" --out "$OUT/stage_neuron_adjusted"
 python3 stage_followups.py --data "$DATA" --res "$OUT" --out "$OUT/stage_followups"
+python3 stage_extra_sensitivity.py --data "$DATA" --res "$OUT" --out "$OUT/stage_extra"
+python3 null_specificity_matched.py --data "$DATA" --ref "$REF_DIR/seaad_mtg_reference.csv.gz" --out "$OUT/null_specificity"
+python3 seaad_neun_histology.py --res "$OUT" --qnp "$REF_DIR/quant_neuropath/MTG_all-values_aibs-ids_20250922.csv" --seaad-meta "$REF_DIR/donors/donor_meta.csv" --out "$OUT/seaad_neun"
 python3 stage_reliability.py --data "$DATA" --out "$OUT/stage_reliability"
 python3 multiple_testing.py    "$OUT"   # last: covers every report above
-python3 supplementary_tables.py --res "$OUT" --out "$OUT/supplementary/Supplementary_Tables_S1-S11.xlsx"
+python3 supplementary_tables.py --res "$OUT" --out "$OUT/supplementary/Supplementary_Tables_S1-S14.xlsx"
