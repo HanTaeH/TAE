@@ -2,7 +2,7 @@
 A SNP is in a set if it lies within +/- WINDOW bp of any gene in the set (hg19 gene spans).
 
 Usage: python make_annot.py <genesets.tsv> <genes_hg19.tsv> <plink_prefix> <out_prefix> [window=100000]
-genesets.tsv: columns set, SYMBOL. Writes <out_prefix>.<chr>.annot.gz for chr 1-22 and
+genesets.tsv: columns set, SYMBOL and optionally window (bp, per set; overrides the default). Writes <out_prefix>.<chr>.annot.gz for chr 1-22 and
 <out_prefix>.names (column order).
 """
 import sys
@@ -20,7 +20,8 @@ for c in range(1, 23):
     cols = {}
     for s in sets:
         g = genes[(genes.CHR.astype(str) == str(c)) & genes.SYMBOL.isin(gs.loc[gs["set"] == s, "SYMBOL"])]
-        st = np.sort(np.maximum(g.START.to_numpy() - win, 0)); en = np.sort(g.END.to_numpy() + win)
+        w = int(gs.loc[gs["set"] == s, "window"].iloc[0]) if "window" in gs.columns else win
+        st = np.sort(np.maximum(g.START.to_numpy() - w, 0)); en = np.sort(g.END.to_numpy() + w)
         # SNP covered if #starts <= bp exceeds #ends < bp
         cols[s] = ((np.searchsorted(st, bim, side="right") - np.searchsorted(en, bim, side="left")) > 0).astype(np.int8)
     pd.DataFrame(cols).to_csv(f"{out}.{c}.annot.gz", sep="\t", index=False, compression="gzip")
