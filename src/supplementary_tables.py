@@ -3,7 +3,8 @@
 S1 literature (32 studies), S2 per-cohort primary endpoints incl. donor-overlap sensitivity,
 S3 random-gene null summary, S4 SEA-AD pseudobulk tests with FDR, S5 all mediation models,
 S6 Hallmark residual-axis gene sets, S7 secondary-family tests with FDR, S8 MSBB neuronal-SPV
-normalisation per region, S9 measurement-error (reliability) correction of the neuron-adjusted stage test.
+normalisation per region, S9 measurement-error (reliability) correction of the neuron-adjusted stage test, S10 random-gene null
+for the neuron-adjusted stage test.
 
 Usage: python supplementary_tables.py --res ../results --out <file.xlsx>
 """
@@ -61,6 +62,7 @@ def main() -> None:
     sheets["S7_primary_secondary_tests"] = mt[mt.family.isin(["primary", "secondary"])].sort_values(["family", "p"])
     sheets["S8_msbb_neuron_spv_norm"] = pd.read_csv(R / "msbb/msbb_neuron_spv_normalisation.csv")
     sheets["S9_stage_reliability"] = pd.read_csv(R / "stage_reliability/per_cohort.csv")
+    sheets["S10_stage_neuron_adj_null"] = pd.read_csv(R / "stage_neuron_adjusted/stage_neuron_adjusted_null.csv")
 
     a.out.parent.mkdir(parents=True, exist_ok=True)
     with pd.ExcelWriter(a.out) as w:

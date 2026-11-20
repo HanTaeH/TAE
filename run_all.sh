@@ -54,6 +54,7 @@ python3 residual_go.py         --data "$DATA" --gmt-dir "${GMT_DIR:-/mnt/project
 python3 residual_go.py         --data "$DATA" --gmt-dir "${GMT_DIR:-/mnt/project-files/d1-data/msigdb}" --out "$OUT/residual_go_nooverlap" --drop-banner-overlap
 python3 seaad_sensitivity.py    --res "$OUT" --seaad-meta "$REF_DIR/donors/donor_meta.csv" --out "$OUT/seaad_sensitivity"
 python3 stage_neuron_adjusted.py --data "$DATA" --out "$OUT/stage_neuron_adjusted"
+python3 stage_neuron_adjusted_null.py --data "$DATA" --out "$OUT/stage_neuron_adjusted"
 python3 stage_reliability.py --data "$DATA" --out "$OUT/stage_reliability"
 python3 multiple_testing.py    "$OUT"   # last: covers every report above
-python3 supplementary_tables.py --res "$OUT" --out "$OUT/supplementary/Supplementary_Tables_S1-S9.xlsx"
+python3 supplementary_tables.py --res "$OUT" --out "$OUT/supplementary/Supplementary_Tables_S1-S10.xlsx"
