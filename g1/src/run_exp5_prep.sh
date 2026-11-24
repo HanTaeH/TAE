@@ -6,7 +6,7 @@ set -euo pipefail
 W=${W:?work dir}; REF=${REF:-/mnt/project-files/g1-data/ref}; B=${B:?venv bin}; PN=${PN:?finngen_R12_pheno_n.tsv}
 HERE=$(cd "$(dirname "$0")" && pwd)
 mkdir -p "$W/raw" "$W/traits" "$W/lof"
-T=(M13_ARTHROSIS_KNEE_PRIM_KNEESURG M13_ARTHTROSIS_COX_PRIM_HIPSURG F5_DEPRESSIO G6_MIGRAINE PAIN HEIGHT_IRN BMI_IRN M13_LUMBAR_PROLAPSE)
+T=(${TRAITS:-M13_ARTHROSIS_KNEE_PRIM_KNEESURG M13_ARTHTROSIS_COX_PRIM_HIPSURG F5_DEPRESSIO G6_MIGRAINE PAIN HEIGHT_IRN BMI_IRN M13_LUMBAR_PROLAPSE})  # TRAITS env overrides (exp 7: F5_ALLANXIOUS)
 [ -f "$W/lof/finngen_R12_lof.txt.gz" ] || gsutil -q cp gs://finngen-public-data-r12/lof/data/finngen_R12_lof.txt.gz gs://finngen-public-data-r12/lof/data/finngen_R12_lof_variants.txt gs://finngen-public-data-r12/lof/data/finngen_R12_sig.txt "$W/lof/"
 for p in "${T[@]}"; do
   [ -f "$W/traits/fg.$p.sumstats.gz" ] && continue
