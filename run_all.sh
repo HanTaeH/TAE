@@ -59,6 +59,8 @@ python3 stage_followups.py --data "$DATA" --res "$OUT" --out "$OUT/stage_followu
 python3 stage_extra_sensitivity.py --data "$DATA" --res "$OUT" --out "$OUT/stage_extra"
 python3 null_specificity_matched.py --data "$DATA" --ref "$REF_DIR/seaad_mtg_reference.csv.gz" --out "$OUT/null_specificity"
 python3 null_specificity_pooled.py --res "$OUT"
+python3 gse33000_null_followup.py --data "$DATA" --ref "$REF_DIR/seaad_mtg_reference.csv.gz" --out "$OUT/gse33000_null_followup"
+python3 msbb_normalisation_kappa_null.py --data "$DATA" --out "$OUT/msbb"
 python3 seaad_neun_histology.py --res "$OUT" --qnp "$REF_DIR/quant_neuropath/MTG_all-values_aibs-ids_20250922.csv" --seaad-meta "$REF_DIR/donors/donor_meta.csv" --out "$OUT/seaad_neun"
 python3 stage_reliability.py --data "$DATA" --out "$OUT/stage_reliability"
 python3 multiple_testing.py    "$OUT"   # last: covers every report above

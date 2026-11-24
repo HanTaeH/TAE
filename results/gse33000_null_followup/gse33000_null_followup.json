@@ -1,0 +1,83 @@
+{
+  "n_ad": 310,
+  "fine_mix": {
+    "1": 71,
+    "g_Vascular": 34,
+    "g_Oligo": 32,
+    "g_Micro": 22,
+    "n_Exc": 19,
+    "absent": 11,
+    "g_Astro": 9,
+    "g_OPC": 8,
+    "n_Inh_other": 7,
+    "n_Inh_PVALB": 7,
+    "n_Inh_SST": 4
+  },
+  "finer_match": {
+    "neff": -0.928,
+    "random_median": -0.898,
+    "random_q05_q95": [
+      -0.921,
+      -0.869
+    ],
+    "p_empirical": 0.01
+  },
+  "strength_match": {
+    "GSE33000_PFC": {
+      "neff": -0.928,
+      "random_median": -0.911,
+      "random_q05_q95": [
+        -0.928,
+        -0.885
+      ],
+      "p_empirical": 0.0539
+    },
+    "GSE132903_MTG": {
+      "neff": -0.921,
+      "random_median": -0.876,
+      "random_q05_q95": [
+        -0.928,
+        -0.801
+      ],
+      "p_empirical": 0.0818
+    },
+    "GSE118553_Temporal_Cortex": {
+      "neff": -0.85,
+      "random_median": -0.805,
+      "random_q05_q95": [
+        -0.886,
+        -0.665
+      ],
+      "p_empirical": 0.2255
+    },
+    "GSE125583_FG": {
+      "neff": -0.927,
+      "random_median": -0.943,
+      "random_q05_q95": [
+        -0.955,
+        -0.924
+      ],
+      "p_empirical": 0.9142
+    }
+  },
+  "subsample": {
+    "52": {
+      "obs_median": -0.923,
+      "null_median": -0.892,
+      "p_median": 0.015,
+      "share_p_lt_0.05": 0.97
+    },
+    "97": {
+      "obs_median": -0.925,
+      "null_median": -0.892,
+      "p_median": 0.017,
+      "share_p_lt_0.05": 0.93
+    },
+    "219": {
+      "obs_median": -0.927,
+      "null_median": -0.893,
+      "p_median": 0.015,
+      "share_p_lt_0.05": 1.0
+    }
+  }
+}

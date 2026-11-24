@@ -1,0 +1,8 @@
+{
+  "n_AD": 31.0,
+  "kappa_spv": 0.475,
+  "kappa_cdr": 0.849,
+  "kappa_random_median": 0.785,
+  "kappa_random_q05": 0.519,
+  "p_spv_le_random": 0.06
+}
