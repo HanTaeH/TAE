@@ -1,0 +1,192 @@
+{
+  "n_genes": 257,
+  "contrast_sd_log": 0.575,
+  "results": {
+    "within_AD_subtype": {
+      "0.0": {
+        "obs_median": -0.848,
+        "spec": {
+          "null_median": -0.827,
+          "p_median": 0.925,
+          "share_p_lt_0.05": 0.0
+        },
+        "strength": {
+          "null_median": -0.836,
+          "p_median": 0.851,
+          "share_p_lt_0.05": 0.0
+        }
+      },
+      "0.02": {
+        "obs_median": -0.824,
+        "spec": {
+          "null_median": -0.812,
+          "p_median": 0.699,
+          "share_p_lt_0.05": 0.0
+        },
+        "strength": {
+          "null_median": -0.814,
+          "p_median": 0.443,
+          "share_p_lt_0.05": 0.0
+        }
+      },
+      "0.05": {
+        "obs_median": -0.825,
+        "spec": {
+          "null_median": -0.833,
+          "p_median": 0.341,
+          "share_p_lt_0.05": 0.1
+        },
+        "strength": {
+          "null_median": -0.84,
+          "p_median": 0.095,
+          "share_p_lt_0.05": 0.35
+        }
+      },
+      "0.1": {
+        "obs_median": -0.755,
+        "spec": {
+          "null_median": -0.821,
+          "p_median": 0.005,
+          "share_p_lt_0.05": 1.0
+        },
+        "strength": {
+          "null_median": -0.832,
+          "p_median": 0.005,
+          "share_p_lt_0.05": 1.0
+        }
+      },
+      "0.25": {
+        "obs_median": -0.546,
+        "spec": {
+          "null_median": -0.828,
+          "p_median": 0.005,
+          "share_p_lt_0.05": 1.0
+        },
+        "strength": {
+          "null_median": -0.838,
+          "p_median": 0.005,
+          "share_p_lt_0.05": 1.0
+        }
+      },
+      "0.5": {
+        "obs_median": -0.318,
+        "spec": {
+          "null_median": -0.824,
+          "p_median": 0.005,
+          "share_p_lt_0.05": 1.0
+        },
+        "strength": {
+          "null_median": -0.832,
+          "p_median": 0.005,
+          "share_p_lt_0.05": 1.0
+        }
+      },
+      "1.0": {
+        "obs_median": -0.189,
+        "spec": {
+          "null_median": -0.821,
+          "p_median": 0.005,
+          "share_p_lt_0.05": 1.0
+        },
+        "strength": {
+          "null_median": -0.829,
+          "p_median": 0.005,
+          "share_p_lt_0.05": 1.0
+        }
+      }
+    },
+    "disease_shift": {
+      "0.0": {
+        "obs_median": 0.37,
+        "spec": {
+          "null_median": 0.327,
+          "p_median": 0.077,
+          "share_p_lt_0.05": 0.5
+        },
+        "strength": {
+          "null_median": 0.353,
+          "p_median": 0.144,
+          "share_p_lt_0.05": 0.2
+        }
+      },
+      "0.02": {
+        "obs_median": 0.45,
+        "spec": {
+          "null_median": 0.334,
+          "p_median": 0.005,
+          "share_p_lt_0.05": 0.95
+        },
+        "strength": {
+          "null_median": 0.361,
+          "p_median": 0.005,
+          "share_p_lt_0.05": 0.95
+        }
+      },
+      "0.05": {
+        "obs_median": 0.491,
+        "spec": {
+          "null_median": 0.33,
+          "p_median": 0.005,
+          "share_p_lt_0.05": 1.0
+        },
+        "strength": {
+          "null_median": 0.356,
+          "p_median": 0.005,
+          "share_p_lt_0.05": 1.0
+        }
+      },
+      "0.1": {
+        "obs_median": 0.593,
+        "spec": {
+          "null_median": 0.321,
+          "p_median": 0.005,
+          "share_p_lt_0.05": 1.0
+        },
+        "strength": {
+          "null_median": 0.34,
+          "p_median": 0.005,
+          "share_p_lt_0.05": 1.0
+        }
+      },
+      "0.25": {
+        "obs_median": 0.737,
+        "spec": {
+          "null_median": 0.34,
+          "p_median": 0.005,
+          "share_p_lt_0.05": 1.0
+        },
+        "strength": {
+          "null_median": 0.373,
+          "p_median": 0.005,
+          "share_p_lt_0.05": 1.0
+        }
+      },
+      "0.5": {
+        "obs_median": 0.754,
+        "spec": {
+          "null_median": 0.317,
+          "p_median": 0.005,
+          "share_p_lt_0.05": 1.0
+        },
+        "strength": {
+          "null_median": 0.341,
+          "p_median": 0.005,
+          "share_p_lt_0.05": 1.0
+        }
+      },
+      "1.0": {
+        "obs_median": 0.74,
+        "spec": {
+          "null_median": 0.324,
+          "p_median": 0.005,
+          "share_p_lt_0.05": 1.0
+        },
+        "strength": {
+          "null_median": 0.354,
+          "p_median": 0.005,
+          "share_p_lt_0.05": 1.0
+        }
+      }
+    }
+  }
+}
