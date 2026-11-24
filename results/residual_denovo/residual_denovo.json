@@ -1,0 +1,467 @@
+{
+  "n_genes": 2280,
+  "cohorts": {
+    "GSE33000_PFC": {
+      "n_AD": 310,
+      "unadjusted": {
+        "var_pc1_5": [
+          0.21,
+          0.176,
+          0.079,
+          0.057,
+          0.047
+        ],
+        "pc1_abs_rho_neuron": 0.644,
+        "sigclust": {
+          "silhouette": 0.227,
+          "null_median": 0.173,
+          "p": 0.005
+        }
+      },
+      "adjusted": {
+        "var_pc1_5": [
+          0.231,
+          0.095,
+          0.07,
+          0.053,
+          0.037
+        ],
+        "pc1_abs_rho_neuron": 0.068,
+        "sigclust": {
+          "silhouette": 0.24,
+          "null_median": 0.207,
+          "p": 0.005
+        },
+        "identity_top_sets_z": {
+          "PC1": {
+            "sub_Microglia-PVM": 3.66,
+            "heat_shock": 3.13,
+            "ribosome": 2.54,
+            "sub_Endothelial": 0.57
+          },
+          "PC2": {
+            "ribosome": 5.45,
+            "oxphos": 2.45,
+            "heat_shock": -2.41,
+            "immediate_early": 1.93
+          },
+          "PC3": {
+            "heat_shock": 2.67,
+            "sub_Endothelial": -2.29,
+            "ribosome": -1.64,
+            "sub_Astrocyte": -1.46
+          },
+          "PC4": {
+            "heat_shock": -5.2,
+            "sub_Astrocyte": 2.14,
+            "sub_Microglia-PVM": -1.36,
+            "sub_Endothelial": 1.08
+          },
+          "PC5": {
+            "ribosome": -6.22,
+            "heat_shock": -5.93,
+            "sub_Microglia-PVM": -1.78,
+            "microglia_activation_complement": -1.26
+          }
+        },
+        "clinical_abs_rho": {
+          "PC1": {
+            "age": 0.107,
+            "sex": 0.018
+          },
+          "PC2": {
+            "age": 0.135,
+            "sex": 0.048
+          },
+          "PC3": {
+            "age": 0.162,
+            "sex": 0.059
+          },
+          "PC4": {
+            "age": 0.217,
+            "sex": 0.116
+          },
+          "PC5": {
+            "age": 0.105,
+            "sex": 0.053
+          }
+        }
+      }
+    },
+    "GSE132903_MTG": {
+      "n_AD": 97,
+      "unadjusted": {
+        "var_pc1_5": [
+          0.303,
+          0.143,
+          0.117,
+          0.04,
+          0.04
+        ],
+        "pc1_abs_rho_neuron": 0.706,
+        "sigclust": {
+          "silhouette": 0.333,
+          "null_median": 0.219,
+          "p": 0.005
+        }
+      },
+      "adjusted": {
+        "var_pc1_5": [
+          0.269,
+          0.104,
+          0.069,
+          0.049,
+          0.044
+        ],
+        "pc1_abs_rho_neuron": 0.033,
+        "sigclust": {
+          "silhouette": 0.203,
+          "null_median": 0.221,
+          "p": 0.801
+        },
+        "identity_top_sets_z": {
+          "PC1": {
+            "ribosome": -6.0,
+            "heat_shock": -2.58,
+            "oxphos": -2.1,
+            "sub_Microglia-PVM": -1.47
+          },
+          "PC2": {
+            "heat_shock": -2.69,
+            "ribosome": -2.27,
+            "sub_Microglia-PVM": 1.65,
+            "sub_Endothelial": 0.98
+          },
+          "PC3": {
+            "ribosome": -4.43,
+            "microglia_activation_complement": 2.27,
+            "sub_Astrocyte": 1.9,
+            "heat_shock": -1.55
+          },
+          "PC4": {
+            "sub_Astrocyte": 2.56,
+            "sub_Microglia-PVM": -1.87,
+            "ribosome": -1.73,
+            "microglia_activation_complement": -1.2
+          },
+          "PC5": {
+            "heat_shock": -4.85,
+            "ribosome": 3.59,
+            "sub_Astrocyte": 3.09,
+            "oxphos": 2.54
+          }
+        },
+        "clinical_abs_rho": {
+          "PC1": {
+            "age": 0.056,
+            "sex": 0.149
+          },
+          "PC2": {
+            "age": 0.113,
+            "sex": 0.116
+          },
+          "PC3": {
+            "age": 0.086,
+            "sex": 0.078
+          },
+          "PC4": {
+            "age": 0.025,
+            "sex": 0.021
+          },
+          "PC5": {
+            "age": 0.17,
+            "sex": 0.127
+          }
+        }
+      }
+    },
+    "GSE118553_Temporal_Cortex": {
+      "n_AD": 52,
+      "unadjusted": {
+        "var_pc1_5": [
+          0.206,
+          0.108,
+          0.09,
+          0.062,
+          0.041
+        ],
+        "pc1_abs_rho_neuron": 0.522,
+        "sigclust": {
+          "silhouette": 0.239,
+          "null_median": 0.192,
+          "p": 0.0547
+        }
+      },
+      "adjusted": {
+        "var_pc1_5": [
+          0.184,
+          0.094,
+          0.056,
+          0.04,
+          0.039
+        ],
+        "pc1_abs_rho_neuron": 0.167,
+        "sigclust": {
+          "silhouette": 0.244,
+          "null_median": 0.198,
+          "p": 0.0199
+        },
+        "identity_top_sets_z": {
+          "PC1": {
+            "ribosome": -4.34,
+            "sub_Endothelial": -3.12,
+            "sub_Microglia-PVM": -1.39,
+            "microglia_activation_complement": 1.36
+          },
+          "PC2": {
+            "ribosome": 6.37,
+            "oxphos": 2.95,
+            "heat_shock": 1.77,
+            "sub_Astrocyte": -1.73
+          },
+          "PC3": {
+            "ribosome": -7.37,
+            "sub_Astrocyte": -2.4,
+            "oxphos": -1.61,
+            "immediate_early": 0.94
+          },
+          "PC4": {
+            "heat_shock": -6.35,
+            "immediate_early": -2.97,
+            "sub_Astrocyte": 2.63,
+            "ribosome": -2.09
+          },
+          "PC5": {
+            "heat_shock": 2.8,
+            "ribosome": 2.54,
+            "immediate_early": 1.91,
+            "sub_Endothelial": -1.58
+          }
+        },
+        "clinical_abs_rho": {
+          "PC1": {
+            "age": 0.128,
+            "sex": 0.063
+          },
+          "PC2": {
+            "age": 0.017,
+            "sex": 0.014
+          },
+          "PC3": {
+            "age": 0.074,
+            "sex": 0.017
+          },
+          "PC4": {
+            "age": 0.105,
+            "sex": 0.089
+          },
+          "PC5": {
+            "age": 0.05,
+            "sex": 0.045
+          }
+        }
+      }
+    },
+    "GSE125583_FG": {
+      "n_AD": 219,
+      "unadjusted": {
+        "var_pc1_5": [
+          0.299,
+          0.2,
+          0.079,
+          0.064,
+          0.046
+        ],
+        "pc1_abs_rho_neuron": 0.052,
+        "sigclust": {
+          "silhouette": 0.256,
+          "null_median": 0.206,
+          "p": 0.01
+        }
+      },
+      "adjusted": {
+        "var_pc1_5": [
+          0.419,
+          0.076,
+          0.066,
+          0.054,
+          0.041
+        ],
+        "pc1_abs_rho_neuron": 0.039,
+        "sigclust": {
+          "silhouette": 0.318,
+          "null_median": 0.281,
+          "p": 0.0149
+        },
+        "identity_top_sets_z": {
+          "PC1": {
+            "ribosome": -5.71,
+            "sub_Endothelial": 2.0,
+            "oxphos": -1.59,
+            "sub_Microglia-PVM": 1.46
+          },
+          "PC2": {
+            "heat_shock": -8.09,
+            "sub_Endothelial": 3.28,
+            "ribosome": -2.83,
+            "sub_Astrocyte": 2.4
+          },
+          "PC3": {
+            "ribosome": 3.04,
+            "heat_shock": 2.03,
+            "immediate_early": 1.75,
+            "sub_Microglia-PVM": 1.37
+          },
+          "PC4": {
+            "ribosome": -10.12,
+            "oxphos": -3.9,
+            "immediate_early": 2.14,
+            "sub_Endothelial": -1.61
+          },
+          "PC5": {
+            "ribosome": 5.71,
+            "sub_Endothelial": 3.71,
+            "sub_Microglia-PVM": -2.27,
+            "oxphos": 2.26
+          }
+        },
+        "clinical_abs_rho": {
+          "PC1": {
+            "age": 0.105,
+            "sex": 0.073,
+            "braak_rho": 0.107,
+            "braak_p": 0.1168
+          },
+          "PC2": {
+            "age": 0.165,
+            "sex": 0.042,
+            "braak_rho": 0.061,
+            "braak_p": 0.3709
+          },
+          "PC3": {
+            "age": 0.05,
+            "sex": 0.11,
+            "braak_rho": 0.033,
+            "braak_p": 0.6336
+          },
+          "PC4": {
+            "age": 0.009,
+            "sex": 0.051,
+            "braak_rho": 0.106,
+            "braak_p": 0.1201
+          },
+          "PC5": {
+            "age": 0.134,
+            "sex": 0.087,
+            "braak_rho": -0.122,
+            "braak_p": 0.0724
+          }
+        }
+      }
+    }
+  },
+  "replication": {
+    "GSE132903_MTG|GSE33000_PFC": {
+      "best_abs_r_per_PC_of_first": [
+        0.517,
+        0.181,
+        0.382,
+        0.13,
+        0.475
+      ],
+      "matched_PC_of_second": [
+        1,
+        4,
+        2,
+        3,
+        2
+      ],
+      "null_p95": 0.053
+    },
+    "GSE118553_Temporal_Cortex|GSE33000_PFC": {
+      "best_abs_r_per_PC_of_first": [
+        0.074,
+        0.35,
+        0.317,
+        0.344,
+        0.201
+      ],
+      "matched_PC_of_second": [
+        2,
+        1,
+        2,
+        5,
+        4
+      ],
+      "null_p95": 0.052
+    },
+    "GSE118553_Temporal_Cortex|GSE132903_MTG": {
+      "best_abs_r_per_PC_of_first": [
+        0.096,
+        0.529,
+        0.323,
+        0.16,
+        0.242
+      ],
+      "matched_PC_of_second": [
+        1,
+        1,
+        5,
+        3,
+        3
+      ],
+      "null_p95": 0.053
+    },
+    "GSE118553_Temporal_Cortex|GSE125583_FG": {
+      "best_abs_r_per_PC_of_first": [
+        0.122,
+        0.319,
+        0.208,
+        0.255,
+        0.269
+      ],
+      "matched_PC_of_second": [
+        4,
+        1,
+        4,
+        3,
+        2
+      ],
+      "null_p95": 0.053
+    },
+    "GSE125583_FG|GSE33000_PFC": {
+      "best_abs_r_per_PC_of_first": [
+        0.468,
+        0.466,
+        0.383,
+        0.185,
+        0.186
+      ],
+      "matched_PC_of_second": [
+        1,
+        4,
+        3,
+        2,
+        2
+      ],
+      "null_p95": 0.054
+    },
+    "GSE125583_FG|GSE132903_MTG": {
+      "best_abs_r_per_PC_of_first": [
+        0.579,
+        0.433,
+        0.44,
+        0.24,
+        0.323
+      ],
+      "matched_PC_of_second": [
+        1,
+        5,
+        3,
+        5,
+        5
+      ],
+      "null_p95": 0.055
+    }
+  }
+}

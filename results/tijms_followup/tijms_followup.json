@@ -1,0 +1,273 @@
+{
+  "n_overlap_with_neff_classifier": 36,
+  "cohorts": [
+    {
+      "cohort": "GSE33000_PFC",
+      "n_AD": 310,
+      "tijms_genes_used": 823,
+      "subtypes": {
+        "S1_hyperplasticity": {
+          "rho_neuron": 0.791,
+          "rho_resid_vs_neff_resid_CA": -0.473,
+          "neuron_spec_median": 0.918,
+          "neuron_spec_p": 1.0,
+          "resid_spec_median": 0.721,
+          "resid_spec_p": 1.0,
+          "neuron_strength_median": 0.922,
+          "neuron_strength_p": 1.0,
+          "resid_strength_median": 0.669,
+          "resid_strength_p": 0.9767
+        },
+        "S2_innate_immune": {
+          "rho_neuron": 0.879,
+          "rho_resid_vs_neff_resid_CA": -0.555,
+          "neuron_spec_median": 0.904,
+          "neuron_spec_p": 0.8173,
+          "resid_spec_median": 0.597,
+          "resid_spec_p": 0.6944,
+          "neuron_strength_median": 0.89,
+          "neuron_strength_p": 0.6346,
+          "resid_strength_median": 0.561,
+          "resid_strength_p": 0.5349
+        },
+        "S3_RNA": {
+          "rho_neuron": 0.864,
+          "rho_resid_vs_neff_resid_CA": -0.468,
+          "neuron_spec_median": 0.888,
+          "neuron_spec_p": 0.7542,
+          "resid_spec_median": 0.615,
+          "resid_spec_p": 0.9668,
+          "neuron_strength_median": 0.888,
+          "neuron_strength_p": 0.7841,
+          "resid_strength_median": 0.579,
+          "resid_strength_p": 0.9103
+        },
+        "S4_choroid_plexus": {
+          "rho_neuron": -0.855,
+          "rho_resid_vs_neff_resid_CA": 0.608,
+          "neuron_spec_median": 0.92,
+          "neuron_spec_p": 0.9967,
+          "resid_spec_median": 0.726,
+          "resid_spec_p": 0.99,
+          "neuron_strength_median": 0.924,
+          "neuron_strength_p": 1.0,
+          "resid_strength_median": 0.714,
+          "resid_strength_p": 0.9203
+        },
+        "S5_BBB": {
+          "rho_neuron": -0.839,
+          "rho_resid_vs_neff_resid_CA": 0.418,
+          "neuron_spec_median": 0.898,
+          "neuron_spec_p": 0.9535,
+          "resid_spec_median": 0.62,
+          "resid_spec_p": 0.9834,
+          "neuron_strength_median": 0.893,
+          "neuron_strength_p": 0.907,
+          "resid_strength_median": 0.561,
+          "resid_strength_p": 0.9568
+        }
+      }
+    },
+    {
+      "cohort": "GSE132903_MTG",
+      "n_AD": 97,
+      "tijms_genes_used": 858,
+      "subtypes": {
+        "S1_hyperplasticity": {
+          "rho_neuron": 0.843,
+          "rho_resid_vs_neff_resid_CA": -0.428,
+          "neuron_spec_median": 0.864,
+          "neuron_spec_p": 0.6146,
+          "resid_spec_median": 0.317,
+          "resid_spec_p": 0.3123,
+          "neuron_strength_median": 0.872,
+          "neuron_strength_p": 0.7442,
+          "resid_strength_median": 0.334,
+          "resid_strength_p": 0.3721
+        },
+        "S2_innate_immune": {
+          "rho_neuron": 0.845,
+          "rho_resid_vs_neff_resid_CA": -0.487,
+          "neuron_spec_median": 0.768,
+          "neuron_spec_p": 0.1728,
+          "resid_spec_median": 0.275,
+          "resid_spec_p": 0.1827,
+          "neuron_strength_median": 0.797,
+          "neuron_strength_p": 0.2757,
+          "resid_strength_median": 0.28,
+          "resid_strength_p": 0.1993
+        },
+        "S3_RNA": {
+          "rho_neuron": 0.822,
+          "rho_resid_vs_neff_resid_CA": -0.673,
+          "neuron_spec_median": 0.646,
+          "neuron_spec_p": 0.0332,
+          "resid_spec_median": 0.279,
+          "resid_spec_p": 0.0166,
+          "neuron_strength_median": 0.746,
+          "neuron_strength_p": 0.196,
+          "resid_strength_median": 0.312,
+          "resid_strength_p": 0.0399
+        },
+        "S4_choroid_plexus": {
+          "rho_neuron": -0.914,
+          "rho_resid_vs_neff_resid_CA": 0.573,
+          "neuron_spec_median": 0.867,
+          "neuron_spec_p": 0.1528,
+          "resid_spec_median": 0.358,
+          "resid_spec_p": 0.1595,
+          "neuron_strength_median": 0.874,
+          "neuron_strength_p": 0.1694,
+          "resid_strength_median": 0.406,
+          "resid_strength_p": 0.206
+        },
+        "S5_BBB": {
+          "rho_neuron": -0.822,
+          "rho_resid_vs_neff_resid_CA": 0.652,
+          "neuron_spec_median": 0.713,
+          "neuron_spec_p": 0.0831,
+          "resid_spec_median": 0.261,
+          "resid_spec_p": 0.01,
+          "neuron_strength_median": 0.773,
+          "neuron_strength_p": 0.2458,
+          "resid_strength_median": 0.281,
+          "resid_strength_p": 0.0066
+        }
+      }
+    },
+    {
+      "cohort": "GSE118553_Temporal_Cortex",
+      "n_AD": 52,
+      "tijms_genes_used": 916,
+      "subtypes": {
+        "S1_hyperplasticity": {
+          "rho_neuron": 0.86,
+          "rho_resid_vs_neff_resid_CA": -0.445,
+          "neuron_spec_median": 0.814,
+          "neuron_spec_p": 0.2027,
+          "resid_spec_median": 0.343,
+          "resid_spec_p": 0.2392,
+          "neuron_strength_median": 0.833,
+          "neuron_strength_p": 0.3422,
+          "resid_strength_median": 0.426,
+          "resid_strength_p": 0.4518
+        },
+        "S2_innate_immune": {
+          "rho_neuron": 0.881,
+          "rho_resid_vs_neff_resid_CA": -0.628,
+          "neuron_spec_median": 0.714,
+          "neuron_spec_p": 0.0033,
+          "resid_spec_median": 0.353,
+          "resid_spec_p": 0.0033,
+          "neuron_strength_median": 0.744,
+          "neuron_strength_p": 0.01,
+          "resid_strength_median": 0.33,
+          "resid_strength_p": 0.0233
+        },
+        "S3_RNA": {
+          "rho_neuron": 0.825,
+          "rho_resid_vs_neff_resid_CA": -0.605,
+          "neuron_spec_median": 0.717,
+          "neuron_spec_p": 0.0199,
+          "resid_spec_median": 0.419,
+          "resid_spec_p": 0.0399,
+          "neuron_strength_median": 0.759,
+          "neuron_strength_p": 0.103,
+          "resid_strength_median": 0.453,
+          "resid_strength_p": 0.1063
+        },
+        "S4_choroid_plexus": {
+          "rho_neuron": -0.92,
+          "rho_resid_vs_neff_resid_CA": 0.584,
+          "neuron_spec_median": 0.834,
+          "neuron_spec_p": 0.0199,
+          "resid_spec_median": 0.451,
+          "resid_spec_p": 0.113,
+          "neuron_strength_median": 0.858,
+          "neuron_strength_p": 0.0233,
+          "resid_strength_median": 0.501,
+          "resid_strength_p": 0.2492
+        },
+        "S5_BBB": {
+          "rho_neuron": -0.844,
+          "rho_resid_vs_neff_resid_CA": 0.635,
+          "neuron_spec_median": 0.71,
+          "neuron_spec_p": 0.01,
+          "resid_spec_median": 0.388,
+          "resid_spec_p": 0.0066,
+          "neuron_strength_median": 0.75,
+          "neuron_strength_p": 0.0299,
+          "resid_strength_median": 0.405,
+          "resid_strength_p": 0.0233
+        }
+      }
+    },
+    {
+      "cohort": "GSE125583_FG",
+      "n_AD": 219,
+      "tijms_genes_used": 845,
+      "subtypes": {
+        "S1_hyperplasticity": {
+          "rho_neuron": 0.855,
+          "rho_resid_vs_neff_resid_CA": -0.486,
+          "neuron_spec_median": 0.937,
+          "neuron_spec_p": 1.0,
+          "resid_spec_median": 0.311,
+          "resid_spec_p": 0.2392,
+          "neuron_strength_median": 0.935,
+          "neuron_strength_p": 1.0,
+          "resid_strength_median": 0.28,
+          "resid_strength_p": 0.1993
+        },
+        "S2_innate_immune": {
+          "rho_neuron": 0.894,
+          "rho_resid_vs_neff_resid_CA": -0.522,
+          "neuron_spec_median": 0.837,
+          "neuron_spec_p": 0.1561,
+          "resid_spec_median": 0.207,
+          "resid_spec_p": 0.0133,
+          "neuron_strength_median": 0.852,
+          "neuron_strength_p": 0.2326,
+          "resid_strength_median": 0.177,
+          "resid_strength_p": 0.0033
+        },
+        "S3_RNA": {
+          "rho_neuron": 0.837,
+          "rho_resid_vs_neff_resid_CA": -0.27,
+          "neuron_spec_median": 0.51,
+          "neuron_spec_p": 0.0033,
+          "resid_spec_median": 0.347,
+          "resid_spec_p": 0.9203,
+          "neuron_strength_median": 0.637,
+          "neuron_strength_p": 0.0033,
+          "resid_strength_median": 0.245,
+          "resid_strength_p": 0.3621
+        },
+        "S4_choroid_plexus": {
+          "rho_neuron": -0.938,
+          "rho_resid_vs_neff_resid_CA": 0.533,
+          "neuron_spec_median": 0.869,
+          "neuron_spec_p": 0.0066,
+          "resid_spec_median": 0.14,
+          "resid_spec_p": 0.0033,
+          "neuron_strength_median": 0.896,
+          "neuron_strength_p": 0.0199,
+          "resid_strength_median": 0.1,
+          "resid_strength_p": 0.0033
+        },
+        "S5_BBB": {
+          "rho_neuron": -0.873,
+          "rho_resid_vs_neff_resid_CA": 0.63,
+          "neuron_spec_median": 0.735,
+          "neuron_spec_p": 0.0066,
+          "resid_spec_median": 0.268,
+          "resid_spec_p": 0.0033,
+          "neuron_strength_median": 0.792,
+          "neuron_strength_p": 0.0365,
+          "resid_strength_median": 0.187,
+          "resid_strength_p": 0.0033
+        }
+      }
+    }
+  ]
+}

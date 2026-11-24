@@ -64,6 +64,8 @@ python3 msbb_normalisation_kappa_null.py --data "$DATA" --out "$OUT/msbb"
 python3 other_schemes_clustered.py --data "$DATA" --ref "$REF_DIR/seaad_mtg_reference.csv.gz" --out "$OUT/other_schemes"
 python3 positive_control_simulation.py --data "$DATA" --ref "$REF_DIR" --out "$OUT/positive_control"
 python3 tijms_csf_projection.py --data "$DATA" --ref "$REF_DIR/seaad_mtg_reference.csv.gz" --out "$OUT/tijms_csf"
+python3 tijms_followup.py --data "$DATA" --ref "$REF_DIR/seaad_mtg_reference.csv.gz" --out "$OUT/tijms_followup"
+python3 residual_denovo.py --data "$DATA" --ref-dir "$REF_DIR" --out "$OUT/residual_denovo"
 python3 seaad_neun_histology.py --res "$OUT" --qnp "$REF_DIR/quant_neuropath/MTG_all-values_aibs-ids_20250922.csv" --seaad-meta "$REF_DIR/donors/donor_meta.csv" --out "$OUT/seaad_neun"
 python3 stage_reliability.py --data "$DATA" --out "$OUT/stage_reliability"
 python3 multiple_testing.py    "$OUT"   # last: covers every report above
