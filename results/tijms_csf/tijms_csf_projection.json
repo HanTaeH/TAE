@@ -1,0 +1,199 @@
+{
+  "n_clustering_proteins": 1058,
+  "centroid_spec_mix_glia_nonspec_neuron_absent": [
+    441,
+    469,
+    133,
+    15
+  ],
+  "cohorts": [
+    {
+      "cohort": "GSE33000_PFC",
+      "n_AD": 310,
+      "genes_found": 875,
+      "subtypes": {
+        "S1_hyperplasticity": {
+          "rho_neuron": 0.799,
+          "rho_neff_CA": -0.869,
+          "null_expr_median_abs": 0.848,
+          "p_expr": 0.9269,
+          "null_spec_median_abs": 0.914,
+          "p_spec": 1.0
+        },
+        "S2_innate_immune": {
+          "rho_neuron": 0.885,
+          "rho_neff_CA": -0.931,
+          "null_expr_median_abs": 0.841,
+          "p_expr": 0.0864,
+          "null_spec_median_abs": 0.896,
+          "p_spec": 0.6877
+        },
+        "S3_RNA": {
+          "rho_neuron": 0.887,
+          "rho_neff_CA": -0.9,
+          "null_expr_median_abs": 0.821,
+          "p_expr": 0.0332,
+          "null_spec_median_abs": 0.882,
+          "p_spec": 0.4086
+        },
+        "S4_choroid_plexus": {
+          "rho_neuron": -0.869,
+          "rho_neff_CA": 0.927,
+          "null_expr_median_abs": 0.841,
+          "p_expr": 0.0864,
+          "null_spec_median_abs": 0.916,
+          "p_spec": 1.0
+        },
+        "S5_BBB": {
+          "rho_neuron": -0.851,
+          "rho_neff_CA": 0.877,
+          "null_expr_median_abs": 0.843,
+          "p_expr": 0.4252,
+          "null_spec_median_abs": 0.89,
+          "p_spec": 0.9269
+        }
+      }
+    },
+    {
+      "cohort": "GSE132903_MTG",
+      "n_AD": 97,
+      "genes_found": 892,
+      "subtypes": {
+        "S1_hyperplasticity": {
+          "rho_neuron": 0.852,
+          "rho_neff_CA": -0.873,
+          "null_expr_median_abs": 0.287,
+          "p_expr": 0.0033,
+          "null_spec_median_abs": 0.873,
+          "p_spec": 0.6246
+        },
+        "S2_innate_immune": {
+          "rho_neuron": 0.861,
+          "rho_neff_CA": -0.836,
+          "null_expr_median_abs": 0.275,
+          "p_expr": 0.0033,
+          "null_spec_median_abs": 0.788,
+          "p_spec": 0.1628
+        },
+        "S3_RNA": {
+          "rho_neuron": 0.831,
+          "rho_neff_CA": -0.816,
+          "null_expr_median_abs": 0.248,
+          "p_expr": 0.0033,
+          "null_spec_median_abs": 0.665,
+          "p_spec": 0.0731
+        },
+        "S4_choroid_plexus": {
+          "rho_neuron": -0.915,
+          "rho_neff_CA": 0.92,
+          "null_expr_median_abs": 0.308,
+          "p_expr": 0.0033,
+          "null_spec_median_abs": 0.868,
+          "p_spec": 0.1495
+        },
+        "S5_BBB": {
+          "rho_neuron": -0.831,
+          "rho_neff_CA": 0.814,
+          "null_expr_median_abs": 0.204,
+          "p_expr": 0.0033,
+          "null_spec_median_abs": 0.732,
+          "p_spec": 0.1329
+        }
+      }
+    },
+    {
+      "cohort": "GSE118553_Temporal_Cortex",
+      "n_AD": 52,
+      "genes_found": 951,
+      "subtypes": {
+        "S1_hyperplasticity": {
+          "rho_neuron": 0.862,
+          "rho_neff_CA": -0.852,
+          "null_expr_median_abs": 0.308,
+          "p_expr": 0.0033,
+          "null_spec_median_abs": 0.823,
+          "p_spec": 0.2326
+        },
+        "S2_innate_immune": {
+          "rho_neuron": 0.891,
+          "rho_neff_CA": -0.837,
+          "null_expr_median_abs": 0.319,
+          "p_expr": 0.0033,
+          "null_spec_median_abs": 0.739,
+          "p_spec": 0.0133
+        },
+        "S3_RNA": {
+          "rho_neuron": 0.834,
+          "rho_neff_CA": -0.771,
+          "null_expr_median_abs": 0.364,
+          "p_expr": 0.0033,
+          "null_spec_median_abs": 0.72,
+          "p_spec": 0.0133
+        },
+        "S4_choroid_plexus": {
+          "rho_neuron": -0.928,
+          "rho_neff_CA": 0.929,
+          "null_expr_median_abs": 0.349,
+          "p_expr": 0.0033,
+          "null_spec_median_abs": 0.845,
+          "p_spec": 0.01
+        },
+        "S5_BBB": {
+          "rho_neuron": -0.855,
+          "rho_neff_CA": 0.778,
+          "null_expr_median_abs": 0.361,
+          "p_expr": 0.0033,
+          "null_spec_median_abs": 0.718,
+          "p_spec": 0.0033
+        }
+      }
+    },
+    {
+      "cohort": "GSE125583_FG",
+      "n_AD": 219,
+      "genes_found": 881,
+      "subtypes": {
+        "S1_hyperplasticity": {
+          "rho_neuron": 0.868,
+          "rho_neff_CA": -0.88,
+          "null_expr_median_abs": 0.313,
+          "p_expr": 0.01,
+          "null_spec_median_abs": 0.941,
+          "p_spec": 0.9934
+        },
+        "S2_innate_immune": {
+          "rho_neuron": 0.904,
+          "rho_neff_CA": -0.911,
+          "null_expr_median_abs": 0.279,
+          "p_expr": 0.0033,
+          "null_spec_median_abs": 0.852,
+          "p_spec": 0.1395
+        },
+        "S3_RNA": {
+          "rho_neuron": 0.847,
+          "rho_neff_CA": -0.887,
+          "null_expr_median_abs": 0.111,
+          "p_expr": 0.0033,
+          "null_spec_median_abs": 0.525,
+          "p_spec": 0.0033
+        },
+        "S4_choroid_plexus": {
+          "rho_neuron": -0.941,
+          "rho_neff_CA": 0.945,
+          "null_expr_median_abs": 0.25,
+          "p_expr": 0.0033,
+          "null_spec_median_abs": 0.881,
+          "p_spec": 0.0233
+        },
+        "S5_BBB": {
+          "rho_neuron": -0.877,
+          "rho_neff_CA": 0.923,
+          "null_expr_median_abs": 0.145,
+          "p_expr": 0.0033,
+          "null_spec_median_abs": 0.74,
+          "p_spec": 0.01
+        }
+      }
+    }
+  ]
+}
