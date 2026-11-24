@@ -5,6 +5,7 @@
    (Fibro = Fibro_pooled, Neuron = Brain_Neuron_pooled). Treating the four z as independent is conservative
    because sample overlap between the two traits makes their estimates positively correlated.
    Independent cohorts (FinnGen, MVP EUR, UKBB) are combined by Stouffer; EUR meta shown separately.
+   Each arm (fibro, neuron) is also reported alone; *_adjDEP traits repeat the test after removing depression (exp 6).
 Usage: python -I summarise_v3.py <h2cts_dir> <out_dir>
 """
 import sys, os, glob
@@ -36,8 +37,11 @@ d.pivot(index="Name", columns="trait", values="Coefficient_P_value").to_csv(f"{o
 
 Z = d.pivot(index="trait", columns="Name", values="z")
 rows = []
-for coh, s, p in [("EURmeta", "EURmeta.SPINSTENOSIS", "EURmeta.DORSALGIA"), ("FinnGen", "fg.SPINSTENOSIS", "fg.DORSALGIA"),
-                  ("MVP_EUR", "MVP_EUR.SPINSTENOSIS", "MVP_EUR.DORSALGIA"), ("UKBB", "ukbb.SPINSTENOSIS", "ukbb.DORSALGIA")]:
+PAIRS = [("EURmeta", "EURmeta.SPINSTENOSIS", "EURmeta.DORSALGIA"), ("FinnGen", "fg.SPINSTENOSIS", "fg.DORSALGIA"),
+         ("MVP_EUR", "MVP_EUR.SPINSTENOSIS", "MVP_EUR.DORSALGIA"), ("UKBB", "ukbb.SPINSTENOSIS", "ukbb.DORSALGIA")]
+# experiment 6: both traits with the FinnGen depression genetic component removed
+PAIRS += [(c + "_adjDEP", s + "_adjDEP", p + "_adjDEP") for c, s, p in PAIRS]
+for coh, s, p in PAIRS:
     if s not in Z.index or p not in Z.index:
         continue
     for fib, neu in [("Fibro_pooled", "Brain_Neuron_pooled"), ("Fibro_pooled__w50", "Brain_Neuron_pooled__w50"),
@@ -46,12 +50,16 @@ for coh, s, p in [("EURmeta", "EURmeta.SPINSTENOSIS", "EURmeta.DORSALGIA"), ("Fi
         rows.append(dict(cohort=coh, fibro_set=fib, neuron_set=neu, z_fib_sten=Z.loc[s, fib], z_fib_dors=Z.loc[p, fib],
                          z_neu_sten=Z.loc[s, neu], z_neu_dors=Z.loc[p, neu], Z_D=D / 2, p_D=norm.sf(D / 2)))
 R = pd.DataFrame(rows)
-for fib in R.fibro_set.unique():
-    x = R[(R.fibro_set == fib) & R.cohort.isin(["FinnGen", "MVP_EUR", "UKBB"])]
-    if len(x):
-        zc = x.Z_D.sum() / np.sqrt(len(x))
-        R = pd.concat([R, pd.DataFrame([dict(cohort="Stouffer(FG,MVP,UKBB)", fibro_set=fib, neuron_set=x.neuron_set.iloc[0],
-                                             Z_D=zc, p_D=norm.sf(zc))])], ignore_index=True)
+R["Z_fib_arm"] = (R.z_fib_sten - R.z_fib_dors) / np.sqrt(2)
+R["Z_neu_arm"] = (R.z_neu_dors - R.z_neu_sten) / np.sqrt(2)
+for suf in ["", "_adjDEP"]:
+    for fib in R.fibro_set.unique():
+        x = R[(R.fibro_set == fib) & R.cohort.isin([c + suf for c in ["FinnGen", "MVP_EUR", "UKBB"]])]
+        if len(x):
+            k = np.sqrt(len(x)); zc = x.Z_D.sum() / k
+            R = pd.concat([R, pd.DataFrame([dict(cohort="Stouffer(FG,MVP,UKBB)" + suf, fibro_set=fib, neuron_set=x.neuron_set.iloc[0],
+                                                 Z_D=zc, p_D=norm.sf(zc), Z_fib_arm=x.Z_fib_arm.sum() / k,
+                                                 Z_neu_arm=x.Z_neu_arm.sum() / k)])], ignore_index=True)
 R.to_csv(f"{out}/dissociation_test.tsv", sep="\t", index=False)
 pd.set_option("display.width", 250)
 print(R.round(4).to_string(index=False))
