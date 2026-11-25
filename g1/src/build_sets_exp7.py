@@ -4,6 +4,7 @@ Rebuild the Ligament_Fibro column of the v3 atlas from
   LSS  = stenotic / hypertrophied ligamentum flavum (GSE294458 'LSS' + GSE267819 LFH1-3)
 EXP7_ROUND=2: Ligament_Fibro_LSS294 (GSE294458 LSS donor only, same dataset as LDH) and LF_hypertrophy_up/down
 (top 10% by log2 CPM ratio LSS294 vs LDH, genes with CPM > 1 in either).
+EXP7_ROUND=3: depth-matched LSS donor sets (1,088 cells, counts thinned to the LDH total, 3 seeds).
 Uses the same ligament fibroblast clusters as the atlas, then make top-10% specificity sets (+/-100 kb) for
 Ligament_Fibro_LDH, Ligament_Fibro_LSS and Fibro_pooled_LDH (LDH ligament + disc fibroblast), plus all_genes.
 Other atlas columns are unchanged. Also writes overlap with the v3 Ligament_Fibro set.
@@ -34,6 +35,24 @@ def pb(ds, samples):
 ldh, n_ldh = pb("GSE294458", ["LDH"])
 lss1, n1 = pb("GSE294458", ["LSS"]); lss2, n2 = pb("GSE267819", ["LFH1", "LFH2", "LFH3"])
 cols = {"Ligament_Fibro_LDH": ldh.fillna(0), "Ligament_Fibro_LSS": pd.concat([lss1, lss2], axis=1).mean(axis=1, skipna=True).fillna(0)}
+if os.environ.get("EXP7_ROUND") == "3":
+    # round 3: depth-matched control. LDH cells have ~3x fewer UMIs and ~5x fewer total counts than the LSS donor,
+    # so its pseudobulk is noisier. Draw 1,088 LSS cells and binomially thin their summed counts to the LDH total
+    # (3 seeds), then rebuild the LSS294 set.
+    a = ad.read_h5ad(f"{scd}/GSE294458.counts.h5ad")
+    cl = set(lab[(lab.dataset == "GSE294458") & (lab.label == "Ligament_Fibro")].cluster)
+    fib = a.obs.cl.astype(str).isin(cl).values
+    tot_ldh = float(a.X[fib & (a.obs["sample"] == "LDH").values].sum())
+    idx = np.where(fib & (a.obs["sample"] == "LSS").values)[0]
+    cols = {}
+    for seed in range(3):
+        rng = np.random.default_rng(2026 + seed)
+        sub = rng.choice(idx, n_ldh, replace=False)
+        s = np.asarray(a.X[sub].sum(0)).ravel().astype(np.int64)
+        s = rng.binomial(s, min(1.0, tot_ldh / s.sum()))
+        s = pd.Series(s, index=a.var_names).groupby(level=0).sum().reindex(atlas.index)
+        cols[f"Ligament_Fibro_LSSdown{seed}"] = (s / s.sum() * 1e6).fillna(0)
+        print("seed", seed, "cells", n_ldh, "counts", int(s.sum()), "LDH counts", int(tot_ldh))
 if os.environ.get("EXP7_ROUND") == "2":
     # round 2: same-dataset, one-donor-each comparison, and the hypertrophy program itself
     cols = {"Ligament_Fibro_LSS294": lss1.fillna(0)}
@@ -53,7 +72,7 @@ if os.environ.get("EXP7_ROUND") == "2":
     lfc = (np.log2(lss1.fillna(0) + 1) - np.log2(ldh.fillna(0) + 1))[e]
     sets["LF_hypertrophy_up"] = list(lfc.sort_values(ascending=False).index[:k])
     sets["LF_hypertrophy_down"] = list(lfc.sort_values().index[:k])
-if os.environ.get("EXP7_ROUND") != "2":
+if os.environ.get("EXP7_ROUND") not in ("2", "3"):
     a = atlas.drop(columns=["Ligament_Fibro", "Disc_Fibro"]).assign(
         Fibro_pooled_LDH=(cols["Ligament_Fibro_LDH"] / cols["Ligament_Fibro_LDH"].sum() * 1e6 + atlas.Disc_Fibro) / 2)
     sets["Fibro_pooled_LDH"] = top(a, "Fibro_pooled_LDH")
