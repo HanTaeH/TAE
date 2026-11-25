@@ -75,7 +75,10 @@ python3 stage_reliability.py --data "$DATA" --out "$OUT/stage_reliability"
 python3 multiple_testing.py    "$OUT"   # last: covers every report above
 python3 supplementary_tables.py --res "$OUT" --out "$OUT/supplementary/Supplementary_Tables_S1-S14.xlsx"
 # v10 (2026-11-25): upper-tail bound, positive control at real AD sizes, within-AD plaque
-python src/bound_upper_tail.py --data "$DATA" --ref "$SEAAD/seaad_mtg_reference.csv.gz" --res results --out results/bound_upper_tail
-for n in 52 97 219 310; do python src/positive_control_simulation.py --data "$DATA" --ref "$SEAAD" --out results/positive_control --n-ad $n --scen within_AD_subtype --fracs 0 0.02 0.05 0.1 0.25 --tag _nAD$n; done
-python src/msbb_plaque_within_ad.py --res results --out results/msbb
-python src/supplementary_tables.py --res results --out results/supplementary/Supplementary_Tables_v10.xlsx
+python3 bound_upper_tail.py --data "$DATA" --ref "$REF_DIR/seaad_mtg_reference.csv.gz" --res "$OUT" --out "$OUT/bound_upper_tail"
+for n in 52 97 219 310; do
+  python3 positive_control_simulation.py --data "$DATA" --ref "$REF_DIR" --out "$OUT/positive_control" --n-ad $n \
+    --scen within_AD_subtype --fracs 0 0.02 0.05 0.1 0.25 --tag _nAD$n
+done
+python3 msbb_plaque_within_ad.py --res "$OUT" --out "$OUT/msbb"
+python3 supplementary_tables.py --res "$OUT" --out "$OUT/supplementary/Supplementary_Tables_v10.xlsx"
