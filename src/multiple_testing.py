@@ -29,7 +29,11 @@ CONFIRMATORY = [
     r"^braak_gse125583::AD_only/(ca_vs_braak|random_null)/p$",
     r"^braak::(T1_all/ca_vs_braak|T5_random_null/all)/p$",
     r"^seaad_pseudobulk::sorted/(ca_vs_CPS|ca_vs_CPS_random_null)/p$",
-    r"^msbb::S_subject_cortex/ca_vs_cdr/p$",  # across-region test dropped (CDR-shuffle null)
+    r"^msbb::S_subject_cortex/ca_vs_cdr/p$",
+    # v11: the across-region test stays in the family, tested against its CDR-shuffle null (a null result)
+    r"^deconv_validation_blocks::B_msbb_across_region_blocks/p_obs_more_negative_than_null$",
+    # v11 (review round 9): the classifier-versus-cell-type-matched-null comparison, both tails
+    rf"^bound_upper_tail::{INDEP}/(spec|strength)/p_(lower|upper)$",
     rf"^li2022::{INDEP}/null_max_abs_neuron_rho/p$",
     # second-round revision: secondary claims carried into the text
     rf"^null::{INDEP}/stage_rho_agesex/p_empirical$",
@@ -57,10 +61,12 @@ def bh(p: np.ndarray) -> np.ndarray:
 
 def collect(res: Path) -> pd.DataFrame:
     rows = []
-    extra = [res / x for x in ["stage_neuron_adjusted/stage_neuron_adjusted.json",
-                                "stage_reliability/stage_reliability.json", "stage_followups/stage_followups.json",
-                                "stage_extra/stage_extra_report.json"]]
-    for f in dict.fromkeys(sorted(res.glob("*/*report.json")) + [x for x in extra if x.exists()]):
+    # v11: every JSON result file (not only *report.json), except this step's own output and the literature counts
+    # simulation outputs are power checks, not tests of the data, and are not counted
+    skip = {"multiple_testing", "literature", "supplementary", "figures", "positive_control", "simulation",
+            "simulation_revision", "seaad_v11"}
+    files = [f for f in sorted(res.glob("*/*.json")) if f.parent.name not in skip]
+    for f in dict.fromkeys(files):
         name = f.stem.replace("_report", "")
         name = {"braak_gse125583": "braak_gse125583"}.get(name, name)
 
@@ -82,7 +88,20 @@ def collect(res: Path) -> pd.DataFrame:
         for _, r in pd.read_csv(nf).iterrows():
             rows.append({"report": "stage_neuron_adjusted_null", "path": f"{r.cohort}/p_empirical",
                          "estimate": r.neff_adjusted, "n": np.nan, "p": float(r.p_empirical)})
-    return pd.DataFrame(rows)
+    for csv, rep in [("seaad_v11/seaad_regulators_within_type.csv", "seaad_regulators_within_type"),
+                     ("seaad_v11/seaad_copathology.csv", "seaad_copathology")]:
+        f = res / csv
+        if f.exists():  # v11 tables with one test per row
+            for _, r in pd.read_csv(f).iterrows():
+                path = "/".join(str(r[c]) for c in r.index if c in ("gene", "cell_type", "vs", "pathology", "score", "adjust"))
+                rows.append({"report": rep, "path": path + "/p", "estimate": r.get("rho_age_sex", r.get("rho")),
+                             "n": r.get("n", np.nan), "p": float(r["p"])})
+    df = pd.DataFrame(rows)
+    # duplicates: the specificity-null lower tail is reported by both null_specificity_matched and
+    # bound_upper_tail, and spike_in_real repeats both nulls; keep one copy of each test
+    dup = ((df.report == "null_specificity_matched") & df.path.str.contains("neuron_rho")) | \
+          ((df.report == "spike_in_real") & ~df.path.str.contains("strength_decile"))
+    return df[~dup]
 
 
 def main() -> None:

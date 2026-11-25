@@ -1,0 +1,288 @@
+{
+  "GSE33000_PFC": {
+    "n_ad": 310,
+    "B_axis": {
+      "vs_neuron": 0.228,
+      "vs_astrocyte": -0.376,
+      "vs_microglia": -0.11,
+      "vs_oligodendrocyte": -0.55,
+      "vs_endothelial": -0.006,
+      "vs_CA": -0.097,
+      "oligo_vs_spec_null": {
+        "obs": -0.55,
+        "null_median": -0.326,
+        "null_q05_q95": [
+          -0.431,
+          -0.214
+        ],
+        "p_lower": 0.0033,
+        "p_upper": 1.0
+      }
+    },
+    "P1_adjusted": {
+      "raw": -0.928,
+      "partial_oligo": -0.92,
+      "partial_all_glia": -0.817
+    },
+    "neuron_subscores": {
+      "excitatory": {
+        "genes": [
+          "SLC17A7",
+          "NRGN",
+          "CALB1"
+        ],
+        "rho": -0.742,
+        "partial_given_other_two": -0.094
+      },
+      "inhibitory": {
+        "genes": [
+          "GAD1",
+          "GAD2",
+          "SST"
+        ],
+        "rho": -0.873,
+        "partial_given_other_two": -0.401
+      },
+      "pan_synaptic": {
+        "genes": [
+          "SNAP25",
+          "STMN2",
+          "SYN1",
+          "ENO2",
+          "VSNL1",
+          "NEFL",
+          "GAP43"
+        ],
+        "rho": -0.928,
+        "partial_given_other_two": -0.678
+      }
+    },
+    "n_age_imputed": 0,
+    "case_control": {
+      "partial_agesex": 0.435,
+      "partial_agesex_neuron": 0.171,
+      "semipartial_agesex_neuron": 0.078,
+      "share_CA_variance_left_after_neuron": 0.249
+    }
+  },
+  "GSE132903_MTG": {
+    "n_ad": 97,
+    "B_axis": {
+      "vs_neuron": 0.195,
+      "vs_astrocyte": -0.283,
+      "vs_microglia": -0.31,
+      "vs_oligodendrocyte": -0.009,
+      "vs_endothelial": -0.306,
+      "vs_CA": -0.151,
+      "oligo_vs_spec_null": {
+        "obs": -0.009,
+        "null_median": -0.439,
+        "null_q05_q95": [
+          -0.601,
+          -0.232
+        ],
+        "p_lower": 1.0,
+        "p_upper": 0.0033
+      }
+    },
+    "P1_adjusted": {
+      "raw": -0.921,
+      "partial_oligo": -0.901,
+      "partial_all_glia": -0.849
+    },
+    "neuron_subscores": {
+      "excitatory": {
+        "genes": [
+          "SLC17A7",
+          "NRGN",
+          "CALB1"
+        ],
+        "rho": -0.8,
+        "partial_given_other_two": -0.11
+      },
+      "inhibitory": {
+        "genes": [
+          "GAD1",
+          "GAD2",
+          "SST"
+        ],
+        "rho": -0.836,
+        "partial_given_other_two": -0.233
+      },
+      "pan_synaptic": {
+        "genes": [
+          "SNAP25",
+          "STMN2",
+          "SYN1",
+          "ENO2",
+          "VSNL1",
+          "NEFL",
+          "NEFM"
+        ],
+        "rho": -0.924,
+        "partial_given_other_two": -0.697
+      }
+    },
+    "n_age_imputed": 0,
+    "case_control": {
+      "partial_agesex": 0.459,
+      "partial_agesex_neuron": 0.09,
+      "semipartial_agesex_neuron": 0.038,
+      "share_CA_variance_left_after_neuron": 0.229
+    }
+  },
+  "GSE118553_Temporal_Cortex": {
+    "n_ad": 52,
+    "B_axis": {
+      "vs_neuron": 0.08,
+      "vs_astrocyte": -0.348,
+      "vs_microglia": -0.305,
+      "vs_oligodendrocyte": -0.576,
+      "vs_endothelial": -0.038,
+      "vs_CA": -0.231,
+      "oligo_vs_spec_null": {
+        "obs": -0.576,
+        "null_median": -0.126,
+        "null_q05_q95": [
+          -0.431,
+          0.135
+        ],
+        "p_lower": 0.01,
+        "p_upper": 0.9934
+      }
+    },
+    "P1_adjusted": {
+      "raw": -0.85,
+      "partial_oligo": -0.9,
+      "partial_all_glia": -0.874
+    },
+    "neuron_subscores": {
+      "excitatory": {
+        "genes": [
+          "SLC17A7",
+          "NRGN",
+          "CALB1"
+        ],
+        "rho": -0.688,
+        "partial_given_other_two": -0.007
+      },
+      "inhibitory": {
+        "genes": [
+          "GAD1",
+          "GAD2",
+          "SST"
+        ],
+        "rho": -0.623,
+        "partial_given_other_two": -0.296
+      },
+      "pan_synaptic": {
+        "genes": [
+          "SNAP25",
+          "STMN2",
+          "SYN1",
+          "ENO2",
+          "VSNL1",
+          "NEFL",
+          "NEFM",
+          "GAP43"
+        ],
+        "rho": -0.845,
+        "partial_given_other_two": -0.626
+      }
+    },
+    "n_age_imputed": 1,
+    "case_control": {
+      "partial_agesex": 0.424,
+      "partial_agesex_neuron": 0.043,
+      "semipartial_agesex_neuron": 0.017,
+      "share_CA_variance_left_after_neuron": 0.193
+    },
+    "GSE118553_AD_vs_control": {
+      "n": 83,
+      "CA": 0.428,
+      "neuron": -0.426,
+      "CA_given_neuron": 0.095
+    },
+    "GSE118553_AsymAD_vs_AD": {
+      "n": 84,
+      "CA": 0.377,
+      "neuron": -0.456,
+      "CA_given_neuron": 0.006
+    },
+    "GSE118553_AsymAD_vs_control": {
+      "n": 63,
+      "CA": -0.001,
+      "neuron": 0.008,
+      "CA_given_neuron": 0.047
+    }
+  },
+  "GSE125583_FG": {
+    "n_ad": 219,
+    "B_axis": {
+      "vs_neuron": 0.6,
+      "vs_astrocyte": -0.147,
+      "vs_microglia": -0.255,
+      "vs_oligodendrocyte": -0.503,
+      "vs_endothelial": -0.263,
+      "vs_CA": -0.411,
+      "oligo_vs_spec_null": {
+        "obs": -0.503,
+        "null_median": -0.636,
+        "null_q05_q95": [
+          -0.711,
+          -0.536
+        ],
+        "p_lower": 0.9867,
+        "p_upper": 0.0166
+      }
+    },
+    "P1_adjusted": {
+      "raw": -0.927,
+      "partial_oligo": -0.884,
+      "partial_all_glia": -0.769
+    },
+    "neuron_subscores": {
+      "excitatory": {
+        "genes": [
+          "SLC17A7",
+          "NRGN",
+          "CALB1"
+        ],
+        "rho": -0.863,
+        "partial_given_other_two": -0.167
+      },
+      "inhibitory": {
+        "genes": [
+          "GAD1",
+          "GAD2",
+          "SST"
+        ],
+        "rho": -0.86,
+        "partial_given_other_two": -0.365
+      },
+      "pan_synaptic": {
+        "genes": [
+          "SNAP25",
+          "STMN2",
+          "SYN1",
+          "ENO2",
+          "RBFOX3",
+          "VSNL1",
+          "NEFL",
+          "NEFM",
+          "GAP43"
+        ],
+        "rho": -0.925,
+        "partial_given_other_two": -0.643
+      }
+    },
+    "n_age_imputed": 1,
+    "case_control": {
+      "partial_agesex": 0.393,
+      "partial_agesex_neuron": 0.154,
+      "semipartial_agesex_neuron": 0.063,
+      "share_CA_variance_left_after_neuron": 0.191
+    }
+  },
+  "pooled_semipartial_mean_fisher": 0.049
+}

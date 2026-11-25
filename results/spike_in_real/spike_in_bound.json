@@ -1,0 +1,102 @@
+{
+  "GSE33000_PFC": {
+    "n_ad": 310,
+    "obs_rho": -0.928,
+    "spec": {
+      "null_q05": -0.904,
+      "margin": -0.024,
+      "ucl95_f": 0.0,
+      "ucl95_var_share": 0.0,
+      "beyond_grid": false
+    },
+    "strength_tertile": {
+      "null_q05": -0.928,
+      "margin": 0.0,
+      "ucl95_f": 0.0,
+      "ucl95_var_share": 0.0,
+      "beyond_grid": false
+    },
+    "strength_decile": {
+      "null_q05": -0.925,
+      "margin": -0.003,
+      "ucl95_f": 0.0,
+      "ucl95_var_share": 0.0,
+      "beyond_grid": false
+    }
+  },
+  "GSE132903_MTG": {
+    "n_ad": 97,
+    "obs_rho": -0.921,
+    "spec": {
+      "null_q05": -0.933,
+      "margin": 0.012,
+      "ucl95_f": 0.028,
+      "ucl95_var_share": 0.018,
+      "beyond_grid": false
+    },
+    "strength_tertile": {
+      "null_q05": -0.924,
+      "margin": 0.003,
+      "ucl95_f": 0.004,
+      "ucl95_var_share": 0.002,
+      "beyond_grid": false
+    },
+    "strength_decile": {
+      "null_q05": -0.923,
+      "margin": 0.002,
+      "ucl95_f": 0.0,
+      "ucl95_var_share": 0.0,
+      "beyond_grid": false
+    }
+  },
+  "GSE118553_Temporal_Cortex": {
+    "n_ad": 52,
+    "obs_rho": -0.85,
+    "spec": {
+      "null_q05": -0.921,
+      "margin": 0.071,
+      "ucl95_f": 0.138,
+      "ucl95_var_share": 0.15,
+      "beyond_grid": false
+    },
+    "strength_tertile": {
+      "null_q05": -0.887,
+      "margin": 0.037,
+      "ucl95_f": 0.092,
+      "ucl95_var_share": 0.077,
+      "beyond_grid": false
+    },
+    "strength_decile": {
+      "null_q05": -0.903,
+      "margin": 0.053,
+      "ucl95_f": 0.114,
+      "ucl95_var_share": 0.11,
+      "beyond_grid": false
+    }
+  },
+  "GSE125583_FG": {
+    "n_ad": 219,
+    "obs_rho": -0.927,
+    "spec": {
+      "null_q05": -0.958,
+      "margin": 0.031,
+      "ucl95_f": 0.169,
+      "ucl95_var_share": 0.05,
+      "beyond_grid": false
+    },
+    "strength_tertile": {
+      "null_q05": -0.955,
+      "margin": 0.028,
+      "ucl95_f": 0.161,
+      "ucl95_var_share": 0.045,
+      "beyond_grid": false
+    },
+    "strength_decile": {
+      "null_q05": -0.956,
+      "margin": 0.029,
+      "ucl95_f": 0.164,
+      "ucl95_var_share": 0.047,
+      "beyond_grid": false
+    }
+  }
+}

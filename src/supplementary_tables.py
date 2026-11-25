@@ -15,6 +15,7 @@ Usage: python supplementary_tables.py --res ../results --out <file.xlsx>
 """
 from __future__ import annotations
 
+import numpy as np
 import argparse
 import json
 from pathlib import Path
@@ -54,6 +55,7 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--res", type=Path, required=True)
     ap.add_argument("--out", type=Path, required=True)
+    ap.add_argument("--ren", type=Path, default=None, help="JSON old->new sheet numbers (manuscript_tokens.py); default v10 map")
     a = ap.parse_args()
     R = a.res
     sheets = {}
@@ -75,11 +77,17 @@ def main() -> None:
                          "cohorts": "GSE48350, GSE122063, GSE5281", "composition_mentioned": True, "null_control": False,
                          "independent_validation": False}])
     lit = pd.concat([lit, lai], ignore_index=True)
-    lit["features_from"] = ["full text" if s in FULL_TEXT else "abstract" for s in lit.study_id]
-    # automated keyword flags come from titles/abstracts; for the nine full-text studies the manual
-    # reading below takes precedence (results/literature comparison table)
+    # v11: study label follows the publication year (Song2025 was published in 2026), and the source of the
+    # methods coding (full text, partial full text or abstract) comes from the methods-coding sheet (S2b), so
+    # that S2 and S2b agree (review round 9, Reviewer 1 table item 2)
+    lit["study_id"] = lit.study_id.replace({"Song2025": "Song2026"})
+    mc0 = pd.read_csv(R / "literature/methods_coding_2026-11-25.csv").set_index("study")
+    key = lit.study_id.str.split("_").str[0]
+    lit["features_from"] = key.map(mc0["source"]).fillna(
+        pd.Series(["full text" if s in FULL_TEXT else "abstract" for s in lit.study_id], index=lit.index))
     lit = lit.rename(columns={"composition_mentioned": "composition_keyword_in_abstract"})
-    lit["composition_fulltext"] = lit.study_id.map(COMPOSITION_FULLTEXT).fillna("not assessed (abstract only)")
+    comp = lit.study_id.map({("Song2026" if k == "Song2025" else k): v for k, v in COMPOSITION_FULLTEXT.items()})
+    lit["composition_from_text"] = comp.fillna(key.map(mc0["composition"])).fillna("not assessed (abstract only)")
     sheets["S1_literature"] = lit.sort_values(["year", "first_author"])
 
     sheets["S2_primary_per_cohort"] = pd.read_csv(R / "meta_revision/per_cohort.csv")
@@ -95,6 +103,13 @@ def main() -> None:
     sheets["S4_seaad_pseudobulk_tests"] = pd.read_csv(R / "seaad_sensitivity/fdr_all_pseudobulk_tests.csv")
     sheets["S5_mediation_all_models"] = pd.read_csv(R / "mediation_revision/mediation_forward_reverse.csv")
     h = pd.read_csv(R / "residual_go/HALLMARK_consistency.csv", index_col=0)
+    # v11: all_up/all_down mean "significant in every cohort-region set in the same direction"; renamed, and the
+    # sign agreement used in the text is added (review round 9, Reviewer 1 table item 3)
+    h = h.rename(columns={"all_up": "significant_up_in_all_sets", "all_down": "significant_down_in_all_sets",
+                          "arrays_up": "significant_up_in_all_array_sets", "arrays_down": "significant_down_in_all_array_sets"})
+    zc = [c for c in h.columns if c.startswith("z_")]
+    if zc:
+        h["same_sign_in_all_sets"] = (np.sign(h[zc]).nunique(axis=1) == 1)
     sheets["S6_hallmark_residual_axis"] = h.sort_values("meta_z").reset_index()
     mt = pd.read_csv(R / "multiple_testing/all_tests.csv")
     sheets["S7_primary_secondary_tests"] = mt[mt.family.isin(["primary", "secondary"])].sort_values(["family", "p"])
@@ -162,7 +177,15 @@ def main() -> None:
                      "spec_null_median": d["null_median"], "spec_p_more_coupled": d["p_median"],
                      "note": f"30 subsamples; median p; share p<0.05 = {d['share_p_lt_0.05']}"})
     sheets["S15_neuron_strength_null"] = pd.DataFrame(rows)
-    sheets["S16_kappa_random_covariates"] = pd.read_csv(R / "msbb/msbb_normalisation_kappa_null.csv")
+    kv = R / "msbb/msbb_kappa_v11.csv"
+    if kv.exists():  # v11: same random covariates in every region, R2-matched random components, bootstrap CIs
+        k11 = pd.read_csv(kv)
+        ks = json.loads((R / "msbb/msbb_kappa_v11.json").read_text())
+        sheets["S16_kappa_random_covariates"] = pd.concat([k11, pd.DataFrame(
+            [{"region": f"SUMMARY {k}", **flat({kk: (str(vv) if isinstance(vv, dict) else vv) for kk, vv in v.items()})}
+             for k, v in ks.items()])], ignore_index=True)
+    else:
+        sheets["S16_kappa_random_covariates"] = pd.read_csv(R / "msbb/msbb_normalisation_kappa_null.csv")
     # S17 positive control (tail: classifier less coupled than random = upper tail)
     rows = []
     for tag, f in [("200", "positive_control/positive_control_simulation.json")] + \
@@ -227,14 +250,73 @@ def main() -> None:
         [{"spec": f"MSBB plaque density, {g}, {k}", **{kk: (str(vv) if isinstance(vv, list) else vv) for kk, vv in d[k].items()}, "n": d["n"]}
          for g, d in pl.items() for k in ("age_sex", "age_sex_neuron")])], ignore_index=True)
 
+    # v11 tables (review round 9)
+    if (R / "spike_in_real/spike_in_real.csv").exists():
+        sk = pd.read_csv(R / "spike_in_real/spike_in_real.csv").drop(columns=["rejected_by_inversion"], errors="ignore")
+        bd = jl("spike_in_real/spike_in_bound.json")
+        sr = jl("spike_in_real/spike_in_real.json")
+        brow = []
+        for c, d in bd.items():
+            for k in ("spec", "strength_tertile", "strength_decile"):
+                brow.append({"cohort": c, "null": k, "n_AD": d["n_ad"], "observed_rho": d["obs_rho"],
+                             "null_median": sr[c]["nulls"][k]["median"], "null_q05": d[k]["null_q05"],
+                             "p_more_coupled": sr[c]["nulls"][k]["p_lower"], "p_less_coupled": sr[c]["nulls"][k]["p_upper"],
+                             "margin_obs_minus_q05": d[k]["margin"], "ucl95_f": d[k]["ucl95_f"], "ucl95_var_share": d[k]["ucl95_var_share"],
+                             "genes_fallback": sr[c]["strata"].get(k if k != "spec" else "spec", {}).get("genes_fallback_whole_pool"),
+                             "genes_with_replacement": sr[c]["strata"].get(k, {}).get("genes_in_strata_drawn_with_replacement")})
+        sheets["S21_spike_in_real"] = pd.DataFrame(brow)
+        sheets["S21b_spike_in_grid"] = sk
+    if (R / "msbb/msbb_neuropath_v11.json").exists():
+        npj = jl("msbb/msbb_neuropath_v11.json")
+        rows = []
+        for g, d in npj.items():
+            if g == "neuron_score_vs_ph_pmi":
+                rows.append({"group": "all", "outcome": "neuron score vs pH and PMI", "n": d["n"],
+                             "note": f"R2 (ranks) {d['r2_rank']}; rho pH {d['rho_ph']}; rho PMI {d['rho_pmi']}"})
+                continue
+            for y, v in d.items():
+                if not isinstance(v, dict):
+                    continue
+                for spec in ("age_sex", "age_sex_neuron", "neuron_vs_outcome_age_sex"):
+                    rows.append({"group": g, "outcome": y, "n": v["n"], "test": "neuron score vs outcome (age, sex)" if spec.startswith("neuron") else f"C-A vs outcome ({spec})",
+                                 "rho": v[spec]["rho"], "p": v[spec]["p"], "ci95": str(v[spec]["ci95"])})
+        sheets["S23_msbb_neuropathology"] = pd.DataFrame(rows)
+    if (R / "seaad_v11/seaad_regulators_within_type.csv").exists():
+        sheets["S24_seaad_regulators_within_type"] = pd.read_csv(R / "seaad_v11/seaad_regulators_within_type.csv")
+        sheets["S24b_seaad_copathology"] = pd.read_csv(R / "seaad_v11/seaad_copathology.csv")
+    if (R / "cohort_v11/cohort_followups_v11.json").exists():
+        cj = jl("cohort_v11/cohort_followups_v11.json")
+        rows = []
+        for c, d in cj.items():
+            if not isinstance(d, dict):
+                rows.append({"cohort": "POOLED", "analysis": c, "value": d})
+                continue
+            def fl(o, path):
+                if isinstance(o, dict):
+                    for k, v in o.items():
+                        fl(v, path + [k])
+                else:
+                    rows.append({"cohort": c, "analysis": "/".join(path), "value": str(o) if isinstance(o, list) else o})
+            fl(d, [])
+        sheets["S25_cohort_followups"] = pd.DataFrame(rows)
+
     titles = {
+        "S21": "Spike-in positive control in the real cohorts: observed coupling against matched nulls, one-sided 95% upper "
+               "confidence limits by test inversion (share of C-A variance), strata coverage; sheet b: grid of spiked signal sizes",
+        "S23": "MSBB (GSE84422) subject-level tangle density sum, CERAD sum, neuritic plaque density, Braak stage and CDR: all subjects, "
+               "AD (CERAD) and AD with CDR >= 1; neuron score vs pH and PMI",
+        "S24": "SEA-AD within-cell-type expression of the Neff key regulators against the all-nuclei C-A score, CPS and Braak stage "
+               "(BH-FDR); sheet b: co-pathology (LATE-NC, Lewy body disease, APOE e4)",
+        "S25": "Independent cohorts: class B axis vs cell scores and specificity-matched null, primary endpoint after glial adjustment, "
+               "neuronal subscores, semipartial case-control correlations, GSE118553 asymptomatic AD",
         "S1": "Included studies of the structured literature search (sheet S2b: methods coding of all 32 studies, source full text or abstract)",
         "S2": "Per-cohort primary endpoints (sheet S7b: pooled random-effects estimates, REML/HKSJ)",
         "S3": "Expression-matched random-gene null (1,000 sets) per cohort-region set",
         "S4": "SEA-AD pseudobulk x outcome tests with nominal and random-gene FDR",
         "S5": "Forward and reverse mediation models (descriptive)",
         "S6": "Hallmark gene sets on the composition-adjusted residual axis (GO sets in the code repository)",
-        "S7": "Primary and secondary tests with within-family and global FDR",
+        "S7": "Primary and secondary tests with within-family and global FDR (secondary family includes the classifier versus "
+              "cell-type-matched null comparisons in both tails and the MSBB across-region test against its CDR-shuffle null)",
         "S8": "MSBB neuronal SPV normalisation per region",
         "S9": "Neuron-adjusted case-control association: pooled rows (POOLED ...) and reliability correction per cohort",
         "S10": "Expression-matched random-gene null for the neuron-adjusted case-control association",
@@ -245,7 +327,8 @@ def main() -> None:
         "S14": "SEA-AD histology (MTG grey matter) against pseudobulk C-A scores; subset neun_share_ge_5pct excludes 4 donors "
                "with NeuN+ < 5% of nuclei (threshold set after inspecting the data); rows with a note are NeuN density given CPS or FANS fraction",
         "S15": "Neuron association against strength-matched (post hoc) and specificity-matched nulls in both tails; GSE33000 finer match and subsamples",
-        "S16": "MSBB kappa against labels before normalisation: neuronal SPV, CDR and 200 single random-gene covariates per region",
+        "S16": "MSBB kappa against labels before normalisation: neuronal SPV (bootstrap CI), the same 200 single random genes in every region, "
+               "and 200 random 14-gene components matched on share of C-A variance; joint tests across regions; cortical regions flagged",
         "S17": "Positive-control simulation: detection rate by injected composition-independent signal (share of published C-A contrast), AD cohort size and null",
         "S18": "Further subtype schemes (Lai 2022, Ma 2023): PC1 axis vs neuron score, cell-score R2, label AUC, expression- and specificity-matched nulls",
         "S19": "Tijms 2024 CSF proteomic subtypes projected on brain bulk cohorts (supplementary analysis)",
@@ -259,7 +342,10 @@ def main() -> None:
         t = k.split("_")[0]
         base, suf = (t[:-1], t[-1]) if t[-1] == "b" else (t, "")
         return REN[base] + suf + k[len(t):]
-    titles = {REN[k]: v for k, v in titles.items()}
+    if a.ren is not None:
+        REN = json.loads(a.ren.read_text())
+    titles = {REN[k]: v for k, v in titles.items() if k in REN}
+    sheets = {k: v for k, v in sheets.items() if k.split("_")[0].rstrip("b") in REN}
     sheets = {ren(k): v for k, v in sheets.items()}
     sheets = dict(sorted(sheets.items(), key=lambda kv: (int(kv[0].split("_")[0].rstrip("b")[1:]), kv[0])))
     readme = pd.DataFrame([{"sheet": k, "table": k.split("_")[0], "title": titles.get(k.split("_")[0].rstrip("b"), "")} for k in sheets])

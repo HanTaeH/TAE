@@ -1,0 +1,26 @@
+{
+  "all_17": {
+    "n_regions": 17,
+    "median_kappa_spv": 0.475,
+    "median_r2_spv": 0.705,
+    "joint_single_gene": {
+      "median_of_medians": 0.799,
+      "p": 0.005
+    },
+    "median_kappa_r2_matched_pc1": 0.5,
+    "n_regions_p_lt_05_single_gene": 10,
+    "n_regions_p_lt_05_r2_matched": 5
+  },
+  "cortical_14": {
+    "n_regions": 14,
+    "median_kappa_spv": 0.528,
+    "median_r2_spv": 0.683,
+    "joint_single_gene": {
+      "median_of_medians": 0.792,
+      "p": 0.0249
+    },
+    "median_kappa_r2_matched_pc1": 0.5,
+    "n_regions_p_lt_05_single_gene": 7,
+    "n_regions_p_lt_05_r2_matched": 3
+  }
+}

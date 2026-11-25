@@ -72,8 +72,6 @@ python3 gtex_residual_axis_qc.py --gtex "$DATA/gtex_v8" --weights "$OUT/residual
 python3 seaad_residual_axis.py --donors "$REF_DIR/donors" --weights "$OUT/residual_quality/residual_template_weights.csv" --out "$OUT/seaad_residual_axis"
 python3 seaad_neun_histology.py --res "$OUT" --qnp "$REF_DIR/quant_neuropath/MTG_all-values_aibs-ids_20250922.csv" --seaad-meta "$REF_DIR/donors/donor_meta.csv" --out "$OUT/seaad_neun"
 python3 stage_reliability.py --data "$DATA" --out "$OUT/stage_reliability"
-python3 multiple_testing.py    "$OUT"   # last: covers every report above
-python3 supplementary_tables.py --res "$OUT" --out "$OUT/supplementary/Supplementary_Tables_S1-S14.xlsx"
 # v10 (2026-11-25): upper-tail bound, positive control at real AD sizes, within-AD plaque
 python3 bound_upper_tail.py --data "$DATA" --ref "$REF_DIR/seaad_mtg_reference.csv.gz" --res "$OUT" --out "$OUT/bound_upper_tail"
 for n in 52 97 219 310; do
@@ -81,4 +79,16 @@ for n in 52 97 219 310; do
     --scen within_AD_subtype --fracs 0 0.02 0.05 0.1 0.25 --tag _nAD$n
 done
 python3 msbb_plaque_within_ad.py --res "$OUT" --out "$OUT/msbb"
-python3 supplementary_tables.py --res "$OUT" --out "$OUT/supplementary/Supplementary_Tables_v10.xlsx"
+# v11 (review round 9): spike-in bound in the real cohorts, MSBB neuropathology, kappa against matched covariates,
+# SEA-AD regulators and co-pathology, class B / glial / neuronal-subscore / semipartial follow-ups
+python3 spike_in_real.py --data "$DATA" --ref "$REF_DIR/seaad_mtg_reference.csv.gz" --res "$OUT" --out "$OUT/spike_in_real"
+python3 spike_in_bound.py --res "$OUT"
+python3 msbb_neuropath_v11.py --data "$DATA" --res "$OUT" --out "$OUT/msbb"
+python3 msbb_kappa_v11.py --data "$DATA" --out "$OUT/msbb"
+python3 seaad_regulators_copath_v11.py --donors "$REF_DIR/donors" --cps "$REF_DIR/Global_and_Local_CPS.20260105.csv" --res "$OUT" --out "$OUT/seaad_v11"
+python3 cohort_followups_v11.py --data "$DATA" --ref "$REF_DIR/seaad_mtg_reference.csv.gz" --out "$OUT/cohort_v11"
+# last: FDR over every result file above, then the supplementary tables numbered by first citation in the manuscript
+python3 multiple_testing.py "$OUT"
+MS=${MS:-/mnt/project-files/d1-results/manuscript}
+python3 manuscript_tokens.py --src "$MS/draft_v11_src_2026-11-25.md" --out "$MS/draft_v11_2026-11-25.md" --ren "$OUT/supplementary/ren_v11.json"
+python3 supplementary_tables.py --res "$OUT" --ren "$OUT/supplementary/ren_v11.json" --out "$OUT/supplementary/Supplementary_Tables_v11.xlsx"

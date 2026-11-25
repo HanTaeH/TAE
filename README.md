@@ -1,36 +1,44 @@
-# AD 분자 아형 교차 코호트 재현성 연구 (D1)
+# Neuronal signal and AD transcriptomic subtypes (D1)
 
-알츠하이머병(AD) 뇌 전사체 분자 아형(Neff et al. 2021 등)이 AMP-AD 밖의 독립 GEO 코호트에서도 재현되는지 검증하는 분석 코드입니다.
+Analysis code for a re-analysis of the Neff et al. (2021) Alzheimer's disease transcriptomic subtypes by
+centroid projection onto public cohorts, with cell-type-matched random gene sets, a spike-in positive
+control and single-nucleus follow-ups. `run_all.sh` reproduces every result, table and figure.
 
-## 데이터 (저장소에 포함하지 않음)
+## Data (not included in the repository)
 
-GEO와 논문 보충자료를 직접 내려받아 아래 구조로 둡니다.
+All inputs are public. Place them as follows (`DATA`, default `/mnt/project-files/d1-data/raw`):
 
-```
-<data>/GSE33000/GSE33000_series_matrix.txt.gz
-<data>/GSE33000/GSE33000_raw_data.txt.gz        # reporterID -> Gene 대응에만 사용
-<data>/neff2021/abb5398_data_file_s1.xlsx       # Neff 2021 Data file S1
-<data>/neff2021/abb5398_data_file_s2.xlsx       # Neff 2021 Data file S2 (271개 분류 유전자)
-<data>/GSE132903/GSE132903_series_matrix.txt.gz
-<data>/GSE118553/GSE118553_series_matrix.txt.gz
-<data>/GPL10558/GPL10558-50081.txt             # GEO 플랫폼 full table
-```
+| Folder | Content | Source |
+| --- | --- | --- |
+| `GSE33000/`, `GSE132903/`, `GSE118553/`, `GSE106241/`, `GSE125583/`, `GSE84422/` | series matrix files (and supplementary raw tables where the series matrix lacks gene symbols) | GEO |
+| `GPL10558/`, `GPL24170/`, `GPL96/` | platform full tables | GEO |
+| `hgnc/` | HGNC complete set (symbol mapping) | genenames.org |
+| `neff2021/` | Data files S1–S3 of Neff et al. 2021 (S2 = class centroids of the 271 classifier genes) | Sci Adv |
+| `tijms2024/` | Supplementary Table 4 of Tijms et al. 2024 | Nat Aging |
+| `gtex_v8/` | gene read counts for brain cortex and frontal cortex (BA9), sample and subject annotations | gs://adult-gtex (open access) |
 
-## 실행
+SEA-AD inputs (`REF_DIR`, default `/mnt/project-files/d1-data/seaad`): the MTG reference h5ad
+(`sea-ad-single-cell-profiling` bucket; set `SEAAD_H5AD` on first run), per-donor objects (downloaded by
+`seaad_donor_aggregate.py`), `Global_and_Local_CPS.20260105.csv`, and quantitative neuropathology
+`quant_neuropath/MTG_all-values_aibs-ids_20250922.csv` (`sea-ad-quantitative-neuropathology` bucket).
+MSigDB Hallmark and GO Biological Process GMT files go in `GMT_DIR` (default `d1-data/msigdb`; record the
+version you download). GENCODE v26 gene lengths are read from the GTEx annotation.
+
+Controlled-access data (MSBB RNA-seq, ROSMAP) are not used.
+
+## Run
 
 ```
 pip install -r requirements.txt
-cd src
-python pilot_gse33000.py --data <data> --out ../results/pilot
+DATA=... REF_DIR=... OUT=$(pwd)/results MS=<manuscript folder> bash run_all.sh
 ```
 
-## 구성
+Seeds are fixed (`SEED + k` in each script). The last steps are `multiple_testing.py` (FDR over every
+result file), `manuscript_tokens.py` (supplementary tables numbered by first citation in the manuscript
+source) and `supplementary_tables.py`. Each script's docstring states its question, method and inputs.
 
-- `src/load_gse33000.py`: GSE33000 발현 행렬과 메타데이터 로드 (AD, 정상만; 헌팅턴병 제외)
-- `src/neff_subtypes.py`: Neff 2021 아형 기준(중심값, logFC) 로드
-- `src/pilot_gse33000.py`: 실험 0 파일럿. Neff 아형 투영, 순열 검정, go/no-go 판정, 세포 구성 보정 미리보기
-- `src/load_illumina.py`: GSE132903, GSE118553 (GPL10558) 로드
-- `src/validate_cohorts.py`: 실험 2 1차. 코호트·뇌 영역별 Neff 투영, 세포 구성 보정, 병기 추세 검정
-- `src/plot_validation.py`: 검증 요약 그림
-- `results/pilot/`: 파일럿 결과 (요약 JSON, 샘플별 배정, 그림)
-- `results/validation/`: 다중 코호트 검증 결과
+## Layout
+
+- `src/` analysis scripts (one question per script; v11 additions: `spike_in_real.py`, `spike_in_bound.py`,
+  `msbb_neuropath_v11.py`, `msbb_kappa_v11.py`, `seaad_regulators_copath_v11.py`, `cohort_followups_v11.py`)
+- `results/` outputs written by the scripts (superseded outputs are not part of the deposited results)

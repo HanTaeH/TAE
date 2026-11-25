@@ -1,0 +1,13 @@
+pathology,score,adjust,n,n_positive,rho,p,q_bh
+LATE_stage,ca_sorted,age_sex,83,56,0.143,0.201,0.4824
+LATE_stage,ca_sorted,age_sex_CPS,83,56,0.059,0.601,0.901
+LATE_stage,ca_fixed_comp,age_sex,83,56,0.225,0.0422,0.2574
+LATE_stage,ca_fixed_comp,age_sex_CPS,83,56,0.192,0.0858,0.2574
+Lewy_body_any,ca_sorted,age_sex,84,37,0.074,0.505,0.8657
+Lewy_body_any,ca_sorted,age_sex_CPS,84,37,0.017,0.878,0.901
+Lewy_body_any,ca_fixed_comp,age_sex,84,37,0.018,0.874,0.901
+Lewy_body_any,ca_fixed_comp,age_sex_CPS,84,37,-0.014,0.901,0.901
+APOE_e4,ca_sorted,age_sex,84,25,-0.042,0.704,0.901
+APOE_e4,ca_sorted,age_sex_CPS,84,25,-0.198,0.0739,0.2574
+APOE_e4,ca_fixed_comp,age_sex,84,25,-0.102,0.358,0.716
+APOE_e4,ca_fixed_comp,age_sex_CPS,84,25,-0.197,0.0759,0.2574

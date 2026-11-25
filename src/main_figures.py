@@ -79,7 +79,7 @@ def fig2():
     ax.get_yticklabels()[0].set_weight("bold")
     for k, x in zip("ABC", (0.17, 0.48, 0.82)):
         ax.text(x, y[0] + 0.62, k, color=INK, ha="center", fontsize=8, weight="bold")
-    ax.set_title("Subtype structure is recovered"); tag(ax, "a")
+    ax.set_title("Class proportions (AD samples)"); tag(ax, "a")
     rmed = ns.set_index("cohort")
     for yi, c in zip(y[1:], v.cohort):
         ax.plot([rmed.loc[c, "frac_A_random_median"]] * 2, [yi - 0.38, yi + 0.38], color=INK, lw=1)
@@ -130,14 +130,16 @@ def fig3():
     rows0 = pcm[pcm.endpoint == "P1_neuron"][["cohort", "n", "rho", "z", "se_boot"]].to_dict("records")
     fs = {"rows": rows0, "pooled_rho": mr["se_boot"]["rho"], "ci": mr["se_boot"]["ci95_hksj"], "pi": mr["se_boot"]["pi95"]}
     nn = pd.read_csv(R / "msbb/neff_style_cdr_normalisation.csv")
-    fig = plt.figure(figsize=(7.2, 5.6)); gs = fig.add_gridspec(2, 3, height_ratios=[1, 1.05])
-    for j, c in enumerate(["GSE33000_PFC", "GSE132903_MTG", "GSE125583_FG"]):
+    sp = pd.read_csv(R / "spike_in_real/spike_in_real.csv")
+    bd = json.load(open(R / "spike_in_real/spike_in_bound.json"))
+    fig = plt.figure(figsize=(9.6, 5.6)); gs = fig.add_gridspec(2, 4, height_ratios=[1, 1.05])
+    for j, c in enumerate(["GSE33000_PFC", "GSE132903_MTG", "GSE118553_Temporal_Cortex", "GSE125583_FG"]):
         ax = fig.add_subplot(gs[0, j]); d = p[p.cohort == c]
         for k in "ABC":
             s = d[d.subtype == k]; ax.scatter(s.neuron, s.ca, s=7, color=COL[k], lw=0, alpha=0.8, label=k)
         rho = spearmanr(d.neuron, d.ca)[0]
         ax.text(0.97, 0.95, f"ρ = {rho:.2f}\nn = {len(d)}", transform=ax.transAxes, ha="right", va="top", fontsize=7.5)
-        ax.set_title(SHORT[c].replace(" (RNA-seq)", "\n(RNA-seq)") if j == 2 else SHORT[c]); ax.set_xlabel("Neuron marker score")
+        ax.set_title(SHORT[c].replace(" (RNA-seq)", "\n(RNA-seq)") if "RNA-seq" in SHORT[c] else SHORT[c]); ax.set_xlabel("Neuron marker score")
         if j == 0:
             ax.set_ylabel("C−A subtype score"); tag(ax, "a"); ax.legend(title="Subtype", fontsize=7, title_fontsize=7, loc="lower left", markerscale=1.6)
     ax = fig.add_subplot(gs[1, :2]); rows = fs["rows"]; yy = np.arange(len(rows) + 1)[::-1]
@@ -160,6 +162,13 @@ def fig3():
     ax.set_xticks([0, 1, 2]); ax.set_xticklabels(["Neuron–\nCDR\nraw", "Neuron–\nCDR\nnorm.", "C\u2212A–\nneuron\nnorm."], fontsize=6.5)
     ax.set_xlim(-0.4, 2.4); ax.set_ylim(-1, 0.4); ax.set_ylabel("ρ per MSBB region")
     ax.set_title("Neff-style CDR normalisation"); tag(ax, "c")
+    ax = fig.add_subplot(gs[1, 3]); pal = ["#2a78d6", "#eb6834", "#1baf7a", "#8a5cc7"]
+    for col, (c, d) in zip(pal, sp.groupby("cohort", sort=False)):
+        ax.plot(d.var_share_median * 100, d.delta_rho, "-o", ms=3, lw=1.2, color=col, label=SHORT.get(c, c).replace(" (RNA-seq)", ""))
+        u = bd[c]["spec"]["ucl95_var_share"] * 100
+        ax.axvline(u, color=col, lw=0.8, ls=":")
+    ax.set_xlim(0, 40); ax.set_xlabel("Spiked share of C−A variance (%)"); ax.set_ylabel("Δρ (C−A vs neuron score)")
+    ax.legend(fontsize=6, loc="upper left"); ax.set_title("Spike-in: sensitivity and\n95% upper limits (dotted)"); tag(ax, "d")
     fig.subplots_adjust(hspace=0.55, wspace=0.9); save(fig, "Fig3_neuron_axis")
 
 

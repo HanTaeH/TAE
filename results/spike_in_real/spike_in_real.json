@@ -1,0 +1,478 @@
+{
+  "GSE33000_PFC": {
+    "n_ad": 310,
+    "n_genes": 224,
+    "obs_rho": -0.928,
+    "nulls": {
+      "spec": {
+        "median": -0.877,
+        "q05_q95": [
+          -0.904,
+          -0.835
+        ],
+        "offset_obs_minus_median": -0.051,
+        "p_lower": 0.004,
+        "p_upper": 0.998
+      },
+      "strength_tertile": {
+        "median": -0.911,
+        "q05_q95": [
+          -0.928,
+          -0.885
+        ],
+        "offset_obs_minus_median": -0.016,
+        "p_lower": 0.0559,
+        "p_upper": 0.9461
+      },
+      "strength_decile": {
+        "median": -0.906,
+        "q05_q95": [
+          -0.925,
+          -0.883
+        ],
+        "offset_obs_minus_median": -0.021,
+        "p_lower": 0.024,
+        "p_upper": 0.978
+      }
+    },
+    "strata": {
+      "spec": {
+        "n_strata": 34,
+        "genes_fallback_whole_pool": 0,
+        "genes_in_strata_drawn_with_replacement": 0
+      },
+      "strength_tertile": {
+        "n_strata": 28,
+        "genes_fallback_whole_pool": 0,
+        "genes_in_strata_drawn_with_replacement": 0
+      },
+      "strength_decile": {
+        "n_strata": 71,
+        "genes_fallback_whole_pool": 0,
+        "genes_in_strata_drawn_with_replacement": 0
+      }
+    },
+    "spike": [
+      {
+        "f": 0.0,
+        "rho_median": -0.928,
+        "rho_q05": -0.938,
+        "delta_rho": -0.0,
+        "var_share_median": 0.0,
+        "detect_spec": 0.0,
+        "detect_strength": 0.0
+      },
+      {
+        "f": 0.02,
+        "rho_median": -0.918,
+        "rho_q05": -0.93,
+        "delta_rho": 0.009,
+        "var_share_median": 0.015,
+        "detect_spec": 0.0,
+        "detect_strength": 0.0
+      },
+      {
+        "f": 0.05,
+        "rho_median": -0.884,
+        "rho_q05": -0.899,
+        "delta_rho": 0.044,
+        "var_share_median": 0.083,
+        "detect_spec": 0.0,
+        "detect_strength": 0.55
+      },
+      {
+        "f": 0.1,
+        "rho_median": -0.791,
+        "rho_q05": -0.82,
+        "delta_rho": 0.137,
+        "var_share_median": 0.239,
+        "detect_spec": 1.0,
+        "detect_strength": 1.0
+      },
+      {
+        "f": 0.15,
+        "rho_median": -0.681,
+        "rho_q05": -0.731,
+        "delta_rho": 0.246,
+        "var_share_median": 0.404,
+        "detect_spec": 1.0,
+        "detect_strength": 1.0
+      },
+      {
+        "f": 0.25,
+        "rho_median": -0.52,
+        "rho_q05": -0.579,
+        "delta_rho": 0.408,
+        "var_share_median": 0.613,
+        "detect_spec": 1.0,
+        "detect_strength": 1.0
+      },
+      {
+        "f": 0.5,
+        "rho_median": -0.302,
+        "rho_q05": -0.382,
+        "delta_rho": 0.625,
+        "var_share_median": 0.768,
+        "detect_spec": 1.0,
+        "detect_strength": 1.0
+      }
+    ]
+  },
+  "GSE132903_MTG": {
+    "n_ad": 97,
+    "n_genes": 241,
+    "obs_rho": -0.921,
+    "nulls": {
+      "spec": {
+        "median": -0.883,
+        "q05_q95": [
+          -0.933,
+          -0.788
+        ],
+        "offset_obs_minus_median": -0.038,
+        "p_lower": 0.1417,
+        "p_upper": 0.8603
+      },
+      "strength_tertile": {
+        "median": -0.878,
+        "q05_q95": [
+          -0.924,
+          -0.806
+        ],
+        "offset_obs_minus_median": -0.043,
+        "p_lower": 0.0679,
+        "p_upper": 0.9341
+      },
+      "strength_decile": {
+        "median": -0.873,
+        "q05_q95": [
+          -0.923,
+          -0.796
+        ],
+        "offset_obs_minus_median": -0.048,
+        "p_lower": 0.0639,
+        "p_upper": 0.9381
+      }
+    },
+    "strata": {
+      "spec": {
+        "n_strata": 30,
+        "genes_fallback_whole_pool": 0,
+        "genes_in_strata_drawn_with_replacement": 0
+      },
+      "strength_tertile": {
+        "n_strata": 27,
+        "genes_fallback_whole_pool": 0,
+        "genes_in_strata_drawn_with_replacement": 0
+      },
+      "strength_decile": {
+        "n_strata": 64,
+        "genes_fallback_whole_pool": 0,
+        "genes_in_strata_drawn_with_replacement": 0
+      }
+    },
+    "spike": [
+      {
+        "f": 0.0,
+        "rho_median": -0.919,
+        "rho_q05": -0.935,
+        "delta_rho": 0.002,
+        "var_share_median": 0.0,
+        "detect_spec": 0.0,
+        "detect_strength": 0.0
+      },
+      {
+        "f": 0.02,
+        "rho_median": -0.914,
+        "rho_q05": -0.934,
+        "delta_rho": 0.007,
+        "var_share_median": 0.01,
+        "detect_spec": 0.0,
+        "detect_strength": 0.0
+      },
+      {
+        "f": 0.05,
+        "rho_median": -0.896,
+        "rho_q05": -0.922,
+        "delta_rho": 0.025,
+        "var_share_median": 0.039,
+        "detect_spec": 0.0,
+        "detect_strength": 0.0
+      },
+      {
+        "f": 0.1,
+        "rho_median": -0.862,
+        "rho_q05": -0.895,
+        "delta_rho": 0.059,
+        "var_share_median": 0.101,
+        "detect_spec": 0.0,
+        "detect_strength": 0.01
+      },
+      {
+        "f": 0.15,
+        "rho_median": -0.823,
+        "rho_q05": -0.863,
+        "delta_rho": 0.098,
+        "var_share_median": 0.16,
+        "detect_spec": 0.13,
+        "detect_strength": 0.255
+      },
+      {
+        "f": 0.25,
+        "rho_median": -0.756,
+        "rho_q05": -0.81,
+        "delta_rho": 0.165,
+        "var_share_median": 0.279,
+        "detect_spec": 0.795,
+        "detect_strength": 0.915
+      },
+      {
+        "f": 0.5,
+        "rho_median": -0.597,
+        "rho_q05": -0.697,
+        "delta_rho": 0.324,
+        "var_share_median": 0.508,
+        "detect_spec": 1.0,
+        "detect_strength": 1.0
+      }
+    ]
+  },
+  "GSE118553_Temporal_Cortex": {
+    "n_ad": 52,
+    "n_genes": 261,
+    "obs_rho": -0.85,
+    "nulls": {
+      "spec": {
+        "median": -0.836,
+        "q05_q95": [
+          -0.921,
+          -0.681
+        ],
+        "offset_obs_minus_median": -0.014,
+        "p_lower": 0.3972,
+        "p_upper": 0.6048
+      },
+      "strength_tertile": {
+        "median": -0.809,
+        "q05_q95": [
+          -0.887,
+          -0.685
+        ],
+        "offset_obs_minus_median": -0.041,
+        "p_lower": 0.2176,
+        "p_upper": 0.7844
+      },
+      "strength_decile": {
+        "median": -0.826,
+        "q05_q95": [
+          -0.903,
+          -0.712
+        ],
+        "offset_obs_minus_median": -0.024,
+        "p_lower": 0.3154,
+        "p_upper": 0.6866
+      }
+    },
+    "strata": {
+      "spec": {
+        "n_strata": 34,
+        "genes_fallback_whole_pool": 0,
+        "genes_in_strata_drawn_with_replacement": 0
+      },
+      "strength_tertile": {
+        "n_strata": 30,
+        "genes_fallback_whole_pool": 0,
+        "genes_in_strata_drawn_with_replacement": 0
+      },
+      "strength_decile": {
+        "n_strata": 74,
+        "genes_fallback_whole_pool": 0,
+        "genes_in_strata_drawn_with_replacement": 0
+      }
+    },
+    "spike": [
+      {
+        "f": 0.0,
+        "rho_median": -0.846,
+        "rho_q05": -0.902,
+        "delta_rho": 0.004,
+        "var_share_median": 0.0,
+        "detect_spec": 0.01,
+        "detect_strength": 0.01
+      },
+      {
+        "f": 0.02,
+        "rho_median": -0.841,
+        "rho_q05": -0.906,
+        "delta_rho": 0.009,
+        "var_share_median": 0.01,
+        "detect_spec": 0.0,
+        "detect_strength": 0.0
+      },
+      {
+        "f": 0.05,
+        "rho_median": -0.846,
+        "rho_q05": -0.901,
+        "delta_rho": 0.004,
+        "var_share_median": 0.028,
+        "detect_spec": 0.0,
+        "detect_strength": 0.0
+      },
+      {
+        "f": 0.1,
+        "rho_median": -0.809,
+        "rho_q05": -0.883,
+        "delta_rho": 0.042,
+        "var_share_median": 0.086,
+        "detect_spec": 0.01,
+        "detect_strength": 0.01
+      },
+      {
+        "f": 0.15,
+        "rho_median": -0.77,
+        "rho_q05": -0.839,
+        "delta_rho": 0.08,
+        "var_share_median": 0.17,
+        "detect_spec": 0.05,
+        "detect_strength": 0.055
+      },
+      {
+        "f": 0.25,
+        "rho_median": -0.673,
+        "rho_q05": -0.778,
+        "delta_rho": 0.177,
+        "var_share_median": 0.353,
+        "detect_spec": 0.53,
+        "detect_strength": 0.565
+      },
+      {
+        "f": 0.5,
+        "rho_median": -0.468,
+        "rho_q05": -0.625,
+        "delta_rho": 0.382,
+        "var_share_median": 0.636,
+        "detect_spec": 0.99,
+        "detect_strength": 0.99
+      }
+    ]
+  },
+  "GSE125583_FG": {
+    "n_ad": 219,
+    "n_genes": 255,
+    "obs_rho": -0.927,
+    "nulls": {
+      "spec": {
+        "median": -0.941,
+        "q05_q95": [
+          -0.958,
+          -0.91
+        ],
+        "offset_obs_minus_median": 0.013,
+        "p_lower": 0.7764,
+        "p_upper": 0.2255
+      },
+      "strength_tertile": {
+        "median": -0.942,
+        "q05_q95": [
+          -0.955,
+          -0.923
+        ],
+        "offset_obs_minus_median": 0.014,
+        "p_lower": 0.9222,
+        "p_upper": 0.0798
+      },
+      "strength_decile": {
+        "median": -0.944,
+        "q05_q95": [
+          -0.956,
+          -0.922
+        ],
+        "offset_obs_minus_median": 0.017,
+        "p_lower": 0.9062,
+        "p_upper": 0.0958
+      }
+    },
+    "strata": {
+      "spec": {
+        "n_strata": 29,
+        "genes_fallback_whole_pool": 0,
+        "genes_in_strata_drawn_with_replacement": 0
+      },
+      "strength_tertile": {
+        "n_strata": 28,
+        "genes_fallback_whole_pool": 0,
+        "genes_in_strata_drawn_with_replacement": 0
+      },
+      "strength_decile": {
+        "n_strata": 75,
+        "genes_fallback_whole_pool": 0,
+        "genes_in_strata_drawn_with_replacement": 0
+      }
+    },
+    "spike": [
+      {
+        "f": 0.0,
+        "rho_median": -0.927,
+        "rho_q05": -0.938,
+        "delta_rho": 0.0,
+        "var_share_median": 0.0,
+        "detect_spec": 0.02,
+        "detect_strength": 0.32
+      },
+      {
+        "f": 0.02,
+        "rho_median": -0.926,
+        "rho_q05": -0.937,
+        "delta_rho": 0.002,
+        "var_share_median": 0.003,
+        "detect_spec": 0.035,
+        "detect_strength": 0.36
+      },
+      {
+        "f": 0.05,
+        "rho_median": -0.923,
+        "rho_q05": -0.936,
+        "delta_rho": 0.005,
+        "var_share_median": 0.004,
+        "detect_spec": 0.06,
+        "detect_strength": 0.51
+      },
+      {
+        "f": 0.1,
+        "rho_median": -0.917,
+        "rho_q05": -0.928,
+        "delta_rho": 0.01,
+        "var_share_median": 0.018,
+        "detect_spec": 0.225,
+        "detect_strength": 0.78
+      },
+      {
+        "f": 0.15,
+        "rho_median": -0.903,
+        "rho_q05": -0.919,
+        "delta_rho": 0.024,
+        "var_share_median": 0.039,
+        "detect_spec": 0.745,
+        "detect_strength": 0.99
+      },
+      {
+        "f": 0.25,
+        "rho_median": -0.867,
+        "rho_q05": -0.887,
+        "delta_rho": 0.06,
+        "var_share_median": 0.097,
+        "detect_spec": 1.0,
+        "detect_strength": 1.0
+      },
+      {
+        "f": 0.5,
+        "rho_median": -0.744,
+        "rho_q05": -0.788,
+        "delta_rho": 0.183,
+        "var_share_median": 0.299,
+        "detect_spec": 1.0,
+        "detect_strength": 1.0
+      }
+    ]
+  }
+}
