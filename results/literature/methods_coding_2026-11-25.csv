@@ -1,0 +1,33 @@
+study,year,role,source,features,n_genes_cluster,subtype_validation,composition,composition_adjusted,composition_tested_as_explanation,random_gene_null,sc_reference_for_composition,interpretation_axis
+Hong2019,2019,de novo,abstract,DEG (reversed gene pairs vs control),,internal,not mentioned,no,no,no,no,ageing vs neuroinflammation
+Dagan2020,2020,de novo,partial full text,whole transcriptome (surprisal),,internal,not mentioned,no,no,no,no,individual heterogeneity
+Milind2020,2020,de novo,partial full text,network modules (WGCNA),,external (re-derived per cohort),not estimated (markers annotate modules),no,no,no,no,inflammatory vs non-inflammatory
+Neff2021,2021,de novo,full text,DEG (3571 AD vs control),3571,external (ROSMAP classifier),estimated (BRETIGEA) as feature,yes (CDR/MMSE normalisation),no,no,no,tau/neuronal vs glial
+ZhengXu2021,2021,de novo,full text (2026-11-18),whole transcriptome (NMF),,external (reclustering visual),not adjusted (limitation noted),no,no,no,no,synaptic vs inflammatory
+LiH2022,2022,de novo,partial full text,unclear (3745 merged genes),3745,internal,not mentioned,no,no,no,no,risk subgroups (hypoxia/angiogenesis)
+Lai2022,2022,de novo,partial full text,DEG/immune WGCNA (5 genes),5,internal (genes validated elsewhere),immune scores (ssGSEA/ESTIMATE) as feature,no,no,no,no,immune-active vs metabolic
+IturriaMedina2022,2022,de novo,abstract,multi-omic,,unclear,not mentioned,no,no,no,no,multi-omic taxonomy
+Yang2023,2023,de novo,abstract,multi-omic (SNF),,internal,not mentioned,no,no,no,no,weak amyloid association
+Zeng2023,2023,de novo,abstract,DEG x lipid genes (key DELMRGs),3,internal (genes validated elsewhere),immune scores (ssGSEA) as feature,no,no,no,no,immune pattern
+Ma2023,2023,de novo,partial full text,DEG x m7G genes,15,internal (nomogram in GSE44770),immune (CIBERSORT/ESTIMATE) as feature,no,no,no,no,immune infiltration high vs low
+Eteleeb2024,2024,de novo,partial full text,multi-omic (top variable),,external (MSBB/ROSMAP),deconvolution as feature,yes (DE),no,no,own snRNA (Knight),neurodegeneration + astrogliosis
+LiCL2024,2024,de novo,partial full text,DEG x PANoptosis x WGCNA,48,internal,not estimated (snRNA for gene expression only),no,no,no,no (snRNA expression only),apoptotic/synaptic damage vs mild
+Wang2024,2024,de novo,partial full text,DEG x PANoptosis,24,internal,immune (CIBERSORT) as feature,no,no,no,no (snRNA expression only),synaptic vs immune-metabolic
+Ye2025,2025,de novo,partial full text,pathway list (no DEG filter),3173,internal (risk score validated elsewhere),not mentioned,no,no,no,no,severe vs mild progression
+Mottaqi2025,2025,de novo,partial full text,top 5000 variable genes,5000,internal,not mentioned,no,no,no,no,transcriptional states
+Honda2025,2025,de novo,partial full text,DEG (vs NCI),,internal,not mentioned,no,no,no,no,progression substages
+Hu2025,2025,de novo,abstract,unclear,,internal (score validated elsewhere),not mentioned,no,no,no,no,amyloid processing high vs low
+Huang2025,2025,de novo,abstract,DEG x pyroptosis genes,6,internal,immune microenvironment as feature,no,no,no,no,pyroptosis-inflammatory high vs low
+Song2026,2026,de novo,full text (2026-11-18),multi-omic,,none (authors note),not estimated,no,no,no,no,synaptic/neurotransmission
+Lee2026,2026,de novo,full text (2026-11-18),multi-region transcriptome,,external (replication + MSBB/Mayo),estimated as feature (nearly all types differ),no,no,no,no,vulnerable vs resilient
+Scheidemantel2026,2026,de novo,abstract,multi-omic incl. cell-type proportion layer,,internal,proportions as an input layer,no,no,no,unclear,immune/heat shock factors
+Nsangou2026,2026,de novo,abstract,multi-omic networks,,external (independent ROSMAP subset),not mentioned,no,no,no,no,normal-to-AD spectrum
+AlOuran2026,2026,de novo,abstract,whole transcriptome latent factors,,unclear,spatial sampling factor identified,yes (DE),factor = sampling (not cell composition),no,no,synaptic/vascular/protein folding
+Mu2026,2026,de novo,abstract,DEG x glycosylation genes,2,internal (diagnostic model validated elsewhere),not for subtypes (snRNA for genes),no,no,no,no (snRNA expression only),two subgroups
+Jorg2026,2026,de novo,partial full text,not specified (UMAP/HDBSCAN),,external (ADTBI/ROSMAP),microglial markers as feature,no,no,no,no,inflammation + neuronal death vs reduced inflammation
+Zhang2026,2026,de novo,partial full text,DEG x autolysosome x WGCNA,5,internal,immune (CIBERSORT) as feature,no,no,no,no (snRNA expression only),immune microenvironment
+Gong2026,2026,de novo,partial full text,DEG x PPP x WGCNA,8,internal,immune (CIBERSORT) as feature,no,no,no,no (snRNA expression only),immune activation
+Liu2026,2026,de novo,partial full text,DEG x mitophagy x WGCNA,8,internal,immune (CIBERSORT) as feature,no,no,no,no (snRNA expression only),neutrophil/immune
+IturriaMedina2025,2025,application,not read,applies IM2022 subtypes,,,,,,,,
+Zammit2026_psych,2026,application,partial full text,applies IM2022 subtypes,,external concordance (label permutation),not mentioned,no,no,no (label permutation only),no,metabolomic pathways
+Luleci2026,2026,application,abstract,applies a published 5-subtype scheme,,,not visible,,,,,
