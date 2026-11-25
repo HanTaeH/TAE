@@ -6,7 +6,10 @@ S6 Hallmark residual-axis gene sets, S7 secondary-family tests with FDR, S8 MSBB
 normalisation per region, S9 measurement-error (reliability) correction of the neuron-adjusted stage test, S10 random-gene null
 for the neuron-adjusted stage test, S11 stage follow-ups (bootstrap CIs of within-cohort tests, covariate
 specifications, reverse partial, glial covariates, GSE33000 age sensitivity), S12 specificity-matched null,
-S13 NNLS-adjusted / alternative-region / AUC case-control analyses, S14 SEA-AD NeuN histology.
+S13 NNLS-adjusted / alternative-region / AUC case-control analyses, S14 SEA-AD NeuN histology; added for v9:
+S15 strength-matched null and kappa against random covariates, S16 further subtype schemes, S17 positive-control
+simulation, S18 CSF proteomic subtypes projected on brain, S19 residual axis (de novo, MSBB, GTEx, SEA-AD),
+S20 methods coding of the 29 de novo subtype studies.
 
 Usage: python supplementary_tables.py --res ../results --out <file.xlsx>
 """
@@ -31,6 +34,20 @@ COMPOSITION_FULLTEXT = {
     "Song2025": "not estimated",
     "Lee2026": "estimated; described per subtype",
 }
+
+
+def json_rows(obj, prefix=""):
+    """Flatten nested JSON into (key, value) rows for a sheet."""
+    rows = []
+    if isinstance(obj, dict):
+        for k, v in obj.items():
+            rows += json_rows(v, f"{prefix}.{k}" if prefix else str(k))
+    elif isinstance(obj, list) and obj and all(isinstance(x, (dict, list)) for x in obj):
+        for i, v in enumerate(obj):
+            rows += json_rows(v, f"{prefix}[{i}]")
+    else:
+        rows.append({"key": prefix, "value": str(obj) if isinstance(obj, list) else obj})
+    return rows
 
 
 def main() -> None:
@@ -126,6 +143,26 @@ def main() -> None:
     sheets["S14_seaad_neun_histology"] = pd.concat([pd.read_csv(R / "seaad_neun/seaad_neun_associations.csv"), beyond],
                                                    ignore_index=True)
 
+    import json as _json
+    jl = lambda f: _json.loads((R / f).read_text())
+    s15 = pd.DataFrame(json_rows(jl("gse33000_null_followup/gse33000_null_followup.json")))
+    s15.insert(0, "analysis", "neuron association, finer and strength-matched nulls")
+    k = pd.read_csv(R / "msbb/msbb_normalisation_kappa_null.csv")
+    k.insert(0, "analysis", "MSBB kappa vs labels before normalisation: SPV, CDR, 200 random-gene covariates")
+    sheets["S15_strength_null_kappa_null"] = pd.concat([s15, k], ignore_index=True)
+    sheets["S16_further_schemes"] = pd.read_csv(R / "other_schemes/other_schemes_clustered.csv")
+    sheets["S17_positive_control"] = pd.DataFrame(json_rows(jl("positive_control/positive_control_simulation.json")))
+    sheets["S18_csf_subtypes_brain"] = pd.concat(
+        [pd.DataFrame(json_rows(jl("tijms_csf/tijms_csf_projection.json"))).assign(analysis="projection"),
+         pd.DataFrame(json_rows(jl("tijms_followup/tijms_followup.json"))).assign(analysis="follow-up nulls, residual coupling")],
+        ignore_index=True)
+    sheets["S19_residual_axis"] = pd.concat(
+        [pd.DataFrame(json_rows(jl(f))).assign(analysis=f.split("/")[0]) for f in
+         ("residual_denovo/residual_denovo.json", "residual_quality/residual_quality.json",
+          "gtex_residual_axis/gtex_residual_axis.json", "gtex_residual_axis_qc/gtex_residual_axis_qc.json",
+          "seaad_residual_axis/seaad_residual_axis.json")], ignore_index=True)
+    sheets["S20_methods_coding"] = pd.read_csv(R / "literature/methods_coding_2026-11-25.csv")
+
     titles = {
         "S1": "Included studies of the structured literature search, with extracted composition and null-control features",
         "S2": "Per-cohort primary endpoints (S2b: pooled random-effects estimates, REML/HKSJ)",
@@ -143,6 +180,13 @@ def main() -> None:
                "bootstrap 95% CIs (AUC compares AD with controls only; GSE118553 n = 83 excludes asymptomatic AD)",
         "S14": "SEA-AD histology (MTG grey matter) against pseudobulk C-A scores; subset neun_share_ge_5pct excludes 4 donors "
                "with NeuN+ < 5% of nuclei (threshold set after inspecting the data); rows with a note are NeuN density given CPS or FANS fraction",
+        "S15": "Neuron association against finer and strength-matched random-gene nulls (four cohorts); MSBB kappa against labels "
+               "before normalisation for SPV, CDR and 200 random-gene covariates per region",
+        "S16": "Further subtype schemes (Lai 2022, Ma 2023, Wang 2024): PC1 axis vs neuron score, cell-score R2, label AUC, nulls",
+        "S17": "Positive-control simulation: detection rate by injected composition-independent signal size (share of published C-A contrast)",
+        "S18": "Tijms 2024 CSF proteomic subtypes projected on brain bulk cohorts: neuron and C-A association, nulls, residual coupling",
+        "S19": "Residual axis after five cell scores: de novo PCA and clustering, MSBB/GSE106241 quality, GTEx v8 and SEA-AD tracing",
+        "S20": "Methods coding of the 29 de novo and 3 applied subtype studies (source: full text or abstract)",
     }
     readme = pd.DataFrame([{"sheet": k, "table": k.split("_")[0], "title": titles.get(k.split("_")[0], "")} for k in sheets])
     readme = pd.concat([pd.DataFrame([{"sheet": "README", "table": "", "title":
