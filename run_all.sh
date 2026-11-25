@@ -68,6 +68,7 @@ python3 tijms_followup.py --data "$DATA" --ref "$REF_DIR/seaad_mtg_reference.csv
 python3 residual_denovo.py --data "$DATA" --ref-dir "$REF_DIR" --out "$OUT/residual_denovo"
 python3 residual_quality.py --data "$DATA" --out "$OUT/residual_quality"
 python3 gtex_residual_axis.py --gtex "$DATA/gtex_v8" --weights "$OUT/residual_quality/residual_template_weights.csv" --out "$OUT/gtex_residual_axis"
+python3 gtex_residual_axis_qc.py --gtex "$DATA/gtex_v8" --weights "$OUT/residual_quality/residual_template_weights.csv" --out "$OUT/gtex_residual_axis_qc"
 python3 seaad_residual_axis.py --donors "$REF_DIR/donors" --weights "$OUT/residual_quality/residual_template_weights.csv" --out "$OUT/seaad_residual_axis"
 python3 seaad_neun_histology.py --res "$OUT" --qnp "$REF_DIR/quant_neuropath/MTG_all-values_aibs-ids_20250922.csv" --seaad-meta "$REF_DIR/donors/donor_meta.csv" --out "$OUT/seaad_neun"
 python3 stage_reliability.py --data "$DATA" --out "$OUT/stage_reliability"

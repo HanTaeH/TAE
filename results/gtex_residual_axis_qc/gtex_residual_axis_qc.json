@@ -1,0 +1,110 @@
+{
+  "cortex": {
+    "n": 255,
+    "seq_metrics_available": 255,
+    "autolysis_available": 255,
+    "sample_level_n": 255,
+    "r2_in_sample": {
+      "death": 0.069,
+      "RIN": 0.049,
+      "seq_qc": 0.213,
+      "centre_batch": 0.083,
+      "all": 0.292
+    },
+    "r2_cv": {
+      "death": 0.034,
+      "RIN": 0.028,
+      "seq_qc": 0.06,
+      "centre_batch": 0.04,
+      "all": 0.044
+    },
+    "rho_seq_metrics": {
+      "SMNTRART": 0.05,
+      "SMEXNCRT": 0.018,
+      "SMNTERRT": -0.053,
+      "SMRRNART": 0.017,
+      "SMMAPRT": -0.068,
+      "SMEXPEFF": -0.079,
+      "SMCHMPRS": -0.032,
+      "SMSPLTRD": 0.148,
+      "SME1MMRT": 0.066,
+      "SMRDTTL": 0.214,
+      "SMRIN": 0.215
+    },
+    "rho_autolysis": [
+      0.0271,
+      0.6672
+    ],
+    "template_vs_gene_signature_r": {
+      "RIN": 0.433,
+      "intronic_rate": 0.109,
+      "rRNA_rate": -0.021,
+      "ischaemic_time": -0.289,
+      "ventilator_vs_fast": 0.114,
+      "age": -0.368
+    }
+  },
+  "frontal_BA9": {
+    "n": 209,
+    "seq_metrics_available": 209,
+    "autolysis_available": 0,
+    "sample_level_n": 209,
+    "r2_in_sample": {
+      "death": 0.062,
+      "RIN": 0.117,
+      "seq_qc": 0.312,
+      "centre_batch": 0.23,
+      "all": 0.469
+    },
+    "r2_cv": {
+      "death": 0.008,
+      "RIN": 0.112,
+      "seq_qc": 0.21,
+      "centre_batch": 0.097,
+      "all": 0.216
+    },
+    "rho_seq_metrics": {
+      "SMNTRART": 0.061,
+      "SMEXNCRT": 0.099,
+      "SMNTERRT": -0.069,
+      "SMRRNART": -0.169,
+      "SMMAPRT": -0.085,
+      "SMEXPEFF": -0.039,
+      "SMCHMPRS": -0.086,
+      "SMSPLTRD": 0.16,
+      "SME1MMRT": -0.054,
+      "SMRDTTL": 0.111,
+      "SMRIN": 0.349
+    },
+    "rho_autolysis": [
+      NaN,
+      NaN
+    ],
+    "template_vs_gene_signature_r": {
+      "RIN": 0.503,
+      "intronic_rate": 0.152,
+      "rRNA_rate": -0.314,
+      "ischaemic_time": -0.177,
+      "ventilator_vs_fast": 0.358,
+      "age": -0.333
+    }
+  },
+  "donor_cortex_vs_BA9": {
+    "n_donors": 147,
+    "rho_raw": [
+      0.171,
+      0.0388
+    ],
+    "n_adj": 147,
+    "rho_after_RIN_seqQC": [
+      0.06,
+      0.468
+    ]
+  },
+  "template_vs_gene_features_spearman": {
+    "gene_len": 0.341,
+    "exon_len": 0.24,
+    "n_exon": 0.045
+  },
+  "n_genes_with_length": 2275
+}
