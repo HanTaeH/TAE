@@ -1,0 +1,235 @@
+{
+  "n_template_genes": 2280,
+  "matched_pc_and_r_to_GSE125583_PC1": {
+    "GSE125583_FG": [
+      1,
+      1.0
+    ],
+    "GSE33000_PFC": [
+      1,
+      0.468
+    ],
+    "GSE132903_MTG": [
+      1,
+      -0.579
+    ],
+    "GSE118553_Temporal_Cortex": [
+      2,
+      0.319
+    ]
+  },
+  "template_top_positive": [
+    "RAB10",
+    "AMD1",
+    "GNA13",
+    "GPM6B",
+    "CTNNA1",
+    "CLIC4",
+    "RB1",
+    "STXBP3",
+    "DDX3X",
+    "CHUK",
+    "TMED5",
+    "KLF3",
+    "TIAL1",
+    "KLHL9",
+    "CMTM6"
+  ],
+  "template_top_negative": [
+    "SF3A2",
+    "BRSK1",
+    "SH3GLB2",
+    "KCTD17",
+    "PELP1",
+    "FAM3A",
+    "KCTD13",
+    "SLC25A18",
+    "PPP1R1B",
+    "MRPL38",
+    "THAP7",
+    "EHMT2",
+    "MAPK11",
+    "CAMK2N2",
+    "CARM1"
+  ],
+  "MSBB_GSE84422": {
+    "n_regions": 17,
+    "genes_in_template_found": 1865,
+    "template": {
+      "ph": {
+        "median_rho": 0.178,
+        "regions_p05": 0,
+        "regions_same_sign_as_median": 12
+      },
+      "pmi": {
+        "median_rho": 0.105,
+        "regions_p05": 1,
+        "regions_same_sign_as_median": 12
+      },
+      "age": {
+        "median_rho": 0.046,
+        "regions_p05": 0,
+        "regions_same_sign_as_median": 10
+      },
+      "braak": {
+        "median_rho": 0.132,
+        "regions_p05": 1,
+        "regions_same_sign_as_median": 13
+      },
+      "cdr": {
+        "median_rho": -0.025,
+        "regions_p05": 0,
+        "regions_same_sign_as_median": 10
+      }
+    },
+    "ribosome": {
+      "ph": {
+        "median_rho": -0.027,
+        "regions_p05": 0,
+        "regions_same_sign_as_median": 10
+      },
+      "pmi": {
+        "median_rho": 0.063,
+        "regions_p05": 1,
+        "regions_same_sign_as_median": 12
+      },
+      "age": {
+        "median_rho": -0.034,
+        "regions_p05": 1,
+        "regions_same_sign_as_median": 9
+      },
+      "braak": {
+        "median_rho": -0.017,
+        "regions_p05": 0,
+        "regions_same_sign_as_median": 9
+      },
+      "cdr": {
+        "median_rho": -0.104,
+        "regions_p05": 0,
+        "regions_same_sign_as_median": 11
+      }
+    },
+    "heat_shock": {
+      "ph": {
+        "median_rho": 0.144,
+        "regions_p05": 0,
+        "regions_same_sign_as_median": 16
+      },
+      "pmi": {
+        "median_rho": -0.075,
+        "regions_p05": 0,
+        "regions_same_sign_as_median": 12
+      },
+      "age": {
+        "median_rho": -0.116,
+        "regions_p05": 0,
+        "regions_same_sign_as_median": 13
+      },
+      "braak": {
+        "median_rho": 0.111,
+        "regions_p05": 0,
+        "regions_same_sign_as_median": 11
+      },
+      "cdr": {
+        "median_rho": 0.067,
+        "regions_p05": 1,
+        "regions_same_sign_as_median": 10
+      }
+    },
+    "subject_level_n": 65,
+    "subject_level": {
+      "template": {
+        "ph": [
+          0.1087,
+          0.3887
+        ],
+        "pmi": [
+          0.1695,
+          0.1771
+        ],
+        "age": [
+          0.044,
+          0.7278
+        ]
+      },
+      "ribosome": {
+        "ph": [
+          -0.1004,
+          0.4262
+        ],
+        "pmi": [
+          0.1491,
+          0.2357
+        ],
+        "age": [
+          -0.0749,
+          0.5533
+        ]
+      },
+      "heat_shock": {
+        "ph": [
+          0.284,
+          0.0219
+        ],
+        "pmi": [
+          -0.1486,
+          0.2375
+        ],
+        "age": [
+          -0.0173,
+          0.8914
+        ]
+      }
+    },
+    "template_ph_shuffled_null": {
+      "median_abs": 0.094,
+      "p95": 0.29,
+      "p": 0.4428
+    }
+  },
+  "GSE106241": {
+    "n": 60,
+    "template": {
+      "rna_quality": [
+        0.1674,
+        0.2012
+      ],
+      "braak": [
+        -0.0931,
+        0.4793
+      ],
+      "age": [
+        0.127,
+        0.3336
+      ]
+    },
+    "ribosome": {
+      "rna_quality": [
+        0.2676,
+        0.0387
+      ],
+      "braak": [
+        -0.0636,
+        0.6292
+      ],
+      "age": [
+        0.0666,
+        0.6132
+      ]
+    },
+    "heat_shock": {
+      "rna_quality": [
+        0.3838,
+        0.0025
+      ],
+      "braak": [
+        -0.0001,
+        0.9991
+      ],
+      "age": [
+        0.1613,
+        0.2183
+      ]
+    }
+  }
+}
