@@ -1,0 +1,62 @@
+{
+  "GSE33000_PFC": {
+    "n_ad": 310,
+    "obs": -0.928,
+    "strength": {
+      "null_median": -0.91,
+      "p_lower": 0.0619,
+      "p_upper": 0.9401
+    },
+    "spec": {
+      "null_median": -0.877,
+      "n": 500,
+      "p_lower": 0.004,
+      "p_upper": 0.998
+    }
+  },
+  "GSE132903_MTG": {
+    "n_ad": 97,
+    "obs": -0.921,
+    "strength": {
+      "null_median": -0.878,
+      "p_lower": 0.0758,
+      "p_upper": 0.9261
+    },
+    "spec": {
+      "null_median": -0.883,
+      "n": 500,
+      "p_lower": 0.1417,
+      "p_upper": 0.8603
+    }
+  },
+  "GSE118553_Temporal_Cortex": {
+    "n_ad": 52,
+    "obs": -0.85,
+    "strength": {
+      "null_median": -0.812,
+      "p_lower": 0.2415,
+      "p_upper": 0.7605
+    },
+    "spec": {
+      "null_median": -0.836,
+      "n": 500,
+      "p_lower": 0.3972,
+      "p_upper": 0.6048
+    }
+  },
+  "GSE125583_FG": {
+    "n_ad": 219,
+    "obs": -0.927,
+    "strength": {
+      "null_median": -0.942,
+      "p_lower": 0.8942,
+      "p_upper": 0.1078
+    },
+    "spec": {
+      "null_median": -0.941,
+      "n": 500,
+      "p_lower": 0.7764,
+      "p_upper": 0.2255
+    }
+  }
+}

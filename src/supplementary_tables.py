@@ -145,26 +145,90 @@ def main() -> None:
 
     import json as _json
     jl = lambda f: _json.loads((R / f).read_text())
-    s15 = pd.DataFrame(json_rows(jl("gse33000_null_followup/gse33000_null_followup.json")))
-    s15.insert(0, "analysis", "neuron association, finer and strength-matched nulls")
-    k = pd.read_csv(R / "msbb/msbb_normalisation_kappa_null.csv")
-    k.insert(0, "analysis", "MSBB kappa vs labels before normalisation: SPV, CDR, 200 random-gene covariates")
-    sheets["S15_strength_null_kappa_null"] = pd.concat([s15, k], ignore_index=True)
-    sheets["S16_further_schemes"] = pd.read_csv(R / "other_schemes/other_schemes_clustered.csv")
-    sheets["S17_positive_control"] = pd.DataFrame(json_rows(jl("positive_control/positive_control_simulation.json")))
-    sheets["S18_csf_subtypes_brain"] = pd.concat(
-        [pd.DataFrame(json_rows(jl("tijms_csf/tijms_csf_projection.json"))).assign(analysis="projection"),
-         pd.DataFrame(json_rows(jl("tijms_followup/tijms_followup.json"))).assign(analysis="follow-up nulls, residual coupling")],
-        ignore_index=True)
-    sheets["S19_residual_axis"] = pd.concat(
-        [pd.DataFrame(json_rows(jl(f))).assign(analysis=f.split("/")[0]) for f in
-         ("residual_denovo/residual_denovo.json", "residual_quality/residual_quality.json",
-          "gtex_residual_axis/gtex_residual_axis.json", "gtex_residual_axis_qc/gtex_residual_axis_qc.json",
-          "seaad_residual_axis/seaad_residual_axis.json")], ignore_index=True)
-    sheets["S20_methods_coding"] = pd.read_csv(R / "literature/methods_coding_2026-11-25.csv")
+    # S15 neuron association: strength-matched null, both tails (v10)
+    up = jl("bound_upper_tail/bound_upper_tail.json")
+    fu = jl("gse33000_null_followup/gse33000_null_followup.json")
+    rows = []
+    for c, d in up.items():
+        rows.append({"cohort": c, "n_AD": d["n_ad"], "observed_rho": d["obs"],
+                     "strength_null_median": d["strength"]["null_median"], "strength_p_more_coupled": d["strength"]["p_lower"],
+                     "strength_p_less_coupled": d["strength"]["p_upper"],
+                     "spec_null_median": d.get("spec", {}).get("null_median"), "spec_p_more_coupled": d.get("spec", {}).get("p_lower"),
+                     "spec_p_less_coupled": d.get("spec", {}).get("p_upper"), "note": "500 sets each; p = (k+1)/(N+1)"})
+    rows.append({"cohort": "GSE33000_PFC", "n_AD": fu["n_ad"], "observed_rho": fu["finer_match"]["neff"],
+                 "note": f"finer match on top non-neuronal type: null median {fu['finer_match']['random_median']}, p more coupled {fu['finer_match']['p_empirical']}"})
+    for n, d in fu["subsample"].items():
+        rows.append({"cohort": f"GSE33000_PFC subsample n={n}", "n_AD": int(n), "observed_rho": d["obs_median"],
+                     "spec_null_median": d["null_median"], "spec_p_more_coupled": d["p_median"],
+                     "note": f"30 subsamples; median p; share p<0.05 = {d['share_p_lt_0.05']}"})
+    sheets["S15_neuron_strength_null"] = pd.DataFrame(rows)
+    sheets["S16_kappa_random_covariates"] = pd.read_csv(R / "msbb/msbb_normalisation_kappa_null.csv")
+    # S17 positive control (tail: classifier less coupled than random = upper tail)
+    rows = []
+    for tag, f in [("200", "positive_control/positive_control_simulation.json")] + \
+                  [(n, f"positive_control/positive_control_simulation_nAD{n}.json") for n in (52, 97, 219, 310)]:
+        d = jl(f)
+        for scen, byf in d["results"].items():
+            for frac, r in byf.items():
+                rows.append({"scenario": scen, "n_AD": int(tag), "signal_share_of_contrast": float(frac), "obs_rho_median": r["obs_median"],
+                             "spec_null_median": r["spec"]["null_median"], "spec_detection_rate": r["spec"]["share_p_lt_0.05"],
+                             "strength_null_median": r["strength"]["null_median"], "strength_detection_rate": r["strength"]["share_p_lt_0.05"],
+                             "tail": "classifier less neuron-coupled than random" if scen == "within_AD_subtype" else
+                                     "neuron-adjusted case-control association larger than random",
+                             "genes": d["n_genes"], "reps": 20, "null_sets": 200})
+    sheets["S17_positive_control"] = pd.DataFrame(rows)
+    os_ = pd.read_csv(R / "other_schemes/other_schemes_clustered.csv")
+    sheets["S18_further_schemes"] = os_[~os_.iloc[:, 0].astype(str).str.contains("Wang")]
+    # S19 CSF subtypes
+    rows = []
+    pr, fo = jl("tijms_csf/tijms_csf_projection.json"), jl("tijms_followup/tijms_followup.json")
+    for cp, cf in zip(pr["cohorts"], fo["cohorts"]):
+        for st, d in cp["subtypes"].items():
+            e = cf["subtypes"][st]
+            rows.append({"cohort": cp["cohort"], "n_AD": cp["n_AD"], "genes_found": cp["genes_found"], "subtype": st,
+                         "rho_neuron": d["rho_neuron"], "rho_neff_CA": d["rho_neff_CA"], "p_expr": d["p_expr"], "p_spec": d["p_spec"],
+                         "genes_without_neff": cf["tijms_genes_used"], "neuron_strength_p": e["neuron_strength_p"],
+                         "rho_resid_vs_neff_resid": e["rho_resid_vs_neff_resid_CA"], "resid_strength_p": e["resid_strength_p"],
+                         "resid_spec_p": e["resid_spec_p"]})
+    sheets["S19_csf_subtypes_brain"] = pd.DataFrame(rows)
+    # S20 residual axis
+    rows = []
+    dn = jl("residual_denovo/residual_denovo.json")
+    for c, d in dn["cohorts"].items():
+        for k in ("unadjusted", "adjusted"):
+            x = d[k]
+            rows.append({"source": "de novo PCA", "cohort": c, "data": k, "n": d["n_AD"],
+                         "var_PC1_5": str(x["var_pc1_5"]), "PC1_abs_rho_neuron": x["pc1_abs_rho_neuron"],
+                         "silhouette": x["sigclust"]["silhouette"], "silhouette_null_median": x["sigclust"]["null_median"],
+                         "sigclust_p": x["sigclust"]["p"]})
+    for pair, d in dn["replication"].items():
+        rows.append({"source": "loading replication", "cohort": pair, "data": "adjusted",
+                     "note": f"best |r| per PC of first {d['best_abs_r_per_PC_of_first']}; matched PC {d['matched_PC_of_second']}; null p95 {d['null_p95']}"})
+    gq, ga = jl("gtex_residual_axis_qc/gtex_residual_axis_qc.json"), jl("gtex_residual_axis/gtex_residual_axis.json")
+    for t in ("cortex", "frontal_BA9"):
+        rows.append({"source": "GTEx v8", "cohort": t, "n": gq[t]["n"],
+                     "note": f"|r| template vs residual PC1-5 {ga[t]['abs_r_template_vs_residual_PC1_5']}; RIN rho {ga[t]['template']['rin_rho']}; "
+                             f"R2 in-sample {gq[t]['r2_in_sample']}; R2 CV {gq[t]['r2_cv']}; gene-signature r {gq[t]['template_vs_gene_signature_r']}"})
+    rows.append({"source": "GTEx v8", "cohort": "same donor cortex vs BA9", "n": gq["donor_cortex_vs_BA9"]["n_donors"],
+                 "note": f"rho raw {gq['donor_cortex_vs_BA9']['rho_raw']}; after RIN and RNA-seq metrics {gq['donor_cortex_vs_BA9']['rho_after_RIN_seqQC']}; "
+                         f"template vs gene length {gq['template_vs_gene_features_spearman']}"})
+    sa = jl("seaad_residual_axis/seaad_residual_axis.json")
+    for k, d in sa.items():
+        if isinstance(d, dict) and "RIN" in d:
+            rows.append({"source": "SEA-AD pseudobulk", "cohort": k, "n": sa["n_donors"],
+                         "note": "; ".join(f"{v} {d[v]}" for v in ("abs_r_template_vs_PC1_5", "RIN", "pH", "PMI", "age", "Braak", "dementia") if v in d)})
+    sheets["S20_residual_axis"] = pd.DataFrame(rows)
+    # methods coding merged into S1
+    mc = pd.read_csv(R / "literature/methods_coding_2026-11-25.csv")
+    sheets["S1b_methods_coding"] = mc
+    # within-AD plaque (S11 addition)
+    pl = jl("msbb/msbb_plaque_within_ad.json")
+    sheets["S11_stage_followups"] = pd.concat([sheets["S11_stage_followups"], pd.DataFrame(
+        [{"spec": f"MSBB plaque density, {g}, {k}", **{kk: (str(vv) if isinstance(vv, list) else vv) for kk, vv in d[k].items()}, "n": d["n"]}
+         for g, d in pl.items() for k in ("age_sex", "age_sex_neuron")])], ignore_index=True)
 
     titles = {
-        "S1": "Included studies of the structured literature search, with extracted composition and null-control features",
+        "S1": "Included studies of the structured literature search (S1b: methods coding of all 32 studies, source full text or abstract)",
         "S2": "Per-cohort primary endpoints (S2b: pooled random-effects estimates, REML/HKSJ)",
         "S3": "Expression-matched random-gene null (1,000 sets) per cohort-region set",
         "S4": "SEA-AD pseudobulk x outcome tests with nominal and random-gene FDR",
@@ -180,15 +244,25 @@ def main() -> None:
                "bootstrap 95% CIs (AUC compares AD with controls only; GSE118553 n = 83 excludes asymptomatic AD)",
         "S14": "SEA-AD histology (MTG grey matter) against pseudobulk C-A scores; subset neun_share_ge_5pct excludes 4 donors "
                "with NeuN+ < 5% of nuclei (threshold set after inspecting the data); rows with a note are NeuN density given CPS or FANS fraction",
-        "S15": "Neuron association against finer and strength-matched random-gene nulls (four cohorts); MSBB kappa against labels "
-               "before normalisation for SPV, CDR and 200 random-gene covariates per region",
-        "S16": "Further subtype schemes (Lai 2022, Ma 2023, Wang 2024): PC1 axis vs neuron score, cell-score R2, label AUC, nulls",
-        "S17": "Positive-control simulation: detection rate by injected composition-independent signal size (share of published C-A contrast)",
-        "S18": "Tijms 2024 CSF proteomic subtypes projected on brain bulk cohorts: neuron and C-A association, nulls, residual coupling",
-        "S19": "Residual axis after five cell scores: de novo PCA and clustering, MSBB/GSE106241 quality, GTEx v8 and SEA-AD tracing",
-        "S20": "Methods coding of the 29 de novo and 3 applied subtype studies (source: full text or abstract)",
+        "S15": "Neuron association against strength-matched (post hoc) and specificity-matched nulls in both tails; GSE33000 finer match and subsamples",
+        "S16": "MSBB kappa against labels before normalisation: neuronal SPV, CDR and 200 single random-gene covariates per region",
+        "S17": "Positive-control simulation: detection rate by injected composition-independent signal (share of published C-A contrast), AD cohort size and null",
+        "S18": "Further subtype schemes (Lai 2022, Ma 2023): PC1 axis vs neuron score, cell-score R2, label AUC, expression- and specificity-matched nulls",
+        "S19": "Tijms 2024 CSF proteomic subtypes projected on brain bulk cohorts (supplementary analysis)",
+        "S20": "Residual axis after five cell scores: de novo PCA, clustering, loading replication, GTEx v8 and SEA-AD tracing",
     }
-    readme = pd.DataFrame([{"sheet": k, "table": k.split("_")[0], "title": titles.get(k.split("_")[0], "")} for k in sheets])
+    # v10: renumber in order of first citation in the manuscript (old -> new)
+    REN = {"S7": "S1", "S1": "S2", "S3": "S3", "S12": "S4", "S15": "S5", "S17": "S6", "S2": "S7", "S16": "S8", "S8": "S9",
+           "S13": "S10", "S9": "S11", "S11": "S12", "S10": "S13", "S5": "S14", "S4": "S15", "S14": "S16", "S18": "S17",
+           "S19": "S18", "S6": "S19", "S20": "S20"}
+    def ren(k):
+        t = k.split("_")[0]
+        base, suf = (t[:-1], t[-1]) if t[-1] == "b" else (t, "")
+        return REN[base] + suf + k[len(t):]
+    titles = {REN[k]: v for k, v in titles.items()}
+    sheets = {ren(k): v for k, v in sheets.items()}
+    sheets = dict(sorted(sheets.items(), key=lambda kv: (int(kv[0].split("_")[0].rstrip("b")[1:]), kv[0])))
+    readme = pd.DataFrame([{"sheet": k, "table": k.split("_")[0], "title": titles.get(k.split("_")[0].rstrip("b"), "")} for k in sheets])
     readme = pd.concat([pd.DataFrame([{"sheet": "README", "table": "", "title":
                         "rho = Spearman or partial Spearman; ci95_hksj = Hartung-Knapp CI; pi95 = 95% prediction interval; "
                         "p_empirical = (k+1)/(N+1), one-sided; se_boot = bootstrap SE of Fisher z"}]), readme], ignore_index=True)

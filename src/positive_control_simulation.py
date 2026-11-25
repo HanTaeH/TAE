@@ -69,6 +69,11 @@ def main() -> None:
     ap.add_argument("--out", type=Path, required=True)
     ap.add_argument("--reps", type=int, default=20)
     ap.add_argument("--n-null", type=int, default=200)
+    ap.add_argument("--n-ad", type=int, default=200, help="AD samples per simulated cohort (v10: real sizes 52-310)")
+    ap.add_argument("--n-ctrl", type=int, default=100)
+    ap.add_argument("--scen", nargs="+", default=["within_AD_subtype", "disease_shift"])
+    ap.add_argument("--fracs", nargs="+", type=float, default=FRACS)
+    ap.add_argument("--tag", default="")
     a = ap.parse_args()
     a.out.mkdir(parents=True, exist_ok=True)
     rng = np.random.default_rng(SEED + 202)
@@ -103,14 +108,14 @@ def main() -> None:
         r = corr_np(z_np(X[rows]), cent)
         return r[:, 2] - r[:, 0]
 
-    out = {"n_genes": int(len(genes)), "contrast_sd_log": round(float(contrast.std()), 3), "results": {}}
-    for scen in ("within_AD_subtype", "disease_shift"):
+    out = {"n_ad": a.n_ad, "n_ctrl": a.n_ctrl, "n_genes": int(len(genes)), "contrast_sd_log": round(float(contrast.std()), 3), "results": {}}
+    for scen in a.scen:
         out["results"][scen] = {}
-        for f in FRACS:
+        for f in a.fracs:
             ps, obs_l, med_l = {k: [] for k in BY}, [], {k: [] for k in BY}
             for _ in range(a.reps):
-                P = np.vstack([props(100, 0, .15, rng), props(200, .1, .6, rng)])
-                ad = np.r_[np.zeros(100, bool), np.ones(200, bool)]
+                P = np.vstack([props(a.n_ctrl, 0, .15, rng), props(a.n_ad, .1, .6, rng)])
+                ad = np.r_[np.zeros(a.n_ctrl, bool), np.ones(a.n_ad, bool)]
                 X = mix(P, prof.values, rng)
                 if scen == "within_AD_subtype":
                     s = rng.normal(0, 1, ad.sum())
@@ -148,7 +153,7 @@ def main() -> None:
                              "share_p_lt_0.05": round(float((pk < .05).mean()), 2)}
             out["results"][scen][str(f)] = res
             print(scen, f, json.dumps(out["results"][scen][str(f)]), flush=True)
-    (a.out / "positive_control_simulation.json").write_text(json.dumps(out, indent=2))
+    (a.out / f"positive_control_simulation{a.tag}.json").write_text(json.dumps(out, indent=2))
 
 
 if __name__ == "__main__":
