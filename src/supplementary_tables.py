@@ -228,8 +228,8 @@ def main() -> None:
          for g, d in pl.items() for k in ("age_sex", "age_sex_neuron")])], ignore_index=True)
 
     titles = {
-        "S1": "Included studies of the structured literature search (S1b: methods coding of all 32 studies, source full text or abstract)",
-        "S2": "Per-cohort primary endpoints (S2b: pooled random-effects estimates, REML/HKSJ)",
+        "S1": "Included studies of the structured literature search (sheet S2b: methods coding of all 32 studies, source full text or abstract)",
+        "S2": "Per-cohort primary endpoints (sheet S7b: pooled random-effects estimates, REML/HKSJ)",
         "S3": "Expression-matched random-gene null (1,000 sets) per cohort-region set",
         "S4": "SEA-AD pseudobulk x outcome tests with nominal and random-gene FDR",
         "S5": "Forward and reverse mediation models (descriptive)",
@@ -238,7 +238,7 @@ def main() -> None:
         "S8": "MSBB neuronal SPV normalisation per region",
         "S9": "Neuron-adjusted case-control association: pooled rows (POOLED ...) and reliability correction per cohort",
         "S10": "Expression-matched random-gene null for the neuron-adjusted case-control association",
-        "S11": "Follow-up stage analyses: bootstrap CIs, covariate specifications, reverse partial, glial covariates, age",
+        "S11": "Follow-up stage analyses: bootstrap CIs, covariate specifications, reverse partial, glial covariates, age; MSBB plaque density within AD",
         "S12": "Random-gene null matched on cell-type specificity: pooled rows and per cohort (one-sided empirical p)",
         "S13": "NNLS-adjusted case-control association, alternative GSE118553 regions, GSE118553 AD vs control only, AUC with "
                "bootstrap 95% CIs (AUC compares AD with controls only; GSE118553 n = 83 excludes asymptomatic AD)",
