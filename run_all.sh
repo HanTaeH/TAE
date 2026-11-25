@@ -87,12 +87,12 @@ python3 msbb_neuropath_v11.py --data "$DATA" --res "$OUT" --out "$OUT/msbb"
 python3 msbb_kappa_v11.py --data "$DATA" --out "$OUT/msbb"
 python3 seaad_regulators_copath_v11.py --donors "$REF_DIR/donors" --cps "$REF_DIR/Global_and_Local_CPS.20260105.csv" --res "$OUT" --out "$OUT/seaad_v11"
 python3 cohort_followups_v11.py --data "$DATA" --ref "$REF_DIR/seaad_mtg_reference.csv.gz" --out "$OUT/cohort_v11"
-# last: FDR over every result file above, then the supplementary tables numbered by first citation in the manuscript
 # v12 (review round 10): direction null, BRETIGEA normalisation, MSBB cross-region agreement, S1 signature decomposition
 python3 null_direction_v12.py --data "$DATA" --ref "$REF_DIR/seaad_mtg_reference.csv.gz" --out "$OUT/null_direction_v12" --n 500
 python3 bretigea_normalisation_v12.py --data "$DATA" --out "$OUT/bretigea_v12" --n 200
 python3 msbb_cross_region_v12.py --data "$DATA" --ref "$REF_DIR/seaad_mtg_reference.csv.gz" --out "$OUT/msbb_v12" --n 500
 python3 neff_signature_decomposition_v12.py --data "$DATA" --ref "$REF_DIR/seaad_mtg_reference.csv.gz" --out "$OUT/neff_signature_v12" --n 200
+# last: FDR over every result file above, then the supplementary tables numbered by first citation in the manuscript
 python3 multiple_testing.py "$OUT"
 MS=${MS:-/mnt/project-files/d1-results/manuscript}
 python3 manuscript_tokens.py --src "$MS/draft_v11_src_2026-11-25.md" --out "$MS/draft_v11_2026-11-25.md" --ren "$OUT/supplementary/ren_v11.json"
