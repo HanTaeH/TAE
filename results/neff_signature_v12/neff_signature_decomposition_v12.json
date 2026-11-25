@@ -1,0 +1,251 @@
+{
+  "n_genes": 15805,
+  "gene_level": {
+    "C_A": {
+      "r2_linear": 0.504,
+      "r2_boosted_crossfit": 0.539,
+      "resid_top_down": [
+        "DRGX",
+        "HIST1H4J",
+        "PVALB",
+        "PTER",
+        "CHRM4",
+        "HIST1H4F",
+        "MAS1",
+        "HIST1H4E",
+        "AL132709.8",
+        "MC4R",
+        "RGS4",
+        "OXGR1",
+        "KRT5",
+        "HIST2H3D",
+        "IPCEF1",
+        "SST",
+        "HIST1H2AE",
+        "AC092661.1",
+        "CRH",
+        "NXPH2",
+        "SMPX",
+        "HIST1H2BL",
+        "SLC6A5",
+        "CD83",
+        "CARTPT"
+      ],
+      "resid_top_up": [
+        "GMNC",
+        "LHX9",
+        "ADGB",
+        "MAPK15",
+        "CLIC6",
+        "ANKRD30BL",
+        "TEKT1",
+        "MUC19",
+        "RASSF9",
+        "MMP9",
+        "ABCC3",
+        "SLC5A5",
+        "TNFSF14",
+        "C6",
+        "SLC47A2",
+        "SPAG17",
+        "VWA5B1",
+        "MYOCD",
+        "C8orf34",
+        "LTF",
+        "SLC27A6",
+        "LILRA5",
+        "MUC5B",
+        "MMEL1",
+        "ARRDC4"
+      ]
+    },
+    "C1_C2": {
+      "r2_linear": 0.172,
+      "r2_boosted_crossfit": 0.217
+    },
+    "B1_B2": {
+      "r2_linear": 0.151,
+      "r2_boosted_crossfit": 0.193
+    },
+    "A_vs_control": {
+      "r2_linear": 0.363,
+      "r2_boosted_crossfit": 0.398
+    },
+    "B1_vs_control": {
+      "r2_linear": 0.33,
+      "r2_boosted_crossfit": 0.342
+    },
+    "B2_vs_control": {
+      "r2_linear": 0.136,
+      "r2_boosted_crossfit": 0.177
+    },
+    "C1_vs_control": {
+      "r2_linear": 0.565,
+      "r2_boosted_crossfit": 0.578
+    },
+    "C2_vs_control": {
+      "r2_linear": 0.396,
+      "r2_boosted_crossfit": 0.437
+    }
+  },
+  "cohorts": {
+    "GSE33000_PFC": {
+      "n_genes": 11114,
+      "n_ad": 310,
+      "rho_with_neuron": {
+        "full": -0.933,
+        "fitted": -0.927,
+        "resid": -0.895
+      },
+      "resid_score_r2_on_5_cell_scores": 0.825,
+      "coherence_resid": {
+        "var_ratio_to_null_median": 2.38,
+        "p_upper": 0.005
+      },
+      "coherence_full_var_ratio": 6.8,
+      "disease_tests": {
+        "dx_agesex": {
+          "rho": 0.395,
+          "null_median": 0.354,
+          "p_two_sided": 0.005
+        },
+        "dx_agesex_cells": {
+          "rho": 0.109,
+          "null_median": 0.11,
+          "p_two_sided": 0.5572
+        }
+      }
+    },
+    "GSE132903_MTG": {
+      "n_genes": 12693,
+      "n_ad": 97,
+      "rho_with_neuron": {
+        "full": -0.929,
+        "fitted": -0.927,
+        "resid": -0.815
+      },
+      "resid_score_r2_on_5_cell_scores": 0.74,
+      "coherence_resid": {
+        "var_ratio_to_null_median": 146.06,
+        "p_upper": 0.005
+      },
+      "coherence_full_var_ratio": 408.4,
+      "disease_tests": {
+        "dx_agesex": {
+          "rho": 0.486,
+          "null_median": 0.005,
+          "p_two_sided": 0.005
+        },
+        "dx_agesex_cells": {
+          "rho": 0.26,
+          "null_median": -0.086,
+          "p_two_sided": 0.0547
+        }
+      }
+    },
+    "GSE118553_Temporal_Cortex": {
+      "n_genes": 13651,
+      "n_ad": 52,
+      "rho_with_neuron": {
+        "full": -0.9,
+        "fitted": -0.872,
+        "resid": -0.826
+      },
+      "resid_score_r2_on_5_cell_scores": 0.742,
+      "coherence_resid": {
+        "var_ratio_to_null_median": 27.66,
+        "p_upper": 0.005
+      },
+      "coherence_full_var_ratio": 72.97,
+      "disease_tests": {
+        "dx_agesex": {
+          "rho": 0.336,
+          "null_median": 0.502,
+          "p_two_sided": 0.995
+        },
+        "dx_agesex_cells": {
+          "rho": -0.111,
+          "null_median": 0.364,
+          "p_two_sided": 0.995
+        }
+      }
+    },
+    "GSE125583_FG": {
+      "n_genes": 12536,
+      "n_ad": 219,
+      "rho_with_neuron": {
+        "full": -0.934,
+        "fitted": -0.946,
+        "resid": -0.828
+      },
+      "resid_score_r2_on_5_cell_scores": 0.723,
+      "coherence_resid": {
+        "var_ratio_to_null_median": 69.63,
+        "p_upper": 0.005
+      },
+      "coherence_full_var_ratio": 215.32,
+      "disease_tests": {
+        "dx_agesex": {
+          "rho": 0.432,
+          "null_median": 0.069,
+          "p_two_sided": 0.005
+        },
+        "dx_agesex_cells": {
+          "rho": 0.299,
+          "null_median": -0.049,
+          "p_two_sided": 0.005
+        },
+        "braak_AD_agesex": {
+          "n": 217,
+          "rho": 0.299,
+          "null_median": 0.11,
+          "p_two_sided": 0.005
+        },
+        "braak_AD_agesex_cells": {
+          "n": 217,
+          "rho": 0.099,
+          "null_median": 0.106,
+          "p_two_sided": 0.6716
+        }
+      }
+    }
+  },
+  "loading_agreement": {
+    "GSE33000_PFC|GSE132903_MTG": {
+      "n_genes": 10332,
+      "rho_loadings": 0.53,
+      "rho_loadings_signature_removed": 0.486,
+      "rho_loading_x_vs_signature": 0.316
+    },
+    "GSE33000_PFC|GSE118553_Temporal_Cortex": {
+      "n_genes": 11097,
+      "rho_loadings": 0.375,
+      "rho_loadings_signature_removed": 0.319,
+      "rho_loading_x_vs_signature": 0.315
+    },
+    "GSE33000_PFC|GSE125583_FG": {
+      "n_genes": 9395,
+      "rho_loadings": 0.694,
+      "rho_loadings_signature_removed": 0.652,
+      "rho_loading_x_vs_signature": 0.338
+    },
+    "GSE132903_MTG|GSE118553_Temporal_Cortex": {
+      "n_genes": 12693,
+      "rho_loadings": 0.426,
+      "rho_loadings_signature_removed": 0.377,
+      "rho_loading_x_vs_signature": 0.323
+    },
+    "GSE132903_MTG|GSE125583_FG": {
+      "n_genes": 10609,
+      "rho_loadings": 0.638,
+      "rho_loadings_signature_removed": 0.59,
+      "rho_loading_x_vs_signature": 0.347
+    },
+    "GSE118553_Temporal_Cortex|GSE125583_FG": {
+      "n_genes": 11376,
+      "rho_loadings": 0.452,
+      "rho_loadings_signature_removed": 0.379,
+      "rho_loading_x_vs_signature": 0.334
+    }
+  }
+}

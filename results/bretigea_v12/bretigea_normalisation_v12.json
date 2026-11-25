@@ -1,0 +1,838 @@
+{
+  "msbb": {
+    "Anterior Cingulate": {
+      "markers_used": {
+        "ast": 512,
+        "end": 616,
+        "mic": 538,
+        "neu": 550,
+        "oli": 519,
+        "opc": 203
+      },
+      "r2_CA_on_6_spv": 0.813,
+      "rho_neu_spv_vs_14marker": 0.968,
+      "kappa_bretigea": 0.075,
+      "kappa_random6_median": 0.28,
+      "kappa_random6_q05_q95": [
+        0.117,
+        0.453
+      ],
+      "p_kappa_le_random": 0.0199,
+      "label_share_before": {
+        "A": 0.406,
+        "B": 0.25,
+        "C": 0.344
+      },
+      "label_share_after": {
+        "A": 0.344,
+        "B": 0.438,
+        "C": 0.219
+      },
+      "rho_CA_raw_vs_neuron14": -0.846,
+      "rho_CA_norm_vs_neuron14": -0.056,
+      "rho_CA_norm_vs_neu_spv": -0.052,
+      "rho_CA_norm_vs_CA_raw": 0.273,
+      "cdr_rho_norm": 0.049,
+      "cdr_rho_raw": 0.231,
+      "braak_rho_norm": 0.253,
+      "braak_rho_raw": 0.185,
+      "nft_sum_rho_norm": 0.178,
+      "nft_sum_rho_raw": 0.187,
+      "n_AD": 32
+    },
+    "Caudate Nucleus": {
+      "markers_used": {
+        "ast": 512,
+        "end": 616,
+        "mic": 538,
+        "neu": 550,
+        "oli": 519,
+        "opc": 203
+      },
+      "r2_CA_on_6_spv": 0.911,
+      "rho_neu_spv_vs_14marker": 0.958,
+      "kappa_bretigea": 0.04,
+      "kappa_random6_median": 0.211,
+      "kappa_random6_q05_q95": [
+        0.04,
+        0.414
+      ],
+      "p_kappa_le_random": 0.0498,
+      "label_share_before": {
+        "A": 0.276,
+        "B": 0.276,
+        "C": 0.448
+      },
+      "label_share_after": {
+        "A": 0.379,
+        "B": 0.379,
+        "C": 0.241
+      },
+      "rho_CA_raw_vs_neuron14": -0.88,
+      "rho_CA_norm_vs_neuron14": -0.05,
+      "rho_CA_norm_vs_neu_spv": 0.041,
+      "rho_CA_norm_vs_CA_raw": 0.18,
+      "cdr_rho_norm": -0.116,
+      "cdr_rho_raw": -0.006,
+      "braak_rho_norm": -0.216,
+      "braak_rho_raw": 0.103,
+      "nft_sum_rho_norm": -0.261,
+      "nft_sum_rho_raw": 0.047,
+      "n_AD": 29
+    },
+    "Dorsolateral Prefrontal Cortex": {
+      "markers_used": {
+        "ast": 512,
+        "end": 616,
+        "mic": 538,
+        "neu": 550,
+        "oli": 519,
+        "opc": 203
+      },
+      "r2_CA_on_6_spv": 0.673,
+      "rho_neu_spv_vs_14marker": 0.908,
+      "kappa_bretigea": 0.183,
+      "kappa_random6_median": 0.256,
+      "kappa_random6_q05_q95": [
+        0.034,
+        0.468
+      ],
+      "p_kappa_le_random": 0.2388,
+      "label_share_before": {
+        "A": 0.321,
+        "B": 0.393,
+        "C": 0.286
+      },
+      "label_share_after": {
+        "A": 0.464,
+        "B": 0.393,
+        "C": 0.143
+      },
+      "rho_CA_raw_vs_neuron14": -0.828,
+      "rho_CA_norm_vs_neuron14": -0.153,
+      "rho_CA_norm_vs_neu_spv": -0.128,
+      "rho_CA_norm_vs_CA_raw": 0.3,
+      "cdr_rho_norm": 0.119,
+      "cdr_rho_raw": -0.228,
+      "braak_rho_norm": 0.12,
+      "braak_rho_raw": 0.153,
+      "nft_sum_rho_norm": -0.0,
+      "nft_sum_rho_raw": 0.072,
+      "n_AD": 28
+    },
+    "Frontal Pole": {
+      "markers_used": {
+        "ast": 512,
+        "end": 616,
+        "mic": 538,
+        "neu": 550,
+        "oli": 519,
+        "opc": 203
+      },
+      "r2_CA_on_6_spv": 0.819,
+      "rho_neu_spv_vs_14marker": 0.968,
+      "kappa_bretigea": 0.123,
+      "kappa_random6_median": 0.309,
+      "kappa_random6_q05_q95": [
+        0.104,
+        0.482
+      ],
+      "p_kappa_le_random": 0.0647,
+      "label_share_before": {
+        "A": 0.286,
+        "B": 0.314,
+        "C": 0.4
+      },
+      "label_share_after": {
+        "A": 0.457,
+        "B": 0.371,
+        "C": 0.171
+      },
+      "rho_CA_raw_vs_neuron14": -0.892,
+      "rho_CA_norm_vs_neuron14": 0.013,
+      "rho_CA_norm_vs_neu_spv": 0.051,
+      "rho_CA_norm_vs_CA_raw": 0.093,
+      "cdr_rho_norm": 0.106,
+      "cdr_rho_raw": 0.194,
+      "braak_rho_norm": 0.192,
+      "braak_rho_raw": 0.363,
+      "nft_sum_rho_norm": -0.013,
+      "nft_sum_rho_raw": 0.294,
+      "n_AD": 35
+    },
+    "Hippocampus": {
+      "markers_used": {
+        "ast": 512,
+        "end": 616,
+        "mic": 538,
+        "neu": 550,
+        "oli": 519,
+        "opc": 203
+      },
+      "r2_CA_on_6_spv": 0.892,
+      "rho_neu_spv_vs_14marker": 0.979,
+      "kappa_bretigea": -0.018,
+      "kappa_random6_median": 0.296,
+      "kappa_random6_q05_q95": [
+        0.119,
+        0.447
+      ],
+      "p_kappa_le_random": 0.005,
+      "label_share_before": {
+        "A": 0.3,
+        "B": 0.267,
+        "C": 0.433
+      },
+      "label_share_after": {
+        "A": 0.367,
+        "B": 0.433,
+        "C": 0.2
+      },
+      "rho_CA_raw_vs_neuron14": -0.89,
+      "rho_CA_norm_vs_neuron14": 0.087,
+      "rho_CA_norm_vs_neu_spv": 0.066,
+      "rho_CA_norm_vs_CA_raw": 0.092,
+      "cdr_rho_norm": 0.205,
+      "cdr_rho_raw": 0.139,
+      "braak_rho_norm": -0.031,
+      "braak_rho_raw": 0.392,
+      "nft_sum_rho_norm": 0.143,
+      "nft_sum_rho_raw": 0.244,
+      "n_AD": 30
+    },
+    "Inferior Frontal Gyrus": {
+      "markers_used": {
+        "ast": 512,
+        "end": 616,
+        "mic": 538,
+        "neu": 550,
+        "oli": 519,
+        "opc": 203
+      },
+      "r2_CA_on_6_spv": 0.858,
+      "rho_neu_spv_vs_14marker": 0.985,
+      "kappa_bretigea": 0.229,
+      "kappa_random6_median": 0.328,
+      "kappa_random6_q05_q95": [
+        0.115,
+        0.508
+      ],
+      "p_kappa_le_random": 0.2289,
+      "label_share_before": {
+        "A": 0.407,
+        "B": 0.259,
+        "C": 0.333
+      },
+      "label_share_after": {
+        "A": 0.37,
+        "B": 0.444,
+        "C": 0.185
+      },
+      "rho_CA_raw_vs_neuron14": -0.906,
+      "rho_CA_norm_vs_neuron14": 0.062,
+      "rho_CA_norm_vs_neu_spv": 0.074,
+      "rho_CA_norm_vs_CA_raw": 0.056,
+      "cdr_rho_norm": 0.094,
+      "cdr_rho_raw": 0.224,
+      "braak_rho_norm": 0.213,
+      "braak_rho_raw": 0.241,
+      "nft_sum_rho_norm": -0.02,
+      "nft_sum_rho_raw": 0.331,
+      "n_AD": 27
+    },
+    "Inferior Temporal Gyrus": {
+      "markers_used": {
+        "ast": 512,
+        "end": 616,
+        "mic": 538,
+        "neu": 550,
+        "oli": 519,
+        "opc": 203
+      },
+      "r2_CA_on_6_spv": 0.784,
+      "rho_neu_spv_vs_14marker": 0.987,
+      "kappa_bretigea": 0.153,
+      "kappa_random6_median": 0.298,
+      "kappa_random6_q05_q95": [
+        0.098,
+        0.498
+      ],
+      "p_kappa_le_random": 0.1493,
+      "label_share_before": {
+        "A": 0.3,
+        "B": 0.333,
+        "C": 0.367
+      },
+      "label_share_after": {
+        "A": 0.367,
+        "B": 0.333,
+        "C": 0.3
+      },
+      "rho_CA_raw_vs_neuron14": -0.909,
+      "rho_CA_norm_vs_neuron14": 0.066,
+      "rho_CA_norm_vs_neu_spv": 0.024,
+      "rho_CA_norm_vs_CA_raw": 0.105,
+      "cdr_rho_norm": -0.302,
+      "cdr_rho_raw": -0.052,
+      "braak_rho_norm": -0.234,
+      "braak_rho_raw": 0.339,
+      "nft_sum_rho_norm": -0.096,
+      "nft_sum_rho_raw": 0.2,
+      "n_AD": 30
+    },
+    "Middle Temporal Gyrus": {
+      "markers_used": {
+        "ast": 512,
+        "end": 616,
+        "mic": 538,
+        "neu": 550,
+        "oli": 519,
+        "opc": 203
+      },
+      "r2_CA_on_6_spv": 0.869,
+      "rho_neu_spv_vs_14marker": 0.949,
+      "kappa_bretigea": 0.247,
+      "kappa_random6_median": 0.333,
+      "kappa_random6_q05_q95": [
+        0.157,
+        0.516
+      ],
+      "p_kappa_le_random": 0.2139,
+      "label_share_before": {
+        "A": 0.387,
+        "B": 0.258,
+        "C": 0.355
+      },
+      "label_share_after": {
+        "A": 0.29,
+        "B": 0.516,
+        "C": 0.194
+      },
+      "rho_CA_raw_vs_neuron14": -0.833,
+      "rho_CA_norm_vs_neuron14": 0.031,
+      "rho_CA_norm_vs_neu_spv": 0.07,
+      "rho_CA_norm_vs_CA_raw": 0.199,
+      "cdr_rho_norm": -0.052,
+      "cdr_rho_raw": 0.277,
+      "braak_rho_norm": 0.482,
+      "braak_rho_raw": 0.355,
+      "nft_sum_rho_norm": 0.375,
+      "nft_sum_rho_raw": 0.312,
+      "n_AD": 31
+    },
+    "Occipital Visual Cortex": {
+      "markers_used": {
+        "ast": 512,
+        "end": 616,
+        "mic": 538,
+        "neu": 550,
+        "oli": 519,
+        "opc": 203
+      },
+      "r2_CA_on_6_spv": 0.888,
+      "rho_neu_spv_vs_14marker": 0.977,
+      "kappa_bretigea": 0.356,
+      "kappa_random6_median": 0.293,
+      "kappa_random6_q05_q95": [
+        0.079,
+        0.471
+      ],
+      "p_kappa_le_random": 0.7214,
+      "label_share_before": {
+        "A": 0.462,
+        "B": 0.231,
+        "C": 0.308
+      },
+      "label_share_after": {
+        "A": 0.423,
+        "B": 0.385,
+        "C": 0.192
+      },
+      "rho_CA_raw_vs_neuron14": -0.849,
+      "rho_CA_norm_vs_neuron14": -0.026,
+      "rho_CA_norm_vs_neu_spv": -0.04,
+      "rho_CA_norm_vs_CA_raw": 0.234,
+      "cdr_rho_norm": -0.33,
+      "cdr_rho_raw": -0.006,
+      "braak_rho_norm": -0.116,
+      "braak_rho_raw": 0.345,
+      "nft_sum_rho_norm": -0.388,
+      "nft_sum_rho_raw": 0.013,
+      "n_AD": 26
+    },
+    "Parahippocampal Gyrus": {
+      "markers_used": {
+        "ast": 512,
+        "end": 616,
+        "mic": 538,
+        "neu": 550,
+        "oli": 519,
+        "opc": 203
+      },
+      "r2_CA_on_6_spv": 0.843,
+      "rho_neu_spv_vs_14marker": 0.986,
+      "kappa_bretigea": 0.362,
+      "kappa_random6_median": 0.293,
+      "kappa_random6_q05_q95": [
+        0.136,
+        0.452
+      ],
+      "p_kappa_le_random": 0.7214,
+      "label_share_before": {
+        "A": 0.469,
+        "B": 0.219,
+        "C": 0.312
+      },
+      "label_share_after": {
+        "A": 0.312,
+        "B": 0.5,
+        "C": 0.188
+      },
+      "rho_CA_raw_vs_neuron14": -0.879,
+      "rho_CA_norm_vs_neuron14": 0.027,
+      "rho_CA_norm_vs_neu_spv": 0.04,
+      "rho_CA_norm_vs_CA_raw": 0.137,
+      "cdr_rho_norm": 0.162,
+      "cdr_rho_raw": 0.547,
+      "braak_rho_norm": 0.329,
+      "braak_rho_raw": 0.293,
+      "nft_sum_rho_norm": 0.43,
+      "nft_sum_rho_raw": 0.307,
+      "n_AD": 32
+    },
+    "Posterior Cingulate Cortex": {
+      "markers_used": {
+        "ast": 512,
+        "end": 616,
+        "mic": 538,
+        "neu": 550,
+        "oli": 519,
+        "opc": 203
+      },
+      "r2_CA_on_6_spv": 0.939,
+      "rho_neu_spv_vs_14marker": 0.971,
+      "kappa_bretigea": 0.134,
+      "kappa_random6_median": 0.282,
+      "kappa_random6_q05_q95": [
+        0.12,
+        0.469
+      ],
+      "p_kappa_le_random": 0.0746,
+      "label_share_before": {
+        "A": 0.419,
+        "B": 0.226,
+        "C": 0.355
+      },
+      "label_share_after": {
+        "A": 0.387,
+        "B": 0.387,
+        "C": 0.226
+      },
+      "rho_CA_raw_vs_neuron14": -0.921,
+      "rho_CA_norm_vs_neuron14": 0.125,
+      "rho_CA_norm_vs_neu_spv": 0.094,
+      "rho_CA_norm_vs_CA_raw": 0.044,
+      "cdr_rho_norm": 0.096,
+      "cdr_rho_raw": 0.109,
+      "braak_rho_norm": 0.203,
+      "braak_rho_raw": 0.252,
+      "nft_sum_rho_norm": 0.014,
+      "nft_sum_rho_raw": 0.219,
+      "n_AD": 31
+    },
+    "Precentral Gyrus": {
+      "markers_used": {
+        "ast": 512,
+        "end": 616,
+        "mic": 538,
+        "neu": 550,
+        "oli": 519,
+        "opc": 203
+      },
+      "r2_CA_on_6_spv": 0.897,
+      "rho_neu_spv_vs_14marker": 0.945,
+      "kappa_bretigea": 0.202,
+      "kappa_random6_median": 0.287,
+      "kappa_random6_q05_q95": [
+        0.117,
+        0.456
+      ],
+      "p_kappa_le_random": 0.2886,
+      "label_share_before": {
+        "A": 0.452,
+        "B": 0.194,
+        "C": 0.355
+      },
+      "label_share_after": {
+        "A": 0.323,
+        "B": 0.452,
+        "C": 0.226
+      },
+      "rho_CA_raw_vs_neuron14": -0.901,
+      "rho_CA_norm_vs_neuron14": -0.015,
+      "rho_CA_norm_vs_neu_spv": -0.05,
+      "rho_CA_norm_vs_CA_raw": 0.096,
+      "cdr_rho_norm": 0.15,
+      "cdr_rho_raw": 0.149,
+      "braak_rho_norm": 0.113,
+      "braak_rho_raw": 0.218,
+      "nft_sum_rho_norm": 0.286,
+      "nft_sum_rho_raw": 0.356,
+      "n_AD": 31
+    },
+    "Prefrontal Cortex": {
+      "markers_used": {
+        "ast": 512,
+        "end": 616,
+        "mic": 538,
+        "neu": 550,
+        "oli": 519,
+        "opc": 203
+      },
+      "r2_CA_on_6_spv": 0.801,
+      "rho_neu_spv_vs_14marker": 0.969,
+      "kappa_bretigea": 0.024,
+      "kappa_random6_median": 0.403,
+      "kappa_random6_q05_q95": [
+        0.219,
+        0.548
+      ],
+      "p_kappa_le_random": 0.005,
+      "label_share_before": {
+        "A": 0.455,
+        "B": 0.212,
+        "C": 0.333
+      },
+      "label_share_after": {
+        "A": 0.394,
+        "B": 0.273,
+        "C": 0.333
+      },
+      "rho_CA_raw_vs_neuron14": -0.841,
+      "rho_CA_norm_vs_neuron14": 0.032,
+      "rho_CA_norm_vs_neu_spv": -0.008,
+      "rho_CA_norm_vs_CA_raw": 0.152,
+      "cdr_rho_norm": -0.193,
+      "cdr_rho_raw": 0.203,
+      "braak_rho_norm": -0.115,
+      "braak_rho_raw": 0.376,
+      "nft_sum_rho_norm": -0.174,
+      "nft_sum_rho_raw": 0.31,
+      "n_AD": 33
+    },
+    "Putamen": {
+      "markers_used": {
+        "ast": 512,
+        "end": 616,
+        "mic": 538,
+        "neu": 550,
+        "oli": 519,
+        "opc": 203
+      },
+      "r2_CA_on_6_spv": 0.871,
+      "rho_neu_spv_vs_14marker": 0.984,
+      "kappa_bretigea": 0.202,
+      "kappa_random6_median": 0.321,
+      "kappa_random6_q05_q95": [
+        0.166,
+        0.467
+      ],
+      "p_kappa_le_random": 0.1393,
+      "label_share_before": {
+        "A": 0.355,
+        "B": 0.161,
+        "C": 0.484
+      },
+      "label_share_after": {
+        "A": 0.355,
+        "B": 0.387,
+        "C": 0.258
+      },
+      "rho_CA_raw_vs_neuron14": -0.89,
+      "rho_CA_norm_vs_neuron14": 0.031,
+      "rho_CA_norm_vs_neu_spv": 0.052,
+      "rho_CA_norm_vs_CA_raw": 0.158,
+      "cdr_rho_norm": 0.074,
+      "cdr_rho_raw": 0.196,
+      "braak_rho_norm": 0.084,
+      "braak_rho_raw": 0.102,
+      "nft_sum_rho_norm": -0.015,
+      "nft_sum_rho_raw": 0.133,
+      "n_AD": 31
+    },
+    "Superior Parietal Lobule": {
+      "markers_used": {
+        "ast": 512,
+        "end": 616,
+        "mic": 538,
+        "neu": 550,
+        "oli": 519,
+        "opc": 203
+      },
+      "r2_CA_on_6_spv": 0.917,
+      "rho_neu_spv_vs_14marker": 0.923,
+      "kappa_bretigea": 0.262,
+      "kappa_random6_median": 0.281,
+      "kappa_random6_q05_q95": [
+        0.071,
+        0.504
+      ],
+      "p_kappa_le_random": 0.4229,
+      "label_share_before": {
+        "A": 0.364,
+        "B": 0.182,
+        "C": 0.455
+      },
+      "label_share_after": {
+        "A": 0.364,
+        "B": 0.364,
+        "C": 0.273
+      },
+      "rho_CA_raw_vs_neuron14": -0.85,
+      "rho_CA_norm_vs_neuron14": -0.103,
+      "rho_CA_norm_vs_neu_spv": -0.071,
+      "rho_CA_norm_vs_CA_raw": 0.212,
+      "cdr_rho_norm": -0.356,
+      "cdr_rho_raw": 0.054,
+      "braak_rho_norm": 0.049,
+      "braak_rho_raw": 0.272,
+      "nft_sum_rho_norm": 0.064,
+      "nft_sum_rho_raw": 0.07,
+      "n_AD": 22
+    },
+    "Superior Temporal Gyrus": {
+      "markers_used": {
+        "ast": 512,
+        "end": 616,
+        "mic": 538,
+        "neu": 550,
+        "oli": 519,
+        "opc": 203
+      },
+      "r2_CA_on_6_spv": 0.791,
+      "rho_neu_spv_vs_14marker": 0.975,
+      "kappa_bretigea": -0.02,
+      "kappa_random6_median": 0.28,
+      "kappa_random6_q05_q95": [
+        0.114,
+        0.452
+      ],
+      "p_kappa_le_random": 0.005,
+      "label_share_before": {
+        "A": 0.419,
+        "B": 0.161,
+        "C": 0.419
+      },
+      "label_share_after": {
+        "A": 0.355,
+        "B": 0.323,
+        "C": 0.323
+      },
+      "rho_CA_raw_vs_neuron14": -0.885,
+      "rho_CA_norm_vs_neuron14": -0.038,
+      "rho_CA_norm_vs_neu_spv": 0.027,
+      "rho_CA_norm_vs_CA_raw": 0.245,
+      "cdr_rho_norm": 0.122,
+      "cdr_rho_raw": 0.272,
+      "braak_rho_norm": 0.218,
+      "braak_rho_raw": 0.199,
+      "nft_sum_rho_norm": 0.236,
+      "nft_sum_rho_raw": 0.244,
+      "n_AD": 31
+    },
+    "Temporal Pole": {
+      "markers_used": {
+        "ast": 512,
+        "end": 616,
+        "mic": 538,
+        "neu": 550,
+        "oli": 519,
+        "opc": 203
+      },
+      "r2_CA_on_6_spv": 0.82,
+      "rho_neu_spv_vs_14marker": 0.967,
+      "kappa_bretigea": 0.068,
+      "kappa_random6_median": 0.272,
+      "kappa_random6_q05_q95": [
+        0.076,
+        0.431
+      ],
+      "p_kappa_le_random": 0.0348,
+      "label_share_before": {
+        "A": 0.379,
+        "B": 0.276,
+        "C": 0.345
+      },
+      "label_share_after": {
+        "A": 0.448,
+        "B": 0.379,
+        "C": 0.172
+      },
+      "rho_CA_raw_vs_neuron14": -0.899,
+      "rho_CA_norm_vs_neuron14": -0.046,
+      "rho_CA_norm_vs_neu_spv": 0.014,
+      "rho_CA_norm_vs_CA_raw": 0.096,
+      "cdr_rho_norm": -0.011,
+      "cdr_rho_raw": 0.274,
+      "braak_rho_norm": 0.312,
+      "braak_rho_raw": 0.284,
+      "nft_sum_rho_norm": 0.274,
+      "nft_sum_rho_raw": 0.3,
+      "n_AD": 29
+    }
+  },
+  "geo": {
+    "GSE33000_PFC": {
+      "markers_used": {
+        "ast": 579,
+        "end": 699,
+        "mic": 587,
+        "neu": 656,
+        "oli": 553,
+        "opc": 235
+      },
+      "r2_CA_on_6_spv": 0.873,
+      "rho_neu_spv_vs_14marker": 0.967,
+      "kappa_bretigea": 0.116,
+      "kappa_random6_median": 0.204,
+      "kappa_random6_q05_q95": [
+        0.127,
+        0.285
+      ],
+      "p_kappa_le_random": 0.0199,
+      "label_share_before": {
+        "A": 0.381,
+        "B": 0.248,
+        "C": 0.371
+      },
+      "label_share_after": {
+        "A": 0.377,
+        "B": 0.377,
+        "C": 0.245
+      },
+      "rho_CA_raw_vs_neuron14": -0.903,
+      "rho_CA_norm_vs_neuron14": 0.025,
+      "rho_CA_norm_vs_neu_spv": -0.001,
+      "rho_CA_norm_vs_CA_raw": 0.065,
+      "n_AD": 310
+    },
+    "GSE132903_MTG": {
+      "markers_used": {
+        "ast": 653,
+        "end": 733,
+        "mic": 625,
+        "neu": 704,
+        "oli": 638,
+        "opc": 268
+      },
+      "r2_CA_on_6_spv": 0.922,
+      "rho_neu_spv_vs_14marker": 0.952,
+      "kappa_bretigea": 0.147,
+      "kappa_random6_median": 0.256,
+      "kappa_random6_q05_q95": [
+        0.122,
+        0.419
+      ],
+      "p_kappa_le_random": 0.0945,
+      "label_share_before": {
+        "A": 0.371,
+        "B": 0.216,
+        "C": 0.412
+      },
+      "label_share_after": {
+        "A": 0.299,
+        "B": 0.454,
+        "C": 0.247
+      },
+      "rho_CA_raw_vs_neuron14": -0.901,
+      "rho_CA_norm_vs_neuron14": -0.003,
+      "rho_CA_norm_vs_neu_spv": -0.018,
+      "rho_CA_norm_vs_CA_raw": 0.128,
+      "n_AD": 97
+    },
+    "GSE118553_Temporal_Cortex": {
+      "markers_used": {
+        "ast": 692,
+        "end": 790,
+        "mic": 671,
+        "neu": 763,
+        "oli": 682,
+        "opc": 282
+      },
+      "r2_CA_on_6_spv": 0.82,
+      "rho_neu_spv_vs_14marker": 0.959,
+      "kappa_bretigea": 0.262,
+      "kappa_random6_median": 0.529,
+      "kappa_random6_q05_q95": [
+        0.364,
+        0.649
+      ],
+      "p_kappa_le_random": 0.005,
+      "label_share_before": {
+        "A": 0.288,
+        "B": 0.288,
+        "C": 0.423
+      },
+      "label_share_after": {
+        "A": 0.404,
+        "B": 0.346,
+        "C": 0.25
+      },
+      "rho_CA_raw_vs_neuron14": -0.81,
+      "rho_CA_norm_vs_neuron14": 0.041,
+      "rho_CA_norm_vs_neu_spv": 0.005,
+      "rho_CA_norm_vs_CA_raw": 0.211,
+      "n_AD": 52
+    },
+    "GSE125583_FG": {
+      "markers_used": {
+        "ast": 653,
+        "end": 686,
+        "mic": 589,
+        "neu": 671,
+        "oli": 693,
+        "opc": 230
+      },
+      "r2_CA_on_6_spv": 0.88,
+      "rho_neu_spv_vs_14marker": 0.978,
+      "kappa_bretigea": 0.101,
+      "kappa_random6_median": 0.187,
+      "kappa_random6_q05_q95": [
+        0.104,
+        0.287
+      ],
+      "p_kappa_le_random": 0.0398,
+      "label_share_before": {
+        "A": 0.301,
+        "B": 0.274,
+        "C": 0.425
+      },
+      "label_share_after": {
+        "A": 0.384,
+        "B": 0.452,
+        "C": 0.164
+      },
+      "rho_CA_raw_vs_neuron14": -0.899,
+      "rho_CA_norm_vs_neuron14": 0.001,
+      "rho_CA_norm_vs_neu_spv": -0.004,
+      "rho_CA_norm_vs_CA_raw": 0.12,
+      "n_AD": 219
+    }
+  },
+  "msbb_summary": {
+    "r2_CA_on_6_spv": 0.858,
+    "rho_neu_spv_vs_14marker": 0.969,
+    "kappa_bretigea": 0.153,
+    "kappa_random6_median": 0.293,
+    "rho_CA_raw_vs_neuron14": -0.885,
+    "rho_CA_norm_vs_neuron14": 0.013,
+    "rho_CA_norm_vs_neu_spv": 0.027,
+    "cdr_rho_raw": 0.194,
+    "cdr_rho_norm": 0.074,
+    "braak_rho_raw": 0.272,
+    "braak_rho_norm": 0.12,
+    "nft_sum_rho_raw": 0.244,
+    "nft_sum_rho_norm": 0.014,
+    "n_regions_p_kappa_lt_05": 6
+  }
+}

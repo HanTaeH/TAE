@@ -13,6 +13,7 @@ All inputs are public. Place them as follows (`DATA`, default `/mnt/project-file
 | `GSE33000/`, `GSE132903/`, `GSE118553/`, `GSE106241/`, `GSE125583/`, `GSE84422/` | series matrix files (and supplementary raw tables where the series matrix lacks gene symbols) | GEO |
 | `GPL10558/`, `GPL24170/`, `GPL96/` | platform full tables | GEO |
 | `hgnc/` | HGNC complete set (symbol mapping) | genenames.org |
+| `bretigea/` | markers_df_human_brain.rda and R sources of BRETIGEA 1.0.3 | github.com/cran/BRETIGEA |
 | `neff2021/` | Data files S1–S3 of Neff et al. 2021 (S2 = class centroids of the 271 classifier genes) | Sci Adv |
 | `tijms2024/` | Supplementary Table 4 of Tijms et al. 2024 | Nat Aging |
 | `gtex_v8/` | gene read counts for brain cortex and frontal cortex (BA9), sample and subject annotations | gs://adult-gtex (open access) |

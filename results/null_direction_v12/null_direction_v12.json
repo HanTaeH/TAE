@@ -1,0 +1,1006 @@
+{
+  "GSE33000_PFC": {
+    "n_ad": 310,
+    "n_genes": 224,
+    "specificity_mix": {
+      "0": 105,
+      "1": 71,
+      "2": 37,
+      "3": 11
+    },
+    "CA_neuron": {
+      "observed": -0.928,
+      "class_mean_rows": -0.909,
+      "rho_CA_observed_vs_class_mean_rows": 0.932,
+      "perm_in_class": {
+        "obs": -0.928,
+        "null_median": -0.907,
+        "null_q05_q95": [
+          -0.923,
+          -0.883
+        ],
+        "p_lower": 0.024,
+        "p_upper": 0.978
+      },
+      "sign_random": {
+        "obs": -0.928,
+        "null_median": -0.031,
+        "null_q05_q95": [
+          -0.833,
+          0.837
+        ],
+        "p_lower": 0.004,
+        "p_upper": 0.998
+      },
+      "spec_matched": {
+        "obs": -0.928,
+        "null_median": -0.874,
+        "null_q05_q95": [
+          -0.905,
+          -0.836
+        ],
+        "p_lower": 0.002,
+        "p_upper": 1.0
+      }
+    },
+    "C1_C2": {
+      "rho_with_CA": -0.488,
+      "neuron": {
+        "perm_in_class": {
+          "obs": 0.342,
+          "null_median": -0.499,
+          "null_q05_q95": [
+            -0.809,
+            0.1
+          ],
+          "p_two_sided": 0.004
+        },
+        "spec_matched": {
+          "obs": 0.342,
+          "null_median": 0.511,
+          "null_q05_q95": [
+            0.413,
+            0.608
+          ],
+          "p_two_sided": 0.008
+        }
+      },
+      "astrocyte": {
+        "perm_in_class": {
+          "obs": 0.086,
+          "null_median": 0.342,
+          "null_q05_q95": [
+            0.035,
+            0.538
+          ],
+          "p_two_sided": 0.1018
+        },
+        "spec_matched": {
+          "obs": 0.086,
+          "null_median": -0.006,
+          "null_q05_q95": [
+            -0.087,
+            0.066
+          ],
+          "p_two_sided": 0.0539
+        }
+      },
+      "microglia": {
+        "perm_in_class": {
+          "obs": 0.069,
+          "null_median": 0.143,
+          "null_q05_q95": [
+            -0.072,
+            0.351
+          ],
+          "p_two_sided": 0.6008
+        },
+        "spec_matched": {
+          "obs": 0.069,
+          "null_median": -0.069,
+          "null_q05_q95": [
+            -0.118,
+            -0.018
+          ],
+          "p_two_sided": 0.002
+        }
+      },
+      "oligodendrocyte": {
+        "perm_in_class": {
+          "obs": 0.172,
+          "null_median": 0.262,
+          "null_q05_q95": [
+            -0.158,
+            0.518
+          ],
+          "p_two_sided": 0.6587
+        },
+        "spec_matched": {
+          "obs": 0.172,
+          "null_median": 0.103,
+          "null_q05_q95": [
+            0.019,
+            0.184
+          ],
+          "p_two_sided": 0.1677
+        }
+      },
+      "endothelial": {
+        "perm_in_class": {
+          "obs": -0.358,
+          "null_median": 0.321,
+          "null_q05_q95": [
+            -0.162,
+            0.628
+          ],
+          "p_two_sided": 0.012
+        },
+        "spec_matched": {
+          "obs": -0.358,
+          "null_median": -0.493,
+          "null_q05_q95": [
+            -0.563,
+            -0.423
+          ],
+          "p_two_sided": 0.004
+        }
+      }
+    },
+    "B1_B2": {
+      "rho_with_CA": -0.787,
+      "neuron": {
+        "perm_in_class": {
+          "obs": 0.626,
+          "null_median": 0.868,
+          "null_q05_q95": [
+            0.765,
+            0.915
+          ],
+          "p_two_sided": 0.01
+        },
+        "spec_matched": {
+          "obs": 0.626,
+          "null_median": 0.73,
+          "null_q05_q95": [
+            0.648,
+            0.793
+          ],
+          "p_two_sided": 0.024
+        }
+      },
+      "astrocyte": {
+        "perm_in_class": {
+          "obs": -0.163,
+          "null_median": -0.486,
+          "null_q05_q95": [
+            -0.583,
+            -0.38
+          ],
+          "p_two_sided": 0.002
+        },
+        "spec_matched": {
+          "obs": -0.163,
+          "null_median": -0.201,
+          "null_q05_q95": [
+            -0.274,
+            -0.12
+          ],
+          "p_two_sided": 0.4491
+        }
+      },
+      "microglia": {
+        "perm_in_class": {
+          "obs": -0.277,
+          "null_median": -0.276,
+          "null_q05_q95": [
+            -0.377,
+            -0.158
+          ],
+          "p_two_sided": 1.0
+        },
+        "spec_matched": {
+          "obs": -0.277,
+          "null_median": -0.18,
+          "null_q05_q95": [
+            -0.248,
+            -0.123
+          ],
+          "p_two_sided": 0.02
+        }
+      },
+      "oligodendrocyte": {
+        "perm_in_class": {
+          "obs": 0.135,
+          "null_median": -0.427,
+          "null_q05_q95": [
+            -0.613,
+            -0.201
+          ],
+          "p_two_sided": 0.002
+        },
+        "spec_matched": {
+          "obs": 0.135,
+          "null_median": -0.009,
+          "null_q05_q95": [
+            -0.097,
+            0.083
+          ],
+          "p_two_sided": 0.016
+        }
+      },
+      "endothelial": {
+        "perm_in_class": {
+          "obs": -0.68,
+          "null_median": -0.648,
+          "null_q05_q95": [
+            -0.753,
+            -0.491
+          ],
+          "p_two_sided": 0.6507
+        },
+        "spec_matched": {
+          "obs": -0.68,
+          "null_median": -0.651,
+          "null_q05_q95": [
+            -0.707,
+            -0.59
+          ],
+          "p_two_sided": 0.3593
+        }
+      }
+    }
+  },
+  "GSE132903_MTG": {
+    "n_ad": 97,
+    "n_genes": 241,
+    "specificity_mix": {
+      "0": 109,
+      "1": 80,
+      "2": 39,
+      "3": 13
+    },
+    "CA_neuron": {
+      "observed": -0.921,
+      "class_mean_rows": -0.886,
+      "rho_CA_observed_vs_class_mean_rows": 0.932,
+      "perm_in_class": {
+        "obs": -0.921,
+        "null_median": -0.884,
+        "null_q05_q95": [
+          -0.91,
+          -0.845
+        ],
+        "p_lower": 0.002,
+        "p_upper": 1.0
+      },
+      "sign_random": {
+        "obs": -0.921,
+        "null_median": -0.006,
+        "null_q05_q95": [
+          -0.814,
+          0.789
+        ],
+        "p_lower": 0.002,
+        "p_upper": 1.0
+      },
+      "spec_matched": {
+        "obs": -0.921,
+        "null_median": -0.877,
+        "null_q05_q95": [
+          -0.933,
+          -0.776
+        ],
+        "p_lower": 0.1277,
+        "p_upper": 0.8743
+      }
+    },
+    "C1_C2": {
+      "rho_with_CA": -0.505,
+      "neuron": {
+        "perm_in_class": {
+          "obs": 0.409,
+          "null_median": -0.546,
+          "null_q05_q95": [
+            -0.832,
+            0.107
+          ],
+          "p_two_sided": 0.01
+        },
+        "spec_matched": {
+          "obs": 0.409,
+          "null_median": -0.469,
+          "null_q05_q95": [
+            -0.8,
+            0.123
+          ],
+          "p_two_sided": 0.008
+        }
+      },
+      "astrocyte": {
+        "perm_in_class": {
+          "obs": -0.096,
+          "null_median": 0.334,
+          "null_q05_q95": [
+            -0.006,
+            0.567
+          ],
+          "p_two_sided": 0.024
+        },
+        "spec_matched": {
+          "obs": -0.096,
+          "null_median": 0.428,
+          "null_q05_q95": [
+            0.056,
+            0.651
+          ],
+          "p_two_sided": 0.016
+        }
+      },
+      "microglia": {
+        "perm_in_class": {
+          "obs": 0.236,
+          "null_median": 0.212,
+          "null_q05_q95": [
+            -0.134,
+            0.453
+          ],
+          "p_two_sided": 0.9042
+        },
+        "spec_matched": {
+          "obs": 0.236,
+          "null_median": 0.204,
+          "null_q05_q95": [
+            -0.131,
+            0.481
+          ],
+          "p_two_sided": 0.8483
+        }
+      },
+      "oligodendrocyte": {
+        "perm_in_class": {
+          "obs": -0.515,
+          "null_median": 0.206,
+          "null_q05_q95": [
+            -0.286,
+            0.568
+          ],
+          "p_two_sided": 0.006
+        },
+        "spec_matched": {
+          "obs": -0.515,
+          "null_median": 0.188,
+          "null_q05_q95": [
+            -0.275,
+            0.548
+          ],
+          "p_two_sided": 0.004
+        }
+      },
+      "endothelial": {
+        "perm_in_class": {
+          "obs": -0.128,
+          "null_median": 0.417,
+          "null_q05_q95": [
+            0.01,
+            0.66
+          ],
+          "p_two_sided": 0.02
+        },
+        "spec_matched": {
+          "obs": -0.128,
+          "null_median": 0.419,
+          "null_q05_q95": [
+            -0.004,
+            0.653
+          ],
+          "p_two_sided": 0.0299
+        }
+      }
+    },
+    "B1_B2": {
+      "rho_with_CA": -0.834,
+      "neuron": {
+        "perm_in_class": {
+          "obs": 0.73,
+          "null_median": 0.83,
+          "null_q05_q95": [
+            0.67,
+            0.911
+          ],
+          "p_two_sided": 0.1537
+        },
+        "spec_matched": {
+          "obs": 0.73,
+          "null_median": 0.721,
+          "null_q05_q95": [
+            0.305,
+            0.869
+          ],
+          "p_two_sided": 0.9501
+        }
+      },
+      "astrocyte": {
+        "perm_in_class": {
+          "obs": -0.287,
+          "null_median": -0.496,
+          "null_q05_q95": [
+            -0.616,
+            -0.354
+          ],
+          "p_two_sided": 0.016
+        },
+        "spec_matched": {
+          "obs": -0.287,
+          "null_median": -0.465,
+          "null_q05_q95": [
+            -0.654,
+            -0.207
+          ],
+          "p_two_sided": 0.1836
+        }
+      },
+      "microglia": {
+        "perm_in_class": {
+          "obs": -0.135,
+          "null_median": -0.269,
+          "null_q05_q95": [
+            -0.429,
+            -0.1
+          ],
+          "p_two_sided": 0.1836
+        },
+        "spec_matched": {
+          "obs": -0.135,
+          "null_median": -0.279,
+          "null_q05_q95": [
+            -0.51,
+            0.012
+          ],
+          "p_two_sided": 0.3852
+        }
+      },
+      "oligodendrocyte": {
+        "perm_in_class": {
+          "obs": -0.49,
+          "null_median": -0.538,
+          "null_q05_q95": [
+            -0.664,
+            -0.381
+          ],
+          "p_two_sided": 0.5988
+        },
+        "spec_matched": {
+          "obs": -0.49,
+          "null_median": -0.402,
+          "null_q05_q95": [
+            -0.635,
+            -0.041
+          ],
+          "p_two_sided": 0.6168
+        }
+      },
+      "endothelial": {
+        "perm_in_class": {
+          "obs": -0.505,
+          "null_median": -0.645,
+          "null_q05_q95": [
+            -0.74,
+            -0.517
+          ],
+          "p_two_sided": 0.0559
+        },
+        "spec_matched": {
+          "obs": -0.505,
+          "null_median": -0.602,
+          "null_q05_q95": [
+            -0.761,
+            -0.355
+          ],
+          "p_two_sided": 0.4072
+        }
+      }
+    }
+  },
+  "GSE118553_Temporal_Cortex": {
+    "n_ad": 52,
+    "n_genes": 261,
+    "specificity_mix": {
+      "0": 118,
+      "1": 88,
+      "2": 42,
+      "3": 13
+    },
+    "CA_neuron": {
+      "observed": -0.85,
+      "class_mean_rows": -0.77,
+      "rho_CA_observed_vs_class_mean_rows": 0.939,
+      "perm_in_class": {
+        "obs": -0.85,
+        "null_median": -0.767,
+        "null_q05_q95": [
+          -0.809,
+          -0.716
+        ],
+        "p_lower": 0.002,
+        "p_upper": 1.0
+      },
+      "sign_random": {
+        "obs": -0.85,
+        "null_median": -0.018,
+        "null_q05_q95": [
+          -0.703,
+          0.738
+        ],
+        "p_lower": 0.01,
+        "p_upper": 0.992
+      },
+      "spec_matched": {
+        "obs": -0.85,
+        "null_median": -0.837,
+        "null_q05_q95": [
+          -0.919,
+          -0.683
+        ],
+        "p_lower": 0.4172,
+        "p_upper": 0.5848
+      }
+    },
+    "C1_C2": {
+      "rho_with_CA": -0.504,
+      "neuron": {
+        "perm_in_class": {
+          "obs": 0.517,
+          "null_median": -0.461,
+          "null_q05_q95": [
+            -0.774,
+            0.153
+          ],
+          "p_two_sided": 0.002
+        },
+        "spec_matched": {
+          "obs": 0.517,
+          "null_median": -0.092,
+          "null_q05_q95": [
+            -0.556,
+            0.423
+          ],
+          "p_two_sided": 0.0299
+        }
+      },
+      "astrocyte": {
+        "perm_in_class": {
+          "obs": 0.191,
+          "null_median": 0.115,
+          "null_q05_q95": [
+            -0.21,
+            0.448
+          ],
+          "p_two_sided": 0.7525
+        },
+        "spec_matched": {
+          "obs": 0.191,
+          "null_median": 0.269,
+          "null_q05_q95": [
+            -0.112,
+            0.577
+          ],
+          "p_two_sided": 0.7385
+        }
+      },
+      "microglia": {
+        "perm_in_class": {
+          "obs": 0.433,
+          "null_median": -0.001,
+          "null_q05_q95": [
+            -0.318,
+            0.36
+          ],
+          "p_two_sided": 0.0359
+        },
+        "spec_matched": {
+          "obs": 0.433,
+          "null_median": 0.122,
+          "null_q05_q95": [
+            -0.253,
+            0.479
+          ],
+          "p_two_sided": 0.1776
+        }
+      },
+      "oligodendrocyte": {
+        "perm_in_class": {
+          "obs": 0.357,
+          "null_median": 0.008,
+          "null_q05_q95": [
+            -0.39,
+            0.423
+          ],
+          "p_two_sided": 0.1756
+        },
+        "spec_matched": {
+          "obs": 0.357,
+          "null_median": 0.16,
+          "null_q05_q95": [
+            -0.287,
+            0.523
+          ],
+          "p_two_sided": 0.4451
+        }
+      },
+      "endothelial": {
+        "perm_in_class": {
+          "obs": -0.391,
+          "null_median": 0.254,
+          "null_q05_q95": [
+            -0.144,
+            0.518
+          ],
+          "p_two_sided": 0.006
+        },
+        "spec_matched": {
+          "obs": -0.391,
+          "null_median": 0.105,
+          "null_q05_q95": [
+            -0.208,
+            0.412
+          ],
+          "p_two_sided": 0.004
+        }
+      }
+    },
+    "B1_B2": {
+      "rho_with_CA": -0.857,
+      "neuron": {
+        "perm_in_class": {
+          "obs": 0.78,
+          "null_median": 0.703,
+          "null_q05_q95": [
+            0.475,
+            0.84
+          ],
+          "p_two_sided": 0.4611
+        },
+        "spec_matched": {
+          "obs": 0.78,
+          "null_median": 0.646,
+          "null_q05_q95": [
+            0.238,
+            0.823
+          ],
+          "p_two_sided": 0.3952
+        }
+      },
+      "astrocyte": {
+        "perm_in_class": {
+          "obs": 0.001,
+          "null_median": -0.198,
+          "null_q05_q95": [
+            -0.395,
+            0.009
+          ],
+          "p_two_sided": 0.1138
+        },
+        "spec_matched": {
+          "obs": 0.001,
+          "null_median": -0.04,
+          "null_q05_q95": [
+            -0.351,
+            0.247
+          ],
+          "p_two_sided": 0.8603
+        }
+      },
+      "microglia": {
+        "perm_in_class": {
+          "obs": 0.283,
+          "null_median": 0.081,
+          "null_q05_q95": [
+            -0.095,
+            0.258
+          ],
+          "p_two_sided": 0.0539
+        },
+        "spec_matched": {
+          "obs": 0.283,
+          "null_median": 0.131,
+          "null_q05_q95": [
+            -0.198,
+            0.373
+          ],
+          "p_two_sided": 0.3992
+        }
+      },
+      "oligodendrocyte": {
+        "perm_in_class": {
+          "obs": 0.292,
+          "null_median": -0.162,
+          "null_q05_q95": [
+            -0.449,
+            0.108
+          ],
+          "p_two_sided": 0.004
+        },
+        "spec_matched": {
+          "obs": 0.292,
+          "null_median": 0.079,
+          "null_q05_q95": [
+            -0.311,
+            0.353
+          ],
+          "p_two_sided": 0.2874
+        }
+      },
+      "endothelial": {
+        "perm_in_class": {
+          "obs": -0.667,
+          "null_median": -0.586,
+          "null_q05_q95": [
+            -0.696,
+            -0.433
+          ],
+          "p_two_sided": 0.3134
+        },
+        "spec_matched": {
+          "obs": -0.667,
+          "null_median": -0.431,
+          "null_q05_q95": [
+            -0.62,
+            -0.195
+          ],
+          "p_two_sided": 0.0679
+        }
+      }
+    }
+  },
+  "GSE125583_FG": {
+    "n_ad": 219,
+    "n_genes": 255,
+    "specificity_mix": {
+      "0": 119,
+      "1": 92,
+      "2": 44,
+      "3": 0
+    },
+    "CA_neuron": {
+      "observed": -0.927,
+      "class_mean_rows": -0.958,
+      "rho_CA_observed_vs_class_mean_rows": 0.953,
+      "perm_in_class": {
+        "obs": -0.927,
+        "null_median": -0.955,
+        "null_q05_q95": [
+          -0.96,
+          -0.949
+        ],
+        "p_lower": 1.0,
+        "p_upper": 0.002
+      },
+      "sign_random": {
+        "obs": -0.927,
+        "null_median": 0.025,
+        "null_q05_q95": [
+          -0.856,
+          0.827
+        ],
+        "p_lower": 0.004,
+        "p_upper": 0.998
+      },
+      "spec_matched": {
+        "obs": -0.927,
+        "null_median": -0.941,
+        "null_q05_q95": [
+          -0.959,
+          -0.907
+        ],
+        "p_lower": 0.7964,
+        "p_upper": 0.2056
+      }
+    },
+    "C1_C2": {
+      "rho_with_CA": -0.204,
+      "neuron": {
+        "perm_in_class": {
+          "obs": -0.038,
+          "null_median": -0.747,
+          "null_q05_q95": [
+            -0.885,
+            -0.403
+          ],
+          "p_two_sided": 0.004
+        },
+        "spec_matched": {
+          "obs": -0.038,
+          "null_median": -0.708,
+          "null_q05_q95": [
+            -0.868,
+            -0.309
+          ],
+          "p_two_sided": 0.012
+        }
+      },
+      "astrocyte": {
+        "perm_in_class": {
+          "obs": 0.21,
+          "null_median": 0.141,
+          "null_q05_q95": [
+            -0.141,
+            0.382
+          ],
+          "p_two_sided": 0.6307
+        },
+        "spec_matched": {
+          "obs": 0.21,
+          "null_median": -0.014,
+          "null_q05_q95": [
+            -0.267,
+            0.294
+          ],
+          "p_two_sided": 0.1737
+        }
+      },
+      "microglia": {
+        "perm_in_class": {
+          "obs": 0.142,
+          "null_median": 0.311,
+          "null_q05_q95": [
+            0.094,
+            0.496
+          ],
+          "p_two_sided": 0.1637
+        },
+        "spec_matched": {
+          "obs": 0.142,
+          "null_median": 0.191,
+          "null_q05_q95": [
+            -0.064,
+            0.386
+          ],
+          "p_two_sided": 0.7246
+        }
+      },
+      "oligodendrocyte": {
+        "perm_in_class": {
+          "obs": 0.009,
+          "null_median": 0.475,
+          "null_q05_q95": [
+            0.117,
+            0.712
+          ],
+          "p_two_sided": 0.018
+        },
+        "spec_matched": {
+          "obs": 0.009,
+          "null_median": 0.553,
+          "null_q05_q95": [
+            0.211,
+            0.725
+          ],
+          "p_two_sided": 0.014
+        }
+      },
+      "endothelial": {
+        "perm_in_class": {
+          "obs": -0.1,
+          "null_median": 0.489,
+          "null_q05_q95": [
+            0.193,
+            0.655
+          ],
+          "p_two_sided": 0.006
+        },
+        "spec_matched": {
+          "obs": -0.1,
+          "null_median": 0.428,
+          "null_q05_q95": [
+            0.075,
+            0.611
+          ],
+          "p_two_sided": 0.006
+        }
+      }
+    },
+    "B1_B2": {
+      "rho_with_CA": -0.765,
+      "neuron": {
+        "perm_in_class": {
+          "obs": 0.573,
+          "null_median": 0.927,
+          "null_q05_q95": [
+            0.878,
+            0.949
+          ],
+          "p_two_sided": 0.002
+        },
+        "spec_matched": {
+          "obs": 0.573,
+          "null_median": 0.846,
+          "null_q05_q95": [
+            0.688,
+            0.912
+          ],
+          "p_two_sided": 0.008
+        }
+      },
+      "astrocyte": {
+        "perm_in_class": {
+          "obs": -0.014,
+          "null_median": -0.081,
+          "null_q05_q95": [
+            -0.192,
+            0.042
+          ],
+          "p_two_sided": 0.3234
+        },
+        "spec_matched": {
+          "obs": -0.014,
+          "null_median": -0.094,
+          "null_q05_q95": [
+            -0.345,
+            0.11
+          ],
+          "p_two_sided": 0.5509
+        }
+      },
+      "microglia": {
+        "perm_in_class": {
+          "obs": -0.323,
+          "null_median": -0.389,
+          "null_q05_q95": [
+            -0.501,
+            -0.306
+          ],
+          "p_two_sided": 0.2535
+        },
+        "spec_matched": {
+          "obs": -0.323,
+          "null_median": -0.373,
+          "null_q05_q95": [
+            -0.521,
+            -0.211
+          ],
+          "p_two_sided": 0.6128
+        }
+      },
+      "oligodendrocyte": {
+        "perm_in_class": {
+          "obs": -0.282,
+          "null_median": -0.654,
+          "null_q05_q95": [
+            -0.749,
+            -0.532
+          ],
+          "p_two_sided": 0.002
+        },
+        "spec_matched": {
+          "obs": -0.282,
+          "null_median": -0.606,
+          "null_q05_q95": [
+            -0.744,
+            -0.407
+          ],
+          "p_two_sided": 0.01
+        }
+      },
+      "endothelial": {
+        "perm_in_class": {
+          "obs": -0.634,
+          "null_median": -0.671,
+          "null_q05_q95": [
+            -0.749,
+            -0.575
+          ],
+          "p_two_sided": 0.5309
+        },
+        "spec_matched": {
+          "obs": -0.634,
+          "null_median": -0.609,
+          "null_q05_q95": [
+            -0.72,
+            -0.447
+          ],
+          "p_two_sided": 0.7545
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,476 @@
+{
+  "all_regions": {
+    "n_subjects": 107,
+    "n_samples": 951,
+    "n_regions": 17,
+    "ca": {
+      "icc1": 0.614,
+      "icc1_ci95": [
+        0.541,
+        0.677
+      ],
+      "split_half_rho_median": 0.861,
+      "expression_null": {
+        "icc1_median": 0.3,
+        "icc1_q05_q95": [
+          0.164,
+          0.437
+        ],
+        "p_upper": 0.002
+      },
+      "specificity_null": {
+        "icc1_median": 0.602,
+        "icc1_q05_q95": [
+          0.555,
+          0.639
+        ],
+        "p_upper": 0.3333
+      }
+    },
+    "neuron": {
+      "icc1": 0.66,
+      "icc1_ci95": [
+        0.583,
+        0.717
+      ],
+      "split_half_rho_median": 0.869
+    },
+    "ca_resid": {
+      "icc1": 0.348,
+      "icc1_ci95": [
+        0.247,
+        0.425
+      ],
+      "split_half_rho_median": 0.621,
+      "expression_null": {
+        "icc1_median": 0.175,
+        "icc1_q05_q95": [
+          0.1,
+          0.27
+        ],
+        "p_upper": 0.004
+      },
+      "specificity_null": {
+        "icc1_median": 0.297,
+        "icc1_q05_q95": [
+          0.232,
+          0.374
+        ],
+        "p_upper": 0.0978
+      }
+    },
+    "neuron_vs_ca_subject_means_rho": -0.962,
+    "label_modal_share": {
+      "obs": 0.726,
+      "shuffled_median": 0.533,
+      "p_upper": 0.001
+    },
+    "subject_level_association": {
+      "all_cdr_ca": {
+        "n": 107,
+        "rho": 0.316,
+        "ci95": [
+          0.121,
+          0.483
+        ]
+      },
+      "all_cdr_neuron": {
+        "n": 107,
+        "rho": -0.349,
+        "ci95": [
+          -0.511,
+          -0.162
+        ]
+      },
+      "all_cdr_ca_resid": {
+        "n": 107,
+        "rho": -0.062,
+        "ci95": [
+          -0.236,
+          0.115
+        ]
+      },
+      "all_braak_ca": {
+        "n": 107,
+        "rho": 0.307,
+        "ci95": [
+          0.114,
+          0.475
+        ]
+      },
+      "all_braak_neuron": {
+        "n": 107,
+        "rho": -0.294,
+        "ci95": [
+          -0.465,
+          -0.1
+        ]
+      },
+      "all_braak_ca_resid": {
+        "n": 107,
+        "rho": -0.011,
+        "ci95": [
+          -0.226,
+          0.182
+        ]
+      },
+      "all_nft_sum_ca": {
+        "n": 107,
+        "rho": 0.277,
+        "ci95": [
+          0.094,
+          0.447
+        ]
+      },
+      "all_nft_sum_neuron": {
+        "n": 107,
+        "rho": -0.273,
+        "ci95": [
+          -0.445,
+          -0.099
+        ]
+      },
+      "all_nft_sum_ca_resid": {
+        "n": 107,
+        "rho": -0.026,
+        "ci95": [
+          -0.217,
+          0.174
+        ]
+      },
+      "AD_cdr_ca": {
+        "n": 65,
+        "rho": 0.175,
+        "ci95": [
+          -0.101,
+          0.426
+        ]
+      },
+      "AD_cdr_neuron": {
+        "n": 65,
+        "rho": -0.22,
+        "ci95": [
+          -0.459,
+          0.054
+        ]
+      },
+      "AD_cdr_ca_resid": {
+        "n": 65,
+        "rho": -0.128,
+        "ci95": [
+          -0.346,
+          0.098
+        ]
+      },
+      "AD_braak_ca": {
+        "n": 65,
+        "rho": 0.311,
+        "ci95": [
+          0.045,
+          0.536
+        ]
+      },
+      "AD_braak_neuron": {
+        "n": 65,
+        "rho": -0.31,
+        "ci95": [
+          -0.555,
+          -0.066
+        ]
+      },
+      "AD_braak_ca_resid": {
+        "n": 65,
+        "rho": -0.022,
+        "ci95": [
+          -0.304,
+          0.227
+        ]
+      },
+      "AD_nft_sum_ca": {
+        "n": 65,
+        "rho": 0.217,
+        "ci95": [
+          -0.034,
+          0.439
+        ]
+      },
+      "AD_nft_sum_neuron": {
+        "n": 65,
+        "rho": -0.227,
+        "ci95": [
+          -0.453,
+          0.015
+        ]
+      },
+      "AD_nft_sum_ca_resid": {
+        "n": 65,
+        "rho": -0.036,
+        "ci95": [
+          -0.312,
+          0.238
+        ]
+      },
+      "all_pmi_ca": {
+        "n": 107,
+        "rho": 0.134
+      },
+      "all_pmi_neuron": {
+        "n": 107,
+        "rho": -0.16
+      },
+      "all_pmi_ca_resid": {
+        "n": 107,
+        "rho": -0.124
+      },
+      "all_ph_ca": {
+        "n": 107,
+        "rho": -0.174
+      },
+      "all_ph_neuron": {
+        "n": 107,
+        "rho": 0.133
+      },
+      "all_ph_ca_resid": {
+        "n": 107,
+        "rho": -0.016
+      }
+    }
+  },
+  "cortical": {
+    "n_subjects": 105,
+    "n_samples": 792,
+    "n_regions": 14,
+    "ca": {
+      "icc1": 0.636,
+      "icc1_ci95": [
+        0.563,
+        0.693
+      ],
+      "split_half_rho_median": 0.851,
+      "expression_null": {
+        "icc1_median": 0.291,
+        "icc1_q05_q95": [
+          0.164,
+          0.44
+        ],
+        "p_upper": 0.002
+      },
+      "specificity_null": {
+        "icc1_median": 0.615,
+        "icc1_q05_q95": [
+          0.571,
+          0.65
+        ],
+        "p_upper": 0.1737
+      }
+    },
+    "neuron": {
+      "icc1": 0.693,
+      "icc1_ci95": [
+        0.609,
+        0.747
+      ],
+      "split_half_rho_median": 0.845
+    },
+    "ca_resid": {
+      "icc1": 0.396,
+      "icc1_ci95": [
+        0.311,
+        0.492
+      ],
+      "split_half_rho_median": 0.648,
+      "expression_null": {
+        "icc1_median": 0.18,
+        "icc1_q05_q95": [
+          0.099,
+          0.281
+        ],
+        "p_upper": 0.002
+      },
+      "specificity_null": {
+        "icc1_median": 0.328,
+        "icc1_q05_q95": [
+          0.259,
+          0.399
+        ],
+        "p_upper": 0.0579
+      }
+    },
+    "neuron_vs_ca_subject_means_rho": -0.961,
+    "label_modal_share": {
+      "obs": 0.73,
+      "shuffled_median": 0.547,
+      "p_upper": 0.001
+    },
+    "subject_level_association": {
+      "all_cdr_ca": {
+        "n": 105,
+        "rho": 0.304,
+        "ci95": [
+          0.124,
+          0.477
+        ]
+      },
+      "all_cdr_neuron": {
+        "n": 105,
+        "rho": -0.344,
+        "ci95": [
+          -0.51,
+          -0.162
+        ]
+      },
+      "all_cdr_ca_resid": {
+        "n": 105,
+        "rho": -0.062,
+        "ci95": [
+          -0.23,
+          0.128
+        ]
+      },
+      "all_braak_ca": {
+        "n": 105,
+        "rho": 0.285,
+        "ci95": [
+          0.09,
+          0.452
+        ]
+      },
+      "all_braak_neuron": {
+        "n": 105,
+        "rho": -0.279,
+        "ci95": [
+          -0.446,
+          -0.091
+        ]
+      },
+      "all_braak_ca_resid": {
+        "n": 105,
+        "rho": -0.039,
+        "ci95": [
+          -0.223,
+          0.149
+        ]
+      },
+      "all_nft_sum_ca": {
+        "n": 105,
+        "rho": 0.258,
+        "ci95": [
+          0.078,
+          0.416
+        ]
+      },
+      "all_nft_sum_neuron": {
+        "n": 105,
+        "rho": -0.268,
+        "ci95": [
+          -0.435,
+          -0.068
+        ]
+      },
+      "all_nft_sum_ca_resid": {
+        "n": 105,
+        "rho": -0.057,
+        "ci95": [
+          -0.256,
+          0.125
+        ]
+      },
+      "AD_cdr_ca": {
+        "n": 63,
+        "rho": 0.159,
+        "ci95": [
+          -0.117,
+          0.403
+        ]
+      },
+      "AD_cdr_neuron": {
+        "n": 63,
+        "rho": -0.209,
+        "ci95": [
+          -0.464,
+          0.082
+        ]
+      },
+      "AD_cdr_ca_resid": {
+        "n": 63,
+        "rho": -0.103,
+        "ci95": [
+          -0.306,
+          0.127
+        ]
+      },
+      "AD_braak_ca": {
+        "n": 63,
+        "rho": 0.301,
+        "ci95": [
+          0.055,
+          0.53
+        ]
+      },
+      "AD_braak_neuron": {
+        "n": 63,
+        "rho": -0.291,
+        "ci95": [
+          -0.509,
+          -0.033
+        ]
+      },
+      "AD_braak_ca_resid": {
+        "n": 63,
+        "rho": 0.005,
+        "ci95": [
+          -0.251,
+          0.261
+        ]
+      },
+      "AD_nft_sum_ca": {
+        "n": 63,
+        "rho": 0.207,
+        "ci95": [
+          -0.03,
+          0.435
+        ]
+      },
+      "AD_nft_sum_neuron": {
+        "n": 63,
+        "rho": -0.223,
+        "ci95": [
+          -0.459,
+          0.036
+        ]
+      },
+      "AD_nft_sum_ca_resid": {
+        "n": 63,
+        "rho": -0.019,
+        "ci95": [
+          -0.282,
+          0.249
+        ]
+      },
+      "all_pmi_ca": {
+        "n": 105,
+        "rho": 0.127
+      },
+      "all_pmi_neuron": {
+        "n": 105,
+        "rho": -0.155
+      },
+      "all_pmi_ca_resid": {
+        "n": 105,
+        "rho": -0.119
+      },
+      "all_ph_ca": {
+        "n": 105,
+        "rho": -0.158
+      },
+      "all_ph_neuron": {
+        "n": 105,
+        "rho": 0.104
+      },
+      "all_ph_ca_resid": {
+        "n": 105,
+        "rho": 0.016
+      }
+    }
+  }
+}
