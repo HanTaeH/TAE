@@ -1,0 +1,224 @@
+{
+  "cortex": {
+    "n_samples": 255,
+    "template_genes_found": 2268,
+    "abs_r_template_vs_residual_PC1_5": [
+      0.216,
+      0.778,
+      0.182,
+      0.221,
+      0.04
+    ],
+    "hardy_counts": {
+      "0.0": 16,
+      "1.0": 18,
+      "2.0": 139,
+      "3.0": 20,
+      "4.0": 62
+    },
+    "template": {
+      "rin_rho": 0.215,
+      "rin_p": 0.000551,
+      "isch_rho": -0.059,
+      "isch_p": 0.347,
+      "age_rho": -0.132,
+      "age_p": 0.0346,
+      "hardy_kw_p": 0.0172,
+      "hardy_means": {
+        "0": 0.001,
+        "1": 0.086,
+        "2": -0.07,
+        "3": -0.004,
+        "4": 0.045
+      },
+      "ventilator_vs_fast_auc": 0.546,
+      "ventilator_vs_fast_p": 0.545,
+      "ols_r2_full": 0.097,
+      "ols_r2_drop": {
+        "rin": 0.027,
+        "isch": 0.001,
+        "hardy": 0.032,
+        "age": 0.013,
+        "sex": 0.0
+      },
+      "batch_kw_p": 0.058,
+      "batch_eta2": 0.324,
+      "batch_eta2_perm_median": 0.146,
+      "batch_eta2_perm_p": 0.0448,
+      "n_batches": 6
+    },
+    "ribosome": {
+      "rin_rho": -0.109,
+      "rin_p": 0.0828,
+      "isch_rho": 0.071,
+      "isch_p": 0.257,
+      "age_rho": -0.035,
+      "age_p": 0.583,
+      "hardy_kw_p": 0.00143,
+      "hardy_means": {
+        "0": 0.508,
+        "1": -0.377,
+        "2": -0.112,
+        "3": 0.048,
+        "4": 0.214
+      },
+      "ventilator_vs_fast_auc": 0.724,
+      "ventilator_vs_fast_p": 0.00321,
+      "ols_r2_full": 0.089,
+      "ols_r2_drop": {
+        "rin": 0.009,
+        "isch": 0.003,
+        "hardy": 0.056,
+        "age": 0.003,
+        "sex": 0.013
+      },
+      "batch_kw_p": 0.0743,
+      "batch_eta2": 0.288,
+      "batch_eta2_perm_median": 0.149,
+      "batch_eta2_perm_p": 0.0746,
+      "n_batches": 6
+    },
+    "heat_shock": {
+      "rin_rho": -0.015,
+      "rin_p": 0.809,
+      "isch_rho": -0.034,
+      "isch_p": 0.594,
+      "age_rho": 0.01,
+      "age_p": 0.872,
+      "hardy_kw_p": 0.0164,
+      "hardy_means": {
+        "0": 0.614,
+        "1": -0.317,
+        "2": -0.027,
+        "3": 0.365,
+        "4": -0.124
+      },
+      "ventilator_vs_fast_auc": 0.701,
+      "ventilator_vs_fast_p": 0.00834,
+      "ols_r2_full": 0.061,
+      "ols_r2_drop": {
+        "rin": 0.0,
+        "isch": 0.0,
+        "hardy": 0.055,
+        "age": 0.0,
+        "sex": 0.002
+      },
+      "batch_kw_p": 0.28,
+      "batch_eta2": 0.121,
+      "batch_eta2_perm_median": 0.143,
+      "batch_eta2_perm_p": 0.5871,
+      "n_batches": 6
+    }
+  },
+  "frontal_BA9": {
+    "n_samples": 209,
+    "template_genes_found": 2267,
+    "abs_r_template_vs_residual_PC1_5": [
+      0.089,
+      0.695,
+      0.395,
+      0.026,
+      0.05
+    ],
+    "hardy_counts": {
+      "0.0": 11,
+      "1.0": 9,
+      "2.0": 115,
+      "3.0": 18,
+      "4.0": 56
+    },
+    "template": {
+      "rin_rho": 0.349,
+      "rin_p": 2.3e-07,
+      "isch_rho": -0.043,
+      "isch_p": 0.541,
+      "age_rho": -0.102,
+      "age_p": 0.14,
+      "hardy_kw_p": 0.0572,
+      "hardy_means": {
+        "0": 0.092,
+        "1": 0.119,
+        "2": -0.069,
+        "3": 0.041,
+        "4": 0.019
+      },
+      "ventilator_vs_fast_auc": 0.643,
+      "ventilator_vs_fast_p": 0.118,
+      "ols_r2_full": 0.17,
+      "ols_r2_drop": {
+        "rin": 0.108,
+        "isch": 0.0,
+        "hardy": 0.036,
+        "age": 0.014,
+        "sex": 0.0
+      },
+      "batch_kw_p": 0.000228,
+      "batch_eta2": 0.449,
+      "batch_eta2_perm_median": 0.129,
+      "batch_eta2_perm_p": 0.005,
+      "n_batches": 11
+    },
+    "ribosome": {
+      "rin_rho": -0.228,
+      "rin_p": 0.000923,
+      "isch_rho": -0.104,
+      "isch_p": 0.133,
+      "age_rho": -0.05,
+      "age_p": 0.471,
+      "hardy_kw_p": 0.237,
+      "hardy_means": {
+        "0": 0.088,
+        "1": -0.484,
+        "2": 0.004,
+        "3": 0.246,
+        "4": -0.027
+      },
+      "ventilator_vs_fast_auc": 0.516,
+      "ventilator_vs_fast_p": 0.863,
+      "ols_r2_full": 0.064,
+      "ols_r2_drop": {
+        "rin": 0.037,
+        "isch": 0.004,
+        "hardy": 0.011,
+        "age": 0.002,
+        "sex": 0.001
+      },
+      "batch_kw_p": 0.544,
+      "batch_eta2": 0.1,
+      "batch_eta2_perm_median": 0.134,
+      "batch_eta2_perm_p": 0.7662,
+      "n_batches": 11
+    },
+    "heat_shock": {
+      "rin_rho": -0.016,
+      "rin_p": 0.82,
+      "isch_rho": -0.048,
+      "isch_p": 0.486,
+      "age_rho": -0.065,
+      "age_p": 0.349,
+      "hardy_kw_p": 0.00604,
+      "hardy_means": {
+        "0": 0.256,
+        "1": -0.193,
+        "2": 0.09,
+        "3": 0.372,
+        "4": -0.324
+      },
+      "ventilator_vs_fast_auc": 0.598,
+      "ventilator_vs_fast_p": 0.287,
+      "ols_r2_full": 0.072,
+      "ols_r2_drop": {
+        "rin": 0.0,
+        "isch": 0.007,
+        "hardy": 0.062,
+        "age": 0.0,
+        "sex": 0.005
+      },
+      "batch_kw_p": 0.246,
+      "batch_eta2": 0.147,
+      "batch_eta2_perm_median": 0.127,
+      "batch_eta2_perm_p": 0.3781,
+      "n_batches": 11
+    }
+  }
+}
