@@ -101,7 +101,14 @@ def collect(res: Path) -> pd.DataFrame:
     # bound_upper_tail, and spike_in_real repeats both nulls; keep one copy of each test
     dup = ((df.report == "null_specificity_matched") & df.path.str.contains("neuron_rho")) | \
           ((df.report == "spike_in_real") & ~df.path.str.contains("strength_decile"))
-    return df[~dup]
+    df = df[~dup]
+    # v12 (review round 10, Reviewer 1 M5.2): list items that share a cohort label produced repeated
+    # (report, path) keys. Exact repeats (same p) are one test; otherwise the keys are numbered.
+    df = df.drop_duplicates(["report", "path", "p"])
+    k = df.groupby(["report", "path"]).cumcount()
+    many = df.duplicated(["report", "path"], keep=False)
+    df.loc[many, "path"] = df.loc[many, "path"] + "#" + k[many].astype(str)
+    return df
 
 
 def main() -> None:
@@ -132,7 +139,8 @@ def main() -> None:
     out.mkdir(exist_ok=True)
     allt.to_csv(out / "all_tests.csv", index=False)
 
-    summ = {"n_tests": int(len(allt)), "by_family": {}}
+    summ = {"n_tests": int(len(allt)), "by_family": {},
+            "note": "n_p05 and n_q05 count only tests not flagged adjusted_for_neuron (for those a large p is the finding)"}
     for fam, d in allt.groupby("family"):
         disc = d[~d["adjusted_for_neuron"]]
         summ["by_family"][fam] = {"n": int(len(d)), "n_adjusted_for_neuron": int(d["adjusted_for_neuron"].sum()),

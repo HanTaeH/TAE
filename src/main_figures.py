@@ -45,7 +45,7 @@ def fig1():
         ax.text(x + w / 2, y + h / 2, t, ha="center", va="center", fontsize=7.2)
     def arr(x1, y1, x2, y2):
         ax.annotate("", (x2, y2), (x1, y1), arrowprops=dict(arrowstyle="->", color=MUTED, lw=0.9))
-    box(0.1, 3.75, 2.3, 1.15, "Neff 2021 classifier\n271 genes, A / B / C\n(+ Li 2022, 3 subgroups)", "#e7f1fb")
+    box(0.1, 3.75, 2.3, 1.15, "Neff 2021 classifier\n271 genes, A / B / C\n(+ Li, Lai, Ma, Tijms CSF)", "#e7f1fb")
     box(0.1, 1.45, 2.3, 2.05, "Independent cohorts\nGSE33000 PFC\nGSE132903 MTG*\nGSE118553 (4 regions)\nGSE125583 FG (RNA-seq)*\nGSE106241 ITC (Braak)")
     box(0.1, 0.1, 2.3, 1.1, "Same-bank comparison\nMSBB GSE84422\n(17 regions)", "#f9eeda")
     box(3.0, 1.9, 2.0, 1.4, "Project each sample\nr(A), r(B), r(C)\nC−A axis score")

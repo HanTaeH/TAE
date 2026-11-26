@@ -4,44 +4,71 @@
     "obs": -0.928,
     "strength": {
       "null_median": -0.91,
-      "p_lower": 0.0619,
-      "p_upper": 0.9401
+      "n": 5000,
+      "null_q05_q95": [
+        -0.929,
+        -0.885
+      ],
+      "p_lower": 0.0662,
+      "p_upper": 0.934,
+      "mc_se_lower": 0.0035,
+      "mc_se_upper": 0.0035
     },
     "spec": {
       "null_median": -0.877,
       "n": 500,
       "p_lower": 0.004,
-      "p_upper": 0.998
+      "p_upper": 0.998,
+      "mc_se_lower": 0.0028,
+      "mc_se_upper": 0.002
     }
   },
   "GSE132903_MTG": {
     "n_ad": 97,
     "obs": -0.921,
     "strength": {
-      "null_median": -0.878,
-      "p_lower": 0.0758,
-      "p_upper": 0.9261
+      "null_median": -0.877,
+      "n": 5000,
+      "null_q05_q95": [
+        -0.925,
+        -0.805
+      ],
+      "p_lower": 0.0732,
+      "p_upper": 0.927,
+      "mc_se_lower": 0.0037,
+      "mc_se_upper": 0.0037
     },
     "spec": {
       "null_median": -0.883,
       "n": 500,
       "p_lower": 0.1417,
-      "p_upper": 0.8603
+      "p_upper": 0.8603,
+      "mc_se_lower": 0.0156,
+      "mc_se_upper": 0.0155
     }
   },
   "GSE118553_Temporal_Cortex": {
     "n_ad": 52,
     "obs": -0.85,
     "strength": {
-      "null_median": -0.812,
-      "p_lower": 0.2415,
-      "p_upper": 0.7605
+      "null_median": -0.806,
+      "n": 5000,
+      "null_q05_q95": [
+        -0.89,
+        -0.674
+      ],
+      "p_lower": 0.223,
+      "p_upper": 0.7782,
+      "mc_se_lower": 0.0059,
+      "mc_se_upper": 0.0059
     },
     "spec": {
       "null_median": -0.836,
       "n": 500,
       "p_lower": 0.3972,
-      "p_upper": 0.6048
+      "p_upper": 0.6048,
+      "mc_se_lower": 0.0219,
+      "mc_se_upper": 0.0219
     }
   },
   "GSE125583_FG": {
@@ -49,14 +76,23 @@
     "obs": -0.927,
     "strength": {
       "null_median": -0.942,
-      "p_lower": 0.8942,
-      "p_upper": 0.1078
+      "n": 5000,
+      "null_q05_q95": [
+        -0.955,
+        -0.92
+      ],
+      "p_lower": 0.889,
+      "p_upper": 0.1112,
+      "mc_se_lower": 0.0044,
+      "mc_se_upper": 0.0044
     },
     "spec": {
       "null_median": -0.941,
       "n": 500,
       "p_lower": 0.7764,
-      "p_upper": 0.2255
+      "p_upper": 0.2255,
+      "mc_se_lower": 0.0186,
+      "mc_se_upper": 0.0187
     }
   }
 }

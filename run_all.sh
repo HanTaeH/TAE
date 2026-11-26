@@ -83,17 +83,24 @@ python3 msbb_plaque_within_ad.py --res "$OUT" --out "$OUT/msbb"
 # SEA-AD regulators and co-pathology, class B / glial / neuronal-subscore / semipartial follow-ups
 python3 spike_in_real.py --data "$DATA" --ref "$REF_DIR/seaad_mtg_reference.csv.gz" --res "$OUT" --out "$OUT/spike_in_real"
 python3 spike_in_bound.py --res "$OUT"
+python3 spike_in_bound_v12.py --res "$OUT" --out "$OUT/spike_in_v12"
 python3 msbb_neuropath_v11.py --data "$DATA" --res "$OUT" --out "$OUT/msbb"
 python3 msbb_kappa_v11.py --data "$DATA" --out "$OUT/msbb"
 python3 seaad_regulators_copath_v11.py --donors "$REF_DIR/donors" --cps "$REF_DIR/Global_and_Local_CPS.20260105.csv" --res "$OUT" --out "$OUT/seaad_v11"
+python3 seaad_regulators_loo_v12.py --donors "$REF_DIR/donors" --data "$DATA" --res "$OUT" --out "$OUT/seaad_v12"
 python3 cohort_followups_v11.py --data "$DATA" --ref "$REF_DIR/seaad_mtg_reference.csv.gz" --out "$OUT/cohort_v11"
-# v12 (review round 10): direction null, BRETIGEA normalisation, MSBB cross-region agreement, S1 signature decomposition
+# v12 (review round 10): direction null, BRETIGEA normalisation, MSBB cross-region agreement, S1 signature decomposition,
+# all pooled estimates without shared donors, Li 2022 against specificity-matched genes, Fig. 1b
 python3 null_direction_v12.py --data "$DATA" --ref "$REF_DIR/seaad_mtg_reference.csv.gz" --out "$OUT/null_direction_v12" --n 500
 python3 bretigea_normalisation_v12.py --data "$DATA" --out "$OUT/bretigea_v12" --n 200
 python3 msbb_cross_region_v12.py --data "$DATA" --ref "$REF_DIR/seaad_mtg_reference.csv.gz" --out "$OUT/msbb_v12" --n 500
 python3 neff_signature_decomposition_v12.py --data "$DATA" --ref "$REF_DIR/seaad_mtg_reference.csv.gz" --out "$OUT/neff_signature_v12" --n 200
+python3 shared_donor_v12.py --data "$DATA" --res "$OUT" --out "$OUT/shared_donor_v12"
+python3 li2022_specnull_v12.py --data "$DATA" --ref "$REF_DIR/seaad_mtg_reference.csv.gz" --out "$OUT/rq2_li2022"
+python3 scheme_overview_v12.py --res "$OUT" --out "$OUT/figures"
 # last: FDR over every result file above, then the supplementary tables numbered by first citation in the manuscript
 python3 multiple_testing.py "$OUT"
 MS=${MS:-/mnt/project-files/d1-results/manuscript}
-python3 manuscript_tokens.py --src "$MS/draft_v11_src_2026-11-25.md" --out "$MS/draft_v11_2026-11-25.md" --ren "$OUT/supplementary/ren_v11.json"
-python3 supplementary_tables.py --res "$OUT" --ren "$OUT/supplementary/ren_v11.json" --out "$OUT/supplementary/Supplementary_Tables_v11.xlsx"
+python3 manuscript_tokens.py --src "$MS/draft_v12_src_2026-11-26.md" --out "$MS/draft_v12_2026-11-26.md" --ren "$OUT/supplementary/ren_v12.json" \
+  --extra "$MS/Supplementary_Note_v12_src_2026-11-26.md" "$MS/Supplementary_Note_v12_2026-11-26.md"
+python3 supplementary_tables.py --res "$OUT" --ren "$OUT/supplementary/ren_v12.json" --out "$OUT/supplementary/Supplementary_Tables_v12.xlsx"

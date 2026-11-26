@@ -1,0 +1,60 @@
+/home/claude/tae/src/shared_donor_v12.py:76: Pandas4Warning: Starting with pandas version 4.0 all arguments of all will be keyword-only.
+  ok = pp.notna().all(1).values
+GSE33000_PFC  done
+/home/claude/tae/src/shared_donor_v12.py:76: Pandas4Warning: Starting with pandas version 4.0 all arguments of all will be keyword-only.
+  ok = pp.notna().all(1).values
+GSE132903_MTG  done
+/home/claude/tae/src/shared_donor_v12.py:76: Pandas4Warning: Starting with pandas version 4.0 all arguments of all will be keyword-only.
+  ok = pp.notna().all(1).values
+GSE132903_MTG _noshared done
+/home/claude/tae/src/shared_donor_v12.py:76: Pandas4Warning: Starting with pandas version 4.0 all arguments of all will be keyword-only.
+  ok = pp.notna().all(1).values
+GSE118553_Temporal_Cortex  done
+/home/claude/tae/src/shared_donor_v12.py:76: Pandas4Warning: Starting with pandas version 4.0 all arguments of all will be keyword-only.
+  ok = pp.notna().all(1).values
+GSE125583_FG  done
+/home/claude/tae/src/shared_donor_v12.py:76: Pandas4Warning: Starting with pandas version 4.0 all arguments of all will be keyword-only.
+  ok = pp.notna().all(1).values
+GSE125583_FG _noshared done
+{
+ "P1": {
+  "all": -0.924,
+  "removed_from_GSE132903_MTG": -0.926,
+  "removed_from_GSE125583_FG": -0.924
+ },
+ "P2_agesex": {
+  "all": 0.425,
+  "removed_from_GSE132903_MTG": 0.42,
+  "removed_from_GSE125583_FG": 0.403
+ },
+ "P2_neuron": {
+  "all": 0.138,
+  "removed_from_GSE132903_MTG": 0.132,
+  "removed_from_GSE125583_FG": 0.144
+ },
+ "P2_neuron_glia": {
+  "all": 0.134,
+  "removed_from_GSE132903_MTG": 0.117,
+  "removed_from_GSE125583_FG": 0.134
+ },
+ "P2_neuron_rank": {
+  "all": 0.062,
+  "removed_from_GSE132903_MTG": 0.056,
+  "removed_from_GSE125583_FG": 0.073
+ },
+ "P2_nnls": {
+  "all": 0.235,
+  "removed_from_GSE132903_MTG": 0.23,
+  "removed_from_GSE125583_FG": 0.221
+ },
+ "reverse": {
+  "all": -0.147,
+  "removed_from_GSE132903_MTG": -0.148,
+  "removed_from_GSE125583_FG": -0.119
+ },
+ "semipartial": {
+  "all": 0.049,
+  "removed_from_GSE132903_MTG": 0.041,
+  "removed_from_GSE125583_FG": 0.052
+ }
+}

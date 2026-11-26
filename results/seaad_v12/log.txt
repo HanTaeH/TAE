@@ -1,0 +1,158 @@
+{
+ "n_tests": 60,
+ "n_q_lt_05": 19,
+ "hits": [
+  {
+   "gene": "ATP6V1A",
+   "cell_type": "Exc",
+   "rho_v11": -0.54,
+   "rho_gene_and_type_removed": -0.581,
+   "q_bh": 0.0,
+   "low_expression": false
+  },
+  {
+   "gene": "NAPB",
+   "cell_type": "Exc",
+   "rho_v11": -0.358,
+   "rho_gene_and_type_removed": -0.33,
+   "q_bh": 0.0091,
+   "low_expression": false
+  },
+  {
+   "gene": "SYT1",
+   "cell_type": "Exc",
+   "rho_v11": 0.494,
+   "rho_gene_and_type_removed": 0.595,
+   "q_bh": 0.0,
+   "low_expression": false
+  },
+  {
+   "gene": "TLN1",
+   "cell_type": "Exc",
+   "rho_v11": -0.116,
+   "rho_gene_and_type_removed": -0.271,
+   "q_bh": 0.0417,
+   "low_expression": false
+  },
+  {
+   "gene": "MSN",
+   "cell_type": "Exc",
+   "rho_v11": 0.496,
+   "rho_gene_and_type_removed": 0.395,
+   "q_bh": 0.0017,
+   "low_expression": false
+  },
+  {
+   "gene": "IL6R",
+   "cell_type": "Exc",
+   "rho_v11": -0.21,
+   "rho_gene_and_type_removed": -0.304,
+   "q_bh": 0.0184,
+   "low_expression": false
+  },
+  {
+   "gene": "LRP10",
+   "cell_type": "Exc",
+   "rho_v11": 0.705,
+   "rho_gene_and_type_removed": 0.566,
+   "q_bh": 0.0,
+   "low_expression": true
+  },
+  {
+   "gene": "QKI",
+   "cell_type": "Exc",
+   "rho_v11": 0.349,
+   "rho_gene_and_type_removed": 0.331,
+   "q_bh": 0.0091,
+   "low_expression": false
+  },
+  {
+   "gene": "ATP6V1A",
+   "cell_type": "Inh",
+   "rho_v11": -0.532,
+   "rho_gene_and_type_removed": -0.527,
+   "q_bh": 0.0,
+   "low_expression": false
+  },
+  {
+   "gene": "NAPB",
+   "cell_type": "Inh",
+   "rho_v11": -0.336,
+   "rho_gene_and_type_removed": -0.327,
+   "q_bh": 0.0096,
+   "low_expression": false
+  },
+  {
+   "gene": "SYT1",
+   "cell_type": "Inh",
+   "rho_v11": 0.352,
+   "rho_gene_and_type_removed": 0.374,
+   "q_bh": 0.003,
+   "low_expression": false
+  },
+  {
+   "gene": "MSN",
+   "cell_type": "Inh",
+   "rho_v11": 0.526,
+   "rho_gene_and_type_removed": 0.521,
+   "q_bh": 0.0,
+   "low_expression": false
+  },
+  {
+   "gene": "LRP10",
+   "cell_type": "Inh",
+   "rho_v11": 0.409,
+   "rho_gene_and_type_removed": 0.394,
+   "q_bh": 0.0017,
+   "low_expression": true
+  },
+  {
+   "gene": "QKI",
+   "cell_type": "Inh",
+   "rho_v11": 0.35,
+   "rho_gene_and_type_removed": 0.364,
+   "q_bh": 0.0039,
+   "low_expression": false
+  },
+  {
+   "gene": "NAPB",
+   "cell_type": "Astro",
+   "rho_v11": -0.338,
+   "rho_gene_and_type_removed": -0.373,
+   "q_bh": 0.003,
+   "low_expression": false
+  },
+  {
+   "gene": "ERMN",
+   "cell_type": "Oligo",
+   "rho_v11": 0.302,
+   "rho_gene_and_type_removed": 0.331,
+   "q_bh": 0.0091,
+   "low_expression": false
+  },
+  {
+   "gene": "SCN2A",
+   "cell_type": "Micro",
+   "rho_v11": -0.325,
+   "rho_gene_and_type_removed": -0.273,
+   "q_bh": 0.0417,
+   "low_expression": false
+  },
+  {
+   "gene": "NAPB",
+   "cell_type": "Micro",
+   "rho_v11": -0.427,
+   "rho_gene_and_type_removed": -0.432,
+   "q_bh": 0.0005,
+   "low_expression": false
+  },
+  {
+   "gene": "ERMN",
+   "cell_type": "Micro",
+   "rho_v11": -0.397,
+   "rho_gene_and_type_removed": -0.334,
+   "q_bh": 0.0091,
+   "low_expression": false
+  }
+ ]
+}

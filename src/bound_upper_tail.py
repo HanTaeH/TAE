@@ -5,8 +5,10 @@ signal makes the classifier LESS neuron-coupled than random genes, detected in t
 cohort tests reported so far were lower-tail (MORE coupled). To bound the composition-independent signal
 in real data, the observed neuron rho is compared with the same nulls in the upper tail:
   spec     : saved specificity-matched draws (null_specificity_matched_distributions.csv, 500 per cohort)
-  strength : 500 fresh strength-matched draws per cohort (expression tertile x 1-unit log2 neuron/glia bin),
-             as in gse33000_null_followup.py; both tails reported.
+  strength : fresh strength-matched draws per cohort (expression tertile x 1-unit log2 neuron/glia bin),
+             as in gse33000_null_followup.py; both tails reported. v12 (review round 10, Reviewer 1 M5.1):
+             5,000 draws (--n), the canonical strength-null run cited everywhere, with the Monte Carlo SE
+             sqrt(p(1-p)/N) of each p.
 p_upper = (#{null >= obs} + 1)/(N + 1).
 
 Usage: python bound_upper_tail.py --data /mnt/project-files/d1-data/raw --ref <seaad_mtg_reference.csv.gz> --res ../results --out <dir>
@@ -37,6 +39,7 @@ def main() -> None:
     ap.add_argument("--ref", type=Path, required=True)
     ap.add_argument("--res", type=Path, required=True)
     ap.add_argument("--out", type=Path, required=True)
+    ap.add_argument("--n", type=int, default=5000)
     a = ap.parse_args()
     a.out.mkdir(parents=True, exist_ok=True)
     rng = np.random.default_rng(SEED + 1010)
@@ -64,16 +67,22 @@ def main() -> None:
         def cr(gs):
             return stats.spearmanr(ca_score(Z.loc[gs].set_axis(cg), cc).values, Z.loc[cmk].mean().values)[0]
         o = cr(cg)
-        nl = np.array([cr(x) for x in draw(rng, cg, st, pool, 500)])
+        nl = np.array([cr(x) for x in draw(rng, cg, st, pool, a.n)])
+        mc = lambda p, n: round(float(np.sqrt(p * (1 - p) / n)), 4)
         sp = dist.loc[dist.cohort == cname, "neuron_rho"].values
         res = {"n_ad": int(ce.shape[1]), "obs": round(float(o), 3),
-               "strength": {"null_median": round(float(np.median(nl)), 3),
-                            "p_lower": round(float(((nl <= o).sum() + 1) / 501), 4),
-                            "p_upper": round(float(((nl >= o).sum() + 1) / 501), 4)}}
+               "strength": {"null_median": round(float(np.median(nl)), 3), "n": int(len(nl)),
+                            "null_q05_q95": [round(float(np.quantile(nl, q)), 3) for q in (.05, .95)],
+                            "p_lower": round(float(((nl <= o).sum() + 1) / (len(nl) + 1)), 4),
+                            "p_upper": round(float(((nl >= o).sum() + 1) / (len(nl) + 1)), 4)}}
+        for t in ("lower", "upper"):
+            res["strength"][f"mc_se_{t}"] = mc(res["strength"][f"p_{t}"], len(nl))
         if len(sp):
             res["spec"] = {"null_median": round(float(np.median(sp)), 3), "n": int(len(sp)),
                            "p_lower": round(float(((sp <= o).sum() + 1) / (len(sp) + 1)), 4),
                            "p_upper": round(float(((sp >= o).sum() + 1) / (len(sp) + 1)), 4)}
+            for t in ("lower", "upper"):
+                res["spec"][f"mc_se_{t}"] = mc(res["spec"][f"p_{t}"], len(sp))
         out[cname] = res
         print(cname, json.dumps(res), flush=True)
     (a.out / "bound_upper_tail.json").write_text(json.dumps(out, indent=2))

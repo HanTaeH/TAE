@@ -1,12 +1,12 @@
 {
-  "n_tests": 2151,
+  "n_tests": 2328,
   "by_family": {
     "exploratory": {
-      "n": 2100,
+      "n": 2277,
       "n_adjusted_for_neuron": 126,
-      "n_p05": 805,
-      "n_q05_family": 601,
-      "n_q05_global": 601
+      "n_p05": 876,
+      "n_q05_family": 645,
+      "n_q05_global": 645
     },
     "primary": {
       "n": 2,
@@ -23,6 +23,7 @@
       "n_q05_global": 21
     }
   },
+  "note": "n_p05 and n_q05 count only tests not flagged adjusted_for_neuron (for those a large p is the finding)",
   "primary": [
     {
       "path": "P1: P1_neuron (4 cohorts)",
@@ -244,25 +245,25 @@
       "q_family": 0.0625
     },
     {
-      "report": "bound_upper_tail",
-      "path": "GSE33000_PFC/strength/p_lower",
-      "estimate": NaN,
-      "p": 0.0619,
-      "q_family": 0.1011
-    },
-    {
       "report": "null",
       "path": "GSE132903_MTG/r2_cell/p_empirical",
       "estimate": 0.474,
       "p": 0.0659,
-      "q_family": 0.1042
+      "q_family": 0.1046
+    },
+    {
+      "report": "bound_upper_tail",
+      "path": "GSE33000_PFC/strength/p_lower",
+      "estimate": NaN,
+      "p": 0.0662,
+      "q_family": 0.1046
     },
     {
       "report": "bound_upper_tail",
       "path": "GSE132903_MTG/strength/p_lower",
       "estimate": NaN,
-      "p": 0.0758,
-      "q_family": 0.1161
+      "p": 0.0732,
+      "q_family": 0.1121
     },
     {
       "report": "null",
@@ -275,8 +276,8 @@
       "report": "bound_upper_tail",
       "path": "GSE125583_FG/strength/p_upper",
       "estimate": NaN,
-      "p": 0.1078,
-      "q_family": 0.1554
+      "p": 0.1112,
+      "q_family": 0.1603
     },
     {
       "report": "bound_upper_tail",
@@ -287,17 +288,17 @@
     },
     {
       "report": "bound_upper_tail",
-      "path": "GSE125583_FG/spec/p_upper",
+      "path": "GSE118553_Temporal_Cortex/strength/p_lower",
       "estimate": NaN,
-      "p": 0.2255,
-      "q_family": 0.3069
+      "p": 0.223,
+      "q_family": 0.2986
     },
     {
       "report": "bound_upper_tail",
-      "path": "GSE118553_Temporal_Cortex/strength/p_lower",
+      "path": "GSE125583_FG/spec/p_upper",
       "estimate": NaN,
-      "p": 0.2415,
-      "q_family": 0.3198
+      "p": 0.2255,
+      "q_family": 0.2986
     },
     {
       "report": "bound_upper_tail",
@@ -336,17 +337,17 @@
     },
     {
       "report": "bound_upper_tail",
-      "path": "GSE118553_Temporal_Cortex/strength/p_upper",
-      "estimate": NaN,
-      "p": 0.7605,
-      "q_family": 0.8646
-    },
-    {
-      "report": "bound_upper_tail",
       "path": "GSE125583_FG/spec/p_lower",
       "estimate": NaN,
       "p": 0.7764,
-      "q_family": 0.8646
+      "q_family": 0.8666
+    },
+    {
+      "report": "bound_upper_tail",
+      "path": "GSE118553_Temporal_Cortex/strength/p_upper",
+      "estimate": NaN,
+      "p": 0.7782,
+      "q_family": 0.8666
     },
     {
       "report": "bound_upper_tail",
@@ -359,22 +360,22 @@
       "report": "bound_upper_tail",
       "path": "GSE125583_FG/strength/p_lower",
       "estimate": NaN,
-      "p": 0.8942,
-      "q_family": 0.9525
+      "p": 0.889,
+      "q_family": 0.947
     },
     {
       "report": "bound_upper_tail",
       "path": "GSE132903_MTG/strength/p_upper",
       "estimate": NaN,
-      "p": 0.9261,
-      "q_family": 0.9597
+      "p": 0.927,
+      "q_family": 0.9535
     },
     {
       "report": "bound_upper_tail",
       "path": "GSE33000_PFC/strength/p_upper",
       "estimate": NaN,
-      "p": 0.9401,
-      "q_family": 0.9597
+      "p": 0.934,
+      "q_family": 0.9535
     },
     {
       "report": "bound_upper_tail",
@@ -400,25 +401,25 @@
       "q_family": 0.0625
     },
     {
-      "report": "bound_upper_tail",
-      "path": "GSE33000_PFC/strength/p_lower",
-      "estimate": NaN,
-      "p": 0.0619,
-      "q_family": 0.1011
-    },
-    {
       "report": "null",
       "path": "GSE132903_MTG/r2_cell/p_empirical",
       "estimate": 0.474,
       "p": 0.0659,
-      "q_family": 0.1042
+      "q_family": 0.1046
+    },
+    {
+      "report": "bound_upper_tail",
+      "path": "GSE33000_PFC/strength/p_lower",
+      "estimate": NaN,
+      "p": 0.0662,
+      "q_family": 0.1046
     },
     {
       "report": "bound_upper_tail",
       "path": "GSE132903_MTG/strength/p_lower",
       "estimate": NaN,
-      "p": 0.0758,
-      "q_family": 0.1161
+      "p": 0.0732,
+      "q_family": 0.1121
     },
     {
       "report": "null",
@@ -431,8 +432,8 @@
       "report": "bound_upper_tail",
       "path": "GSE125583_FG/strength/p_upper",
       "estimate": NaN,
-      "p": 0.1078,
-      "q_family": 0.1554
+      "p": 0.1112,
+      "q_family": 0.1603
     },
     {
       "report": "bound_upper_tail",
@@ -443,17 +444,17 @@
     },
     {
       "report": "bound_upper_tail",
-      "path": "GSE125583_FG/spec/p_upper",
+      "path": "GSE118553_Temporal_Cortex/strength/p_lower",
       "estimate": NaN,
-      "p": 0.2255,
-      "q_family": 0.3069
+      "p": 0.223,
+      "q_family": 0.2986
     },
     {
       "report": "bound_upper_tail",
-      "path": "GSE118553_Temporal_Cortex/strength/p_lower",
+      "path": "GSE125583_FG/spec/p_upper",
       "estimate": NaN,
-      "p": 0.2415,
-      "q_family": 0.3198
+      "p": 0.2255,
+      "q_family": 0.2986
     },
     {
       "report": "bound_upper_tail",
@@ -492,17 +493,17 @@
     },
     {
       "report": "bound_upper_tail",
-      "path": "GSE118553_Temporal_Cortex/strength/p_upper",
-      "estimate": NaN,
-      "p": 0.7605,
-      "q_family": 0.8646
-    },
-    {
-      "report": "bound_upper_tail",
       "path": "GSE125583_FG/spec/p_lower",
       "estimate": NaN,
       "p": 0.7764,
-      "q_family": 0.8646
+      "q_family": 0.8666
+    },
+    {
+      "report": "bound_upper_tail",
+      "path": "GSE118553_Temporal_Cortex/strength/p_upper",
+      "estimate": NaN,
+      "p": 0.7782,
+      "q_family": 0.8666
     },
     {
       "report": "bound_upper_tail",
@@ -515,22 +516,22 @@
       "report": "bound_upper_tail",
       "path": "GSE125583_FG/strength/p_lower",
       "estimate": NaN,
-      "p": 0.8942,
-      "q_family": 0.9525
+      "p": 0.889,
+      "q_family": 0.947
     },
     {
       "report": "bound_upper_tail",
       "path": "GSE132903_MTG/strength/p_upper",
       "estimate": NaN,
-      "p": 0.9261,
-      "q_family": 0.9597
+      "p": 0.927,
+      "q_family": 0.9535
     },
     {
       "report": "bound_upper_tail",
       "path": "GSE33000_PFC/strength/p_upper",
       "estimate": NaN,
-      "p": 0.9401,
-      "q_family": 0.9597
+      "p": 0.934,
+      "q_family": 0.9535
     },
     {
       "report": "bound_upper_tail",

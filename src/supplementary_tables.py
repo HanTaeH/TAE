@@ -201,7 +201,11 @@ def main() -> None:
                              "genes": d["n_genes"], "reps": 20, "null_sets": 200})
     sheets["S17_positive_control"] = pd.DataFrame(rows)
     os_ = pd.read_csv(R / "other_schemes/other_schemes_clustered.csv")
-    sheets["S18_further_schemes"] = os_[~os_.iloc[:, 0].astype(str).str.contains("Wang")]
+    os_["gene_list_verified"] = ~os_.iloc[:, 0].astype(str).str.contains("Wang")  # Wang 2024 list from a secondary summary
+    sheets["S18_further_schemes"] = os_
+    li = R / "rq2_li2022/li2022_specnull_v12.csv"
+    if li.exists():  # v12: Li 2022 hub-gene subgroups against specificity-matched random genes
+        sheets["S18b_li2022"] = pd.read_csv(li)
     # S19 CSF subtypes
     rows = []
     pr, fo = jl("tijms_csf/tijms_csf_projection.json"), jl("tijms_followup/tijms_followup.json")
@@ -300,6 +304,25 @@ def main() -> None:
             fl(d, [])
         sheets["S25_cohort_followups"] = pd.DataFrame(rows)
 
+    # v12: share of C-A variance explained by the cell scores (cited with the residual axis; Reviewer 1 minor 4)
+    if (R / "residual/residual_summary.csv").exists():
+        sheets["S20b_cell_score_r2"] = pd.read_csv(R / "residual/residual_summary.csv")
+    # v12 tables (review round 10)
+    v12 = {"S26_bretigea_normalisation": "bretigea_v12/bretigea_normalisation_v12.json",
+           "S27_direction_null": "null_direction_v12/null_direction_v12.json",
+           "S28_msbb_cross_region": "msbb_v12/msbb_cross_region_v12.json",
+           "S29_signature_decomposition": "neff_signature_v12/neff_signature_decomposition_v12.json",
+           "S30_shared_donors": "shared_donor_v12/shared_donor_v12.json",
+           "S31_spike_bound": "spike_in_v12/spike_in_bound_v12.json",
+           "S32_regulators_loo": "seaad_v12/seaad_regulators_loo_v12.json"}
+    for sh, f in v12.items():
+        if (R / f).exists():
+            sheets[sh] = pd.DataFrame(json_rows(jl(f)))
+    if (R / "seaad_v12/seaad_regulators_loo_v12.csv").exists():
+        sheets["S32_regulators_loo"] = pd.read_csv(R / "seaad_v12/seaad_regulators_loo_v12.csv")
+    if (R / "shared_donor_v12/shared_donor_per_cohort.csv").exists():
+        sheets["S30b_shared_donors_per_cohort"] = pd.read_csv(R / "shared_donor_v12/shared_donor_per_cohort.csv")
+
     titles = {
         "S21": "Spike-in positive control in the real cohorts: observed coupling against matched nulls, one-sided 95% upper "
                "confidence limits by test inversion (share of C-A variance), strata coverage; sheet b: grid of spiked signal sizes",
@@ -309,8 +332,21 @@ def main() -> None:
                "(BH-FDR); sheet b: co-pathology (LATE-NC, Lewy body disease, APOE e4)",
         "S25": "Independent cohorts: class B axis vs cell scores and specificity-matched null, primary endpoint after glial adjustment, "
                "neuronal subscores, semipartial case-control correlations, GSE118553 asymptomatic AD",
-        "S1": "Included studies of the structured literature search (sheet S2b: methods coding of all 32 studies, source full text or abstract)",
-        "S2": "Per-cohort primary endpoints (sheet S7b: pooled random-effects estimates, REML/HKSJ)",
+        "S26": "Neff et al.'s cell-type normalisation reproduced with BRETIGEA (six SPVs, up to 1,000 markers per type): R2 of the "
+               "C-A score on the SPVs, kappa before/after against six random 1,000-gene PC1s, coupling and stage associations after normalisation; "
+               "MSBB per region (AD) and GEO cohorts (AD)",
+        "S27": "Direction of the classifier per cell-type class: observed coupling, class-mean centroid rows, within-class permutation and random "
+               "signs of centroid rows, specificity-matched random genes; C1-C2 and B1-B2 contrasts against cell scores",
+        "S28": "GSE84422: cross-region agreement within subjects (ICC(1), split-half, modal label share) for the C-A, neuron and neuron-adjusted "
+               "scores against expression- and specificity-matched random genes; subject-level associations with CDR, Braak, tangles, PMI, pH",
+        "S29": "Data file S1 genome-wide signatures split into a part predicted from SEA-AD cell-type expression and a residual; residual "
+               "signature scores in the four cohorts (coupling, coherence, diagnosis and Braak, loading agreement)",
+        "S30": "Pooled estimates with the 62 shared donors removed from GSE132903 or GSE125583 (sheet b: per cohort)",
+        "S31": "Spike-in upper confidence limits including sampling variability, offset-free detectable signal, and equivalence (TOST) of the "
+               "classifier's offset from the matched nulls",
+        "S32": "SEA-AD key regulators within cell type against a C-A score recomputed without the tested gene and without the tested type's nuclei",
+        "S1": "Included studies of the structured literature search (sheet b: methods coding of all 32 studies, source full text or abstract)",
+        "S2": "Per-cohort primary endpoints (sheet b: pooled random-effects estimates, REML/HKSJ)",
         "S3": "Expression-matched random-gene null (1,000 sets) per cohort-region set",
         "S4": "SEA-AD pseudobulk x outcome tests with nominal and random-gene FDR",
         "S5": "Forward and reverse mediation models (descriptive)",
@@ -330,7 +366,8 @@ def main() -> None:
         "S16": "MSBB kappa against labels before normalisation: neuronal SPV (bootstrap CI), the same 200 single random genes in every region, "
                "and 200 random 14-gene components matched on share of C-A variance; joint tests across regions; cortical regions flagged",
         "S17": "Positive-control simulation: detection rate by injected composition-independent signal (share of published C-A contrast), AD cohort size and null",
-        "S18": "Further subtype schemes (Lai 2022, Ma 2023): PC1 axis vs neuron score, cell-score R2, label AUC, expression- and specificity-matched nulls",
+        "S18": "Further subtype schemes (Lai 2022, Ma 2023; Wang 2024 with an unverified gene list, flagged): PC1 axis vs neuron score, cell-score R2, label AUC, expression- and specificity-matched nulls "
+               "(sheet b: Li 2022 hub-gene subgroup scores against specificity-matched random genes, both tails)",
         "S19": "Tijms 2024 CSF proteomic subtypes projected on brain bulk cohorts (supplementary analysis)",
         "S20": "Residual axis after five cell scores: de novo PCA, clustering, loading replication, GTEx v8 and SEA-AD tracing",
     }
