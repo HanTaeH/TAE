@@ -1,0 +1,66 @@
+{
+  "GSE33000_PFC": {
+    "n_ad": 310,
+    "obs_unexplained": 0.1749,
+    "spec": {
+      "null_median": 0.2247,
+      "null_q95": 0.2719,
+      "excess_over_median": -0.0498,
+      "p_upper": 0.987
+    },
+    "strength_tertile": {
+      "null_median": 0.1771,
+      "null_q95": 0.2166,
+      "excess_over_median": -0.0022,
+      "p_upper": 0.5534
+    }
+  },
+  "GSE132903_MTG": {
+    "n_ad": 97,
+    "obs_unexplained": 0.1149,
+    "spec": {
+      "null_median": 0.138,
+      "null_q95": 0.2236,
+      "excess_over_median": -0.0231,
+      "p_upper": 0.7752
+    },
+    "strength_tertile": {
+      "null_median": 0.0992,
+      "null_q95": 0.1434,
+      "excess_over_median": 0.0157,
+      "p_upper": 0.2348
+    }
+  },
+  "GSE118553_Temporal_Cortex": {
+    "n_ad": 52,
+    "obs_unexplained": 0.1196,
+    "spec": {
+      "null_median": 0.1692,
+      "null_q95": 0.2581,
+      "excess_over_median": -0.0497,
+      "p_upper": 0.9201
+    },
+    "strength_tertile": {
+      "null_median": 0.1438,
+      "null_q95": 0.2,
+      "excess_over_median": -0.0242,
+      "p_upper": 0.8202
+    }
+  },
+  "GSE125583_FG": {
+    "n_ad": 219,
+    "obs_unexplained": 0.1511,
+    "spec": {
+      "null_median": 0.0926,
+      "null_q95": 0.1347,
+      "excess_over_median": 0.0585,
+      "p_upper": 0.021
+    },
+    "strength_tertile": {
+      "null_median": 0.0794,
+      "null_q95": 0.097,
+      "excess_over_median": 0.0717,
+      "p_upper": 0.001
+    }
+  }
+}

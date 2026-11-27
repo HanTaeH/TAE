@@ -1,0 +1,206 @@
+{
+  "cohorts": {
+    "GSE33000_PFC": {
+      "n_ad": 310,
+      "obs_rho": -0.928,
+      "obs_unexplained": 0.175,
+      "null_rho_median": -0.892,
+      "null_unexplained_median": 0.226,
+      "null_unexplained_q95": 0.27,
+      "p_upper_rho_obs": 1.0,
+      "p_upper_unexplained_obs": 0.994,
+      "f_for_share": {
+        "0.0": 0.0,
+        "0.01": 0.0155,
+        "0.02": 0.024,
+        "0.03": 0.0305,
+        "0.05": 0.0379,
+        "0.075": 0.0471,
+        "0.1": 0.0555,
+        "0.15": 0.0714,
+        "0.2": 0.0867,
+        "0.3": 0.1176
+      },
+      "achieved_share_median": {
+        "0.0": 0.0,
+        "0.01": 0.009,
+        "0.02": 0.018,
+        "0.03": 0.032,
+        "0.05": 0.046,
+        "0.075": 0.072,
+        "0.1": 0.097,
+        "0.15": 0.153,
+        "0.2": 0.202,
+        "0.3": 0.3
+      }
+    },
+    "GSE132903_MTG": {
+      "n_ad": 97,
+      "obs_rho": -0.921,
+      "obs_unexplained": 0.115,
+      "null_rho_median": -0.86,
+      "null_unexplained_median": 0.137,
+      "null_unexplained_q95": 0.232,
+      "p_upper_rho_obs": 0.9102,
+      "p_upper_unexplained_obs": 0.7585,
+      "f_for_share": {
+        "0.0": 0.0,
+        "0.01": 0.0213,
+        "0.02": 0.0379,
+        "0.03": 0.0511,
+        "0.05": 0.0675,
+        "0.075": 0.0833,
+        "0.1": 0.0965,
+        "0.15": 0.1368,
+        "0.2": 0.1738,
+        "0.3": 0.2641
+      },
+      "achieved_share_median": {
+        "0.0": 0.0,
+        "0.01": 0.011,
+        "0.02": 0.022,
+        "0.03": 0.039,
+        "0.05": 0.053,
+        "0.075": 0.067,
+        "0.1": 0.093,
+        "0.15": 0.139,
+        "0.2": 0.184,
+        "0.3": 0.309
+      }
+    },
+    "GSE118553_Temporal_Cortex": {
+      "n_ad": 52,
+      "obs_rho": -0.85,
+      "obs_unexplained": 0.12,
+      "null_rho_median": -0.835,
+      "null_unexplained_median": 0.167,
+      "null_unexplained_q95": 0.252,
+      "p_upper_rho_obs": 0.5848,
+      "p_upper_unexplained_obs": 0.9261,
+      "f_for_share": {
+        "0.0": 0.0,
+        "0.01": 0.0066,
+        "0.02": 0.0401,
+        "0.03": 0.0555,
+        "0.05": 0.0756,
+        "0.075": 0.0884,
+        "0.1": 0.102,
+        "0.15": 0.1444,
+        "0.2": 0.1701,
+        "0.3": 0.2221
+      },
+      "achieved_share_median": {
+        "0.0": 0.0,
+        "0.01": 0.009,
+        "0.02": 0.014,
+        "0.03": 0.031,
+        "0.05": 0.042,
+        "0.075": 0.056,
+        "0.1": 0.073,
+        "0.15": 0.153,
+        "0.2": 0.206,
+        "0.3": 0.292
+      }
+    },
+    "GSE125583_FG": {
+      "n_ad": 219,
+      "obs_rho": -0.927,
+      "obs_unexplained": 0.151,
+      "null_rho_median": -0.942,
+      "null_unexplained_median": 0.093,
+      "null_unexplained_q95": 0.132,
+      "p_upper_rho_obs": 0.1936,
+      "p_upper_unexplained_obs": 0.014,
+      "f_for_share": {
+        "0.0": 0.0,
+        "0.01": 0.0741,
+        "0.02": 0.1075,
+        "0.03": 0.1297,
+        "0.05": 0.1676,
+        "0.075": 0.2081,
+        "0.1": 0.2482,
+        "0.15": 0.3201,
+        "0.2": 0.3766,
+        "0.3": 0.4896
+      },
+      "achieved_share_median": {
+        "0.0": 0.0,
+        "0.01": 0.011,
+        "0.02": 0.024,
+        "0.03": 0.029,
+        "0.05": 0.047,
+        "0.075": 0.073,
+        "0.1": 0.093,
+        "0.15": 0.154,
+        "0.2": 0.197,
+        "0.3": 0.296
+      }
+    }
+  },
+  "summary": {
+    "rho": {
+      "GSE33000_PFC": {
+        "size": 0.0,
+        "share_at_50pct": 0.126,
+        "share_at_80pct": 0.147
+      },
+      "GSE132903_MTG": {
+        "size": 0.0,
+        "share_at_50pct": null,
+        "share_at_80pct": null
+      },
+      "GSE118553_Temporal_Cortex": {
+        "size": 0.005,
+        "share_at_50pct": null,
+        "share_at_80pct": null
+      },
+      "GSE125583_FG": {
+        "size": 0.035,
+        "share_at_50pct": 0.022,
+        "share_at_80pct": 0.039
+      },
+      "stouffer": {
+        "size": 0.0,
+        "share_at_50pct": 0.085,
+        "share_at_80pct": 0.102
+      },
+      "stouffer_sqrt_n": {
+        "size": 0.0,
+        "share_at_50pct": 0.078,
+        "share_at_80pct": 0.094
+      }
+    },
+    "unexpl": {
+      "GSE33000_PFC": {
+        "size": 0.0,
+        "share_at_50pct": 0.12,
+        "share_at_80pct": 0.145
+      },
+      "GSE132903_MTG": {
+        "size": 0.0,
+        "share_at_50pct": 0.141,
+        "share_at_80pct": 0.184
+      },
+      "GSE118553_Temporal_Cortex": {
+        "size": 0.0,
+        "share_at_50pct": 0.178,
+        "share_at_80pct": 0.262
+      },
+      "GSE125583_FG": {
+        "size": 0.86,
+        "share_at_50pct": 0.01,
+        "share_at_80pct": 0.01
+      },
+      "stouffer": {
+        "size": 0.0,
+        "share_at_50pct": 0.069,
+        "share_at_80pct": 0.091
+      },
+      "stouffer_sqrt_n": {
+        "size": 0.0,
+        "share_at_50pct": 0.065,
+        "share_at_80pct": 0.083
+      }
+    }
+  }
+}

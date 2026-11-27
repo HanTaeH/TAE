@@ -1,0 +1,797 @@
+{
+  "label": "MTG",
+  "n_donors": 84,
+  "min_nuclei": 30,
+  "n_null": 1000,
+  "n_power_sets": 100,
+  "per_subclass_cps": [
+    {
+      "subclass": "L2/3 IT",
+      "n_donors": 84,
+      "n_classifier_genes": 223,
+      "n_supertypes_used": 8,
+      "age_sex": {
+        "partial_rho": -0.111,
+        "null_median": -0.018,
+        "null_q025_q975": [
+          -0.268,
+          0.219
+        ],
+        "p_two_sided": 0.4695,
+        "p_upper": 0.7522
+      },
+      "tech": {
+        "partial_rho": -0.132,
+        "null_median": -0.025,
+        "null_q025_q975": [
+          -0.255,
+          0.196
+        ],
+        "p_two_sided": 0.3666,
+        "p_upper": 0.8172
+      },
+      "supertype": {
+        "partial_rho": -0.231,
+        "null_median": 0.113,
+        "null_q025_q975": [
+          -0.129,
+          0.287
+        ],
+        "p_two_sided": 0.002,
+        "p_upper": 0.999
+      }
+    },
+    {
+      "subclass": "L4 IT",
+      "n_donors": 84,
+      "n_classifier_genes": 225,
+      "n_supertypes_used": 4,
+      "age_sex": {
+        "partial_rho": 0.197,
+        "null_median": -0.022,
+        "null_q025_q975": [
+          -0.226,
+          0.183
+        ],
+        "p_two_sided": 0.036,
+        "p_upper": 0.021
+      },
+      "tech": {
+        "partial_rho": 0.166,
+        "null_median": -0.019,
+        "null_q025_q975": [
+          -0.211,
+          0.171
+        ],
+        "p_two_sided": 0.0639,
+        "p_upper": 0.031
+      },
+      "supertype": {
+        "partial_rho": 0.167,
+        "null_median": -0.12,
+        "null_q025_q975": [
+          -0.277,
+          0.06
+        ],
+        "p_two_sided": 0.003,
+        "p_upper": 0.002
+      }
+    },
+    {
+      "subclass": "L5 IT",
+      "n_donors": 83,
+      "n_classifier_genes": 223,
+      "n_supertypes_used": 6,
+      "age_sex": {
+        "partial_rho": 0.122,
+        "null_median": -0.006,
+        "null_q025_q975": [
+          -0.238,
+          0.201
+        ],
+        "p_two_sided": 0.2817,
+        "p_upper": 0.1279
+      },
+      "tech": {
+        "partial_rho": 0.093,
+        "null_median": -0.012,
+        "null_q025_q975": [
+          -0.236,
+          0.182
+        ],
+        "p_two_sided": 0.3506,
+        "p_upper": 0.1608
+      },
+      "supertype": {
+        "partial_rho": 0.042,
+        "null_median": 0.084,
+        "null_q025_q975": [
+          -0.127,
+          0.252
+        ],
+        "p_two_sided": 0.6793,
+        "p_upper": 0.6414
+      }
+    },
+    {
+      "subclass": "L6 IT",
+      "n_donors": 82,
+      "n_classifier_genes": 220,
+      "n_supertypes_used": 2,
+      "age_sex": {
+        "partial_rho": 0.199,
+        "null_median": -0.043,
+        "null_q025_q975": [
+          -0.218,
+          0.147
+        ],
+        "p_two_sided": 0.006,
+        "p_upper": 0.004
+      },
+      "tech": {
+        "partial_rho": 0.167,
+        "null_median": -0.05,
+        "null_q025_q975": [
+          -0.215,
+          0.125
+        ],
+        "p_two_sided": 0.01,
+        "p_upper": 0.006
+      },
+      "supertype": {
+        "partial_rho": 0.146,
+        "null_median": -0.063,
+        "null_q025_q975": [
+          -0.22,
+          0.106
+        ],
+        "p_two_sided": 0.013,
+        "p_upper": 0.009
+      }
+    },
+    {
+      "subclass": "Sst",
+      "n_donors": 82,
+      "n_classifier_genes": 230,
+      "n_supertypes_used": 15,
+      "age_sex": {
+        "partial_rho": 0.105,
+        "null_median": -0.014,
+        "null_q025_q975": [
+          -0.204,
+          0.216
+        ],
+        "p_two_sided": 0.2757,
+        "p_upper": 0.1518
+      },
+      "tech": {
+        "partial_rho": 0.103,
+        "null_median": -0.016,
+        "null_q025_q975": [
+          -0.206,
+          0.212
+        ],
+        "p_two_sided": 0.2667,
+        "p_upper": 0.1499
+      },
+      "supertype": {
+        "partial_rho": 0.012,
+        "null_median": 0.096,
+        "null_q025_q975": [
+          -0.066,
+          0.259
+        ],
+        "p_two_sided": 0.3187,
+        "p_upper": 0.8192
+      }
+    },
+    {
+      "subclass": "Pvalb",
+      "n_donors": 82,
+      "n_classifier_genes": 226,
+      "n_supertypes_used": 10,
+      "age_sex": {
+        "partial_rho": 0.257,
+        "null_median": 0.01,
+        "null_q025_q975": [
+          -0.188,
+          0.21
+        ],
+        "p_two_sided": 0.016,
+        "p_upper": 0.011
+      },
+      "tech": {
+        "partial_rho": 0.262,
+        "null_median": 0.002,
+        "null_q025_q975": [
+          -0.187,
+          0.2
+        ],
+        "p_two_sided": 0.008,
+        "p_upper": 0.006
+      },
+      "supertype": {
+        "partial_rho": 0.04,
+        "null_median": 0.107,
+        "null_q025_q975": [
+          -0.077,
+          0.296
+        ],
+        "p_two_sided": 0.4665,
+        "p_upper": 0.7752
+      }
+    },
+    {
+      "subclass": "Vip",
+      "n_donors": 83,
+      "n_classifier_genes": 230,
+      "n_supertypes_used": 13,
+      "age_sex": {
+        "partial_rho": 0.198,
+        "null_median": -0.078,
+        "null_q025_q975": [
+          -0.278,
+          0.122
+        ],
+        "p_two_sided": 0.009,
+        "p_upper": 0.008
+      },
+      "tech": {
+        "partial_rho": 0.224,
+        "null_median": -0.082,
+        "null_q025_q975": [
+          -0.286,
+          0.111
+        ],
+        "p_two_sided": 0.004,
+        "p_upper": 0.003
+      },
+      "supertype": {
+        "partial_rho": 0.06,
+        "null_median": 0.021,
+        "null_q025_q975": [
+          -0.168,
+          0.183
+        ],
+        "p_two_sided": 0.6703,
+        "p_upper": 0.3417
+      }
+    },
+    {
+      "subclass": "Lamp5",
+      "n_donors": 83,
+      "n_classifier_genes": 232,
+      "n_supertypes_used": 6,
+      "age_sex": {
+        "partial_rho": 0.149,
+        "null_median": -0.058,
+        "null_q025_q975": [
+          -0.261,
+          0.169
+        ],
+        "p_two_sided": 0.0609,
+        "p_upper": 0.036
+      },
+      "tech": {
+        "partial_rho": 0.184,
+        "null_median": -0.044,
+        "null_q025_q975": [
+          -0.247,
+          0.166
+        ],
+        "p_two_sided": 0.033,
+        "p_upper": 0.021
+      },
+      "supertype": {
+        "partial_rho": -0.042,
+        "null_median": -0.022,
+        "null_q025_q975": [
+          -0.206,
+          0.164
+        ],
+        "p_two_sided": 0.8412,
+        "p_upper": 0.5834
+      }
+    },
+    {
+      "subclass": "Astrocyte",
+      "n_donors": 84,
+      "n_classifier_genes": 243,
+      "n_supertypes_used": 5,
+      "age_sex": {
+        "partial_rho": 0.06,
+        "null_median": -0.143,
+        "null_q025_q975": [
+          -0.306,
+          0.078
+        ],
+        "p_two_sided": 0.039,
+        "p_upper": 0.032
+      },
+      "tech": {
+        "partial_rho": 0.148,
+        "null_median": -0.094,
+        "null_q025_q975": [
+          -0.265,
+          0.126
+        ],
+        "p_two_sided": 0.019,
+        "p_upper": 0.019
+      },
+      "supertype": {
+        "partial_rho": -0.011,
+        "null_median": -0.108,
+        "null_q025_q975": [
+          -0.269,
+          0.074
+        ],
+        "p_two_sided": 0.2507,
+        "p_upper": 0.1169
+      }
+    },
+    {
+      "subclass": "Oligodendrocyte",
+      "n_donors": 81,
+      "n_classifier_genes": 237,
+      "n_supertypes_used": 4,
+      "age_sex": {
+        "partial_rho": 0.028,
+        "null_median": 0.023,
+        "null_q025_q975": [
+          -0.163,
+          0.2
+        ],
+        "p_two_sided": 0.957,
+        "p_upper": 0.4805
+      },
+      "tech": {
+        "partial_rho": 0.13,
+        "null_median": 0.047,
+        "null_q025_q975": [
+          -0.13,
+          0.22
+        ],
+        "p_two_sided": 0.3796,
+        "p_upper": 0.1858
+      },
+      "supertype": {
+        "partial_rho": 0.148,
+        "null_median": 0.069,
+        "null_q025_q975": [
+          -0.143,
+          0.261
+        ],
+        "p_two_sided": 0.4755,
+        "p_upper": 0.2318
+      }
+    },
+    {
+      "subclass": "OPC",
+      "n_donors": 84,
+      "n_classifier_genes": 240,
+      "n_supertypes_used": 3,
+      "age_sex": {
+        "partial_rho": 0.165,
+        "null_median": -0.006,
+        "null_q025_q975": [
+          -0.135,
+          0.147
+        ],
+        "p_two_sided": 0.012,
+        "p_upper": 0.011
+      },
+      "tech": {
+        "partial_rho": 0.261,
+        "null_median": -0.013,
+        "null_q025_q975": [
+          -0.14,
+          0.142
+        ],
+        "p_two_sided": 0.002,
+        "p_upper": 0.002
+      },
+      "supertype": {
+        "partial_rho": 0.073,
+        "null_median": 0.201,
+        "null_q025_q975": [
+          0.063,
+          0.333
+        ],
+        "p_two_sided": 0.0759,
+        "p_upper": 0.959
+      }
+    },
+    {
+      "subclass": "mean_neuronal",
+      "age_sex": {
+        "partial_rho": 0.14,
+        "null_median": -0.026,
+        "null_q025_q975": [
+          -0.188,
+          0.131
+        ],
+        "p_two_sided": 0.044,
+        "p_upper": 0.019
+      },
+      "tech": {
+        "partial_rho": 0.134,
+        "null_median": -0.028,
+        "null_q025_q975": [
+          -0.185,
+          0.122
+        ],
+        "p_two_sided": 0.038,
+        "p_upper": 0.015
+      },
+      "supertype": {
+        "partial_rho": 0.024,
+        "null_median": 0.027,
+        "null_q025_q975": [
+          -0.11,
+          0.144
+        ],
+        "p_two_sided": 0.974,
+        "p_upper": 0.5185
+      }
+    },
+    {
+      "subclass": "mean_non_neuronal",
+      "age_sex": {
+        "partial_rho": 0.084,
+        "null_median": -0.04,
+        "null_q025_q975": [
+          -0.166,
+          0.092
+        ],
+        "p_two_sided": 0.0629,
+        "p_upper": 0.035
+      },
+      "tech": {
+        "partial_rho": 0.179,
+        "null_median": -0.018,
+        "null_q025_q975": [
+          -0.143,
+          0.119
+        ],
+        "p_two_sided": 0.002,
+        "p_upper": 0.002
+      },
+      "supertype": {
+        "partial_rho": 0.07,
+        "null_median": 0.054,
+        "null_q025_q975": [
+          -0.075,
+          0.174
+        ],
+        "p_two_sided": 0.8012,
+        "p_upper": 0.3956
+      }
+    }
+  ],
+  "concordance": {
+    "all": {
+      "observed": 0.434,
+      "null_median": 0.681,
+      "null_q05_q95": [
+        0.597,
+        0.752
+      ],
+      "p_upper": 1.0,
+      "p_lower": 0.001
+    },
+    "neuronal": {
+      "observed": 0.703,
+      "null_median": 0.787,
+      "null_q05_q95": [
+        0.715,
+        0.845
+      ],
+      "p_upper": 0.966,
+      "p_lower": 0.035
+    },
+    "non_neuronal": {
+      "observed": 0.76,
+      "null_median": 0.693,
+      "null_q05_q95": [
+        0.585,
+        0.777
+      ],
+      "p_upper": 0.1039,
+      "p_lower": 0.8971
+    }
+  },
+  "f_for_share": {
+    "0.0": {
+      "L2/3 IT": 0.0,
+      "L4 IT": 0.0,
+      "L5 IT": 0.0,
+      "L6 IT": 0.0,
+      "Sst": 0.0,
+      "Pvalb": 0.0,
+      "Vip": 0.0,
+      "Lamp5": 0.0,
+      "Astrocyte": 0.0,
+      "Oligodendrocyte": 0.0,
+      "OPC": 0.0
+    },
+    "0.01": {
+      "L2/3 IT": 0.0022,
+      "L4 IT": 0.0027,
+      "L5 IT": 0.0029,
+      "L6 IT": 0.0032,
+      "Sst": 0.002,
+      "Pvalb": 0.0022,
+      "Vip": 0.0021,
+      "Lamp5": 0.0021,
+      "Astrocyte": 0.004,
+      "Oligodendrocyte": 0.0039,
+      "OPC": 0.0038
+    },
+    "0.02": {
+      "L2/3 IT": 0.0044,
+      "L4 IT": 0.0054,
+      "L5 IT": 0.0058,
+      "L6 IT": 0.0063,
+      "Sst": 0.0039,
+      "Pvalb": 0.0045,
+      "Vip": 0.0042,
+      "Lamp5": 0.0042,
+      "Astrocyte": 0.008,
+      "Oligodendrocyte": 0.0079,
+      "OPC": 0.0075
+    },
+    "0.03": {
+      "L2/3 IT": 0.0065,
+      "L4 IT": 0.0081,
+      "L5 IT": 0.0087,
+      "L6 IT": 0.0095,
+      "Sst": 0.0059,
+      "Pvalb": 0.0067,
+      "Vip": 0.0064,
+      "Lamp5": 0.0063,
+      "Astrocyte": 0.0107,
+      "Oligodendrocyte": 0.0107,
+      "OPC": 0.0105
+    },
+    "0.05": {
+      "L2/3 IT": 0.0103,
+      "L4 IT": 0.0113,
+      "L5 IT": 0.0117,
+      "L6 IT": 0.0122,
+      "Sst": 0.0099,
+      "Pvalb": 0.0105,
+      "Vip": 0.0102,
+      "Lamp5": 0.0102,
+      "Astrocyte": 0.0135,
+      "Oligodendrocyte": 0.0135,
+      "OPC": 0.0133
+    },
+    "0.075": {
+      "L2/3 IT": 0.0124,
+      "L4 IT": 0.0139,
+      "L5 IT": 0.0144,
+      "L6 IT": 0.0153,
+      "Sst": 0.012,
+      "Pvalb": 0.0128,
+      "Vip": 0.0123,
+      "Lamp5": 0.0122,
+      "Astrocyte": 0.017,
+      "Oligodendrocyte": 0.0171,
+      "OPC": 0.0169
+    },
+    "0.1": {
+      "L2/3 IT": 0.0144,
+      "L4 IT": 0.0165,
+      "L5 IT": 0.0171,
+      "L6 IT": 0.0183,
+      "Sst": 0.014,
+      "Pvalb": 0.015,
+      "Vip": 0.0145,
+      "Lamp5": 0.0142,
+      "Astrocyte": 0.0203,
+      "Oligodendrocyte": 0.0205,
+      "OPC": 0.0203
+    },
+    "0.15": {
+      "L2/3 IT": 0.0185,
+      "L4 IT": 0.0213,
+      "L5 IT": 0.0218,
+      "L6 IT": 0.0235,
+      "Sst": 0.0181,
+      "Pvalb": 0.0195,
+      "Vip": 0.0187,
+      "Lamp5": 0.0183,
+      "Astrocyte": 0.0252,
+      "Oligodendrocyte": 0.0258,
+      "OPC": 0.0256
+    },
+    "0.2": {
+      "L2/3 IT": 0.0223,
+      "L4 IT": 0.0253,
+      "L5 IT": 0.0257,
+      "L6 IT": 0.0283,
+      "Sst": 0.0217,
+      "Pvalb": 0.0233,
+      "Vip": 0.0222,
+      "Lamp5": 0.0219,
+      "Astrocyte": 0.03,
+      "Oligodendrocyte": 0.031,
+      "OPC": 0.0308
+    },
+    "0.3": {
+      "L2/3 IT": 0.0293,
+      "L4 IT": 0.0337,
+      "L5 IT": 0.0339,
+      "L6 IT": 0.0376,
+      "Sst": 0.0281,
+      "Pvalb": 0.0309,
+      "Vip": 0.0288,
+      "Lamp5": 0.0285,
+      "Astrocyte": 0.0387,
+      "Oligodendrocyte": 0.0404,
+      "OPC": 0.0405
+    }
+  },
+  "power": [
+    {
+      "share": 0.0,
+      "L2/3 IT": 0.08,
+      "L4 IT": 0.09,
+      "L5 IT": 0.06,
+      "L6 IT": 0.07,
+      "Sst": 0.02,
+      "Pvalb": 0.05,
+      "Vip": 0.03,
+      "Lamp5": 0.04,
+      "Astrocyte": 0.02,
+      "Oligodendrocyte": 0.07,
+      "OPC": 0.06,
+      "mean_neuronal": 0.04,
+      "mean_non_neuronal": 0.04
+    },
+    {
+      "share": 0.01,
+      "L2/3 IT": 0.06,
+      "L4 IT": 0.06,
+      "L5 IT": 0.07,
+      "L6 IT": 0.1,
+      "Sst": 0.04,
+      "Pvalb": 0.09,
+      "Vip": 0.1,
+      "Lamp5": 0.06,
+      "Astrocyte": 0.1,
+      "Oligodendrocyte": 0.09,
+      "OPC": 0.21,
+      "mean_neuronal": 0.12,
+      "mean_non_neuronal": 0.2
+    },
+    {
+      "share": 0.02,
+      "L2/3 IT": 0.08,
+      "L4 IT": 0.13,
+      "L5 IT": 0.15,
+      "L6 IT": 0.22,
+      "Sst": 0.08,
+      "Pvalb": 0.14,
+      "Vip": 0.22,
+      "Lamp5": 0.11,
+      "Astrocyte": 0.23,
+      "Oligodendrocyte": 0.25,
+      "OPC": 0.37,
+      "mean_neuronal": 0.27,
+      "mean_non_neuronal": 0.52
+    },
+    {
+      "share": 0.03,
+      "L2/3 IT": 0.21,
+      "L4 IT": 0.28,
+      "L5 IT": 0.27,
+      "L6 IT": 0.39,
+      "Sst": 0.2,
+      "Pvalb": 0.24,
+      "Vip": 0.29,
+      "Lamp5": 0.24,
+      "Astrocyte": 0.38,
+      "Oligodendrocyte": 0.39,
+      "OPC": 0.55,
+      "mean_neuronal": 0.48,
+      "mean_non_neuronal": 0.74
+    },
+    {
+      "share": 0.05,
+      "L2/3 IT": 0.43,
+      "L4 IT": 0.45,
+      "L5 IT": 0.43,
+      "L6 IT": 0.66,
+      "Sst": 0.49,
+      "Pvalb": 0.49,
+      "Vip": 0.63,
+      "Lamp5": 0.54,
+      "Astrocyte": 0.55,
+      "Oligodendrocyte": 0.58,
+      "OPC": 0.72,
+      "mean_neuronal": 0.8,
+      "mean_non_neuronal": 0.9
+    },
+    {
+      "share": 0.075,
+      "L2/3 IT": 0.54,
+      "L4 IT": 0.58,
+      "L5 IT": 0.67,
+      "L6 IT": 0.79,
+      "Sst": 0.59,
+      "Pvalb": 0.66,
+      "Vip": 0.79,
+      "Lamp5": 0.63,
+      "Astrocyte": 0.75,
+      "Oligodendrocyte": 0.75,
+      "OPC": 0.87,
+      "mean_neuronal": 0.91,
+      "mean_non_neuronal": 0.96
+    },
+    {
+      "share": 0.1,
+      "L2/3 IT": 0.61,
+      "L4 IT": 0.74,
+      "L5 IT": 0.78,
+      "L6 IT": 0.88,
+      "Sst": 0.72,
+      "Pvalb": 0.82,
+      "Vip": 0.86,
+      "Lamp5": 0.77,
+      "Astrocyte": 0.88,
+      "Oligodendrocyte": 0.89,
+      "OPC": 0.95,
+      "mean_neuronal": 0.98,
+      "mean_non_neuronal": 0.99
+    },
+    {
+      "share": 0.15,
+      "L2/3 IT": 0.84,
+      "L4 IT": 0.89,
+      "L5 IT": 0.94,
+      "L6 IT": 0.97,
+      "Sst": 0.9,
+      "Pvalb": 0.92,
+      "Vip": 0.98,
+      "Lamp5": 0.9,
+      "Astrocyte": 0.95,
+      "Oligodendrocyte": 0.98,
+      "OPC": 1.0,
+      "mean_neuronal": 1.0,
+      "mean_non_neuronal": 1.0
+    },
+    {
+      "share": 0.2,
+      "L2/3 IT": 0.87,
+      "L4 IT": 0.96,
+      "L5 IT": 0.98,
+      "L6 IT": 0.98,
+      "Sst": 0.98,
+      "Pvalb": 0.98,
+      "Vip": 1.0,
+      "Lamp5": 0.97,
+      "Astrocyte": 0.97,
+      "Oligodendrocyte": 1.0,
+      "OPC": 1.0,
+      "mean_neuronal": 1.0,
+      "mean_non_neuronal": 1.0
+    },
+    {
+      "share": 0.3,
+      "L2/3 IT": 0.98,
+      "L4 IT": 1.0,
+      "L5 IT": 1.0,
+      "L6 IT": 1.0,
+      "Sst": 1.0,
+      "Pvalb": 1.0,
+      "Vip": 1.0,
+      "Lamp5": 1.0,
+      "Astrocyte": 0.99,
+      "Oligodendrocyte": 1.0,
+      "OPC": 1.0,
+      "mean_neuronal": 1.0,
+      "mean_non_neuronal": 1.0
+    }
+  ]
+}
