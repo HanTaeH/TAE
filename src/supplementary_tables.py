@@ -88,6 +88,14 @@ def main() -> None:
     lit = lit.rename(columns={"composition_mentioned": "composition_keyword_in_abstract"})
     comp = lit.study_id.map({("Song2026" if k == "Song2025" else k): v for k, v in COMPOSITION_FULLTEXT.items()})
     lit["composition_from_text"] = comp.fillna(key.map(mc0["composition"])).fillna("not assessed (abstract only)")
+    # v13 (review round 11): selection rule applied to every study (testable from published genes/centroids on public data)
+    TESTED = {"Neff2021": "tested (centroids)", "LiH2022": "tested (hub genes)", "Lai2022": "tested (signature genes, PC1 proxy)",
+              "Ma2023": "tested (gene set, PC1)", "Wang2024": "qualified; Supplementary Note only (gene list unverified)"}
+    SMALL = ["Zeng2023", "LiCL2024", "Huang2025", "Mu2026", "Zhang2026", "Gong2026", "Liu2026"]
+    lit["tested_here"] = [TESTED.get(k, "qualified (small gene set), not tested" if k in SMALL else
+                                     ("application of a published scheme" if r == "application" else
+                                      "not testable: no published gene weights/centroids or multi-omic/whole-transcriptome features"))
+                          for k, r in zip(key, lit.role)]
     sheets["S1_literature"] = lit.sort_values(["year", "first_author"])
 
     sheets["S2_primary_per_cohort"] = pd.read_csv(R / "meta_revision/per_cohort.csv")
@@ -169,7 +177,7 @@ def main() -> None:
                      "strength_null_median": d["strength"]["null_median"], "strength_p_more_coupled": d["strength"]["p_lower"],
                      "strength_p_less_coupled": d["strength"]["p_upper"],
                      "spec_null_median": d.get("spec", {}).get("null_median"), "spec_p_more_coupled": d.get("spec", {}).get("p_lower"),
-                     "spec_p_less_coupled": d.get("spec", {}).get("p_upper"), "note": "500 sets each; p = (k+1)/(N+1)"})
+                     "spec_p_less_coupled": d.get("spec", {}).get("p_upper"), "note": "5,000 sets per null; p = (k+1)/(N+1)"})
     rows.append({"cohort": "GSE33000_PFC", "n_AD": fu["n_ad"], "observed_rho": fu["finer_match"]["neff"],
                  "note": f"finer match on top non-neuronal type: null median {fu['finer_match']['random_median']}, p more coupled {fu['finer_match']['p_empirical']}"})
     for n, d in fu["subsample"].items():
@@ -265,7 +273,7 @@ def main() -> None:
                 brow.append({"cohort": c, "null": k, "n_AD": d["n_ad"], "observed_rho": d["obs_rho"],
                              "null_median": sr[c]["nulls"][k]["median"], "null_q05": d[k]["null_q05"],
                              "p_more_coupled": sr[c]["nulls"][k]["p_lower"], "p_less_coupled": sr[c]["nulls"][k]["p_upper"],
-                             "margin_obs_minus_q05": d[k]["margin"], "ucl95_f": d[k]["ucl95_f"], "ucl95_var_share": d[k]["ucl95_var_share"],
+                             "margin_obs_minus_q05": d[k]["margin"],
                              "genes_fallback": sr[c]["strata"].get(k if k != "spec" else "spec", {}).get("genes_fallback_whole_pool"),
                              "genes_with_replacement": sr[c]["strata"].get(k, {}).get("genes_in_strata_drawn_with_replacement")})
         sheets["S21_spike_in_real"] = pd.DataFrame(brow)
@@ -323,9 +331,16 @@ def main() -> None:
     if (R / "shared_donor_v12/shared_donor_per_cohort.csv").exists():
         sheets["S30b_shared_donors_per_cohort"] = pd.read_csv(R / "shared_donor_v12/shared_donor_per_cohort.csv")
 
+    # v13 (review round 11): de novo clustering, BRETIGEA against six random components
+    if (R / "denovo_v13/denovo_clustering_v13.csv").exists():
+        sheets["S33_denovo_clustering"] = pd.read_csv(R / "denovo_v13/denovo_clustering_v13.csv")
+        sheets["S33b_denovo_pcs"] = pd.read_csv(R / "denovo_v13/denovo_pcs_v13.csv")
+    if (R / "bretigea_v12/bretigea_random_r2_v13.json").exists():
+        sheets["S26b_bretigea_random_r2"] = pd.DataFrame(json_rows(jl("bretigea_v12/bretigea_random_r2_v13.json")))
+
     titles = {
-        "S21": "Spike-in positive control in the real cohorts: observed coupling against matched nulls, one-sided 95% upper "
-               "confidence limits by test inversion (share of C-A variance), strata coverage; sheet b: grid of spiked signal sizes",
+        "S21": "Spike-in positive control in the real cohorts: observed coupling against matched nulls, strata coverage; sheet b: grid "
+               "of spiked signal sizes with detection rates (upper limits and power are in the spike-in bound table)",
         "S23": "MSBB (GSE84422) subject-level tangle density sum, CERAD sum, neuritic plaque density, Braak stage and CDR: all subjects, "
                "AD (CERAD) and AD with CDR >= 1; neuron score vs pH and PMI",
         "S24": "SEA-AD within-cell-type expression of the Neff key regulators against the all-nuclei C-A score, CPS and Braak stage "
@@ -334,16 +349,23 @@ def main() -> None:
                "neuronal subscores, semipartial case-control correlations, GSE118553 asymptomatic AD",
         "S26": "Neff et al.'s cell-type normalisation reproduced with BRETIGEA (six SPVs, up to 1,000 markers per type): R2 of the "
                "C-A score on the SPVs, kappa before/after against six random 1,000-gene PC1s, coupling and stage associations after normalisation; "
-               "MSBB per region (AD) and GEO cohorts (AD)",
+               "MSBB per region (AD) and GEO cohorts (AD); sheet b: R2 of the C-A score on six (and one) random 1,000-gene PC1s",
         "S27": "Direction of the classifier per cell-type class: observed coupling, class-mean centroid rows, within-class permutation and random "
-               "signs of centroid rows, specificity-matched random genes; C1-C2 and B1-B2 contrasts against cell scores",
+               "signs of centroid rows; C1-C2 and B1-B2 contrasts against cell scores and their within-class and specificity-matched nulls. "
+               "The specificity-matched rows here come from a separate run with its own seed (500 sets); the canonical specificity-matched "
+               "null for the C-A score is the specificity-matched null table",
+        "S33": "De novo subtyping of AD samples per independent cohort (1,500 highest-MAD genes, marker genes removed; consensus NMF and "
+               "k-means on 10 PCs, k = 2-4; unadjusted and after regressing out five cell scores): eta2 of the neuron score, cross-validated "
+               "balanced accuracy of labels from five cell scores against 100 expression-matched random-gene score sets drawn outside the "
+               "clustered genes, share of between-subtype variance explained by the cell scores, ARI with unadjusted labels; sheet b: PCs 1-3",
         "S28": "GSE84422: cross-region agreement within subjects (ICC(1), split-half, modal label share) for the C-A, neuron and neuron-adjusted "
                "scores against expression- and specificity-matched random genes; subject-level associations with CDR, Braak, tangles, PMI, pH",
         "S29": "Data file S1 genome-wide signatures split into a part predicted from SEA-AD cell-type expression and a residual; residual "
                "signature scores in the four cohorts (coupling, coherence, diagnosis and Braak, loading agreement)",
         "S30": "Pooled estimates with the 62 shared donors removed from GSE132903 or GSE125583 (sheet b: per cohort)",
-        "S31": "Spike-in upper confidence limits including sampling variability, offset-free detectable signal, and equivalence (TOST) of the "
-               "classifier's offset from the matched nulls",
+        "S31": "Spike-in: power of the upper-tail test (variance share at 50% and 80% detection), one-sided 95% upper confidence limits "
+               "including sampling variability, and equivalence of the classifier's offset from the matched nulls (fixed and random effects, "
+               "DerSimonian-Laird tau2 with HKSJ 90% CI)",
         "S32": "SEA-AD key regulators within cell type against a C-A score recomputed without the tested gene and without the tested type's nuclei",
         "S1": "Included studies of the structured literature search (sheet b: methods coding of all 32 studies, source full text or abstract)",
         "S2": "Per-cohort primary endpoints (sheet b: pooled random-effects estimates, REML/HKSJ)",

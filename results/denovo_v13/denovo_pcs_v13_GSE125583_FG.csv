@@ -1,0 +1,7 @@
+cohort,variant,pc,var_share,abs_rho_neuron,r2_on_cells
+GSE125583_FG,unadjusted,1,0.387,0.973,0.978
+GSE125583_FG,unadjusted,2,0.203,0.133,0.105
+GSE125583_FG,unadjusted,3,0.078,0.08,0.816
+GSE125583_FG,cell_adjusted,1,0.354,0.055,0.0
+GSE125583_FG,cell_adjusted,2,0.086,0.051,-0.0
+GSE125583_FG,cell_adjusted,3,0.073,0.05,0.0

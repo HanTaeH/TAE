@@ -3,6 +3,7 @@ Usage: python main_figures.py <d1-results dir> <out dir>
 """
 import ast
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -15,6 +16,16 @@ from matplotlib.patches import FancyBboxPatch
 from scipy.stats import spearmanr
 
 R, OUT = Path(sys.argv[1]), Path(sys.argv[2])
+
+
+def P(rel: str) -> Path:
+    """Resolve a result path in either layout: the shared d1-results folder (revision/, v12_analyses/, gse125583/)
+    or the flat results/ folder that run_all.sh writes (review round 11: figures are now rebuilt by run_all.sh)."""
+    cands = [rel, re.sub(r"^(revision|v12_analyses)/", "", rel), rel.replace("gse125583/", "braak_gse125583/")]
+    for c in cands:
+        if (R / c).exists():
+            return R / c
+    return R / rel
 OUT.mkdir(parents=True, exist_ok=True)
 COL = {"A": "#2a78d6", "B": "#eb6834", "C": "#1baf7a"}
 INK, MUTED, GRID = "#1f1f1e", "#6b6a64", "#d9d8d2"
@@ -45,8 +56,8 @@ def fig1():
         ax.text(x + w / 2, y + h / 2, t, ha="center", va="center", fontsize=7.2)
     def arr(x1, y1, x2, y2):
         ax.annotate("", (x2, y2), (x1, y1), arrowprops=dict(arrowstyle="->", color=MUTED, lw=0.9))
-    box(0.1, 3.75, 2.3, 1.15, "Neff 2021 classifier\n271 genes, A / B / C\n(+ Li, Lai, Ma, Tijms CSF)", "#e7f1fb")
-    box(0.1, 1.45, 2.3, 2.05, "Independent cohorts\nGSE33000 PFC\nGSE132903 MTG*\nGSE118553 (4 regions)\nGSE125583 FG (RNA-seq)*\nGSE106241 ITC (Braak)")
+    box(0.1, 3.75, 2.3, 1.15, "Subtype axes: Neff 2021 (271 genes),\nLi 2022, Lai 2022, Ma 2023,\nde novo NMF / k-means", "#e7f1fb")
+    box(0.1, 1.45, 2.3, 2.05, "Independent cohorts\nGSE33000 PFC\nGSE132903 MTG*\nGSE118553 (4 regions)\nGSE125583 FG (RNA-seq)*\nStage only: GSE106241 ITC")
     box(0.1, 0.1, 2.3, 1.1, "Same-bank comparison\nMSBB GSE84422\n(17 regions)", "#f9eeda")
     box(3.0, 1.9, 2.0, 1.4, "Project each sample\nr(A), r(B), r(C)\nC−A axis score")
     box(5.6, 3.75, 2.0, 1.15, "Random-gene nulls\nexpression (1,000 sets)\ncell type (500 sets)")
@@ -63,8 +74,8 @@ def fig1():
 
 # ---------- Fig 2: reproducibility ----------
 def fig2():
-    v = pd.read_csv(R / "validation/validation_summary.csv")
-    ND = R / "revision/null" if (R / "revision/null").exists() else R / "null"
+    v = pd.read_csv(P("validation/validation_summary.csv"))
+    ND = P("revision/null") if (P("revision/null")).exists() else P("null")
     nul = pd.read_csv(ND / "null_distributions.csv"); ns = pd.read_csv(ND / "null_summary.csv")
     fig, axs = plt.subplots(1, 3, figsize=(10.4, 3.0), gridspec_kw={"width_ratios": [1.1, 1, 0.8], "wspace": 0.55})
     ax = axs[0]
@@ -87,7 +98,7 @@ def fig2():
             fontsize=6.5, color=MUTED, va="top")
     ax = axs[1]
     order = list(v.cohort)
-    sn = R / "revision/null_specificity/null_specificity_matched_distributions.csv"
+    sn = P("revision/null_specificity/null_specificity_matched_distributions.csv")
     spec_med = pd.read_csv(sn).groupby("cohort").neuron_rho.median().to_dict() if sn.exists() else {}
     for i, c in enumerate(order):
         d = nul[nul.cohort == c].neuron_rho.values
@@ -105,7 +116,7 @@ def fig2():
     ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.45), ncol=2, fontsize=6.5)
     ax.set_title("Neuron axis vs random-gene nulls"); tag(ax, "b")
     ax = axs[2]
-    spec = pd.read_csv(R / "revision/classifier_specificity/classifier_gene_specificity.csv", index_col=0)
+    spec = pd.read_csv(P("revision/classifier_specificity/classifier_gene_specificity.csv"), index_col=0)
     tab = pd.crosstab(spec["direction"], spec["class"]).reindex(index=["up_in_A", "up_in_C"])
     cols = [("neuron-enriched", COL["A"]), ("non-specific", "#b8b7b0"), ("glia-enriched", COL["C"]), ("not_in_reference", GRID)]
     left = np.zeros(2)
@@ -124,14 +135,13 @@ def fig2():
 
 # ---------- Fig 3: neuron axis ----------
 def fig3():
-    p = pd.read_csv(R / "validation/projection_all_cohorts.csv"); p["ca"] = p.r_C - p.r_A
-    mr = json.load(open(R / "revision/meta_revision/meta_report.json"))["P1_neuron (4 cohorts)"]
-    pcm = pd.read_csv(R / "revision/meta_revision/per_cohort.csv")
+    p = pd.read_csv(P("validation/projection_all_cohorts.csv")); p["ca"] = p.r_C - p.r_A
+    mr = json.load(open(P("revision/meta_revision/meta_report.json")))["P1_neuron (4 cohorts)"]
+    pcm = pd.read_csv(P("revision/meta_revision/per_cohort.csv"))
     rows0 = pcm[pcm.endpoint == "P1_neuron"][["cohort", "n", "rho", "z", "se_boot"]].to_dict("records")
     fs = {"rows": rows0, "pooled_rho": mr["se_boot"]["rho"], "ci": mr["se_boot"]["ci95_hksj"], "pi": mr["se_boot"]["pi95"]}
-    nn = pd.read_csv(R / "msbb/neff_style_cdr_normalisation.csv")
-    sp = pd.read_csv(R / "spike_in_real/spike_in_real.csv")
-    bd = json.load(open(R / "spike_in_real/spike_in_bound.json"))
+    nn = pd.read_csv(P("msbb/neff_style_cdr_normalisation.csv"))
+    sp = pd.read_csv(P("spike_in_real/spike_in_real.csv"))
     fig = plt.figure(figsize=(9.6, 5.6)); gs = fig.add_gridspec(2, 4, height_ratios=[1, 1.05])
     for j, c in enumerate(["GSE33000_PFC", "GSE132903_MTG", "GSE118553_Temporal_Cortex", "GSE125583_FG"]):
         ax = fig.add_subplot(gs[0, j]); d = p[p.cohort == c]
@@ -163,25 +173,26 @@ def fig3():
     ax.set_xlim(-0.4, 2.4); ax.set_ylim(-1, 0.4); ax.set_ylabel("ρ per MSBB region")
     ax.set_title("Neff-style CDR normalisation"); tag(ax, "c")
     ax = fig.add_subplot(gs[1, 3]); pal = ["#2a78d6", "#eb6834", "#1baf7a", "#8a5cc7"]
-    for col, (c, d) in zip(pal, sp.groupby("cohort", sort=False)):
-        ax.plot(d.var_share_median * 100, d.delta_rho, "-o", ms=3, lw=1.2, color=col, label=SHORT.get(c, c).replace(" (RNA-seq)", ""))
-        u = bd[c]["spec"]["ucl95_var_share"] * 100
-        ax.axvline(u, color=col, lw=0.8, ls=":")
-    ax.set_xlim(0, 40); ax.set_xlabel("Spiked share of C−A variance (%)"); ax.set_ylabel("Δρ (C−A vs neuron score)")
-    ax.legend(fontsize=6, loc="upper left"); ax.set_title("Spike-in: sensitivity and\n95% upper limits (dotted)"); tag(ax, "d")
+    pw = json.load(open(P("v12_analyses/spike_in_v12/spike_in_bound_v12.json")))["power"]  # v13: power, not limits
+    for col, c in zip(pal, ["GSE33000_PFC", "GSE132903_MTG", "GSE118553_Temporal_Cortex", "GSE125583_FG"]):
+        pb = pw[c]["spec"]["power_by_var_share"]
+        ax.plot([float(x) * 100 for x in pb], list(pb.values()), "-o", ms=3, lw=1.2, color=col, label=SHORT[c].replace(" (RNA-seq)", ""))
+    ax.axhline(0.8, color=MUTED, lw=0.8, ls=":")
+    ax.set_xlim(0, 55); ax.set_ylim(-0.02, 1.02); ax.set_xlabel("Spiked share of C−A variance (%)"); ax.set_ylabel("Detection rate (power)")
+    ax.legend(fontsize=6, loc="lower right"); ax.set_title("Spike-in: power of the\nspecificity-matched test"); tag(ax, "d")
     fig.subplots_adjust(hspace=0.55, wspace=0.9); save(fig, "Fig3_neuron_axis")
 
 
 # ---------- Fig 4: stage and mediation ----------
 def fig4():
-    g = pd.read_csv(R / "gse125583/braak_gse125583_per_sample.csv", index_col=0); g = g[g.set == "AD_only"] if "set" in g else g[g.group == "AD"]
-    m = pd.read_csv(R / "msbb/msbb_subject_scores.csv")
-    reg = pd.read_csv(R / "msbb/msbb_region_summary.csv", index_col=0)
-    med = pd.read_csv(R / "mediation/mediation_summary.csv")
+    g = pd.read_csv(P("gse125583/braak_gse125583_per_sample.csv"), index_col=0); g = g[g.set == "AD_only"] if "set" in g else g[g.group == "AD"]
+    m = pd.read_csv(P("msbb/msbb_subject_scores.csv"))
+    reg = pd.read_csv(P("msbb/msbb_region_summary.csv"), index_col=0)
+    med = pd.read_csv(P("mediation/mediation_summary.csv"))
     fig = plt.figure(figsize=(7.2, 5.6)); gs4 = fig.add_gridspec(2, 2)
     axs = np.array([[fig.add_subplot(gs4[0, 0]), fig.add_subplot(gs4[0, 1])], [fig.add_subplot(gs4[1, :]), None]], dtype=object)
-    g125 = json.load(open(R / "gse125583/braak_gse125583_report.json"))["AD_only"]
-    msj = json.load(open(R / "msbb/msbb_report.json"))["S_subject_cortex"]
+    g125 = json.load(open(P("gse125583/braak_gse125583_report.json")))["AD_only"]
+    msj = json.load(open(P("msbb/msbb_report.json")))["S_subject_cortex"]
     ax = axs[0, 0]; bs = sorted(g.braak.dropna().unique())
     data = [g[g.braak == b].ca_score.values for b in bs]
     ax.boxplot(data, positions=range(len(bs)), widths=0.55, showfliers=False, medianprops=dict(color=INK),
@@ -202,12 +213,12 @@ def fig4():
     ax.set_xticks(range(len(cd))); ax.set_xticklabels([f"{c:g}" for c in cd]); ax.set_xlabel("CDR")
     ax.set_ylabel("C−A score (subject mean, cortex)"); ax.set_title(f"MSBB, all subjects: CDR\nρ = {r[0]:.2f}; age/sex-adjusted {msj['ca_vs_cdr_partial']['rho']:.2f}"); tag(ax, "b")
     ax = axs[1, 0]
-    pc = pd.read_csv(R / "revision/meta_revision/per_cohort.csv")
-    nsr = pd.read_csv(R / "revision/null/null_summary.csv").set_index("cohort")
-    mrep = json.load(open(R / "revision/meta_revision/meta_report.json"))
+    pc = pd.read_csv(P("revision/meta_revision/per_cohort.csv"))
+    nsr = pd.read_csv(P("revision/null/null_summary.csv")).set_index("cohort")
+    mrep = json.load(open(P("revision/meta_revision/meta_report.json")))
     cs = ["GSE33000_PFC", "GSE132903_MTG", "GSE118553_Temporal_Cortex", "GSE125583_FG"]
-    sna = pd.read_csv(R / "revision/stage_neuron_adjusted/per_cohort.csv")
-    snj = json.load(open(R / "revision/stage_neuron_adjusted/stage_neuron_adjusted.json"))["ca_stage_agesex_neuron"]["pooled"]
+    sna = pd.read_csv(P("revision/stage_neuron_adjusted/per_cohort.csv"))
+    snj = json.load(open(P("revision/stage_neuron_adjusted/stage_neuron_adjusted.json")))["ca_stage_agesex_neuron"]["pooled"]
     yy = np.arange(len(cs) + 1)[::-1]
     for yi, c in zip(yy[:-1], cs):
         raw = pc[(pc.cohort == c) & (pc.endpoint == "P2_stage")].iloc[0]
@@ -226,7 +237,7 @@ def fig4():
     ax.get_yticklabels()[-1].set_weight("bold")
     ax.axvline(0, color=GRID, lw=0.8); ax.set_xlim(-0.2, 0.9)
     ax.scatter([], [], s=22, color="#b8b7b0", label="unadjusted"); ax.scatter([], [], s=22, color=COL["C"], label="age + sex adjusted")
-    ax.scatter([], [], marker="|", s=60, color=INK, label="random genes, adjusted (median)")
+    ax.scatter([], [], marker="|", s=60, color=INK, label="expression-matched random genes, age + sex adjusted (median)")
     ax.scatter([], [], marker="s", s=22, color=COL["A"], label="+ neuron score")
     ax.legend(fontsize=6.5, loc="upper center", bbox_to_anchor=(0.45, -0.22), ncol=4, columnspacing=0.8)
     ax.set_xlabel("ρ (C−A score vs diagnosis, case–control)")
@@ -238,7 +249,7 @@ def fig4():
 def fig5():
     fig, axs = plt.subplots(1, 2, figsize=(8.2, 3.6), gridspec_kw={"wspace": 1.1, "width_ratios": [1.15, 0.9]})
     ax = axs[0]
-    cr = json.load(open(R / "revision/seaad_celltype_revision/seaad_celltype_revision_report.json"))
+    cr = json.load(open(P("revision/seaad_celltype_revision/seaad_celltype_revision_report.json")))
     lam = cr["laminar"]
     pa = lambda k, o: cr[k][f"ca_vs_{o}_partial_age_sex"]["rho"]
     bars = [("All nuclei (sorted)", pa("sorted", "CPS"), pa("sorted", "Braak"), pa("sorted", "dementia")),
@@ -260,8 +271,8 @@ def fig5():
     ax.legend(fontsize=6.5, loc="upper center", bbox_to_anchor=(0.4, -0.16), ncol=3, columnspacing=0.8)
     ax.set_title("SEA-AD MTG pseudobulks (n = 84; exploratory)"); tag(ax, "a")
     ax = axs[1]
-    rep = json.load(open(R / "simulation/simulation_report.json"))
-    rv = json.load(open(R / "revision/simulation_revision/simulation_revision_report.json"))
+    rep = json.load(open(P("simulation/simulation_report.json")))
+    rv = json.load(open(P("revision/simulation_revision/simulation_revision_report.json")))
     # labels: rho of C-A with neuron fraction (loss, glia) or with the extent of lowering d (per-cell; driver = -d)
     names = [("Neuron loss", rv["neuron_loss_reference"]["signal_mean_best_r"], rv["neuron_loss_reference"]["ca_vs_driver_rho"], COL["C"]),
              ("Per-neuron mRNA ↓\n(fixed composition)", rv["percell_global"]["signal_mean_best_r"], -rv["percell_global"]["ca_vs_driver_rho"], COL["A"]),
@@ -280,7 +291,7 @@ def fig5():
 
 # ---------- Supplementary: all mediation models; MSBB per-region ----------
 def figS():
-    mf = pd.read_csv(R / "revision/mediation_revision/mediation_forward_reverse.csv")
+    mf = pd.read_csv(P("revision/mediation_revision/mediation_forward_reverse.csv"))
     lab = (mf.dataset + ", " + mf.x + " | " + mf.mediator).tolist()
     fig, ax = plt.subplots(figsize=(6.4, 0.42 * len(mf) + 1.2))
     for yi, (_, row) in zip(range(len(mf))[::-1], mf.iterrows()):
@@ -295,7 +306,7 @@ def figS():
     ax.set_xlabel("Proportion mediated (95% bootstrap CI; clipped to −0.5–2)")
     ax.set_title("All mediation models, forward and reverse")
     save(fig, "FigS1_mediation_all_models")
-    reg = pd.read_csv(R / "msbb/msbb_region_summary.csv", index_col=0).sort_values("ad_ca_neuron")
+    reg = pd.read_csv(P("msbb/msbb_region_summary.csv"), index_col=0).sort_values("ad_ca_neuron")
     fig, ax = plt.subplots(figsize=(3.6, 4.2)); yv = np.arange(len(reg))
     ax.barh(yv, reg.ad_ca_neuron, color=COL["C"], height=0.65); ax.set_yticks(yv); ax.set_yticklabels(reg.index, fontsize=6.5)
     ax.set_xlim(-1, 0); ax.set_xlabel("ρ (C−A vs neuron score) in AD, per region"); ax.set_title("MSBB GSE84422, 17 regions")

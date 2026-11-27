@@ -1,0 +1,288 @@
+{
+  "labellings": [
+    {
+      "cohort": "GSE125583_FG",
+      "n_AD": 219,
+      "variant": "unadjusted",
+      "method": "nmf",
+      "k": 2,
+      "sizes": [
+        146,
+        73
+      ],
+      "cophenetic": 0.987,
+      "eta2_neuron": 0.648,
+      "cv_bal_acc_cells": 0.943,
+      "chance": 0.5,
+      "cv_bal_acc_random_median": 0.77,
+      "p_random_ge": 0.0099,
+      "between_var_share_cells": 0.983
+    },
+    {
+      "cohort": "GSE125583_FG",
+      "n_AD": 219,
+      "variant": "unadjusted",
+      "method": "kmeans_pc",
+      "k": 2,
+      "sizes": [
+        107,
+        112
+      ],
+      "cophenetic": null,
+      "eta2_neuron": 0.652,
+      "cv_bal_acc_cells": 0.949,
+      "chance": 0.5,
+      "cv_bal_acc_random_median": 0.806,
+      "p_random_ge": 0.0099,
+      "between_var_share_cells": 0.947
+    },
+    {
+      "cohort": "GSE125583_FG",
+      "n_AD": 219,
+      "variant": "unadjusted",
+      "method": "nmf",
+      "k": 3,
+      "sizes": [
+        99,
+        77,
+        43
+      ],
+      "cophenetic": 0.977,
+      "eta2_neuron": 0.653,
+      "cv_bal_acc_cells": 0.681,
+      "chance": 0.333,
+      "cv_bal_acc_random_median": 0.758,
+      "p_random_ge": 0.8515,
+      "between_var_share_cells": 0.681
+    },
+    {
+      "cohort": "GSE125583_FG",
+      "n_AD": 219,
+      "variant": "unadjusted",
+      "method": "kmeans_pc",
+      "k": 3,
+      "sizes": [
+        63,
+        55,
+        101
+      ],
+      "cophenetic": null,
+      "eta2_neuron": 0.639,
+      "cv_bal_acc_cells": 0.705,
+      "chance": 0.333,
+      "cv_bal_acc_random_median": 0.824,
+      "p_random_ge": 1.0,
+      "between_var_share_cells": 0.642
+    },
+    {
+      "cohort": "GSE125583_FG",
+      "n_AD": 219,
+      "variant": "unadjusted",
+      "method": "nmf",
+      "k": 4,
+      "sizes": [
+        67,
+        111,
+        2,
+        39
+      ],
+      "cophenetic": 0.942,
+      "eta2_neuron": 0.551,
+      "cv_bal_acc_cells": null,
+      "chance": 0.25,
+      "cv_bal_acc_random_median": null,
+      "p_random_ge": null,
+      "between_var_share_cells": 0.621
+    },
+    {
+      "cohort": "GSE125583_FG",
+      "n_AD": 219,
+      "variant": "unadjusted",
+      "method": "kmeans_pc",
+      "k": 4,
+      "sizes": [
+        59,
+        64,
+        35,
+        61
+      ],
+      "cophenetic": null,
+      "eta2_neuron": 0.737,
+      "cv_bal_acc_cells": 0.681,
+      "chance": 0.25,
+      "cv_bal_acc_random_median": 0.733,
+      "p_random_ge": 0.7921,
+      "between_var_share_cells": 0.658
+    },
+    {
+      "cohort": "GSE125583_FG",
+      "n_AD": 219,
+      "variant": "cell_adjusted",
+      "method": "nmf",
+      "k": 2,
+      "sizes": [
+        139,
+        80
+      ],
+      "cophenetic": 0.975,
+      "eta2_neuron": 0.007,
+      "cv_bal_acc_cells": 0.48,
+      "chance": 0.5,
+      "cv_bal_acc_random_median": 0.849,
+      "p_random_ge": 1.0,
+      "between_var_share_cells": 0.0,
+      "ari_vs_unadjusted": -0.003
+    },
+    {
+      "cohort": "GSE125583_FG",
+      "n_AD": 219,
+      "variant": "cell_adjusted",
+      "method": "kmeans_pc",
+      "k": 2,
+      "sizes": [
+        131,
+        88
+      ],
+      "cophenetic": null,
+      "eta2_neuron": 0.01,
+      "cv_bal_acc_cells": 0.477,
+      "chance": 0.5,
+      "cv_bal_acc_random_median": 0.859,
+      "p_random_ge": 1.0,
+      "between_var_share_cells": 0.0,
+      "ari_vs_unadjusted": 0.005
+    },
+    {
+      "cohort": "GSE125583_FG",
+      "n_AD": 219,
+      "variant": "cell_adjusted",
+      "method": "nmf",
+      "k": 3,
+      "sizes": [
+        126,
+        12,
+        81
+      ],
+      "cophenetic": 0.974,
+      "eta2_neuron": 0.019,
+      "cv_bal_acc_cells": 0.327,
+      "chance": 0.333,
+      "cv_bal_acc_random_median": 0.613,
+      "p_random_ge": 1.0,
+      "between_var_share_cells": 0.0,
+      "ari_vs_unadjusted": 0.193
+    },
+    {
+      "cohort": "GSE125583_FG",
+      "n_AD": 219,
+      "variant": "cell_adjusted",
+      "method": "kmeans_pc",
+      "k": 3,
+      "sizes": [
+        78,
+        44,
+        97
+      ],
+      "cophenetic": null,
+      "eta2_neuron": 0.018,
+      "cv_bal_acc_cells": 0.35,
+      "chance": 0.333,
+      "cv_bal_acc_random_median": 0.765,
+      "p_random_ge": 1.0,
+      "between_var_share_cells": 0.0,
+      "ari_vs_unadjusted": 0.255
+    },
+    {
+      "cohort": "GSE125583_FG",
+      "n_AD": 219,
+      "variant": "cell_adjusted",
+      "method": "nmf",
+      "k": 4,
+      "sizes": [
+        16,
+        68,
+        28,
+        107
+      ],
+      "cophenetic": 0.867,
+      "eta2_neuron": 0.06,
+      "cv_bal_acc_cells": 0.261,
+      "chance": 0.25,
+      "cv_bal_acc_random_median": 0.429,
+      "p_random_ge": 1.0,
+      "between_var_share_cells": 0.0,
+      "ari_vs_unadjusted": 0.092
+    },
+    {
+      "cohort": "GSE125583_FG",
+      "n_AD": 219,
+      "variant": "cell_adjusted",
+      "method": "kmeans_pc",
+      "k": 4,
+      "sizes": [
+        34,
+        71,
+        39,
+        75
+      ],
+      "cophenetic": null,
+      "eta2_neuron": 0.025,
+      "cv_bal_acc_cells": 0.303,
+      "chance": 0.25,
+      "cv_bal_acc_random_median": 0.675,
+      "p_random_ge": 1.0,
+      "between_var_share_cells": 0.0,
+      "ari_vs_unadjusted": 0.188
+    }
+  ],
+  "pcs": [
+    {
+      "cohort": "GSE125583_FG",
+      "variant": "unadjusted",
+      "pc": 1,
+      "var_share": 0.387,
+      "abs_rho_neuron": 0.973,
+      "r2_on_cells": 0.978
+    },
+    {
+      "cohort": "GSE125583_FG",
+      "variant": "unadjusted",
+      "pc": 2,
+      "var_share": 0.203,
+      "abs_rho_neuron": 0.133,
+      "r2_on_cells": 0.105
+    },
+    {
+      "cohort": "GSE125583_FG",
+      "variant": "unadjusted",
+      "pc": 3,
+      "var_share": 0.078,
+      "abs_rho_neuron": 0.08,
+      "r2_on_cells": 0.816
+    },
+    {
+      "cohort": "GSE125583_FG",
+      "variant": "cell_adjusted",
+      "pc": 1,
+      "var_share": 0.354,
+      "abs_rho_neuron": 0.055,
+      "r2_on_cells": 0.0
+    },
+    {
+      "cohort": "GSE125583_FG",
+      "variant": "cell_adjusted",
+      "pc": 2,
+      "var_share": 0.086,
+      "abs_rho_neuron": 0.051,
+      "r2_on_cells": -0.0
+    },
+    {
+      "cohort": "GSE125583_FG",
+      "variant": "cell_adjusted",
+      "pc": 3,
+      "var_share": 0.073,
+      "abs_rho_neuron": 0.05,
+      "r2_on_cells": 0.0
+    }
+  ]
+}

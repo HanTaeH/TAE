@@ -1,12 +1,12 @@
 {
-  "n_tests": 2328,
+  "n_tests": 2428,
   "by_family": {
     "exploratory": {
-      "n": 2277,
+      "n": 2377,
       "n_adjusted_for_neuron": 126,
-      "n_p05": 876,
-      "n_q05_family": 645,
-      "n_q05_global": 645
+      "n_p05": 911,
+      "n_q05_family": 673,
+      "n_q05_global": 673
     },
     "primary": {
       "n": 2,

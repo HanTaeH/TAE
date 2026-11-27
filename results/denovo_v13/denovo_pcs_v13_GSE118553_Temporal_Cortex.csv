@@ -1,0 +1,7 @@
+cohort,variant,pc,var_share,abs_rho_neuron,r2_on_cells
+GSE118553_Temporal_Cortex,unadjusted,1,0.476,0.691,0.606
+GSE118553_Temporal_Cortex,unadjusted,2,0.159,0.643,0.465
+GSE118553_Temporal_Cortex,unadjusted,3,0.047,0.256,0.84
+GSE118553_Temporal_Cortex,cell_adjusted,1,0.365,0.17,0.0
+GSE118553_Temporal_Cortex,cell_adjusted,2,0.091,0.121,-0.0
+GSE118553_Temporal_Cortex,cell_adjusted,3,0.048,0.016,-0.0

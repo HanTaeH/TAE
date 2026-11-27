@@ -1,0 +1,13 @@
+cohort,n_AD,variant,method,k,sizes,cophenetic,eta2_neuron,cv_bal_acc_cells,chance,cv_bal_acc_random_median,p_random_ge,between_var_share_cells,ari_vs_unadjusted
+GSE33000_PFC,310,unadjusted,nmf,2,"[147, 163]",0.984,0.006,0.682,0.5,0.777,0.9109,0.07,
+GSE33000_PFC,310,unadjusted,kmeans_pc,2,"[123, 187]",,0.005,0.666,0.5,0.83,0.9901,0.155,
+GSE33000_PFC,310,unadjusted,nmf,3,"[113, 173, 24]",0.958,0.017,0.607,0.333,0.545,0.1089,0.219,
+GSE33000_PFC,310,unadjusted,kmeans_pc,3,"[102, 105, 103]",,0.013,0.662,0.333,0.73,0.8515,0.331,
+GSE33000_PFC,310,unadjusted,nmf,4,"[5, 194, 73, 38]",0.952,0.053,0.467,0.25,0.416,0.198,0.339,
+GSE33000_PFC,310,unadjusted,kmeans_pc,4,"[63, 55, 91, 101]",,0.012,0.555,0.25,0.633,0.8416,0.338,
+GSE33000_PFC,310,cell_adjusted,nmf,2,"[209, 101]",0.992,0.001,0.488,0.5,0.736,1.0,0.0,0.493
+GSE33000_PFC,310,cell_adjusted,kmeans_pc,2,"[192, 118]",,0.0,0.541,0.5,0.791,1.0,0.0,0.638
+GSE33000_PFC,310,cell_adjusted,nmf,3,"[87, 165, 58]",0.956,0.006,0.326,0.333,0.501,1.0,0.0,0.13
+GSE33000_PFC,310,cell_adjusted,kmeans_pc,3,"[117, 108, 85]",,0.001,0.413,0.333,0.614,1.0,0.0,0.403
+GSE33000_PFC,310,cell_adjusted,nmf,4,"[36, 16, 167, 91]",0.871,0.004,0.253,0.25,0.384,1.0,0.0,0.008
+GSE33000_PFC,310,cell_adjusted,kmeans_pc,4,"[101, 68, 70, 71]",,0.012,0.318,0.25,0.466,1.0,0.0,0.257

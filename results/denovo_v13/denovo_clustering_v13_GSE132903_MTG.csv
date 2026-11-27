@@ -1,0 +1,13 @@
+cohort,n_AD,variant,method,k,sizes,cophenetic,eta2_neuron,cv_bal_acc_cells,chance,cv_bal_acc_random_median,p_random_ge,between_var_share_cells,ari_vs_unadjusted
+GSE132903_MTG,97,unadjusted,nmf,2,"[68, 29]",0.99,0.527,0.891,0.5,0.798,0.099,0.652,
+GSE132903_MTG,97,unadjusted,kmeans_pc,2,"[50, 47]",,0.561,0.875,0.5,0.802,0.0792,0.732,
+GSE132903_MTG,97,unadjusted,nmf,3,"[24, 32, 41]",0.971,0.52,0.777,0.333,0.765,0.4356,0.507,
+GSE132903_MTG,97,unadjusted,kmeans_pc,3,"[42, 27, 28]",,0.586,0.796,0.333,0.74,0.2376,0.572,
+GSE132903_MTG,97,unadjusted,nmf,4,"[23, 14, 37, 23]",0.854,0.348,0.648,0.25,0.641,0.4554,0.413,
+GSE132903_MTG,97,unadjusted,kmeans_pc,4,"[20, 28, 22, 27]",,0.729,0.772,0.25,0.668,0.0594,0.611,
+GSE132903_MTG,97,cell_adjusted,nmf,2,"[14, 83]",0.898,0.016,0.492,0.5,0.54,0.9802,0.0,0.048
+GSE132903_MTG,97,cell_adjusted,kmeans_pc,2,"[41, 56]",,0.008,0.439,0.5,0.704,1.0,0.0,0.047
+GSE132903_MTG,97,cell_adjusted,nmf,3,"[59, 29, 9]",0.895,0.003,0.33,0.333,0.459,1.0,0.0,-0.001
+GSE132903_MTG,97,cell_adjusted,kmeans_pc,3,"[30, 22, 45]",,0.036,0.334,0.333,0.536,1.0,0.0,0.178
+GSE132903_MTG,97,cell_adjusted,nmf,4,"[50, 24, 22, 1]",0.831,0.086,,0.25,,,0.0,0.103
+GSE132903_MTG,97,cell_adjusted,kmeans_pc,4,"[18, 28, 27, 24]",,0.05,0.257,0.25,0.47,1.0,0.0,0.203

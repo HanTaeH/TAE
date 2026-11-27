@@ -1,0 +1,288 @@
+{
+  "labellings": [
+    {
+      "cohort": "GSE118553_Temporal_Cortex",
+      "n_AD": 52,
+      "variant": "unadjusted",
+      "method": "nmf",
+      "k": 2,
+      "sizes": [
+        24,
+        28
+      ],
+      "cophenetic": 0.936,
+      "eta2_neuron": 0.216,
+      "cv_bal_acc_cells": 0.675,
+      "chance": 0.5,
+      "cv_bal_acc_random_median": 0.747,
+      "p_random_ge": 0.8317,
+      "between_var_share_cells": 0.314
+    },
+    {
+      "cohort": "GSE118553_Temporal_Cortex",
+      "n_AD": 52,
+      "variant": "unadjusted",
+      "method": "kmeans_pc",
+      "k": 2,
+      "sizes": [
+        20,
+        32
+      ],
+      "cophenetic": null,
+      "eta2_neuron": 0.337,
+      "cv_bal_acc_cells": 0.755,
+      "chance": 0.5,
+      "cv_bal_acc_random_median": 0.787,
+      "p_random_ge": 0.6733,
+      "between_var_share_cells": 0.343
+    },
+    {
+      "cohort": "GSE118553_Temporal_Cortex",
+      "n_AD": 52,
+      "variant": "unadjusted",
+      "method": "nmf",
+      "k": 3,
+      "sizes": [
+        17,
+        19,
+        16
+      ],
+      "cophenetic": 0.915,
+      "eta2_neuron": 0.638,
+      "cv_bal_acc_cells": 0.659,
+      "chance": 0.333,
+      "cv_bal_acc_random_median": 0.65,
+      "p_random_ge": 0.4851,
+      "between_var_share_cells": 0.435
+    },
+    {
+      "cohort": "GSE118553_Temporal_Cortex",
+      "n_AD": 52,
+      "variant": "unadjusted",
+      "method": "kmeans_pc",
+      "k": 3,
+      "sizes": [
+        22,
+        19,
+        11
+      ],
+      "cophenetic": null,
+      "eta2_neuron": 0.532,
+      "cv_bal_acc_cells": 0.582,
+      "chance": 0.333,
+      "cv_bal_acc_random_median": 0.696,
+      "p_random_ge": 0.8416,
+      "between_var_share_cells": 0.407
+    },
+    {
+      "cohort": "GSE118553_Temporal_Cortex",
+      "n_AD": 52,
+      "variant": "unadjusted",
+      "method": "nmf",
+      "k": 4,
+      "sizes": [
+        14,
+        7,
+        13,
+        18
+      ],
+      "cophenetic": 0.921,
+      "eta2_neuron": 0.549,
+      "cv_bal_acc_cells": 0.672,
+      "chance": 0.25,
+      "cv_bal_acc_random_median": 0.564,
+      "p_random_ge": 0.0891,
+      "between_var_share_cells": 0.491
+    },
+    {
+      "cohort": "GSE118553_Temporal_Cortex",
+      "n_AD": 52,
+      "variant": "unadjusted",
+      "method": "kmeans_pc",
+      "k": 4,
+      "sizes": [
+        11,
+        19,
+        14,
+        8
+      ],
+      "cophenetic": null,
+      "eta2_neuron": 0.608,
+      "cv_bal_acc_cells": 0.53,
+      "chance": 0.25,
+      "cv_bal_acc_random_median": 0.583,
+      "p_random_ge": 0.6832,
+      "between_var_share_cells": 0.424
+    },
+    {
+      "cohort": "GSE118553_Temporal_Cortex",
+      "n_AD": 52,
+      "variant": "cell_adjusted",
+      "method": "nmf",
+      "k": 2,
+      "sizes": [
+        11,
+        41
+      ],
+      "cophenetic": 0.986,
+      "eta2_neuron": 0.095,
+      "cv_bal_acc_cells": 0.472,
+      "chance": 0.5,
+      "cv_bal_acc_random_median": 0.592,
+      "p_random_ge": 0.9703,
+      "between_var_share_cells": 0.0,
+      "ari_vs_unadjusted": 0.106
+    },
+    {
+      "cohort": "GSE118553_Temporal_Cortex",
+      "n_AD": 52,
+      "variant": "cell_adjusted",
+      "method": "kmeans_pc",
+      "k": 2,
+      "sizes": [
+        16,
+        36
+      ],
+      "cophenetic": null,
+      "eta2_neuron": 0.005,
+      "cv_bal_acc_cells": 0.469,
+      "chance": 0.5,
+      "cv_bal_acc_random_median": 0.669,
+      "p_random_ge": 0.9604,
+      "between_var_share_cells": 0.0,
+      "ari_vs_unadjusted": 0.073
+    },
+    {
+      "cohort": "GSE118553_Temporal_Cortex",
+      "n_AD": 52,
+      "variant": "cell_adjusted",
+      "method": "nmf",
+      "k": 3,
+      "sizes": [
+        9,
+        28,
+        15
+      ],
+      "cophenetic": 0.945,
+      "eta2_neuron": 0.044,
+      "cv_bal_acc_cells": 0.365,
+      "chance": 0.333,
+      "cv_bal_acc_random_median": 0.514,
+      "p_random_ge": 0.9703,
+      "between_var_share_cells": 0.0,
+      "ari_vs_unadjusted": 0.192
+    },
+    {
+      "cohort": "GSE118553_Temporal_Cortex",
+      "n_AD": 52,
+      "variant": "cell_adjusted",
+      "method": "kmeans_pc",
+      "k": 3,
+      "sizes": [
+        19,
+        11,
+        22
+      ],
+      "cophenetic": null,
+      "eta2_neuron": 0.206,
+      "cv_bal_acc_cells": 0.424,
+      "chance": 0.333,
+      "cv_bal_acc_random_median": 0.597,
+      "p_random_ge": 0.9901,
+      "between_var_share_cells": 0.0,
+      "ari_vs_unadjusted": 0.502
+    },
+    {
+      "cohort": "GSE118553_Temporal_Cortex",
+      "n_AD": 52,
+      "variant": "cell_adjusted",
+      "method": "nmf",
+      "k": 4,
+      "sizes": [
+        33,
+        5,
+        2,
+        12
+      ],
+      "cophenetic": 0.864,
+      "eta2_neuron": 0.009,
+      "cv_bal_acc_cells": null,
+      "chance": 0.25,
+      "cv_bal_acc_random_median": null,
+      "p_random_ge": null,
+      "between_var_share_cells": 0.0,
+      "ari_vs_unadjusted": 0.102
+    },
+    {
+      "cohort": "GSE118553_Temporal_Cortex",
+      "n_AD": 52,
+      "variant": "cell_adjusted",
+      "method": "kmeans_pc",
+      "k": 4,
+      "sizes": [
+        18,
+        9,
+        15,
+        10
+      ],
+      "cophenetic": null,
+      "eta2_neuron": 0.263,
+      "cv_bal_acc_cells": 0.318,
+      "chance": 0.25,
+      "cv_bal_acc_random_median": 0.468,
+      "p_random_ge": 0.9802,
+      "between_var_share_cells": 0.0,
+      "ari_vs_unadjusted": 0.385
+    }
+  ],
+  "pcs": [
+    {
+      "cohort": "GSE118553_Temporal_Cortex",
+      "variant": "unadjusted",
+      "pc": 1,
+      "var_share": 0.476,
+      "abs_rho_neuron": 0.691,
+      "r2_on_cells": 0.606
+    },
+    {
+      "cohort": "GSE118553_Temporal_Cortex",
+      "variant": "unadjusted",
+      "pc": 2,
+      "var_share": 0.159,
+      "abs_rho_neuron": 0.643,
+      "r2_on_cells": 0.465
+    },
+    {
+      "cohort": "GSE118553_Temporal_Cortex",
+      "variant": "unadjusted",
+      "pc": 3,
+      "var_share": 0.047,
+      "abs_rho_neuron": 0.256,
+      "r2_on_cells": 0.84
+    },
+    {
+      "cohort": "GSE118553_Temporal_Cortex",
+      "variant": "cell_adjusted",
+      "pc": 1,
+      "var_share": 0.365,
+      "abs_rho_neuron": 0.17,
+      "r2_on_cells": 0.0
+    },
+    {
+      "cohort": "GSE118553_Temporal_Cortex",
+      "variant": "cell_adjusted",
+      "pc": 2,
+      "var_share": 0.091,
+      "abs_rho_neuron": 0.121,
+      "r2_on_cells": -0.0
+    },
+    {
+      "cohort": "GSE118553_Temporal_Cortex",
+      "variant": "cell_adjusted",
+      "pc": 3,
+      "var_share": 0.048,
+      "abs_rho_neuron": 0.016,
+      "r2_on_cells": -0.0
+    }
+  ]
+}

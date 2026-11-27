@@ -17,6 +17,8 @@ results/spike_in_real/spike_in_real.json:
   inverse-variance pooled offset with its 90% CI, equivalent within +/-0.05 (and +/-0.03) if the CI lies
   inside the margin. Rows for the specificity-, strength(tertile)- and strength(decile)-matched nulls.
 
+v13: random-effects (HKSJ) pooling of the offsets and the variance share detected with 50% and 80% power.
+
 Usage: python spike_in_bound_v12.py --res ../results --out ../results/spike_in_v12
 """
 from __future__ import annotations
@@ -89,7 +91,28 @@ def main() -> None:
                  "equivalent_within_0.03": bool(lo > -0.03 and hi < 0.03),
                  "per_cohort_offset": dict(zip(d.keys(), np.round(offs, 3).tolist())),
                  "per_cohort_se": dict(zip(d.keys(), np.round(ses, 4).tolist()))}
-    rep = {"bound": out, "equivalence": eq}
+        # v13 (review round 11): random-effects pool (DerSimonian-Laird tau^2, HKSJ 90% CI), because Q is significant
+        tau2 = max(0.0, (q - (len(offs) - 1)) / (w.sum() - (w ** 2).sum() / w.sum()))
+        ws = 1 / (ses ** 2 + tau2)
+        mr = float((ws * offs).sum() / ws.sum())
+        se_h = float(np.sqrt((ws * (offs - mr) ** 2).sum() / (len(offs) - 1) / ws.sum()))
+        t = float(stats.t.ppf(0.95, len(offs) - 1))
+        lo_r, hi_r = mr - t * se_h, mr + t * se_h
+        eq[k]["random_effects"] = {"tau2": round(tau2, 5), "pooled_offset": round(mr, 3), "ci90_hksj": [round(lo_r, 3), round(hi_r, 3)],
+                                   "equivalent_within_0.05": bool(lo_r > -0.05 and hi_r < 0.05),
+                                   "equivalent_within_0.03": bool(lo_r > -0.03 and hi_r < 0.03)}
+    # v13: power of the upper-tail test (share of 200 spiked replicates with p < 0.05 against the matched null),
+    # interpolated on the share of C-A variance: the variance share detected with 50% and 80% power
+    power = {}
+    for c, r in d.items():
+        vs = np.array([s["var_share_median"] for s in r["spike"]])
+        power[c] = {}
+        for nk, key in (("spec", "detect_spec"), ("strength_decile", "detect_strength")):
+            pw = np.maximum.accumulate(np.array([s[key] for s in r["spike"]]))
+            power[c][nk] = {f"var_share_at_{int(x * 100)}pct_power": (None if pw.max() < x else round(float(np.interp(x, pw + np.arange(len(pw)) * 1e-9, vs)), 3))
+                            for x in (0.5, 0.8)}
+            power[c][nk]["power_by_var_share"] = dict(zip([str(v) for v in vs], pw.round(3).tolist()))
+    rep = {"bound": out, "equivalence": eq, "power": power}
     (a.out / "spike_in_bound_v12.json").write_text(json.dumps(rep, indent=2))
     print(json.dumps(rep, indent=1))
 

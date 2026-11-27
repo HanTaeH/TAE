@@ -18,7 +18,7 @@ KEYS = {"tests": "S7", "lit": "S1", "exprnull": "S3", "specnull": "S12", "streng
         "adjnull": "S10", "stagefu": "S11", "nft": "S23", "mediation": "S5", "seaadpb": "S4", "histo": "S14",
         "regulators": "S24", "schemes": "S18", "cohortv11": "S25", "csf": "S19", "hallmark": "S6", "residual": "S20",
         "bretigea": "S26", "direction": "S27", "crossregion": "S28", "signature": "S29", "shared": "S30", "spikev12": "S31",
-        "regloo": "S32"}
+        "regloo": "S32", "denovo": "S33"}
 
 
 def main() -> None:

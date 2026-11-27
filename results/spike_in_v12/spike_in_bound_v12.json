@@ -172,6 +172,16 @@
         "GSE132903_MTG": 0.0319,
         "GSE118553_Temporal_Cortex": 0.0619,
         "GSE125583_FG": 0.0123
+      },
+      "random_effects": {
+        "tau2": 0.00115,
+        "pooled_offset": -0.021,
+        "ci90_hksj": [
+          -0.06,
+          0.017
+        ],
+        "equivalent_within_0.05": false,
+        "equivalent_within_0.03": false
       }
     },
     "strength_tertile": {
@@ -196,6 +206,16 @@
         "GSE132903_MTG": 0.0296,
         "GSE118553_Temporal_Cortex": 0.0584,
         "GSE125583_FG": 0.0104
+      },
+      "random_effects": {
+        "tau2": 0.00036,
+        "pooled_offset": -0.009,
+        "ci90_hksj": [
+          -0.039,
+          0.021
+        ],
+        "equivalent_within_0.05": true,
+        "equivalent_within_0.03": false
       }
     },
     "strength_decile": {
@@ -220,6 +240,130 @@
         "GSE132903_MTG": 0.0319,
         "GSE118553_Temporal_Cortex": 0.0579,
         "GSE125583_FG": 0.0099
+      },
+      "random_effects": {
+        "tau2": 0.00056,
+        "pooled_offset": -0.011,
+        "ci90_hksj": [
+          -0.044,
+          0.022
+        ],
+        "equivalent_within_0.05": true,
+        "equivalent_within_0.03": false
+      }
+    }
+  },
+  "power": {
+    "GSE33000_PFC": {
+      "spec": {
+        "var_share_at_50pct_power": 0.161,
+        "var_share_at_80pct_power": 0.208,
+        "power_by_var_share": {
+          "0.0": 0.0,
+          "0.015": 0.0,
+          "0.083": 0.0,
+          "0.239": 1.0,
+          "0.404": 1.0,
+          "0.613": 1.0,
+          "0.768": 1.0
+        }
+      },
+      "strength_decile": {
+        "var_share_at_50pct_power": 0.077,
+        "var_share_at_80pct_power": 0.17,
+        "power_by_var_share": {
+          "0.0": 0.0,
+          "0.015": 0.0,
+          "0.083": 0.55,
+          "0.239": 1.0,
+          "0.404": 1.0,
+          "0.613": 1.0,
+          "0.768": 1.0
+        }
+      }
+    },
+    "GSE132903_MTG": {
+      "spec": {
+        "var_share_at_50pct_power": 0.226,
+        "var_share_at_80pct_power": 0.285,
+        "power_by_var_share": {
+          "0.0": 0.0,
+          "0.01": 0.0,
+          "0.039": 0.0,
+          "0.101": 0.0,
+          "0.16": 0.13,
+          "0.279": 0.795,
+          "0.508": 1.0
+        }
+      },
+      "strength_decile": {
+        "var_share_at_50pct_power": 0.204,
+        "var_share_at_80pct_power": 0.258,
+        "power_by_var_share": {
+          "0.0": 0.0,
+          "0.01": 0.0,
+          "0.039": 0.0,
+          "0.101": 0.01,
+          "0.16": 0.255,
+          "0.279": 0.915,
+          "0.508": 1.0
+        }
+      }
+    },
+    "GSE118553_Temporal_Cortex": {
+      "spec": {
+        "var_share_at_50pct_power": 0.342,
+        "var_share_at_80pct_power": 0.519,
+        "power_by_var_share": {
+          "0.0": 0.01,
+          "0.01": 0.01,
+          "0.028": 0.01,
+          "0.086": 0.01,
+          "0.17": 0.05,
+          "0.353": 0.53,
+          "0.636": 0.99
+        }
+      },
+      "strength_decile": {
+        "var_share_at_50pct_power": 0.33,
+        "var_share_at_80pct_power": 0.509,
+        "power_by_var_share": {
+          "0.0": 0.01,
+          "0.01": 0.01,
+          "0.028": 0.01,
+          "0.086": 0.01,
+          "0.17": 0.055,
+          "0.353": 0.565,
+          "0.636": 0.99
+        }
+      }
+    },
+    "GSE125583_FG": {
+      "spec": {
+        "var_share_at_50pct_power": 0.029,
+        "var_share_at_80pct_power": 0.052,
+        "power_by_var_share": {
+          "0.0": 0.02,
+          "0.003": 0.035,
+          "0.004": 0.06,
+          "0.018": 0.225,
+          "0.039": 0.745,
+          "0.097": 1.0,
+          "0.299": 1.0
+        }
+      },
+      "strength_decile": {
+        "var_share_at_50pct_power": 0.004,
+        "var_share_at_80pct_power": 0.02,
+        "power_by_var_share": {
+          "0.0": 0.32,
+          "0.003": 0.36,
+          "0.004": 0.51,
+          "0.018": 0.78,
+          "0.039": 0.99,
+          "0.097": 1.0,
+          "0.299": 1.0
+        }
       }
     }
   }

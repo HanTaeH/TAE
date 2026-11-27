@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # Reproduce every analysis and figure from raw downloaded files.
-# DATA: folder with GSE33000/, GSE132903/, GSE118553/, GSE106241/, GSE125583/ (series matrix + raw/), GPL10558/, GPL24170/, hgnc/, neff2021/
+# DATA: folder with GSE33000/, GSE132903/, GSE118553/, GSE106241/, GSE125583/, GSE84422/ (series matrix + raw/), GPL10558/,
+#       GPL24170/, hgnc/, neff2021/, bretigea/, tijms2024/, gtex/ (see README for each source); MSigDB in $DATA/../msigdb
+# Tested with Python 3.13 (requirements.txt). Random seeds are fixed in every script.
 # SEAAD_H5AD: SEA-AD MTG reference (Reference_MTG_RNAseq_final-nuclei.2022-06-07.h5ad, ~6.4 GB,
 #             https://sea-ad-single-cell-profiling.s3.amazonaws.com/MTG/RNAseq/); only needed once
 set -euo pipefail
@@ -97,10 +99,26 @@ python3 msbb_cross_region_v12.py --data "$DATA" --ref "$REF_DIR/seaad_mtg_refere
 python3 neff_signature_decomposition_v12.py --data "$DATA" --ref "$REF_DIR/seaad_mtg_reference.csv.gz" --out "$OUT/neff_signature_v12" --n 200
 python3 shared_donor_v12.py --data "$DATA" --res "$OUT" --out "$OUT/shared_donor_v12"
 python3 li2022_specnull_v12.py --data "$DATA" --ref "$REF_DIR/seaad_mtg_reference.csv.gz" --out "$OUT/rq2_li2022"
-python3 scheme_overview_v12.py --res "$OUT" --out "$OUT/figures"
-# last: FDR over every result file above, then the supplementary tables numbered by first citation in the manuscript
+# v13 (review round 11): de novo subtyping (four cohorts in parallel), BRETIGEA against six random components, Fig. 1b
+for c in GSE33000_PFC GSE132903_MTG GSE118553_Temporal_Cortex GSE125583_FG; do
+  OMP_NUM_THREADS=1 python3 denovo_clustering_v13.py --data "$DATA" --out "$OUT/denovo_v13" --cohort "$c" &
+done; wait
+python3 denovo_clustering_v13.py --data "$DATA" --out "$OUT/denovo_v13" --merge
+python3 bretigea_random_r2_v13.py --data "$DATA" --out "$OUT/bretigea_v12"
+python3 scheme_overview_v13.py --res "$OUT" --out "$OUT/figures"
+# figures (Fig. 1a and 2-5, S1, S3) and the literature flow (Fig. S2)
+python3 main_figures.py "$OUT" "$OUT/figures"
+python3 prisma_plot.py "$OUT/literature/prisma_counts.json" "$OUT/figures/FigS2_prisma.png"
+# literature search: re-run screening only if the PubMed export is supplied (LIT); the coded tables are in results/literature
+if [ -n "${LIT:-}" ] && [ -f "$LIT/pubmed_search2_2026-11-17.txt" ]; then
+  python3 lit_parse.py "$LIT/pubmed_search2_2026-11-17.txt" "$OUT/literature/screen"
+  python3 lit_screen_decisions.py "$OUT/literature/screen/records_prescreened.csv" "$OUT/literature"
+fi
+# last: FDR over every result file above, then the supplementary tables numbered by first citation in the manuscript.
+# MS holds the manuscript sources; the numbered outputs are written to $OUT/manuscript, never over the sources.
 python3 multiple_testing.py "$OUT"
-MS=${MS:-/mnt/project-files/d1-results/manuscript}
-python3 manuscript_tokens.py --src "$MS/draft_v12_src_2026-11-26.md" --out "$MS/draft_v12_2026-11-26.md" --ren "$OUT/supplementary/ren_v12.json" \
-  --extra "$MS/Supplementary_Note_v12_src_2026-11-26.md" "$MS/Supplementary_Note_v12_2026-11-26.md"
-python3 supplementary_tables.py --res "$OUT" --ren "$OUT/supplementary/ren_v12.json" --out "$OUT/supplementary/Supplementary_Tables_v12.xlsx"
+MS=${MS:-$(cd .. && pwd)/manuscript}
+mkdir -p "$OUT/manuscript"
+python3 manuscript_tokens.py --src "$MS/draft_v13_src_2026-11-27.md" --out "$OUT/manuscript/draft_v13.md" --ren "$OUT/supplementary/ren_v13.json" \
+  --extra "$MS/Supplementary_Note_v13_src_2026-11-27.md" "$OUT/manuscript/Supplementary_Note_v13.md"
+python3 supplementary_tables.py --res "$OUT" --ren "$OUT/supplementary/ren_v13.json" --out "$OUT/supplementary/Supplementary_Tables_v13.xlsx"

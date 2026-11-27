@@ -69,7 +69,7 @@ def main() -> None:
     ax.set_xlabel("|ρ| with the neuron score, AD samples")
     for c, (lab, col, mk) in COH.items():
         ax.scatter([], [], s=22, marker=mk, color=col, label=lab)
-    ax.scatter([], [], s=16, marker="o", facecolor="white", edgecolor=MUTED, label="cell-type-matched random median")
+    ax.scatter([], [], s=16, marker="o", facecolor="white", edgecolor=MUTED, label="specificity-matched random median")
     ax.legend(loc="lower left", bbox_to_anchor=(0, 1.0), ncol=3, fontsize=6.5, handletextpad=0.3, columnspacing=0.8)
     ax.tick_params(axis="y", labelsize=7, colors=INK)
     fig.savefig(a.out / "fig1b_schemes.png", bbox_inches="tight")

@@ -23,23 +23,7 @@ Lai 2022  immune,GSE118553_Temporal_Cortex,0.227,0.425
 Ma 2023  m7G,GSE118553_Temporal_Cortex,0.836,0.773
 Lai 2022  immune,GSE125583_FG,0.779,0.32
 Ma 2023  m7G,GSE125583_FG,0.314,0.328
-Tijms 2024 CSF  1 hyperplasticity,GSE33000_PFC,0.799,0.914
-Tijms 2024 CSF  2 innate immune,GSE33000_PFC,0.885,0.896
-Tijms 2024 CSF  3 RNA,GSE33000_PFC,0.887,0.882
-Tijms 2024 CSF  4 choroid plexus,GSE33000_PFC,0.869,0.916
-Tijms 2024 CSF  5 BBB,GSE33000_PFC,0.851,0.89
-Tijms 2024 CSF  1 hyperplasticity,GSE132903_MTG,0.852,0.873
-Tijms 2024 CSF  2 innate immune,GSE132903_MTG,0.861,0.788
-Tijms 2024 CSF  3 RNA,GSE132903_MTG,0.831,0.665
-Tijms 2024 CSF  4 choroid plexus,GSE132903_MTG,0.915,0.868
-Tijms 2024 CSF  5 BBB,GSE132903_MTG,0.831,0.732
-Tijms 2024 CSF  1 hyperplasticity,GSE118553_Temporal_Cortex,0.862,0.823
-Tijms 2024 CSF  2 innate immune,GSE118553_Temporal_Cortex,0.891,0.739
-Tijms 2024 CSF  3 RNA,GSE118553_Temporal_Cortex,0.834,0.72
-Tijms 2024 CSF  4 choroid plexus,GSE118553_Temporal_Cortex,0.928,0.845
-Tijms 2024 CSF  5 BBB,GSE118553_Temporal_Cortex,0.855,0.718
-Tijms 2024 CSF  1 hyperplasticity,GSE125583_FG,0.868,0.941
-Tijms 2024 CSF  2 innate immune,GSE125583_FG,0.904,0.852
-Tijms 2024 CSF  3 RNA,GSE125583_FG,0.847,0.525
-Tijms 2024 CSF  4 choroid plexus,GSE125583_FG,0.941,0.881
-Tijms 2024 CSF  5 BBB,GSE125583_FG,0.877,0.74
+"De novo  PC1 (1,500 variable genes)",GSE33000_PFC,0.101,
+"De novo  PC1 (1,500 variable genes)",GSE132903_MTG,0.865,
+"De novo  PC1 (1,500 variable genes)",GSE118553_Temporal_Cortex,0.691,
+"De novo  PC1 (1,500 variable genes)",GSE125583_FG,0.973,

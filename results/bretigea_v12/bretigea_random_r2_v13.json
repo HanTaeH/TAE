@@ -1,0 +1,265 @@
+{
+  "msbb": {
+    "Anterior Cingulate": {
+      "r2_6spv": 0.813,
+      "r2_6random_median": 0.755,
+      "r2_6random_q05_q95": [
+        0.676,
+        0.827
+      ],
+      "p_random6_ge": 0.1089,
+      "r2_neuron_spv": 0.747,
+      "r2_1random_median": 0.606,
+      "p_random1_ge": 0.0099
+    },
+    "Caudate Nucleus": {
+      "r2_6spv": 0.911,
+      "r2_6random_median": 0.795,
+      "r2_6random_q05_q95": [
+        0.733,
+        0.878
+      ],
+      "p_random6_ge": 0.0099,
+      "r2_neuron_spv": 0.814,
+      "r2_1random_median": 0.692,
+      "p_random1_ge": 0.0099
+    },
+    "Dorsolateral Prefrontal Cortex": {
+      "r2_6spv": 0.673,
+      "r2_6random_median": 0.563,
+      "r2_6random_q05_q95": [
+        0.387,
+        0.691
+      ],
+      "p_random6_ge": 0.0792,
+      "r2_neuron_spv": 0.527,
+      "r2_1random_median": 0.122,
+      "p_random1_ge": 0.0099
+    },
+    "Frontal Pole": {
+      "r2_6spv": 0.819,
+      "r2_6random_median": 0.727,
+      "r2_6random_q05_q95": [
+        0.685,
+        0.798
+      ],
+      "p_random6_ge": 0.0297,
+      "r2_neuron_spv": 0.704,
+      "r2_1random_median": 0.621,
+      "p_random1_ge": 0.0099
+    },
+    "Hippocampus": {
+      "r2_6spv": 0.892,
+      "r2_6random_median": 0.79,
+      "r2_6random_q05_q95": [
+        0.7,
+        0.86
+      ],
+      "p_random6_ge": 0.0297,
+      "r2_neuron_spv": 0.828,
+      "r2_1random_median": 0.545,
+      "p_random1_ge": 0.0099
+    },
+    "Inferior Frontal Gyrus": {
+      "r2_6spv": 0.858,
+      "r2_6random_median": 0.798,
+      "r2_6random_q05_q95": [
+        0.68,
+        0.879
+      ],
+      "p_random6_ge": 0.1089,
+      "r2_neuron_spv": 0.729,
+      "r2_1random_median": 0.55,
+      "p_random1_ge": 0.0099
+    },
+    "Inferior Temporal Gyrus": {
+      "r2_6spv": 0.784,
+      "r2_6random_median": 0.766,
+      "r2_6random_q05_q95": [
+        0.699,
+        0.825
+      ],
+      "p_random6_ge": 0.3465,
+      "r2_neuron_spv": 0.743,
+      "r2_1random_median": 0.54,
+      "p_random1_ge": 0.0099
+    },
+    "Middle Temporal Gyrus": {
+      "r2_6spv": 0.869,
+      "r2_6random_median": 0.676,
+      "r2_6random_q05_q95": [
+        0.547,
+        0.784
+      ],
+      "p_random6_ge": 0.0099,
+      "r2_neuron_spv": 0.682,
+      "r2_1random_median": 0.484,
+      "p_random1_ge": 0.0099
+    },
+    "Occipital Visual Cortex": {
+      "r2_6spv": 0.888,
+      "r2_6random_median": 0.863,
+      "r2_6random_q05_q95": [
+        0.793,
+        0.917
+      ],
+      "p_random6_ge": 0.1782,
+      "r2_neuron_spv": 0.822,
+      "r2_1random_median": 0.551,
+      "p_random1_ge": 0.0099
+    },
+    "Parahippocampal Gyrus": {
+      "r2_6spv": 0.843,
+      "r2_6random_median": 0.777,
+      "r2_6random_q05_q95": [
+        0.695,
+        0.845
+      ],
+      "p_random6_ge": 0.0693,
+      "r2_neuron_spv": 0.815,
+      "r2_1random_median": 0.611,
+      "p_random1_ge": 0.0099
+    },
+    "Posterior Cingulate Cortex": {
+      "r2_6spv": 0.939,
+      "r2_6random_median": 0.798,
+      "r2_6random_q05_q95": [
+        0.687,
+        0.878
+      ],
+      "p_random6_ge": 0.0099,
+      "r2_neuron_spv": 0.844,
+      "r2_1random_median": 0.503,
+      "p_random1_ge": 0.0099
+    },
+    "Precentral Gyrus": {
+      "r2_6spv": 0.897,
+      "r2_6random_median": 0.786,
+      "r2_6random_q05_q95": [
+        0.692,
+        0.881
+      ],
+      "p_random6_ge": 0.0297,
+      "r2_neuron_spv": 0.794,
+      "r2_1random_median": 0.491,
+      "p_random1_ge": 0.0099
+    },
+    "Prefrontal Cortex": {
+      "r2_6spv": 0.801,
+      "r2_6random_median": 0.695,
+      "r2_6random_q05_q95": [
+        0.508,
+        0.797
+      ],
+      "p_random6_ge": 0.0396,
+      "r2_neuron_spv": 0.663,
+      "r2_1random_median": 0.225,
+      "p_random1_ge": 0.0099
+    },
+    "Putamen": {
+      "r2_6spv": 0.871,
+      "r2_6random_median": 0.737,
+      "r2_6random_q05_q95": [
+        0.664,
+        0.808
+      ],
+      "p_random6_ge": 0.0099,
+      "r2_neuron_spv": 0.766,
+      "r2_1random_median": 0.632,
+      "p_random1_ge": 0.0099
+    },
+    "Superior Parietal Lobule": {
+      "r2_6spv": 0.917,
+      "r2_6random_median": 0.712,
+      "r2_6random_q05_q95": [
+        0.547,
+        0.833
+      ],
+      "p_random6_ge": 0.0099,
+      "r2_neuron_spv": 0.766,
+      "r2_1random_median": 0.278,
+      "p_random1_ge": 0.0099
+    },
+    "Superior Temporal Gyrus": {
+      "r2_6spv": 0.791,
+      "r2_6random_median": 0.764,
+      "r2_6random_q05_q95": [
+        0.712,
+        0.824
+      ],
+      "p_random6_ge": 0.1386,
+      "r2_neuron_spv": 0.722,
+      "r2_1random_median": 0.687,
+      "p_random1_ge": 0.0297
+    },
+    "Temporal Pole": {
+      "r2_6spv": 0.82,
+      "r2_6random_median": 0.73,
+      "r2_6random_q05_q95": [
+        0.639,
+        0.821
+      ],
+      "p_random6_ge": 0.0594,
+      "r2_neuron_spv": 0.762,
+      "r2_1random_median": 0.584,
+      "p_random1_ge": 0.0099
+    }
+  },
+  "geo": {
+    "GSE33000_PFC": {
+      "r2_6spv": 0.873,
+      "r2_6random_median": 0.843,
+      "r2_6random_q05_q95": [
+        0.802,
+        0.882
+      ],
+      "p_random6_ge": 0.0792,
+      "r2_neuron_spv": 0.826,
+      "r2_1random_median": 0.742,
+      "p_random1_ge": 0.0198
+    },
+    "GSE132903_MTG": {
+      "r2_6spv": 0.922,
+      "r2_6random_median": 0.778,
+      "r2_6random_q05_q95": [
+        0.582,
+        0.874
+      ],
+      "p_random6_ge": 0.0099,
+      "r2_neuron_spv": 0.858,
+      "r2_1random_median": 0.429,
+      "p_random1_ge": 0.0099
+    },
+    "GSE118553_Temporal_Cortex": {
+      "r2_6spv": 0.82,
+      "r2_6random_median": 0.498,
+      "r2_6random_q05_q95": [
+        0.335,
+        0.647
+      ],
+      "p_random6_ge": 0.0099,
+      "r2_neuron_spv": 0.605,
+      "r2_1random_median": 0.172,
+      "p_random1_ge": 0.0099
+    },
+    "GSE125583_FG": {
+      "r2_6spv": 0.88,
+      "r2_6random_median": 0.825,
+      "r2_6random_q05_q95": [
+        0.741,
+        0.865
+      ],
+      "p_random6_ge": 0.0396,
+      "r2_neuron_spv": 0.856,
+      "r2_1random_median": 0.004,
+      "p_random1_ge": 0.0099
+    }
+  },
+  "msbb_summary": {
+    "r2_6spv": 0.858,
+    "r2_6random_median": 0.764,
+    "r2_neuron_spv": 0.762,
+    "r2_1random_median": 0.55,
+    "n_regions_p_random6_lt_05": 9
+  }
+}
