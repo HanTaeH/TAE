@@ -5,6 +5,8 @@ Rebuild the Ligament_Fibro column of the v3 atlas from
 EXP7_ROUND=2: Ligament_Fibro_LSS294 (GSE294458 LSS donor only, same dataset as LDH) and LF_hypertrophy_up/down
 (top 10% by log2 CPM ratio LSS294 vs LDH, genes with CPM > 1 in either).
 EXP7_ROUND=3: depth-matched LSS donor sets (1,088 cells, counts thinned to the LDH total, 3 seeds).
+EXP7_ROUND=4: one set per GSE267819 hypertrophied-LF donor (LFH1, LFH2, LFH3), to test whether the stenotic-state
+enrichment repeats in each individual (limitation: one stenotic donor in round 2).
 Uses the same ligament fibroblast clusters as the atlas, then make top-10% specificity sets (+/-100 kb) for
 Ligament_Fibro_LDH, Ligament_Fibro_LSS and Fibro_pooled_LDH (LDH ligament + disc fibroblast), plus all_genes.
 Other atlas columns are unchanged. Also writes overlap with the v3 Ligament_Fibro set.
@@ -53,6 +55,11 @@ if os.environ.get("EXP7_ROUND") == "3":
         s = pd.Series(s, index=a.var_names).groupby(level=0).sum().reindex(atlas.index)
         cols[f"Ligament_Fibro_LSSdown{seed}"] = (s / s.sum() * 1e6).fillna(0)
         print("seed", seed, "cells", n_ldh, "counts", int(s.sum()), "LDH counts", int(tot_ldh))
+if os.environ.get("EXP7_ROUND") == "4":
+    cols, nd = {}, {}
+    for d in ["LFH1", "LFH2", "LFH3"]:
+        c, nd[d] = pb("GSE267819", [d])
+        cols[f"Ligament_Fibro_{d}"] = c.fillna(0)
 if os.environ.get("EXP7_ROUND") == "2":
     # round 2: same-dataset, one-donor-each comparison, and the hypertrophy program itself
     cols = {"Ligament_Fibro_LSS294": lss1.fillna(0)}
@@ -72,7 +79,7 @@ if os.environ.get("EXP7_ROUND") == "2":
     lfc = (np.log2(lss1.fillna(0) + 1) - np.log2(ldh.fillna(0) + 1))[e]
     sets["LF_hypertrophy_up"] = list(lfc.sort_values(ascending=False).index[:k])
     sets["LF_hypertrophy_down"] = list(lfc.sort_values().index[:k])
-if os.environ.get("EXP7_ROUND") not in ("2", "3"):
+if os.environ.get("EXP7_ROUND") not in ("2", "3", "4"):
     a = atlas.drop(columns=["Ligament_Fibro", "Disc_Fibro"]).assign(
         Fibro_pooled_LDH=(cols["Ligament_Fibro_LDH"] / cols["Ligament_Fibro_LDH"].sum() * 1e6 + atlas.Disc_Fibro) / 2)
     sets["Fibro_pooled_LDH"] = top(a, "Fibro_pooled_LDH")
@@ -85,5 +92,9 @@ for s, g in sets.items():
     rows += [(s, x, 100_000) for x in g]
 rows += [("all_genes", x, 100_000) for x in atlas.index]
 pd.DataFrame(rows, columns=["set", "SYMBOL", "window"]).to_csv(f"{out}/genesets_exp7.tsv", sep="\t", index=False)
-pd.DataFrame([dict(sample="LDH", cells=n_ldh), dict(sample="LSS_GSE294458", cells=n1), dict(sample="LFH_GSE267819", cells=n2)]).to_csv(f"{out}/ncells.tsv", sep="\t", index=False)
+if os.environ.get("EXP7_ROUND") == "4":
+    nd["LDH"] = n_ldh; nd["LSS_GSE294458"] = n1
+    pd.DataFrame([dict(sample=k, cells=v) for k, v in nd.items()]).to_csv(f"{out}/ncells.tsv", sep="\t", index=False)
+else:
+  pd.DataFrame([dict(sample="LDH", cells=n_ldh), dict(sample="LSS_GSE294458", cells=n1), dict(sample="LFH_GSE267819", cells=n2)]).to_csv(f"{out}/ncells.tsv", sep="\t", index=False)
 print(pd.DataFrame(ov).round(3).to_string(index=False))
