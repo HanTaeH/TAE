@@ -119,6 +119,6 @@ fi
 python3 multiple_testing.py "$OUT"
 MS=${MS:-$(cd .. && pwd)/manuscript}
 mkdir -p "$OUT/manuscript"
-python3 manuscript_tokens.py --src "$MS/draft_v13_src_2026-11-27.md" --out "$OUT/manuscript/draft_v13.md" --ren "$OUT/supplementary/ren_v13.json" \
-  --extra "$MS/Supplementary_Note_v13_src_2026-11-27.md" "$OUT/manuscript/Supplementary_Note_v13.md"
-python3 supplementary_tables.py --res "$OUT" --ren "$OUT/supplementary/ren_v13.json" --out "$OUT/supplementary/Supplementary_Tables_v13.xlsx"
+python3 manuscript_tokens.py --src "$MS/draft_v14_src_2026-11-27.md" --out "$OUT/manuscript/draft_v14.md" --ren "$OUT/supplementary/ren_v14.json" \
+  --extra "$MS/Supplementary_Note_v14_src_2026-11-27.md" "$OUT/manuscript/Supplementary_Note_v14.md"
+python3 supplementary_tables.py --res "$OUT" --ren "$OUT/supplementary/ren_v14.json" --out "$OUT/supplementary/Supplementary_Tables_v14.xlsx"
