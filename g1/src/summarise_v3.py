@@ -40,7 +40,7 @@ rows = []
 PAIRS = [("EURmeta", "EURmeta.SPINSTENOSIS", "EURmeta.DORSALGIA"), ("FinnGen", "fg.SPINSTENOSIS", "fg.DORSALGIA"),
          ("MVP_EUR", "MVP_EUR.SPINSTENOSIS", "MVP_EUR.DORSALGIA"), ("UKBB", "ukbb.SPINSTENOSIS", "ukbb.DORSALGIA")]
 # experiment 6: both traits with the FinnGen depression genetic component removed
-PAIRS += [(c + suf, s + suf, p + suf) for suf in ["_adjDEP", "_adjDEPANX"] for c, s, p in PAIRS]  # exp 7b: depression + anxiety
+PAIRS += [(c + suf, s + suf, p + suf) for suf in ["_adjDEP", "_adjDEPANX", "_adjUKBDEP"] for c, s, p in PAIRS]  # exp 7b: depression + anxiety
 for coh, s, p in PAIRS:
     if s not in Z.index or p not in Z.index:
         continue
@@ -52,7 +52,7 @@ for coh, s, p in PAIRS:
 R = pd.DataFrame(rows)
 R["Z_fib_arm"] = (R.z_fib_sten - R.z_fib_dors) / np.sqrt(2)
 R["Z_neu_arm"] = (R.z_neu_dors - R.z_neu_sten) / np.sqrt(2)
-for suf in ["", "_adjDEP", "_adjDEPANX"]:
+for suf in ["", "_adjDEP", "_adjDEPANX", "_adjUKBDEP"]:  # _adjUKBDEP: Pan-UKB depression (limitation 2)
     for fib in R.fibro_set.unique():
         x = R[(R.fibro_set == fib) & R.cohort.isin([c + suf for c in ["FinnGen", "MVP_EUR", "UKBB"]])]
         if len(x):
